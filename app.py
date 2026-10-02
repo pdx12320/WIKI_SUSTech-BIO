@@ -34,6 +34,12 @@ def home():
     return render_template("pages/home.html")
 
 
+@app.route("/next")
+def home_next():
+    """Keep the particle prototype's original preview URL available."""
+    return render_template("pages/home.html")
+
+
 @app.route("/assets/<path:filename>")
 def assets(filename):
     return send_from_directory(path.join(app.root_path, "assets"), filename)

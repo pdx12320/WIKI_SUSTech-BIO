@@ -1,0 +1,17 @@
+image: python:3.12
+
+pages:
+  stage: build
+  script:
+    - pip install --no-cache-dir -r dependencies.txt
+    - python -m unittest discover -s tests -v
+    - FLASK_APP=app.py flask freeze
+    - python scripts/audit_build.py
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: never # No runners will run on branches other than main
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always

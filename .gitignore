@@ -1,0 +1,15 @@
+env
+venv
+.vscode
+.idea
+.DS_Store
+__pycache__
+public
+node_modules
+.venv/
+__pycache__/
+.pytest_cache/
+__pycache__/
+.pytest_cache/
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% from "macros.html" import evidence %}
+{% block title %}{{ content.title }}{% endblock %}
+ {% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='model.css') }}">{% endblock %}
+{% set modules = [('01','Transcriptome-wide Off-target Prediction','RNA-seq · Off-target prediction'),('02','PUF Mutagenesis','PUF mutation · Structural model'),('03','Module 3','Coming soon'),('04','Module 4','Coming soon')] %}
+{% set chapters = [
+ [('Overview','Overview'),('Experimental design','Experimental design'),('Workflow','Workflow'),('Results and interpretation','Results'),('Engineering implications','Engineering implications'),('Reproducibility and availability','Reproducibility'),('References','References')],
+ [('Background and engineering objective','Background'),('Part I. Assay-informed specificity ranking','Specificity ranking'),('Part II. Structure-conditioned PUF design and experimental comparison','Structure-guided design'),('Next Design–Build–Test–Learn cycle','Next DBTL cycle'),('Data, figures and reproducibility','Data & reproducibility'),('References','References')], [], []
+] %}
+{% block main %}
+<main id="main-content" class="model-page">
+      <header class="model-overview" id="model-overview">
+        <div class="model-introduction">
+          <div class="model-introduction-copy">
+             <h1 class="model-typed-title" aria-label="{{ content.title }}.">{% for letter in content.title ~ '.' %}<span class="typed-glyph" aria-hidden="true" style="--letter:{{ loop.index0 }}">{{ letter }}</span>{% endfor %}<i class="typing-caret" aria-hidden="true">|</i></h1>
+          </div>
+          <figure class="model-character">
+            {% include 'components/model/typing-hero.html' %}
+          </figure>
+        </div>
+        <div class="module-grid">
+          {% for number, title, subtitle in modules %}
+          <a class="module-card module-card--{{ loop.index }}" href="#module{{ loop.index }}">
+            {% include 'components/model/neuron-frame.html' %}
+            <div class="neuron-card-content">
+            <div class="module-card-top"><span>MODULE {{ number }}</span></div>
+            {% include 'components/model/character-card.html' %}
+            <h2>{{ title }}</h2><p>{{ subtitle }}</p>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </header>
+  <div class="model-layout">
+    <aside class="model-sidebar">
+      <nav aria-label="Model modules">
+        {% for number, title, subtitle in modules %}
+        <div class="module-nav-group">
+        {% set module_index = loop.index %}
+        <button type="button" data-module-link data-module="module{{ loop.index }}" aria-expanded="false" aria-controls="module-subnav-{{ loop.index }}">Module {{ loop.index }}</button>
+        <div class="module-subnav" id="module-subnav-{{ loop.index }}" hidden>
+          <a href="#module{{ module_index }}">Overview</a>
+          {% for heading, short in chapters[loop.index0] %}{% if 'DBTL' not in short and short != 'Overview' %}<a href="#module{{ module_index }}-{{ loop.index }}" data-chapter-link>{{ short }}</a>{% endif %}{% endfor %}
+        </div>
+        </div>
+        {% endfor %}
+      </nav>
+
+     </aside>
+     <div class="model-reading">
+       {% if content.html %}
+       <section class="model-module" id="model-content" data-content-source="{{ content.source_label }}">
+         <header class="module-heading"><span class="module-number">00</span><div><p class="model-eyebrow">{{ content.metadata.eyebrow }}</p><h2>{{ content.metadata.get('heading', content.title) }}</h2><p>{{ content.metadata.subtitle }}</p></div></header>
+         <article class="model-prose markdown-content markdown-content--custom">{{ rendered_markdown }}</article>
+       </section>
+       {% endif %}
+       {% for number, title, subtitle in modules %}
+      <section class="model-module{% if loop.index > 2 %} model-module--pending{% endif %}" id="module{{ loop.index }}" data-model-module{% if loop.index > 2 %} data-content-status="pending"{% endif %}>
+        <header class="module-heading"><span class="module-number">{{ number }}</span><div><p class="model-eyebrow">MODULE {{ number }}</p><h2>{{ title }}</h2><p>{{ subtitle }}</p>
+            </div></header>
+        {% if loop.index == 1 %}
+          {{ evidence('Computational analysis of RNA-seq data', 'Candidate sites and descriptive editing profiles from the supplied team analysis. Independent validation and construct-aware confirmation remain necessary.', 'model') }}
+          <article class="model-prose">{% include 'components/model/module1.html' %}</article>
+          <details class="model-dbtl" id="module1-dbtl"><summary>Module 1 · Design–Build–Test–Learn <span>＋</span></summary><article class="model-prose">{% include 'components/model/module1-dbtl.html' %}</article></details>
+        {% elif loop.index == 2 %}
+          {{ evidence('Development-stage modeling', 'Grouped cross-validation and retrospective comparisons are distinct from prospective validation. Inverse-folding sampling preference is not measured RNA affinity.', 'model') }}
+          <article class="model-prose">{% include 'components/model/module2.html' %}</article>
+          <details class="model-dbtl" id="module2-dbtl"><summary>Module 2 · Design–Build–Test–Learn <span>＋</span></summary><article class="model-prose">{% include 'components/model/module2-dbtl.html' %}</article></details>
+        {% else %}
+          <div class="module-pending"><span aria-hidden="true">✳</span><h3>Content pending team review</h3><p>This module will be added as the project develops.</p></div>
+        {% endif %}
+        {% if loop.index < 4 %}<a class="module-next" href="#module{{ loop.index + 1 }}">Next · Module {{ loop.index + 1 }} <span aria-hidden="true">↓</span></a>{% endif %}
+      </section>
+      {% endfor %}
+    </div>
+  </div>
+ </main>
+ {% endblock %}
+{% block page_scripts %}<script src="{{ url_for('static', filename='model.js') }}" defer></script><script src="{{ url_for('static', filename='model-character.js') }}" defer></script>{% endblock %}

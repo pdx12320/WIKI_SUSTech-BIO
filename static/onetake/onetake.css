@@ -47,6 +47,7 @@ html:not(.js) .ot-bar :is(.ot-brand, .ot-bar__meta) {
   opacity: 1; visibility: visible; transform: none; transition-delay: 0s;
 }
 .ot-bar.is-story-ended .ot-bar__meta { opacity: .55; }
+.ot-bar.is-story-ended { background: rgba(3, 5, 11, .9); backdrop-filter: blur(14px); }
 .ot-menu-btn {
   display: inline-flex; align-items: center; gap: 12px;
   margin-left: auto; text-decoration: none;
@@ -89,10 +90,10 @@ body.ot-menu-open { overflow: hidden; }
 .ot-menu a {
   display: inline-block; padding: 5px 0; color: var(--ot-ink); text-decoration: none;
   font-size: clamp(18px, 1.6vw, 24px); letter-spacing: -.01em;
-  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
-  transition: background-size .5s var(--ot-ease), color .3s;
+  transition: color .3s;
 }
-.ot-menu a:hover, .ot-menu a:focus-visible { color: var(--ot-mint); background-size: 100% 1px; }
+.ot-menu a:hover, .ot-menu a:focus-visible { color: var(--ot-mint); }
+.ot-menu a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
 /* ---------- Stage ---------- */
 .ot-stage { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
@@ -132,20 +133,6 @@ body.ot-menu-open { overflow: hidden; }
   text-shadow: 0 0 44px rgba(92, 255, 184, .6);
   opacity: var(--fix, 0);
   filter: blur(calc((1 - var(--fix, 0)) * 14px));
-}
-
-/* The two portraits emerge from the RNA itself; world anchors are projected in JS. */
-.ot-companions { position: absolute; inset: 0; pointer-events: none; }
-.ot-mascot {
-  position: absolute; left: 0; top: 0; width: 120px; opacity: 0; visibility: hidden;
-  transform-origin: 50% 100%; will-change: transform, opacity;
-}
-.ot-mascot svg {
-  display: block; width: 100%; height: auto;
-  /* The cropped lower edge dissolves into the luminous backbone. */
-  mask-image: linear-gradient(#000 82%, transparent 100%);
-  -webkit-mask-image: linear-gradient(#000 82%, transparent 100%);
-  filter: drop-shadow(0 0 7px #9fd0ff30);
 }
 
 /* ---------- Story track ---------- */
@@ -249,12 +236,6 @@ body.ot-menu-open { overflow: hidden; }
 .ot-card a:hover, .ot-card a:focus-visible { color: var(--ot-ink); padding-left: 6px; }
 .ot-card a:hover i, .ot-card a:focus-visible i { opacity: 1; transform: none; color: var(--ot-mint); }
 
-/* ---------- Footer (required licence + repository link kept verbatim) ---------- */
-body.ot .site-footer { position: relative; z-index: 12; color: var(--ot-mute); background: var(--ot-bg); border-top: 1px solid var(--ot-line); }
-body.ot .site-footer a { color: var(--ot-ink); }
-body.ot .site-footer .footer-label { color: var(--ot-mute); }
-body.ot .site-footer strong, body.ot .site-footer small { color: var(--ot-ink); }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .ot-bar__meta { display: none; }
@@ -273,7 +254,7 @@ body.ot .site-footer strong, body.ot .site-footer small { color: var(--ot-ink); 
 /* Leave room for the story on short landscape screens. */
 @media (max-height: 500px) and (min-width: 761px) {
   .ot-brand__logo { width: 64px; }
-  .ot-companions, .ot-scroll-hint { display: none; }
+  .ot-scroll-hint { display: none; }
   .ot-vignette { background: linear-gradient(0deg, #03050bf5, #03050bb3 50%, transparent 85%); }
   .ot-ch { bottom: 30px; }
   .ot-h { font-size: clamp(28px, 4.6vw, 48px); }
@@ -289,13 +270,11 @@ body.ot .site-footer strong, body.ot .site-footer small { color: var(--ot-ink); 
   .ot-ch { transition: none; }
   .ot-ch:not(.is-on) { visibility: hidden; }
   .ot-scroll-hint i { animation: none; }
-  .ot-companions { display: none; }
 }
 
 /* Readable baseline when JavaScript/WebGL is unavailable or motion is reduced. */
 .ot--static .ot-canvas, .ot--static .ot-letter,
 .ot--static .ot-scroll-hint { display: none; }
-.ot--static .ot-companions { display: none; }
 .ot--static .ot-story { height: auto; padding-top: 100px; pointer-events: auto; }
 .ot--static .ot-chapters { position: relative; height: auto; }
 .ot--static .ot-ch {

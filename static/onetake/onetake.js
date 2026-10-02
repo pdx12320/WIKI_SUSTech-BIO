@@ -6,7 +6,7 @@
  * and every uniform are pure functions of that value, so scrubbing backwards
  * replays the take exactly in reverse.
  *
- * The particle field is procedural; the two story portraits use local artwork.
+ * Everything is procedural: no textures, no models, no remote requests.
  */
 import * as THREE from 'three';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -14,7 +14,6 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { createRnaRibbon } from './rna-ribbon.js';
 
 const root = document.querySelector('[data-ot]');
 const canvas = root?.querySelector('[data-ot-canvas]');
@@ -260,7 +259,7 @@ function astrocyteShape(n) {
   return { pos, meta };
 }
 
-const STRAND = { half: 22, radius: 1.4, pitch: 18, baseStep: 0.62 };
+const STRAND = { half: 22, radius: 1.05, pitch: 6.2, baseStep: 0.62 };
 function strandShape(n) {
   const { half, radius, pitch, baseStep } = STRAND;
   const pos = new Float32Array(n * 3);
@@ -342,7 +341,7 @@ float snoise(vec3 v){
 }`;
 
 const particleVertex = /* glsl */`
-uniform float uTime, uStage, uIntro, uBurden, uFix, uWave, uTurb, uPR, uSize, uRot, uMotion, uAspect, uMouseOn, uRibbon;
+uniform float uTime, uStage, uIntro, uBurden, uFix, uWave, uTurb, uPR, uSize, uRot, uMotion, uAspect, uMouseOn;
 uniform vec2 uMouse;
 attribute vec3 aMaze, aBrain, aCell, aStrand, aClump;
 attribute float aMazeK;  // -1 maze wall · 0..1 along the wandering path
@@ -416,7 +415,6 @@ void main(){
   alpha = mix(mix(.42, .18 + .8 * glow, onPath), alpha, e0);
   alpha = mix(alpha, .35, dust);
   alpha *= mix(.08, 1., intro);
-  alpha *= mix(1., .38, onStrand * uRibbon * (1. - dust));
 
   vec4 mv = modelViewMatrix * vec4(p, 1.);
   gl_Position = projectionMatrix * mv;
@@ -496,7 +494,7 @@ const KEYS = [
   { p: 0.19, stage: 0, cam: V(-2.6, 1.4, 13), look: V(0, 0.2, 0) },
   { p: 0.26, stage: 1, cam: V(1.4, 0.6, 9.6), look: V(0, 0, 0) },
   { p: 0.33, stage: 1, cam: V(-1.8, 1.4, 8.4), look: V(0, 0, 0) },
-  { p: 0.43, stage: 2, cam: V(0, 3, 19), look: V(2, 0, 0) },
+  { p: 0.43, stage: 2, cam: V(-16, 2.6, 9.5), look: V(-11, 0, 0) },
   { p: 0.51, stage: 2, cam: V(-4.5, 1.6, 6.8), look: V(-1, 0.3, 0) },
   { p: 0.58, stage: 2, cam: V(-0.6, 0.9, 4.4), look: V(0, 0.6, 0) },
   { p: 0.68, stage: 3, cam: V(0.5, 2.2, 14), look: V(0, 0, 0) },
@@ -555,40 +553,6 @@ function setupDom() {
     for (const el of counters) {
       const k = smooth(ramp(p, +el.dataset.from, +el.dataset.to));
       el.textContent = `${Math.round(+el.dataset.target * (live ? k : 1)).toLocaleString('en-US')}+`;
-    }
-  };
-}
-
-function setupCompanions(camera) {
-  const portraits = [
-    { el: root.querySelector('.ot-mascot--cell'), x: 7, mobileX: 4.5, enter: .426, fade: .454, leave: .478, width: 1.7, phase: 0 },
-    { el: root.querySelector('.ot-mascot--cleaner'), x: 11, mobileX: 7, enter: .426, fade: .448, leave: .46, width: 1.6, phase: 1.7 },
-  ];
-  const anchor = new THREE.Vector3(), projected = new THREE.Vector3(), ahead = new THREE.Vector3();
-  const at = (x, out) => out.set(x, Math.cos(x / STRAND.pitch * Math.PI * 2) * STRAND.radius, Math.sin(x / STRAND.pitch * Math.PI * 2) * STRAND.radius);
-  return (p, time) => {
-    for (const portrait of portraits) {
-      const entering = smooth(ramp(p, portrait.enter, portrait.enter + .012));
-      const leaving = smooth(ramp(p, portrait.fade, portrait.leave));
-      const opacity = entering * (1 - leaving);
-      portrait.el.style.visibility = opacity > .001 ? 'visible' : 'hidden';
-      portrait.el.style.opacity = opacity.toFixed(3);
-      if (opacity < .001) continue;
-      // Fixed points on the same backbone keep the portraits attached as the
-      // camera travels past. Narrow screens use a closer pair on that curve.
-      const x = innerWidth < 761 ? portrait.mobileX : portrait.x;
-      at(x, anchor);
-      projected.copy(anchor).project(camera);
-      at(x + .12, ahead).project(camera);
-      const sx = (projected.x * .5 + .5) * innerWidth;
-      const sy = (-projected.y * .5 + .5) * innerHeight;
-      const slope = Math.atan2(-(ahead.y - projected.y) * innerHeight, (ahead.x - projected.x) * innerWidth);
-      const depth = anchor.distanceTo(camera.position);
-      const size = clamp(portrait.width * (innerWidth < 761 ? 1.45 : 1) * innerHeight / (2 * Math.tan(camera.fov * Math.PI / 360) * depth), 42, 155);
-      const rise = (1 - entering) * 22;
-      const tilt = clamp(slope * 180 / Math.PI * .16, -9, 9) + Math.sin(time * 1.3 + portrait.phase) * 1.8;
-      portrait.el.style.width = `${size.toFixed(2)}px`;
-      portrait.el.style.transform = `translate3d(${sx.toFixed(2)}px, ${(sy + rise).toFixed(2)}px, 0) translate(-50%, -92%) rotate(${tilt.toFixed(2)}deg)`;
     }
   };
 }
@@ -713,7 +677,6 @@ function boot() {
     uFix: { value: 0 }, uWave: { value: 0 }, uTurb: { value: 0 }, uPR: { value: 1 },
     uSize: { value: small ? 2.6 : 2.2 }, uRot: { value: 0 }, uMotion: { value: 1 },
     uAspect: { value: 1 }, uMouse: { value: new THREE.Vector2(9, 9) }, uMouseOn: { value: 0 },
-    uRibbon: { value: 0 },
   };
   const material = new THREE.ShaderMaterial({
     uniforms, vertexShader: particleVertex, fragmentShader: particleFragment,
@@ -729,10 +692,7 @@ function boot() {
 
   const scene = new THREE.Scene();
   scene.add(points, ring);
-  const rnaRibbon = createRnaRibbon(THREE, STRAND);
-  scene.add(rnaRibbon.group);
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 200);
-  const updateCompanions = setupCompanions(camera);
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: false, powerPreference: 'high-performance' });
   renderer.setClearColor(0x03050b, 1);
@@ -796,8 +756,8 @@ function boot() {
     // Intro dolly: the take opens slightly further out.
     camPos.z += (1 - smooth(intro)) * 6;
     camera.position.copy(camPos); camera.lookAt(camLook);
+    // Keep the C/U overlay aligned with this frame's camera before projection.
     camera.updateMatrixWorld();
-    updateCompanions(P, time);
 
     uniforms.uTime.value = time;
     uniforms.uStage.value = stage;
@@ -809,13 +769,7 @@ function boot() {
     uniforms.uWave.value = ramp(P, 0.835, 0.885);
     uniforms.uMotion.value = motion;
     uniforms.uMouse.value.copy(mouseSmooth);
-    const ribbonPresence = smooth(ramp(P, .385, .43)) * (1 - smooth(ramp(P, .595, .62)))
-      + smooth(ramp(P, .81, .835)) * (1 - smooth(ramp(P, .885, .915)));
-    uniforms.uRibbon.value = clamp(ribbonPresence);
-    // The mesh and its portraits share one backbone; don't part only the
-    // particles while the illustrated strand is in view.
-    uniforms.uMouseOn.value = mouseOn * motion * (1 - uniforms.uRibbon.value);
-    rnaRibbon.update(P, stage, time, uniforms.uFix.value);
+    uniforms.uMouseOn.value = mouseOn * motion;
 
     // The editor ring: arrives along the strand, closes on the letter, leaves.
     const ringIn = smooth(ramp(P, 0.79, 0.825)), ringOut = smooth(ramp(P, 0.87, 0.9));
@@ -826,8 +780,7 @@ function boot() {
     ringUniforms.uOpacity.value = ringIn * (1 - ringOut);
 
     grade.uniforms.uTime.value = time;
-    bloom.threshold = lerp(.12, .65, uniforms.uRibbon.value);
-    bloom.strength = (0.75 + 0.12 * uniforms.uFix.value * (1 - ramp(P, 0.9, 1)) + 0.25 * ramp(P, 0.52, 0.58) * (1 - ramp(P, 0.6, 0.66))) * (1 - .65 * uniforms.uRibbon.value);
+    bloom.strength = 0.75 + 0.12 * uniforms.uFix.value * (1 - ramp(P, 0.9, 1)) + 0.25 * ramp(P, 0.52, 0.58) * (1 - ramp(P, 0.6, 0.66));
 
     // Project the letter onto the page so the type sits on the particle knot.
     const letterOn = ramp(P, 0.515, 0.54) * (1 - ramp(P, 0.6, 0.625)) + ramp(P, 0.81, 0.83) * (1 - ramp(P, 0.885, 0.905));

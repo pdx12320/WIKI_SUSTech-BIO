@@ -72,7 +72,9 @@
     ink.textBaseline = 'top';
 
     // Sample the real glyph positions, including labels that wrap on mobile.
-    for (const label of panel.querySelectorAll('.rna-branch__label, .rna-branch__base')) {
+    // Only sample the visible front face of editable bases; the U back face
+    // should not become a second overlapping glyph in the particle mask.
+    for (const label of panel.querySelectorAll('.rna-branch__label, [data-rna-glyph]')) {
       const style = getComputedStyle(label);
       ink.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
       for (const node of label.childNodes) {
@@ -217,6 +219,9 @@
   });
   document.addEventListener('pointerdown', (event) => {
     if (navigation && !navigation.contains(event.target)) closeAll();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeAll();
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) closeAll(); });
   window.addEventListener('resize', () => stopMenuParticles());

@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 
 from app import app
+from wiki_content import NAVIGATION
 
 
 PUBLIC_ROUTES = [
@@ -89,13 +90,12 @@ class WikiRoutesTest(unittest.TestCase):
         index = re.search(r'<section\b[^>]*aria-labelledby="ot-index-title"[^>]*>(.*?)</section>', page, re.S)
         self.assertIsNotNone(menu)
         self.assertIsNotNone(index)
-        for route in PUBLIC_ROUTES:
-            if route in {"/", "/next"}:
-                continue
+        navigation_routes = [f"/{route}" for group in NAVIGATION for route, _ in group["items"]]
+        for route in navigation_routes:
             with self.subTest(route=route):
                 self.assertIn(f'href="{route}"', menu.group(1))
                 self.assertIn(f'href="{route}"', index.group(1))
-        self.assertIn('class="site-footer"', page)
+        self.assertRegex(page, r'<footer\b[^>]*\bsite-footer\b')
 
     def test_particle_preview_alias_matches_default_home(self):
         self.assertEqual(self.get_text("/next"), self.get_text("/"))

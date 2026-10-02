@@ -1,14 +1,14 @@
-/* Load after page styles. The particle home owns its existing body.ot theme. */
+/* Light reading theme. The particle home owns its existing dark body.ot theme. */
 body:not(.ot) {
-  --particle-bg: #03050b;
-  --particle-panel: #0b1220;
-  --particle-raised: #121e30;
-  --particle-ink: #e9eef7;
-  --particle-muted: #b7c1d1;
-  --particle-ice: #9fd0ff;
-  --particle-coral: #ff6a55;
-  --particle-mint: #5cffb8;
-  --particle-line: #29374c;
+  --particle-bg: #f5f7fb;
+  --particle-panel: #eef3fb;
+  --particle-raised: #e2eaf8;
+  --particle-ink: #25314c;
+  --particle-muted: #53617a;
+  --particle-ice: #485b99;
+  --particle-coral: #aa4e58;
+  --particle-mint: #326f6d;
+  --particle-line: #d2dcec;
   --paper: var(--particle-bg);
   --paper-2: var(--particle-panel);
   --dark-ink: var(--particle-ink);
@@ -23,16 +23,16 @@ body:not(.ot) {
   --warm-yellow: var(--particle-ice);
   --accent-purple: var(--particle-ice);
   --line: var(--particle-line);
-  --shadow: 0 20px 50px #0006;
+  --shadow: 0 20px 50px #25314c0d;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
   color: var(--particle-ink);
   background: var(--particle-bg);
 }
 
 body:not(.ot)::before { background-image: none; }
-body:not(.ot) ::selection { color: #03050b; background: #9fd0ff; }
+body:not(.ot) ::selection { color: #25314c; background: #dce5f5; }
 body:not(.ot) :focus-visible { outline: 2px solid var(--particle-ice); outline-offset: 4px; }
 body:not(.ot) :is(.page-hero, .model-page, .not-found) {
   color: var(--particle-ink);
@@ -41,7 +41,7 @@ body:not(.ot) :is(.page-hero, .model-page, .not-found) {
 
 /* Navigation keeps its current layout and interactions. */
 body:not(.ot) .site-nav {
-  background: #03050bf5;
+  background: #f8fafdf5;
   border-color: var(--particle-line);
 }
 body:not(.ot) :is(.site-brand, .site-brand strong) { color: var(--particle-ink); }
@@ -53,7 +53,7 @@ body:not(.ot) :is(.dropdown-menu, .rna-menu, .navbar-collapse) {
   color: var(--particle-ink);
   background: var(--particle-panel);
   border-color: var(--particle-line);
-  box-shadow: 0 18px 44px #0006;
+  box-shadow: 0 18px 44px #25314c14;
 }
 body:not(.ot) :is(.dropdown-item, .rna-branch) { color: var(--particle-ink); }
 body:not(.ot) .dropdown-item:is(:hover, :focus, .active),
@@ -75,10 +75,10 @@ body:not(.ot) .rna-branches li:nth-child(3n) .rna-branch__base {
   color: var(--particle-bg);
   background: var(--particle-mint);
 }
-body:not(.ot) .rna-branch__bond { background: #9fd0ff66; }
+body:not(.ot) .rna-branch__bond { background: #7888b766; }
 body:not(.ot) .rna-branch__label > span { color: var(--particle-ice); }
 body:not(.ot) :is(.rna-menu__lead, .rna-menu__backbone) path { stroke: var(--particle-ice); }
-body:not(.ot) .nav-whale::after { background: #9fd0ff24; }
+body:not(.ot) .nav-whale::after { background: #7888b724; }
 body:not(.ot) .nav-whale i { border-color: var(--particle-ice); }
 body:not(.ot) .story-progress { background: var(--particle-line); }
 
@@ -93,10 +93,12 @@ body:not(.ot) .rna-menu__particles {
   height: 100%;
   z-index: 2;
   pointer-events: none;
+  /* Only decorative menu particles are toned for the light surface. */
+  filter: brightness(.65) saturate(.7);
 }
 body:not(.ot) .rna-menu.is-gathering {
-  background: rgba(11, 18, 32, var(--rna-reveal, 0));
-  border-color: rgba(41, 55, 76, var(--rna-reveal, 0));
+  background: rgba(238, 243, 251, var(--rna-reveal, 0));
+  border-color: rgba(210, 220, 236, var(--rna-reveal, 0));
   box-shadow: none;
   backdrop-filter: none;
 }
@@ -112,11 +114,11 @@ body:not(.ot) .site-nav .site-logo,
   body:not(.ot) .site-nav .site-logo { width: 42px; }
 }
 
-/* Hero and reading text share the home's restrained palette. */
-body:not(.ot) .page-hero::after { border-color: #9fd0ff14; }
+/* Soft surfaces keep long scientific pages light without changing their layout. */
+body:not(.ot) .page-hero::after { border-color: #485b9914; }
 body:not(.ot) .light-dot { opacity: .07; }
 body:not(.ot) .page-hero__copy h1 { color: var(--particle-ink); font-weight: 400; }
-body:not(.ot) :is(.page-hero__lead, .footer-legal p, .model-intro,
+body:not(.ot) :is(.page-hero__lead, .model-intro,
   .module-heading p:last-child, .module-pending p, .model-sidebar-note) {
   color: var(--particle-muted);
 }
@@ -128,7 +130,7 @@ body:not(.ot) :is(.markdown-content p, .markdown-content li,
 body:not(.ot) :is(.markdown-content a, .model-prose a,
   .references a, .evidence-links a, .text-link, .module-next) {
   color: var(--particle-ice);
-  text-decoration-color: #9fd0ff88;
+  text-decoration-color: #7888b788;
 }
 body:not(.ot) :is(.markdown-content a, .model-prose a,
   .references a, .evidence-links a, .text-link, .module-next):hover {
@@ -198,7 +200,7 @@ body:not(.ot) :is(.markdown-content code, .model-prose :not(pre) > code) {
 body:not(.ot) :is(.markdown-content pre, .model-prose pre, .code-panel,
   .app-panel pre, .code-panel pre) {
   color: var(--particle-ink);
-  background: #060b14;
+  background: #e8eef8;
   border-color: var(--particle-line);
 }
 body:not(.ot) :is(.markdown-content, .model-prose, .app-panel, .code-panel) pre code {
@@ -208,9 +210,9 @@ body:not(.ot) :is(.markdown-content, .model-prose, .app-panel, .code-panel) pre 
 
 /* Model reading navigation, including its mobile chapter dropdown. */
 body:not(.ot) .model-sidebar {
-  background: #03050bf5;
+  background: #f5f7fbf5;
   border-color: var(--particle-line);
-  scrollbar-color: #52647d transparent;
+  scrollbar-color: #a4b1ca transparent;
 }
 body:not(.ot) .model-sidebar :is(button, nav a) { color: var(--particle-muted); }
 body:not(.ot) .model-sidebar button:is(:hover, [aria-expanded="true"]),
@@ -260,15 +262,7 @@ body:not(.ot) :is(.model-prose figure, .markdown-content figure) a:hover { color
 body:not(.ot) :is(.figure-slot__preview, .art-slot__surface) :is(span, strong) { color: #234879; }
 body:not(.ot) :is(.figure-slot, .art-slot) figcaption { color: var(--particle-muted); }
 
-/* Footer and utility controls. */
-body:not(.ot) .site-footer {
-  color: var(--particle-muted);
-  background: var(--particle-bg);
-  border-color: var(--particle-line);
-}
-body:not(.ot) .footer-intro p { color: var(--particle-ink); }
-body:not(.ot) .footer-grid a:not(.site-brand) { color: var(--particle-muted); opacity: 1; }
-body:not(.ot) .footer-grid a:hover { color: var(--particle-ice); }
+/* Utility controls; the shared footer is styled independently. */
 body:not(.ot) :is(.button--coral, .back-to-top) {
   color: var(--particle-bg);
   background: var(--particle-ice);

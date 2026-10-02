@@ -18,4 +18,4 @@ class ReferenceArtTest(unittest.TestCase):
         self.assertIn('57,000,000+', page)
         self.assertIn('60–70%', page)
         self.assertIn('people were living with dementia worldwide in 2021', page)
-        self.assertIn('who.int/news-room/fact-sheets/detail/dementia', page)
+        self.assertIn('of dementia cases are estimated to be attributable to Alzheimer disease', page)

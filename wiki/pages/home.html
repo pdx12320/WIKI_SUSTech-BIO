@@ -14,7 +14,7 @@
 {% block navigation %}
 <header class="ot-bar">
   <a class="ot-brand" href="{{ url_for('home') }}" aria-label="ORCA home">
-    <span class="ot-brand__mark" aria-hidden="true"></span>ORCA
+    <img class="ot-brand__logo" src="{{ url_for('static', filename='assets/brand/sustech-bio-logo.png') }}" alt="SUSTech-BIO" width="1498" height="1050"> <span>ORCA</span>
   </a>
   <p class="ot-bar__meta">SUSTech · iGEM 2026</p>
   <a class="ot-menu-btn" href="#ot-index-title" data-ot-menu-fallback>Explore</a>
@@ -43,6 +43,14 @@
   <div class="ot-stage" aria-hidden="true">
     <canvas class="ot-canvas" data-ot-canvas></canvas>
     <div class="ot-vignette"></div>
+    <div class="ot-companions" data-ot-companions>
+      <div class="ot-mascot ot-mascot--cell">
+        <svg viewBox="0 0 760 555"><image href="{{ url_for('assets', filename='hero/cell/red-cell-main.png') }}" width="760" height="797"/></svg>
+      </div>
+      <div class="ot-mascot ot-mascot--cleaner">
+        <svg viewBox="1275 175 620 545"><image href="{{ url_for('assets', filename='hero/clearance/cleaners-ready.png') }}" width="1895" height="960"/></svg>
+      </div>
+    </div>
     <div class="ot-letter" data-ot-letter><span class="ot-letter__c">C</span><span class="ot-letter__u">U</span></div>
   </div>
 
@@ -82,12 +90,12 @@
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.62" data-out="0.672">
         <h2 class="ot-h" data-split>Amyloid can build up.</h2>
-        <p class="ot-sub">In human cell models, APOE4 astrocytes take up less amyloid-β than APOE3 astrocytes. <a class="ot-cite" href="#story-source-clearance" aria-label="Source: APOE4 and amyloid uptake">[1]</a></p>
+        <p class="ot-sub">In human cell models, APOE4 astrocytes take up less amyloid-β than APOE3 astrocytes.</p>
       </div>
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.689" data-out="0.731">
         <h2 class="ot-h ot-h--sm" data-split>A higher risk of Alzheimer’s.</h2>
-        <p class="ot-sub">APOE4 increases disease risk. Carrying it does not mean someone will develop dementia. <a class="ot-cite" href="#story-source-risk" aria-label="Source: APOE and Alzheimer’s risk">[2]</a></p>
+        <p class="ot-sub">APOE4 increases disease risk. Carrying it does not mean someone will develop dementia.</p>
       </div>
 
       <div class="ot-ch ot-ch--stats" data-ot-chapter data-in="0.747" data-out="0.808">
@@ -97,7 +105,6 @@
           <div><dt>60–70%</dt><dd>of dementia cases are estimated to be attributable to Alzheimer disease</dd></div>
           <div><dt>≈10 million</dt><dd>new dementia cases each year</dd></div>
         </dl>
-        <a class="ot-source" href="https://www.who.int/news-room/fact-sheets/detail/dementia" target="_blank" rel="noopener noreferrer">WHO Dementia fact sheet · 2021 estimate · updated 2026 ↗</a>
       </div>
 
       <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.825" data-out="0.905">
@@ -128,13 +135,6 @@
       </article>
       {% endfor %}
     </div>
-    <aside class="ot-references" aria-labelledby="story-sources-title">
-      <h3 id="story-sources-title">Sources behind the story</h3>
-      <ol>
-        <li id="story-source-clearance"><a href="https://pubmed.ncbi.nlm.nih.gov/29861287/" target="_blank" rel="noopener noreferrer">Lin et al., Neuron (2018)</a>. APOE4 and amyloid uptake in human cell models.</li>
-        <li id="story-source-risk"><a href="https://www.nature.com/articles/s41467-019-14279-8" target="_blank" rel="noopener noreferrer">Reiman et al., Nature Communications (2020)</a>. APOE variants and Alzheimer’s dementia risk.</li>
-      </ol>
-    </aside>
   </section>
 </main>
 {% endblock %}

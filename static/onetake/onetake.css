@@ -7,8 +7,8 @@ body.ot {
   --ot-ice: #9fd0ff;
   --ot-coral: #ff6a55;
   --ot-mint: #5cffb8;
-  --ot-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --ot-serif: Georgia, "Times New Roman", serif;
+  --ot-sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --ot-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --ot-mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
   --ot-ease: cubic-bezier(.16, .84, .24, 1);
   padding-top: 0;
@@ -25,25 +25,28 @@ html:has(body.ot) { scroll-behavior: auto; background: #03050b; }
 .ot-bar {
   position: fixed; inset: 0 0 auto; z-index: 40;
   display: flex; align-items: center; gap: 24px;
-  padding: 22px clamp(20px, 4vw, 56px);
-  mix-blend-mode: difference;
+  padding: 14px clamp(20px, 4vw, 56px);
 }
 .ot-brand {
   display: inline-flex; align-items: center; gap: 10px;
   color: #fff; text-decoration: none;
   font-weight: 600; letter-spacing: .14em; font-size: 14px;
 }
-.ot-brand__mark {
-  width: 14px; height: 14px; border-radius: 50%;
-  border: 1.5px solid currentColor; position: relative;
-}
-.ot-brand__mark::after {
-  content: ""; position: absolute; inset: 3px; border-radius: 50%; background: currentColor;
-}
+.ot-brand__logo { display: block; width: 96px; height: auto; }
 .ot-bar__meta {
   margin: 0 auto 0 0; color: #fff; opacity: .55;
   font: 500 11px/1 var(--ot-mono); letter-spacing: .16em; text-transform: uppercase;
 }
+.ot-bar :is(.ot-brand, .ot-bar__meta) {
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .6s ease, transform .6s var(--ot-ease), visibility 0s linear .6s;
+}
+.ot-bar.is-story-ended :is(.ot-brand, .ot-bar__meta),
+body.ot:has(.ot--static.is-ready) .ot-bar :is(.ot-brand, .ot-bar__meta),
+html:not(.js) .ot-bar :is(.ot-brand, .ot-bar__meta) {
+  opacity: 1; visibility: visible; transform: none; transition-delay: 0s;
+}
+.ot-bar.is-story-ended .ot-bar__meta { opacity: .55; }
 .ot-menu-btn {
   display: inline-flex; align-items: center; gap: 12px;
   margin-left: auto; text-decoration: none;
@@ -114,7 +117,7 @@ body.ot-menu-open { overflow: hidden; }
 /* The one letter, projected onto the particle knot. */
 .ot-letter {
   position: absolute; left: 0; top: 0; opacity: 0;
-  font: 400 clamp(84px, 11vw, 176px)/1 var(--ot-serif);
+  font: italic 400 clamp(84px, 11vw, 176px)/1 var(--ot-serif);
   will-change: transform, opacity;
 }
 .ot-letter span { position: absolute; left: 50%; top: 0; transform: translateX(-50%); }
@@ -129,6 +132,20 @@ body.ot-menu-open { overflow: hidden; }
   text-shadow: 0 0 44px rgba(92, 255, 184, .6);
   opacity: var(--fix, 0);
   filter: blur(calc((1 - var(--fix, 0)) * 14px));
+}
+
+/* The two portraits emerge from the RNA itself; world anchors are projected in JS. */
+.ot-companions { position: absolute; inset: 0; pointer-events: none; }
+.ot-mascot {
+  position: absolute; left: 0; top: 0; width: 120px; opacity: 0; visibility: hidden;
+  transform-origin: 50% 100%; will-change: transform, opacity;
+}
+.ot-mascot svg {
+  display: block; width: 100%; height: auto;
+  /* The cropped lower edge dissolves into the luminous backbone. */
+  mask-image: linear-gradient(#000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(#000 82%, transparent 100%);
+  filter: drop-shadow(0 0 7px #9fd0ff30);
 }
 
 /* ---------- Story track ---------- */
@@ -154,12 +171,12 @@ body.ot-menu-open { overflow: hidden; }
 .ot-kicker--coral { color: var(--ot-coral); }
 .ot-kicker--mint { color: var(--ot-mint); }
 .ot-h {
-  margin: 0; font-family: var(--ot-serif); font-weight: 400;
-  font-size: clamp(36px, 5.3vw, 84px); line-height: 1.08; letter-spacing: -.025em;
+  margin: 0; font-weight: 500;
+  font-size: clamp(42px, 7vw, 112px); line-height: .98; letter-spacing: -.035em;
   text-wrap: balance;
 }
-.ot-h--sm { font-size: clamp(30px, 3.9vw, 62px); line-height: 1.12; letter-spacing: -.015em; }
-.ot-h em { font: inherit; }
+.ot-h--sm { font-size: clamp(28px, 3.6vw, 56px); line-height: 1.06; letter-spacing: -.025em; }
+.ot-h em { font-family: var(--ot-serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
 .ot-h em.coral { color: var(--ot-coral); }
 .ot-h em.mint { color: var(--ot-mint); }
 .ot-sub { margin: 22px 0 0; max-width: 48ch; color: #b7c1d1; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.55; }
@@ -173,24 +190,26 @@ body.ot-menu-open { overflow: hidden; }
   transition: transform .5s var(--ot-ease);
 }
 .ot-ch.is-on .wi { transform: none; transition: transform 1.1s var(--ot-ease) calc(var(--i) * 55ms + 80ms); }
-.ot-ch .ot-sub, .ot-ch .ot-stats, .ot-ch .ot-source, .ot-ch .ot-scroll-hint {
+.ot-ch .ot-sub, .ot-ch .ot-stats, .ot-ch .ot-scroll-hint {
   opacity: 0; transform: translateY(10px);
   transition: opacity .4s ease, transform .5s var(--ot-ease);
 }
-.ot-ch.is-on .ot-sub, .ot-ch.is-on .ot-stats, .ot-ch.is-on .ot-source, .ot-ch.is-on .ot-scroll-hint {
+.ot-ch.is-on .ot-sub, .ot-ch.is-on .ot-stats, .ot-ch.is-on .ot-scroll-hint {
   opacity: 1; transform: none; transition: opacity 1s ease .25s, transform 1.2s var(--ot-ease) .25s;
 }
 
 /* Hero */
 .ot-ch--hero { bottom: clamp(70px, 12vh, 140px); max-width: none; right: clamp(20px, 6vw, 96px); }
 .ot-hero-title {
-  margin: 0; font-family: var(--ot-serif); font-weight: 400;
-  font-size: clamp(100px, 21vw, 300px); line-height: .95; letter-spacing: -.045em;
-  color: var(--ot-ink);
+  margin: 0; font-weight: 600;
+  font-size: clamp(110px, 24vw, 380px); line-height: .8; letter-spacing: -.06em;
+  background: linear-gradient(180deg, #fff 20%, rgba(159, 208, 255, .35) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+.ot-hero-title .wi { background: inherit; -webkit-background-clip: text; background-clip: text; }
 .ot-hero-sub {
-  margin: 28px 0 0; max-width: 38ch;
-  font: 400 clamp(18px, 1.8vw, 27px)/1.4 var(--ot-sans); color: var(--ot-ink);
+  margin: 28px 0 0; max-width: 34ch;
+  font: italic 400 clamp(20px, 2vw, 30px)/1.25 var(--ot-serif); color: var(--ot-ink);
 }
 .ot-root:not(.is-ready) .ot-ch--hero .wi { transform: translateY(105%); }
 .ot-scroll-hint {
@@ -207,11 +226,6 @@ body.ot-menu-open { overflow: hidden; }
 .ot-stats dt { font-weight: 500; font-size: clamp(30px, 3.4vw, 54px); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .ot-stats dd { margin: 10px 0 0; color: var(--ot-mute); font-size: 14px; line-height: 1.5; max-width: 30ch; }
 .ot-stats div:nth-child(2) dt { color: var(--ot-coral); }
-.ot-source {
-  display: inline-block; margin-top: 26px; color: var(--ot-mute); text-decoration: none;
-  font: 400 12px/1.5 var(--ot-sans); letter-spacing: 0;
-}
-.ot-source:hover { color: var(--ot-ink); }
 
 /* ---------- Index ---------- */
 .ot-index {
@@ -235,13 +249,6 @@ body.ot-menu-open { overflow: hidden; }
 .ot-card a:hover, .ot-card a:focus-visible { color: var(--ot-ink); padding-left: 6px; }
 .ot-card a:hover i, .ot-card a:focus-visible i { opacity: 1; transform: none; color: var(--ot-mint); }
 
-.ot-cite { color: inherit; font-size: .75em; vertical-align: super; }
-.ot-references { margin-top: 72px; max-width: 900px; color: #b7c1d1; }
-.ot-references h3 { font: 400 24px/1.3 var(--ot-serif); margin-bottom: 20px; }
-.ot-references ol { padding-left: 20px; }
-.ot-references li { padding: 5px 0; font-size: 14px; line-height: 1.6; scroll-margin-top: 100px; }
-.ot-references a { color: var(--ot-ink); text-underline-offset: 3px; }
-
 /* ---------- Footer (required licence + repository link kept verbatim) ---------- */
 body.ot .site-footer { position: relative; z-index: 12; color: var(--ot-mute); background: var(--ot-bg); border-top: 1px solid var(--ot-line); }
 body.ot .site-footer a { color: var(--ot-ink); }
@@ -251,6 +258,8 @@ body.ot .site-footer strong, body.ot .site-footer small { color: var(--ot-ink); 
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .ot-bar__meta { display: none; }
+  .ot-brand__logo { width: 78px; }
+  .ot-hero-title { font-size: clamp(80px, 28vw, 180px); }
   .ot-story { height: 1350vh; }
   .ot-ch, .ot-ch--right { left: 20px; right: 20px; text-align: left; bottom: 96px; }
   .ot-ch--low { transform: none; }
@@ -261,16 +270,32 @@ body.ot .site-footer strong, body.ot .site-footer small { color: var(--ot-ink); 
   .ot-scroll-hint { position: static; margin-top: 30px; }
 }
 
+/* Leave room for the story on short landscape screens. */
+@media (max-height: 500px) and (min-width: 761px) {
+  .ot-brand__logo { width: 64px; }
+  .ot-companions, .ot-scroll-hint { display: none; }
+  .ot-vignette { background: linear-gradient(0deg, #03050bf5, #03050bb3 50%, transparent 85%); }
+  .ot-ch { bottom: 30px; }
+  .ot-h { font-size: clamp(28px, 4.6vw, 48px); }
+  .ot-h--sm { font-size: 30px; }
+  .ot-sub { margin-top: 12px; font-size: 15px; line-height: 1.4; }
+  .ot-hero-title { font-size: clamp(80px, 18vw, 180px); }
+  .ot-hero-sub { margin-top: 16px; font-size: 20px; }
+  .ot-stats { margin-top: 18px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ot-ch .wi, .ot-ch.is-on .wi { transform: none; transition: none; }
   .ot-ch { transition: none; }
   .ot-ch:not(.is-on) { visibility: hidden; }
   .ot-scroll-hint i { animation: none; }
+  .ot-companions { display: none; }
 }
 
 /* Readable baseline when JavaScript/WebGL is unavailable or motion is reduced. */
 .ot--static .ot-canvas, .ot--static .ot-letter,
 .ot--static .ot-scroll-hint { display: none; }
+.ot--static .ot-companions { display: none; }
 .ot--static .ot-story { height: auto; padding-top: 100px; pointer-events: auto; }
 .ot--static .ot-chapters { position: relative; height: auto; }
 .ot--static .ot-ch {
@@ -279,7 +304,7 @@ body.ot .site-footer strong, body.ot .site-footer small { color: var(--ot-ink); 
 }
 .ot--static .ot-ch--hero { padding-top: 100px; padding-bottom: 100px; }
 .ot-root.ot--static .ot-ch .wi,
-.ot--static .ot-ch .ot-sub, .ot--static .ot-ch .ot-stats, .ot--static .ot-ch .ot-source {
+.ot--static .ot-ch .ot-sub, .ot--static .ot-ch .ot-stats {
   transform: none; opacity: 1; transition: none;
 }
 .ot--static .ot-index { padding-top: 80px; }

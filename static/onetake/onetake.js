@@ -540,32 +540,18 @@ function splitWords(el) {
   walk(el);
 }
 
-const CHAPTERS = [
-  [-1, '00', 'Lost'], [-0.07, '01', 'Brain'], [0.2, '02', 'Astrocyte'], [0.38, '03', 'Sequence'],
-  [0.62, '04', 'Burden'], [0.8, '05', 'Correction'], [0.93, '06', 'Restoration'],
-];
-
 function setupDom() {
   document.querySelectorAll('[data-split]').forEach(splitWords);
   const chapters = [...document.querySelectorAll('[data-ot-chapter]')].map((el) => ({
     el, a: parseFloat(el.dataset.in), b: parseFloat(el.dataset.out),
   }));
   const counters = [...document.querySelectorAll('[data-ot-count]')];
-  const hudNum = document.querySelector('[data-ot-hud-num]');
-  const hudName = document.querySelector('[data-ot-hud-name]');
-  const hudBar = document.querySelector('[data-ot-hud-bar]');
-  const hud = document.querySelector('.ot-hud');
-  let last = '';
   return (p, live) => {
     for (const c of chapters) c.el.classList.toggle('is-on', p >= c.a && p < c.b);
     for (const el of counters) {
       const k = smooth(ramp(p, +el.dataset.from, +el.dataset.to));
       el.textContent = `${Math.round(+el.dataset.target * (live ? k : 1)).toLocaleString('en-US')}+`;
     }
-    const ch = CHAPTERS.filter((c) => p >= c[0]).pop();
-    if (ch[1] !== last) { last = ch[1]; hudNum.textContent = ch[1]; hudName.textContent = ch[2]; }
-    hudBar.style.transform = `scaleX(${clamp(p)})`;
-    hud.classList.toggle('is-hidden', p > 1.02 || p < -0.12);
   };
 }
 

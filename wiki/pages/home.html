@@ -26,7 +26,7 @@
   <div class="ot-menu__grid">
     {% for group in navigation_groups %}
     <div class="ot-menu__group" style="--g:{{ loop.index0 }}">
-      <p class="ot-kicker">{{ '%02d' % loop.index }} — {{ group.label }}</p>
+      <p class="ot-kicker">{{ group.label }}</p>
       <ul>
         {% for page, title in group['items'] %}
         <li><a href="{{ url_for('pages', page=page) }}">{{ title }}</a></li>
@@ -46,12 +46,6 @@
     <div class="ot-letter" data-ot-letter><span class="ot-letter__c">C</span><span class="ot-letter__u">U</span></div>
   </div>
 
-  <div class="ot-hud" aria-hidden="true">
-    <span class="ot-hud__num" data-ot-hud-num>01</span>
-    <span class="ot-hud__track"><i data-ot-hud-bar></i></span>
-    <span class="ot-hud__name" data-ot-hud-name>Brain</span>
-  </div>
-
   <!-- One continuous scroll track. Every chapter is pinned over the same
        WebGL take; data-in / data-out are fractions of the track. -->
   <section class="ot-story" data-ot-story aria-label="ORCA — the project in one take">
@@ -63,67 +57,68 @@
       </header>
 
       <div class="ot-ch ot-ch--low" data-ot-chapter data-in="-0.1" data-out="0.0">
-        <p class="ot-kicker">00 — Lost</p>
         <h2 class="ot-h ot-h--sm" data-split>Every turn looks familiar. <em>None lead home.</em></h2>
       </div>
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.11" data-out="0.2">
-        <p class="ot-kicker">01 — Brain</p>
-        <h2 class="ot-h" data-split>The brain.</h2>
+        <h2 class="ot-h" data-split>Inside the brain.</h2>
+        <p class="ot-sub">Our story follows an astrocyte, then a single strand of RNA inside it.</p>
       </div>
 
       <div class="ot-ch ot-ch--right" data-ot-chapter data-in="0.235" data-out="0.335">
-        <p class="ot-kicker">02 — Astrocyte</p>
-        <h2 class="ot-h" data-split>An astrocyte.</h2>
+        <h2 class="ot-h" data-split>Meet the astrocyte.</h2>
+        <p class="ot-sub">These cells support neurons and help handle proteins and lipids in the brain.</p>
       </div>
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.395" data-out="0.485">
-        <p class="ot-kicker">03 — Sequence</p>
-        <h2 class="ot-h" data-split>Inside, a single <em>sequence.</em></h2>
+        <h2 class="ot-h" data-split>The instruction is APOE.</h2>
+        <p class="ot-sub">It encodes apolipoprotein E, a protein involved in moving lipids through the brain.</p>
       </div>
 
-      <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.525" data-out="0.605">
-        <h2 class="ot-h ot-h--sm" data-split>One letter decides which protein is made.</h2>
+      <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.52" data-out="0.605">
+        <h2 class="ot-h ot-h--sm" data-split>One letter changes the protein.</h2>
+        <p class="ot-sub">APOE4 RNA carries C at this site; APOE3 carries U. The difference changes one amino acid in the protein.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.645" data-out="0.715">
-        <p class="ot-kicker ot-kicker--coral">04 — Burden</p>
-        <h2 class="ot-h" data-split>The signal never <em class="coral">clears.</em></h2>
-        <p class="ot-sub" data-split>APOE4 protein accumulates faster than it is removed</p>
+      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.62" data-out="0.672">
+        <h2 class="ot-h" data-split>Amyloid can build up.</h2>
+        <p class="ot-sub">In human cell models, APOE4 astrocytes take up less amyloid-β than APOE3 astrocytes. <a class="ot-cite" href="#story-source-clearance" aria-label="Source: APOE4 and amyloid uptake">[1]</a></p>
       </div>
 
-      <div class="ot-ch ot-ch--stats" data-ot-chapter data-in="0.73" data-out="0.8">
-        <h2 class="ot-h ot-h--sm" data-split>One condition. A world of lives.</h2>
+      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.689" data-out="0.731">
+        <h2 class="ot-h ot-h--sm" data-split>A higher risk of Alzheimer’s.</h2>
+        <p class="ot-sub">APOE4 increases disease risk. Carrying it does not mean someone will develop dementia. <a class="ot-cite" href="#story-source-risk" aria-label="Source: APOE and Alzheimer’s risk">[2]</a></p>
+      </div>
+
+      <div class="ot-ch ot-ch--stats" data-ot-chapter data-in="0.747" data-out="0.808">
+        <h2 class="ot-h ot-h--sm" data-split>Dementia affects millions.</h2>
         <dl class="ot-stats">
-          <div><dt data-ot-count data-target="57000000" data-from="0.73" data-to="0.775">57,000,000+</dt><dd>people were living with dementia worldwide in 2021</dd></div>
+          <div><dt data-ot-count data-target="57000000" data-from="0.747" data-to="0.775">57,000,000+</dt><dd>people were living with dementia worldwide in 2021</dd></div>
           <div><dt>60–70%</dt><dd>of dementia cases are estimated to be attributable to Alzheimer disease</dd></div>
           <div><dt>≈10 million</dt><dd>new dementia cases each year</dd></div>
         </dl>
         <a class="ot-source" href="https://www.who.int/news-room/fact-sheets/detail/dementia" target="_blank" rel="noopener noreferrer">WHO Dementia fact sheet · 2021 estimate · updated 2026 ↗</a>
       </div>
 
-      <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.815" data-out="0.895">
-        <p class="ot-kicker ot-kicker--mint">05 — Correction</p>
-        <h2 class="ot-h" data-split>What if we can <em class="mint">reverse it?</em></h2>
+      <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.825" data-out="0.905">
+        <h2 class="ot-h ot-h--sm" data-split>What if we edit the RNA?</h2>
+        <p class="ot-sub">ORCA investigates targeted C-to-U editing to shift APOE4 RNA toward an APOE3-like state.</p>
       </div>
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.935" data-out="2">
-        <p class="ot-kicker ot-kicker--mint">06 — Restoration</p>
-        <h2 class="ot-h" data-split>The signal <em class="mint">clears.</em></h2>
-        <p class="ot-sub" data-split>Healthy neurons and upright astrocytes · clearance restored</p>
+        <h2 class="ot-h" data-split>Could clearance recover?</h2>
+        <p class="ot-sub">ORCA asks whether targeted RNA editing can improve cellular function. Editing specificity, delivery and any benefit to cells must be tested.</p>
       </div>
     </div>
   </section>
 
   <section class="ot-index" aria-labelledby="ot-index-title">
     <div class="ot-index__head">
-      <p class="ot-kicker">Explore</p>
-      <h2 id="ot-index-title" class="ot-h">The whole project,<br><em>one letter at a time.</em></h2>
+      <h2 id="ot-index-title" class="ot-h">Explore the project</h2>
     </div>
     <div class="ot-index__grid">
       {% for group in navigation_groups %}
       <article class="ot-card">
-        <p class="ot-card__num">{{ '%02d' % loop.index }}</p>
         <h3>{{ group.label }}</h3>
         <ul>
           {% for page, title in group['items'] %}
@@ -133,6 +128,13 @@
       </article>
       {% endfor %}
     </div>
+    <aside class="ot-references" aria-labelledby="story-sources-title">
+      <h3 id="story-sources-title">Sources behind the story</h3>
+      <ol>
+        <li id="story-source-clearance"><a href="https://pubmed.ncbi.nlm.nih.gov/29861287/" target="_blank" rel="noopener noreferrer">Lin et al., Neuron (2018)</a>. APOE4 and amyloid uptake in human cell models.</li>
+        <li id="story-source-risk"><a href="https://www.nature.com/articles/s41467-019-14279-8" target="_blank" rel="noopener noreferrer">Reiman et al., Nature Communications (2020)</a>. APOE variants and Alzheimer’s dementia risk.</li>
+      </ol>
+    </aside>
   </section>
 </main>
 {% endblock %}

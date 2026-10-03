@@ -1,0 +1,182 @@
+/* ORCA home — the opening television.
+ *
+ * The set is real geometry, not a picture of a screen: the four bezel panels
+ * mask a hole in the middle, and the take's own canvas shows through it. The
+ * opening shot of the take is already a labyrinth (mazeShape() in onetake.js),
+ * so this layer only supplies the frame and then gets out of the way — as you
+ * scroll, the picture grows to fill the viewport and the set breaks apart.
+ *
+ * Scoped to body.ot-crayon: /next and every inner page are untouched. Nothing
+ * here is written by onetake.js; --ot-p is read, never set.
+ */
+
+body.ot-crayon {
+  --tv-p: 0;      /* 0 = framed · 1 = fullscreen, synced from the take */
+  --tv-a: 0;      /* idle flutter, so the set reads as live glass */
+  /* The two sizing knobs. The hole is always centred, so everything else is
+     derived from --tv-hw below in pure viewport units — the whole set re-lays
+     itself out on resize without any JavaScript. */
+  --tv-cw: 49%;   /* hole width */
+  --tv-hw: 49vw;
+  --tv-hh: 27.44vw;   /* hole height = 0.56 · width, so the screen is 16:9 */
+}
+
+/* ---------- The picture ---------- */
+/* A transform on this wrapper (not on the canvas) is what zooms the shot, so
+   the renderer never resizes and the particle count, bloom and camera are the
+   same ones /next runs. */
+.ot-pic {
+  position: fixed; inset: 0; z-index: 2;
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  will-change: transform;
+  /* A breath of shadow so the shot reads as recessed glass, not a cut-out. */
+  filter: drop-shadow(0 0 18px rgba(0, 0, 0, .5));
+}
+
+/* Horizontal scanlines. These live inside the picture so they scale with it,
+   exactly as a raster would. */
+.ot-tv__scan {
+  position: absolute; inset: 0; z-index: 3;
+  pointer-events: none; opacity: calc(.14 + .14 * var(--tv-a, 0));
+  background: repeating-linear-gradient(180deg,
+    rgba(0, 0, 0, .55) 0 1px,
+    rgba(0, 0, 0, 0) 1px 3px);
+  transition: opacity .5s linear;
+}
+.ot-pic[data-fullscreen="1"] .ot-tv__scan { opacity: 0; }
+
+/* The glass itself: an off-axis sheen across the screen, plus the halo the
+   picture throws onto its surroundings. Sized off --tv-hw so it lines up with
+   the hole; the huge spread term is what turns the rectangle into a halo. */
+.ot-tv__glass {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--tv-hw); height: calc(var(--tv-hw) * .56);
+  transform: translate(-50%, -50%);
+  z-index: 4; pointer-events: none; opacity: .55;
+  background:
+    radial-gradient(120% 140% at 22% 12%, rgba(255, 255, 255, .05) 0%, rgba(255, 255, 255, 0) 34%),
+    radial-gradient(closest-side, rgba(120, 150, 255, .10), rgba(120, 150, 255, 0) 62%),
+    0 0 120px 46px rgba(96, 132, 255, .07);
+}
+
+/* ---------- The casing ---------- */
+.ot-tv { position: fixed; inset: 0; z-index: 14; pointer-events: none; }
+
+.ot-tv__face,
+.ot-tv__side {
+  position: absolute; display: block;
+  will-change: transform, opacity;
+  transition: transform .6s cubic-bezier(.19, .87, .28, 1), opacity .6s linear;
+}
+.ot-tv__face {
+  left: 0; right: 0;
+  /* Wood grain: a banded gradient, with a sheen and a contact shadow at the
+     outer lip so the casing has a profile. */
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 0 7%, rgba(0, 0, 0, .10) 22%, rgba(255, 255, 255, .03) 41%, rgba(0, 0, 0, .08) 63%, rgba(255, 255, 255, .04) 86%, rgba(0, 0, 0, .12) 100%),
+    linear-gradient(#463325, #2c1f16);
+}
+.ot-tv__face--top {
+  top: 0; height: calc((100% - var(--tv-hh)) / 2);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .07), inset 0 2px 0 rgba(0, 0, 0, .38);
+}
+.ot-tv__face--bottom {
+  bottom: 0; height: calc((100% - var(--tv-hh)) / 2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), inset 0 -2px 0 rgba(0, 0, 0, .42);
+}
+.ot-tv__face--left,
+.ot-tv__face--right {
+  top: calc((100% - var(--tv-hh)) / 2); height: var(--tv-hh);
+  background: linear-gradient(#3b2b1f, #2a1e15);
+}
+.ot-tv__face--left {
+  left: 0; width: calc(50% - var(--tv-cw) / 2);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .18), 3px 0 16px rgba(0, 0, 0, .45);
+}
+.ot-tv__face--right {
+  left: calc(50% + var(--tv-cw) / 2); right: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .18), -3px 0 16px rgba(0, 0, 0, .45);
+}
+
+/* Retired casing: the top panel hinges up, the bottom one drops, the sides
+   slide out. Driven per-piece from onetake-tv.js, which is why each one needs
+   its own length to interpolate to. */
+.ot-tv[data-phase="off"] .ot-tv__face--top { transform: translateY(var(--d, -22vh)); }
+.ot-tv[data-phase="off"] .ot-tv__face--bottom { transform: translateY(var(--d, 24vh)); }
+.ot-tv[data-phase="off"] .ot-tv__face--left { transform: translateX(var(--d, -26vw)); }
+.ot-tv[data-phase="off"] .ot-tv__face--right { transform: translateX(var(--d, 26vw)); }
+
+/* The lip around the screen: the last bright edge before the hole. */
+.ot-tv__lip {
+  position: absolute;
+  left: calc(50% - var(--tv-hw) / 2 - 1.4vw);
+  top: calc(50% - var(--tv-hh) / 2 - 1.4vw);
+  width: calc(var(--tv-hw) + 2.8vw);
+  height: calc(var(--tv-hh) + 2.8vw);
+  border-radius: 1.1vw;
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 226, 196, .13),
+    inset 0 10px 20px rgba(0, 0, 0, .62),
+    inset 0 -8px 16px rgba(0, 0, 0, .5);
+  will-change: opacity;
+  transition: opacity .6s linear;
+}
+
+.ot-tv__brand,
+.ot-tv__knobs,
+.ot-tv__led, .ot-tv__led-on {
+  position: absolute; will-change: opacity;
+  transition: opacity .6s linear;
+}
+.ot-tv__brand {
+  left: calc(50% + var(--tv-hw) / 2 + 3.4vw);
+  bottom: calc((100% - var(--tv-hh)) / 2 + 2.6vh);
+  font: 600 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255, 232, 205, .5);
+}
+.ot-tv__knobs {
+  right: calc(50% - var(--tv-hw) / 2 - 5vw);
+  bottom: calc((100% - var(--tv-hh)) / 2 + 2.6vh);
+  display: flex; gap: .7vw;
+}
+.ot-tv__knobs i {
+  display: block; width: 1.5vh; height: 1.5vh; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #6b5340, #20160f 70%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), 0 1px 3px rgba(0, 0, 0, .6);
+}
+.ot-tv__led {
+  left: calc(50% + var(--tv-hw) / 2 + 3.4vw);
+  bottom: calc((100% - var(--tv-hh)) / 2 + 5.4vh);
+  width: .62vh; height: .62vh; border-radius: 50%;
+  background: #ff6a4a; box-shadow: 0 0 10px rgba(255, 106, 74, .85);
+}
+/* Pulsing dot — the set is on. */
+.ot-tv__led-on {
+  left: calc(50% + var(--tv-hw) / 2 + 3.4vw);
+  bottom: calc((100% - var(--tv-hh)) / 2 + 5.4vh);
+  width: .62vh; height: .62vh; border-radius: 50%;
+  background: #7dffc0; box-shadow: 0 0 12px rgba(125, 255, 192, .9);
+  animation: ot-tv-blink 2.6s ease-in-out infinite;
+}
+@keyframes ot-tv-blink {
+  0%, 100% { opacity: .25; }
+  50% { opacity: .85; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  body.ot-crayon { --tv-cw: 86%; --tv-hw: 86vw; --tv-hh: 48.16vw; }
+  .ot-tv__brand, .ot-tv__knobs { display: none; }
+  .ot-tv__led, .ot-tv__led-on { left: auto; right: 7vw; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ot-pic, .ot-tv__face, .ot-tv__lip,
+  .ot-tv__brand, .ot-tv__knobs, .ot-tv__led, .ot-tv__led-on,
+  .ot-tv__scan, .ot-tv__glass { transition: none; }
+  .ot-tv__led-on { animation: none; opacity: .6; }
+  .ot-tv__scan { opacity: .2; }
+}

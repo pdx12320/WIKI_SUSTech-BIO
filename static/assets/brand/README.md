@@ -2,6 +2,12 @@
 
 `sustech-bio-logo.png` is a derived cutout of the user-provided SUSTech-BIO JPEG, prepared with the built-in ImageGen tool to remove the exterior white background and excess margins. The PNG is 1498 × 1050 pixels and has an alpha channel. The original artwork remains the reference; this generated cutout is not a pixel-identical extraction.
 
+`sustech-bio-favicon.svg` embeds that PNG unchanged in a square, transparent
+viewport. Its tighter browser-tab crop prioritizes the full mascot over the
+wide wordmark, making the character about 32% larger than the full-logo framing.
+The embedded artwork is not redrawn or resampled; the square viewport preserves
+the image's aspect ratio without unequal horizontal and vertical scaling.
+
 ## Exact editing prompt
 
 ```text

@@ -34,6 +34,24 @@ def home():
     return render_template("pages/home.html")
 
 
+@app.route("/next")
+def home_next():
+    """Isolated homepage clone for the residue-112 structure review."""
+    return render_template("pages/home_next_structure.html")
+
+
+@app.route("/next-crayon")
+def home_next_crayon():
+    """Crayon layer over the same particle take, added one element at a time."""
+    return render_template("pages/home_next_crayon.html")
+
+
+@app.route("/next-journey")
+def home_next_journey():
+    """Familiar-world journey review, sharing the existing biology take."""
+    return render_template("pages/home_next_journey.html")
+
+
 @app.route("/assets/<path:filename>")
 def assets(filename):
     return send_from_directory(path.join(app.root_path, "assets"), filename)

@@ -1,0 +1,78 @@
+/* The dementia comparison is a moment inside the particle take, not a page of
+   its own: a full-bleed canvas of lights with a single line of text floating
+   over it. There is no panel, no chart, no dashboard and no numbers to read —
+   only the field, and one sentence at a time. */
+
+.ot .ot-ch.ot-ch--stats {
+  inset: 0;
+  width: 100%; max-width: none;
+  padding: 0;
+  pointer-events: none;
+}
+
+.burden { position: absolute; inset: 0; overflow: hidden; }
+
+/* The field itself fills the frame. It is allowed to sit over the particle
+   take: the two are the same kind of light, and the canvas is mostly empty
+   space between dots, so the take still shows through. */
+.burden__field {
+  position: absolute; inset: 0;
+  display: block;
+  width: 100%; height: 100%;
+}
+
+/* ---------- One sentence at a time ---------- */
+.burden__lines {
+  position: absolute;
+  left: clamp(22px, 7vw, 112px);
+  bottom: clamp(96px, 16vh, 190px);
+  max-width: min(30ch, 60vw);
+  pointer-events: none;
+}
+.burden__line {
+  position: absolute; left: 0; bottom: 0;
+  margin: 0;
+  font: 400 clamp(26px, 3.4vw, 54px)/1.22 var(--ot-serif);
+  letter-spacing: -.025em;
+  color: var(--ot-ink);
+  text-shadow: 0 2px 24px rgba(3, 5, 11, .9), 0 1px 3px rgba(3, 5, 11, .8);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .5s var(--ot-ease), transform .5s var(--ot-ease);
+  will-change: opacity, transform;
+}
+.burden__line.is-on { opacity: 1; transform: none; }
+.burden__line span { color: var(--ot-coral); }
+
+/* Source line stays quiet and out of the way, but present for judging. */
+.burden__source {
+  position: absolute;
+  left: clamp(22px, 7vw, 112px);
+  bottom: clamp(22px, 4vh, 40px);
+  right: clamp(22px, 7vw, 112px);
+  margin: 0;
+  max-width: 78ch;
+  color: var(--ot-mute);
+  font-size: 10px; line-height: 1.5;
+  text-shadow: 0 1px 8px rgba(3, 5, 11, .95);
+}
+.burden__source a { color: var(--ot-mute); text-decoration: none; opacity: .9; }
+.burden__source a:hover { color: var(--ot-ink); }
+.burden__source a:focus-visible { outline: 2px solid var(--ot-coral); outline-offset: 3px; }
+
+.burden__no-js { color: var(--ot-mute); font-size: 13px; }
+.ot--static .burden { position: relative; inset: auto; padding: 64px clamp(20px, 6vw, 96px); }
+.ot--static .burden__field { position: relative; height: 46vh; }
+.ot--static .burden__lines { position: relative; left: auto; bottom: auto; margin-top: 28px; }
+.ot--static .burden__line { position: relative; opacity: 1; transform: none; margin-bottom: 14px; }
+.ot--static .burden__source { position: relative; left: auto; bottom: auto; margin-top: 22px; }
+
+@media (max-width: 760px) {
+  .burden__lines { left: 22px; right: 22px; bottom: clamp(120px, 22vh, 190px); max-width: none; }
+  .burden__line { font-size: clamp(23px, 6.4vw, 34px); }
+  .burden__source { left: 22px; right: 22px; font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burden__line { transition: none; }
+}

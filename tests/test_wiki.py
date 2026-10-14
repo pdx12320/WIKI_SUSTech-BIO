@@ -1,12 +1,17 @@
+import json
 import re
 import unittest
 from pathlib import Path
+from urllib.parse import urljoin
 
 from app import app
+from wiki_content import NAVIGATION
 
 
 PUBLIC_ROUTES = [
     "/",
+    "/next",
+    "/next-journey",
     "/team",
     "/attributions",
     "/description",
@@ -78,12 +83,44 @@ class WikiRoutesTest(unittest.TestCase):
         page = self.get_text("/404.html")
         self.assertIn("Lost in the current", page)
 
-    def test_home_contains_layered_hero_and_stops_after_global_scene(self):
+    def test_home_contains_particle_story_and_project_navigation(self):
         page = self.get_text("/")
-        self.assertIn('data-rna-clearance-state="ready"', page)
-        self.assertIn('data-global-scene', page)
-        self.assertNotIn('data-solution-reveal', page)
-        self.assertNotIn('class="site-footer"', page)
+        for marker in ['data-ot>', 'data-ot-canvas', 'data-ot-story']:
+            self.assertIn(marker, page)
+        menu = re.search(r'<nav\b[^>]*aria-label="Primary navigation"[^>]*>(.*?)</nav>', page, re.S)
+        index = re.search(r'<section\b[^>]*aria-labelledby="ot-index-title"[^>]*>(.*?)</section>', page, re.S)
+        self.assertIsNotNone(menu)
+        self.assertIsNotNone(index)
+        navigation_routes = [f"/{route}" for group in NAVIGATION for route, _ in group["items"]]
+        for route in navigation_routes:
+            with self.subTest(route=route):
+                self.assertIn(f'href="{route}"', menu.group(1))
+                self.assertIn(f'href="{route}"', index.group(1))
+        self.assertRegex(page, r'<footer\b[^>]*\bsite-footer\b')
+
+    def test_particle_structure_preview_keeps_home_story(self):
+        # /next now adds the separately reviewed residue-112 structure section.
+        home, preview = self.get_text("/"), self.get_text("/next")
+        for page in [home, preview]:
+            for marker in ['data-ot-canvas', 'data-ot-story', 'data-bio-handle="pod"',
+                           'data-bio-handle="cetus"', 'What if we can']:
+                self.assertIn(marker, page)
+        self.assertIn('href="#ot-index-title"', home)
+        self.assertIn('href="#apoe112"', preview)
+
+    def test_journey_preserves_biology_and_removes_crt(self):
+        home, journey = self.get_text("/"), self.get_text("/next-journey")
+        self.assertNotIn("data-crt-picture", journey)
+        self.assertEqual(journey.count("data-ot-canvas"), 1)
+        self.assertIn("Skip to project", journey)
+        for marker in ['data-bio-handle="pod"', 'data-bio-handle="cetus"',
+                       'data-burden', 'ot-index-title', 'data-journey-station="home"',
+                       'data-journey-station="bridge"', 'data-journey-station="road"']:
+            self.assertIn(marker, journey)
+        # Compare the copied post-opening chapter markup, not only its markers.
+        start = '<div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.11"'
+        self.assertEqual(home[home.index(start):home.index("</main>")],
+                         journey[journey.index(start):journey.index("</main>")])
 
     def test_visible_brand_is_orca(self):
         home = self.get_text("/")
@@ -91,14 +128,49 @@ class WikiRoutesTest(unittest.TestCase):
         for page in [home, team]:
             self.assertIn("ORCA", page)
             self.assertNotIn("REWIRE", page)
-        self.assertIn("On-target RNA Correction for Alzheimer’s Disease", home)
+        self.assertIn("On-target RNA Correction of APOE4 for Alzheimer’s Disease", home)
 
-    def test_home_uses_layered_clearance_assets(self):
+    def test_particle_assets_and_transitive_module_imports_are_served_locally(self):
         page = self.get_text("/")
-        self.assertIn('hero/clearance/cleaners-ready.png', page)
-        self.assertIn('hero/clearance/cleaners-exhausted.png', page)
-        self.assertIn('class="rna-opening__cleaners"', page)
-        self.assertIn('class="rna-opening__clearance-copy"', page)
+        self.assertIn('/static/onetake/onetake.css', page)
+        self.assertIn('/static/onetake/onetake.js', page)
+        importmap = re.search(r'<script type="importmap">(.*?)</script>', page, re.S)
+        self.assertIsNotNone(importmap)
+        imports = json.loads(importmap.group(1))["imports"]
+        pending = ["/static/onetake/onetake.css", "/static/onetake/onetake.js"]
+        visited = set()
+        while pending:
+            asset_url = pending.pop()
+            if asset_url in visited:
+                continue
+            visited.add(asset_url)
+            self.assertTrue(asset_url.startswith("/static/"), asset_url)
+            response = self.client.get(asset_url)
+            try:
+                self.assertEqual(response.status_code, 200, asset_url)
+                source = response.get_data(as_text=True)
+                self.assertTrue(source, asset_url)
+            finally:
+                response.close()
+            if not asset_url.endswith((".js", ".mjs")):
+                continue
+            for specifier in re.findall(r'(?:from\s*|import\s*)[\'"]([^\'"]+)[\'"]', source):
+                if specifier in imports:
+                    pending.append(imports[specifier])
+                elif specifier.startswith("three/addons/"):
+                    pending.append(imports["three/addons/"] + specifier.removeprefix("three/addons/"))
+                else:
+                    self.assertTrue(specifier.startswith("."), specifier)
+                    pending.append(urljoin(asset_url, specifier))
+
+    def test_inner_pages_do_not_load_particle_assets(self):
+        for route in PUBLIC_ROUTES:
+            if route in {"/", "/next", "/next-journey"}:
+                continue
+            with self.subTest(route=route):
+                page = self.get_text(route)
+                self.assertNotIn("onetake/", page)
+                self.assertNotIn('type="importmap"', page)
 
     def test_hero_assets_are_served_from_requested_path(self):
         response = self.client.get("/assets/hero/clearance/cleaners-ready.png")
@@ -117,12 +189,16 @@ class WikiRoutesTest(unittest.TestCase):
         app_source = Path("app.py").read_text(encoding="utf-8")
         self.assertIn('app.run(host="127.0.0.1",', app_source)
 
-    def test_dry_lab_pages_show_evidence_status(self):
+    def test_evidence_callouts_are_omitted_only_from_model(self):
         for route in ["/dry-lab", "/model", "/brain-delivery", "/offtarget-atlas", "/software"]:
             with self.subTest(route=route):
                 page = self.get_text(route)
-                self.assertIn("Evidence status", page)
-                self.assertIn('data-evidence=', page)
+                if route == "/model":
+                    self.assertNotIn("Evidence status", page)
+                    self.assertNotIn('data-evidence=', page)
+                else:
+                    self.assertIn("Evidence status", page)
+                    self.assertIn('data-evidence=', page)
 
     def test_spatial_model_is_not_publicly_mentioned(self):
         for route in PUBLIC_ROUTES:
@@ -180,7 +256,7 @@ class WikiRoutesTest(unittest.TestCase):
         for route in ["/dry-lab", "/model", "/brain-delivery", "/offtarget-atlas", "/software"]:
             with self.subTest(route=route):
                 page = self.get_text(route)
-                targets = re.findall(r'<a href="#([^"]+)">', page)
+                targets = re.findall(r'<a\b[^>]*\bhref="#([^"]+)"[^>]*>', page)
                 self.assertTrue(targets)
                 for target in targets:
                     self.assertIn(f'id="{target}"', page)

@@ -18,6 +18,17 @@ For up-to-date requirements, resources, help and guidance, visit [teams.igem.org
 
 ## Getting started
 
+The default home page now uses the particle animation from `wiki_particle_version.zip`.
+`/` uses `wiki/pages/home.html`; `/next` is a separate residue-112 structure review
+using `wiki/pages/home_next_structure.html`. The structure section remains in the
+review page until approved. Both use the shared animation modules in `static/onetake/`;
+the project navigation still links to the existing Wiki pages.
+When WebGL is unavailable or reduced motion is requested, the page presents the same content in a static reading layout.
+
+For concurrent assistant tasks, read [AGENTS.md](AGENTS.md) and the
+[task coordination record](docs/plans/2026-10-11-task-coordination.md).
+They identify shared files, module boundaries, preview status, and the local recovery snapshot.
+
 For normal content work, edit only the matching Markdown file under `docs/` and add page images under `assets/images/`.
 1. Open the Web IDE
 2. Follow the simple [content editing guide](docs/README.md)

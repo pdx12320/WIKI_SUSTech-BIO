@@ -41,7 +41,7 @@ def hit(part,label,xy,group=None):
  if group:a.set('data-overview-select-group',group)
  E.SubElement(a,Q('title')).text=label
  x,y,w,h=xy
- if part != 'fundamental-research' and not part.startswith('fundamental-research-cycle-'):y+=380
+ if not part.startswith(('fundamental-research', 'functional-validation')):y+=380
  E.SubElement(a,Q('rect'),x=str(x),y=str(y),width=str(w),height=str(h),rx='8')
 hit('fundamental-research','Fundamental Research',(32,32,912,70),'fundamental-research')
 hit('fundamental-research-cycle-01','Fundamental Research · Cycle 1',(52,114,430,220))
@@ -65,6 +65,10 @@ hit('gfa','GFA',(86,886,389,184))
 hit('mre','MRE',(510,886,379,184))
 hit('aso','ASO',(86,1094,389,217))
 hit('cre-loxp','Cre-loxP',(510,1094,379,217))
+hit('functional-validation','Functional Validation',(32,1772,912,66),'functional-validation')
+hit('functional-validation-cycle-01','Functional Validation · Experiment I',(52,1840,280,250))
+hit('functional-validation-cycle-02','Functional Validation · Experiment II',(350,1840,280,250))
+hit('functional-validation-cycle-03','Functional Validation · Experiment III',(648,1840,280,250))
 text=E.tostring(svg,encoding='unicode')
 (repo/'wiki/components/engineering_overview.html').write_text(text.replace('__AAV_URL__',"{{ url_for('static', filename='engineering-overview/aav9.png') }}"))
 (out/'combined.svg').write_text(text.replace('__AAV_URL__','../../static/engineering-overview/aav9.png'))

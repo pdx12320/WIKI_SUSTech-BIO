@@ -61,7 +61,7 @@ ENGINEERING_PARTS = [
     "fundamental-research",
     "pod", "cetus", "integrated-orca", "gfa", "mre", "aso", "cre-loxp",
     "deliver", "measure", "model-rna-seq", "model-puf", "model-apobec",
-    "model-lamar", "model-whole-body",
+    "model-lamar", "model-whole-body", "functional-validation",
 ]
 
 
@@ -312,7 +312,7 @@ class WikiRoutesTest(unittest.TestCase):
         self.assertIn('data-engineering-view="map"', page)
         self.assertEqual(len(re.findall(r'\bdata-engineering-map(?=[\s>])', page)), 1)
         self.assertEqual(re.findall(r'\bdata-engineering-group="([^"]+)"', page),
-                         ["fundamental-research", "edit", "control", "deliver", "measure", "model"])
+                         ["fundamental-research", "edit", "control", "deliver", "measure", "model", "functional-validation"])
         self.assertIn('data-selected-group=""', page)
         self.assertNotIn('data-engineering-expand', page)
         self.assertNotIn('engineering-map-expand', page)
@@ -341,7 +341,7 @@ class WikiRoutesTest(unittest.TestCase):
             link = re.search(rf'<a\b[^>]*data-engineering-group="{group["id"]}"[^>]*>', page)
             self.assertIsNotNone(link)
             self.assertIn(f'href="#{group["parts"][0]["id"]}"', link.group(0))
-        leaf_parts = [part for part in ENGINEERING_PARTS if part not in {"fundamental-research", "deliver", "measure"}]
+        leaf_parts = [part for part in ENGINEERING_PARTS if part not in {"fundamental-research", "deliver", "measure", "functional-validation"}]
         self.assertCountEqual(re.findall(r'\bdata-engineering-part="([^"]+)"', page), leaf_parts)
         # Cycles remain in the reader; the overview map stops at module level.
         self.assertNotRegex(page, r'\bdata-map-cycle="')
@@ -362,15 +362,15 @@ class WikiRoutesTest(unittest.TestCase):
         self.assertEqual(len(ids), len(set(ids)))
         # Imported manuscripts define their own cycle counts. Integrated ORCA
         # has one unnumbered DBTL record; Cre–loxP is a proposal, not an experiment.
-        counts = dict(zip(ENGINEERING_PARTS, [2, 3, 6, 1, 2, 3, 6, 0, 3, 10, 5, 6, 5, 5, 5]))
+        counts = dict(zip(ENGINEERING_PARTS, [2, 3, 6, 1, 2, 3, 6, 0, 3, 10, 5, 6, 5, 5, 5, 3]))
         cycles = [f"{part}-cycle-{number:02d}" for part, count in counts.items() for number in range(1, count + 1)]
-        self.assertEqual(len(cycles), 62)
+        self.assertEqual(len(cycles), 65)
         self.assertCountEqual([anchor for anchor in ids if re.fullmatch(r".+-cycle-\d{2}", anchor)], cycles)
         for cycle in cycles:
             with self.subTest(cycle=cycle):
                 for stage in ["design", "build", "test", "learn"]:
                     self.assertIn(f"{cycle}-{stage}", ids)
-        for part in ENGINEERING_PARTS[10:]:
+        for part in ENGINEERING_PARTS[10:15]:
             self.assertRegex(article.group(1), rf'<h3\b[^>]*id="{part}"')
         portraits = re.findall(r'<svg\b[^>]*\bdata-dbtl-portrait="[^"]+"[^>]*>.*?</svg>', page, re.S)
         # Reuse the existing portrait pool for additional cycles, without

@@ -50,7 +50,7 @@
   .engineering-map-leaf, .engineering-map[data-selected-group='model'] .engineering-map-leaf { min-height:46px; padding:8px; font-size:13px; }
 }
 
-/* Fundamental Research shares the root column, outside the five workstreams. */
+/* Fundamental Research and Functional Validation share the root column. */
 .engineering-map-peer {
   grid-column:1; grid-row:1; align-self:center; transform:translateY(-190px);
   height:auto; min-height:76px; padding:10px 0;
@@ -70,8 +70,8 @@
 @media (max-width:599px), (hover:none) {
   .engineering-overview-art { aspect-ratio:732 / 1602; }
 }
-.engineering-workspace[data-engineering-active-part='fundamental-research'] .engineering-heading-row--group { font-size:14px; }
-.engineering-workspace[data-engineering-active-part='fundamental-research'] .engineering-heading-row > :is(.engineering-heading-group,.engineering-heading-part) { white-space:normal; line-height:1.05; }
+.engineering-workspace:is([data-engineering-active-part='fundamental-research'],[data-engineering-active-part='functional-validation']) .engineering-heading-row--group { font-size:14px; }
+.engineering-workspace:is([data-engineering-active-part='fundamental-research'],[data-engineering-active-part='functional-validation']) .engineering-heading-row > :is(.engineering-heading-group,.engineering-heading-part) { white-space:normal; line-height:1.05; }
 
 /* Keep the two overview-level titles on one line and reserve their full width. */
 .engineering-map-root h1,
@@ -123,3 +123,10 @@
   .engineering-map-root,
   .engineering-map-peer { padding-inline:10px; }
 }
+
+/* Functional Validation is a peer below Platform Development, not a workstream. */
+.engineering-map-peer--functional { transform:translateY(190px); }
+@media (max-width:900px) {
+  .engineering-map-peer--functional { grid-row:4; transform:none; }
+}
+.engineering-map[data-overview='true'] .engineering-map-peer--functional { grid-row:8; transform:none; }

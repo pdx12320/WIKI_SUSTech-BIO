@@ -1,6 +1,6 @@
 # Engineering linked overview
 
-The navigation map is on the left and the user's latest portrait diagram is on the right. Fundamental Research is a peer of Platform Development in the root column, connected by a line; it is also the first category in the reader roller. The five Engineering workstreams keep their existing branches. The two Fundamental Research cycles are reached from the reader or directly from their illustrated regions.
+The navigation map is on the left and the user's latest portrait diagram is on the right. Fundamental Research, Platform Development and Functional Validation share the root column, with peer connectors. Fundamental Research is the first reader category and Functional Validation is the last. The five Engineering workstreams keep their existing branches. The two Fundamental Research cycles and three Functional Validation experiments are reached from the reader or directly from their illustrated regions. All three FV experiments use the same Design–Build–Test–Learn controls while retaining their Experiment I–III labels.
 
 Hover or keyboard focus on either representation highlights the corresponding module in color and leaves the remaining illustration in grayscale. Hovering a diagram module expands its matching map branch. Both representations are ordinary chapter links; click or Enter opens the same chapter, including its introduction. Touch users tap either view directly. Mouse-driven desktop windows down to 600 px keep the map and diagram beside each other. Below 600 px, or on touch-first devices, the complete map and diagram stack in one scrollable region.
 
@@ -34,10 +34,12 @@ Temporary conversion layers and extracted fonts stay in `work/engineering-overvi
 
 ## Verification
 
-`tests/engineering_overview_browser.mjs` exercises all 15 chapters from both sides, bidirectional hover, grayscale isolation, keyboard Enter, return-to-map, normal motion, responsive widths and touch tapping. `tests/test_wiki.py` checks the native vector / single bitmap contract and the reader's independent cycle controls.
+`tests/engineering_overview_browser.mjs` exercises all 16 chapters from both sides, bidirectional hover, grayscale isolation, keyboard Enter, return-to-map, normal motion, responsive widths and touch tapping. `tests/test_wiki.py` checks the native vector / single bitmap contract and the reader's independent cycle controls.
 
 The broader legacy navigation script still stops at its old `data-engineering-turn-progress > 0` assertion after a 3-pixel wheel continuation. A controlled browser comparison produced the same null progress value with the untouched main-branch reader and this branch; this is recorded in `qa/reader-baseline-comparison.json`. The new linked-overview browser suite and 25 route/markup tests pass. No reader wheel behavior was changed to satisfy that older assertion.
 
 2026-10-18 follow-up: verified the actual in-app browser at 627 px. All 14 module selections had zero chromatic fill/stroke values outside the active layers; Control and Measure mouse/focus states are saved in `qa/in-app-*-only.png`. A stationary-pointer hover event could replace keyboard selection; diagram hover now requires physical pointer movement before overriding keyboard focus. A GFA diagram click and return-to-map were also confirmed in that same browser.
 
-2026-10-19 migration: both Blueprint experimental cycles were moved verbatim, with explicit Engineering cycle/stage anchors and the original four references. Blueprint retains links to their new locations. All 135 Python checks pass; browser checks cover the peer connector, both new cycle links and all eight DBTL targets, all 15 chapters, desktop/mobile layouts and category rollers.
+2026-10-19 migration: both Blueprint experimental cycles were moved verbatim, with explicit Engineering cycle/stage anchors and the original four references. Blueprint retains links to their new locations. All 135 Python checks pass; browser checks cover the peer connector, both new cycle links and all eight DBTL targets, all 16 chapters, desktop/mobile layouts and category rollers.
+
+2026-10-19 FV migration: the supplied `Functional_Validation_Final_EN.md` manuscript is integrated in `docs/project/engineering.md` with all paragraphs, captions and 11 references preserved. Existing figure assets are reused. Results retains a synthesis and direct links to the three experiments. The overview artwork itself is unchanged; its Functional Validation title and three experiment regions now link to the reader.

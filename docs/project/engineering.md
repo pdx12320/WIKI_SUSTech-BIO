@@ -108,7 +108,7 @@ Programmable On-target Docking
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/pod.png" alt="POD recognition module bound to APOE4 RNA." width="1800" height="1080" decoding="async">
 
-Selecting PUF12 gave ORCA a programmable RNA-recognition backbone for editing APOE4 at C388, but it did not confine editing to that site. **POD (Programmable On-target Docking)** addresses the recognition side of this problem. By engineering the tripartite recognition motifs (TRMs) of individual PUF repeats, we sought variants that preserve useful C388 editing while improving discrimination against unwanted APOE edits. Three engineering cycles took us from exploratory motif design and construct verification to functional screening and literature-guided expansion of the recognition repertoire.
+POD (Programmable On-target Docking) engineers the RNA-recognition motifs of PUF12 to improve editing specificity. We explored recognition variants designed to retain APOE4 C388 editing while limiting unwanted editing at other APOE sites.
 
 ### **Engineering Rationale** {#pod-engineering-rationale .engineering-section-title}
 
@@ -308,9 +308,7 @@ Engineering APOBEC substrate selectivity
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/cetus.png" alt="CETUS catalytic module and C-to-U RNA editing." width="1800" height="1080" decoding="async">
 
-Targeting the right RNA does not guarantee editing the right cytidine. In ORCA, PUF recruits the editor to APOE4, but the attached APOBEC domain can also act on nearby cytidines with compatible sequence contexts. **CETUS** addresses this second layer of specificity by engineering the deaminase itself.
-
-Using the 199-amino-acid **Pro.hA1** deaminase derived from the engineered ProAPOBEC family [2], we sought to favor the intended **c.388 (GCG)** site over the prominent **c.871 (GCA)** bystander while monitoring **c.295 (ACA)** as a distinct context. Across six design–build–test–learn (DBTL) cycles, we screened single and combined mutations, assessed amplicon-wide editing, challenged computational predictions, and retested candidates in a different library background. The resulting candidates—**G27T–K30H–Q58M** for GCG/GCA preference and **G27D** for ACA suppression—address different aspects of substrate selectivity.
+CETUS engineers ORCA’s APOBEC catalytic domain to improve cytidine selectivity. We tested deaminase variants for their ability to retain editing at APOE4 c.388 while limiting bystander editing at c.871 and c.295.
 
 ### **Engineering Rationale** {#cetus-engineering-rationale .engineering-section-title}
 
@@ -489,7 +487,7 @@ The deliberately matched wet-lab comparison was more decisive for position 132. 
 
 #### Learn {#cetus-cycle-05-learn}
 
-The methods were not interchangeable: **general sequence/structure compatibility was poorly aligned with +1 preference**, while supervised prediction offered some information about target activity. This is a distinction between designing a protein that remains compatible with a familiar fold and selecting one that **discriminates two closely related RNA contexts**. The M132D/E pair also confirmed that a distant substitution can have a substantial **combination-specific** effect. For subsequent designs, we treated computational outputs as a source of constrained hypotheses, with **direct functional assays and matched controls** determining candidate selection.
+The methods were not interchangeable: **general sequence/structure compatibility was poorly aligned with +1 preference**, while supervised prediction offered some information about target activity. The matched M132D/E comparison identified **M132E as the more activity-retaining substitution on that combination background**, while the G27T–K30H–Q58M–M132E candidate remained below the joint activity gate. These results motivated testing **M132E alone** alongside the established triple mutant in the next batch. Computational outputs supplied hypotheses; functional assays and matched controls determined which candidates merited further evaluation.
 
 ### **Cycle 6**: Testing a new library background {#cetus-cycle-06 .engineering-cycle-title}
 
@@ -507,7 +505,7 @@ Among **25 mutant constructs**, **G27T–K30H–Q58M** attained **ROF = 1.218** 
 
 The G27 scan provided a different benefit. **Seven of ten substitutions** brought **c.295 (ACA)** editing below the 5% detection threshold. **G27D** was particularly useful: c.295 editing was undetectable while **Activity Retention = 0.990**. Yet most G27 substitutions had little +1 effect (**seven of ten ROF ≤ 1.06**), reinforcing the distinction between −1- and +1-context optimization.
 
-The new batch also revealed **context sensitivity in a previously strong single mutation**: **K30H**, the leading activity-retaining single mutant in Cycle 1, now showed **ROF = 1.050**, ranking **14th of 25**. This does not invalidate its earlier result or its role in the triple mutant; it shows that a single-mutant ranking is not universal across experimental backgrounds. Finally, **M132D/E** retained high activity as singles (**0.915/1.018**), unlike their strong divergence in one matched combination, while all four PUF references had +1 Ratios close to **1.0**.
+The new batch also revealed **context sensitivity in a previously strong single mutation**: **K30H**, the leading activity-retaining single mutant in Cycle 1, now showed **ROF = 1.050**, ranking **14th of 25**. This does not invalidate its earlier result or its role in the triple mutant; it shows that a single-mutant ranking is not universal across experimental backgrounds. **M132E** retained **1.018** of parental target activity with **ROF = 1.062**, whereas **M132D** retained **0.915**. M132E therefore offered a high-activity single-mutant candidate with only a modest GCG/GCA preference shift. Its **c.295 editing fraction was 0.1259**, so it did not reproduce the below-detection ACA result of G27D. All four PUF references had +1 Ratios close to **1.0**.
 
 ![Independent-batch performance of APOBEC candidates and position-27 substitutions](/assets/images/submission-20261017/engineering/cetus/Figure_10.png){.engineering-figure style="--engineering-figure-width:600px;--engineering-detail-width:960px"}
 
@@ -515,7 +513,7 @@ The new batch also revealed **context sensitivity in a previously strong single 
 
 #### Learn {#cetus-cycle-06-learn}
 
-The triple mutant retained a strong **within-batch** activity–preference balance, whereas **G27D** repeatedly provided potent **ACA-context suppression** with little target-activity penalty. The K30H and M132 observations underscored two related limits of one-off screens: **experimental background** and **mutation combination** both shape apparent performance. The G27 scan also showed that **modifying −1-context sensitivity need not improve +1 G/A discrimination**: these are different engineering objectives, not two versions of the same score. We therefore retained two complementary directions rather than declaring one universal specificity-enhancing substitution.
+The triple mutant retained a strong **within-batch activity–preference balance**. **M132E** provided a complementary candidate with **near-parental target activity** and a simpler single-substitution background. Together with the matched residue-132 comparison in Cycle 5, these results justified carrying both directions into POD–CETUS integration. The G27 scan remained evidence that **ACA suppression and +1 G/A discrimination are distinct objectives**; its G27D result was not assigned to M132E. Integration still required matched functional measurements, because neither single-module activity nor a favorable combination result established compatibility with an engineered POD.
 
 ---
 
@@ -523,7 +521,7 @@ The triple mutant retained a strong **within-batch** activity–preference balan
 
 CETUS began by searching for residues that might distinguish the +1 base of an RNA substrate. Six DBTL cycles showed that **APOBEC sequence preference is distributed across recognition regions** and must be evaluated alongside the desired editing activity—not inferred from structural proximity or a high ratio alone.
 
-Our clearest **GCG/GCA-preference candidate**, **G27T–K30H–Q58M**, was the only variant in its combination batch to meet both preset criteria (**+1 Ratio 2.156; Activity Retention 0.773**) and remained competitive in another library background (**ROF 1.218; Activity Retention 0.980**). **G27D** addressed a different sequence layer: it reduced **c.295 (ACA)** editing from **0.294 to 0.008** in the initial screen and again lowered it below detection while preserving **0.990** target activity in the later batch.
+Our clearest **GCG/GCA-preference candidate**, **G27T–K30H–Q58M**, was the only variant in its combination batch to meet both preset criteria (**+1 Ratio 2.156; Activity Retention 0.773**) and remained competitive in another library background (**ROF 1.218; Activity Retention 0.980**). **M132E** supplied the second candidate direction: it preserved **1.018** of parental target activity with **ROF 1.062** as a single mutant, and retained more activity than M132D in a matched combination comparison (**0.7517 versus 0.3398**). These findings supported advancing the triple mutant and M132E into **Integrated ORCA** for their distinct performance profiles. They did not establish M132E as an ACA-suppressing or universally specificity-enhancing mutation.
 
 Equally important was the engineering method established along the way. **Matched controls exposed combination-dependent effects**, amplicon-wide analysis revealed the limits of local motif ratios, and computational predictions proved more useful for generating hypotheses than for assigning functional selectivity. Alongside POD's target-recognition engineering, these APOBEC-level advances form the catalytic optimization arm for subsequent **Integrated ORCA** design.
 
@@ -545,7 +543,7 @@ Engineering the complete RNA editor
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/integrated-orca.png" alt="Integrated ORCA combines POD recognition and CETUS catalysis." width="1800" height="1080" decoding="async">
 
-Optimizing an RNA-binding domain and a catalytic domain separately does not guarantee that they will work better together. To move from individual protein-engineering efforts to a complete APOE4-targeting editor, we integrated selected POD and CETUS variants into ORCA and evaluated their performance against the original editor and matched single-module controls. Our objective was not simply to maximize editing at C388, but to retain useful target activity while reducing potentially consequential bystander editing. A combinatorial library, targeted and regional editing analyses, and Nanopore read-level measurements allowed us to compare these competing objectives and select two complementary candidates for further development.
+Integrated ORCA brings POD recognition variants and CETUS catalytic variants into a single editor. We compared their combinations with the original editor and single-module controls to assess the balance between target activity and bystander editing.
 
 ### **Engineering Rationale** {#integrated-orca-engineering-rationale .engineering-section-title}
 
@@ -563,7 +561,7 @@ We also needed more than a single performance metric. A lower bystander signal m
 
 #### Design — A Combinatorial Test of Module Compatibility {#integrated-orca-cycle-01-design}
 
-We selected four previously engineered **POD variants**—**P9-NTQ, P8-GVE, P9-GNS, and P9-NPS**—and four **CETUS variants**—**30H, 30H-58M, 27T-30H-58M, and 27D**. These candidates represented different activity–selectivity profiles rather than simply the highest-activity choices from their respective screens.
+We selected four previously engineered **POD variants**—**P9-NTQ, P8-GVE, P9-GNS, and P9-NPS**—and four **CETUS variants**—**30H, 30H-58M, 27T-30H-58M, and M132E**. G27T–K30H–Q58M and M132E carried forward the two CETUS candidate directions: activity–preference balance and target-activity retention, respectively. The 30H and 30H–58M candidates retained earlier engineering backgrounds for comparison. Each pairing still required matched functional testing.
 
 Pairing every POD with every CETUS produced a **4 × 4 design comprising 16 Integrated ORCA constructs**. All were based on the same PUF–APOBEC fusion architecture, with the engineered recognition and catalytic sequences as the variables (Figure 1A).
 
@@ -575,7 +573,7 @@ For each integrated construct, the planned comparison contained four editor stat
 
 #### Build — Constructing and Verifying the Integrated Library {#integrated-orca-cycle-01-build}
 
-We assembled the 16 planned POD–CETUS expression constructs and verified their sequences before functional testing. Two combinations—**P8-GVE × 30H-58M** and **P8-GVE × 27D**—showed sequence abnormalities and were excluded from downstream assays. The other **14 constructs passed sequence verification** and were assigned stable identifiers, **IO-01 through IO-14**, according to the verified pairing matrix (Figure 2).
+We assembled the 16 planned POD–CETUS expression constructs and verified their sequences before functional testing. Two combinations—**P8-GVE × 30H-58M** and **P8-GVE × M132E**—showed sequence abnormalities and were excluded from downstream assays. The other **14 constructs passed sequence verification** and were assigned stable identifiers, **IO-01 through IO-14**, according to the verified pairing matrix (Figure 2).
 
 This distinction between **16 designed** and **14 experimentally evaluated** constructs is maintained throughout the analysis. The validated library was tested alongside Original ORCA and its corresponding POD-only and CETUS-only controls.
 
@@ -591,7 +589,7 @@ We expressed the 14 sequence-verified editors in HEK293T cells and measured C388
 
 The resulting C388 editing rates ranged from **0.81% to 77.18%**, showing that module pairing substantially affected the activity of the complete editor (Figure 3A). **IO-09 (P9-GNS × 27T-30H-58M)** was the most active integrated construct at **77.18%**, followed by **IO-08 (P9-GNS × 30H-58M)** at **70.04%** and **IO-03 (P9-NTQ × 27T-30H-58M)** at **69.78%**. **IO-02 (P9-NTQ × 30H-58M)** retained **61.31%** target editing.
 
-The differences were not explained by either module alone. With the same P9-GNS recognition domain, changing CETUS from 27T-30H-58M in IO-09 to 27D in IO-10 reduced C388 editing from **77.18% to 2.58%**. Conversely, 27T-30H-58M supported **69.78%** editing with P9-NTQ (IO-03) but only **0.81%** with P8-GVE (IO-06). These contrasts establish that successful independent optimization does not ensure functional compatibility in the assembled protein.
+The differences were not explained by either module alone. With the same P9-GNS recognition domain, changing CETUS from 27T-30H-58M in IO-09 to M132E in IO-10 reduced C388 editing from **77.18% to 2.58%**. Conversely, 27T-30H-58M supported **69.78%** editing with P9-NTQ (IO-03) but only **0.81%** with P8-GVE (IO-06). These contrasts establish that successful independent optimization does not ensure functional compatibility in the assembled protein.
 
 ![Figure 3. C388 editing performance and technical reproducibility across the integrated library.](/assets/images/submission-20261017/engineering/integrated-orca/Figure_03.png){.engineering-figure style="--engineering-figure-width:740px;--engineering-detail-width:960px"}
 
@@ -675,7 +673,7 @@ To compare the library more systematically, we summarized the **sum of site-edit
 
 Original ORCA had a cumulative **290-site burden of 21.658**, with **87 sites** at or above 5% editing. IO-02 and IO-03 lowered these totals to **2.671 / 12 sites** and **3.420 / 18 sites**, respectively. Their cumulative **147-site potentially nonsynonymous burdens** were **1.423** and **1.689**. By comparison, IO-09 reached **10.373** across 290 sites and **53 sites** at or above 5%, despite its higher target editing rate.
 
-Single-module optimization also remained competitive: **27D-only** retained **60.55%** C388 editing, a 290-site burden of **1.683**, and only **five sites** at or above 5%. This reinforced the importance of the single-module controls: adding a second engineered module must earn its place through measured performance.
+Single-module optimization also remained competitive: **M132E-only** retained **60.55%** C388 editing, a 290-site burden of **1.683**, and only **five sites** at or above 5%. This reinforced the importance of the single-module controls: adding a second engineered module must earn its place through measured performance.
 
 ![Figure 11. Consequence-resolved cumulative bystander burden and number of edited sites.](/assets/images/submission-20261017/engineering/integrated-orca/Figure_11.png){.engineering-figure style="--engineering-figure-width:800px;--engineering-detail-width:960px"}
 
@@ -767,7 +765,7 @@ Cell-context-dependent transcriptional control
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/gfa.png" alt="GFA transcriptional control of ORCA." width="1800" height="1080" decoding="async">
 
-PUF-mediated RNA recognition determines *what* ORCA can edit, but not *where* the editor is expressed. To introduce an additional layer of control for our astrocyte-oriented system, we investigated **gfaABC1D**, a compact promoter derived from the human *GFAP* regulatory region. Through two engineering cycles, we established contrasting GFAP-associated cellular backgrounds and compared gfaABC1D with CMV in ORCA expression constructs. The resulting transcriptional and editing-associated readouts supported gfaABC1D as a cell-context-dependent control element, while revealing an unexpectedly weak CMV response in U251 cells.
+To support astrocyte-oriented ORCA expression, we investigated gfaABC1D, a compact GFAP-derived promoter. We compared it with CMV across contrasting cellular backgrounds to assess its potential for transcriptional control.
 
 ### **Engineering Rationale** {#gfa-engineering-rationale .engineering-section-title}
 
@@ -861,7 +859,7 @@ Evaluating microRNA-mediated regulation
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/mre.png" alt="miRNA-responsive elements in the ORCA transcript 3-prime UTR." width="1800" height="1080" decoding="async">
 
-Transcriptional control alone may not fully restrict ORCA expression to the intended cell population. We therefore explored a complementary, microRNA-responsive layer designed to suppress editor transcripts in non-target cellular environments. Inspired by an astrocyte-targeting AAV strategy, we introduced a **4×6T microRNA response element (MRE)** into the ORCA transcript and evaluated it through three Design–Build–Test–Learn (DBTL) cycles: endogenous miRNA profiling, direct editor-expression testing, and a controlled miR-124 mimic experiment. The central question was whether this extra layer could improve expression selectivity **without sacrificing functional editing output**.
+We explored a 4×6T microRNA response element as a complementary layer for suppressing ORCA expression in non-target cellular environments. Testing examined miRNA responsiveness and its effects on editor expression and editing output.
 
 ### **Engineering Rationale** {#mre-engineering-rationale .engineering-section-title}
 
@@ -978,9 +976,7 @@ Engineering an external OFF interface
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/aso.png" alt="Gapmer ASO, RNA tag and RNase H1 control of ORCA mRNA." width="1800" height="1080" decoding="async">
 
-Controlling where ORCA is expressed does not resolve every risk associated with sustained RNA-editing activity. We therefore sought an independent means of suppressing the editor after delivery, without permanently altering its expression cassette. Within our broader control strategy, permanent termination is addressed by Cre–loxP; here, we investigated **antisense oligonucleotides (ASOs)** as a potentially reversible, externally administered OFF signal.
-
-Our approach evolved from searching ORCA's existing RNA sequence for ASO targets to designing a dedicated **Synthetic ASO Tag**. Four computational engineering cycles established the tag architecture and selected a candidate, C805. Two subsequent cell-based cycles tested whether C805 could suppress reporter expression and, ultimately, ORCA-mediated RNA editing.
+We investigated antisense oligonucleotides (ASOs) as an externally administered OFF signal for ORCA. A dedicated Synthetic ASO Tag was designed and tested for suppression of reporter expression and ORCA-mediated editing.
 
 ### **Engineering Rationale** {#aso-engineering-rationale-why-an-aso-controlled-interface .engineering-section-title}
 
@@ -1248,9 +1244,7 @@ A proposed genetic off-switch
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/cre-loxp.png" alt="Cre-mediated excision of a loxP-flanked ORCA cassette." width="1800" height="1080" decoding="async">
 
-AAV9 offers a route to sustained ORCA expression, allowing the editor to act on newly synthesized APOE4 transcripts. Yet an editor designed to persist also needs a way to stop. We therefore proposed a **Cre–loxP genetic off-switch**: two loxP sites flank the ORCA coding sequence, enabling subsequently delivered Cre recombinase to excise it from the expression template.
-
-This design complements our antisense oligonucleotide (ASO) strategy. Whereas ASOs suppress ORCA at the RNA level, Cre–loxP is intended to prevent further production of the editor from recombined DNA templates. **The Cre–loxP module is a proposed design and has not been experimentally validated in ORCA.**
+We proposed a Cre–loxP off-switch to stop further ORCA production by excising its coding sequence from the expression template. This DNA-level control complements ASO-mediated RNA suppression and remains experimentally unvalidated in ORCA.
 
 ### **Engineering Rationale** {#cre-loxp-engineering-rationale .engineering-section-title}
 
@@ -1330,9 +1324,7 @@ Delivery toward CNS applications
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/deliver.png" alt="AAV9 delivery of an ITR-flanked ORCA cassette." width="1800" height="1080" decoding="async">
 
-An RNA editor can only become a useful biological intervention if it reaches the intended cells and remains available for an appropriate period. For ORCA, which is designed to convert APOE4 RNA into an APOE3-like sequence, delivery must address two challenges: access to the central nervous system (CNS) and continued editing of newly produced transcripts.
-
-We selected adeno-associated virus serotype 9 (AAV9) as a candidate delivery platform and developed a proof-of-concept workflow in three stages: establishing AAV9 production with a fluorescent reporter, packaging our own ORCA expression cassettes, and testing for ORCA transcripts in AAV9-treated astrocytic cells. These stages distinguish **vector production**, **genome recovery**, and **expression in recipient cells**—separate requirements for functional delivery.
+We explored AAV9 as a candidate delivery platform for sustained ORCA expression in a CNS-oriented application. Our proof-of-concept workflow examined vector production, ORCA cassette packaging, and transcript detection in recipient astrocytic cells.
 
 ### **Engineering Rationale** {#deliver-engineering-rationale .engineering-section-title}
 
@@ -1493,7 +1485,7 @@ Engineering an editing-responsive reporter
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/measure.png" alt="SONAR reporter and SAP fluorescence analysis." width="1800" height="1080" decoding="async">
 
-RNA editing changes individual nucleotides, but those changes are not immediately visible in living cells. To evaluate ORCA more efficiently, we developed **SONAR (System for Optical Normalization and Analysis of RNA Editing)**: an editing-responsive fluorescence reporter supported by a framework for interpreting its output. Across ten engineering cycles, we established the reporter's protein-stability switch, refined its expression and target context, added an editor-expression marker, and explored fluorescence measurements across three platforms. The resulting system provides multiple optical views of reporter behavior while making clear why fluorescence alone cannot be treated as an RNA-editing percentage.
+SONAR (System for Optical Normalization and Analysis of RNA Editing) couples an editing-responsive fluorescence reporter with a framework for interpreting its output. We engineered the reporter and evaluated optical readouts while distinguishing fluorescence signals from RNA-editing percentages.
 
 ### **Engineering Rationale** {#measure-engineering-rationale .engineering-section-title}
 

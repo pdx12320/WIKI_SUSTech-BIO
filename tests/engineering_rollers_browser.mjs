@@ -38,6 +38,9 @@ try {
   await expect('gfa');
   await row('group').focus();
   await page.keyboard.press('Home');
+  await expect('fundamental-research');
+  assert.equal(await row('part').getAttribute('aria-disabled'), 'true');
+  await page.keyboard.press('ArrowRight');
   await expect('pod');
   await row('part').focus();
   await page.keyboard.press('ArrowLeft');

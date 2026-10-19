@@ -21,7 +21,7 @@
 {% block navigation %}{% include 'menu.html' %}{% endblock %}
 
 {% block main %}
-<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-ot>
+<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-quick-rewind data-ot>
   <script src="{{ url_for('static', filename='onetake/home-entry.js') }}"></script>
   {% include 'components/crt_opening.html' %}
   <div class="ot-bio-labels" aria-hidden="true">
@@ -63,17 +63,17 @@
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.11" data-out="0.2">
         <span class="ot-object">Brain</span>
-        <p class="ot-chapter-copy">Alzheimer’s disease progressively damages brain cells and their connections, leading to memory loss and declining thinking abilities.</p>
+        <p class="ot-chapter-copy"><strong class="ot-highlight-coral">Alzheimer’s disease</strong> progressively damages <strong class="ot-highlight-ice">brain cells and their connections</strong>, leading to <strong class="ot-highlight-coral">memory loss</strong> and declining thinking abilities.</p>
       </div>
 
       <div class="ot-ch ot-ch--right" data-ot-chapter data-in="0.235" data-out="0.335">
         <span class="ot-object">Astrocyte</span>
-        <p class="ot-chapter-copy">Astrocytes support neurons and help regulate brain metabolism. Changes in their lipid handling and inflammatory responses are linked to Alzheimer’s disease.</p>
+        <p class="ot-chapter-copy"><strong class="ot-highlight-mint">Astrocytes</strong> support neurons and help regulate brain metabolism. Changes in their <strong class="ot-highlight-ice">lipid handling</strong> and <strong class="ot-highlight-coral">inflammatory responses</strong> are linked to Alzheimer’s disease.</p>
       </div>
 
       <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.395" data-out="0.485">
         <span class="ot-object">APOE4 RNA</span>
-        <p class="ot-chapter-copy">Astrocytes produce APOE to transport cholesterol and other lipids. APOE4 can disturb this balance, weakening metabolic support for neurons.</p>
+        <p class="ot-chapter-copy">Astrocytes produce <strong class="ot-highlight-ice">APOE</strong> to transport cholesterol and other lipids. <strong class="ot-highlight-coral">APOE4</strong> can disturb this balance, weakening <strong class="ot-highlight-ice">metabolic support for neurons</strong>.</p>
       </div>
 
       <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.52" data-out="0.605">
@@ -98,13 +98,18 @@
       </div>
 
       <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.825" data-out="0.913">
-        <p class="ot-narrative">We aim to change APOE4 RNA to an APOE3-like sequence without altering genomic DNA.</p>
+        <p class="ot-narrative">We aim to change <strong class="ot-highlight-coral">APOE4</strong> RNA to an <strong class="ot-highlight-mint">APOE3</strong> sequence without altering genomic DNA.</p>
         <p class="ot-static-explanation">PUF recognizes and binds the target RNA. APOBEC converts the target C to U.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left ot-ch--conclusion" data-ot-chapter data-in="0.935" data-out="2">
-        <p class="ot-narrative">We combine wet-lab measurements, RNA-seq analysis and computational modeling to optimize the PUF–APOBEC RNA-editing system.</p>
-        <p class="ot-chapter-copy">Our goal is greater editing specificity while preserving useful target activity.</p>
+      <div class="ot-ch ot-ch--left ot-ch--conclusion ot-ch--wet-design" data-ot-chapter data-in="0.935" data-out="0.966">
+        <p class="ot-narrative">We design ORCA as a <strong class="ot-model-emphasis">modular RNA editing platform</strong>, coupling <strong class="ot-design-emphasis">programmable recognition</strong> with <strong class="ot-design-emphasis">catalytic engineering</strong>.</p>
+        <p class="ot-chapter-copy">We also investigate <strong class="ot-workstream-emphasis">GFA, MRE and ASO</strong> designs for expression control, explore <strong class="ot-workstream-emphasis">AAV9</strong> delivery, and develop <strong class="ot-workstream-emphasis">SONAR</strong> for editing-responsive fluorescence measurements.</p>
+      </div>
+
+      <div class="ot-ch ot-ch--left ot-ch--conclusion" data-ot-chapter data-in="0.974" data-out="2">
+        <p class="ot-narrative">We integrate wet-lab evidence with <strong class="ot-model-emphasis">foundation models</strong> and <strong class="ot-model-emphasis">structural modeling</strong> to guide refinement of the PUF–APOBEC RNA editing system.</p>
+        <p class="ot-chapter-copy">Our goal is greater <strong class="ot-specificity-emphasis">editing specificity</strong> while preserving useful <strong class="ot-activity-emphasis">target activity</strong>.</p>
       </div>
     </div>
   </section>

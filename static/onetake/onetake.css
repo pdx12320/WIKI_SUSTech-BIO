@@ -141,6 +141,14 @@ body.ot-menu-open { overflow: hidden; }
 .ot-codon__protein { color: #a4abc4; letter-spacing: .04em; }
 .ot-object { display: inline-block; font-size: clamp(20px,2vw,30px); color: #d0d0eb; letter-spacing: .02em; }
 .ot-narrative { margin: 0; max-width: 31ch; font-size: clamp(23px,2.5vw,36px); font-weight: 400; line-height: 1.35; text-wrap: pretty; }
+.ot-ch .ot-highlight-ice { color: var(--ot-ice); font-weight: 500; }
+.ot-ch .ot-highlight-coral { color: #ffb0bd; font-weight: 500; }
+.ot-ch .ot-highlight-mint { color: #a5ffda; font-weight: 500; }
+.ot-ch--conclusion .ot-model-emphasis { color: var(--ot-ice); font-weight: 500; }
+.ot-ch--conclusion .ot-specificity-emphasis { color: var(--ot-mint); font-weight: 600; }
+.ot-ch--conclusion .ot-activity-emphasis { color: #e2ce95; font-weight: 600; }
+.ot-ch--wet-design .ot-design-emphasis { color: #c1bcff; font-weight: 500; }
+.ot-ch--wet-design .ot-workstream-emphasis { color: #e2ce95; font-weight: 600; }
 .ot-ch--low .ot-narrative { margin-inline: auto; max-width: 38ch; }
 .ot-source { margin: 16px 0 0; color: #8994ae; font-size: 11px; letter-spacing: .035em; }
 .ot-static-explanation { display: none; }

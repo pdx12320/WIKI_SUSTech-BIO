@@ -584,6 +584,7 @@ const KEYS = [
 // Text, camera and effects all use this same reversible timeline mapping.
 const { track: TRACK, length: trackLength, scale: trackScale } = buildScrollTrack(KEYS, {
   burden: !!root?.querySelector('[data-burden]'),
+  quickEditExit: !!root?.hasAttribute('data-edit-quick-rewind'),
 });
 // Add the comparison's reading distance without speeding up other chapters.
 story?.style.setProperty('--ot-track-scale', trackScale);

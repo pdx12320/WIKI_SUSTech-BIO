@@ -71,7 +71,7 @@
   }
 
   function partAlias(id) {
-    return ({ edit: 'pod', control: 'gfa', program: 'model' })[id] || id;
+    return ({ edit: 'pod', control: 'gfa', program: 'model-rna-seq', model: 'model-rna-seq' })[id] || id;
   }
 
   // Keep the authored Markdown intact, but give each part its own reading
@@ -221,8 +221,7 @@
       let id = decodeURIComponent(hash.slice(1));
       // Previous shared-cycle links continue to open the corresponding POD record.
       if (/^cycle-\d{2}(?:-(design|build|test|learn))?$/.test(id)) id = `pod-${id}`;
-      if (id === 'program') id = 'model';
-      if (/^(program|model)-cycle-\d{2}(?:-(design|build|test|learn))?$/.test(id)) {
+      if (/^(program|model)(?:-cycle-\d{2}(?:-(design|build|test|learn))?)?$/.test(id)) {
         id = id.replace(/^(program|model)/, 'model-rna-seq');
       }
       const target = document.getElementById(id);
@@ -281,7 +280,7 @@
     wheel.dataset.cycle = cycle;
     wheel.dataset.stage = stage || '';
     // Design-only chapters retain the mascot without implying a DBTL cycle.
-    wheel.closest('.dbtl-directory').hidden = part === 'model';
+    wheel.closest('.dbtl-directory').hidden = false;
     wheel.toggleAttribute('data-mascot-only', !number);
     wheel.setAttribute('aria-label', number
       ? 'Engineering cycle: Design, Build, Test, Learn'

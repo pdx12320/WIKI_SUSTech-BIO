@@ -59,8 +59,6 @@
 .engineering-project-overview-art:has(.overview-links a:is(:hover,:focus-visible)) > image { opacity:.35; }
 .engineering-project-overview-art .overview-spotlight { opacity:0; pointer-events:none; transition:opacity .18s; }
 .engineering-project-overview-art .overview-hotspot:has(a:is(:hover,:focus-visible)) > .overview-spotlight { opacity:1; }
-/* The SVG rectangle supplies the focus ring along the artwork geometry. */
-.engineering-project-overview-art .overview-links a:focus-visible { outline:none; }
 .engineering-project-overview-art .overview-links a:is(:hover,:focus-visible) > rect { stroke:#536b91; stroke-width:2; vector-effect:non-scaling-stroke; }
 @media (prefers-reduced-motion:reduce) {
   .engineering-project-overview-art > image,

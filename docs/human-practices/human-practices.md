@@ -274,7 +274,7 @@ Presenting our first stakeholder map made us pause. Its nine stages, from the la
 
 This became a starting point for revising the map. We needed to ask why each group belonged, what we had actually learned about their concerns, how they could affect or be affected by ORCA, and which relationships still needed investigation. The original slide records our thinking at the Summit; its checkmarks should not be read as a current audit of completed stakeholder consultations. A revised map will need to make the reasoning and remaining gaps clearer before we assess whether it is easier to understand.
 
-[Stakeholder map · first version, page 4](/assets/human-practices/attachments/peking-rice-hp-summit-presentation-v2.pdf#page=4)
+[Stakeholder map · first version, page 4](https://static.igem.wiki/teams/6085/wiki/hp/peking-rice-hp-summit-presentation-v2.pdf#page=4)
 
 The [Summit exchange record and full presentation](/education#3-8-august-30-online-exchange-at-the-peking-rice-global-summit) are on the Education page.
 

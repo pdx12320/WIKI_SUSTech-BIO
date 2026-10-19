@@ -1,7 +1,7 @@
 /* Quiet, resizable previews rendered from the unchanged source PDFs. */
 (() => {
   const base = new URL('pdf-previews/', document.currentScript.src);
-  const links = [...document.querySelectorAll('.hp-manuscript a[href]')].filter(link => !link.querySelector('img, svg') && /\/attachments\/[^/]+\.pdf(?:[?#]|$)/i.test(link.href));
+  const links = [...document.querySelectorAll('.hp-manuscript a[href]')].filter(link => !link.querySelector('img, svg') && /\.pdf(?:[?#]|$)/i.test(link.href));
   if (!links.length) return;
 
   function sourceDetails(link) {

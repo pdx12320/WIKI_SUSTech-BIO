@@ -67,7 +67,7 @@ The first edition gathered the information into chapters, summaries and self-che
 
 #### First edition {#first-edition-establishing-a-health-knowledge-framework}
 
-[First workbook · Chinese PDF](/assets/human-practices/attachments/older-adults-health-workbook-v1-zh.pdf)
+[First workbook · Chinese PDF](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v1-zh.pdf)
 
 At **Shahe Subdistrict Elderly Service Center**, we trialled lessons and discussed misleading health claims and scams. We focused on what to check and whom to ask before trusting a promise or making a purchase.
 
@@ -131,12 +131,12 @@ The second edition adds hand-drawn illustrations and an English version.
 <div class="hp-handbook-pair" role="group" aria-label="Version 2 in Chinese and English">
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-zh">
     <h5 id="hp-handbook-zh">Chinese edition</h5>
-    <p><a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.pdf" data-pdf-title="Version 2 · Chinese">Download PDF</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-zh.pdf" data-pdf-title="Version 2 · Chinese">Download PDF</a></p>
     <p class="hp-handbook-editable"><a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx">Editable Word version</a></p>
   </section>
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-en">
     <h5 id="hp-handbook-en">English edition</h5>
-    <p><a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-en.pdf" data-pdf-title="Version 2 · English">Download PDF</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-en.pdf" data-pdf-title="Version 2 · English">Download PDF</a></p>
     <p class="hp-handbook-editable"><a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx">Editable Word version</a></p>
   </section>
 </div>
@@ -594,7 +594,7 @@ These conversations gave us practice linking familiar biology to design choices 
 On **July 24, 2026**, **our instructor Hengwei Su (宿恒玮)** and **our advisor Xinyi Liu (刘心怡)** attended the **8th China Northwest iGEM Exchange Conference** at **Northwest University's Taibai Campus in Xi'an**. Co-organized by **NWU-CHINA and LZU-GANSU**, the meetup brought teams together for project presentations and discussion.
 
 <figure class="hp-figure hp-northwest-gallery" id="hp-northwest-meetup-collage">
-  <a href="/assets/human-practices/images/northwest-meetup-collage-2026-07-24.svg" target="_blank" rel="noopener" aria-label="Open the Northwest meetup collage at full size"><img src="/assets/human-practices/images/northwest-meetup-collage-2026-07-24.svg" width="1812" height="1212" alt="Four photographs from the Northwest iGEM meetup: discussion, opening slide, our representatives' name cards and a project presentation" loading="lazy" decoding="async"></a>
+  <a href="https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg" target="_blank" rel="noopener" aria-label="Open the Northwest meetup collage at full size"><img src="https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg" width="1812" height="1212" alt="Four photographs from the Northwest iGEM meetup: discussion, opening slide, our representatives' name cards and a project presentation" loading="lazy" decoding="async"></a>
   <figcaption>Northwest iGEM meetup · July 24, 2026</figcaption>
 </figure>
 
@@ -686,7 +686,7 @@ Our reflection on the first stakeholder map is documented on the [Human Practice
 
 [Summit recording →](https://meeting.tencent.com/crm/2yd5G3OO81)
 
-[Summit presentation · PDF](/assets/human-practices/attachments/peking-rice-hp-summit-presentation-v2.pdf)
+[Summit presentation · PDF](https://static.igem.wiki/teams/6085/wiki/hp/peking-rice-hp-summit-presentation-v2.pdf)
 
 
 

@@ -1867,7 +1867,8 @@
     "https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-11-fundamental-research-5a292a432e76.avif",
     "https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-12-functional-validation-6778be681dc8.avif",
     "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-engineering-02-model-puffer-61f4506c421a.avif",
-    "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif"
+    "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif",
+    "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif"
   ],
   "confirmed_mapping": [
     {
@@ -7185,6 +7186,12 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif",
       "sha256": "882fa65b4ac0e71b617b86ef4d267ea791f6637870add3e84407a3669c53df74",
       "evidence": "user_supplied_url_http200_avif_dimensions_sha25612_and_pixel_comparison_20261019"
+    },
+    {
+      "local_path": "assets/human-practices/opening/banana-dna-original.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif",
+      "sha256": "52da07b331eb396dc92b9db243614e2ab51ecbfba45b626c11bd8ff320a0b037",
+      "evidence": "user_uploaded_hp_opening_original_http200_avif_1440x960_visual_content_verified_20261019"
     }
   ],
   "content_hashes": [
@@ -8063,6 +8070,14 @@
     {
       "url": "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif",
       "sha256": "aec50a1d7b06fc1bce80347b8bd9730a5b8781827650c48f334e8c9b57b129c9"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif",
+      "sha256": "7d68c241e8b2eb25f8bb0f789e6d2a1478a6f18291e824e14d7de0ea03a80a57",
+      "dimensions": [
+        1440,
+        960
+      ]
     }
   ]
 }

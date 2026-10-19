@@ -9,14 +9,21 @@
 </div>
 {% endset %}
 
+{% block main %}
+{% include 'components/human-practices/opening.html' %}
+{{ super() }}
+{% endblock %}
+
 {% block page_styles %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='human-practices/opening/opening.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/human-practices.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/pdf-panels.css') }}">
 {% endblock %}
 
 {% block page_scripts %}
 {{ super() }}
+<script src="{{ url_for('static', filename='human-practices/opening/opening.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/interviews/orca-interviews.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/pdf-panels.js') }}" defer></script>
 {% endblock %}

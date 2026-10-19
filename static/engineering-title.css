@@ -4,6 +4,7 @@
 .engineering-overview-identity .engineering-overview-toolbar-title { position: static; transform: none; width: 100%; padding: 0; color: #2e3065; font: 600 clamp(19px, 2.25vw, 32px)/1.08 'ORCA Engineering', 'Arial Narrow', sans-serif; letter-spacing: -.015em; text-align: center; }
 .engineering-overview-title-rule { position: relative; width: 86%; height: 1px; background: #d4d7e4; margin-top: 1px; }
 .engineering-overview-title-rule::before { content: ''; position: absolute; bottom: 0; left: 0; width: 30%; height: 3px; background: #c47b8b; }
+.engineering-overview-hint { width: 100%; max-width: 172px; margin: 0; padding: 0 3px; color: #69738a; font: 400 clamp(11px, .95vw, 14px)/1.5 'Source Sans 3', 'Segoe UI', sans-serif; text-align: center; text-wrap: pretty; }
 @media(max-width:480px) { .engineering-overview-identity { gap: 10px; padding: 0 2px; } .engineering-overview-identity .engineering-overview-toolbar-title { font-size: 16px; } }
 
 /* Match the overview identity in the detailed chapter navigation. */
@@ -14,4 +15,13 @@
   font-style: normal;
   letter-spacing: -.015em;
   color: #2e3065;
+}
+
+/* Give the chapter navigator a clear title and a separate return row. */
+.engineering-sidebar-left .diagram-heading {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 32px;
+  line-height: 1.1;
 }

@@ -1,3 +1,4 @@
+@import url("memory-room.css");
 /* A complete cabinet in a dark room; its aperture contains the live take. */
 .ot-crt-home { --crt-shell: 1; --crt-glass: 1; --crt-title: 0; }
 .ot-crt-room { position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -69,3 +70,51 @@
   .ot-crt-nameplate small { font-size: 1.3cqw; } }
 @media (max-height: 500px) { .ot-crt-mount { width: min(58vw, 85vh); top: 52%; } .ot-crt-hint { display: none; } }
 @media (prefers-reduced-motion: reduce) { .ot-crt-raster { animation: none; } }
+
+/* Optional purple-room review: ?review=crt-purple. */
+.ot-crt-preview .ot-crt-room {
+  background: radial-gradient(ellipse at 49% 48%, #7542b85c, transparent 48%),
+    radial-gradient(ellipse at 18% 70%, #48236555, transparent 45%), #060510;
+  opacity: var(--crt-shell);
+}
+/* Soft grounding shadow, without the previous horizontal shelf. */
+.ot-crt-preview .ot-crt-mount::before {
+  left: -12%; right: -12%; top: 89%; height: 27%; border: 0;
+  background: radial-gradient(ellipse, #0b0616aa 0%, #6d419c12 38%, transparent 70%);
+  box-shadow: none;
+}
+.ot-crt-preview .ot-crt-set { filter: drop-shadow(0 0 32px #a078e533); }
+.ot-crt-decor, .ot-crt-snow { display: none; }
+.ot-crt-preview .ot-crt-decor { display: block; position: absolute; pointer-events: none; }
+.ot-crt-preview .ot-crt-sticker {
+  z-index: 5; padding: .7cqw 1.1cqw; border: 2px solid #e4d7ed; border-radius: 5px;
+  box-shadow: 2px 3px 3px #0007; font: 700 1.8cqw/1.1 Futura, sans-serif; letter-spacing: .04em;
+}
+.ot-crt-preview .ot-crt-sticker--orca { left: 78%; top: 44%; transform: rotate(-9deg); background: #c4ade6; color: #302447; }
+.ot-crt-preview .ot-crt-sticker--rna { left: 39%; bottom: 1%; transform: rotate(4deg); background: #eee7da; color: #695080; font-size: 1.25cqw; }
+.ot-crt-preview .ot-crt-toy { width: 17%; height: 20%; left: 13%; bottom: 99%; filter: drop-shadow(0 3px 2px #0009); }
+.ot-crt-preview .ot-crt-tape { width: 19%; height: 7%; right: 10%; bottom: 100%; transform: rotate(-4deg); border: 3px solid #302638; border-radius: 3px; background: repeating-linear-gradient(90deg,#211b2b 0 14%,#b6a2c1 15% 28%,#211b2b 29% 40%); box-shadow: 0 3px 5px #000; }
+.ot-crt-preview .ot-crt-snow { display: block; position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; pointer-events: none; mix-blend-mode: screen; }
+.ot-crt-preview .ot-crt-glass { background: linear-gradient(135deg,#b79ae222,transparent 45%),radial-gradient(ellipse,transparent 40%,#10052099); }
+@media (prefers-reduced-motion: reduce) { .ot-crt-preview .ot-crt-snow { display: none; } }
+
+/* Full-screen snow opening for the purple preview. */
+.ot-crt-preview .ot-crt-mount { visibility: hidden; }
+.ot-crt-preview .ot-crt-room { opacity: 0; }
+.ot-crt-preview .ot-crt-picture::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, #d6bee830 0 1px, #06020d18 1px 4px),
+    repeating-linear-gradient(90deg, #d6bee823 0 1px, transparent 1px 4px),
+    radial-gradient(ellipse at 40% 36%, #c5a0ec33, transparent 60%),
+    radial-gradient(ellipse, transparent 35%, #090515a0);
+  opacity: calc((1 - var(--crt-title)) * .5); mix-blend-mode: soft-light;
+}
+.ot-crt-preview .ot-stage { filter: blur(calc(var(--crt-reception, 0) * 1.8px)); }
+.ot-crt-preview .ot-crt-snow { filter: none; }
+.ot-crt-preview:not(.ot--static)::after {
+  content: 'SCROLL TO ENTER'; position: fixed; z-index: 4; left: 50%; bottom: 8vh;
+  transform: translateX(-50%); padding: 10px 16px; border-radius: 3px;
+  background: #130d2399; color: #eee6ff; font: 500 10px/1.4 Futura, sans-serif;
+  letter-spacing: .22em; opacity: calc(1 - var(--crt-title)); pointer-events: none;
+}

@@ -1,3 +1,6 @@
+import {SNOW_WIDTH,SNOW_HEIGHT,paintCoarseSnow} from './crt-coarse-noise.mjs';
+import { createMemoryRoom } from './memory-room.mjs';
+
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const smooth = v => v * v * (3 - 2 * v);
 const mix = (a, b, t) => a + (b - a) * t;
@@ -8,6 +11,17 @@ export function createCrtOpening(root) {
   const anchor = root.querySelector('[data-crt-anchor]');
   const set = root.querySelector('[data-crt-set]');
   const stage = picture.querySelector('.ot-stage');
+  const purple = new URLSearchParams(location.search).get('review') !== 'crt-legacy';
+  root.classList.toggle('ot-crt-preview', purple);
+  const memoryRoom = purple ? createMemoryRoom(root) : null;
+  const snow = purple ? document.createElement('canvas') : null;
+  let noiseContext, noiseImage, lastNoise = 0;
+  const tuningEpoch = performance.now();
+  if (snow) {
+    snow.className = 'ot-crt-snow'; snow.width = SNOW_WIDTH; snow.height = SNOW_HEIGHT;
+    picture.append(snow); noiseContext = snow.getContext('2d');
+    noiseImage = noiseContext.createImageData(SNOW_WIDTH, SNOW_HEIGHT);
+  }
   let base, mount, rect, lastZoom = -1;
   const resize = () => {
     base = anchor.getBoundingClientRect();
@@ -17,8 +31,26 @@ export function createCrtOpening(root) {
   resize();
   addEventListener('resize', resize, { passive: true });
   const update = p => {
-    const zoom = smooth(clamp((p + 0.184) / 0.039));
-    const signal = smooth(clamp((p + 0.18) / 0.027));
+    const zoom = purple ? 1 : smooth(clamp((p + 0.184) / 0.039));
+    const signal = smooth(clamp(purple ? (p + 0.142) / 0.035 : (p + 0.18) / 0.027));
+    // A slow attempt at reception: settle, almost resolve, then lose the picture.
+    const receptionTime = ((performance.now()-tuningEpoch)/1000)%8.6;
+    const reception = purple && signal<.05
+      ? smooth(clamp((receptionTime-3.0)/.65)) * (1-smooth(clamp((receptionTime-4.05)/.6))) : 0;
+    if (purple) {
+      root.style.setProperty('--crt-reception', reception.toFixed(4));
+      root.dataset.crtReception = reception>.8 ? 'locked' : reception>.05 ? 'tuning' : 'snow';
+      memoryRoom?.update(p,reception);
+    }
+    if (snow) {
+      snow.style.opacity = String((1-signal)*mix(.68,.12,reception));
+      const now = performance.now();
+      if (signal < 1 && now-lastNoise > 65) {
+        lastNoise = now;
+        paintCoarseSnow(noiseImage.data,now,reception);
+        noiseContext.putImageData(noiseImage,0,0);
+      }
+    }
     if (zoom !== lastZoom) {
       lastZoom = zoom;
       rect = { x: mix(base.x, 0, zoom), y: mix(base.y, 0, zoom),
@@ -31,10 +63,11 @@ export function createCrtOpening(root) {
       set.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${kx}, ${ky})`;
       root.style.setProperty('--crt-shell', (1 - smooth(clamp((zoom - 0.66) / 0.3))).toFixed(4));
       root.style.setProperty('--crt-glass', (1 - zoom).toFixed(4));
-      root.style.setProperty('--crt-title', smooth(clamp((zoom - 0.76) / 0.24)).toFixed(4));
+      root.style.setProperty('--crt-title', (purple ? signal : smooth(clamp((zoom - 0.76) / 0.24))).toFixed(4));
       root.dataset.crtPhase = zoom === 1 ? 'maze' : zoom === 0 ? 'television' : 'entering';
     }
-    return signal;
+    if (purple) root.style.setProperty('--crt-title', signal.toFixed(4));
+    return mix(signal,.82,reception);
   };
   const pointer = (x, y) => ({
     x: ((x - rect.x) / rect.width) * 2 - 1,

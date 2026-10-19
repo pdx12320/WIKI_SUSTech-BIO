@@ -80,8 +80,11 @@ for(let frame=0;frame<100;frame++){now+=40;tunnel.update(0,0,0,-1,-1,false,false
 assert.equal(room.dataset.tunnelEncounter,'quiet-pass');
 for(let frame=0;frame<100;frame++){now+=40;tunnel.update(0,1,1,-1,-1,false,false);}
 assert.equal(room.dataset.tunnelEncounter,'quiet-pass'); // Offscreen passes must not flash the frame.
-assert.deepEqual(normalizeMemoryTuning({count:999,speed:-1}),{count:96,speed:0});
+assert.deepEqual(normalizeMemoryTuning({count:999,speed:-1}),{count:144,speed:0});
 assert.deepEqual(normalizeMemoryTuning({count:NaN,speed:Infinity}),{count:36,speed:1});
+tunnel.setTuning({count:141,speed:1.2});
+assert.equal(room.dataset.tunnelCount,'141');
+assert.equal(room.dataset.tunnelSpeed,'1.2');
 tunnel.setTuning({count:0,speed:0});const paused=room.dataset.tunnelTravel;
 now+=40;tunnel.update(0,0,0,-1,-1,false,false);assert.equal(room.dataset.tunnelTravel,paused);
 assert.equal(room.dataset.tunnelCount,'0');

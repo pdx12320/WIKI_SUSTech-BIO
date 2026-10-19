@@ -7,13 +7,16 @@ export function paintMosaicWalls(ctx,project,travel,w,h){
     const identity=layer+Math.floor(travel*.85/6480)*24;
     for(let face=0;face<4;face++)for(let cell=0;cell<8;cell++){
       const seed=identity*131+face*41+cell*17;
-      if(hash(seed)<.47)continue;
+      if(hash(seed)<.16)continue;
       const horizontal=face>1,sign=face%2?1:-1,step=horizontal?240:165;
-      const u=(cell-4)*step,gap=8+hash(seed+3)*26;
+      const u=(cell-4)*step,gap=4+hash(seed+3)*14;
       const vertex=(v,depth)=>horizontal?project(v,sign*660,depth):project(sign*960,v,depth);
       const corners=[vertex(u+gap,z),vertex(u+step-gap,z),vertex(u+step-gap,far),vertex(u+gap,far)];
       if(corners.every(([x])=>x<0)||corners.every(([x])=>x>w)||corners.every(([,y])=>y<0)||corners.every(([,y])=>y>h))continue;
-      ctx.globalAlpha=Math.min(.13,.035+75/z)*(.55+hash(seed+19)*.45);
+      // Four readable planes dissolve along their own screen axis around ORCA.
+      const axis=horizontal?1:0,center=horizontal?h*.47:w*.5,span=horizontal?h*.5:w*.5;
+      const edge=Math.min(1,Math.max(0,(Math.abs(corners.reduce((sum,p)=>sum+p[axis],0)/4-center)/span-.2)/.38));
+      ctx.globalAlpha=Math.min(.42,.13+180/z)*edge*(.55+hash(seed+19)*.45);
       ctx.fillStyle=colors[Math.floor(hash(seed+11)*colors.length)];
       ctx.beginPath();corners.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fill();
     }

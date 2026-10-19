@@ -41,7 +41,7 @@ export function createMemoryRoom(root) {
   echo.classList.add('memory-room__echo');echo.setAttribute('aria-hidden','true');room.append(echo);
   const tunnel=createMemoryTunnel(room);
   const fullscreenFaults=createFullscreenMemoryFaults();
-  tunnel.setTuning({count:94,speed:1.2});
+  tunnel.setTuning({count:141,speed:1.2});
   const surfaces=[];
   // Rasterize every source at the same coarse resolution and quantized palette.
   for (const art of room.querySelectorAll('.memory-room__objects:not(.memory-room__echo) .memory-object__art')) {

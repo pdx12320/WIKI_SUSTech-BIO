@@ -47,7 +47,7 @@ export function createMemoryTunnel(room){
   let last=performance.now(),travel=0,w=0,h=0,navBottom=112,impact=0,closePass=0;
   const grab=createMemoryGrab();let records=[],enabled=false,canMove=false,previousTravel=0;
   let tuning={count:36,speed:1};
-  const items=Array.from({length:96},(_,index)=>({index,energy:0,hitX:0,hitY:0,previousZ:0,travelOffset:0,fling:null}));
+  const items=Array.from({length:144},(_,index)=>({index,energy:0,hitX:0,hitY:0,previousZ:0,travelOffset:0,fling:null}));
   const finish=id=>{
     const held=id===undefined?grab.cancel():grab.release(id);if(!held)return;
     held.item.fling={...held,age:0};held.item.energy=1;

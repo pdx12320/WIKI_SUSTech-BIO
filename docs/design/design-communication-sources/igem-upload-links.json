@@ -542,6 +542,20 @@
       "local_path": "static/fonts/design/pinyon-script-regular.ttf",
       "group": "stories",
       "role": "quote font"
+    },
+    {
+      "local_path": "assets/images/design-communication/identity/visual-system-primary-colour-palette.jpg",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/visual-system-primary-colour-palette.avif",
+      "group": "identity",
+      "bytes": 17291,
+      "sha256": "6e75ef9d4af34b1029e50f806099189b944a7cd57174c243f2f7ac302cdda588",
+      "status": 200,
+      "mime": "image/avif",
+      "dimensions": [
+        1276,
+        1198
+      ],
+      "cors": null
     }
   ]
 }

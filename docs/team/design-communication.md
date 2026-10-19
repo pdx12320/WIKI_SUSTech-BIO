@@ -45,11 +45,27 @@ The goal is not simply to publish information. It is to make room for recognitio
 
 ### Our Visual System
 
-Our visual system gives these principles a common language across formats.
+Our visual system gives these principles a common language across formats. The five colors below define our primary palette: deep blue anchors the identity, violet and lavender support it, and the two pinks bring warmth.
+
+<figure class="design-palette" id="primary-visual-palette">
+  <div class="design-palette__row">
+    <a href="https://static.igem.wiki/teams/6085/wiki/design/identity/visual-system-primary-colour-palette.avif" target="_blank" rel="noopener" aria-label="Open the original ORCA primary color palette">
+      <img src="https://static.igem.wiki/teams/6085/wiki/design/identity/visual-system-primary-colour-palette.avif" alt="ORCA primary visual palette: #FFDBDD, #C6CCF4, #7375B2, #303D72, and #FB95A3" width="1276" height="1198">
+    </a>
+    <dl class="design-palette__key">
+      <div><dt><span class="design-palette__swatch design-palette__swatch--blush" aria-hidden="true"></span>Blush</dt><dd>#FFDBDD</dd></div>
+      <div><dt><span class="design-palette__swatch design-palette__swatch--lavender" aria-hidden="true"></span>Lavender</dt><dd>#C6CCF4</dd></div>
+      <div><dt><span class="design-palette__swatch design-palette__swatch--violet" aria-hidden="true"></span>Violet</dt><dd>#7375B2</dd></div>
+      <div><dt><span class="design-palette__swatch design-palette__swatch--blue" aria-hidden="true"></span>Deep blue</dt><dd>#303D72</dd></div>
+      <div><dt><span class="design-palette__swatch design-palette__swatch--coral" aria-hidden="true"></span>Coral pink</dt><dd>#FB95A3</dd></div>
+    </dl>
+  </div>
+  <figcaption>Figure 2. ORCA’s primary visual palette.</figcaption>
+</figure>
 
 | Element | How we use it |
 | --- | --- |
-| Color | Deep blue and coral pink create contrast between scientific focus and human warmth. Final values and usage rules follow the approved design files. |
+| Color | The five-color palette above is the reference for our visual identity. Deep blue provides structure, violet and lavender provide supporting tones, and blush and coral pink add warmth. |
 | Typography | Headings, body text, and display text use clear levels so readers can move through both scientific and public-facing content. |
 | Graphic language | Whale forms, RNA-like curves, and organic contours connect biological ideas with the ORCA identity. |
 | Layout and readability | Images, captions, and text are arranged with deliberate hierarchy and enough contrast for desktop and mobile reading. |
@@ -65,7 +81,7 @@ Guided by [our design principles](#our-design-principles), our identity is an ev
   <a href="https://static.igem.wiki/teams/6085/wiki/design/identity/figure-02-early-logo.avif" target="_blank" rel="noopener">
     <img src="https://static.igem.wiki/teams/6085/wiki/design/identity/figure-02-early-logo.avif" alt="Early logo concept" width="1080" height="1080">
   </a>
-  <figcaption>Figure 2. Early SUSTech-BIO logo concept from the Alzheimer’s disease and liver-disease project phase.</figcaption>
+  <figcaption>Figure 3. Early SUSTech-BIO logo concept from the Alzheimer’s disease and liver-disease project phase.</figcaption>
 </figure>
 
 ### REWIRE
@@ -93,7 +109,7 @@ In the second version, the system still used the name REWIRE. The curve along th
       <span class="design-panel__label" aria-hidden="true">(c)</span>
     </div>
   </div>
-  <figcaption>Figure 3. Second-version REWIRE identity, with the whale’s underside curve echoing an RNA strand: (a) project logo; (b) SUSTech-BIO mark; (c) mascot sheet.</figcaption>
+  <figcaption>Figure 4. Second-version REWIRE identity, with the whale’s underside curve echoing an RNA strand: (a) project logo; (b) SUSTech-BIO mark; (c) mascot sheet.</figcaption>
 </figure>
 
 ### ORCA
@@ -141,7 +157,7 @@ The mascot extends the identity into a more personal form. It gives the team a c
       <span class="design-panel__label" aria-hidden="true">(f)</span>
     </div>
   </div>
-  <figcaption>Figure 4. Third-version ORCA identity after the project-name change and headwear refinement: (a) ORCA logo; (b) mascot-logo lockup; (c) standing mascot; (d) Thinking; (e) conch-shell pose; (f) Sleepy.</figcaption>
+  <figcaption>Figure 5. Third-version ORCA identity after the project-name change and headwear refinement: (a) ORCA logo; (b) mascot-logo lockup; (c) standing mascot; (d) Thinking; (e) conch-shell pose; (f) Sleepy.</figcaption>
 </figure>
 
 ### Wiki home style explorations
@@ -169,7 +185,7 @@ Our early Wiki home explorations tested different ways to bring the project's vi
       <span class="design-panel__label" aria-hidden="true">(c)</span>
     </div>
   </div>
-  <figcaption>Figure 5. Early Wiki home style explorations: (a) a long page composition connecting the ORCA heading to the reading space with flowing lines and puzzle shapes; (b) an expressive pink-and-blue header with hand-lettered text; (c) a character-based composition with a large open reading area.</figcaption>
+  <figcaption>Figure 6. Early Wiki home style explorations: (a) a long page composition connecting the ORCA heading to the reading space with flowing lines and puzzle shapes; (b) an expressive pink-and-blue header with hand-lettered text; (c) a character-based composition with a large open reading area.</figcaption>
 </figure>
 
 ## Design in Action
@@ -186,12 +202,12 @@ A WORLDPROOF Hackathon participant badge shows the identity in an external event
 
 <figure>
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-06-team-hoodie-v1.avif" alt="First-version hooded team jacket concept">
-  <figcaption>Figure 6. First team-clothing concept from the early Alzheimer’s disease and liver-disease project phase.</figcaption>
+  <figcaption>Figure 7. First team-clothing concept from the early Alzheimer’s disease and liver-disease project phase.</figcaption>
 </figure>
 
 <figure>
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-07-team-tshirt-v2.avif" alt="Second-version navy short-sleeve team T-shirt, front and back">
-  <figcaption>Figure 7. Second-version short-sleeve team T-shirt: a small chest logo on the front and the mascot composition on the back.</figcaption>
+  <figcaption>Figure 8. Second-version short-sleeve team T-shirt: a small chest logo on the front and the mascot composition on the back.</figcaption>
 </figure>
 
 <figure class="design-figure-group">
@@ -209,12 +225,12 @@ A WORLDPROOF Hackathon participant badge shows the identity in an external event
       <span class="design-panel__label" aria-hidden="true">(b)</span>
     </div>
   </div>
-  <figcaption>Figure 8. Third-version clothing graphics: (a) the expanded project name, with the initials ORCA highlighted in pink; (b) SUSTech, BIO, and ORCA lettering.</figcaption>
+  <figcaption>Figure 9. Third-version clothing graphics: (a) the expanded project name, with the initials ORCA highlighted in pink; (b) SUSTech, BIO, and ORCA lettering.</figcaption>
 </figure>
 
 <figure id="third-version-team-jacket">
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-09-team-varsity-jacket-v3.avif" alt="Third-version navy-and-white varsity team jacket, front and back design mockup" width="1448" height="1086">
-  <figcaption>Figure 9. Third-version varsity team jacket: front and back design mockup, showing the ORCA project lettering, SUSTech-BIO wordmark, and killer-whale mark.</figcaption>
+  <figcaption>Figure 10. Third-version varsity team jacket: front and back design mockup, showing the ORCA project lettering, SUSTech-BIO wordmark, and killer-whale mark.</figcaption>
 </figure>
 
 ### Team flags and online meetings
@@ -230,24 +246,24 @@ A WORLDPROOF Hackathon participant badge shows the identity in an external event
       <span class="design-panel__label" aria-hidden="true">(b)</span>
     </div>
   </div>
-  <figcaption>Figure 10. Team flag evolution: (a) first version with the earlier whale mark; (b) current version with the killer-whale mark replacing the earlier central mark.</figcaption>
+  <figcaption>Figure 11. Team flag evolution: (a) first version with the earlier whale mark; (b) current version with the killer-whale mark replacing the earlier central mark.</figcaption>
 </figure>
 
 <figure>
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-11-online-meeting-background.avif" alt="Tencent meeting background">
-  <figcaption>Figure 11. Online meeting background carrying the SUSTech-BIO identity, iGEM mark, REWIRE mark, and DNA motif.</figcaption>
+  <figcaption>Figure 12. Online meeting background carrying the SUSTech-BIO identity, iGEM mark, REWIRE mark, and DNA motif.</figcaption>
 </figure>
 
 ### Event materials and merchandise
 
 <figure class="design-badge" id="worldproof-badge">
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-12-worldproof-hackathon-badge.avif" alt="WORLDPROOF Hackathon participant badge" width="815" height="1181">
-  <figcaption>Figure 12. WORLDPROOF Hackathon participant-badge design.</figcaption>
+  <figcaption>Figure 13. WORLDPROOF Hackathon participant-badge design.</figcaption>
 </figure>
 
 <figure>
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-13-mascot-personality-stickers.avif" alt="Mascot personality stickers — white-background triptych">
-  <figcaption>Figure 13. Mascot personality stickers, arranged left to right: Quick-Witted, Gentle, and Energetic.</figcaption>
+  <figcaption>Figure 14. Mascot personality stickers, arranged left to right: Quick-Witted, Gentle, and Energetic.</figcaption>
 </figure>
 
 Our tri-fold brochures introduce the team and project at the South China exchange and APiC conference.
@@ -276,7 +292,7 @@ Our tri-fold brochures introduce the team and project at the South China exchang
       <span class="design-panel__label" aria-hidden="true">(c)</span>
     </div>
   </div>
-  <figcaption>Figure 14. Event communication: (a) South China exchange poster; (b, c) HP community outreach poster template, pages 1 and 2.</figcaption>
+  <figcaption>Figure 15. Event communication: (a) South China exchange poster; (b, c) HP community outreach poster template, pages 1 and 2.</figcaption>
 </figure>
 
 ### Conference presentations
@@ -285,7 +301,7 @@ The APiC opening-ceremony presentation extends the visual identity to a conferen
 
 <figure>
   <img src="https://static.igem.wiki/teams/6085/wiki/design/applications/figure-15-apic-opening-slide-01.avif" alt="First slide of the APiC conference opening-ceremony presentation">
-  <figcaption>Figure 15. Opening slide of the APiC conference opening-ceremony presentation.</figcaption>
+  <figcaption>Figure 16. Opening slide of the APiC conference opening-ceremony presentation.</figcaption>
 </figure>
 
 Beyond recognition at events, the same emphasis on clarity and participation guides [our public-facing stories](#science-meets-people).
@@ -323,7 +339,7 @@ The handwritten cards bring participants' own words into this visual story, turn
       <span class="design-panel__label" aria-hidden="true">(c)</span>
     </div>
   </div>
-  <figcaption>Figure 16. The Time Capsule activity: (a) writing materials and mascot stickers; (b) the mailbox at the activity table; (c) participants' handwritten cards.</figcaption>
+  <figcaption>Figure 17. The Time Capsule activity: (a) writing materials and mascot stickers; (b) the mailbox at the activity table; (c) participants' handwritten cards.</figcaption>
 </figure>
 
 
@@ -339,7 +355,7 @@ The handwritten cards bring participants' own words into this visual story, turn
       <a href="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" target="_blank" rel="noopener">
         <img src="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" alt="Aphasia Map instruction board: draw an object card, avoid the listed words, and communicate through gestures or alternative descriptions" width="1080" height="1528">
       </a>
-      <figcaption>Figure 17. The Aphasia Map (失语地图) activity board, presenting the rules as three illustrated steps.</figcaption>
+      <figcaption>Figure 18. The Aphasia Map (失语地图) activity board, presenting the rules as three illustrated steps.</figcaption>
     </figure>
   </div>
 </div>
@@ -369,5 +385,5 @@ The Chinese and English event posts connect the activities, their visual materia
       <a class="design-story-read-link" href="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-b-time-capsule-post-en-long.avif" target="_blank" rel="noopener">Read the full English post ↗</a>
     </div>
   </div>
-  <figcaption>Figure 18. Bilingual event posts: (a) Chinese; (b) English. Open either preview to read the complete original long image.</figcaption>
+  <figcaption>Figure 19. Bilingual event posts: (a) Chinese; (b) English. Open either preview to read the complete original long image.</figcaption>
 </figure>

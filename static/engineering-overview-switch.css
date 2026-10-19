@@ -1,0 +1,104 @@
+/* Two viewport-sized scenes; only confirmed navigation moves between them. */
+.engineering-workspace[data-engineering-view='map'] {
+  --engineering-overview-height:calc(100svh - var(--engineering-nav-height,112px));
+  padding:0 clamp(6px,1vw,16px);
+}
+.engineering-map.engineering-map--stacked {
+  --overview-left-rail:clamp(108px,13vw,190px);
+  --overview-right-rail:clamp(116px,14vw,200px);
+  --overview-rail-gap:clamp(8px,1vw,18px);
+  display:block; position:relative; height:100%; overflow:hidden;
+  overscroll-behavior:contain;
+}
+.engineering-project-overview-stage,
+.engineering-mindmap-stage {
+  position:absolute; inset:0; box-sizing:border-box; height:100%; min-height:0;
+  outline:none; transition:transform .42s cubic-bezier(.22,.7,.25,1),visibility 0s .42s;
+}
+.engineering-project-overview-stage { transform:translateY(0); overflow:hidden; visibility:visible; transition-delay:0s; }
+.engineering-mindmap-stage { transform:translateY(100%); visibility:hidden; pointer-events:none; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; padding:0 0 16px; }
+.engineering-map--stacked[data-overview-section='mindmap'] .engineering-project-overview-stage { transform:translateY(-100%); visibility:hidden; pointer-events:none; transition-delay:0s,.42s; }
+.engineering-map--stacked[data-overview-section='mindmap'] .engineering-mindmap-stage { transform:translateY(0); visibility:visible; pointer-events:auto; transition-delay:0s; }
+.engineering-project-overview-figure { position:absolute; inset:0 calc(var(--overview-right-rail) + var(--overview-rail-gap)) 44px calc(var(--overview-left-rail) + var(--overview-rail-gap)); margin:0; }
+.engineering-project-overview-art {
+  display:block; width:100%; height:100%; max-height:100%;
+}
+.engineering-view-switch-row { display:flex; justify-content:flex-end; width:100%; box-sizing:border-box; padding:4px; z-index:2; }
+.engineering-project-overview-stage > .engineering-view-switch-row { position:absolute; right:0; bottom:0; }
+.engineering-mindmap-stage > .engineering-view-switch-row { position:sticky; top:0; background:#ffffffed; }
+.engineering-view-switch {
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:36px; padding:6px 16px; border:1px solid #c6cedd; border-radius:999px;
+  background:#f2f4f9; color:#3d5279; font:600 15px/1.3 'Source Sans 3','Segoe UI',sans-serif;
+  cursor:pointer; transition:background .18s,border-color .18s;
+}
+.engineering-view-switch:hover { background:#e7ecf5; border-color:#8c9bb8; }
+.engineering-view-switch:focus-visible { outline:3px solid #6575a3; outline-offset:2px; }
+.engineering-view-switch span { font-size:20px; line-height:1; }
+.engineering-map--stacked .engineering-map-canvas {
+  box-sizing:border-box; width:100%; max-width:1220px; margin-inline:auto;
+  height:calc(100% - 44px); min-height:570px;
+}
+.engineering-view-hint {
+  position:absolute; z-index:3; right:8px; bottom:48px; max-width:calc(100% - 32px);
+  padding:8px 14px; border:1px solid #c6cedd; border-radius:12px;
+  background:#f2f4ff; color:#3d5279; font:500 14px/1.4 'Source Sans 3','Segoe UI',sans-serif;
+  pointer-events:none;
+}
+.engineering-map--stacked[data-overview-section='mindmap'] .engineering-view-hint { top:48px; bottom:auto; }
+@media (max-width:900px) { .engineering-map--stacked .engineering-map-canvas { min-height:680px; height:auto; } }
+@media (max-width:599px), (hover:none) {
+  .engineering-map--stacked[data-overview='true'] .engineering-map-canvas { height:auto; min-height:0; padding-top:30px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .engineering-project-overview-stage,.engineering-mindmap-stage,.engineering-view-switch { transition:none; }
+}
+
+/* Independent spotlight: the approved artwork stays untouched. */
+.engineering-project-overview-art > image { transition:opacity .18s; }
+.engineering-project-overview-art:has(.overview-links a:is(:hover,:focus-visible)) > image { opacity:.35; }
+.engineering-project-overview-art .overview-spotlight { opacity:0; pointer-events:none; transition:opacity .18s; }
+.engineering-project-overview-art .overview-hotspot:has(a:is(:hover,:focus-visible)) > .overview-spotlight { opacity:1; }
+.engineering-project-overview-art .overview-links a:is(:hover,:focus-visible) > rect { stroke:#536b91; stroke-width:2; vector-effect:non-scaling-stroke; }
+@media (prefers-reduced-motion:reduce) {
+  .engineering-project-overview-art > image,
+  .engineering-project-overview-art .overview-spotlight { transition:none; }
+}
+
+
+/* Side rails sit level with the artwork and reserve no vertical space. */
+.engineering-overview-toolbar {
+  position:absolute; inset:0 0 44px; z-index:4; pointer-events:none;
+}
+.engineering-overview-toolbar-title {
+  position:absolute; top:50%; left:0; transform:translateY(-50%);
+  width:var(--overview-left-rail); box-sizing:border-box;
+  margin:0; padding:0 4px; border:0; text-align:center;
+  color:#354969; font:400 clamp(18px,1.7vw,28px)/1.3 Georgia,serif;
+}
+.engineering-overview-actions {
+  position:absolute; top:50%; right:0; transform:translateY(-50%);
+  width:var(--overview-right-rail); display:flex; flex-direction:column; gap:12px;
+  pointer-events:auto;
+}
+.engineering-overview-actions a {
+  display:grid; grid-template-columns:16px minmax(0,1fr); align-items:center; min-height:42px;
+  padding:8px 10px; box-sizing:border-box; border:1px solid #cbd4e2; border-radius:999px;
+  color:#405578; background:#fff; text-decoration:none; text-align:left;
+  font:600 clamp(12px,1vw,14px)/1.25 'Source Sans 3','Segoe UI',sans-serif;
+}
+.engineering-overview-actions a:hover { background:#edf1f8; border-color:#8e9fba; }
+.engineering-overview-actions a:focus-visible { outline:3px solid #6575a3; outline-offset:2px; }
+.engineering-overview-actions a.engineering-overview-actions-primary { background:#eaf0fa; border-color:#bac9df; }
+.engineering-map--stacked[data-overview-section='mindmap'] .engineering-overview-toolbar { visibility:hidden; }
+@media (max-width:480px) {
+  .engineering-map.engineering-map--stacked { --overview-left-rail:80px; --overview-right-rail:92px; --overview-rail-gap:4px; }
+  .engineering-overview-toolbar-title { font-size:14px; }
+  .engineering-overview-actions { gap:8px; }
+  .engineering-overview-actions a { padding:7px 5px; font-size:11px; }
+}
+
+.engineering-overview-actions a { gap:7px; }
+.engineering-action-icon { display:block; flex:0 0 16px; width:16px; height:16px; }
+.engineering-overview-actions a > span { min-width:0; }
+@media (max-width:480px) { .engineering-overview-actions a { gap:4px; } }

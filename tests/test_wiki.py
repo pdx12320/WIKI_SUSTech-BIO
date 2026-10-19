@@ -324,7 +324,14 @@ class WikiRoutesTest(unittest.TestCase):
         self.assertNotRegex(map_section.group(1), r'<img\b')
         self.assertEqual(len(re.findall(r'<image\b', map_section.group(1))), 1)
         self.assertIn('data-engineering-overview=', map_section.group(1))
-        self.assertEqual(len(re.findall(r'\bdata-overview-layer=', map_section.group(1))), 21)
+        self.assertIn('data-overview-independent=', map_section.group(1))
+        for target in re.findall(r'data-overview-target="([^"]+)"', map_section.group(1)):
+            self.assertIn(f'id="{target}"', page)
+        self.assertIn('images/engineering-overviews/project-overview.png', map_section.group(1))
+        self.assertIn('data-overview-scroll="engineering-mindmap"', map_section.group(1))
+        self.assertIn('data-overview-scroll="engineering-project-overview"', map_section.group(1))
+        self.assertLess(map_section.group(1).index('id="engineering-project-overview"'),
+                        map_section.group(1).index('id="engineering-mindmap"'))
         self.assertNotIn('engineering-map-water-art', map_section.group(1))
         self.assertRegex(map_section.group(1), r'<h1\b[^>]*id="engineering-map-title"[^>]*>Platform Development</h1>')
         visible_copy = re.sub(r'<[^>]+>', '', map_section.group(1))

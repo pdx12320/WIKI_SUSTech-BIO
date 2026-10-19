@@ -42,8 +42,9 @@
 
 
   const art = map.querySelector('[data-engineering-overview]');
+  const independentOverview = art.hasAttribute('data-overview-independent');
   const layers = [...art.querySelectorAll('[data-overview-layer]')];
-  const diagramLinks = [...art.querySelectorAll('[data-overview-target]')];
+  const diagramLinks = independentOverview ? [] : [...art.querySelectorAll('[data-overview-target]')];
   // Write real SVG paint values, rather than trusting compositing filters on
   // groups of <use> glyphs. Keep an immutable copy for exact color restoration.
   const paints = new Map(layers.map(layer => [layer,
@@ -57,6 +58,7 @@
       }))
   ]));
   function highlight(group, part = '') {
+    if (independentOverview) return;
     if (art.dataset.activeGroup === group && art.dataset.activePart === part) return;
     art.dataset.activeGroup = group;
     art.dataset.activePart = part;

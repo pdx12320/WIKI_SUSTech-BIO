@@ -85,7 +85,10 @@ body.engineering-workspace-page {
   box-shadow: 0 0 28px 2px #5f667526;
   overflow: hidden;
 }
-.engineering-scroll { overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #959fce #efeffa; scroll-padding: 24px; }
+.engineering-scroll { overflow: auto; overscroll-behavior: contain; scroll-padding: 24px; }
+/* Keep native scrolling without a visible bar beside the reader. */
+.engineering-scroll { scrollbar-width: none; }
+.engineering-scroll::-webkit-scrollbar { display: none; }
 .engineering-scroll:focus-visible { outline: 3px solid #989fd3; outline-offset: -5px; }
 /* Fixed end space keeps the last lines readable above the chapter drawer. */
 .engineering-copy { padding: 12px clamp(30px, 4vw, 56px) 112px; }

@@ -5,11 +5,12 @@
 }
 .engineering-controls .engineering-cycle-tuner[hidden] { display: none; }
 .cycle-tuner-viewport {
-  min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin;
-  scrollbar-color: #a7afc9 #e8ebf3; border: 1px solid #c5ccdd; border-radius: 8px;
+  min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none;
+  border: 1px solid #c5ccdd; border-radius: 8px;
   background: linear-gradient(#e1e7f0, #f8f9fc 30px, #eef1f7);
   box-shadow: inset 0 2px 4px #33407117, 0 1px 0 #fff;
 }
+.cycle-tuner-viewport::-webkit-scrollbar { display: none; }
 .cycle-tuner-track { position: relative; display: flex; min-width: 100%; width: 100%; }
 .cycle-tuner-track[data-expanded='true'] { width: calc(var(--tuner-count) * 132px); }
 .cycle-tuner-track::before {

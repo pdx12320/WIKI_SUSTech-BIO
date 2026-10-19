@@ -12,106 +12,205 @@ ORCA began with a therapeutic question: could programmable C-to-U RNA editing re
 
 We addressed these challenges through five interconnected routes—**EDIT, CONTROL, DELIVER, MEASURE, and MODEL**—before taking our first steps toward disease-relevant cellular evaluation. Here, we bring together their principal outcomes and examine how far the resulting platform has progressed beyond molecular editing.
 
-## 01. EDIT — Engineering a More Precise RNA Editor
+## Platform Achievements
 
-We first improved ORCA at the molecular level, engineering the PUF recognition domain and APOBEC catalytic domain independently before evaluating them in combination. Throughout, the goal was not simply higher editing at the intended APOE4 cytidine, **C388**, but a more favorable balance between that edit and potentially damaging bystander conversions.
+<section class="results-achievements" aria-label="Six platform achievements">
+  <article class="achievement-card edit" aria-labelledby="edit-title">
+    <a class="card-figure" href="/assets/images/results-achievements/edit.png" data-enlarge aria-label="Enlarge Edit summary figure"><img src="/assets/images/results-achievements/edit.png" alt="POD recognition candidates and CETUS catalytic candidates combine into Integrated ORCA editors IO-02 and IO-03." width="3600" height="2000"></a>
+    <div class="card-copy"><h3 id="edit-title">Keep the edit. Reduce the bystanders.</h3>
+      <p class="card-description">IO-02 and IO-03 retained 61.31% and 69.78% C388 editing, respectively, while reducing C871 editing from 79.17% in the parental editor to 13.84% and 14.28%. Their broader bystander profiles offered complementary choices.</p>
+      <p class="card-takeaway"><em>The complete editing profile guided candidate selection.</em></p>
+    </div><a class="card-link" href="/engineering#integrated-orca-conclusion-from-component-optimization-to-editor-level-selection">Back to Engineering</a>
+  </article>
 
-**POD (Programmable On-target Docking)** examined how targeted changes to PUF tripartite recognition motifs (TRMs) [5,6] affect RNA recognition and editing outcomes. Across 81 evaluated variants, performance depended strongly on both repeat position and recognition-motif composition. One representative candidate, **P9-NTQ**, retained **93.88%** of the parental PUF12 C388 activity while improving selectivity relative to C295 and C871 by **1.29-fold** and **2.90-fold**, respectively. These results showed that local recognition-interface engineering could improve particular specificity trade-offs without necessarily sacrificing most target activity.
+  <article class="achievement-card control" aria-labelledby="control-title">
+    <a class="card-figure" href="/assets/images/results-achievements/control.png" data-enlarge aria-label="Enlarge Control summary figure"><img src="/assets/images/results-achievements/control.png" alt="G.M.A.C. regulatory approaches: GFA and ASO tested, MRE constructed without confirmed specific regulation, Cre–loxP designed." width="3600" height="2800"></a>
+    <div class="card-copy"><h3 id="control-title">Turn editing down on demand.</h3>
+      <p class="card-description">ASO treatment reduced C388 editing in tagged ORCA from 57.13% to 28.54% at the 48-hour readout. The gfaABC1D promoter also showed cell-context-dependent expression, providing a second route to regulate ORCA.</p>
+      <p class="card-takeaway"><em>ASO-dependent suppression was demonstrated; recovery after withdrawal remains untested.</em></p>
+    </div><a class="card-link" href="/engineering#aso-conclusion-from-aso-target-selection-to-an-engineered-off-interface">Back to Engineering</a>
+  </article>
 
-**CETUS (Cytidine Editing, Tethered for Uridine Switching)** addressed APOBEC sequence-context preference. **G27T–K30H–Q58M** achieved a **GCG/GCA editing ratio of 2.156** while retaining **77.3%** of target activity in one combination batch, and remained competitive in a later batch (**ROF 1.218; activity retention 0.980**). **M132E** provided an activity-retaining single-mutant candidate (**retention 1.018; ROF 1.062**) and retained more activity than M132D in a matched combination background. These distinct performance profiles motivated their subsequent evaluation with POD in Integrated ORCA.
+  <article class="achievement-card deliver" aria-labelledby="deliver-title">
+    <a class="card-figure" href="/assets/images/engineering-conclusions/deliver.png" data-enlarge aria-label="Enlarge Deliver summary figure"><img src="/assets/images/engineering-conclusions/deliver.png" alt="AAV9 workflow progresses through reporter production, ORCA packaging and recipient-cell testing; ORCA expression remains unconfirmed." width="3600" height="2041"></a>
+    <div class="card-copy"><h3 id="deliver-title">From vector to delivery testing.</h3>
+      <p class="card-description">We constructed and packaged GFA–ORCA and CMV–ORCA AAV9 vectors, then tested the GFA–ORCA preparation in CCF-STTG1 cells. The recipient-cell assay did not detect a clear ORCA transcript band.</p>
+      <p class="card-takeaway"><em>Production and testing workflows are in place; functional delivery remains unconfirmed.</em></p>
+    </div><a class="card-link" href="/engineering#deliver-conclusion">Back to Engineering</a>
+  </article>
 
-We then combined four POD and four CETUS candidates to design **16 Integrated ORCA configurations**, of which **14** were sequence-verified and functionally evaluated alongside the parental editor and relevant single-module controls. C388 editing varied widely, from **0.81% to 77.18%**. Some pairings preserved strong activity; others lost activity despite containing individually promising modules. **Optimization of separate domains was therefore not reliably additive.**
+  <article class="achievement-card measure" aria-labelledby="measure-title">
+    <a class="card-figure" href="/assets/images/engineering-conclusions/measure.png" data-enlarge aria-label="Enlarge Measure summary figure"><img src="/assets/images/engineering-conclusions/measure.png" alt="SONAR connects modular reporter engineering, relative calibration, SAP and real-editor tests; PER is not yet validated." width="3600" height="2000"></a>
+    <div class="card-copy"><h3 id="measure-title">Read beyond the glow.</h3>
+      <p class="card-description">SONAR connects a modular reporter with relative optical scores and the SAP analysis workflow. Real-editor tests showed that increasing the molecular editing signal did not produce a corresponding rise in normalized green fluorescence.</p>
+      <p class="card-takeaway"><em>Reporter activity and RNA editing percentage require distinct evidence.</em></p>
+    </div><a class="card-link" href="/engineering#measure-conclusion">Back to Engineering</a>
+  </article>
 
-Selection also required looking beyond the target site. Relative to the parental editor's **79.17% C871 editing**, **IO-02** and **IO-03** reduced this potentially stop-generating bystander signal to **13.84%** and **14.28%**, respectively. We additionally evaluated editing across **290 non-target cytidines** in the sequenced APOE coding region and examined co-editing within individual sequencing reads. Integrating target activity, potentially disruptive bystanders, and read-level composition led us to select two complementary editors: **IO-02 (61.31% C388 editing)** and **IO-03 (69.78%)**. IO-02 offered a more favorable profile across broader potentially nonsynonymous bystanders, whereas IO-03 combined stronger target activity with advantages in avoiding selected predicted premature-stop changes.
+  <article class="achievement-card model" aria-labelledby="model-title">
+    <a class="card-figure" href="/assets/images/engineering-conclusions/model.png" data-enlarge aria-label="Enlarge Model summary figure"><img src="/assets/images/engineering-conclusions/model.png" alt="PUFFER connects RNA-seq analysis, PUF specificity ranking, catalytic design, LAMAR site prioritization and delivery simulations." width="3600" height="2840"></a>
+    <div class="card-copy"><h3 id="model-title">Narrow the search. Guide the next test.</h3>
+      <p class="card-description">The PUF specificity ranker recovered 20 of the measured Top30 candidates in a grouped evaluation of 66 constructs. Together with RNA-seq analysis, LAMAR and delivery simulations, this work helped prioritize candidates and questions for experimental testing.</p>
+      <p class="card-takeaway"><em>Predictions guide validation; their performance is bounded by the evaluated data.</em></p>
+    </div><a class="card-link" href="/engineering#model-conclusion">Back to Engineering</a>
+  </article>
 
-**The outcome of EDIT was not a single maximum-efficiency variant, but a candidate-selection strategy that evaluates what happens to the edited RNA molecule as a whole.** Detailed mutation screens and comparative benchmarks are presented in POD, CETUS, and Integrated ORCA Engineering.
+  <article class="achievement-card fv" aria-labelledby="fv-title">
+    <a class="card-figure" href="/assets/images/engineering-conclusions/functional-validation.png" data-enlarge aria-label="Enlarge Functional Validation summary figure"><img src="/assets/images/engineering-conclusions/functional-validation.png" alt="CCF-STTG1 studies establish provisional electroporation conditions and explore BODIPY imaging and Aβ42 ELISA, with limited phenotypic evidence." width="2880" height="1920"></a>
+    <div class="card-copy"><h3 id="fv-title">Testing ORCA beyond the reporter.</h3>
+      <p class="card-description">We established provisional electroporation conditions in CCF-STTG1 cells and explored lipid-associated imaging and extracellular Aβ42 measurement. Limited imaging replication and out-of-range ELISA samples defined the requirements for the next experiments.</p>
+      <p class="card-takeaway"><em>These studies begin cellular evaluation; they do not yet establish causal functional rescue.</em></p>
+    </div><a class="card-link" href="/engineering#functional-validation-conclusion">Back to Engineering</a>
+  </article>
+</section>
 
-## 02. CONTROL — Regulating Expression and Editing Activity
+## SONAR Spotlight
 
-Specificity at the RNA-binding interface cannot, by itself, control which cells express an editor or how long its activity persists. Our **G.M.A.C. framework** therefore explored four complementary regulatory approaches: transcriptional control, post-transcriptional regulation, externally induced suppression, and permanent shutdown.
+<p class="sonar-introduction">SONAR connects <strong>reporter Engineering, a Measurement framework, and reusable resources shared through Contribution</strong>. Together, they turn an experimental reporter into a workflow that other teams can understand, adapt and test.</p>
 
-For **transcriptional control**, we investigated the compact **gfaABC1D** promoter [7]. Relative to CMV within each cell background, gfaABC1D drove lower ORCA expression in HEK293T but higher expression in U251. Target-site Sanger measurements followed the same direction: the editing-associated signal changed from **73.5% under CMV to 8.5% under gfaABC1D** in HEK293T, but from **7.5% to 57.0%** in U251. These semi-quantitative observations supported strong **cell-context dependence**, rather than establishing universal astrocyte specificity.
+<figure class="sonar-system" aria-labelledby="sonar-system-title">
+  <div class="sonar-ring">
+    <strong class="sonar-ring-title" id="sonar-system-title">SONAR</strong>
+    <svg class="sonar-ring-arrows" viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs><marker id="sonar-cycle-arrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" viewBox="0 0 16 16" refX="12" refY="8" orient="auto"><path d="M2 2 L14 8 L2 14 Z"/></marker></defs>
+      <path class="sonar-ring-path" d="M670 162 A300 300 0 0 1 800 400" marker-end="url(#sonar-cycle-arrow)"/>
+      <path class="sonar-ring-path" d="M590 696 A300 300 0 0 1 410 696" marker-end="url(#sonar-cycle-arrow)"/>
+      <path class="sonar-ring-path" d="M200 400 A300 300 0 0 1 330 162" marker-end="url(#sonar-cycle-arrow)"/>
+    </svg>
+    <section class="sonar-cycle-card sonar-ring-engineering" aria-labelledby="sonar-engineering-title">
+      <h3 id="sonar-engineering-title"><a href="/engineering#measure">Engineering</a></h3>
+      <p class="sonar-cycle-role">Build and test the reporter:</p>
+      <p>Reporter construction and controlled editor tests provide modeling benchmarks, experimental data and independent molecular evidence.</p>
+      <a class="sonar-chapter-link" href="/engineering#measure">Explore Engineering</a>
+    </section>
+    <section class="sonar-cycle-card sonar-ring-measurement" aria-labelledby="sonar-measurement-title">
+      <h3 id="sonar-measurement-title"><a href="/measurement">Measurement</a></h3>
+      <p class="sonar-cycle-role">Define how to interpret the signal:</p>
+      <p>Data define cell selection, normalization and reference calibration, and test how optical signals relate to molecular evidence.</p>
+      <a class="sonar-chapter-link" href="/measurement">Explore Measurement</a>
+    </section>
+    <section class="sonar-cycle-card sonar-ring-contribution" aria-labelledby="sonar-contribution-title">
+      <h3 id="sonar-contribution-title"><a href="/contribution#sonar">Contribution</a></h3>
+      <p class="sonar-cycle-role">Make the workflow usable by others:</p>
+      <p>Reporter designs, protocols and <strong>SAP (SONAR Analysis Program)</strong> help other teams adapt reporters and use the measurement framework.</p>
+      <a class="sonar-chapter-link" href="/contribution#sonar">Explore Contribution</a>
+    </section>
+    <div class="sonar-ring-label sonar-ring-data"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 V20 M6 14 L12 20 L18 14"/></svg></span><span class="sonar-label-text">Provides modeling benchmarks and experimental data</span></div>
+    <div class="sonar-ring-label sonar-ring-framework"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 V20 M6 14 L12 20 L18 14"/></svg></span><span class="sonar-label-text">Serves as<br>the software core</span></div>
+    <div class="sonar-ring-label sonar-ring-reuse"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 8 A8 8 0 1 0 19 17 M19 3 V8 H14"/></svg></span><span class="sonar-label-text">Tools, parts and guidance for other teams</span></div>
+  </div>
+</figure>
 
-For **post-transcriptional regulation** [8], we tested a **4×6T MRE** architecture and a reduced configuration. MRE-containing constructs repeatedly showed substantially attenuated expression, but the experiments did not establish convincing miRNA-specific suppression. We therefore **excluded the MRE module from the final ORCA design** instead of retaining a regulatory feature without adequate functional support.
+<p class="sonar-explanation"><strong>SONAR is the overall system; SAP is the software within it.</strong> The reporter supplies experimental signals, Measurement defines how to analyze them, and SAP helps users apply the workflow—from reporter sequence adaptation to flow-data analysis and export.</p>
 
-The **ASO** [9] route provided a more direct means of external intervention. After engineering a synthetic ASO-binding tag, treatment with **C805 ASO** reduced tagged mCherry fluorescence by **78.6% at 48 hours**. Introducing the same tag into ORCA lowered C388 editing from **57.13% to 28.54%** at 48 hours—a **50.04% relative decrease**—with substantial suppression still observed at 96 hours. Untagged ORCA did not show the same response. This established **tag-dependent suppression of editing output**, although recovery after ASO withdrawal remains to be demonstrated.
+<section class="orca-journey" aria-labelledby="integrated-conclusion" markdown="1">
 
-Finally, we designed a **Cre–loxP** strategy in which a later AAV–Cre intervention could excise the ORCA expression cassette. This DNA-level shutdown mechanism remains **a proposed design, not an experimentally validated result**.
+## Beyond One Base {#integrated-conclusion}
 
-Taken together, CONTROL identified two particularly useful components for further work: **gfaABC1D** for cell-background-dependent transcriptional regulation and the **synthetic ASO tag** for externally induced attenuation of editing activity.
+<p class="journey-subtitle"><em>The ORCA Journey</em></p>
 
-## 03. DELIVER — Exploring AAV9-Mediated Delivery
+Most pages of this Wiki are devoted to explaining what we designed, built, tested, and learned. Here, at the end of our project, we would like to put aside the data and figures for a moment and share something more personal.
 
-The intended APOE4 correction is transient at the RNA level: newly synthesized transcripts would continue to require editing. This made **AAV9** an attractive prospective delivery platform because of its potential for sustained expression, while ORCA's relatively compact architecture offered a path toward meeting AAV payload constraints.
+Looking back on this year, we realize that some of the most meaningful parts of our journey are also the hardest to capture in a scientific report.
 
-We progressed through three experimental stages. First, **AAV–mCherry** was used to establish a three-plasmid packaging, recovery, purification, and genome-quantification workflow. Although mCherry expression was visible in producer cells, recovered viral-genome signals were low and no clear fluorescence was observed in the preliminary recipient-cell test.
+When we first started ORCA, we had a clear and exciting idea: to convert APOE4 into an APOE3-equivalent form through precise RNA editing, exploring a new possibility for Alzheimer's disease intervention. We were full of enthusiasm, and perhaps a little naive about how straightforward the path ahead might be.
 
-Next, we independently constructed **GFA–ORCA** and **CMV–ORCA** AAV transfer vectors and completed packaging, purification, and concentration. Provisional genome-titer estimates were **4.69 × 10¹² vg/mL** and **3.40 × 10¹¹ vg/mL**, respectively. These values remained subject to dilution-related and other quality-control uncertainties; genome copies do not establish intact, infectious particles.
+It did not take long for reality to challenge that expectation.
 
-Finally, we applied the GFA–ORCA AAV9 preparation to human **CCF-STTG1** cells and assayed ORCA transcripts by reverse-transcription PCR. No clear expected ORCA band was detected in the treated-cell cDNA. Thus, we established an initial production and recipient-cell testing workflow, **but have not yet demonstrated functional AAV9-mediated ORCA expression or editing**. The next challenge is to connect viral preparation quality with verified transduction, expression, and molecular editing in recipient cells.
+In our early attempts at mutation design, we sometimes found ourselves facing countless possibilities without a clear sense of which direction to take. We knew what we wanted to improve, but figuring out how to get there was another matter. Conversations with our dry-lab teammates gradually brought new perspectives and more systematic ways of approaching these problems. What had seemed like an overwhelming search began to take shape.
 
-## 04. MEASURE — Making Reporter Signals Interpretable
+That experience changed how we understood collaboration. Interdisciplinary research was no longer just a matter of assigning different tasks to people with different expertise. We discovered how much progress could come from listening to someone who approached the same problem in an entirely different way. When one person's knowledge reached its limits, another person's perspective could open a new path.
 
-To evaluate successive ORCA designs, we developed **SONAR (System for Optical Normalization and Analysis of RNA Editing)**, linking reporter construction, quantitative interpretation, and a reusable analysis workflow.
+We carried that lesson with us throughout the project.
 
-Across ten Engineering cycles, we established an editing-responsive reporter built around **mCherry** [11] as an expression reference, **EGFP** as an editing-associated readout, and an **ecDHFR destabilizing domain (DD)** to modulate reporter-protein stability [10]. AC/INAC reference constructs, TMP perturbation, reporter-dose optimization, the sequence-verified **RepOpen-A-1** reporter, and the **P2A–BFP** editor marker refined both the experimental system and its interpretation.
+We also learned that the value of an idea sometimes becomes clearer when things do not go according to plan.
 
-A critical result emerged when the reporter was tested with real editors: increasing ORCA input generally increased **BFP-positive coexpression** and the reporter's sequencing-based target-site substitution signal, but **normalized green fluorescence did not increase correspondingly**. An editing-responsive reporter therefore could not be treated as a direct readout of RNA editing percentage.
+Our SONAR reporter was originally designed for our own experiments. We wanted a convenient way to observe RNA editing and guide the development of ORCA. But as the project progressed and time became increasingly limited, we realized that we might not be able to complete everything we had envisioned.
 
-We organized the measurement problem into four layers. **Layer 0** standardizes cell-population selection and background handling. **Layer 1** calculates the **Reporter Activity Score (RAS)** from continuous EGFP and mCherry signals. **Layer 2** uses AC/INAC input mixtures to empirically calibrate a **Relative Editing Score (RES)**, which represents a reference-input equivalent rather than a measured fraction of edited RNA. **Layer 3** connects optical measurements with independent molecular evidence toward a **Predicted Editing Rate (PER)**. This final step remains exploratory: an absolutely calibrated PER has **not** yet been established.
+It was frustrating to face that possibility after investing so much effort.
 
-The **SONAR Analysis Program (SAP)** brings these concepts into a software-oriented workflow for flow-cytometry processing, layered analysis, visualization, and reusable outputs. Together, Reporter Engineering and SONAR Measurement provide a clearer distinction between **reporter response**, **relative optical calibration**, and **molecular editing evidence**.
+Then we began asking ourselves a different question. Even if we could not fully realize our original plans within this iGEM season, could the work still be useful to someone else?
 
-## 05. MODEL — Connecting Experimental Evidence with Computational Design
+We started thinking beyond APOE4, exploring how the reporter could be designed to accommodate different RNA-editing targets and how our experience could help future teams avoid some of the difficulties we had encountered. Gradually, something created to support our own research became something we hoped to share with a much wider community.
 
-Our [Model](/model) workflow connected transcriptome-wide editing profiles, protein and RNA foundation models, structural modeling and delivery simulations. Together, these approaches linked measured editing outcomes to candidate editor designs, RNA-site shortlists and system-level performance.
+We do not know who might use these tools in the future. But there is something deeply satisfying about imagining that a team we have never met might one day find our work useful.
 
-**Transcriptomic Landscape** compared **36 RNA-seq libraries** using a common candidate-screening workflow. GVE and SNE showed narrower detected editing profiles than PUF12 while retaining apparent C388 signals, which include endogenous reference T. Joint analysis of candidate-site counts, target signals and bystander rates distinguished these profiles from a general reduction in editor activity.
+In many ways, this is also what iGEM itself came to mean to us.
 
-**Recognition Code** combined model-guided PUF selection with assay-informed specificity ranking. Across 66 constructs, the **PUF-ESM Specificity Ranker** achieved Spearman **ρ = 0.405** in grouped evaluation. Its predicted Top30 recovered **20 of the measured Top30**, compared with **13.64** expected from random selection. Structure-conditioned sequence generation expanded the library of recognition and scaffold variants for subsequent testing.
+Hosting iGBA was one of the most demanding experiences of our year. Between preparations, coordination, and all the details that come with bringing people together, we spent considerable time and energy on work that had little to do with our experiments. There were moments when organizing an event seemed no easier than running a laboratory.
 
-**Catalytic Design** linked protein–RNA structural comparisons with APOBEC mutant screening and combination design. The lead combination achieved a target-to-comparison-site ratio of **2.156** while retaining **77.3% of parental target activity** in the same experimental batch. Matched comparisons connected residue choices and sequence background with measured substrate preference and activity.
+Yet we are grateful that we did it.
 
-**LAMAR** adapted an RNA foundation model to regional assessment and cytidine ranking. In Stage II evaluation, the top 10 and top 20 candidates included a supported site in **77.9% and 92.1% of 140 positive test windows**, respectively. These shortlists concentrated RNA-seq-supported sites within defined screening budgets.
+Through iGBA, we met students from different universities, listened to their projects, exchanged ideas, and shared the excitement and frustrations of doing research. It was wonderful to discover how many people our age were working just as passionately on questions completely different from our own.
 
-[**Delivery Dynamics**](/software#rewire) coupled whole-body equations with spatial simulations to examine delivery, expression and multisite RNA reactions. Simulated dose scans identified an intermediate peak in the intended RNA product, while tissue simulations revealed persistent differences in coverage. Together, these results identified delivery and expression as key determinants of product composition and tissue coverage.
+What stayed with us most was the openness of these exchanges. People were willing to share their experiences, discuss problems they had not yet solved, and appreciate one another's ideas. We had entered iGEM thinking primarily about a competition. Somewhere along the way, we found ourselves becoming part of a community.
 
-## 06. Functional Validation — Toward Disease-Relevant Cellular Effects
+**We came together because of synthetic biology, but what made the experience memorable was the people.**
 
-Functional studies moved ORCA beyond artificial reporters into CCF-STTG1, an accessible human cell model expressing endogenous APOE. The complete model-selection rationale, figures, methods and Design–Build–Test–Learn records are now in [Functional Validation within Engineering](/engineering#functional-validation).
+Our Human Practices work brought us into conversations we might never have had otherwise.
 
-### Experiment I — Establishing CCF-STTG1 Electroporation
+During our visit to a nursing home, we organized an educational session on fraud prevention for older adults. We initially focused on making the information accessible and practical. But the conversations that followed left a much deeper impression on us.
 
-An mCherry-based screen established **1350 V, 20 ms, two pulses** as a provisional working condition for subsequent experiments. The observations support detectable plasmid expression, not a calibrated transfection efficiency or a direct viability measurement. [Read Experiment I](/engineering#functional-validation-cycle-01).
+We heard concerns about health, uncertainty about unfamiliar technologies, and curiosity about new medical treatments. We began to appreciate how difficult it can be to navigate a world where information changes rapidly, especially when the consequences of trusting the wrong information can be so personal.
 
-### Experiment II — Investigating Lipid-Droplet-Related Phenotypes
+For us, scientific advances often represented exciting possibilities. For some of the older adults we met, they also raised more immediate questions: Could these developments really help people like them? How could they know what was trustworthy?
 
-IO-treated fields contained fewer algorithm-detected BODIPY-positive punctate candidates than EV, without a parallel decrease in mean whole-field fluorescence. With **one analyzable field per group** and no reliable confirmation of newly generated endogenous APOE4 editing, this is an exploratory image phenotype, not established functional rescue. [Read Experiment II](/engineering#functional-validation-cycle-02).
+We had come hoping to share knowledge. We left having learned a great deal ourselves.
 
-### Experiment III — Exploring Extracellular Aβ42 Handling
+Our conversations with Alzheimer's disease specialists brought another perspective. In the laboratory, we were accustomed to discussing APOE4, editing efficiency, molecular specificity, and delivery strategies. Clinical conversations reminded us of the realities behind those terms: the gradual changes in patients' lives, the responsibilities carried by caregivers, and the difficult decisions families must make.
 
-The ELISA standard curve was internally consistent, but **all 72 sample and reference wells exceeded its calibrated range**. Review identified **200-fold dilution instead of the planned 2000-fold**, preventing reliable residual-Aβ42 concentrations or treatment-dependent clearance comparisons. A verified dilution pilot is required before repeating the assay. [Read Experiment III](/engineering#functional-validation-cycle-03).
+They also challenged us to think about what a future treatment would actually require. Even if precise RNA editing became possible, would it be safe enough? Could it reach the right cells? What burdens might treatment place on patients?
 
-## 07. Conclusion — What ORCA Has Established
+These questions made our original ambition feel both more distant and more meaningful.
 
-Across EDIT, CONTROL, DELIVER, MEASURE, and MODEL, ORCA progressed from a programmable PUF–APOBEC editor toward a more integrated engineering platform. **POD, CETUS, and Integrated ORCA** produced and compared candidates using target activity and bystander consequences rather than target efficiency alone. **G.M.A.C.** identified promising transcriptional and externally responsive control strategies, while **AAV9 work** established an initial vector-production and recipient-cell testing workflow. **SONAR** clarified how fluorescence can—and cannot—be used to infer editing. **MODEL** connected RNA-seq evidence, PUF and APOBEC engineering, LAMAR site prioritization and whole-body simulations to guide further experimental evaluation.
+We began to understand that Alzheimer's disease is not simply a biological problem waiting for a molecular solution. It affects the ordinary moments through which people recognize one another, care for one another, and build their lives together. Behind every discussion of therapeutic potential are people hoping for more time, more independence, and more moments with those they love.
 
-The functional experiments broadened the investigation to a human cell model with endogenous APOE. They established working electroporation conditions, generated a preliminary image-based lipid phenotype for follow-up, and exposed a concrete calibration issue that must be resolved before extracellular Aβ42 responses can be measured. **They have not yet demonstrated causal phenotypic rescue, confirmed functional AAV9 delivery, or established an Alzheimer's disease therapy.**
+We cannot claim to fully understand what those families experience. But meeting people outside the laboratory helped us approach our research with greater humility and a stronger sense of responsibility.
 
-The contribution of ORCA lies in making these next steps experimentally addressable: identifying stronger and more selective editor candidates, developing routes to regulate and eventually deliver them, distinguishing optical reporter signals from molecular evidence, and defining the validation still required to connect APOE4 RNA correction with meaningful cellular function.
+There were, of course, many quieter moments throughout this year.
 
+We debated experimental designs, struggled with unexpected results, and spent far longer than anticipated on things that had once seemed simple. While some of us were working with cells and plasmids, others were developing models, writing code, preparing events, or trying to turn months of work into something understandable on this Wiki.
 
-## References
+We were not always patient, and we did not always agree. There were times when everyone was tired and the next step was far from obvious.
 
-1. Lin, Y. T., et al. (2018). APOE4 Causes Widespread Molecular and Cellular Alterations Associated with Alzheimer's Disease Phenotypes in Human iPSC-Derived Brain Cell Types. *Neuron*, 98(6), 1141–1154.e7. [https://doi.org/10.1016/j.neuron.2018.05.008](https://doi.org/10.1016/j.neuron.2018.05.008). (Source for Figure 3A–B.)
-2. Sienski, G., et al. (2021). APOE4 disrupts intracellular lipid homeostasis in human iPSC-derived glia. *Science Translational Medicine*, 13(583), eaaz4564. [https://doi.org/10.1126/scitranslmed.aaz4564](https://doi.org/10.1126/scitranslmed.aaz4564). (Source adapted in Figure 2.)
-3. Farmer, B. C., Kluemper, J., & Johnson, L. A. (2019). Apolipoprotein E4 Alters Astrocyte Fatty Acid Metabolism and Lipid Droplet Formation. *Cells*, 8(2), 182. [https://doi.org/10.3390/cells8020182](https://doi.org/10.3390/cells8020182). (Source adapted in Figure 2.)
-4. Fan, J., et al. (2016). Identification of a Chrysanthemic Ester as an Apolipoprotein E Inducer in Astrocytes. *PLOS ONE*, 11(9), e0162384. [https://doi.org/10.1371/journal.pone.0162384](https://doi.org/10.1371/journal.pone.0162384). (CCF-STTG1 model background.)
-5. Wang, X., McLachlan, J., Zamore, P. D., & Hall, T. M. T. (2002). Modular recognition of RNA by a human pumilio-homology domain. *Cell*, 110(4), 501–512. [https://doi.org/10.1016/S0092-8674(02)00873-5](https://doi.org/10.1016/S0092-8674(02)00873-5).
-6. Filipovska, A., Razif, M. F. M., Nygård, K. K. A., & Rackham, O. (2011). A universal code for RNA recognition by PUF proteins. *Nature Chemical Biology*, 7(7), 425–427. [https://doi.org/10.1038/nchembio.577](https://doi.org/10.1038/nchembio.577).
-7. Lee, Y., Messing, A., Su, M., & Brenner, M. (2008). GFAP promoter elements required for region-specific and astrocyte-specific expression. *Glia*, 56(5), 481–493. [https://doi.org/10.1002/glia.20622](https://doi.org/10.1002/glia.20622).
-8. Baek, D., Villén, J., Shin, C., Camargo, F. D., Gygi, S. P., & Bartel, D. P. (2008). The impact of microRNAs on protein output. *Nature*, 455, 64–71. [https://doi.org/10.1038/nature07242](https://doi.org/10.1038/nature07242).
-9. Wu, H., Lima, W. F., Zhang, H., Fan, A., Sun, H., & Crooke, S. T. (2004). Determination of the role of the human RNase H1 in the pharmacology of DNA-like antisense drugs. *Journal of Biological Chemistry*, 279(17), 17181–17189. [https://doi.org/10.1074/jbc.M311683200](https://doi.org/10.1074/jbc.M311683200).
-10. Iwamoto, M., Björklund, T., Lundberg, C., Kirik, D., & Wandless, T. J. (2010). A general chemical method to regulate protein stability in the mammalian central nervous system. *Chemistry & Biology*, 17(9), 981–988. [https://doi.org/10.1016/j.chembiol.2010.07.009](https://doi.org/10.1016/j.chembiol.2010.07.009).
-11. Shaner, N. C., et al. (2004). Improved monomeric red, orange and yellow fluorescent proteins derived from Discosoma sp. red fluorescent protein. *Nature Biotechnology*, 22(12), 1567–1572. [https://doi.org/10.1038/nbt1037](https://doi.org/10.1038/nbt1037).
-12. Qi, G., Mi, Y., Shi, X., Gu, H., Brinton, R. D., & Yin, F. (2021). ApoE4 Impairs Neuron-Astrocyte Coupling of Fatty Acid Metabolism. *Cell Reports*, 34(1), 108572. [https://doi.org/10.1016/j.celrep.2020.108572](https://doi.org/10.1016/j.celrep.2020.108572).
+But we kept going together.
+
+Along the way, we learned much more than experimental techniques or computational methods. We learned to ask for help, to trust one another's expertise, to take responsibility when things went wrong, and to accept that an idea we had worked hard on might not be the right one.
+
+We also learned to appreciate forms of contribution that are easy to overlook. A thoughtful question, an honest disagreement, or someone taking the time to help a teammate through a difficult problem could matter just as much as a successful experiment.
+
+Years from now, we may no longer remember the exact parameters of an experiment or how many times we revised a particular construct. But we hope we will remember the conversations, the shared excitement, the unexpected friendships, and the people who made this year what it was.
+
+That is what we will carry with us from iGEM.
+
+As this chapter of ORCA comes to an end, we know that our original scientific goal remains far from complete. We have not developed a treatment for Alzheimer's disease, and many questions still need to be answered. There is much more work to be done before the therapeutic possibilities we imagined can become reality.
+
+We hope that the data, tools, methods, and experiences we leave behind will give future researchers something useful to build upon. Perhaps another team will adapt our reporter, improve an approach we explored, or find inspiration in a question we were unable to answer.
+
+We would be happy to see them go further than we could.
+
+And beyond the scientific community, we think of the older adults we met, the patients and families we learned about, and the many people waiting for better ways to confront Alzheimer's disease. We hope that one day, the collective efforts of researchers around the world will lead to treatments that make a genuine difference in their lives.
+
+We cannot know how long that will take, or what role our own work might eventually play.
+
+What we do know is that this year has changed how we think about science, about working with others, and about the responsibilities that come with trying to make something useful for the world.
+
+We began with the ambition of changing a single base in an RNA molecule.
+
+**We never expected how much that little base would change us.**
+
+To every teammate who walked this journey with us, to everyone who guided and supported us, and to all those who welcomed us, shared their stories, and challenged us to think differently: thank you.
+
+ORCA is far from a perfect answer. There are things we wish we had done better, questions we wish we had answered, and ideas we wish we had more time to explore.
+
+But we are proud of what we have built, of what we have learned, and, above all, of having done it together.
+
+*— The SUSTech-BIO 2026 iGEM Team*
+{: .journey-signature }
+
+</section>
+
+<div class="results-thank-you" id="thank-you" role="group" aria-label="A thank-you from the ORCA team">
+  <img src="/assets/images/results-ending/orca-thank-you.png" alt="The ORCA mascot smiling and bowing in thanks." width="1093" height="1439" loading="lazy" decoding="async">
+  <p>Thank you for exploring ORCA with us.</p>
+</div>

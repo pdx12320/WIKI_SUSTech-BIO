@@ -1837,11 +1837,13 @@ Mapping candidate RNA editing sites
 
 #### Overview {#model-rna-seq-overview}
 
-Module 1 turns RNA sequencing (RNA-seq) into candidate editing sites and comparative profiles for editor design. The wet-lab team supplied paired-end sequencing from six editor groups and three control groups, with four biological replicates each, giving 36 libraries.
+Module 1 converts RNA sequencing (RNA-seq) into candidate editing sites, replicate-level rates and sequence contexts for editor comparison. The wet-lab dataset comprised six editor groups and three control groups, each with four biological replicates, giving 36 libraries.
 
-Building on the REDItools framework (Picardi & Pesole, 2013), we extended REDItools2 discovery (Flati et al., 2020) with target-allele recounting, multiple-testing correction, transcript orientation, cell-line variant filtering and replicate consistency. Matched-site comparisons and normalization by callable cytosines then made differences between editors and chromosomes interpretable. The resulting site lists, rates and sequence contexts guide follow-up assays and provide consistent inputs for the PUF, APOBEC and LAMAR models.
+Building on REDItools (Picardi & Pesole, 2013) and REDItools2 (Flati et al., 2020), we refined allele counting, background screening and replicate consistency. Matched-site comparisons and callable-cytosine normalization then connected candidate-site profiles with target signals and chromosome-level patterns. The resulting tables provide a common evidence base for the PUF, APOBEC and LAMAR models.
 
-[Read the full RNA-seq model](https://github.com/pdx12320/WIKI_SUSTech-BIO/blob/main/wiki/components/model/module1.html)
+**Main results.** GVE and SNE retained 383 and 4,389 candidate sites, respectively, approximately 97.0% and 66.0% fewer than PUF12. Both retained apparent C388 signals, which include endogenous reference T. Comparing site counts with target and bystander signals distinguished narrower detected profiles from a general loss of editor activity.
+
+[Explore Transcriptomic Landscape and its results](/model#module1-1)
 
 #### **Cycle 1**: Defining candidate signals {#model-rna-seq-cycle-01 .engineering-cycle-title}
 
@@ -2023,11 +2025,13 @@ Specificity ranking and structure-conditioned design
 
 #### Overview {#model-puf-overview}
 
-Module 2 ranks PUF variants by relative specificity and proposes sequences for further evaluation. Wet-lab inputs comprised amino-acid sequences and labels for three endpoints: C295, C388 and C871. C388 was the target endpoint, with the other two representing bystander editing. Two batches contained 81 constructs, including 66 with complete endpoint labels; observed endpoints from the remaining constructs also contributed to training.
+Module 2 combines assay-informed specificity ranking with structure-conditioned generation of PUF variants. Two experimental batches supplied 81 constructs, including 66 with complete measurements at target C388 and bystanders C295 and C871. Available endpoint measurements from the remaining constructs also contributed to training.
 
-Our approach developed from AlphaFold 3 contact probabilities (CP) into the PUF-ESM ranker, combining substitution identity, an evolutionary prior and three-endpoint regression. Feedback guided revisions to the representation and evaluation, while structure-conditioned generation extended exploration into scaffold positions beyond the training coverage. Ranked variants, scaffold proposals and model-consensus candidates guide the next experimental comparisons.
+The workflow progressed from AlphaFold 3 contact probabilities to the PUF-ESM Specificity Ranker, integrating substitution identity, an evolutionary prior and three-endpoint regression. Experimental feedback guided representation and evaluation choices. Structure-conditioned generation broadened the design library to additional recognition and scaffold positions.
 
-[View the complete Module 2 model.](https://github.com/pdx12320/WIKI_SUSTech-BIO/blob/main/wiki/components/model/module2.html)
+**Main results.** In grouped evaluation of 66 constructs, the ranker achieved Spearman ρ = 0.405 and recovered 20 of the measured Top30, versus 13.64 expected randomly. Model-guided testing also identified an SNE construct with increased C388 editing and reduced C295 and C871 signals relative to its matched control. These results linked candidate prioritization to an improved target–bystander balance.
+
+[Explore Recognition Code and its results](/model#module2-1)
 
 #### **Cycle 1**: Testing structural contact features {#model-puf-cycle-01 .engineering-cycle-title}
 
@@ -2249,11 +2253,13 @@ Refining catalytic-module structural models
 
 #### Overview {#model-apobec-overview}
 
-Module 3 used structural modelling to organize APOBEC variants for matched comparisons of substrate preference and activity. Published PUF–APOBEC fusion designs provide the platform context for examining recognition and catalytic domains together (Wang et al., 2002; Han et al., 2022, 2025). Wet-lab inputs included parent and variant sequences, functional labels, and requests for same-site, combination and sequence-background controls. These inputs defined the comparisons returned by the model.
+Module 3 links APOBEC structural modeling with experimental comparisons of substrate preference and activity. Published PUF–APOBEC designs provided the platform context (Wang et al., 2002; Han et al., 2022, 2025). Parent and variant sequences, functional measurements and matched controls defined the comparisons examined by the model.
 
-Our modelling framework combined **contact decomposition, parent-corrected substrate differences, parallel complex and protein-only predictions, and contact-network clustering**. The revisions addressed ambiguous contact types, parental substrate effects, RNA-dependent deviations and unstable structural groups. The resulting contact maps and structural branches guided candidate combinations and mechanistic controls.
+We combined contact decomposition, parent-corrected substrate differences, parallel protein–RNA and protein-only predictions, and contact-network clustering. Successive revisions separated contact types, accounted for parental substrate effects and stabilized structural groups. The resulting maps and clusters informed candidate combinations and mechanistic comparisons.
 
-[View the complete Module 3 model.](https://github.com/pdx12320/WIKI_SUSTech-BIO/blob/main/wiki/components/model/module3.html)
+**Main results.** Combination screening identified G27T–K30H–Q58M with a GCG/GCA editing ratio of 2.156 and retention of 77.3% of parental target activity. Matched same-site and sequence-background comparisons further showed how residue choices shaped substrate preference and activity. These experimental outcomes connected structural hypotheses with a lead that balanced both objectives.
+
+[Explore Catalytic Design and its results](/model#module3-1)
 
 #### **Cycle 1**: Interpreting predicted contacts {#model-apobec-cycle-01 .engineering-cycle-title}
 
@@ -2441,9 +2447,13 @@ Prioritizing RNA editing candidates
 
 #### Overview {#model-lamar-overview}
 
-RNA sequencing from the wet-lab team supplied editing-site labels and their surrounding sequences. We extended the RNA language model LAMAR through human-transcript adaptation, regional prediction and cytidine ranking. The workflow separates sequence learning, region selection and local prioritization, with a ranking objective matched to the number of candidates the team can examine. Its ordered shortlists guide follow-up site selection, and new site labels provide feedback for further model development.
+Module 4 adapts the LAMAR RNA foundation model to prioritize regions and cytidines for follow-up. RNA-seq supplied editing-site labels and surrounding sequences, while human transcripts provided the adaptation corpus.
 
-[Explore the Module 4 model and results](https://github.com/pdx12320/WIKI_SUSTech-BIO/blob/main/wiki/components/model/module4.html)
+The workflow separates human-transcript adaptation, regional assessment and local cytidine ranking. A ranking objective aligns the output with a practical screening budget: the number of candidates that can be examined within each window. New site labels can then inform subsequent model development.
+
+**Main results.** Across 140 positive test windows, the top 10 and top 20 cytidines included a supported site in 77.9% and 92.1% of windows, respectively. These results defined two useful screening budgets and concentrated supported sites into focused shortlists. Sequence-context comparisons also distinguished editor-specific flanking profiles.
+
+[Explore LAMAR and its results](/model#module4-1)
 
 #### **Cycle 1**: Introducing pretrained RNA representations {#model-lamar-cycle-01 .engineering-cycle-title}
 
@@ -2628,13 +2638,13 @@ Modelling delivery and multisite editing
 
 #### Overview {#model-whole-body-overview}
 
-The whole-body model connects vector input, tissue distribution, blood–brain barrier transport, cellular expression and RNA editing. It examines how delivery losses and competing reactions shape the final APOE RNA profile.
+Module 5 connects vector distribution, blood–brain barrier transport, cellular expression and multisite RNA editing. It examines how delivery losses and competing reactions shape the final APOE RNA profile and its distribution across tissue.
 
-Its wet-lab interface accepts editor configurations, expression time courses, APOE 112/158 editing rates, and bystander and off-target measurements for parameter updates. The simulations presented here use literature-informed priors and scenario parameters. They guide the choice of measurements, product-specific assays, doses and observation times.
+The framework combines compartmental ordinary differential equations, explicit RNA reactions and a three-dimensional cellular model. Literature-informed priors and scenario parameters support simulated comparisons of intended-product retention, unwanted editing and tissue coverage. An experimental-data interface accepts expression time courses and editing measurements for future parameter updates.
 
-Our contribution combines compartmental ordinary differential equations, explicit multisite reactions and a three-dimensional cellular model. Intended-product retention, unwanted editing and tissue coverage become distinct design objectives. Doses are normalized model inputs, and all results below are simulated.
+**Main results.** Simulated dose scans identified an intermediate maximum in APOE3-like RNA, followed by a decline as further editing consumed the intended product. Spatial simulations showed persistent differences between cells near and far from vessels, even as dose increased. Together, these results identified delivery and expression as key determinants of product composition and tissue coverage.
 
-[Read the full whole-body delivery model](https://github.com/pdx12320/WIKI_SUSTech-BIO/blob/main/wiki/pages/software.html#L38)
+[Explore Delivery Dynamics and its results](/software#rewire-purpose)
 
 #### **Cycle 1**: Tracking intended RNA products {#model-whole-body-cycle-01 .engineering-cycle-title}
 

@@ -5,34 +5,34 @@
       <desc id="engineering-project-overview-description">Fundamental Research, Platform Development and Functional Validation. Select a module to open its chapter, or use the button below to explore the mind map.</desc>
       <image id="engineering-project-overview-image" href="{{ url_for('assets', filename='images/engineering-overviews/project-overview.png') }}" width="1680" height="1188" preserveAspectRatio="xMidYMid meet"/>
       <g class="overview-links">
-        {% for target, label, x, y, width, height in [
-          ('fundamental-research', 'Fundamental Research', 24, 24, 344, 788),
-          ('fundamental-research-cycle-01', 'Fundamental Research — Cycle 1', 48, 128, 296, 286),
-          ('fundamental-research-cycle-02', 'Fundamental Research — Cycle 2', 48, 456, 296, 332),
-          ('deliver', 'Deliver — AAV9', 424, 134, 396, 246),
-          ('model-rna-seq', 'Model — PUFFER', 840, 134, 792, 246),
-          ('model-rna-seq', 'Transcriptomic Landscape', 860, 220, 189, 140),
-          ('model-puf', 'Recognition Code', 1049, 220, 94, 140),
-          ('model-apobec', 'Catalytic Design', 1143, 220, 95, 140),
-          ('model-lamar', 'LAMAR', 1238, 220, 189, 140),
-          ('model-whole-body', 'Delivery Dynamics', 1427, 220, 189, 140),
-          ('pod', 'Edit', 424, 420, 396, 392),
-          ('integrated-orca', 'Integrated ORCA', 560, 440, 240, 40),
-          ('pod', 'POD', 468, 540, 220, 130),
-          ('cetus', 'CETUS', 688, 560, 100, 180),
-          ('measure', 'Measure — SONAR and SAP', 840, 420, 396, 392),
-          ('gfa', 'Control', 24, 844, 1212, 300),
-          ('gfa', 'GFA', 64, 932, 268, 194),
-          ('mre', 'MRE', 352, 932, 268, 194),
-          ('aso', 'ASO', 640, 932, 268, 194),
-          ('cre-loxp', 'Cre–loxP', 928, 932, 268, 194),
-          ('functional-validation', 'Functional Validation', 1296, 420, 360, 724),
-          ('functional-validation-cycle-01', 'Electroporation', 1320, 520, 312, 200),
-          ('functional-validation-cycle-02', 'BODIPY 493/503', 1320, 732, 312, 180),
-          ('functional-validation-cycle-03', 'Aβ internalization', 1320, 924, 312, 198)
+        {% for target, label, x, y, width, height, radius in [
+          ('fundamental-research', 'Fundamental Research', 24, 24, 344, 788, 24),
+          ('fundamental-research-cycle-01', 'Fundamental Research — Cycle 1', 48, 128, 296, 286, 10),
+          ('fundamental-research-cycle-02', 'Fundamental Research — Cycle 2', 48, 456, 296, 332, 10),
+          ('deliver', 'Deliver — AAV9', 424, 134, 396, 246, 22),
+          ('model', 'Model — PUFFER', 840, 134, 796, 246, 22),
+          ('model-rna-seq', 'Transcriptomic Landscape', 860, 220, 189, 140, 10),
+          ('model-puf', 'Recognition Code', 1049, 220, 94, 140, 10),
+          ('model-apobec', 'Catalytic Design', 1143, 220, 95, 140, 10),
+          ('model-lamar', 'LAMAR', 1238, 220, 189, 140, 10),
+          ('model-whole-body', 'Delivery Dynamics', 1427, 220, 189, 140, 10),
+          ('pod', 'Edit', 424, 420, 396, 392, 22),
+          ('integrated-orca', 'Integrated ORCA', 560, 440, 240, 40, 10),
+          ('pod', 'POD', 468, 540, 220, 130, 10),
+          ('cetus', 'CETUS', 688, 560, 100, 180, 10),
+          ('measure', 'Measure — SONAR and SAP', 840, 420, 396, 392, 22),
+          ('gfa', 'Control', 44, 852, 1192, 292, 22),
+          ('gfa', 'GFA', 64, 932, 268, 194, 10),
+          ('mre', 'MRE', 352, 932, 268, 194, 10),
+          ('aso', 'ASO', 640, 932, 268, 194, 10),
+          ('cre-loxp', 'Cre–loxP', 928, 932, 268, 194, 10),
+          ('functional-validation', 'Functional Validation', 1296, 420, 360, 724, 24),
+          ('functional-validation-cycle-01', 'Electroporation', 1320, 520, 312, 200, 10),
+          ('functional-validation-cycle-02', 'BODIPY 493/503', 1320, 732, 312, 180, 10),
+          ('functional-validation-cycle-03', 'Aβ internalization', 1320, 924, 312, 198, 10)
         ] %}
-        <clipPath id="overview-clip-{{ loop.index }}"><rect x="{{ x }}" y="{{ y }}" width="{{ width }}" height="{{ height }}" rx="10"/></clipPath>
-        <g class="overview-hotspot"><use class="overview-spotlight" href="#engineering-project-overview-image" clip-path="url(#overview-clip-{{ loop.index }})" aria-hidden="true"/><a href="#{{ target }}" data-overview-target="{{ target }}" aria-label="{{ label }}, open chapter"><title>{{ label }}</title><rect x="{{ x }}" y="{{ y }}" width="{{ width }}" height="{{ height }}" rx="10"/></a></g>
+        <clipPath id="overview-clip-{{ loop.index }}"><rect x="{{ x }}" y="{{ y }}" width="{{ width }}" height="{{ height }}" rx="{{ radius }}"/></clipPath>
+        <g class="overview-hotspot"><use class="overview-spotlight" href="#engineering-project-overview-image" clip-path="url(#overview-clip-{{ loop.index }})" aria-hidden="true"/><a href="#{{ target }}" data-overview-target="{{ target }}" aria-label="{{ label }}, open chapter"><title>{{ label }}</title><rect x="{{ x }}" y="{{ y }}" width="{{ width }}" height="{{ height }}" rx="{{ radius }}"/></a></g>
         {% endfor %}
       </g>
     </svg>

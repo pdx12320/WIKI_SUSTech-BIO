@@ -345,7 +345,8 @@ class WikiRoutesTest(unittest.TestCase):
         config = re.search(r'<script\b[^>]*data-engineering-map-data[^>]*>(.*?)</script>', page, re.S)
         self.assertIsNotNone(config)
         groups = json.loads(config.group(1))
-        self.assertEqual([part["id"] for group in groups for part in group["parts"]], ENGINEERING_PARTS)
+        self.assertEqual([part["id"] for group in groups for part in group["parts"] if not part.get("overview")], ENGINEERING_PARTS)
+        self.assertEqual([part["id"] for group in groups for part in group["parts"] if part.get("overview")], ["model"])
         for group in groups:
             link = re.search(rf'<a\b[^>]*data-engineering-group="{group["id"]}"[^>]*>', page)
             self.assertIsNotNone(link)

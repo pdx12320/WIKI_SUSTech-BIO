@@ -647,6 +647,11 @@
     if (boundaryInput(direction, 40)) event.preventDefault();
   });
   back.addEventListener('click', () => showMap({ historyEntry: true, focus: true }));
+  workspace.querySelector('[data-engineering-overview-back]')?.addEventListener('click', () => {
+    workspace.classList.remove('engineering-nav-open');
+    workspace.querySelector('.engineering-nav-toggle')?.setAttribute('aria-expanded', 'false');
+    showMap({ historyEntry: true, focus: true });
+  });
   addEventListener('hashchange', syncHash);
   addEventListener('popstate', syncHash);
   addEventListener('resize', resize);

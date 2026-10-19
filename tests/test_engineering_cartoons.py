@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import unittest
 from lxml import html
-from app import app
+from app import app, freezer
 
 
 class EngineeringCartoonsTest(unittest.TestCase):
@@ -54,6 +54,15 @@ class EngineeringCartoonsTest(unittest.TestCase):
         self.assertEqual({image.get('src') for image in images}, {r['url'] for r in self.manifest})
         self.assertTrue(doc.xpath('//script[contains(@src,"engineering-overview-cartoons.js")]'))
         self.assertTrue(doc.xpath('//link[contains(@href,"engineering-overview-cartoons.css")]'))
+
+    def test_local_freeze_discovers_every_inert_template_image(self):
+        doc = self.document('local')
+        sources = {image.get('src') for image in doc.xpath('//template[@data-engineering-cartoon-assets]//img')}
+        self.assertEqual(len(sources), 10)
+        self.assertTrue(sources.issubset(set(freezer.all_urls())))
+        for source in sources:
+            with self.client.get(source) as response:
+                self.assertEqual(response.status_code, 200, source)
 
     def test_asset_routing_preserves_a_deployment_mount_point(self):
         for mode in ['local', 'igem']:

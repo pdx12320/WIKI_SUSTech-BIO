@@ -1,4 +1,5 @@
 from os import environ, path
+import json
 from flask import Flask, abort, render_template, send_from_directory, url_for
 from flask_frozen import Freezer
 from markupsafe import Markup
@@ -16,6 +17,16 @@ app.config["FREEZER_RELATIVE_URLS"] = True
 app.config["FREEZER_IGNORE_MIMETYPE_WARNINGS"] = True
 freezer = Freezer(app)
 install_igem_assets(app)
+
+
+@freezer.register_generator
+def engineering_cartoon_files():
+    # Inert template image URLs are localized after rendering, so url_for's
+    # discovery cannot see them. Preserve these dependencies in local exports.
+    if app.config['WIKI_ASSET_MODE'] == 'local':
+        with open(path.join(app.root_path, 'assets/images/engineering-cartoons/manifest.json')) as stream:
+            for record in json.load(stream):
+                yield 'assets', {'filename': 'images/engineering-cartoons/' + record['image']}
 
 
 @freezer.register_generator

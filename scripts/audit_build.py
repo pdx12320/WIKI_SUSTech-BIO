@@ -13,7 +13,6 @@ EXPECTED_OUTPUTS = {
     "team",
     "attributions",
     "description",
-    "blueprint",
     "engineering",
     "results",
     "contribution",

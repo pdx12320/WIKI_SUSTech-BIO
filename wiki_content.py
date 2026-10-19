@@ -48,7 +48,6 @@ CONTENT_PAGES: dict[str, PageConfig] = {
     "design-communication": PageConfig("team/design-communication.md", "pages/design-communication.html"),
     "attributions": PageConfig("team/attributions.md"),
     "description": PageConfig("project/description.md"),
-    "blueprint": PageConfig("project/blueprint.md"),
     "engineering": PageConfig("project/engineering.md", "pages/engineering.html"),
     "results": PageConfig("project/results.md"),
     "contribution": PageConfig("project/contribution.md", "pages/contribution-sonar.html"),
@@ -83,7 +82,6 @@ NAVIGATION = (
         "label": "Project",
         "items": (
             ("description", "Description"),
-            ("blueprint", "Blueprint"),
             ("engineering", "Engineering"),
             ("results", "Results"),
             ("contribution", "Contribution"),

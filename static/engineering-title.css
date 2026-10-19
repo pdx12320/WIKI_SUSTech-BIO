@@ -1,0 +1,17 @@
+@font-face { font-family: 'ORCA Engineering'; src: url('fonts/headers/BarlowCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+.engineering-overview-identity { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: var(--overview-left-rail); box-sizing: border-box; padding: 0 5px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.engineering-overview-mascot { display: block; width: min(100%, 146px); height: auto; }
+.engineering-overview-identity .engineering-overview-toolbar-title { position: static; transform: none; width: 100%; padding: 0; color: #2e3065; font: 600 clamp(19px, 2.25vw, 32px)/1.08 'ORCA Engineering', 'Arial Narrow', sans-serif; letter-spacing: -.015em; text-align: center; }
+.engineering-overview-title-rule { position: relative; width: 86%; height: 1px; background: #d4d7e4; margin-top: 1px; }
+.engineering-overview-title-rule::before { content: ''; position: absolute; bottom: 0; left: 0; width: 30%; height: 3px; background: #c47b8b; }
+@media(max-width:480px) { .engineering-overview-identity { gap: 10px; padding: 0 2px; } .engineering-overview-identity .engineering-overview-toolbar-title { font-size: 16px; } }
+
+/* Match the overview identity in the detailed chapter navigation. */
+.engineering-heading #engineering-title,
+.engineering-sidebar-left .diagram-heading {
+  font-family: 'ORCA Engineering', 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -.015em;
+  color: #2e3065;
+}

@@ -6,6 +6,7 @@
 {% set has_model_reading = not has_dbtl and (content.source_label.startswith('docs/project/') or content.source_label.startswith('docs/human-practices/')) %}
 {% set has_model_surface = has_model_reading or content.source_label in ['docs/wet-lab/measurement.md', 'docs/wet-lab/safety-and-security.md'] %}
 {% set directory = namespace(groups=[], current=none) %}
+{% set personality = {'docs/project/description.md': 'description', 'docs/project/results.md': 'results', 'docs/project/contribution.md': 'contribution', 'docs/project/future.md': 'future', 'docs/wet-lab/measurement.md': 'measurement', 'docs/wet-lab/safety-and-security.md': 'safety', 'docs/human-practices/human-practices.md': 'hp', 'docs/human-practices/education.md': 'education', 'docs/human-practices/inclusivity.md': 'inclusivity'}.get(content.source_label) %}
 {% set is_description = content.source_label == 'docs/project/description.md' %}
 {% set description_labels = {
   'alzheimer-s-disease-the-problem': 'Alzheimer’s Disease',
@@ -46,6 +47,7 @@
 {% endif %}
 {% if content.source_label == 'docs/wet-lab/measurement.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='measurement-reading.css') }}">{% endif %}
 {% if content.source_label in ['docs/project/blueprint.md', 'docs/project/results.md'] %}<link rel="stylesheet" href="{{ url_for('static', filename='experiment-prose.css') }}">{% endif %}
+{% if personality %}<link rel="stylesheet" href="{{ url_for('static', filename='chapter-personalities.css') }}">{% endif %}
 {% endblock %}
 {% block page_scripts %}
 {% if has_dbtl %}<script src="{{ url_for('static', filename='reading-orbit/dbtl-wheel.js') }}" defer></script>{% endif %}
@@ -57,8 +59,9 @@
 
 {% block main %}
 <main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% elif has_model_surface %} content-page--model-surface{% endif %}">
-  {% if content.source_label == 'docs/project/description.md' %}
-  {% include 'components/description_title.html' %}
+  {% if personality %}
+  {% from 'components/chapter_personality.html' import chapter_header %}
+  {{ chapter_header(personality, content.title, 'content-overview') }}
   {% else %}
   <header class="content-overview">
     <h1>{{ content.title }}</h1>

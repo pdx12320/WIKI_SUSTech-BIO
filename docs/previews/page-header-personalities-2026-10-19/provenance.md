@@ -1,0 +1,23 @@
+# Page header design previews
+
+Local preview based on main `7a80308`. Results, Notebook and Experiment headers only. The page title Experiment is preserved from existing metadata. Description remains unchanged.
+
+All three mascot images were made with the built-in image_gen tool, referencing `static/assets/mascots/orca-description-guide.png`. Final transparent PNG files: `static/assets/mascots/orca-results-header.png`, `orca-notebook-header.png`, and `orca-experiments-header.png`.
+
+Fonts are self-hosted under `static/fonts/headers/`, with individual OFL licenses. Sources: https://github.com/google/fonts/tree/main/ofl/rajdhani , https://github.com/google/fonts/tree/main/ofl/courierprime , https://github.com/google/fonts/tree/main/ofl/barlowcondensed . Fonts and mascot images have not yet been uploaded to iGEM media hosting.
+
+## Results prompt
+
+Create one new pose of the exact ORCA mascot in the supplied reference, used as a small website header illustration. Preserve character identity: chibi peach-pink face, coral round cheeks, dark-indigo orca-shaped hood with white eye patch and white forehead band, expressive dark eyes with triangular white highlights, tiny navy outfit, white mitten gloves, round navy boots. Preserve bold smooth navy outlines, clean soft 2D sticker art, gentle lavender shading. Full body, compact silhouette, oriented toward the LEFT. Transparent background, no background scene, no ground, no cast shadow, no text, letters, numbers, logos, or watermark. One character only, centered square composition with 7% transparent safety margin. Match the reference character and rendering closely, but change pose and props as described. Friendly confident character standing, holding up a small cream presentation board on its left side (viewer's left). Board contains only three small pastel bars and a simple dot plot, abstract decorative data with NO numbers or labels, no arrows implying all positive results. Other hand pointing at the board with a short pointer. Enthusiastic but composed expression. No desk.
+
+## Notebook prompt
+
+Create one new pose of the exact ORCA mascot in the supplied reference, used as a small website header illustration. Preserve character identity: chibi peach-pink face, coral round cheeks, dark-indigo orca-shaped hood with white eye patch and white forehead band, expressive dark eyes with triangular white highlights, tiny navy outfit, white mitten gloves, round navy boots. Preserve bold smooth navy outlines, clean soft 2D sticker art, gentle lavender shading. Full body, compact silhouette, oriented toward the LEFT. Transparent background, no background scene, no ground, no cast shadow, no text, letters, numbers, logos, or watermark. One character only, centered square composition with 7% transparent safety margin. Match the reference character and rendering closely, but change pose and props as described. Focused gentle character seated on a small lavender stool, writing with a coral pencil in an open cream notebook resting on its lap. Looking down toward the notebook, thoughtful happy expression. Both feet visible, body leaning slightly forward, no table. Notebook contains only a few subtle unlettered lines.
+
+## Experiments prompt
+
+Create one new pose of the exact ORCA mascot in the supplied reference, used as a small website header illustration. Preserve character identity: chibi peach-pink face, coral round cheeks, dark-indigo orca-shaped hood with white eye patch and white forehead band, expressive dark eyes with triangular white highlights, tiny navy outfit, white mitten gloves, round navy boots. Preserve bold smooth navy outlines, clean soft 2D sticker art, gentle lavender shading. Full body, compact silhouette, oriented toward the LEFT. Transparent background, no background scene, no ground, no cast shadow, no text, letters, numbers, logos, or watermark. One character only, centered square composition with 7% transparent safety margin. Match the reference character and rendering closely, but change pose and props as described. Attentive cheerful character wearing a short white lab coat over the familiar navy outfit. One white-gloved hand holds a recognizable laboratory micropipette upright, the other holds a small cream clipboard bearing three simple coral check marks and short pale lines, no lettering. Standing, full body, slight three-quarter turn to LEFT. Clear simple silhouette, no liquid splashes, no extra lab equipment.
+
+## Validation
+
+Desktop previews at 1280px and mobile previews at 390px inspected. All three selected fonts loaded successfully. All three mobile pages have document scroll width equal to viewport width (390px). Decorative mascots have empty alt text; scientific content and application controls are unchanged.

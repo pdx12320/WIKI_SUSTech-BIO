@@ -1,0 +1,28 @@
+{
+  "tool": "Built-in image_gen",
+  "prompts": {
+    "contribution": "Use case: illustration-story. Create a standalone website header mascot. Reference image is character identity and illustration style reference. Match exactly the indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, short limbs, indigo shoes, clean thick indigo outlines and restrained lavender shading. One full-body character centered, square composition with 8% clear margins, transparent background. No text, no scenery, no watermark. Friendly open expression, holding with both hands an open small toolbox containing simple pastel modular blocks and a document, offering useful resources to viewer.",
+    "future": "Use case: illustration-story. Create a standalone website header mascot. Reference image is character identity and illustration style reference. Match exactly the indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, short limbs, indigo shoes, clean thick indigo outlines and restrained lavender shading. One full-body character centered, square composition with 8% clear margins, transparent background. No text, no scenery, no watermark. Looking up toward upper right through a small telescope held in both hands, cape slightly lifted, curious hopeful pose. No stars or rocket.",
+    "measurement": "Use case: illustration-story. Create a standalone website header mascot. Reference image is character identity and illustration style reference. Match exactly the indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, short limbs, indigo shoes, clean thick indigo outlines and restrained lavender shading. One full-body character centered, square composition with 8% clear margins, transparent background. No text, no scenery, no watermark. Carefully looking at a compact instrument panel with a simple scale and plotted curve, one gloved hand adjusting its knob. Calm precise expression.",
+    "safety": "Use case: illustration-story. Create a standalone website header mascot. Reference image is character identity and illustration style reference. Match exactly the indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, short limbs, indigo shoes, clean thick indigo outlines and restrained lavender shading. One full-body character centered, square composition with 8% clear margins, transparent background. No text, no scenery, no watermark. Friendly and reliable, wearing white lab coat and transparent safety goggles over the familiar hooded face, holding a compact indigo shield with a large pale check mark. Not a guard or warrior."
+  },
+  "assets": [
+    [
+      "contribution",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-506e88f2-6820-4118-8182-104f6bfb01a2.png"
+    ],
+    [
+      "future",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-91418e4b-d077-4e1b-ae40-5fa7ef006b00.png"
+    ],
+    [
+      "measurement",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-b5bcfb2f-c8ec-40be-991d-f32598920996.png"
+    ],
+    [
+      "safety",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-5838737c-2a18-428a-b756-26e890695e38.png"
+    ]
+  ],
+  "status": "Local preview only"
+}

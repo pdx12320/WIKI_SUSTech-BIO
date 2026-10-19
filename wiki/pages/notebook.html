@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 {% block title %}{{ content.title }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='notebook/notebook.css') }}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='notebook/notebook.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='chapter-personalities.css') }}">{% endblock %}
 {% block main %}
 <main id="main-content" class="notebook-page">
-  <header class="nb-intro">
-    <h1>{{ content.title }}<span>.</span></h1>
-  </header>
+  {% from 'components/chapter_personality.html' import chapter_header %}
+  {{ chapter_header('notebook', content.title, 'nb-intro') }}
   <section class="nb-app" data-notebook data-index="{{ url_for('static', filename='notebook/index.json') }}" aria-label="Interactive research notebook" aria-busy="true">
     <div class="nb-toolbar">
       <div class="nb-view-label"><button class="nb-back" type="button" data-back hidden aria-label="Return to timeline overview">← <span>Overview</span></button><span data-view-label></span></div>

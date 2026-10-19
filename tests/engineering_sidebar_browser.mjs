@@ -28,7 +28,7 @@ try {
   await group(g).click();
   if(!parts.length)await expectPart(g);
   for(const part of parts){await child(part).click();await expectPart(part);assert.equal(await page.locator('.engineering-part-panel:not([hidden])').count(),1);}
-  assert.equal(await page.locator('.diagram-branch').count(),parts.length?1:0);
+  assert.equal(await page.locator('.diagram-reveal.is-open .diagram-branch').count(),parts.length?1:0);
  }
  await group('control').click();
  let positions=await page.locator('.branch-control a').evaluateAll(es=>es.map(e=>({x:e.offsetLeft,y:e.offsetTop})));

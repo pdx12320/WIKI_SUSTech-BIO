@@ -49,6 +49,16 @@
       const xs = corners.map(point => point.x), ys = corners.map(point => point.y);
       const exitX = left ? box.x + visibleX - Math.max(...xs) : box.x + box.width - visibleX - Math.min(...xs);
       const exitY = upper ? box.y + visibleY - Math.max(...ys) : box.y + box.height - visibleY - Math.min(...ys);
+      // Put each title inside the visible photo area after the piece rotates.
+      // Invert that same transform so the lettering stays attached to its piece.
+      const targetX = box.x + box.width * (left ? .10 : .90);
+      const targetY = box.y + box.height * (upper ? .07 : .93);
+      const localX = (targetX - originX - exitX) / .92;
+      const localY = (targetY - originY - exitY) / .92;
+      const labelX = originX + localX * c + localY / scaleRatio * sin;
+      const labelY = originY - localX * scaleRatio * sin + localY * c;
+      opening.style.setProperty(`--opening-label-${direction}-x`, `${((labelX - box.x) / box.width * 100).toFixed(5)}%`);
+      opening.style.setProperty(`--opening-label-${direction}-y`, `${((labelY - box.y) / box.height * 100).toFixed(5)}%`);
       opening.style.setProperty(`--opening-exit-${direction}-x`, `${(exitX / box.width * 100).toFixed(5)}%`);
       opening.style.setProperty(`--opening-exit-${direction}-y`, `${(exitY / box.height * 100).toFixed(5)}%`);
     }

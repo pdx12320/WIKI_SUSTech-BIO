@@ -1,0 +1,18 @@
+{
+  "changed_files": [
+    "static/team-opening-layout.js",
+    "static/team-opening-layout.css",
+    "wiki/pages/team.html",
+    "tests/team_puzzle_exit.mjs"
+  ],
+  "behavior": "Each piece keeps its original group label within the visible tilted photo corner after unfolding and during unpacking. Labels animate with their piece; original closed positions are preserved.",
+  "checks": [
+    "Rotated label anchors and corner geometry at 390x844, 844x390, 768x1024, 1440x900, 2560x1080 passed",
+    "Atomic image readiness regression passed",
+    "git diff --check passed",
+    "Browser screenshot of unfolding/compliation stage: four complete names and clear central code panels",
+    "19 Team Python tests passed against latest main",
+    "Six Team JavaScript suites passed"
+  ],
+  "screenshot": "team-visible-group-labels-20261020.png"
+}

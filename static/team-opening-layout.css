@@ -34,3 +34,22 @@
 .team-opening__open-hint { position: absolute; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 12; padding: 10px 20px; border: 1px solid #fff9; border-radius: 99px; background: #19143dcc; color: #fff; font: inherit; font-size: 15px; white-space: nowrap; cursor: pointer; }
 .team-opening[data-unfolding] .team-opening__open-hint,
 .team-opening:not([data-team-images="ready"]) .team-opening__open-hint { display: none; }
+
+/* Names travel toward the inner photo corner while the puzzle opens. */
+.team-opening .team-opening__piece--nw { --opening-label-x: var(--opening-label-nw-x, 43%); --opening-label-y: var(--opening-label-nw-y, 42%); }
+.team-opening .team-opening__piece--ne { --opening-label-x: var(--opening-label-ne-x, 57%); --opening-label-y: var(--opening-label-ne-y, 42%); }
+.team-opening .team-opening__piece--sw { --opening-label-x: var(--opening-label-sw-x, 43%); --opening-label-y: var(--opening-label-sw-y, 58%); }
+.team-opening .team-opening__piece--se { --opening-label-x: var(--opening-label-se-x, 57%); --opening-label-y: var(--opening-label-se-y, 58%); }
+.team-opening .team-opening__piece-label {
+  transition: left 2800ms 700ms cubic-bezier(.22,.72,.18,1), top 2800ms 700ms cubic-bezier(.22,.72,.18,1), width 2800ms 700ms cubic-bezier(.22,.72,.18,1), font-size 2800ms 700ms cubic-bezier(.22,.72,.18,1);
+}
+.team-opening[data-unfolding] .team-opening__piece-label {
+  left: var(--opening-label-x);
+  top: var(--opening-label-y);
+  width: min(180px, 17vw);
+  font-size: clamp(12px, 2.3vw, 28px);
+}
+.team-opening[data-unfolding="complete"] .team-opening__piece-label { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .team-opening .team-opening__piece-label { transition: none; }
+}

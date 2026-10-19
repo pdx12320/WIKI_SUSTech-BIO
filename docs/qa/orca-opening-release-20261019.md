@@ -1,0 +1,9 @@
+# ORCA opening promotion · 2026-10-19
+
+Promotes the reviewed purple memory tunnel to the default home opening. The previous CRT is available with ?review=crt-legacy. The opening uses the selected 94-object pool and 1.2 speed, with no tuning panel or localStorage overrides. Hover residue, grab/release, central title clearing, radial trails, four-sided mosaic, coarse snow, pale highlights and fullscreen faults are retained. The handwritten photograph is bundled beside the module so it does not depend on an untracked design-assets directory.
+
+Scope: only crt-opening styles/script and the new dedicated memory/snow modules, their bundled photo, four focused JavaScript tests and this QA record. No home template, biology sequence, Paris scene, navigation, content, manifest or other task changes are included.
+
+Validation against upstream/main b33c901: node tests/memory_tunnel.mjs; node tests/memory_grab.mjs; node tests/memory_spacing.mjs; node tests/fullscreen_memory_faults.mjs; Python unittest discover -s tests -p test_wiki.py (26 passed); git diff --check. In-app browser verified the isolated worktree on port 8131: 12 registered sources, count 94, speed 1.2 and zero memory controls, with the animated opening visible. A background verification tab initially used the readable static fallback; the existing preview tab loaded the animated version correctly. Screenshot is retained in the original workspace docs/qa/orca-opening-release-20261019.png. Mobile was not repeated in this promotion.
+
+The change is isolated on codex/orca-memory-opening from the team main branch; the shared original checkout and unrelated local edits are preserved. Rollback after merge is a revert of this PR's merge commit; ?review=crt-legacy also provides a comparison. Local pre-promotion snapshots remain under .local-backups/orca-opening-release-20261019/ in the original workspace.

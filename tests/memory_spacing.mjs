@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {memoryScreenBounds,selectSpacedMemories} from '../static/onetake/memory-spacing.mjs';
+const a={index:1,z:100,x:100,y:100,halfWidth:60,halfHeight:40};
+const b={...a,index:2,z:200,x:115};
+const c={...a,index:3,z:300,x:400};
+assert.deepEqual([...selectSpacedMemories([b,c,a])],[1,3]);
+assert.deepEqual([...selectSpacedMemories([a,c,b])],[1,3]);
+assert.deepEqual([...selectSpacedMemories([b])],[2]);
+const thin=memoryScreenBounds(0,0,120,30,Math.PI/2,-1,.2,1);
+assert(thin.halfHeight>thin.halfWidth);
+assert(Number.isFinite(thin.halfWidth+thin.halfHeight));
+assert.equal(selectSpacedMemories([{...a,index:4,x:1000},a]).size,2);
+console.log('Passed nearest-first overlap spacing, order independence, isolated recovery and rotated/mirrored silhouette bounds.');

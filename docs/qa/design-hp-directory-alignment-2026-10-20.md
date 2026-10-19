@@ -1,0 +1,9 @@
+# Design left directory aligned with HP
+
+The user clarified that the entire far-left page directory should match HP, in addition to the heading fonts. The dedicated Design directory overrides now follow HP’s major/minor hierarchy, spacing and responsive widths. The shared content-reading controller supplies the chevron accordion, major active tile and animated child indicator. The Design-only relabeling script is no longer included, so the entries match the actual chapter headings; custom ordinal numbers, double labels, rules and plus/minus controls are removed. Approved Design colors are retained through scoped variables.
+
+Changed source files: static/design-communication.css and wiki/pages/design-communication.html. HP, shared integration files and page content are unchanged. Both sources were updated in the shared checkout and the isolated preview.
+
+Browser verification: four actual chapter labels, zero custom chapter wrappers, no ordinal pseudo-content, no Design relabeling script, shared subnavigation indicator present. At the Early Logo Concept anchor, the identity group is expanded and the matching child is selected. Final screenshot is design-hp-directory-alignment-2026-10-20.png. Five existing Design tests and git diff --check passed. The user approved this layout and requested a PR and merge to main. Release preparation uses upstream/main 26e9511 and contains only the two scoped source files plus this note and screenshot. The opening interaction/loading regression tests and a fresh isolated Frozen-Flask build also passed.
+
+Release audit: standard build/link audit and Design-specific CDN check passed. The strict whole-site CDN audit reports 32 pre-existing local-media entries on unrelated pages, including engineering conclusion graphics, chapter mascots/fonts and a Home image. Neither modified source adds a media dependency; those unrelated sources are unchanged from the main base.

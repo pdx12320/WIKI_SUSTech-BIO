@@ -9,6 +9,12 @@ html:has([data-design-opening]) {
   --design-rule: rgba(48, 61, 114, .16);
 }
 
+/* Capture HP's shared heading family before the Design body font overrides it. */
+body:has([data-design-opening]) {
+  --design-heading-family: var(--sans);
+  --design-reading-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+}
+
 @font-face {
   font-family: "ORCA Quote Script";
   src: url("https://static.igem.wiki/teams/6085/wiki/design/stories/pinyon-script-regular.ttf") format("truetype");
@@ -27,190 +33,68 @@ html:has([data-design-opening]) {
   font-family: var(--sans);
 }
 
-.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content :is(h2, h3) {
-  font-family: Georgia, "Times New Roman", serif;
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content h2 {
+  font-family: var(--design-heading-family);
 }
 
-/* A quiet chapter index; retain the shared anchors and accordion behaviour. */
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content h3 {
+  font-family: var(--design-reading-family);
+}
+
+/* HP's shared directory layout and accordion; keep Design's approved colors. */
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory {
-  --design-index-ink: var(--design-blue);
-  --design-index-muted: var(--design-muted);
-  padding: 0 8px 8px 0;
+  font-family: var(--design-reading-family);
 }
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory__label {
-  padding: 0 0 14px;
-  color: var(--design-index-muted);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: .16em;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol {
-  counter-reset: design-part;
-  gap: 0;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol > li {
-  counter-increment: design-part;
-  padding-block: 5px;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol > li + li {
-  border-top: 1px solid var(--design-rule);
-}
-
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory ol { gap: 4px; }
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a {
-  min-height: 50px;
-  gap: 12px;
-  padding: 5px 0;
-  border: 0;
-  border-radius: 0;
-  color: var(--design-index-muted);
-  background: transparent;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-  overflow-wrap: normal;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .design-directory__chapter {
-  display: grid;
-  gap: 3px;
-  min-width: 0;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .design-directory__title {
+  align-items: flex-start;
+  min-height: 44px;
+  padding: 6px 10px;
+  color: var(--design-blue);
+  font-size: 20px;
+  font-weight: 650;
   line-height: 1.3;
 }
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .design-directory__topic {
-  color: var(--design-index-muted);
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) [data-content-major]::before {
-  content: counter(design-part, decimal-leading-zero);
-  flex: 0 0 20px;
-  color: var(--design-muted);
-  font-size: 11px;
-  font-weight: 400;
-  font-variant-numeric: tabular-nums;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a[aria-current] {
-  color: var(--design-index-ink);
-  font-weight: 600;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle {
-  flex-basis: 28px;
-  border-radius: 4px;
-  color: var(--design-muted);
-  background: transparent;
-  cursor: pointer;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle::after {
-  content: "+";
-  width: auto;
-  height: auto;
-  border: 0;
-  font: 400 18px/1 var(--sans);
-  transform: none;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle[aria-expanded="true"]::after {
-  content: "−";
-}
-
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory .content-subnav {
-  gap: 0;
-  margin: 0 0 10px 32px;
-  padding: 0;
-  border: 0;
+  gap: 1px;
+  margin: 4px 0 8px 12px;
+  padding-left: 6px;
+  border-left-color: var(--design-rule);
 }
-
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a {
-  padding: 7px 0;
-  border: 0;
-  border-radius: 0;
-  color: var(--design-index-muted);
-  background: transparent;
-  box-shadow: none;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.45;
-  overflow-wrap: normal;
+  padding: 5px 7px;
+  color: var(--design-muted);
+  font-size: 15px;
+  line-height: 1.35;
 }
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current] {
-  color: var(--design-index-ink);
-  font-weight: 600;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current]::before {
-  content: "";
-  position: absolute;
-  top: 14px;
-  left: -14px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav > .content-subnav-indicator {
-  display: none;
-}
-
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle { color: var(--design-muted); }
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory :is(a, button):hover {
-  color: var(--design-index-ink);
-  background: transparent;
+  color: var(--design-blue);
+  background: rgba(198, 204, 244, .2);
 }
-
-.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--design-lavender);
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory a[aria-current] {
+  color: var(--design-blue);
+  border-color: var(--design-rule);
+  background: rgba(198, 204, 244, .28);
 }
-
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current] { background: transparent; }
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav > .content-subnav-indicator {
+  background: rgba(198, 204, 244, .28);
+  box-shadow: inset 2px 0 var(--design-violet);
+}
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory :is(a, button):focus-visible {
+  outline-color: var(--design-blue);
+}
 @media (min-width: 761px) and (max-width: 1100px) {
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a {
-    gap: 8px;
-    font-size: 14px;
-  }
-
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle {
-    flex-basis: 24px;
-  }
-
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory .content-subnav {
-    margin-left: 28px;
-  }
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .markdown-page { grid-template-columns: 224px minmax(0, 1fr); }
 }
-
 @media (max-width: 760px) {
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-mobile-directory {
-    background: rgba(255, 255, 255, .96);
-  }
-
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a,
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a {
-    min-height: 44px;
-  }
-
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a {
-    display: flex;
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-mobile-directory .content-group__head > a {
     align-items: center;
-    padding-block: 10px;
+    padding: 10px 12px;
+    font-size: 17px;
   }
-
-  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current]::before {
-    top: 20px;
-  }
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a { padding: 8px 10px; }
 }
 
 .content-page [data-content-source="docs/team/design-communication.md"] .markdown-content .design-principle-quote {

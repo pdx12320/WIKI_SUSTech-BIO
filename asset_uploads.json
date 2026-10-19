@@ -1868,7 +1868,17 @@
     "https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-12-functional-validation-6778be681dc8.avif",
     "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-engineering-02-model-puffer-61f4506c421a.avif",
     "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif",
-    "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif"
+    "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-01-pod-ed3effe3b888.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-02-cetus-b421b1c0212d.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-03-integrated-orca-cb14f211df45.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-04-gfa-f13809a7d74e.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-05-mre-ff738e23e1e7.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-06-aso-8e500a4ed7ec.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-07-cre-loxp-56bec17d1db1.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-08-aav9-3346a48c8d5b.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-09-sonar-c615567701ad.avif",
+    "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-10-puffer-8625152c4d11.avif"
   ],
   "confirmed_mapping": [
     {
@@ -7192,6 +7202,66 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif",
       "sha256": "52da07b331eb396dc92b9db243614e2ab51ecbfba45b626c11bd8ff320a0b037",
       "evidence": "user_uploaded_hp_opening_original_http200_avif_1440x960_visual_content_verified_20261019"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/pod.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-01-pod-ed3effe3b888.avif",
+      "sha256": "ed3effe3b8886b2d1928e0003218e15c8317330104df304b20caf929b35bbfd7",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/cetus.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-02-cetus-b421b1c0212d.avif",
+      "sha256": "b421b1c0212d7304a96708cbcbd3eeb0f2f652e3428772ee0ae03b72b17a3d8f",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/integrated-orca.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-03-integrated-orca-cb14f211df45.avif",
+      "sha256": "cb14f211df4599ea7cfb93e36a88a7eb82fd7290bd37ace6d364d80bab7abe31",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/gfa.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-04-gfa-f13809a7d74e.avif",
+      "sha256": "f13809a7d74ec1b6381dc901d7e10829727bbf77aa3e45d6a15debd841543018",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/mre.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-05-mre-ff738e23e1e7.avif",
+      "sha256": "ff738e23e1e79d1b3728caa59a1fc8988384c1e25cf716aef9182b0662deee13",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/aso.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-06-aso-8e500a4ed7ec.avif",
+      "sha256": "8e500a4ed7ecd40138add6d35f70d5211f38d08a56b3fcf9799c6479c4c71522",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/cre-loxp.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-07-cre-loxp-56bec17d1db1.avif",
+      "sha256": "56bec17d1db1153b24f906840c8779592cb4cb10276c3c272ef3e13ab42dc724",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/aav9.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-08-aav9-3346a48c8d5b.avif",
+      "sha256": "3346a48c8d5bf857556d97e95e966ebe7baf66f884d05e71c9103ed9b1bd88f7",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/sonar.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-09-sonar-c615567701ad.avif",
+      "sha256": "c615567701ad73c097bc548a6d36628eb20bb91338667e48702158b714f94fd6",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
+    },
+    {
+      "local_path": "assets/images/engineering-cartoons/puffer.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-10-puffer-8625152c4d11.avif",
+      "sha256": "8625152c4d115df5d74f8affcb3ac7dd688b19699b05cd46bd4dd0d45065517d",
+      "evidence": "user_cartoon_upload_url_and_filename_sha256_verified_avif_dimensions_pixels"
     }
   ],
   "content_hashes": [

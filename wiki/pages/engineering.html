@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='reading-back-to-top.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-workspace.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-overview-illustrations.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='engineering-overview-cartoons.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='control-milestones.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-figures.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-map.css') }}">
@@ -53,6 +54,7 @@
     {% include 'components/engineering_map_back.html' %}
   </aside>
 </main>
+{% include 'components/engineering_cartoon_assets.html' %}
 <noscript><style>.engineering-map { display: none !important; } .engineering-workspace { position: static; display: block; } .engineering-paper[hidden] { display: block !important; } body.engineering-workspace-page { height: auto; overflow: auto; }</style></noscript>
 {% endblock %}
 {% block footer %}{% endblock %}
@@ -66,4 +68,5 @@
 <script src="{{ url_for('static', filename='engineering-figures.js') }}" defer></script>
 <script src="{{ url_for('static', filename='engineering-sidebar.js') }}" defer></script>
 <script src="{{ url_for('static', filename='engineering-overview-switch.js') }}" defer></script>
+<script src="{{ url_for('static', filename='engineering-overview-cartoons.js') }}" defer></script>
 {% endblock %}

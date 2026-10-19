@@ -58,6 +58,13 @@ for (const [width, height] of [[390, 844], [844, 390], [768, 1024], [1440, 900],
       `${direction} must remain visible at its horizontal corner at ${width}×${height}`);
     assert.ok(Math.abs(innerY - height * (upper ? .25 : .75)) < .01,
       `${direction} must remain visible at its vertical corner at ${width}×${height}`);
+    const labelX = parseFloat(properties.get(`--opening-label-${direction}-x`)) / 100 * width;
+    const labelY = parseFloat(properties.get(`--opening-label-${direction}-y`)) / 100 * height;
+    const lx = labelX - ox, ly = labelY - oy;
+    const finalX = ox + dx + .92 * (lx * Math.cos(angle) - ly * Math.sin(angle));
+    const finalY = oy + dy + .92 * (lx * Math.sin(angle) + ly * Math.cos(angle));
+    assert.ok(Math.abs(finalX - width * (left ? .10 : .90)) < .01, 'Names must remain inside the visible corner');
+    assert.ok(Math.abs(finalY - height * (upper ? .07 : .93)) < .01, 'Names must remain inside the visible corner');
     assert.ok(left ? Math.min(...xs) < 0 : Math.max(...xs) > width);
     assert.ok(upper ? Math.min(...ys) < 0 : Math.max(...ys) > height);
 

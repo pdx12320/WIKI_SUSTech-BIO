@@ -121,11 +121,13 @@ For us, this combination of programmable recognition, C-to-U editing, and modula
 
 CU-REWIRE provided a molecular starting point for APOE4 RNA editing. Building on this foundation, ORCA addresses a broader question: how can a programmable editor become a system whose activity can be refined, regulated, delivered, and meaningfully evaluated? We organized our work into three connected stages: **Fundamental Research, Platform Development, and Functional Validation**.
 
-<div class="description-card" markdown="1">
+<div class="description-card description-card--fundamental" markdown="1">
 
 ### Fundamental Research <span class="description-heading-subtitle">— Establishing the Foundation</span>
 
 We began by adapting the REWIRE framework to APOE4 and comparing PUF recognition architectures. These initial experiments examined how recognition-domain design affected editing at our target, informing the choice of a molecular backbone for subsequent engineering.
+
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#fundamental-research" aria-label="To Engineering: Fundamental Research">To Engineering <span aria-hidden="true">↗</span></a></div>
 
 </div>
 
@@ -133,56 +135,68 @@ We began by adapting the REWIRE framework to APOE4 and comparing PUF recognition
 
 Improving the editor alone would not address every requirement of the system. We therefore developed five complementary workstreams, each focused on a distinct engineering question.
 
-<div class="description-card description-card--workstream" markdown="1">
+<div class="description-card description-card--workstream description-card--edit" markdown="1">
 
 **EDIT — Refining recognition and catalysis.**
 {: .description-workstream-title}
 
 Through POD and CETUS, we investigated changes to the PUF recognition domain and APOBEC catalytic domain. Integrated ORCA brought selected variants together to examine their combined behavior.
 
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#pod" aria-label="To Engineering: Edit">To Engineering <span aria-hidden="true">↗</span></a></div>
+
 </div>
 
-<div class="description-card description-card--workstream" markdown="1">
+<div class="description-card description-card--workstream description-card--control" markdown="1">
 
 **CONTROL — Regulating expression and activity.**
 {: .description-workstream-title}
 
 We explored complementary strategies for cell-context-dependent expression and externally controlled suppression, addressing where the editor acts and how its activity might be limited.
 
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#gfa" aria-label="To Engineering: Control">To Engineering <span aria-hidden="true">↗</span></a></div>
+
 </div>
 
-<div class="description-card description-card--workstream" markdown="1">
+<div class="description-card description-card--workstream description-card--deliver" markdown="1">
 
 **DELIVER — Developing a delivery route.**
 {: .description-workstream-title}
 
 We investigated AAV-compatible constructs and packaging as steps toward delivering the editing machinery to relevant cells.
 
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#deliver" aria-label="To Engineering: Deliver">To Engineering <span aria-hidden="true">↗</span></a></div>
+
 </div>
 
-<div class="description-card description-card--workstream" markdown="1">
+<div class="description-card description-card--workstream description-card--measure" markdown="1">
 
 **MEASURE — Making editing assessable.**
 {: .description-workstream-title}
 
 We developed an editing-responsive reporter and the SONAR analysis framework to support comparable fluorescence measurements and examine their relationship to sequencing-based editing evidence.
 
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#measure" aria-label="To Engineering: Measure">To Engineering <span aria-hidden="true">↗</span></a></div>
+
 </div>
 
-<div class="description-card description-card--workstream" markdown="1">
+<div class="description-card description-card--workstream description-card--model" markdown="1">
 
 **MODEL — Supporting design decisions.**
 {: .description-workstream-title}
 
 We used computational approaches to investigate molecular recognition, prioritize candidate designs, and explore how delivery and editing parameters could influence system behavior.
 
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#model-rna-seq" aria-label="To Engineering: Model">To Engineering <span aria-hidden="true">↗</span></a></div>
+
 </div>
 
-<div class="description-card" markdown="1">
+<div class="description-card description-card--validation" markdown="1">
 
 ### Functional Validation <span class="description-heading-subtitle">— Connecting Editing to Biological Context</span>
 
 Finally, we extended our investigation to APOE4-relevant cellular models, examining editor introduction and disease-related cellular readouts. This stage asks whether molecular editing is accompanied by measurable biological changes, while distinguishing evidence of editing from evidence of functional benefit.
+
+<div class="description-card__actions"><a class="description-card__engineering" href="/engineering#functional-validation" aria-label="To Engineering: Functional Validation">To Engineering <span aria-hidden="true">↗</span></a></div>
 
 </div>
 

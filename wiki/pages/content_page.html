@@ -41,6 +41,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='description-stats.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='description-navigation.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='description-typography.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='description-title.css') }}">
 {% endif %}
 {% if content.source_label == 'docs/wet-lab/measurement.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='measurement-reading.css') }}">{% endif %}
 {% if content.source_label in ['docs/project/blueprint.md', 'docs/project/results.md'] %}<link rel="stylesheet" href="{{ url_for('static', filename='experiment-prose.css') }}">{% endif %}
@@ -55,9 +56,13 @@
 
 {% block main %}
 <main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% endif %}">
+  {% if content.source_label == 'docs/project/description.md' %}
+  {% include 'components/description_title.html' %}
+  {% else %}
   <header class="content-overview">
     <h1>{{ content.title }}</h1>
   </header>
+  {% endif %}
 
   {% if content.source_label == 'docs/wet-lab/measurement.md' and content.metadata.overview %}
   <section class="measurement-overview" aria-labelledby="measurement-overview-title">

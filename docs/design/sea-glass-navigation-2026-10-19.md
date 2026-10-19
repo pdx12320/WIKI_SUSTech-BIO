@@ -163,3 +163,15 @@ by the independent C-to-U focus flip; the comparison was repeated after that
 animation settled. The assembled menu and a partial-mask preview were inspected.
 The 26 route tests, navigation-scroll tests, JS syntax and whitespace checks passed.
 No dependencies or remote repository state were changed.
+
+## Branch publication validation — 2026-10-19
+
+The user authorized publication only to `design/sea-glass-menu`. The branch
+incorporates `main` at `b33c901e306b0beffe7b6c488f1e32882eadd4fb`, preserving
+Blueprint removal and the newer Engineering navigation/illustration changes.
+The merge required no conflict resolution. Validation on the combined tree:
+145 Python tests passed, as did `tests/navigation_scroll.mjs`, JavaScript syntax
+checks and 12 browser viewport/route scenarios. The original Python environment
+lacked test-only lxml; the complete run used the existing bundled lxml 6.1.1
+without installing packages or changing dependency manifests. Runtime content
+and deployment targets remain unchanged by this publication step.

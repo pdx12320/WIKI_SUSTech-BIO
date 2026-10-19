@@ -1,0 +1,108 @@
+/* Original Overview diagrams flip to their corresponding ORCA characters. */
+.engineering-overview-card:has(.mascot-flip) { display: flow-root; container-type: inline-size; }
+.mascot-flip {
+  position: relative;
+  float: right;
+  width: 44%;
+  max-width: 360px;
+  aspect-ratio: 5 / 3;
+  margin: 2px 0 16px 24px;
+  perspective: 900px;
+}
+.mascot-flip-stage {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 620ms cubic-bezier(.22, 1, .36, 1);
+}
+.mascot-flip[data-flipped='true'] .mascot-flip-stage { transform: rotateY(180deg); }
+.mascot-flip-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 14px;
+}
+.mascot-flip-front { transform: rotateY(0deg); }
+.mascot-flip-back {
+  transform: rotateY(180deg);
+  padding: 8px 14px;
+  border: 1px solid #d5d7e6;
+  background: linear-gradient(145deg, #fffefb, #f2f1fb);
+}
+.engineering-copy .markdown-content .mascot-flip .mascot-flip-face > img {
+  display: block;
+  float: none;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  object-fit: contain;
+}
+.mascot-flip-toggle {
+  position: absolute;
+  z-index: 2;
+  /* Match the label row at 153/1080 of the source diagram height. */
+  top: max(22px, 14.2%);
+  right: 10px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #66618a;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.mascot-flip-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  z-index: -1;
+  border: 1px solid #c5c1d9;
+  border-radius: 50%;
+  background: #fffefcf5;
+  box-shadow: 0 2px 7px #4a476515;
+}
+.mascot-flip-toggle:hover::before { background: #efedf9; border-color: #9c92bb; }
+.mascot-flip-toggle:focus-visible { outline: 3px solid #8b729f; outline-offset: 1px; }
+.mascot-flip-toggle[aria-pressed='true'] { color: #fff; }
+.mascot-flip-toggle[aria-pressed='true']::before { background: #787199; border-color: #787199; }
+@container (max-width: 520px) {
+  .mascot-flip { float: none; width: min(100%, 360px); margin: 0 auto 20px; }
+}
+@media (max-width: 600px) {
+  .mascot-flip { float: none; width: min(100%, 360px); margin: 0 auto 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mascot-flip-stage { transition: none; transform: none !important; }
+  .mascot-flip-face { transform: none; }
+  .mascot-flip-back { visibility: hidden; }
+  .mascot-flip[data-flipped='true'] .mascot-flip-front { visibility: hidden; }
+  .mascot-flip[data-flipped='true'] .mascot-flip-back { visibility: visible; }
+}
+@media (forced-colors: active) {
+  .mascot-flip-toggle::before, .mascot-flip-back { border-color: ButtonText; background: Canvas; }
+  .mascot-flip-toggle, .mascot-flip-toggle[aria-pressed='true'] { color: ButtonText; }
+}
+@media print {
+  .mascot-flip-toggle { display: none; }
+  .mascot-flip-stage { transition: none; transform: none !important; }
+  .mascot-flip-back { display: none; }
+}

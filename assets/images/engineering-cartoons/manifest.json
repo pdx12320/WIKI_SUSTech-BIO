@@ -1,0 +1,202 @@
+[
+  {
+    "module": "pod",
+    "image": "pod.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-01-pod-ed3effe3b888.avif",
+    "sha256": "ed3effe3b8886b2d1928e0003218e15c8317330104df304b20caf929b35bbfd7",
+    "dimensions": [
+      3785,
+      2488
+    ],
+    "cdn_dimensions": [
+      3785,
+      2488
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.06613642445428944,
+      "rgb_mae": 0.39462575801982497
+    }
+  },
+  {
+    "module": "cetus",
+    "image": "cetus.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-02-cetus-b421b1c0212d.avif",
+    "sha256": "b421b1c0212d7304a96708cbcbd3eeb0f2f652e3428772ee0ae03b72b17a3d8f",
+    "dimensions": [
+      3217,
+      3107
+    ],
+    "cdn_dimensions": [
+      3217,
+      3107
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.08310553275521027,
+      "rgb_mae": 0.49135551707271247
+    }
+  },
+  {
+    "module": "integrated-orca",
+    "image": "integrated-orca.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-03-integrated-orca-cb14f211df45.avif",
+    "sha256": "cb14f211df4599ea7cfb93e36a88a7eb82fd7290bd37ace6d364d80bab7abe31",
+    "dimensions": [
+      4833,
+      3000
+    ],
+    "cdn_dimensions": [
+      4000,
+      2483
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.11294824808699154,
+      "rgb_mae": 0.5873306819707343
+    }
+  },
+  {
+    "module": "gfa",
+    "image": "gfa.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-04-gfa-f13809a7d74e.avif",
+    "sha256": "f13809a7d74ec1b6381dc901d7e10829727bbf77aa3e45d6a15debd841543018",
+    "dimensions": [
+      352,
+      228
+    ],
+    "cdn_dimensions": [
+      352,
+      228
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.07471092503987241,
+      "rgb_mae": 1.1975927033492824
+    }
+  },
+  {
+    "module": "mre",
+    "image": "mre.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-05-mre-ff738e23e1e7.avif",
+    "sha256": "ff738e23e1e79d1b3728caa59a1fc8988384c1e25cf716aef9182b0662deee13",
+    "dimensions": [
+      352,
+      230
+    ],
+    "cdn_dimensions": [
+      352,
+      230
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.07989130434782608,
+      "rgb_mae": 1.17207674571805
+    }
+  },
+  {
+    "module": "aso",
+    "image": "aso.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-06-aso-8e500a4ed7ec.avif",
+    "sha256": "8e500a4ed7ecd40138add6d35f70d5211f38d08a56b3fcf9799c6479c4c71522",
+    "dimensions": [
+      352,
+      234
+    ],
+    "cdn_dimensions": [
+      352,
+      234
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.07763937451437451,
+      "rgb_mae": 1.2518696581196582
+    }
+  },
+  {
+    "module": "cre-loxp",
+    "image": "cre-loxp.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-07-cre-loxp-56bec17d1db1.avif",
+    "sha256": "56bec17d1db1153b24f906840c8779592cb4cb10276c3c272ef3e13ab42dc724",
+    "dimensions": [
+      1622,
+      1049
+    ],
+    "cdn_dimensions": [
+      1622,
+      1049
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.03439539036061589,
+      "rgb_mae": 0.7647468847672435
+    }
+  },
+  {
+    "module": "aav9",
+    "image": "aav9.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-08-aav9-3346a48c8d5b.avif",
+    "sha256": "3346a48c8d5bf857556d97e95e966ebe7baf66f884d05e71c9103ed9b1bd88f7",
+    "dimensions": [
+      1226,
+      816
+    ],
+    "cdn_dimensions": [
+      1226,
+      816
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.13808655599270703,
+      "rgb_mae": 0.7562607288701234
+    }
+  },
+  {
+    "module": "sonar",
+    "image": "sonar.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-09-sonar-c615567701ad.avif",
+    "sha256": "c615567701ad73c097bc548a6d36628eb20bb91338667e48702158b714f94fd6",
+    "dimensions": [
+      1224,
+      816
+    ],
+    "cdn_dimensions": [
+      1224,
+      816
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.18739186851211073,
+      "rgb_mae": 0.9076300114272288
+    }
+  },
+  {
+    "module": "puffer",
+    "image": "puffer.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-10-puffer-8625152c4d11.avif",
+    "sha256": "8625152c4d115df5d74f8affcb3ac7dd688b19699b05cd46bd4dd0d45065517d",
+    "dimensions": [
+      1224,
+      816
+    ],
+    "cdn_dimensions": [
+      1224,
+      816
+    ],
+    "cdn_verification": {
+      "status": 200,
+      "format": "AVIF",
+      "alpha_mae": 0.151617366717929,
+      "rgb_mae": 0.9597453837199367
+    }
+  }
+]

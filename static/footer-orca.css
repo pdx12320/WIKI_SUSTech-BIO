@@ -29,7 +29,7 @@
 .site-footer--school .footer-intro-logo:focus-visible img { filter: drop-shadow(0 0 6px #9cb9df); }
 .site-footer--school .footer-intro-logo img { display: block; width: 150px; max-width: 100%; height: auto; object-fit: contain; }
 .site-footer--school .footer-about p { color: #dbe5f4; font: 14px/1.65 Futura, 'Century Gothic', sans-serif; margin: 0 0 10px; max-width: none; }
-.site-footer--school .footer-about a { display: inline-flex; align-items: center; gap: 16px; font-size: 14px; color: #fffefc; text-decoration: none; border-bottom: 1px solid #9cb9df; padding-bottom: 5px; }
+.site-footer--school .footer-about a { display: inline-flex; align-items: center; gap: 16px; font-size: 14px; color: #fffefc; text-decoration: none; border-bottom: 0; padding-bottom: 5px; }
 .site-footer--school .footer-about a span { transition: transform .25s ease; }
 .site-footer--school .footer-about a:hover span { transform: translateX(5px); }
 .site-footer--school .footer-nav { grid-column: 1; grid-row: 2; gap: 18px; border-top: 1px solid #b1c9eb26; padding-top: 18px; }
@@ -50,9 +50,9 @@
 .site-footer--school .footer-sponsors::before { content: ''; position: absolute; z-index: -1; inset: 0 -100vw; background: #fff; pointer-events: none; }
 .site-footer--school .footer-community-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; width: 100%; }
 .site-footer--school .footer-community-heading h4 { text-align: left; width: auto; color: #10274c; }
-.site-footer--school .footer-community-heading a { flex-shrink: 0; color: #10274c; font-size: 13px; text-underline-offset: 4px; }
+.site-footer--school .footer-community-heading a { flex-shrink: 0; color: #10274c; font-size: 13px; text-decoration: none; }
 .site-footer--school .footer-community-note { width: 100%; margin: 0; color: #dbe5f4; font-size: 12px; line-height: 1.5; }
-.site-footer--school .sponsor-logos-scroll { scrollbar-width: thin; scrollbar-color: #7287a5 #edf1f7; padding-bottom: 10px; }
+.site-footer--school .sponsor-logos-scroll { scrollbar-width: none; padding-bottom: 10px; }
 .site-footer--school .sponsor-logos-group { align-items: flex-start; gap: 18px; }
 .site-footer--school .community-logo-card { width: 150px; flex-basis: 150px; }
 .site-footer--school .community-logo-surface { height: 58px; border-radius: 4px; }

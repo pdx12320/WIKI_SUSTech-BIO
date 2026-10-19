@@ -56,6 +56,7 @@ members:
   category: team-members
   quote_lang: en
 - name: Dengxiang Yang
+  role_layout: single-row
   number: '04'
   photo_asset: assets/team/portraits/dengxiang_yang.avif
   photo_position: 50% 35%
@@ -114,7 +115,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B5
 - name: Jiawen Fu
-  number: 08
+  number: '07'
   photo_asset: assets/team/portraits/jiawen_fu.avif
   photo_position: 50% 35%
   quote: After all, tomorrow is another day.
@@ -129,7 +130,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B12
 - name: Lili Yu
-  number: 09
+  number: '08'
   photo_asset: assets/team/portraits/lili_yu.avif
   photo_position: 50% 35%
   quote: Every action's an art of creation
@@ -142,7 +143,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B16
 - name: Muyin GUO
-  number: '10'
+  number: '09'
   photo_asset: assets/team/portraits/muyin_guo.avif
   photo_position: 50% 35%
   quote: Shine like the stars, dare to be different.
@@ -155,7 +156,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B13
 - name: Ping Sun
-  number: '11'
+  number: '10'
   photo_asset: assets/team/portraits/ping_sun.avif
   photo_position: 50% 35%
   quote: Whatever the mind of man can conceive and believe ,it can achieve.
@@ -170,7 +171,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B3
 - name: Wenxiang Huang
-  number: '12'
+  number: '11'
   photo_asset: assets/team/portraits/wenxiang_huang.avif
   photo_position: 50% 35%
   quote: ''
@@ -183,7 +184,7 @@ members:
     icon: video
   category: team-members
 - name: Xiaoyu Que
-  number: '13'
+  number: '12'
   photo_asset: assets/team/portraits/xiaoyu_que.avif
   photo_position: 50% 35%
   quote: Does the future lie far beyond the starry night?May we always keep our mind pure and bright.
@@ -207,7 +208,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B4
 - name: Yilin Liu
-  number: '15'
+  number: '13'
   photo_asset: assets/team/portraits/yilin_liu.avif
   photo_position: 50% 35%
   quote: Among countless choices, walk towards yourself.
@@ -222,7 +223,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B14
 - name: Yukang Qi
-  number: '16'
+  number: '14'
   photo_asset: assets/team/portraits/yukang_qi.avif
   photo_position: 50% 35%
   quote: Stay curious, keep exploring.
@@ -237,7 +238,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B11
 - name: Yunxiang Zhang
-  number: '17'
+  number: '15'
   photo_asset: assets/team/portraits/yunxiang_zhang.avif
   photo_position: 50% 35%
   quote: The struggle itself toward the heights is enough to fill a man's heart.

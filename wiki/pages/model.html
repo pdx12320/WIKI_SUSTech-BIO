@@ -43,11 +43,11 @@
        <section class="model-module" id="model-content" data-content-source="{{ content.source_label }}">
          <header class="module-heading"><span class="module-number">00</span><div><h2>{{ content.metadata.get('heading', content.title) }}</h2></div></header>
          <article class="model-prose markdown-content markdown-content--custom">
+           {{ rendered_markdown }}
            <figure class="model-overview-figure" id="model-figure-1">
              <img src="{{ url_for('assets', filename='images/orca-model-overview-combined.svg') }}" width="1600" height="1949" alt="ORCA model overview. The larger upper four-module cycle connects through a broad arrow to Modeling data at the center of the smaller lower whole-body delivery model. Modeling data connects only to the lower-right RNA product composition panel; the other panels show systemic distribution, barrier and expression, and tissue coverage.">
-             <figcaption><strong>Figure 1.</strong> ORCA model overview.</figcaption>
+             <figcaption><strong>Figure 1.</strong> ORCA model overview. RNA-seq maps the editing landscape; protein foundation and structural models guide recognition and catalytic design; generative models propose PUF sequences; LAMAR ranks RNA sites; and delivery simulations connect editor exposure to RNA products. Experimental measurements connect the sequence-level models to observed editing outcomes.</figcaption>
            </figure>
-           {{ rendered_markdown }}
          </article>
        </section>
        {% endif %}

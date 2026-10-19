@@ -8,6 +8,10 @@ eyebrow: Project
 
 ## Short-Term — Platform Optimization {#short-term-platform-optimization}
 
+![Short-term vision for a data-driven ORCA optimization platform](/assets/images/submission-20261017/future/short-term-platform-optimization.png)
+
+*Figure 1. Proposed ORCA development loop connecting computational design, POD–CETUS optimization, SONAR measurement, future reporter-RNA calibration, and system-level integration.*
+
 *From Engineering an Editor to Engineering Discovery*
 
 Our work began with APOE4 RNA editing, but it has grown into a broader effort to engineer how RNA editors are designed, controlled, delivered, and measured. POD explored the PUF recognition architecture; CETUS investigated the APOBEC catalytic domain; Integrated ORCA brought the two into the same optimization space; and SONAR introduced a quantitative framework for evaluating editing behavior. Together with computational design and expression control, these efforts suggest a new possibility: **what if every editing experiment could inform the next design?** Our next step is not simply to improve one ORCA variant, but to make the process of developing RNA editors more systematic, predictive, and iterative.
@@ -22,13 +26,13 @@ These advances could ultimately connect in a **data-driven design–build–test
 
 At the same time, a useful RNA-editing platform must be judged by more than editing efficiency. We plan to extend system-level validation of AAV9 delivery, characterize gfaABC1D-driven expression across relevant cell types, and assess how ASO-based suppression and Cre–loxP-mediated shutdown could function within a complete ORCA system. These efforts would bring delivery compatibility, cellular selectivity, controllability, and bystander risk into the same evaluation framework as on-target performance. The next generation of ORCA should not simply be a stronger editor for APOE4. **It should be a platform that helps us design, measure, compare, and improve RNA editors for the targets that come next.**
 
-![Short-term vision for a data-driven ORCA optimization platform](/assets/images/submission-20261017/future/short-term-platform-optimization.png)
-
-*Figure 1. Proposed ORCA development loop connecting computational design, POD–CETUS optimization, SONAR measurement, future reporter-RNA calibration, and system-level integration.*
-
 ---
 
 ## Long-Term — Therapeutic Translation {#long-term-therapeutic-translation}
+
+![Long-term ORCA vision from astrocyte RNA editing toward therapeutic translation](/assets/images/submission-20261017/future/long-term-therapeutic-translation.png)
+
+*Figure 2. Proposed translational path from improved CNS delivery and astrocytic APOE4 RNA editing to potential local tissue effects, functional studies, safety evaluation, and clinical strategy.*
 
 *Beyond the Edited Cell*
 
@@ -43,7 +47,3 @@ This leads to a central translational question: **how much correction is enough?
 Only with such human-relevant evidence could ORCA advance toward **preclinical therapeutic evaluation**. Suitable APOE4 animal models would allow us to examine brain distribution, cell-type preference, editing persistence, and disease-related functional outcomes in vivo. Safety assessment would need to extend beyond confirming the intended edit: transcriptome-wide unintended editing, prolonged expression, immune responses, dose selection, and the reliability of shutdown mechanisms would all require systematic investigation. Further ahead, a clinical strategy would have to account for patient heterogeneity. APOE genotype, disease stage, and biomarkers from blood, cerebrospinal fluid, and neuroimaging could help identify the populations most likely to benefit and the outcomes most meaningful to measure. For an intervention directed at an Alzheimer's-related risk mechanism, timing may be especially important: could the greatest benefit come before extensive neural damage, rather than only after symptoms are established?
 
 Our long-term vision also reaches beyond APOE4. As programmable recognition, catalytic design, delivery, and safety control improve, the same principles could be explored for other disease-relevant RNAs amenable to C-to-U editing. The nonpermanent nature of RNA editing offers a distinct therapeutic design space, but its value will depend on whether molecular effects can become sufficiently durable, reproducible, and controllable to matter biologically. Ultimately, ORCA is about more than changing one nucleotide. **It is about learning whether a precisely targeted molecular intervention can improve the behavior of a complex biological system—and what evidence is needed to turn that possibility into a treatment.**
-
-![Long-term ORCA vision from astrocyte RNA editing toward therapeutic translation](/assets/images/submission-20261017/future/long-term-therapeutic-translation.png)
-
-*Figure 2. Proposed translational path from improved CNS delivery and astrocytic APOE4 RNA editing to potential local tissue effects, functional studies, safety evaluation, and clinical strategy.*

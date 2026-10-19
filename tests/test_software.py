@@ -51,7 +51,7 @@ class SoftwareDeliveryTest(unittest.TestCase):
         self.assertIn('<h2>PUFFER</h2>', self.html)
         self.assertNotRegex(self.html, r'[\u4e00-\u9fff]')
         chapter_numbers = re.findall(r'<h3 id="[^"]+" data-model-chapter><span class="chapter-number">([\d.]+)</span>', self.html)
-        expected_numbers = [f'1.{chapter}' for chapter in range(1, 7)] + [f'2.{chapter}' for chapter in range(1, 6)]
+        expected_numbers = [f'1.{chapter}' for chapter in range(1, 7)] + [f'2.{chapter}' for chapter in range(1, 7)]
         self.assertEqual(chapter_numbers, expected_numbers)
         sidebar_numbers = re.findall(r'<span class="module-chapter-number">([\d.]+)</span>', self.html)
         self.assertEqual(sidebar_numbers, expected_numbers)
@@ -97,7 +97,8 @@ class SoftwareDeliveryTest(unittest.TestCase):
 
     def test_numbered_figures_and_descriptive_names(self):
         self.assertEqual(self.page.figure_numbers, list(range(1, 41)))
-        self.assertLess(self.html.index('id="software-figure-1"'), self.html.index('id="rewire-purpose"'))
+        self.assertLess(self.html.index('id="rewire-purpose"'), self.html.index('id="rewire-logic"'))
+        self.assertLess(self.html.index('id="rewire-logic"'), self.html.index('id="software-figure-1"'))
         first_figure = self.html.split('id="software-figure-1"', 1)[1].split('</figure>', 1)[0]
         self.assertIn('14_full_model_workflow/figure.svg', first_figure)
         self.assertIn('Figure 1. Delivery-to-editing model.', first_figure)
@@ -108,7 +109,7 @@ class SoftwareDeliveryTest(unittest.TestCase):
         self.assertIn("Module 4's LAMAR-based RNA-site prioritization", self.html)
         self.assertNotIn('DBTL', self.html.upper())
 
-    def test_references_and_code_last_without_body_hyperlinks(self):
+    def test_references_and_code_last_with_overview_result_links(self):
         sections, start, depth = [], None, 0
         for tag in re.finditer(r'<(/?)section\b[^>]*>', self.html):
             if start is None:
@@ -127,7 +128,21 @@ class SoftwareDeliveryTest(unittest.TestCase):
             self.assertIn('doi:', section)
             parser = SoftwareParser()
             parser.feed(section)
-            self.assertTrue(all('download' in link for link in parser.links))
+            result_links = [link for link in parser.links if link.get('href', '').startswith('#rewire-result-')]
+            public_links = {
+                'https://puffer-43e67d.igem.wiki/',
+                'https://video.igem.org/w/i2fLRahC8pGYzLGTc7X1SS',
+                'https://video.igem.org/w/i5ucCjeFKN3JoWaDeSiLiU',
+            }
+            self.assertTrue(all('download' in link or link in result_links or link.get('href') in public_links for link in parser.links))
+            for link in result_links:
+                self.assertIn('id="' + link['href'][1:] + '"', section)
+            if 'id="rewire-purpose"' in section:
+                self.assertEqual(len(result_links), 4)
+                overview = section.split('id="rewire-purpose"', 1)[1].split('<h3 id="rewire-logic"', 1)[0]
+                self.assertLess(len(re.sub(r'<[^>]+>', ' ', overview).split()), 115)
+                self.assertEqual(overview.count('<strong>'), 4)
+                self.assertNotIn('<figure', overview)
 
     def test_saved_spatial_data_has_all_doses_frames_and_cells(self):
         source = Path('static/assets/software/brain-delivery/brain-delivery-spatial.json')
@@ -156,9 +171,27 @@ class SoftwareDeliveryTest(unittest.TestCase):
                 self.assertEqual(response.status_code, 206)
                 self.assertEqual(len(response.data), 1024)
                 response.close()
-        # Original files stay available locally; video players are hidden until
-        # official Video Universe URLs are supplied by the team.
+        # Preserve archived originals; both hosting environments use official embeds.
         self.assertNotIn('<video', self.html)
-        self.assertNotIn('id="workbench-demo"', self.html)
-        self.assertNotIn('href="#workbench-tutorial"', self.html)
+        self.assertIn('id="workbench-demo"', self.html)
+        self.assertIn('href="#workbench-tutorial"', self.html)
         self.assertNotIn('autoplay', self.html)
+
+    def test_puffer_embeds_and_overview_link_work_in_both_asset_modes(self):
+        original_mode = app.config['WIKI_ASSET_MODE']
+        try:
+            for mode in ('local', 'igem'):
+                with self.subTest(mode=mode):
+                    app.config['WIKI_ASSET_MODE'] = mode
+                    page = self.client.get('/software').get_data(as_text=True)
+                    frames = re.findall(r'<iframe\b[^>]*>', page)
+                    self.assertEqual(len(frames), 2)
+                    for frame, video in zip(frames, ('i2fLRahC8pGYzLGTc7X1SS', 'i5ucCjeFKN3JoWaDeSiLiU')):
+                        self.assertIn(f'src="https://video.igem.org/videos/embed/{video}"', frame)
+                        self.assertIn('title="PUFFER', frame)
+                        self.assertIn('allowfullscreen', frame)
+                    overview = page.split('id="workbench-purpose"', 1)[1].split('<h3 id="workbench-tutorial"', 1)[0]
+                    self.assertIn('id="workbench-demo"', overview)
+                    self.assertRegex(overview.strip(), r'<p class="software-website-link"><a href="https://puffer-43e67d\.igem\.wiki/"[^>]*>[^<]+</a></p>$')
+        finally:
+            app.config['WIKI_ASSET_MODE'] = original_mode

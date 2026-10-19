@@ -512,7 +512,7 @@
 
   function resize() {
     const siteNav = document.querySelector('.site-nav');
-    if (siteNav) workspace.style.setProperty('--engineering-nav-height', `${Math.ceil(siteNav.getBoundingClientRect().bottom)}px`);
+    if (siteNav) workspace.style.setProperty('--engineering-nav-height', `${siteNav.offsetHeight}px`);
     schedule();
   }
 

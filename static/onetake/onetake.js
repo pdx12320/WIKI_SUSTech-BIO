@@ -584,7 +584,7 @@ const KEYS = [
 // Text, camera and effects all use this same reversible timeline mapping.
 const { track: TRACK, length: trackLength, scale: trackScale } = buildScrollTrack(KEYS, {
   burden: !!root?.querySelector('[data-burden]'),
-  quickEditExit: !!root?.hasAttribute('data-edit-quick-rewind'),
+  stagedConclusions: !!root?.hasAttribute('data-staged-conclusions'),
 });
 // Add the comparison's reading distance without speeding up other chapters.
 story?.style.setProperty('--ot-track-scale', trackScale);
@@ -617,10 +617,16 @@ function setupDom() {
     el, a: parseFloat(el.dataset.in), b: parseFloat(el.dataset.out),
   }));
   const counters = [...document.querySelectorAll('[data-ot-count]')];
+  const reveals = [...root.querySelectorAll('[data-ot-reveal]')];
   const bar = document.querySelector('.ot-bar');
   return (p, live) => {
     if (bar) bar.classList.toggle('is-story-ended', p >= 1);
     for (const c of chapters) c.el.classList.toggle('is-on', p >= c.a && p < c.b);
+    for (const el of reveals) {
+      const amount = smooth(ramp(p, +el.dataset.otReveal, +el.dataset.otRevealEnd));
+      el.style.setProperty('--copy-reveal', amount.toFixed(4));
+      el.setAttribute('aria-hidden', String(amount === 0));
+    }
     for (const el of counters) {
       const k = smooth(ramp(p, +el.dataset.from, +el.dataset.to));
       el.textContent = `${Math.round(+el.dataset.target * (live ? k : 1)).toLocaleString('en-US')}+`;
@@ -665,6 +671,7 @@ function webglAvailable() {
 
 function showStatic() {
   root?.classList.add('ot--static', 'is-ready');
+  root?.querySelectorAll('[data-ot-reveal]').forEach(el => el.removeAttribute('aria-hidden'));
   for (const el of document.querySelectorAll('[data-ot-count]')) {
     el.textContent = `${Number(el.dataset.target).toLocaleString('en-US')}+`;
   }

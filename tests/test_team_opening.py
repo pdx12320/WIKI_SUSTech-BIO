@@ -55,10 +55,13 @@ class TeamOpeningTest(unittest.TestCase):
             self.assertIn(f'<span>{name}</span>', folders)
             self.assertRegex(folders, rf'<button[^>]+type="button"[^>]+data-team-filter="{name}"[^>]+aria-pressed="false"[^>]+aria-controls="team-deck" disabled>')
         self.assertNotIn('<a ', folders)
-        self.assertIn('data-team-filter-reset hidden', header)
+        self.assertIn('data-team-overview aria-label="Show all team members"', header)
+        self.assertNotIn('data-team-filter-reset', header)
+        self.assertIn('class="team-sr-only" data-team-filter-summary', header)
         self.assertIn('data-team-filter-summary hidden', header)
         self.assertIn('data-team-filter-status role="status" aria-live="polite" aria-atomic="true"', header)
         self.assertIn('data-team-filter-empty hidden', page)
+        self.assertNotIn('Science is a team sport.', page)
 
     def test_folder_filters_receive_all_formal_member_role_labels(self):
         with app.test_client() as client:

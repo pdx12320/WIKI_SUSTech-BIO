@@ -87,7 +87,10 @@
       button?.classList.remove('is-unpacking');
       button?.classList.remove('is-complete');
       button?.setAttribute('aria-busy', 'false');
-      button?.setAttribute('aria-label', 'ORCA team package unpacked');
+      if (button) button.disabled = false;
+      button?.setAttribute('data-team-overview', '');
+      button?.setAttribute('aria-label', 'Show all team members');
+      button?.setAttribute('aria-controls', 'team-deck');
       const status = button?.querySelector('[data-team-package-status]');
       if (status) status.textContent = 'ORCA team package unpacked.';
       if (compilation) document.querySelector('[data-team-package-mount]')?.replaceChildren(compilation);
@@ -163,12 +166,13 @@
       return;
     }
 
-    const holdDuration = 600;
+    const durationScale = 0.6;
+    const holdDuration = 600 * durationScale;
     const outputSpeed = 1.1 * 1.3;
-    const outputDuration = (Math.max(8000, lines.length * 260 + holdDuration) - holdDuration) / outputSpeed;
+    const outputDuration = (Math.max(8000, lines.length * 260 + 600) - 600) / outputSpeed * durationScale;
     const duration = outputDuration + holdDuration;
     const lineInterval = outputDuration / Math.max(lines.length, 1);
-    const typingDuration = Math.min(190 / outputSpeed, lineInterval * .75);
+    const typingDuration = Math.min(190 / outputSpeed * durationScale, lineInterval * .75);
     const startedAt = performance.now();
     let codeComplete = false;
     let framesComplete = false;
@@ -180,7 +184,7 @@
       button.classList.remove('is-unpacking');
       button.classList.add('is-complete');
       if (status) status.textContent = 'Unpacked';
-      phaseTimers.push(setTimeout(() => finish({ packageOpen: true }), 1400));
+      phaseTimers.push(setTimeout(() => finish({ packageOpen: true }), 1400 * durationScale));
     };
     const showFrame = index => {
       if (opening.hidden) return;

@@ -1,0 +1,62 @@
+body .site-nav[data-scroll-navigation] {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform .28s cubic-bezier(.22, 1, .36, 1);
+}
+
+body .site-nav[data-scroll-navigation].is-scroll-hidden {
+  transform: translateY(-110%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body .site-nav[data-scroll-navigation] { transition: none; }
+}
+
+/* CSS gates the first paint too, before the animation module has loaded.
+   Static/reduced-motion fallbacks retain their normal navigation. */
+body.ot:has([data-ot]:not(.ot--static):not(.is-story-complete)) .site-nav {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-110%);
+  transition: none;
+}
+
+/* Engineering shares one animated offset between menu and reading workspace. */
+@property --engineering-menu-space {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
+}
+body.engineering-workspace-page {
+  background: #fff;
+}
+body.engineering-workspace-page .site-nav[data-scroll-navigation] {
+  background: #fff;
+  transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+}
+body.engineering-workspace-page .site-nav[data-scroll-navigation].is-scroll-hidden {
+  transform: translateY(-100%);
+}
+body.engineering-workspace-page .engineering-workspace {
+  --engineering-menu-space: var(--engineering-nav-height, 112px);
+  top: var(--engineering-menu-space);
+  transition: --engineering-menu-space .65s cubic-bezier(.22, 1, .36, 1);
+}
+body.engineering-workspace-page:has(.site-nav.is-scroll-hidden) .engineering-workspace {
+  --engineering-menu-space: 0px;
+}
+body.engineering-workspace-page .engineering-workspace[data-engineering-view='map'] {
+  --engineering-overview-height: calc(100svh - var(--engineering-menu-space) - 24px);
+}
+@media (max-width: 900px) {
+  body.engineering-workspace-page .engineering-sidebar-left {
+    top: calc(var(--engineering-menu-space) + 42px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.engineering-workspace-page :is(.site-nav[data-scroll-navigation], .engineering-workspace) {
+    transition: none;
+  }
+}

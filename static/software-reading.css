@@ -65,9 +65,10 @@ body:not(.ot) .software-page .model-prose a.software-action--primary:hover { col
 .software-page .software-actions { grid-template-columns: minmax(0, 360px); }
 .software-page .software-workflow .software-step svg { display: block; width: 40px; height: 40px; margin-bottom: 10px; fill: none; stroke: #2e267c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .software-page .software-tutorial { margin: 28px 0 36px; }
-.software-page .software-tutorial video { display: block; width: 100%; height: auto; aspect-ratio: 3024 / 2144; background: #171536; border-radius: 8px; }
-.software-page .software-demo video { aspect-ratio: 1280 / 832; }
+.software-page .software-tutorial iframe { display: block; width: 100%; height: auto; aspect-ratio: 3024 / 2144; border: 0; background: #171536; border-radius: 8px; }
+.software-page .software-demo iframe { aspect-ratio: 1280 / 832; }
 .software-page .model-prose .software-tutorial p { margin-top: 12px; font-size: 15px; color: #625f76; }
+.software-page .software-website-link a { font-weight: 650; text-underline-offset: 4px; }
 
 /* Four concise result stories, with figures kept in their numbered sequence. */
 .software-page .software-stories { margin: 30px 0 42px; padding: 0; list-style: none; counter-reset: software-story; }
@@ -82,3 +83,31 @@ body:not(.ot) .software-page .model-prose a.software-action--primary:hover { col
   .software-page .software-stories > li { padding: 24px 0 24px 40px; }
   .software-page .software-stories > li::before { top: 25px; font-size: 16px; }
 }
+
+/* A brief contribution statement and linked, highlighted simulation findings. */
+.software-page .model-prose .software-overview-results {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 32px;
+  padding: 0;
+  list-style: none;
+}
+.software-page .model-prose .software-overview-results li { margin: 0; }
+.software-page .software-overview-results a {
+  display: grid;
+  grid-template-columns: 1.5em minmax(0, 1fr);
+  gap: 8px;
+  padding: 12px 16px;
+  border-left: 3px solid #aaa1cc;
+  border-radius: 0 10px 10px 0;
+  background: #f4f1fb;
+  color: #3f395e;
+  text-decoration: none;
+}
+.software-page .software-overview-results a:hover { background: #eae5f5; }
+.software-page .software-overview-results a:focus-visible {
+  outline: 2px solid #5f62cd;
+  outline-offset: 3px;
+}
+.software-page .software-overview-results a > span { color: #78709e; }
+.software-page .software-overview-results strong { font-weight: 650; }

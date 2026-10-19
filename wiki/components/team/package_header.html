@@ -7,10 +7,10 @@
         <span class="team-opening__compile-line">load modules/dry_lab</span>
         <span class="team-opening__compile-line">load modules/wet_lab</span>
       </div>
-      <div class="team-opening__pkg">
+      <button class="team-opening__pkg" type="button" data-team-overview aria-label="Show all team members" aria-controls="team-deck">
         <span class="team-opening__pkg-art"><img src="{{ package_frames[3] }}" alt="" width="1600" height="1600"></span>
         <span class="team-opening__pkg-name">ORCA_TEAM.pkg</span>
-      </div>
+      </button>
       <div class="team-opening__compile-code" aria-hidden="true">
         <span class="team-opening__compile-line">load modules/human_practices</span>
         <span class="team-opening__compile-line">load modules/design</span>
@@ -33,8 +33,7 @@
     </li>
     {% endfor %}
   </ul>
-  <div class="team-filter-summary" data-team-filter-summary hidden>
+  <div class="team-sr-only" data-team-filter-summary hidden>
     <p data-team-filter-status role="status" aria-live="polite" aria-atomic="true"></p>
-    <button class="team-filter-reset" type="button" data-team-filter-reset hidden>Show all</button>
   </div>
 </header>

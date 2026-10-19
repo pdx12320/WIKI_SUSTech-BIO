@@ -53,3 +53,9 @@
   .ot-crt-home .ot-chapter-copy { margin-top: 14px; line-height: 1.45; }
   .ot-crt-home .ot-ch--right .ot-chapter-copy { margin-left: 0; }
 }
+
+/* Each conclusion gives its headline time before revealing supporting copy. */
+.ot-root:not(.ot--static) [data-ot-reveal] {
+  opacity: var(--copy-reveal, 0);
+  transform: translateY(calc(14px * (1 - var(--copy-reveal, 0))));
+}

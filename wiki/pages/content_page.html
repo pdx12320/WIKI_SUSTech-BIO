@@ -4,6 +4,7 @@
 {% block title %}{{ content.title }}{% endblock %}
 {% set has_dbtl = content.source_label == 'docs/project/engineering.md' %}
 {% set has_model_reading = not has_dbtl and (content.source_label.startswith('docs/project/') or content.source_label.startswith('docs/human-practices/')) %}
+{% set has_model_surface = has_model_reading or content.source_label in ['docs/wet-lab/measurement.md', 'docs/wet-lab/safety-and-security.md'] %}
 {% set directory = namespace(groups=[], current=none) %}
 {% set is_description = content.source_label == 'docs/project/description.md' %}
 {% set description_labels = {
@@ -36,7 +37,7 @@
 {% if has_dbtl %}<link rel="stylesheet" href="{{ url_for('static', filename='reading-orbit/dbtl-wheel.css') }}">{% endif %}
 <link rel="stylesheet" href="{{ url_for('static', filename='content-reading.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='model-reading.css') }}">
-{% if has_model_reading %}<link rel="stylesheet" href="{{ url_for('static', filename='content-model-reading.css') }}">{% endif %}
+{% if has_model_surface %}<link rel="stylesheet" href="{{ url_for('static', filename='content-model-reading.css') }}">{% endif %}
 {% if content.source_label == 'docs/project/description.md' %}
 <link rel="stylesheet" href="{{ url_for('static', filename='description-stats.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='description-navigation.css') }}">
@@ -54,7 +55,7 @@
 {% endblock %}
 
 {% block main %}
-<main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% endif %}">
+<main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% elif has_model_surface %} content-page--model-surface{% endif %}">
   <header class="content-overview">
     <h1>{{ content.title }}</h1>
   </header>
@@ -66,7 +67,7 @@
   </section>
   {% endif %}
 
-  {% if has_model_reading %}<div class="content-model-stage">{% endif %}
+  {% if has_model_surface %}<div class="content-model-stage">{% endif %}
   {% if content.toc and not has_dbtl %}
   <details class="content-mobile-directory">
     {% include 'components/page_sections_control.html' %}
@@ -88,7 +89,7 @@
       </article>
     </div>
   </div>
-  {% if has_model_reading %}</div>{% endif %}
+  {% if has_model_surface %}</div>{% endif %}
   {% include 'components/model/back-to-top.html' %}
 </main>
 {% endblock %}

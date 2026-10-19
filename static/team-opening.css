@@ -234,7 +234,7 @@ body.team-page--opening-blur .member-card.is-ready .member-card__turn { transfor
 .team-opening__pkg.is-complete .team-opening__pkg-art {
   border-color: #F58F9C;
   box-shadow: 0 0 0 5px #F58F9C22, 0 0 32px #F58F9C66;
-  animation: team-package-complete 1400ms ease-out both;
+  animation: team-package-complete 840ms ease-out both;
 }
 .team-opening__pkg.is-complete .team-opening__sr-status {
   position: static;

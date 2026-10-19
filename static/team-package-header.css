@@ -42,9 +42,10 @@
   grid-row: auto;
   transform: none;
   opacity: 1;
-  cursor: default;
-  pointer-events: none;
+  cursor: pointer;
+  pointer-events: auto;
 }
+.team-package-header .team-opening__pkg:focus-visible { outline: 2px solid #6F56C4; outline-offset: 5px; border-radius: 10px; }
 .team-package-header .team-opening__pkg-art {
   width: 96px;
   border-color: #D9D7E5;

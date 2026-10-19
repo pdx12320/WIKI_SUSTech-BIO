@@ -46,7 +46,7 @@
           {{ heart('member-card__front-heart') }}
           <h4 class="member-card__name" id="{{ key }}-name"><span data-fit-name>{{ member.get('card_name', name) }}</span></h4>
           <svg class="member-card__arrow" viewBox="0 0 200 38" fill="none" aria-hidden="true" focusable="false"><path d="M4 29 173 8 66 32 193 18 M174 10l20 7-12 13" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <ul class="member-card__roles{% if member.get('role_layout') == 'two-rows' %} member-card__roles--two-rows{% endif %}" id="{{ key }}-roles" aria-label="Roles">
+          <ul class="member-card__roles{% if member.get('role_layout') == 'two-rows' %} member-card__roles--two-rows{% elif member.get('role_layout') == 'single-row' %} member-card__roles--single-row{% endif %}" id="{{ key }}-roles" aria-label="Roles">
             {% for role in bottom_roles %}<li>{{ icon(role.get('icon', 'other')) }}<span>{{ role.label }}</span></li>{% else %}<li>{{ icon('other') }}<span>Team 2026</span></li>{% endfor %}
           </ul>
         </div>
@@ -61,7 +61,6 @@
         {% else %}<p class="member-card__quote member-card__quote--pending" id="{{ key }}-quote"><span data-fit-quote>A few words,<br>in your own voice.</span><small>Personal one-liner to come</small></p>{% endif %}
         {{ heart('member-card__back-heart') }}
       </div>
-      <p class="member-card__footer">SCIENCE <span>×</span> PEOPLE <span>×</span> A BRIGHTER TOMORROW</p>
     </div>
   </div>
   <button class="member-card__toggle" type="button" aria-pressed="false" aria-label="Flip {{ name }} card" aria-describedby="{% if is_student_leader %}{{ key }}-leader {% endif %}{{ key }}-roles" data-card-toggle hidden><span class="team-sr-only">Flip {{ name }} card</span></button>

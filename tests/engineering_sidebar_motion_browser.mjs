@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {mkdir} from 'node:fs/promises';
+const {chromium}=createRequire(import.meta.url)(process.env.PLAYWRIGHT_MODULE||'playwright');
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const base=process.env.WIKI_BASE_URL||'http://127.0.0.1:8919';
+await mkdir('work/nav-motion',{recursive:true});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(`${base}/engineering#pod`,{waitUntil:'networkidle'});
+ await page.waitForTimeout(400);
+ await page.locator('[data-diagram-part="cetus"]').hover();
+ await page.waitForTimeout(180);
+ assert.notEqual(await page.locator('[data-diagram-part="cetus"] .branch-symbol').evaluate(el=>getComputedStyle(el).transform),'none');
+ await page.evaluate(()=>window.savedTile=document.querySelector('.tile-control'));
+ // Capture animation halfway, avoiding Playwright's automatic wait for stable geometry.
+ await page.locator('.tile-control').evaluate(el=>el.click());
+ await page.waitForTimeout(90);
+ const mid=await page.locator('[data-branch-group="control"]').evaluate(el=>({height:el.getBoundingClientRect().height,full:el.firstElementChild.scrollHeight}));
+ assert.ok(mid.height>0&&mid.height<mid.full,JSON.stringify(mid));
+ await page.waitForTimeout(320);
+ assert.equal(await page.evaluate(()=>window.savedTile===document.querySelector('.tile-control')),true);
+ assert.equal(await page.locator('[data-branch-group="edit"]').evaluate(el=>el.inert&&el.getBoundingClientRect().height===0),true);
+ const marker=page.locator('.branch-control .diagram-selection-marker');
+ const before=await marker.evaluate(el=>getComputedStyle(el).transform);
+ await page.locator('[data-diagram-part="aso"]').evaluate(el=>el.click());
+ await page.waitForTimeout(70);
+ const during=await marker.evaluate(el=>getComputedStyle(el).transform);
+ await page.waitForTimeout(250);
+ const after=await marker.evaluate(el=>getComputedStyle(el).transform);
+ assert.notEqual(before,during);assert.notEqual(during,after);
+ await page.screenshot({path:'work/nav-motion/desktop.png'});
+ for(const id of ['edit','model','control','deliver','control'])await page.locator(`[data-diagram-group="${id}"]`).evaluate(el=>el.click());
+ await page.waitForTimeout(400);
+ assert.equal(await page.locator('.diagram-reveal.is-open').count(),1);
+ await page.emulateMedia({reducedMotion:'reduce'});
+ assert.ok(await marker.evaluate(el=>parseFloat(getComputedStyle(el).transitionDuration)<.001));
+ await page.locator('.tile-model').focus();await page.keyboard.press('Enter');
+ assert.equal(await page.locator('.tile-model').getAttribute('aria-expanded'),'true');
+ await page.setViewportSize({width:390,height:844});
+ await page.locator('.engineering-nav-toggle').click();
+ await page.screenshot({path:'work/nav-motion/mobile.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+ assert.deepEqual(errors,[]);
+ console.log('PASS: hover, intermediate expansion, persistent nodes, hidden inert branches, moving marker, rapid switching, reduced motion, keyboard, mobile overflow.');
+}finally{await browser.close();}

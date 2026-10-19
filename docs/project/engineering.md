@@ -315,7 +315,7 @@ POD evaluated **81 variant entries across two screening batches**, revealing dis
 
 ## CETUS {#cetus .engineering-chapter-title}
 
-Engineering APOBEC substrate selectivity
+Cytidine Editing, Tethered for Uridine Switching
 {.engineering-chapter-subtitle}
 
 ### Overview {#cetus-overview}
@@ -769,7 +769,6 @@ Integrated ORCA combined independently engineered recognition and catalytic modu
 Cell-context-dependent transcriptional control
 {.engineering-chapter-subtitle}
 
-<p class="control-evidence-note">Cell-context-dependent transcriptional regulation demonstrated; universal astrocyte specificity not established.</p>
 
 <span id="control"></span>
 
@@ -867,7 +866,6 @@ GFA introduced a **compact transcriptional control layer** into ORCA. Replacing 
 Evaluating microRNA-mediated regulation
 {.engineering-chapter-subtitle}
 
-<p class="control-evidence-note">Constructed and tested; miRNA-specific suppression not established. Excluded from the final ORCA design.</p>
 
 ### Overview {#mre-overview}
 
@@ -984,7 +982,6 @@ The tested **4×6T MRE configuration was not incorporated into the selected ORCA
 Engineering an external OFF interface
 {.engineering-chapter-subtitle}
 
-<p class="control-evidence-note">Tag-dependent suppression of editing demonstrated; recovery after ASO withdrawal remains unverified.</p>
 
 ### Overview {#aso-overview}
 
@@ -1252,7 +1249,6 @@ The **Synthetic ASO Tag** established an externally addressable suppression inte
 A proposed genetic off-switch
 {.engineering-chapter-subtitle}
 
-<p class="control-evidence-note">DNA-level shutdown strategy designed; excision and permanent shutdown remain experimentally unverified.</p>
 
 ### Overview {#cre-loxp-overview}
 
@@ -1494,7 +1490,7 @@ AAV9 engineering progressed from reporter-based packaging to **GFA–ORCA and CM
 
 ## SONAR {#measure .engineering-chapter-title}
 
-Engineering an editing-responsive reporter
+System for Optical Normalization and Analysis of RNA Editing
 {.engineering-chapter-subtitle}
 
 ### Overview {#measure-overview}

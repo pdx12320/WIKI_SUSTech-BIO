@@ -103,3 +103,30 @@ body.engineering-workspace-page{background:#f5f6fb}
 .diagram-overview-back{display:inline-flex;align-items:center;justify-content:center;gap:4px;flex-shrink:0;min-height:28px;padding:4px 7px;border:1px solid #cbd3e5;border-radius:7px;background:#f8f9fc;color:#334071;font:600 12px/1.2 'Avenir Next','Segoe UI',sans-serif;letter-spacing:0;cursor:pointer}
 .diagram-overview-back:hover{background:#e9edf8;border-color:#899abd}
 .diagram-overview-back:focus-visible{outline:2px solid #5f62cd;outline-offset:2px}
+
+/* Interaction motion: mounted branches, gentle hover, and a shared selection marker. */
+.diagram-reveal{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden}
+.diagram-reveal.is-open{grid-template-rows:1fr;opacity:1;visibility:visible}
+.diagram-reveal-inner{min-height:0;overflow:hidden}
+.project-diagram.motion-ready .diagram-reveal{transition:grid-template-rows 280ms cubic-bezier(.2,.7,.2,1),opacity 180ms ease,visibility 280ms}
+.diagram-branch{position:relative}
+.diagram-branch a.is-current:after{content:none}
+.diagram-selection-marker{position:absolute;left:0;top:0;width:18px;height:3px;border-radius:2px;background:#bd8a9c;pointer-events:none;opacity:0}
+.motion-ready .diagram-selection-marker{transition:transform 200ms cubic-bezier(.2,.7,.2,1),opacity 150ms ease}
+.diagram-tile,.diagram-branch a,.diagram-tab,.diagram-symbol,.branch-symbol{transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 150ms ease}
+.diagram-tile:focus-visible,.diagram-branch a:focus-visible{border-color:#899abd;background:#fff}
+.diagram-tile:focus-visible .diagram-tab,.diagram-tile:focus-visible .diagram-symbol,.diagram-branch a:focus-visible .branch-symbol{color:#334071}
+.diagram-tile:focus-visible .diagram-symbol,.diagram-branch a:focus-visible .branch-symbol{transform:scale(1.05)}
+@media(hover:hover) and (pointer:fine){
+ .diagram-tile:hover .diagram-symbol,.diagram-branch a:hover .branch-symbol{transform:scale(1.05);color:#334071}
+ .diagram-tile:hover .diagram-tab{color:#334071}
+}
+@media(prefers-reduced-motion:reduce){
+ .project-diagram.motion-ready .diagram-reveal,.motion-ready .diagram-selection-marker,
+ .diagram-tile,.diagram-branch a,.diagram-tab,.diagram-symbol,.branch-symbol{transition:none}
+ .diagram-tile .diagram-symbol,.diagram-branch a .branch-symbol{transform:none!important}
+}
+
+/* Main icons animate their internal parts instead of scaling the whole symbol. */
+.diagram-tile.has-icon-gesture .diagram-symbol{transform:none}
+.compass-needle,.sonar-arc,.tile-deliver .diagram-symbol > path{transform-box:view-box;transform-origin:32px 32px}

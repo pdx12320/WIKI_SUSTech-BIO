@@ -1,3 +1,4 @@
+import {openingWordmark} from './orca-opening-wordmark.mjs';
 import {createFullscreenMemoryFaults} from './fullscreen-memory-faults.mjs';
 import {EXTRA_MEMORIES} from './memory-life-objects.mjs';
 import { createMemoryTunnel } from './memory-tunnel.mjs';
@@ -35,7 +36,7 @@ export function createMemoryRoom(root) {
     ['wheelchair',wheelchair,'',-8,1.2],
     ...EXTRA_MEMORIES,
   ];
-  room.innerHTML=`<div class="memory-room__haze" aria-hidden="true"></div><div class="memory-room__objects" aria-hidden="true">${items.map(([name,art,caption,angle,depth])=>`<figure class="memory-object memory-object--${name}" style="--tilt:${angle}deg;--depth:${depth}"><div class="memory-object__art">${art}</div>${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`).join('')}</div><div class="memory-room__intro"><p class="memory-room__eyebrow">SUSTech · iGEM 2026</p><p class="memory-room__title">ORCA<span>On-target RNA Correction of APOE4</span></p><p class="memory-room__description">A familiar world.<br>A new possibility for Alzheimer’s disease.</p><p class="memory-room__scroll">MOVE TO EXPLORE · DRAG TO CATCH · ↓ SCROLL TO ENTER</p></div>`;
+  room.innerHTML=`<div class="memory-room__haze" aria-hidden="true"></div><div class="memory-room__objects" aria-hidden="true">${items.map(([name,art,caption,angle,depth])=>`<figure class="memory-object memory-object--${name}" style="--tilt:${angle}deg;--depth:${depth}"><div class="memory-object__art">${art}</div>${caption?`<figcaption>${caption}</figcaption>`:''}</figure>`).join('')}</div><div class="memory-room__intro"><p class="memory-room__eyebrow">SUSTech · iGEM 2026</p><p class="memory-room__title">${openingWordmark}<span>On-target RNA Correction of APOE4</span></p><p class="memory-room__description">A familiar world.<br>A new possibility for Alzheimer’s disease.</p><p class="memory-room__scroll">MOVE TO EXPLORE · DRAG TO CATCH · ↓ SCROLL TO ENTER</p></div>`;
   root.append(room);
   const echo=room.querySelector('.memory-room__objects').cloneNode(true);
   echo.classList.add('memory-room__echo');echo.setAttribute('aria-hidden','true');room.append(echo);

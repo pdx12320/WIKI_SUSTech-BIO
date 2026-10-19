@@ -9,9 +9,6 @@
 #demo-coach p {font-size:13px;line-height:1.7;margin:0;color:#50675c;}
 #demo-guide-hide {border:0;background:transparent;color:#527062;font-size:23px;line-height:1;min-height:28px;min-width:28px;padding:0;border-radius:5px;}
 #demo-guide-hide:hover {background:#eaf6ef;}
-#demo-coach .demo-coach-bottom {display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #e4eee8;margin-top:15px;padding-top:12px;}
-#demo-coach .demo-coach-bottom span {font-size:10px;color:#648272;}
-#demo-guide-locate {border:0;background:#e7f8ee;color:#08783f;font-size:11px;font-weight:700;padding:7px 10px;border-radius:6px;white-space:nowrap;}
 #demo-guide-resume {position:fixed;bottom:22px;right:22px;z-index:10003;border:1px solid #159b5c;border-radius:30px;background:#fff;color:#08783f;padding:10px 18px;font-size:13px;box-shadow:0 4px 18px #174e3426;}
 @media(max-width:600px){#demo-coach{width:300px;padding:14px 16px;}#demo-coach h2{font-size:16px;}#demo-coach p{font-size:12px;}}
 @media(prefers-reduced-motion:reduce){#demo-target-ring{animation:none;}}

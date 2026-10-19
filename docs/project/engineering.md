@@ -2804,9 +2804,7 @@ Spatial coverage became a separate output alongside mean editing, with vessel-di
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/functional-validation.png" alt="Three experimental schematics in a triangular arrangement: electroporation, lipid-droplet imaging, and an extracellular amyloid-beta assay." width="1800" height="1080" decoding="async">
 
-ORCA was developed with a therapeutic objective: to redirect APOE4 RNA toward an APOE3-equivalent coding outcome through programmable C-to-U editing. Our preceding Engineering work improved the editor, examined ways to regulate its expression, explored delivery strategies, and established tools to measure editing-related signals. Yet molecular editing, however precise, is not itself a measure of therapeutic function.
-
-The next question was whether ORCA could be studied in a cell model expressing endogenous APOE, and whether editor treatment might be associated with changes in biologically relevant phenotypes. We therefore moved beyond artificial reporters to a human astrocyte-related cell model and pursued three complementary experiments: establishing plasmid delivery, examining lipid-droplet-associated structures, and assessing extracellular Aβ42 handling. Together, these studies mark an initial transition from **engineering an RNA editor** to **investigating what its intended molecular correction might mean for cellular function**.
+Can ORCA treatment affect disease-relevant cellular functions? We moved beyond artificial reporters to a human astrocyte-related cell model expressing endogenous APOE. Three experiments examined **plasmid delivery, lipid-droplet-associated structures, and extracellular Aβ42 handling**—an initial step toward connecting molecular editing with cellular function.
 
 ### Engineering Rationale {#functional-validation-engineering-rationale}
 

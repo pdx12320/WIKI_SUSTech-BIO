@@ -7,7 +7,7 @@ eyebrow: Project / Contribution
 # SONAR
 
 <div class="sonar-intro" id="intro">
-<p class="sonar-kicker">A toolkit for the next experiment</p>
+<p class="sonar-kicker">From fluorescence to interpretable measurements</p>
 <p>SONAR — System for Optical Normalization and Analysis of RNA Editing — connects a modular fluorescence reporter to a stepwise measurement framework. A green output responds to an edit-sensitive coding switch, while a red signal provides a reporter-expression reference. Together, the reporter and SONAR Analysis Program (SAP) help you move from sequence design to a controlled, interpretable fluorescence experiment. This tutorial shares the design logic, a practical workflow and interactive examples. Reuse the parts that fit your question, validate a new construct, and keep its measurement context alongside the result. Fluorescence alone does not establish the fraction of edited RNA.</p>
 <p class="sonar-review-note">Review edition · supplied resources are authorized for sharing; final Wiki publication review is ongoing.</p>
 </div>

@@ -19,7 +19,7 @@ We organize these questions across eight scales and four actions: **Anticipate �
 
 ### Scale 01 — Sequence Scale
 
-A targeted RNA editor may also affect other transcripts or nearby sites. The current [Model](/model) page brings RNA-seq candidate-site analysis and LAMAR site prioritization into the same evidence framework. RNA-seq provides candidate editing evidence under a documented analysis procedure; LAMAR ranks sites for follow-up.
+A targeted RNA editor may also affect other transcripts or nearby sites. Transcriptome-wide unintended RNA editing has been demonstrated for some deaminase-containing DNA base editors [5](#safety-ref-5); their measured rates cannot be transferred to ORCA. The current [Model](/model) page brings RNA-seq candidate-site analysis and LAMAR site prioritization into the same evidence framework. RNA-seq provides candidate editing evidence under a documented analysis procedure; LAMAR ranks sites for follow-up.
 
 Neither a sequence match nor a model ranking establishes that a site is edited in a particular cell. A smaller detected candidate set also does not prove that unintended editing is absent. Interpretation depends on the samples, background screening and detection limits, with independent validation needed for individual biological claims.
 
@@ -63,7 +63,7 @@ A favorable cellular readout does not by itself establish a therapeutic benefit 
 
 The documented project combines laboratory research with computational modeling. Its delivery branch raises questions about exposure, unintended activity and the duration of expression, which must be assessed within the reviewed scope of each study.
 
-Cell experiments and simulation outputs do not establish safety for administration to people or animals. They also do not resolve immune effects, long-term distribution or the consequences of repeated exposure. Any future expansion of the research scope requires its own evidence and applicable institutional review.
+Cell experiments and simulation outputs do not establish safety for administration to people or animals. They also do not resolve immune effects, long-term distribution or the consequences of repeated exposure. Any future expansion of the research scope requires its own evidence, applicable institutional review and review against the relevant iGEM safety policies [3](#safety-ref-3).
 
 Targeting RNA does not by itself establish that an intervention can be stopped immediately. Expression and downstream effects may persist, so claims about reversibility require supporting evidence.
 
@@ -71,13 +71,13 @@ Targeting RNA does not by itself establish that an intervention can be stopped i
 
 A possible future intervention would need to consider the priorities of people receiving care and those supporting them. Monitoring, treatment burden, accessibility, cost and uncertainty about long-term effects all matter.
 
-Stakeholder views can help frame research questions, but they cannot establish biological safety or substitute for informed consent. Any additional participant research needs an appropriate review of consent, privacy and accessibility before data collection.
+Stakeholder views can help frame research questions, but they cannot establish biological safety or substitute for informed consent. Any additional participant research needs an appropriate review of consent, privacy and accessibility before data collection. For future medical research involving human participants, the WMA Declaration of Helsinki provides a relevant ethical framework [4](#safety-ref-4).
 
 Changes motivated by engagement should be traceable to the relevant discussion and clearly separated from clinical recommendations. This page does not claim that a treatment-burden study has been completed.
 
 ## V. Security Across the Same Scales
 
-Laboratory security depends on documented access permissions, material accountability and reporting of loss or unauthorized use. Project-specific arrangements must be confirmed against institutional records rather than inferred from the Wiki.
+Laboratory security depends on documented access permissions, material accountability and reporting of loss or unauthorized use. WHO guidance frames biosecurity across biological materials, technology and information [2](#safety-ref-2). Project-specific arrangements must be confirmed against institutional records rather than inferred from the Wiki.
 
 For computational work, the repository's content guidance requires a clear distinction between experimental data, simulation outputs, heuristic prioritization and implemented software. Source data, analysis versions, run settings and limitations should accompany the claims they support. A working interface or a passing software check does not constitute biological validation.
 
@@ -85,7 +85,7 @@ Public releases must exclude credentials, personal data and confidential third-p
 
 ## VI. General Lab Safety
 
-The wet-lab documentation covers molecular biology, cell-based research, measurement and functional validation. These activities require risk assessments appropriate to the materials and facilities involved. Detailed laboratory procedures and authorization records belong in the institution's controlled documentation.
+The wet-lab documentation covers molecular biology, cell-based research, measurement and functional validation. These activities require risk assessments appropriate to the materials and facilities involved, following a risk-based approach such as that described in the WHO Laboratory Biosafety Manual [1](#safety-ref-1). Detailed laboratory procedures and authorization records belong in the institution's controlled documentation.
 
 ### Facilities and supervision
 
@@ -121,3 +121,15 @@ This draft follows the current project pages listed below and the repository's e
 - [Engineering](/engineering): the project's design and evidence cycle.
 - [SONAR](/project-contribution-sonar): measurement context and limits of interpretation.
 - [Notebook](/notebook) and [Results](/results): experimental records and the status of integrated reporting.
+
+## References {#safety-references}
+
+1. <span id="safety-ref-1" style="scroll-margin-top:72px"></span>World Health Organization. Laboratory biosafety manual. 4th ed. Geneva: WHO; 2020. [Source](https://www.who.int/publications/i/item/9789240011311).
+
+2. <span id="safety-ref-2" style="scroll-margin-top:72px"></span>World Health Organization. Laboratory biosecurity guidance. Geneva: WHO; 2024. [Source](https://www.who.int/publications/i/item/9789240095113).
+
+3. <span id="safety-ref-3" style="scroll-margin-top:72px"></span>iGEM. Safety Policies. Online policy collection. Accessed 20 October 2026. [Source](https://responsibility.igem.org/safety-policies).
+
+4. <span id="safety-ref-4" style="scroll-margin-top:72px"></span>World Medical Association. WMA Declaration of Helsinki – Ethical Principles for Medical Research Involving Human Participants. 2024 revision. [Source](https://www.wma.net/policies-post/wma-declaration-of-helsinki/).
+
+5. <span id="safety-ref-5" style="scroll-margin-top:72px"></span>Grünewald J, Zhou R, Garcia SP, et al. Transcriptome-wide off-target RNA editing induced by CRISPR-guided DNA base editors. Nature. 2019;569:433–437. [Source](https://doi.org/10.1038/s41586-019-1161-z).

@@ -63,11 +63,11 @@ The software example below starts from a CGC triplet. The selected adaptation ch
 
 ### 1.2 Reporter Construction {#reporter-construction}
 
-**Connect the insert to a verified reporter backbone.** SONAR places a replaceable target window between EGFP and an ecDHFR destabilizing domain (DD). mCherry is an expression reference from the same reporter transcript; P2A enables ribosomal skipping between the upstream and downstream products. Incomplete skipping and differences in protein maturation can still influence the readout.
+**Connect the insert to a verified reporter backbone.** SONAR places a replaceable target window between EGFP and an ecDHFR destabilizing domain (DD), drawing on the established ecDHFR-DD protein-stability mechanism [1](#sonar-tutorial-ref-1). mCherry is an expression reference from the same reporter transcript; P2A enables ribosomal skipping between the upstream and downstream products [2](#sonar-tutorial-ref-2). Incomplete skipping and differences in protein maturation can still influence the readout.
 
 Use the explorer to follow the expected coding consequence. In the unedited RNA, translation continues into DD. After the intended CGA→UGA change, translation terminates before DD and EGFP without the downstream DD can accumulate. This is a mechanism illustration, not a measured fold change.
 
-1. Match the oligo interfaces to the exact acceptor, then assemble using the applicable construction protocol.
+1. Match the oligo interfaces to the exact acceptor, then assemble using the applicable construction protocol. BsaI-mediated assembly follows the type IIS restriction-ligation principle of Golden Gate cloning [3](#sonar-tutorial-ref-3).
 2. Sequence the insert, both junctions and any repaired backbone sites before measuring a clone.
 3. Prepare references appropriate to the experiment. AC has a **DNA-encoded TGA** stop; it is not an enzymatically edited RNA sample. INAC is an inactive reference and is not interchangeable with every unedited target.
 
@@ -93,7 +93,7 @@ Use matched Mock controls to define background. Include editor-free and editor c
 
 ### 2.2 Flow Cytometry & Data Acquisition {#flow-cytometry}
 
-**Select a quantitatively usable population and preserve the original FCS files.** Record scatter and pulse geometry, mCherry and EGFP channels, and BFP when relevant. Use matched controls to establish background and gates; retain their definitions when comparing samples in the same qualified context. Scatter selection alone does not establish cell viability.
+**Select a quantitatively usable population and preserve the original FCS files.** Record scatter and pulse geometry, mCherry and EGFP channels, and BFP when relevant. Use matched controls to establish background and gates; retain their definitions when comparing samples in the same qualified context. General flow-cytometry guidance provides the rationale for controls, compensation and analysis records [5](#sonar-tutorial-ref-5). Scatter selection alone does not establish cell viability.
 
 The teaching dataset below comes from real S7 CytoFLEX S acquisitions in HEK293T cells. It shows every 50th original event for a bounded display. Full-source counts and reporter scores are computed separately by the frozen SONAR engine. The recorded identity compensation matrix is not evidence of validated multicolor compensation; these detector-scale results remain exploratory.
 
@@ -123,11 +123,11 @@ RAS compares summed background-corrected green and red signals from the same sel
 
 ## Going Further {#going-further}
 
-**Improve the reporter.** A new window can change accessibility, reading-frame behavior and protein output. Check sequence identity before interpreting a fluorescence difference. P2A separation, DD-linked stability, fluorophore maturation and background all contribute to the assay. Validate dynamic range in the actual cell system; a compatible coding switch is only the beginning of an assay.
+**Improve the reporter.** A new window can change accessibility, reading-frame behavior and protein output. Check sequence identity before interpreting a fluorescence difference. P2A separation, DD-linked stability, fluorophore maturation and background all contribute to the assay [1](#sonar-tutorial-ref-1), [2](#sonar-tutorial-ref-2), [4](#sonar-tutorial-ref-4). Validate dynamic range in the actual cell system; a compatible coding switch is only the beginning of an assay.
 
 **Improve experimental resolution.** Compare appropriate reporter/editor amounts under matched acquisition conditions. Inspect the usable reporter population as well as its score. If an editor-linked marker is present, distinguish reporter-only and co-expression populations explicitly. Keep experimental units and replicate relationships in the sample map: thousands of cells from one well do not become thousands of biological replicates. Continuous reporter scores can be more informative than an arbitrary green-positive percentage, but they still require quality checks.
 
-**Strengthen the interpretation.** Begin with RAS for a relative reporter response. Add matched references for an empirical RES scale and record its valid domain, including batch and reporter identity. To connect fluorescence to transcript editing, collect paired reporter-RNA measurements and evaluate a model with appropriate held-out data. Reusing a curve across a new reporter or batch requires qualification; a familiar instrument name alone is insufficient. Preserve unavailable or out-of-domain results rather than forcing a numerical conclusion.
+**Strengthen the interpretation.** Begin with RAS for a relative reporter response. Add matched references for an empirical RES scale and record its valid domain, including batch and reporter identity. To connect fluorescence to transcript editing, collect paired reporter-RNA measurements and evaluate a model with appropriate held-out data. Validation splits should respect experimental-unit and batch dependencies rather than treating correlated observations as independent [6](#sonar-tutorial-ref-6). Reusing a curve across a new reporter or batch requires qualification; a familiar instrument name alone is insufficient. Preserve unavailable or out-of-domain results rather than forcing a numerical conclusion.
 
 ## Adapting SONAR {#adapting-sonar}
 
@@ -148,3 +148,17 @@ These team-supplied resources are shared for inspection and adaptation. Keep the
 </div>
 
 SONAR is learned as a workflow. Reuse the components that fit your question, keep the assay context alongside your data, and recalibrate when the reporter or conditions change.
+
+## References {#sonar-tutorial-references}
+
+1. <span id="sonar-tutorial-ref-1" style="scroll-margin-top:72px"></span>Iwamoto M, Björklund T, Lundberg C, Kirik D, Wandless TJ. A general chemical method to regulate protein stability in the mammalian central nervous system. Chemistry & Biology. 2010;17(9):981–988. [Source](https://doi.org/10.1016/j.chembiol.2010.07.009).
+
+2. <span id="sonar-tutorial-ref-2" style="scroll-margin-top:72px"></span>Kim JH, Lee SR, Li LH, et al. High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. PLOS ONE. 2011;6(4):e18556. [Source](https://doi.org/10.1371/journal.pone.0018556).
+
+3. <span id="sonar-tutorial-ref-3" style="scroll-margin-top:72px"></span>Engler C, Kandzia R, Marillonnet S. A one pot, one step, precision cloning method with high throughput capability. PLOS ONE. 2008;3(11):e3647. [Source](https://doi.org/10.1371/journal.pone.0003647).
+
+4. <span id="sonar-tutorial-ref-4" style="scroll-margin-top:72px"></span>Balleza E, Kim JM, Cluzel P. Systematic characterization of maturation time of fluorescent proteins in living cells. Nature Methods. 2018;15:47–51. [Source](https://doi.org/10.1038/nmeth.4509).
+
+5. <span id="sonar-tutorial-ref-5" style="scroll-margin-top:72px"></span>Cossarizza A, Chang HD, Radbruch A, et al. Guidelines for the use of flow cytometry and cell sorting in immunological studies (third edition). European Journal of Immunology. 2021;51(12):2708–3145. [Source](https://doi.org/10.1002/eji.202170126).
+
+6. <span id="sonar-tutorial-ref-6" style="scroll-margin-top:72px"></span>Roberts DR, Bahn V, Ciuti S, et al. Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. Ecography. 2017;40:913–929. [Source](https://doi.org/10.1111/ecog.02881).

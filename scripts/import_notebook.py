@@ -35,7 +35,7 @@ def main():
     by_id = {r['id']: r for r in records}
     assert len(by_id) == len(records) == len(finalized['entries'])
     track_specs = [
-        ('Fundmental', 'Fundmental', 'Core editor & foundational assays', '#6466ab', 'edit'),
+        ('Fundmental', 'Fundamental', 'Core editor & foundational assays', '#6466ab', 'edit'),
         ('PUF', 'PUF', 'PUF mutant construction & screening', '#41469a', 'edit'),
         ('Apobec', 'Apobec', 'APOBEC mutant construction & screening', '#96705d', 'edit'),
         ('Gfa', 'Gfa', 'GFAP promoter experiments', '#387e85', 'control'),
@@ -45,9 +45,10 @@ def main():
         ('Reporter', 'Reporter', 'Reporter construction & measurement', '#4b789b', 'measure'),
         ('FV', 'FV', 'Functional validation experiments', '#6b814d', 'validation'),
     ]
-    tracks = [dict(id=b.lower(), label=label, archiveBranch=b, description=desc,
+    tracks = [dict(id=label.lower(), label=label, archiveBranch=label, description=desc,
                    color=color, category=category, engineeringLinks=[])
               for b, label, desc, color, category in track_specs]
+    public_branches = {b: label for b, label, *_ in track_specs}
     index = dict(schemaVersion=1, title='ORCA research notebook',
                  finalizedOn=finalized['finalized_on'],
                  datePolicy='All finalized record dates confirmed by the project owner for this timeline on 2026-10-17.',
@@ -58,12 +59,14 @@ def main():
         relative = Path(r['branch']) / r['filename']
         assert relative.as_posix() == entry['file']
         assert entry['status'] == 'final'  # Finalization covers legacy daily records without status.
-        cutoff = end_dates.get(r['branch'].lower())
+        public_branch = public_branches[r['branch']]
+        public_relative = Path(public_branch) / r['filename']
+        cutoff = end_dates.get(public_branch.lower())
         if cutoff and r['date'] > cutoff:
             # Keep the website's curated cutoff across future archive imports.
-            (dest / 'pdfs' / relative).unlink(missing_ok=True)
+            (dest / 'pdfs' / public_relative).unlink(missing_ok=True)
             for page in range(1, entry['pages'] + 1):
-                (dest / 'previews' / r['branch'] / f'{relative.stem}-p{page}.webp').unlink(missing_ok=True)
+                (dest / 'previews' / public_branch / f'{relative.stem}-p{page}.webp').unlink(missing_ok=True)
             continue
         pdf = source / relative
         digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
@@ -71,21 +74,21 @@ def main():
         doc = fitz.open(pdf)
         assert len(doc) == entry['pages']
         assert r['date'] in '\n'.join(page.get_text() for page in doc)
-        out = dest / 'pdfs' / relative
+        out = dest / 'pdfs' / public_relative
         out.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(pdf, out)
         pages = []
         for i, page in enumerate(doc):
-            preview = Path('previews') / r['branch'] / f'{pdf.stem}-p{i+1}.webp'
+            preview = Path('previews') / public_branch / f'{pdf.stem}-p{i+1}.webp'
             target = dest / preview
             target.parent.mkdir(parents=True, exist_ok=True)
             pix = page.get_pixmap(matrix=fitz.Matrix(1600 / page.rect.width, 1600 / page.rect.width), alpha=False)
             Image.frombytes('RGB', [pix.width, pix.height], pix.samples).save(target, 'WEBP', lossless=True)
             pages.append(dict(number=i+1, preview=preview.as_posix(), width=pix.width, height=pix.height,
                               sha256=hashlib.sha256(target.read_bytes()).hexdigest()))
-        index['records'].append(dict(id=r['id'], trackId=r['branch'].lower(), date=r['date'],
+        index['records'].append(dict(id=r['id'], trackId=public_branch.lower(), date=r['date'],
             title=r['experiment'], experimenter=r['experimenter'], order=order,
-            pdf='pdfs/' + relative.as_posix(), originalFilename=r['filename'],
+            pdf='pdfs/' + public_relative.as_posix(), originalFilename=r['filename'],
             pageCount=len(doc), pages=pages, sha256=digest,
             sourceNote='Finalized Notebook PDF; title and calendar date matched to the approved daily index.'))
     index['records'].sort(key=lambda r: (r['date'], r['order']))

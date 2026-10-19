@@ -21,13 +21,13 @@ page on 2026-10-17. No chronology or scientific findings were newly inferred
 by the website implementation. Private daily JSON and source notes are not shipped.
 
 The current published selection contains **168 records / 171 pages**. At the
-owner's request, Fundmental ends on 2026-07-31; its ten later records and their
+owner's request, Fundamental ends on 2026-07-31; its ten later records and their
 website PDF/preview copies were removed. `scripts/notebook_publication.json`
 preserves this cutoff on future imports. The original local archive is retained.
 
 | Archive branch / track | Records | First date | Last date |
 | --- | ---: | --- | --- |
-| Fundmental | 15 | 2026-06-21 | 2026-07-31 |
+| Fundamental | 15 | 2026-06-21 | 2026-07-31 |
 | PUF | 38 | 2026-07-27 | 2026-09-19 |
 | Apobec | 21 | 2026-08-24 | 2026-09-28 |
 | Gfa | 9 | 2026-08-11 | 2026-08-30 |
@@ -37,7 +37,7 @@ preserves this cutoff on future imports. The original local archive is retained.
 | Reporter | 33 | 2026-08-03 | 2026-09-26 |
 | FV | 8 | 2026-09-18 | 2026-10-13 |
 
-`Fundmental` deliberately retains the archive's spelling. `Reporter` retains
+`Fundamental` is the corrected public label; the importer maps the legacy archive spelling to it. `Reporter` retains
 its archival track identity; no separate SONAR track or Cre–loxP record is
 invented. There are no missing assets in this finalized source inventory.
 No project/track milestones are asserted in the initial index. The existing

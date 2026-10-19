@@ -19,9 +19,9 @@ class NotebookTest(unittest.TestCase):
         self.assertEqual(len(records),168)
         self.assertEqual(sum(r['pageCount'] for r in records),171)
         self.assertEqual(len({r['id'] for r in records}),len(records))
-        fundmental=[r for r in records if r['trackId']=='fundmental']
-        self.assertEqual(len(fundmental),15)
-        self.assertEqual(max(r['date'] for r in fundmental),'2026-07-31')
+        fundamental=[r for r in records if r['trackId']=='fundamental']
+        self.assertEqual(len(fundamental),15)
+        self.assertEqual(max(r['date'] for r in fundamental),'2026-07-31')
         self.assertEqual({p.relative_to(BASE).as_posix() for p in (BASE/'pdfs').rglob('*.pdf')},{r['pdf'] for r in records})
         self.assertEqual({p.relative_to(BASE).as_posix() for p in (BASE/'previews').rglob('*.webp')},{p['preview'] for r in records for p in r['pages']})
         for r in records:

@@ -5,9 +5,9 @@
   "datePolicy": "All finalized record dates confirmed by the project owner for this timeline on 2026-10-17.",
   "tracks": [
     {
-      "id": "fundmental",
-      "label": "Fundmental",
-      "archiveBranch": "Fundmental",
+      "id": "fundamental",
+      "label": "Fundamental",
+      "archiveBranch": "Fundamental",
       "description": "Core editor & foundational assays",
       "color": "#6466ab",
       "category": "edit",
@@ -89,18 +89,18 @@
   "records": [
     {
       "id": "ZH-06-21-10R_Construction",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-06-21",
       "title": "10R Core Editor Provided by the Instructor",
       "experimenter": "Instructor",
       "order": 0,
-      "pdf": "pdfs/Fundmental/2026-06-21_10R_Provision_Instructor.pdf",
+      "pdf": "pdfs/Fundamental/2026-06-21_10R_Provision_Instructor.pdf",
       "originalFilename": "2026-06-21_10R_Provision_Instructor.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-06-21_10R_Provision_Instructor-p1.webp",
+          "preview": "previews/Fundamental/2026-06-21_10R_Provision_Instructor-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "96f470c16e4da37b814b31beda207b74d05f02a1d302ffb0846c2d13eb754ce5"
@@ -111,18 +111,18 @@
     },
     {
       "id": "MAINT-2026-06-25-Initial_10R_Cell_Transfection",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-06-25",
       "title": "Cell Transfection for the Initial 10R Assessment",
       "experimenter": "Muyin Guo",
       "order": 1,
-      "pdf": "pdfs/Fundmental/2026-06-25_Initial_10R_Cell_Transfection_Muyin_Guo.pdf",
+      "pdf": "pdfs/Fundamental/2026-06-25_Initial_10R_Cell_Transfection_Muyin_Guo.pdf",
       "originalFilename": "2026-06-25_Initial_10R_Cell_Transfection_Muyin_Guo.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-06-25_Initial_10R_Cell_Transfection_Muyin_Guo-p1.webp",
+          "preview": "previews/Fundamental/2026-06-25_Initial_10R_Cell_Transfection_Muyin_Guo-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "14abb1a33b5bb35f66dd17c1b3de5a348bec457afc36cfa300f74198fb8488b0"
@@ -133,18 +133,18 @@
     },
     {
       "id": "MAINT-2026-06-27-Initial_10R_Protein_Collection",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-06-27",
       "title": "Protein Sample Collection for the Initial 10R Blot",
       "experimenter": "Xiaoyu Que and Muyin Guo",
       "order": 2,
-      "pdf": "pdfs/Fundmental/2026-06-27_Initial_10R_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo.pdf",
+      "pdf": "pdfs/Fundamental/2026-06-27_Initial_10R_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo.pdf",
       "originalFilename": "2026-06-27_Initial_10R_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-06-27_Initial_10R_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo-p1.webp",
+          "preview": "previews/Fundamental/2026-06-27_Initial_10R_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "cc4726b30abf7145b04bf0e396a6a5cc679eabb0a20a22d2ea33c39919053160"
@@ -155,18 +155,18 @@
     },
     {
       "id": "GMQX-07-16-Core_Editor_WB",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-06-28",
       "title": "Successful Western Blot of the Initial 10R Comparison",
       "experimenter": "Xiaoyu Que and Muyin Guo",
       "order": 3,
-      "pdf": "pdfs/Fundmental/2026-06-28_10R_Western_Blot_Que_Xiaoyu_and_Guo_Muyin.pdf",
+      "pdf": "pdfs/Fundamental/2026-06-28_10R_Western_Blot_Que_Xiaoyu_and_Guo_Muyin.pdf",
       "originalFilename": "2026-06-28_10R_Western_Blot_Que_Xiaoyu_and_Guo_Muyin.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-06-28_10R_Western_Blot_Que_Xiaoyu_and_Guo_Muyin-p1.webp",
+          "preview": "previews/Fundamental/2026-06-28_10R_Western_Blot_Que_Xiaoyu_and_Guo_Muyin-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "c58a5eb7d4259cd35ffc5a70cd9fe89be804ab3c12838bf13b9f68a16cb7eb25"
@@ -177,18 +177,18 @@
     },
     {
       "id": "MAINT-2026-06-29-Initial_10R_RNA_RT",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-06-29",
       "title": "RNA Preparation for the Initial APOE Sequencing Assay",
       "experimenter": "Hansen Zhang",
       "order": 4,
-      "pdf": "pdfs/Fundmental/2026-06-29_Initial_10R_RNA_RT_Hansen_Zhang.pdf",
+      "pdf": "pdfs/Fundamental/2026-06-29_Initial_10R_RNA_RT_Hansen_Zhang.pdf",
       "originalFilename": "2026-06-29_Initial_10R_RNA_RT_Hansen_Zhang.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-06-29_Initial_10R_RNA_RT_Hansen_Zhang-p1.webp",
+          "preview": "previews/Fundamental/2026-06-29_Initial_10R_RNA_RT_Hansen_Zhang-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "57ff8e4dbd1aa7892525619acc3420352beb02006e7abb44f31a5ef234ff07b7"
@@ -199,18 +199,18 @@
     },
     {
       "id": "MAINT-2026-06-30-Initial_10R_Amplicon_Submission",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-06-30",
       "title": "APOE Amplicon Preparation and Submission for the Initial Assay",
       "experimenter": "Hansen Zhang",
       "order": 5,
-      "pdf": "pdfs/Fundmental/2026-06-30_Initial_10R_Amplicon_Submission_Hansen_Zhang.pdf",
+      "pdf": "pdfs/Fundamental/2026-06-30_Initial_10R_Amplicon_Submission_Hansen_Zhang.pdf",
       "originalFilename": "2026-06-30_Initial_10R_Amplicon_Submission_Hansen_Zhang.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-06-30_Initial_10R_Amplicon_Submission_Hansen_Zhang-p1.webp",
+          "preview": "previews/Fundamental/2026-06-30_Initial_10R_Amplicon_Submission_Hansen_Zhang-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "0b036db3c2b8f92184ababb3063f93fde16df1532311f4e52fadac6124153ca2"
@@ -221,18 +221,18 @@
     },
     {
       "id": "ZH-07-16-Core_Editor_Sequencing",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-01",
       "title": "APOE Sequencing in the Initial 10R Comparison",
       "experimenter": "Hansen Zhang",
       "order": 6,
-      "pdf": "pdfs/Fundmental/2026-07-01_Core_Editor_Sequencing_Zhang_Hansen.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-01_Core_Editor_Sequencing_Zhang_Hansen.pdf",
       "originalFilename": "2026-07-01_Core_Editor_Sequencing_Zhang_Hansen.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-01_Core_Editor_Sequencing_Zhang_Hansen-p1.webp",
+          "preview": "previews/Fundamental/2026-07-01_Core_Editor_Sequencing_Zhang_Hansen-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "a9dd5d4254179f8ff3e928749a0f88e2b7ff5beba5ec4b712ed7654a95585578"
@@ -243,18 +243,18 @@
     },
     {
       "id": "ZH-07-03-PUF_Length_Panel_Construction",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-03",
       "title": "Construction of the 10R, 12R, 13R and 15R Editor Panel",
       "experimenter": "Hansen Zhang, Hairong Xi and Sirui Wang",
       "order": 7,
-      "pdf": "pdfs/Fundmental/2026-07-03_PUF_Length_Panel_Construction_Zhang_Hansen_Hairong_Xi_and_Sirui_Wang.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-03_PUF_Length_Panel_Construction_Zhang_Hansen_Hairong_Xi_and_Sirui_Wang.pdf",
       "originalFilename": "2026-07-03_PUF_Length_Panel_Construction_Zhang_Hansen_Hairong_Xi_and_Sirui_Wang.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-03_PUF_Length_Panel_Construction_Zhang_Hansen_Hairong_Xi_and_Sirui_Wang-p1.webp",
+          "preview": "previews/Fundamental/2026-07-03_PUF_Length_Panel_Construction_Zhang_Hansen_Hairong_Xi_and_Sirui_Wang-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "259603ad4c4640e820fbd7b81fdd777a3f40a89a4e409421b3a5f2cac1d83d81"
@@ -265,18 +265,18 @@
     },
     {
       "id": "MAINT-2026-07-09-APOE4_Panel_Cell_Transfection",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-09",
       "title": "Cell Transfection for the APOE4 Editor Comparison",
       "experimenter": "Muyin Guo",
       "order": 8,
-      "pdf": "pdfs/Fundmental/2026-07-09_APOE4_Panel_Cell_Transfection_Muyin_Guo.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-09_APOE4_Panel_Cell_Transfection_Muyin_Guo.pdf",
       "originalFilename": "2026-07-09_APOE4_Panel_Cell_Transfection_Muyin_Guo.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-09_APOE4_Panel_Cell_Transfection_Muyin_Guo-p1.webp",
+          "preview": "previews/Fundamental/2026-07-09_APOE4_Panel_Cell_Transfection_Muyin_Guo-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "e57fec1f6fb176093d78625d3d10fdcbbbc4588fc59dab22d03607cec1b493f7"
@@ -287,18 +287,18 @@
     },
     {
       "id": "MAINT-2026-07-11-APOE4_Protein_Collection",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-11",
       "title": "Protein Sample Preparation for the First APOE4 Blot",
       "experimenter": "Xiaoyu Que and Muyin Guo",
       "order": 9,
-      "pdf": "pdfs/Fundmental/2026-07-11_APOE4_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-11_APOE4_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo.pdf",
       "originalFilename": "2026-07-11_APOE4_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-11_APOE4_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo-p1.webp",
+          "preview": "previews/Fundamental/2026-07-11_APOE4_Protein_Collection_Xiaoyu_Que_and_Muyin_Guo-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "df0b58bdff393e01c2b8252b23e10634827c117c4035664b8726c70347b21300"
@@ -309,18 +309,18 @@
     },
     {
       "id": "GMQX-07-13-PUF_Length_WB_First",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-13",
       "title": "First APOE4 Western Blot Assessment",
       "experimenter": "Xiaoyu Que and Muyin Guo",
       "order": 10,
-      "pdf": "pdfs/Fundmental/2026-07-13_PUF_Length_WB_First_Que_Xiaoyu_and_Guo_Muyin.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-13_PUF_Length_WB_First_Que_Xiaoyu_and_Guo_Muyin.pdf",
       "originalFilename": "2026-07-13_PUF_Length_WB_First_Que_Xiaoyu_and_Guo_Muyin.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-13_PUF_Length_WB_First_Que_Xiaoyu_and_Guo_Muyin-p1.webp",
+          "preview": "previews/Fundamental/2026-07-13_PUF_Length_WB_First_Que_Xiaoyu_and_Guo_Muyin-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "2537c7681dfe112773d95d5d2869a27e5c560fdbfd4abecd5f900014a0fdf771"
@@ -331,18 +331,18 @@
     },
     {
       "id": "MAINT-2026-07-14-PUF_Length_RNA_RT",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-14",
       "title": "RNA Preparation for the PUF-Length Comparison",
       "experimenter": "Hansen Zhang",
       "order": 11,
-      "pdf": "pdfs/Fundmental/2026-07-14_PUF_Length_RNA_RT_Hansen_Zhang.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-14_PUF_Length_RNA_RT_Hansen_Zhang.pdf",
       "originalFilename": "2026-07-14_PUF_Length_RNA_RT_Hansen_Zhang.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-14_PUF_Length_RNA_RT_Hansen_Zhang-p1.webp",
+          "preview": "previews/Fundamental/2026-07-14_PUF_Length_RNA_RT_Hansen_Zhang-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "ffda2db9ba79a334224b79366cd5c69ad54daba25902b1bc6b91150be79031c6"
@@ -353,18 +353,18 @@
     },
     {
       "id": "MAINT-2026-07-15-PUF_Length_Amplicon_Submission",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-15",
       "title": "APOE Amplicon Submission for the PUF-Length Comparison",
       "experimenter": "Hansen Zhang",
       "order": 12,
-      "pdf": "pdfs/Fundmental/2026-07-15_PUF_Length_Amplicon_Submission_Hansen_Zhang.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-15_PUF_Length_Amplicon_Submission_Hansen_Zhang.pdf",
       "originalFilename": "2026-07-15_PUF_Length_Amplicon_Submission_Hansen_Zhang.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-15_PUF_Length_Amplicon_Submission_Hansen_Zhang-p1.webp",
+          "preview": "previews/Fundamental/2026-07-15_PUF_Length_Amplicon_Submission_Hansen_Zhang-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "6aaedf2cde883c176af40c5f2d5a4561b3198ddcda20e1f0c22edb7c766c80a7"
@@ -375,18 +375,18 @@
     },
     {
       "id": "GM-09-21-Fund1_Sequencing",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-18",
       "title": "APOE Sequencing in the PUF-Length Editor Comparison",
       "experimenter": "Hansen Zhang",
       "order": 13,
-      "pdf": "pdfs/Fundmental/2026-07-18_Fund1_Sequencing_Zhang_Hansen.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-18_Fund1_Sequencing_Zhang_Hansen.pdf",
       "originalFilename": "2026-07-18_Fund1_Sequencing_Zhang_Hansen.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-18_Fund1_Sequencing_Zhang_Hansen-p1.webp",
+          "preview": "previews/Fundamental/2026-07-18_Fund1_Sequencing_Zhang_Hansen-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "f1a7f87a2654f61c13f1315a247a64c6fbc312a15cddbaba8b4d17ff75853171"
@@ -499,18 +499,18 @@
     },
     {
       "id": "QX23",
-      "trackId": "fundmental",
+      "trackId": "fundamental",
       "date": "2026-07-31",
       "title": "HEK293T Cell Thawing",
       "experimenter": "Xiaoyu Que",
       "order": 18,
-      "pdf": "pdfs/Fundmental/2026-07-31_HEK293T_Cell_Thawing_Que_Xiaoyu.pdf",
+      "pdf": "pdfs/Fundamental/2026-07-31_HEK293T_Cell_Thawing_Que_Xiaoyu.pdf",
       "originalFilename": "2026-07-31_HEK293T_Cell_Thawing_Que_Xiaoyu.pdf",
       "pageCount": 1,
       "pages": [
         {
           "number": 1,
-          "preview": "previews/Fundmental/2026-07-31_HEK293T_Cell_Thawing_Que_Xiaoyu-p1.webp",
+          "preview": "previews/Fundamental/2026-07-31_HEK293T_Cell_Thawing_Que_Xiaoyu-p1.webp",
           "width": 1600,
           "height": 2271,
           "sha256": "5defad281a3921ad6c395106809719d09aae26856473af3e8b8ee7d9ffec5b74"

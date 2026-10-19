@@ -1,0 +1,92 @@
+/* Coordinated puzzle palette with individually visible, touching inner borders. */
+.team-opening .team-opening__piece--nw {
+  --puzzle-edge: #218c74;
+  --puzzle-badge: #15705c;
+  --puzzle-wash-proposal: #b8dccc;
+}
+.team-opening .team-opening__piece--ne {
+  --puzzle-edge: #346ec2;
+  --puzzle-badge: #24559d;
+  --puzzle-wash-proposal: #c3d6ef;
+}
+.team-opening .team-opening__piece--sw {
+  --puzzle-edge: #da8751;
+  --puzzle-badge: #a55227;
+  --puzzle-wash-proposal: #f4d2b5;
+}
+.team-opening .team-opening__piece--se {
+  --puzzle-edge: #9e62b2;
+  --puzzle-badge: #7d458f;
+  --puzzle-wash-proposal: #dec8e7;
+}
+.team-opening__puzzle > .team-opening__piece {
+  stroke: var(--puzzle-edge, var(--opening-line));
+  stroke-width: calc(var(--puzzle-border-width, 17px) * 2);
+  opacity: 1;
+}
+
+/* Palette treatments stay separate from the uploaded photographs. */
+.team-opening[data-team-puzzle-palette] .team-opening__collages {
+  --puzzle-wash-strength: .56;
+}
+.team-opening[data-team-puzzle-palette] .team-opening__collage {
+  --puzzle-wash-color: var(--puzzle-wash-proposal);
+}
+.team-opening[data-team-puzzle-palette] .team-opening__piece-label {
+  width: max-content;
+  max-width: min(27vw, 280px);
+  padding: .2em .48em;
+  border: 2px solid #fff;
+  border-radius: .65em .85em .72em .8em;
+  background: var(--puzzle-badge);
+  color: #fff;
+  box-shadow: 0 3px 0 #211d3826;
+}
+.team-opening[data-team-puzzle-palette] .team-opening__piece-lettering {
+  stroke: none;
+  filter: none;
+}
+.team-opening[data-team-puzzle-palette="white-badge"] .team-opening__piece-label {
+  background: #fff;
+  color: var(--puzzle-badge);
+  border-color: var(--puzzle-edge);
+}
+.team-opening[data-team-puzzle-palette="original"] .team-puzzle-wash__photo {
+  filter: none;
+}
+.team-opening[data-team-puzzle-palette="original"] .team-puzzle-wash__tint,
+.team-opening[data-team-puzzle-palette="original"] .team-puzzle-wash__light {
+  opacity: 0;
+}
+@media (max-width: 640px) {
+  .team-opening[data-team-puzzle-palette] .team-opening__piece-label {
+    max-width: 30vw;
+    padding: .18em .32em;
+    border-width: 1.5px;
+  }
+}
+
+.team-opening__puzzle > .team-opening__piece--nw {
+  clip-path: url(#team-puzzle-stroke-clip-nw);
+}
+
+.team-opening__puzzle > .team-opening__piece--ne {
+  clip-path: url(#team-puzzle-stroke-clip-ne);
+}
+
+.team-opening__puzzle > .team-opening__piece--sw {
+  clip-path: url(#team-puzzle-stroke-clip-sw);
+}
+
+.team-opening__puzzle > .team-opening__piece--se {
+  clip-path: url(#team-puzzle-stroke-clip-se);
+}
+
+@media (max-width: 640px) {
+  .team-opening { --puzzle-border-width: 14px; }
+}
+
+/* Borrow the neighboring photo pixels; color the tab as part of its owner. */
+.team-opening__collage-fragment {
+  --puzzle-wash-color: inherit;
+}

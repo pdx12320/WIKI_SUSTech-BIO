@@ -16,7 +16,7 @@ body.team-page:not(.ot){--particle-bg:#FFFEFC;background:var(--team-paper);color
 .team-scroll>img{width:100%;height:auto;display:block}
 .team-scroll p{position:absolute;inset:31% 22% auto 18%;margin:0;font:700 clamp(16px,1.6vw,23px)/1.45 Team Hand,'Kaiti SC',cursive;color:#303c70;transform:rotate(-4deg)}
 .team-scroll p span{display:block;font:700 10px/1.5 Team Futura,sans-serif;letter-spacing:.04em;margin-top:12px;text-transform:uppercase}
-.team-deck{padding-block:38px 72px;scroll-margin-top:calc(var(--nav-h) + 24px)}
+.team-deck{padding-block:38px 72px;border-top:1px solid #D9D7E5;scroll-margin-top:calc(var(--nav-h) + 24px)}
 .team-deck__heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}
 .team-deck__heading h2,.team-closing h2{font:700 clamp(32px,3.1vw,44px)/1.1 Georgia,serif;letter-spacing:-.035em;margin:0;color:var(--team-ink)}
 .team-deck__heading .team-eyebrow{margin-bottom:10px}
@@ -32,8 +32,7 @@ body.team-page:not(.ot){--particle-bg:#FFFEFC;background:var(--team-paper);color
 .member-card__photo{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;display:block;transform:scale(var(--photo-scale,1.35));transform-origin:var(--photo-origin,50% 65%)}
 .member-card__photo[hidden]{display:none}
 .member-card__shade{position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(180deg,#0004 0%,transparent 27%,transparent 47%,#0003 62%,#000e 100%);pointer-events:none}
-.member-card__top{position:absolute;inset:4.2cqw 4cqw auto;display:flex;align-items:flex-start;justify-content:space-between;color:#fff;gap:6px}
-.member-card__number{font:700 8.8cqw/1 Team Futura,sans-serif;text-shadow:0 1px 6px #0005}
+.member-card__top{position:absolute;inset:4.2cqw 4cqw auto;display:flex;align-items:flex-start;justify-content:flex-end;color:#fff;gap:6px}
 .member-card__leader{display:inline-flex;align-items:center;flex:none;padding:1.7cqw 2.2cqw;border-radius:99px;background:#fff;color:#171536;box-shadow:0 .7cqw 0 #17131e44;font:700 clamp(7px,4cqw,12px)/1.15 Team Futura,Futura,sans-serif;white-space:nowrap}
 .member-card__identity{position:absolute;inset:auto 4.1cqw 3.5cqw;display:flex;flex-direction:column;align-items:stretch}
 .member-card__name{height:30cqw;margin:0 0 0 -1cqw;display:flex;align-items:end;color:#fff;font:900 24cqw/.92 Team Display,Impact,sans-serif;letter-spacing:-.065em;text-transform:uppercase;transform:rotate(-5deg);transform-origin:center bottom;position:relative}
@@ -43,9 +42,6 @@ body.team-page:not(.ot){--particle-bg:#FFFEFC;background:var(--team-paper);color
 .member-card__roles{display:flex;gap:2.3cqw;flex-wrap:wrap;margin:0;padding:0;list-style:none}
 .member-card__roles li{display:flex;align-items:center;justify-content:center;gap:2cqw;background:#fff;border-radius:99px;padding:2.6cqw 3.7cqw;font:700 3.7cqw/1.2 Team Futura,Futura,sans-serif;color:#17131e;box-shadow:0 .7cqw 0 #17131e;max-width:100%;overflow-wrap:anywhere}
 .member-card__roles svg{width:5.5cqw;height:5.5cqw;flex:none}
-.member-card__roles--single-row{flex-wrap:nowrap;gap:1.4cqw}
-.member-card__roles.member-card__roles--single-row li{padding:2.6cqw 2.1cqw;gap:1.2cqw;font-size:3.4cqw;white-space:nowrap;overflow-wrap:normal}
-.member-card__roles.member-card__roles--single-row svg{width:4.2cqw;height:4.2cqw}
 .member-card__missing{position:absolute;inset:0;background:#d7d4ef;display:flex;align-items:center;justify-content:center;flex-direction:column}
 .member-card__missing[hidden]{display:none}
 .member-card__missing span{width:80%;text-align:center;color:#171536;font:700 3.2cqw/1.5 Team Futura,sans-serif;overflow-wrap:anywhere}
@@ -138,11 +134,10 @@ body.team-page:not(.ot){--particle-bg:#FFFEFC;background:var(--team-paper);color
 
 /* Keep four or five bottom tags below the face; the last three share row two. */
 .member-card__roles--two-rows{display:grid;grid-template-columns:repeat(3,max-content);justify-content:start;gap:2cqw 1.4cqw}
-.member-card__roles--two-rows li{justify-self:start;font-size:clamp(8px,4.6cqw,12px);padding:2cqw;gap:1.2cqw;white-space:nowrap;overflow-wrap:normal}
-.member-card__roles--two-rows svg{width:4.8cqw;height:4.8cqw}
+.member-card__roles--two-rows li{justify-self:start;font-size:clamp(6px,4cqw,12px);padding:1.6cqw;gap:1cqw;white-space:nowrap;overflow-wrap:normal}
+.member-card__roles--two-rows svg{display:block;width:4.4cqw;height:4.4cqw}
 .member-card__roles--two-rows li:nth-child(1){grid-row:1;grid-column:1 / span 2}
 .member-card__roles--two-rows li:nth-child(2):not(:nth-last-child(3)){grid-row:1;grid-column:3}
 .member-card__roles--two-rows li:nth-last-child(3){grid-row:2;grid-column:1}
 .member-card__roles--two-rows li:nth-last-child(2){grid-row:2;grid-column:2}
 .member-card__roles--two-rows li:last-child{grid-row:2;grid-column:3}
-.member-card__roles--two-rows li:nth-last-child(-n+3) svg{display:none}

@@ -1,0 +1,21 @@
+/* Extracted files act as member links only in the completed package header. */
+.team-package-header .team-skill-file {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  text-underline-offset: .22em;
+  text-decoration-thickness: 1px;
+}
+@media (hover: hover) {
+  .team-package-header .team-skill-file:hover { text-decoration: underline; }
+}
+.team-package-header .team-skill-file:focus-visible {
+  text-decoration: underline;
+  outline: 2px solid #F58F9C;
+  outline-offset: 3px;
+}
+.team-deck .member-card[id] { scroll-margin-block: calc(var(--nav-h, 72px) + 24px) 24px; }
+.team-deck .member-card.is-package-target {
+  z-index: 2;
+}
+.team-deck .member-card[id]:focus { outline: none; }

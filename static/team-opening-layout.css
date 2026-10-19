@@ -1,0 +1,36 @@
+/* Keep a tilted part of each puzzle visible in its viewport corner. */
+.team-opening .team-opening__piece--nw { --opening-x: var(--opening-exit-nw-x, -34%); --opening-y: var(--opening-exit-nw-y, -36%); }
+.team-opening .team-opening__piece--ne { --opening-x: var(--opening-exit-ne-x, 34%); --opening-y: var(--opening-exit-ne-y, -36%); }
+.team-opening .team-opening__piece--sw { --opening-x: var(--opening-exit-sw-x, -34%); --opening-y: var(--opening-exit-sw-y, 36%); }
+.team-opening .team-opening__piece--se { --opening-x: var(--opening-exit-se-x, 34%); --opening-y: var(--opening-exit-se-y, 36%); }
+
+/* The opening immediately uncovers the blurred roster, with no solid interlude. */
+.team-opening[data-unfolding] > .team-opening__cover { opacity: 0; transition: none; }
+.team-opening[data-unfolding] > .team-opening__blur { opacity: 1; transition: none; }
+
+/* Closed until the controller arms motion after layout and the page transition. */
+.team-opening .team-opening__piece,
+.team-opening .team-opening__piece-label-motion {
+  animation: none;
+  transform: translate(0, 0) rotate(0) scale(1);
+}
+.team-opening[data-unfolding="true"] .team-opening__piece,
+.team-opening[data-unfolding="true"] .team-opening__piece-label-motion {
+  animation: team-opening-unfold 2800ms 700ms cubic-bezier(.22,.72,.18,1) both;
+}
+.team-opening[data-unfolding="complete"] .team-opening__piece,
+.team-opening[data-unfolding="complete"] .team-opening__piece-label-motion {
+  animation: none;
+  transform: translate(var(--opening-x), var(--opening-y))
+    scaleX(var(--opening-rotation-pre-scale, 1)) rotate(var(--opening-turn))
+    scaleX(var(--opening-rotation-post-scale, 1)) scale(.92);
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-opening[data-unfolding] .team-opening__piece,
+  .team-opening[data-unfolding] .team-opening__piece-label-motion { animation: none; }
+}
+
+/* Explicit puzzle entry stays available to mouse, touch and keyboard users. */
+.team-opening__open-hint { position: absolute; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 12; padding: 10px 20px; border: 1px solid #fff9; border-radius: 99px; background: #19143dcc; color: #fff; font: inherit; font-size: 15px; white-space: nowrap; cursor: pointer; }
+.team-opening[data-unfolding] .team-opening__open-hint,
+.team-opening:not([data-team-images="ready"]) .team-opening__open-hint { display: none; }

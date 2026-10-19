@@ -1,0 +1,44 @@
+/* Fixed inline outlines: rounded lettering is ready on the very first paint. */
+.team-opening__puzzle-labels,
+.team-opening__piece-label-motion { position: absolute; inset: 0; pointer-events: none; }
+.team-opening__puzzle-labels { z-index: 3; }
+.team-opening__piece-label-motion {
+  transform-box: view-box;
+  opacity: .86;
+  animation: team-opening-unfold 2800ms 700ms cubic-bezier(.22,.72,.18,1) both;
+}
+.team-opening__piece-label {
+  position: absolute;
+  left: 38%;
+  top: 32%;
+  display: grid;
+  place-items: center;
+  width: min(240px, 20vw);
+  max-width: none;
+  transform: translate(-50%, -50%);
+  color: var(--opening-line);
+  font: 400 clamp(18px, 2.6vw, 36px)/1 system-ui, sans-serif;
+  letter-spacing: normal;
+  text-shadow: none;
+}
+.team-opening__piece-lettering {
+  display: block;
+  width: var(--puzzle-lettering-width);
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+  fill: currentColor;
+}
+.team-opening__piece--ne > .team-opening__piece-label,
+.team-opening__piece--se > .team-opening__piece-label { left: 62%; }
+.team-opening__piece--sw > .team-opening__piece-label,
+.team-opening__piece--se > .team-opening__piece-label { top: 68%; }
+@media (max-width: 640px) {
+  .team-opening__piece-label { width: 24vw; max-width: none; font-size: clamp(12px, 3.6vw, 20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-opening__piece-label-motion {
+    animation: none;
+    transform: translate(var(--opening-x), var(--opening-y)) rotate(var(--opening-turn)) scale(.92);
+  }
+}

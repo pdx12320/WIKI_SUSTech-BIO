@@ -27,7 +27,7 @@
 {% set is_student_leader = roles|selectattr('label', 'equalto', 'Student Leader')|list|length > 0 %}
 {% set bottom_roles = roles|rejectattr('label', 'equalto', 'Student Leader')|list %}
 {% set key = 'team-card-' ~ index %}
-<article class="member-card{% if not photo %} member-card--pending{% endif %}{% if quote %} member-card--with-quote{% endif %}{% if quote_is_long %} member-card--long-quote{% endif %}" data-member-card data-member-name="{{ name }}" data-member-roles="{{ roles|map(attribute='label')|list|tojson|forceescape }}" aria-label="{{ name }}{% if member.get('preview') %} card layout preview{% endif %}">
+<article id="{{ key }}" tabindex="-1" class="member-card{% if not photo %} member-card--pending{% endif %}{% if quote %} member-card--with-quote{% endif %}{% if quote_is_long %} member-card--long-quote{% endif %}" data-member-card data-member-name="{{ name }}" data-member-roles="{{ roles|map(attribute='label')|list|tojson|forceescape }}" aria-label="{{ name }}{% if member.get('preview') %} card layout preview{% endif %}">
   <div class="member-card__turn">
     <div class="member-card__face member-card__front" data-card-front>
       <div class="member-card__portrait">
@@ -39,14 +39,13 @@
         </div>
         <span class="member-card__shade" aria-hidden="true"></span>
         <div class="member-card__top">
-          <span class="member-card__number">{{ member.get('number', '%02d'|format(index)) }}</span>
           {% if is_student_leader %}<span class="member-card__leader" id="{{ key }}-leader" data-card-leader>Student Leader</span>{% endif %}
         </div>
         <div class="member-card__identity">
           {{ heart('member-card__front-heart') }}
           <h4 class="member-card__name" id="{{ key }}-name"><span data-fit-name>{{ member.get('card_name', name) }}</span></h4>
           <svg class="member-card__arrow" viewBox="0 0 200 38" fill="none" aria-hidden="true" focusable="false"><path d="M4 29 173 8 66 32 193 18 M174 10l20 7-12 13" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <ul class="member-card__roles{% if member.get('role_layout') == 'two-rows' %} member-card__roles--two-rows{% elif member.get('role_layout') == 'single-row' %} member-card__roles--single-row{% endif %}" id="{{ key }}-roles" aria-label="Roles">
+          <ul class="member-card__roles{% if member.get('role_layout') == 'two-rows' %} member-card__roles--two-rows{% endif %}" id="{{ key }}-roles" aria-label="Roles">
             {% for role in bottom_roles %}<li>{{ icon(role.get('icon', 'other')) }}<span>{{ role.label }}</span></li>{% else %}<li>{{ icon('other') }}<span>Team 2026</span></li>{% endfor %}
           </ul>
         </div>
@@ -61,6 +60,7 @@
         {% else %}<p class="member-card__quote member-card__quote--pending" id="{{ key }}-quote"><span data-fit-quote>A few words,<br>in your own voice.</span><small>Personal one-liner to come</small></p>{% endif %}
         {{ heart('member-card__back-heart') }}
       </div>
+      <p class="member-card__footer">SCIENCE <span>×</span> PEOPLE <span>×</span> A BRIGHTER TOMORROW</p>
     </div>
   </div>
   <button class="member-card__toggle" type="button" aria-pressed="false" aria-label="Flip {{ name }} card" aria-describedby="{% if is_student_leader %}{{ key }}-leader {% endif %}{{ key }}-roles" data-card-toggle hidden><span class="team-sr-only">Flip {{ name }} card</span></button>

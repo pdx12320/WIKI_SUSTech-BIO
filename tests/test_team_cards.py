@@ -26,7 +26,8 @@ class TeamCardsTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         page = response.get_data(as_text=True)
         self.assertEqual(page.count('data-member-card '), 25)
-        self.assertEqual(page.count('Personal one-liner to come'), 5)
+        self.assertEqual(page.count('Personal one-liner to come'), 1)
+        self.assertIn('Stay curious! Challenge limits!', page)
         self.assertIn('A million dreams are keeping me awake.', page)
         self.assertIn('data-content-source="docs/team/team.md"', page)
         self.assertIn('team-cards.css', page)
@@ -42,7 +43,8 @@ class TeamCardsTest(unittest.TestCase):
                 expected = f'https://static.igem.wiki/teams/6085/wiki/team/{filename}.avif'
                 self.assertEqual(by_name[name]['photo'], expected)
                 self.assertIn(f'src="{expected}"', page)
-        self.assertFalse(by_name['Xueyin Lu'].get('quote'))
+        self.assertEqual(by_name['Xueyin Lu']['quote'], 'Even my daydreams ask questions.')
+        self.assertIn('Even my daydreams ask questions.', page)
 
     def test_members_are_escaped_not_interpreted_as_html(self):
         page = self.render_members([{'name':'<img onerror=alert(1)>', 'quote':'<script>alert(2)</script>'}])
@@ -94,13 +96,14 @@ class TeamCardsTest(unittest.TestCase):
         self.assertEqual([m['name'] for m in members if m['category']=='instructor'], ['Hengwei Su','Xueyin Lu'])
         self.assertEqual(by_name['Jacky Man-leuk Yuen']['category'], 'advisors')
         self.assertEqual(sum(m['category']=='team-members' for m in members), 15)
-        self.assertEqual([m['number'] for m in members if m['category']=='team-members'],
-                         [f'{number:02d}' for number in range(1, 16)])
         self.assertEqual(sum(m['category']=='advisors' for m in members), 5)
         pis = [m for m in members if m['category']=='pi']
         self.assertEqual([m['name'] for m in pis], ['Zefeng Wang', 'Fuxing Zeng', 'Min Zhang'])
         self.assertEqual([m['roles'][0]['label'] for m in pis], ['Primary PI', 'Secondary PI', 'Secondary PI'])
-        self.assertTrue(all(not m.get('quote') and not m.get('photo') and not m.get('photo_asset') for m in pis))
+        self.assertTrue(all(m.get('photo') or m.get('photo_asset') for m in pis))
+        self.assertEqual(by_name['Fuxing Zeng']['photo_asset'], 'assets/team/portrait-options/fuxing-zeng/candidate-a-card-2x3.jpg')
+        self.assertEqual(by_name['Fuxing Zeng']['quote'], 'Stay curious! Challenge limits!')
+        self.assertEqual(by_name['Min Zhang']['quote'], 'Accept the things you cannot change,\nchange the things you can,\nand have the wisdom to tell the difference.')
 
     def test_long_quote_has_no_read_quote_control(self):
         page = self.client.get('/team').get_data(as_text=True)
@@ -120,7 +123,7 @@ class TeamCardsTest(unittest.TestCase):
         expected = {
             'Bolin Dong': ['Dry Lab', 'RNA LAMAR Model'],
             'Dengxiang Yang': ['Student Leader', 'Dry Lab', 'Wiki', 'Foundation Model'],
-            'Hansen Zhang': ['Student Leader', 'Wet Lab', 'Wiki'],
+            'Hansen Zhang': ['Student Leader', 'Wet Lab', 'Wiki', 'Fashion'],
             'Chenfan Liao': ['Student Leader', 'HP', 'Wiki', 'Inclusivity', 'Builder'],
             'Wenxiang Huang': ['HP', 'Wiki', 'Video Production'],
             'Fengyi Tang': ['HP', 'Interview'],

@@ -7,6 +7,8 @@ package_frames:
 - https://static.igem.wiki/teams/6085/wiki/team/pkg2.avif
 - https://static.igem.wiki/teams/6085/wiki/team/pkg3.avif
 - https://static.igem.wiki/teams/6085/wiki/team/pkg4.avif
+campus_photo_asset: assets/team/campus/campus-sunlit-building.avif
+campus_photo_position: 50% 43%
 members:
 - name: Benxiang Xiao
   number: '01'
@@ -56,10 +58,10 @@ members:
   category: team-members
   quote_lang: en
 - name: Dengxiang Yang
-  role_layout: single-row
   number: '04'
   photo_asset: assets/team/portraits/dengxiang_yang.avif
   photo_position: 50% 35%
+  photo_origin: 50% 90%
   quote: Dance until death, burn bright till the last breath.
   roles:
   - label: Student Leader
@@ -98,6 +100,8 @@ members:
     icon: wet
   - label: Wiki
     icon: dry
+  - label: Fashion
+    icon: other
   category: team-members
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B19
@@ -115,9 +119,11 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B5
 - name: Jiawen Fu
-  number: '07'
+  number: 08
   photo_asset: assets/team/portraits/jiawen_fu.avif
   photo_position: 50% 35%
+  photo_scale: 1.5
+  photo_origin: 50% 90%
   quote: After all, tomorrow is another day.
   roles:
   - label: HP
@@ -130,9 +136,11 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B12
 - name: Lili Yu
-  number: '08'
+  number: 09
   photo_asset: assets/team/portraits/lili_yu.avif
   photo_position: 50% 35%
+  photo_scale: 1.55
+  photo_origin: 50% 90%
   quote: Every action's an art of creation
   roles:
   - label: Design
@@ -143,7 +151,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B16
 - name: Muyin GUO
-  number: '09'
+  number: '10'
   photo_asset: assets/team/portraits/muyin_guo.avif
   photo_position: 50% 35%
   quote: Shine like the stars, dare to be different.
@@ -156,7 +164,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B13
 - name: Ping Sun
-  number: '10'
+  number: '11'
   photo_asset: assets/team/portraits/ping_sun.avif
   photo_position: 50% 35%
   quote: Whatever the mind of man can conceive and believe ,it can achieve.
@@ -171,7 +179,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B3
 - name: Wenxiang Huang
-  number: '11'
+  number: '12'
   photo_asset: assets/team/portraits/wenxiang_huang.avif
   photo_position: 50% 35%
   quote: ''
@@ -184,7 +192,7 @@ members:
     icon: video
   category: team-members
 - name: Xiaoyu Que
-  number: '12'
+  number: '13'
   photo_asset: assets/team/portraits/xiaoyu_que.avif
   photo_position: 50% 35%
   quote: Does the future lie far beyond the starry night?May we always keep our mind pure and bright.
@@ -208,7 +216,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B4
 - name: Yilin Liu
-  number: '13'
+  number: '15'
   photo_asset: assets/team/portraits/yilin_liu.avif
   photo_position: 50% 35%
   quote: Among countless choices, walk towards yourself.
@@ -223,7 +231,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B14
 - name: Yukang Qi
-  number: '14'
+  number: '16'
   photo_asset: assets/team/portraits/yukang_qi.avif
   photo_position: 50% 35%
   quote: Stay curious, keep exploring.
@@ -238,7 +246,7 @@ members:
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B11
 - name: Yunxiang Zhang
-  number: '15'
+  number: '17'
   photo_asset: assets/team/portraits/yunxiang_zhang.avif
   photo_position: 50% 35%
   quote: The struggle itself toward the heights is enough to fill a man's heart.
@@ -289,12 +297,14 @@ members:
   roles:
   - label: Advisor
     icon: other
+  - label: Poet
+    icon: other
   quote_source: Team members contribution.xlsx / Sheet1!B2
 - name: Xueyin Lu
   number: '22'
   category: instructor
   photo: https://static.igem.wiki/teams/6085/wiki/team/xueyin-lu.avif
-  quote: ''
+  quote: Even my daydreams ask questions.
   quote_lang: en
   roles:
   - label: Instructor
@@ -302,8 +312,12 @@ members:
 - name: Zefeng Wang
   number: '23'
   category: pi
-  photo: ''
-  quote: ''
+  photo: https://static.igem.wiki/teams/6085/wiki/team/zefeng-wang.avif
+  photo_position: 50% 35%
+  photo_scale: 1.25
+  photo_origin: 85% 65%
+  quote: Make the world a better place, one base a time.
+  quote_source: User-provided, 2026-10-19
   quote_lang: en
   roles:
   - label: Primary PI
@@ -311,8 +325,10 @@ members:
 - name: Fuxing Zeng
   number: '24'
   category: pi
-  photo: ''
-  quote: ''
+  photo_asset: assets/team/portrait-options/fuxing-zeng/candidate-a-card-2x3.jpg
+  photo_position: 50% 15%
+  photo_scale: 1
+  quote: Stay curious! Challenge limits!
   quote_lang: en
   roles:
   - label: Secondary PI
@@ -320,8 +336,14 @@ members:
 - name: Min Zhang
   number: '25'
   category: pi
-  photo: ''
-  quote: ''
+  photo: https://static.igem.wiki/teams/6085/wiki/team/min-zhang.avif
+  photo_position: 50% 50%
+  photo_scale: 1
+  quote: |-
+    Accept the things you cannot change,
+    change the things you can,
+    and have the wisdom to tell the difference.
+  quote_source: User-provided, 2026-10-19
   quote_lang: en
   roles:
   - label: Secondary PI
@@ -330,4 +352,4 @@ members:
 
 # Meet Our Team
 
-Personal one-liners are imported verbatim from Team members contribution.xlsx. Alias matches and Instructor assignments follow the user’s confirmations. PI names and titles follow the supplied screenshot; their portraits and quotes are pending.
+Personal one-liners are imported verbatim from Team members contribution.xlsx. Alias matches and Instructor assignments follow the user’s confirmations. PI roles follow the official team roster. PI portraits and quotations were supplied and confirmed by the team.

@@ -1,0 +1,102 @@
+/* Photographic opening: every layer uses the same original image coordinates. */
+.hp-opening {
+  position: relative;
+  isolation: isolate;
+  height: calc(100svh - var(--nav-h, 100px));
+  min-height: 620px;
+  overflow: hidden;
+  background: #57452e;
+  color: #fff9e9;
+}
+.hp-opening__curtain { position: absolute; inset: 0; overflow: hidden; }
+.hp-opening__photo, .hp-opening__foreground {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; pointer-events: none;
+}
+.hp-opening__photo { filter: brightness(.72) saturate(.82); }
+.hp-opening__wash { position: absolute; inset: 0; }
+.hp-opening__foreground { z-index: 3; }
+.hp-opening__foreground > image { filter: brightness(.72) saturate(.82); }
+.hp-cup-print { color: var(--hp-this-outer, #ff7800); opacity: .96; }
+.hp-cup-ink { fill: currentColor; }
+.hp-cup-ink--top { stroke: currentColor; stroke-width: 1.8px; stroke-linejoin: round; paint-order: stroke fill; }
+.hp-cup-wrap-row { transform-box: view-box; transform-origin: 567px var(--roll-origin); }
+.hp-cup-wrap-row--top { --roll-delay: 1250ms; --roll-origin: 520px; }
+.hp-cup-wrap-row--middle { color: var(--hp-this-middle, #b000ff); --roll-delay: 1350ms; --roll-origin: 545px; }
+.hp-cup-wrap-row--bottom { --roll-delay: 1450ms; --roll-origin: 580px; }
+.hp-opening__meta {
+  position: absolute; z-index: 4; top: 7%; left: 5.5%; right: 5.5%;
+  display: flex; justify-content: space-between; gap: 20px;
+  font: 500 11px/1.4 var(--font-body, sans-serif); letter-spacing: .2em; text-transform: uppercase;
+}
+.hp-opening__question {
+  position: absolute; top: 20%; left: 5%; right: 4%; margin: 0;
+  color: #fff; font-family: Futura, 'Century Gothic', Arial, sans-serif;
+  font-weight: 600; font-size: clamp(72px, 7.2vw, 142px); line-height: .98; letter-spacing: -.055em;
+}
+.hp-opening__question > span { display: block; position: relative; z-index: 2; }
+.hp-opening__question > span:last-child { z-index: 4; }
+.hp-opening__question > span + span { margin-top: .025em; }
+.hp-opening__question > .hp-opening__emphasis { white-space: nowrap; margin-top: .12em; }
+.hp-this {
+  position: relative; display: inline-flex; flex-direction: column; vertical-align: top;
+  color: #ff7800;
+  font-size: 1.16em; font-weight: 700; letter-spacing: -.065em;
+  line-height: .86; margin-left: .035em; margin-top: .06em; gap: .09em;
+}
+.hp-this__row { display: block; overflow: hidden; color: inherit; padding-right: .08em; margin-right: -.08em; }
+.hp-this__row > span { display: block; transform: translateY(var(--slice-y)); }
+.hp-this__row--top { height: .23em; --slice-y: -.04em; --slice-delay: 1250ms; }
+.hp-this__row--middle { height: .35em; color: var(--hp-this-middle, #b000ff); --slice-y: -.13em; --slice-delay: 1370ms; }
+.hp-this__row--bottom { height: .58em; --slice-y: -.29em; --slice-delay: 1490ms; }
+.hp-opening__ending {
+  position: absolute; z-index: 4; top: 65%; left: 53%; right: 4%; margin: 0;
+  color: #fff;
+  font: 400 clamp(42px, 5.25vw, 96px)/1.05 Georgia, serif; letter-spacing: -.045em;
+}
+.hp-opening__ending span { display: block; }
+.hp-opening__ending em { font-weight: 400; }
+.hp-opening__bottom {
+  position: absolute; bottom: 35px; left: 5.5%; right: 5.5%; z-index: 4;
+  display: flex; justify-content: space-between; align-items: end; gap: 20px;
+  font: 400 12px/1.6 Arial, sans-serif;
+}
+.hp-opening__bottom > span { white-space: nowrap; }
+.hp-opening__continue {
+  display: grid; place-items: center; flex: none; width: 52px; height: 52px;
+  color: inherit; text-decoration: none; border: 0;
+  background: transparent;
+}
+.hp-opening__continue:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+.hp-opening__continue svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; animation: hp-scroll-cue 1800ms 2900ms ease-in-out infinite; }
+@keyframes hp-scroll-cue { 0%, 100% { transform: translateY(-3px); } 55% { transform: translateY(4px); } }
+.hp-opening[data-state="playing"] .hp-opening__curtain { animation: hp-curtain 1150ms cubic-bezier(.22,.7,.22,1) both; }
+.hp-opening[data-state="playing"] .hp-opening__question > span,
+.hp-opening[data-state="playing"] .hp-opening__ending { animation: hp-question 1100ms 850ms cubic-bezier(.2,.7,.2,1) both; }
+.hp-opening[data-state="playing"] .hp-opening__meta { animation: hp-question 850ms 1450ms ease both; }
+.hp-opening[data-state="playing"] .hp-opening__bottom { animation: hp-question 850ms 2050ms ease both; }
+.hp-opening[data-state="playing"] .hp-this__row > span { animation: hp-this-slice 280ms var(--slice-delay) cubic-bezier(.16,1,.3,1) both; }
+.hp-opening[data-state="playing"] .hp-cup-wrap-row { will-change: transform, opacity; animation: hp-cup-row-roll 320ms var(--roll-delay) cubic-bezier(.25,.6,.4,1) both; }
+@keyframes hp-cup-row-roll {
+  0% { opacity: 0; transform: translateY(-18px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes hp-this-slice { from { opacity: 0; transform: translateY(calc(var(--slice-y) - .65em)); } to { opacity: 1; transform: translateY(var(--slice-y)); } }
+@keyframes hp-curtain { from { clip-path: inset(0 0 100% 0); transform: translateY(-5%); } to { clip-path: inset(0); transform: none; } }
+@keyframes hp-question { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
+@media (max-width: 700px) {
+  .hp-opening { min-height: 600px; }
+  /* A wider photographic stage preserves both the cup and the right-hand wrist. */
+  .hp-opening__photo, .hp-opening__foreground { width: 250%; max-width: none; left: -60%; }
+  .hp-opening__meta { top: 7%; font-size: 9px; letter-spacing: .12em; }
+  .hp-opening__meta span:last-child { max-width: 110px; text-align: right; }
+  .hp-opening__question { top: 25%; font-size: clamp(50px, 11.5vw, 80px); left: 6%; right: 3%; }
+  .hp-opening__ending { top: 69%; left: 43%; right: 3%; font-size: clamp(30px, 7.6vw, 50px); }
+  .hp-opening__bottom { bottom: 24px; font-size: 10px; }
+  .hp-opening__bottom { gap: 8px; }
+  .hp-opening__bottom > span { font-size: clamp(7px, 1.9vw, 10px); letter-spacing: -.02em; }
+  .hp-opening__continue { width: 40px; height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-opening *, .hp-opening[data-state="playing"] * { animation: none !important; scroll-behavior: auto; }
+}

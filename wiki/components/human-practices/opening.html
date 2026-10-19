@@ -1,0 +1,28 @@
+<section class="hp-opening" data-hp-opening data-wh-own-opening aria-label="A question that stayed">
+  <div class="hp-opening__curtain">
+    <img class="hp-opening__photo" src="{{ url_for('assets', filename='human-practices/opening/banana-dna-original.jpg') }}" width="1440" height="960" alt="A gloved hand lifts strands of banana DNA from a clear cup with a spoon." fetchpriority="high">
+    <div class="hp-opening__wash" aria-hidden="true"></div>
+    <h2 class="hp-opening__question" aria-label="What can we do with THIS once we have extracted it?">
+      <span aria-hidden="true">What can</span>
+      <span aria-hidden="true">we do</span>
+      <span class="hp-opening__emphasis" aria-hidden="true">with</span>
+    </h2>
+    {# Native clipping retains the exact photographed pixels, including the clear cup.
+       Both the photograph and the foreground use identical cover geometry. #}
+    <svg class="hp-opening__foreground" viewBox="0 0 1440 960" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><clipPath id="hp-opening-subject">
+        <path d="M1440 0H1196 C1182 2 1178 4 1160 3 C1064 1 989 18 940 46 C910 63 882 83 864 111 C835 126 815 154 802 181 C788 197 780 221 787 238 C799 252 816 239 833 224 L852 218 C846 249 851 288 866 309 C880 329 898 331 912 318 C915 344 928 359 946 359 C958 359 966 353 972 340 C977 365 992 387 1010 393 C1026 400 1043 391 1051 372 C1068 384 1090 369 1099 352 C1116 381 1146 428 1180 451 C1237 495 1305 523 1350 561 L1386 585 L1440 599Z"/>
+        <path d="M814 230 L850 211 L887 215 L688 421 C679 432 669 446 665 464 C658 495 636 525 608 545 L559 568 C534 574 506 567 493 551 C479 536 483 508 491 483 C505 442 539 408 581 397 C602 390 623 393 642 388Z"/>
+        <path d="M411 444 C410 408 478 380 564 380 C649 376 734 410 738 451 C739 475 720 491 711 501 L685 751 C682 784 641 805 582 807 C513 806 464 794 456 761 L433 502 C418 485 409 465 411 444Z"/>
+      </clipPath></defs>
+      <image href="{{ url_for('assets', filename='human-practices/opening/banana-dna-original.jpg') }}" width="1440" height="960" clip-path="url(#hp-opening-subject)"/>
+      {# Cup lettering is anchored to photograph coordinates, so it stays on the
+         plastic above the liquid at every cover crop and viewport size. #}
+      {% include 'components/human-practices/cup_print.html' %}
+      <defs><clipPath id="hp-opening-spoon-front"><path d="M814 230 L850 211 L887 215 L688 421 C679 432 669 446 665 464 C658 495 636 525 608 545 L559 568 C534 574 506 567 493 551 C479 536 483 508 491 483 C505 442 539 408 581 397 C602 390 623 393 642 388Z"/></clipPath></defs>
+      <image href="{{ url_for('assets', filename='human-practices/opening/banana-dna-original.jpg') }}" width="1440" height="960" clip-path="url(#hp-opening-spoon-front)"/>
+    </svg>
+    <p class="hp-opening__ending" aria-hidden="true"><span>once we have</span><span><em>extracted it?</em></span></p>
+    <div class="hp-opening__bottom"><span>* A question from a participant at Taoyuan Elderly Service Center.</span><a class="hp-opening__continue" href="#main-content" aria-label="Continue to Human Practices"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6"/></svg></a></div>
+  </div>
+</section>

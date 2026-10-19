@@ -64,13 +64,17 @@ The **SONAR Analysis Program (SAP)** brings these concepts into a software-orien
 
 ## 05. MODEL — Connecting Experimental Evidence with Computational Design
 
-Our [Model](/model) workflow connected measured editing profiles with editor design and RNA-site prioritization. Analysis of **36 RNA-seq libraries** established candidate-site profiles under a common screening procedure, supporting comparisons of target signals and unintended editing.
+Our [Model](/model) workflow connected transcriptome-wide editing profiles, protein and RNA foundation models, structural modeling and delivery simulations. Together, these approaches linked measured editing outcomes to candidate editor designs, RNA-site shortlists and system-level performance.
 
-**PUF modeling** linked candidate selection to experimental testing, followed by assay-informed assessment of specificity ranking. Across 66 constructs, the **PUF-ESM Specificity Ranker** achieved Spearman **ρ = 0.405** in grouped evaluation. Its predicted Top30 recovered **20 of the measured Top30**, compared with **13.64** expected from random selection within the same cohort. **APOBEC modeling** connected structural hypotheses, mutant screening and combination design. The lead combination reached a target-to-comparison-site ratio of **2.156** while retaining **77.3% of parental target activity** in the same experimental batch.
+**Transcriptomic Landscape** compared **36 RNA-seq libraries** using a common candidate-screening workflow. GVE and SNE showed narrower detected editing profiles than PUF12 while retaining apparent C388 signals, which include endogenous reference T. Joint analysis of candidate-site counts, target signals and bystander rates distinguished these profiles from a general reduction in editor activity.
 
-**LAMAR** translated RNA-seq-supported patterns into ranked shortlists for further site validation. In Stage II testing, the top 10 and top 20 candidates included a supported site in **77.9% and 92.1% of 140 positive windows**, respectively. These results describe prioritization within the evaluated data, rather than confirmed activity at every ranked site.
+**Recognition Code** combined model-guided PUF selection with assay-informed specificity ranking. Across 66 constructs, the **PUF-ESM Specificity Ranker** achieved Spearman **ρ = 0.405** in grouped evaluation. Its predicted Top30 recovered **20 of the measured Top30**, compared with **13.64** expected from random selection. Structure-conditioned sequence generation expanded the library of recognition and scaffold variants for subsequent testing.
 
-[Delivery Dynamics](/software#rewire) extended this workflow to delivery, tissue distribution, expression and multisite RNA reactions. Parameter scans, sensitivity analysis, uncertainty analysis and spatial simulations examined trade-offs among intended-product retention, unwanted editing and tissue coverage. These simulation outputs support comparisons of delivery and editing assumptions and identify processes for experimental follow-up.
+**Catalytic Design** linked protein–RNA structural comparisons with APOBEC mutant screening and combination design. The lead combination achieved a target-to-comparison-site ratio of **2.156** while retaining **77.3% of parental target activity** in the same experimental batch. Matched comparisons connected residue choices and sequence background with measured substrate preference and activity.
+
+**LAMAR** adapted an RNA foundation model to regional assessment and cytidine ranking. In Stage II evaluation, the top 10 and top 20 candidates included a supported site in **77.9% and 92.1% of 140 positive test windows**, respectively. These shortlists concentrated RNA-seq-supported sites within defined screening budgets.
+
+[**Delivery Dynamics**](/software#rewire) coupled whole-body equations with spatial simulations to examine delivery, expression and multisite RNA reactions. Simulated dose scans identified an intermediate peak in the intended RNA product, while tissue simulations revealed persistent differences in coverage. Together, these results identified delivery and expression as key determinants of product composition and tissue coverage.
 
 ## 06. Functional Validation — Toward Disease-Relevant Cellular Effects
 

@@ -12,6 +12,7 @@
   {'id': 'deliver', 'label': 'Deliver', 'parts': [{'id': 'deliver', 'label': 'Deliver'}]},
   {'id': 'measure', 'label': 'Measure', 'parts': [{'id': 'measure', 'label': 'Measure'}]},
   {'id': 'model', 'label': 'Model', 'parts': [
+    {'id': 'model', 'label': 'Model overview', 'overview': true},
     {'id': 'model-rna-seq', 'label': 'Transcriptomic Landscape', 'short': 'Landscape'},
     {'id': 'model-puf', 'label': 'Recognition Code', 'short': 'Recognition'},
     {'id': 'model-apobec', 'label': 'Catalytic Design', 'short': 'Catalysis'},
@@ -49,7 +50,7 @@
       {% for group in engineering_groups if group.id not in ['fundamental-research', 'functional-validation'] %}
       {% if group.parts | length > 1 %}
       <div class="engineering-map-leaves" id="engineering-map-{{ group.id }}" data-map-branch-group="{{ group.id }}" style="--map-row: {{ loop.index + 2 }}" role="group" aria-label="{{ group.label }} branches" hidden>
-        {% for part in group.parts %}
+        {% for part in group.parts if not part.overview | default(false) %}
         <a class="engineering-map-leaf" data-engineering-part="{{ part.id }}" href="#{{ part.id }}" title="{{ part.label }}" aria-label="{{ part.label }}, open overview"><span class="map-label">{{ part.short | default(part.label) }}</span></a>
         {% endfor %}
       </div>

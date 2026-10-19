@@ -16,7 +16,7 @@
  });
  new MutationObserver(()=>requestAnimationFrame(revealVerticalCycle)).observe(tuner,{subtree:true,childList:true,attributes:true,attributeFilter:['aria-current']});
  addEventListener('resize',()=>requestAnimationFrame(revealVerticalCycle));
- const rows=[['fundamental-research','Fundamental Research','fundamental-research'],['edit','Edit','edit'],['control','Control','gfa'],['deliver','Deliver','deliver'],['measure','Measure','measure'],['model','Model','model-rna-seq'],['functional-validation','Functional Validation','functional-validation']];
+ const rows=[['fundamental-research','Fundamental Research','fundamental-research'],['edit','Edit','edit'],['control','Control','gfa'],['deliver','Deliver','deliver'],['measure','Measure','measure'],['model','Model','model'],['functional-validation','Functional Validation','functional-validation']];
  const branches={
   edit:[['pod','POD','pod'],['cetus','CETUS','cetus'],['integrated-orca','Integrated ORCA','integrated-orca']],
   control:[['gfa','GFA','gfa'],['mre','MRE','mre'],['aso','ASO','aso'],['cre-loxp','Cre–loxP','cre-loxp']],

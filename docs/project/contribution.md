@@ -40,21 +40,27 @@ Methods and records have distinct roles. A protocol describes an approach; a not
 
 ### Dry-lab analysis across molecular and system scales {#dry-lab-resources}
 
-#### RNA-seq evidence and editor comparisons
+Our dry-lab contribution connects transcriptome-wide measurements with editor design, RNA-site prioritization and delivery modeling. The five complementary approaches share experimental inputs and return results that inform the next design decision.
 
-The Model page connects candidate RNA-editing sites with the PUF and APOBEC work. RNA-seq analysis provides a documented basis for comparing detected candidate profiles, while the editor studies connect computational hypotheses with measured outcomes. Together, these views help distinguish a more favorable editing profile from a general loss of editor activity.
+#### Transcriptomic Landscape
 
-For reuse, the relevant contribution is the analysis context as well as the result: the comparison being made, the origin of the measurements and the limits of the evaluation. A result obtained in a tested panel remains a result for that panel; it does not establish the behavior of every possible editor or cellular setting.
+The RNA-seq workflow converts sequencing libraries into consistently screened candidate sites, replicate-level rates and transcript-oriented sequence contexts. Matched-site comparisons and callable-cytosine normalization support comparisons across editors and chromosomes. Applied to 36 libraries, the workflow distinguished narrower detected editing profiles from a general loss of activity. The site tables and sequence contexts also provide shared inputs for downstream modeling.
 
-#### Prioritization with LAMAR
+#### Recognition Code and Catalytic Design
 
-LAMAR provides the complementary perspective of ranking RNA regions and sites for follow-up. Its outputs organize candidate evidence into a more manageable set of questions. A ranking helps allocate attention, while the biological interpretation still depends on independent evidence at the sites being considered.
+PUF modeling combines protein foundation-model representations, assay-informed ranking and structure-conditioned sequence generation. The PUF-ESM Specificity Ranker recovered 20 of the measured Top30 constructs in grouped evaluation, concentrating higher-specificity variants into a smaller candidate panel. Generated recognition and scaffold variants extend the design library for further experimental work.
 
-#### Whole-body modeling
+APOBEC modeling connects paired protein–RNA structures, parent-corrected contact profiles and structural clustering with matched experimental comparisons. Combination screening identified a lead that balanced substrate preference with retained target activity. Together, the PUF and APOBEC workflows link computational proposals to measured editing profiles and preserve the comparisons behind candidate selection.
 
-The Software page connects delivery, tissue distribution, cellular expression and RNA editing within a common modeling framework. Its figures and archived outputs make assumptions, uncertainty and differences between simulated scenarios visible. The spatial view adds a way to examine variation that can be obscured by an overall average.
+#### RNA-site prioritization with LAMAR
 
-These models extend the project beyond an isolated molecular comparison. They help describe how conclusions depend on processes at other scales. Their outputs remain simulations in the stated model context, rather than demonstrations of delivery or therapeutic effectiveness in a living organism.
+LAMAR combines human-transcript adaptation, regional assessment and local cytidine ranking to prioritize RNA sites. Its top 10 and top 20 lists contained a supported site in 77.9% and 92.1% of 140 positive test windows, respectively. The resulting shortlists let teams choose a screening budget and examine the sequence contexts associated with their editor.
+
+#### Delivery Dynamics
+
+The delivery framework links vector distribution, blood–brain barrier transport, cellular expression and multisite RNA reactions. Compartmental equations track product composition over time, while spatial simulations reveal differences in exposure and editing across tissue. Dose scans identified an intermediate peak in the intended RNA product, and spatial analysis showed persistent differences in coverage.
+
+The [Model](/model) and [Software](/software#rewire) pages share these workflows, figures and archived outputs alongside their inputs and evaluation settings. Teams can use them to compare editor candidates, prioritize RNA sites and explore delivery scenarios within a connected analysis workflow.
 
 ### Bringing wet and dry work together {#how-to-reproduce}
 

@@ -1,0 +1,337 @@
+{
+  "naming": "figure-NN[-panel]-subject.ext",
+  "figures": 18,
+  "displayed_images": 34,
+  "assets": [
+    {
+      "figure": 1,
+      "panel": "",
+      "previous_path": "references/figure-01-dieter-rams.jpg",
+      "upload_path": "references/figure-01-dieter-rams.jpg",
+      "bytes": 2265029,
+      "sha256": "7c20120b2c32698a88c6e483505c83b78b16f4cc81a67108a09e9e378d651f08",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-01-dieter-rams.avif"
+    },
+    {
+      "figure": 2,
+      "panel": "",
+      "previous_path": "identity/logo-early.png",
+      "upload_path": "identity/figure-02-early-logo.png",
+      "bytes": 361416,
+      "sha256": "8c928fc113b1b80fad2b4402a2aed8b12068367e4af1507ba4e9b396f6b689a1",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-02-early-logo.avif"
+    },
+    {
+      "figure": 3,
+      "panel": "a",
+      "previous_path": "identity/logo-rewire.png",
+      "upload_path": "identity/figure-03-a-rewire-logo.png",
+      "bytes": 181890,
+      "sha256": "1d0ebc8ff996c1a497f36dc6cd31774ffb45e5ec380b80cd043a44010cef8461",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-03-a-rewire-logo.avif"
+    },
+    {
+      "figure": 3,
+      "panel": "b",
+      "previous_path": "identity/logo-rewire-sustech-bio.png",
+      "upload_path": "identity/figure-03-b-rewire-sustech-bio-mark.png",
+      "bytes": 197792,
+      "sha256": "df792262ccd9e59e085766ecfb352a304dd204af93e2650ee32105949f4f1e7a",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-03-b-rewire-sustech-bio-mark.avif"
+    },
+    {
+      "figure": 3,
+      "panel": "c",
+      "previous_path": "identity/mascot-rewire-sheet.png",
+      "upload_path": "identity/figure-03-c-rewire-mascot-sheet.png",
+      "bytes": 389449,
+      "sha256": "016d7ac2d4058d4770bccbe321963b7920dc86a6442857f602abc93133e5f0b1",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-03-c-rewire-mascot-sheet.avif"
+    },
+    {
+      "figure": 4,
+      "panel": "a",
+      "previous_path": "identity/logo-orca.png",
+      "upload_path": "identity/figure-04-a-orca-logo.png",
+      "bytes": 343249,
+      "sha256": "82efdd10849b70c9dcad3790101b6da10ad52c5d9bcd79c29d0f862efde91b3c",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-a-orca-logo.avif"
+    },
+    {
+      "figure": 4,
+      "panel": "b",
+      "previous_path": "identity/logo-orca-mascot-lockup.png",
+      "upload_path": "identity/figure-04-b-orca-mascot-lockup.png",
+      "bytes": 178710,
+      "sha256": "1da8843ed835ec8b4aed3504e3fa0827588e167e7b7bb722bbde9e006b3bb6a4",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-b-orca-mascot-lockup.avif"
+    },
+    {
+      "figure": 4,
+      "panel": "c",
+      "previous_path": "identity/mascot-orca-v3-04.png",
+      "upload_path": "identity/figure-04-c-orca-mascot-standing.png",
+      "bytes": 102211,
+      "sha256": "07f26f1bb96d4ccfc530a51baee13ffff1510a770ed197dbb88e3dabf1fac926",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-c-orca-mascot-standing.avif"
+    },
+    {
+      "figure": 4,
+      "panel": "d",
+      "previous_path": "identity/mascot-orca-v3-01-white.png",
+      "upload_path": "identity/figure-04-d-orca-mascot-thinking-white.png",
+      "bytes": 1285198,
+      "sha256": "97c8dc55794166d7633bfe702b9d3dbe70cd9311cb370ad21396800617b25a09",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-d-orca-mascot-thinking-white.avif"
+    },
+    {
+      "figure": 4,
+      "panel": "e",
+      "previous_path": "identity/mascot-orca-v3-02-white.png",
+      "upload_path": "identity/figure-04-e-orca-mascot-conch-white.png",
+      "bytes": 1314197,
+      "sha256": "442b701f0eb52c6566f24987cff00bfea8c5bd6cfbafb65146a0e3f50ca18d32",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-e-orca-mascot-conch-white.avif"
+    },
+    {
+      "figure": 4,
+      "panel": "f",
+      "previous_path": "identity/mascot-orca-v3-03-white.png",
+      "upload_path": "identity/figure-04-f-orca-mascot-sleepy-white.png",
+      "bytes": 1290731,
+      "sha256": "8e0750e97cc9da78db2168c0d5460128c42c6feb07b0ae789c795c66ce45338f",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-f-orca-mascot-sleepy-white.avif"
+    },
+    {
+      "figure": 5,
+      "panel": "a",
+      "previous_path": "identity/wiki-home-exploration-01.png",
+      "upload_path": "identity/figure-05-a-wiki-home-flowing-layout.png",
+      "bytes": 1965100,
+      "sha256": "178c9e3efc31ec483f37e04958c58ab4c96128eb3f93c19454a655eb269293ee",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-05-a-wiki-home-flowing-layout.avif"
+    },
+    {
+      "figure": 5,
+      "panel": "b",
+      "previous_path": "identity/wiki-home-exploration-02.png",
+      "upload_path": "identity/figure-05-b-wiki-home-orca-header.png",
+      "bytes": 317168,
+      "sha256": "25a1578a1c382d5e34e657a5b348f019e49e40fe4c4a9d5d09b3acd4301073d7",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-05-b-wiki-home-orca-header.avif"
+    },
+    {
+      "figure": 5,
+      "panel": "c",
+      "previous_path": "identity/wiki-home-exploration-03.png",
+      "upload_path": "identity/figure-05-c-wiki-home-character-layout.png",
+      "bytes": 186755,
+      "sha256": "f9402eda585976d71c49d37d9263714264b1a15b73475d7fef888cb8ca0bc59f",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-05-c-wiki-home-character-layout.avif"
+    },
+    {
+      "figure": 6,
+      "panel": "",
+      "previous_path": "applications/apparel-varsity-jacket-v1.png",
+      "upload_path": "applications/figure-06-team-hoodie-v1.png",
+      "bytes": 442356,
+      "sha256": "84f89c59f5c6c116b21ca89a14118dfd65628def7a3edeb71819f43d9a21e7a8",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-06-team-hoodie-v1.avif"
+    },
+    {
+      "figure": 7,
+      "panel": "",
+      "previous_path": "applications/apparel-tshirt-v2.png",
+      "upload_path": "applications/figure-07-team-tshirt-v2.png",
+      "bytes": 1428771,
+      "sha256": "1b1802332ce136046e6b3a1cb8a91e889e8573e230df7cf87226e94c403615fb",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-07-team-tshirt-v2.avif"
+    },
+    {
+      "figure": 8,
+      "panel": "a",
+      "previous_path": "applications/apparel-v3-pattern-project-name.png",
+      "upload_path": "applications/figure-08-a-apparel-project-name.png",
+      "bytes": 146020,
+      "sha256": "22e252c45453bec8760e3bfd1318b3b0120e16ec56d1ecd5926e3efca42d7f9f",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-08-a-apparel-project-name.avif"
+    },
+    {
+      "figure": 8,
+      "panel": "b",
+      "previous_path": "applications/apparel-v3-pattern-team-wordmark.png",
+      "upload_path": "applications/figure-08-b-apparel-team-wordmark.png",
+      "bytes": 373807,
+      "sha256": "e9c52ebd96643a793e839e8307443e99aebcb4acf52369cbeaa6358325cab0bd",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-08-b-apparel-team-wordmark.avif"
+    },
+    {
+      "figure": 9,
+      "panel": "",
+      "previous_path": "applications/apparel-varsity-jacket-v3.png",
+      "upload_path": "applications/figure-09-team-varsity-jacket-v3.png",
+      "bytes": 1669464,
+      "sha256": "8c14774274a81cb5d943161019b919cf6c07caeb2ce1dc288476f6d456cccf93",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-09-team-varsity-jacket-v3.avif"
+    },
+    {
+      "figure": 10,
+      "panel": "a",
+      "previous_path": "applications/flag-v1.png",
+      "upload_path": "applications/figure-10-a-team-flag-v1.png",
+      "bytes": 410542,
+      "sha256": "3c9ce8a818e2cdbd02fe54afa47da97ad4840019efb129d9571c83695c2dbdff",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-10-a-team-flag-v1.avif"
+    },
+    {
+      "figure": 10,
+      "panel": "b",
+      "previous_path": "applications/flag-v2.png",
+      "upload_path": "applications/figure-10-b-team-flag-v2-current.png",
+      "bytes": 382927,
+      "sha256": "c1c73cf3a6dda6f8e47f51552cbb9d6f0085c93d74119128aecfa302a7c6ea9c",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-10-b-team-flag-v2-current.avif"
+    },
+    {
+      "figure": 11,
+      "panel": "",
+      "previous_path": "applications/tencent-meeting-background.png",
+      "upload_path": "applications/figure-11-online-meeting-background.png",
+      "bytes": 384727,
+      "sha256": "94472198ac3eae675cfbd5b54f0f95843ab7b097341d18f46850670e13608e75",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-11-online-meeting-background.avif"
+    },
+    {
+      "figure": 12,
+      "panel": "",
+      "previous_path": "applications/worldproof-hackathon-badge.png",
+      "upload_path": "applications/figure-12-worldproof-hackathon-badge.png",
+      "bytes": 1197605,
+      "sha256": "219b2f20394b39e896cad56a6936dff95fb815b2424aa059a4e1c4495cc5bb22",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-12-worldproof-hackathon-badge.avif"
+    },
+    {
+      "figure": 13,
+      "panel": "",
+      "previous_path": "applications/mascot-personality-stickers-triptych.png",
+      "upload_path": "applications/figure-13-mascot-personality-stickers.png",
+      "bytes": 1507852,
+      "sha256": "cf239ecd0f0faa68f02e30ca134c1f6f1f654607bd5c459fb7f28692e6b90fde",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-13-mascot-personality-stickers.avif"
+    },
+    {
+      "figure": 14,
+      "panel": "a",
+      "previous_path": "applications/event-south-china-exchange-poster.png",
+      "upload_path": "applications/figure-14-a-south-china-poster.png",
+      "bytes": 722180,
+      "sha256": "c09df57ebd0f619e3b42066d009f9fd010e137369a9b7d7e34a990af842c57a7",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-a-south-china-poster.avif"
+    },
+    {
+      "figure": 14,
+      "panel": "a",
+      "previous_path": "applications/pdf-sources/event-south-china-exchange-poster.pdf",
+      "upload_path": "applications/figure-14-a-south-china-poster.pdf",
+      "bytes": 3358936,
+      "sha256": "a8da7de88b548f97b2feb73382f53d422b8fb47ae08307878d7c7da3d4a7f2d1",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-a-south-china-poster.pdf"
+    },
+    {
+      "figure": 14,
+      "panel": "b",
+      "previous_path": "applications/event-hp-community-outreach-poster-template-page-01.png",
+      "upload_path": "applications/figure-14-b-hp-community-poster-page-01.png",
+      "bytes": 519779,
+      "sha256": "fc119895e232aaa61507e2d65c5e6a27895109665caf4acb61a218c9d468c798",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-b-hp-community-poster-page-01.avif"
+    },
+    {
+      "figure": 14,
+      "panel": "bc",
+      "previous_path": "applications/pdf-sources/event-hp-community-outreach-poster-template.pdf",
+      "upload_path": "applications/figure-14-bc-hp-community-poster-template.pdf",
+      "bytes": 1068026,
+      "sha256": "b94e669d3c8c4503fb066a23ba2fe7962a9873cf0caf4451d7f7d0de5fad5adc",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-bc-hp-community-poster-template.pdf"
+    },
+    {
+      "figure": 14,
+      "panel": "c",
+      "previous_path": "applications/event-hp-community-outreach-poster-template-page-02.png",
+      "upload_path": "applications/figure-14-c-hp-community-poster-page-02.png",
+      "bytes": 517246,
+      "sha256": "f10d930bd29aa2c1a4e936fec05596998a4053ebdae8c372d11fdb1a1dee7e43",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-c-hp-community-poster-page-02.avif"
+    },
+    {
+      "figure": 15,
+      "panel": "",
+      "previous_path": "applications/presentation-apic-opening-slide-01.png",
+      "upload_path": "applications/figure-15-apic-opening-slide-01.png",
+      "bytes": 2462767,
+      "sha256": "baaa2aa9ce3546aef5cfe7c8f644478b92a510851b70d392936ee14047a806b3",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-15-apic-opening-slide-01.avif"
+    },
+    {
+      "figure": 16,
+      "panel": "a",
+      "previous_path": "stories/figure-16-a-time-capsule-activity-materials.jpg",
+      "upload_path": "stories/figure-16-a-time-capsule-activity-materials.jpg",
+      "source_name": "a38156ff2c3cd67df6c3e0a673e039cc.jpg",
+      "bytes": 229282,
+      "sha256": "457859193a0f00b3612f487f9cc209c1461c0fb7cac193fdb13b448a0f8d8bfa",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-a-time-capsule-activity-materials.avif"
+    },
+    {
+      "figure": 16,
+      "panel": "b",
+      "previous_path": "stories/figure-16-b-time-capsule-activity-mailbox.jpg",
+      "upload_path": "stories/figure-16-b-time-capsule-activity-mailbox.jpg",
+      "source_name": "3bfe595b64a9d91ff12c5787da4b11a9.jpg",
+      "bytes": 226832,
+      "sha256": "257ee7e7d30456be9711cc177a102abf540bcbf0d8d14bbbde90caf312417356",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-b-time-capsule-activity-mailbox.avif"
+    },
+    {
+      "figure": 16,
+      "panel": "c",
+      "previous_path": "stories/figure-16-c-time-capsule-handwritten-cards.png",
+      "upload_path": "stories/figure-16-c-time-capsule-handwritten-cards.png",
+      "source_name": "codex-clipboard-e9691f80-849a-4d32-8ff1-e77dcc88f148.png",
+      "bytes": 746598,
+      "sha256": "13856a570e6fda7468a56d624bf71850abe3f673cdc87c944a5d4da2f69a8537",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-c-time-capsule-handwritten-cards.avif"
+    },
+    {
+      "figure": 17,
+      "panel": "",
+      "previous_path": "stories/figure-17-aphasia-map-instructions.png",
+      "upload_path": "stories/figure-17-aphasia-map-instructions.png",
+      "source_name": "codex-clipboard-02e85529-aae0-46d4-88a5-36b04db47adf.png",
+      "bytes": 336843,
+      "sha256": "4c46ddcf622e129657869d13fa0a728293ce799666fa24ad2fafe1dd129e18f0",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif"
+    },
+    {
+      "figure": 18,
+      "panel": "a",
+      "previous_path": "stories/figure-18-a-time-capsule-post-zh-long.jpg",
+      "upload_path": "stories/figure-18-a-time-capsule-post-zh-long.jpg",
+      "source_name": "dcbbaf06bfcba261a08168d505b28c95.jpg",
+      "bytes": 3635117,
+      "sha256": "5943f38a3c1c46a0dbcf1debdec0dc516a6b942cae8e925f4a8ab1afb29984a4",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-a-time-capsule-post-zh-long.avif"
+    },
+    {
+      "figure": 18,
+      "panel": "b",
+      "previous_path": "stories/figure-18-b-time-capsule-post-en-long.jpg",
+      "upload_path": "stories/figure-18-b-time-capsule-post-en-long.jpg",
+      "source_name": "8f794ff9e1c888335d5d3cd077a2f9a2.jpg",
+      "bytes": 3681396,
+      "sha256": "3e266749067a2dca8bd0e176f6589e7e7df1444582fd7a5e7b23d4895b4e01dc",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-b-time-capsule-post-en-long.avif"
+    }
+  ]
+}

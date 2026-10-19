@@ -1,0 +1,634 @@
+@font-face {
+  font-family: "ORCA Quote Script";
+  src: url("https://static.igem.wiki/teams/6085/wiki/design/stories/pinyon-script-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) {
+  --sans: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
+  font-family: var(--sans);
+}
+
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content :is(h2, h3) {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* A quiet chapter index; retain the shared anchors and accordion behaviour. */
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory {
+  --design-index-ink: #303d70;
+  --design-index-muted: #686d83;
+  padding: 0 8px 8px 0;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory__label {
+  padding: 0 0 14px;
+  color: var(--design-index-muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .16em;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol {
+  counter-reset: design-part;
+  gap: 0;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol > li {
+  counter-increment: design-part;
+  padding-block: 5px;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol > li + li {
+  border-top: 1px solid #e1e3ec;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a {
+  min-height: 50px;
+  gap: 12px;
+  padding: 5px 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--design-index-muted);
+  background: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  overflow-wrap: normal;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .design-directory__chapter {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .design-directory__title {
+  line-height: 1.3;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .design-directory__topic {
+  color: var(--design-index-muted);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) [data-content-major]::before {
+  content: counter(design-part, decimal-leading-zero);
+  flex: 0 0 20px;
+  color: #8a8fa3;
+  font-size: 11px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a[aria-current] {
+  color: var(--design-index-ink);
+  font-weight: 600;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle {
+  flex-basis: 28px;
+  border-radius: 4px;
+  color: #858a9e;
+  background: transparent;
+  cursor: pointer;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle::after {
+  content: "+";
+  width: auto;
+  height: auto;
+  border: 0;
+  font: 400 18px/1 var(--sans);
+  transform: none;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory .content-subnav {
+  gap: 0;
+  margin: 0 0 10px 32px;
+  padding: 0;
+  border: 0;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a {
+  padding: 7px 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--design-index-muted);
+  background: transparent;
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  overflow-wrap: normal;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current] {
+  color: var(--design-index-ink);
+  font-weight: 600;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -14px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav > .content-subnav-indicator {
+  display: none;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory :is(a, button):hover {
+  color: var(--design-index-ink);
+  background: transparent;
+}
+
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #b9bed1;
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle {
+    flex-basis: 24px;
+  }
+
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory .content-subnav {
+    margin-left: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-mobile-directory {
+    background: #fffefcf5;
+  }
+
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a,
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a {
+    min-height: 44px;
+  }
+
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a {
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+  }
+
+  .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-subnav a[aria-current]::before {
+    top: 20px;
+  }
+}
+
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content .design-principle-quote {
+  margin: 36px 0;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-principle-quote .design-principle-quote__text {
+  margin: 0 0 16px;
+  color: #171536;
+  font-family: "ORCA Quote Script", "Snell Roundhand", cursive;
+  font-size: clamp(38px, 4.5vw, 52px);
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  line-height: 1.4;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-principle-quote .design-principle-quote__attribution {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-principle-reference {
+  container: design-reference / inline-size;
+  width: 100%;
+  margin: 36px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-principle-reference__row {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(200px, 240px);
+  width: min(100%, 720px);
+  margin-inline: auto;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-principle-reference .design-principle-quote {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content figure.design-principle-reference__portrait {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-principle-reference__portrait > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 10px;
+}
+
+@container design-reference (max-width: 560px) {
+  [data-content-source="docs/team/design-communication.md"] .design-principle-reference__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  [data-content-source="docs/team/design-communication.md"] .design-principle-reference .design-principle-quote {
+    text-align: center;
+  }
+
+  [data-content-source="docs/team/design-communication.md"] .markdown-content figure.design-principle-reference__portrait {
+    width: min(100%, 240px);
+    justify-self: center;
+  }
+}
+
+/* All page captions share one type treatment, including the portrait. */
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content figure > figcaption {
+  margin: 12px 0 0;
+  padding: 0;
+  color: #6b6880;
+  font-family: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.65;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content figcaption :is(a, em, strong, span) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+}
+
+/* Portfolio layout, scoped to ORCA Studio. Artwork keeps its original framing. */
+[data-content-source="docs/team/design-communication.md"] .design-document-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 0 34px;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-document-links > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  padding: 16px 0;
+  border-block: 1px solid #d9d7e5;
+  color: #2e267c;
+  text-decoration: none;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-document-links__title {
+  display: block;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-document-links__meta {
+  display: block;
+  margin-top: 6px;
+  color: #6b6880;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-document-links > a:hover .design-document-links__title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-document-links > a:focus-visible {
+  outline: 2px solid #5d5ad7;
+  outline-offset: 4px;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--event-posters {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--event-posters img {
+  height: 280px;
+  object-fit: contain;
+  object-position: top;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery {
+  display: grid;
+  gap: 24px;
+  margin: 34px 0;
+  align-items: start;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--flags {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--explorations {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery :is(figure, .design-panel) {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content figure.design-figure-group {
+  width: 100%;
+  margin: 34px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-figure-group > .design-gallery {
+  margin-block: 0;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-panel__label {
+  display: block;
+  margin-top: 8px;
+  color: #6b6880;
+  font-family: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] :is(.design-gallery--activity-photos, .design-gallery--bilingual-posts) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--activity-photos .design-panel--handwritten {
+  grid-column: 1 / -1;
+  width: min(100%, 380px);
+  justify-self: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content figure.design-story-map {
+  width: min(100%, 440px);
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-story-layout {
+  container: design-story / inline-size;
+  margin-block: 24px 34px;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-story-layout__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-story-layout__copy > p:first-child {
+  margin-top: 0;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-story-layout figure.design-story-map {
+  margin-block: 0;
+}
+
+@container design-story (max-width: 560px) {
+  [data-content-source="docs/team/design-communication.md"] .design-story-layout__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--bilingual-posts img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: top;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-article-preview {
+  display: block;
+  overflow: hidden;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-story-read-link {
+  display: block;
+  margin-top: 8px;
+  color: #2e267c;
+  font-family: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--explorations a {
+  display: block;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--explorations img {
+  height: 360px;
+  object-fit: contain;
+  object-position: top;
+}
+
+[data-content-source="docs/team/design-communication.md"] figure.design-logo {
+  width: min(100%, 260px);
+  margin: 24px auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+[data-content-source="docs/team/design-communication.md"] :is(.design-gallery--identity, .design-gallery--mascots) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--logos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+[data-content-source="docs/team/design-communication.md"] :is(.design-gallery--identity, .design-gallery--logos, .design-gallery--mascots) a {
+  display: block;
+}
+
+[data-content-source="docs/team/design-communication.md"] :is(.design-gallery--identity, .design-gallery--logos) img {
+  height: 220px;
+  object-fit: contain;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--mascots img {
+  height: 180px;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* One shared grid keeps both ORCA rows on the same column centers. */
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--orca {
+  --orca-preview-height: 180px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--orca a {
+  container-type: inline-size;
+  position: relative;
+  display: block;
+  height: var(--orca-preview-height);
+  overflow: hidden;
+  background: #fff;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--orca img {
+  height: var(--orca-preview-height);
+  object-fit: contain;
+  background: #fff;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--orca .design-orca-crop img {
+  --artwork-unit: min(calc(100cqw / var(--crop-width)), calc(var(--orca-preview-height) / var(--crop-height)));
+  position: absolute;
+  width: calc(var(--source-width) * var(--artwork-unit));
+  max-width: none;
+  height: auto;
+  left: calc(50% - var(--crop-center-x) * var(--artwork-unit));
+  top: calc(50% - var(--crop-center-y) * var(--artwork-unit));
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--apparel-patterns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-gallery--apparel-patterns a {
+  display: block;
+}
+
+[data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--apparel-patterns img {
+  height: 220px;
+  object-fit: contain;
+  background: #19143d;
+}
+
+[data-content-source="docs/team/design-communication.md"] figure.design-badge {
+  width: min(100%, 260px);
+  margin: 34px auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  [data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--orca {
+    --orca-preview-height: 140px;
+    gap: 16px 12px;
+  }
+  [data-content-source="docs/team/design-communication.md"] .design-document-links {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  [data-content-source="docs/team/design-communication.md"] .design-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [data-content-source="docs/team/design-communication.md"] :is(.design-gallery--identity, .design-gallery--logos, .design-gallery--mascots) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-content-source="docs/team/design-communication.md"] .design-gallery--apparel-patterns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  [data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--apparel-patterns img {
+    height: 150px;
+  }
+
+  [data-content-source="docs/team/design-communication.md"] :is(.design-gallery--identity, .design-gallery--logos, .design-gallery--mascots) img {
+    height: 160px;
+  }
+}

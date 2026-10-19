@@ -1,0 +1,20 @@
+[
+  {
+    "file": "mascot-opening-bottom-left.webp",
+    "source_frames": 88,
+    "webp_frames": 60,
+    "duration_ms": 7500,
+    "bytes": 1356662,
+    "lossless_visible_pixels": true,
+    "sha256": "7b883c17e892230fb9de44228d65a5e6efd0458690f18cc6ebd36ba42471981e"
+  },
+  {
+    "file": "mascot-opening-top-right.webp",
+    "source_frames": 88,
+    "webp_frames": 28,
+    "duration_ms": 7500,
+    "bytes": 559334,
+    "lossless_visible_pixels": true,
+    "sha256": "71f4aed33c56dfa58a355c475f9bbcb54c686bdaa8081b167120d19430b6ac0d"
+  }
+]

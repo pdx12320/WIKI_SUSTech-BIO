@@ -1,3 +1,14 @@
+/* Team-supplied primary palette; scoped to the Design page and its opening. */
+html:has([data-design-opening]) {
+  --design-blush: #FFDBDD;
+  --design-lavender: #C6CCF4;
+  --design-violet: #7375B2;
+  --design-blue: #303D72;
+  --design-coral: #FB95A3;
+  --design-muted: rgba(48, 61, 114, .78);
+  --design-rule: rgba(48, 61, 114, .16);
+}
+
 @font-face {
   font-family: "ORCA Quote Script";
   src: url("https://static.igem.wiki/teams/6085/wiki/design/stories/pinyon-script-regular.ttf") format("truetype");
@@ -7,6 +18,11 @@
 }
 
 .content-page:has([data-content-source="docs/team/design-communication.md"]) {
+  --particle-ink: var(--design-blue);
+  --particle-muted: var(--design-muted);
+  --particle-coral: var(--design-coral);
+  --ink: var(--design-blue);
+  --dark-ink: var(--design-blue);
   --sans: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
   font-family: var(--sans);
 }
@@ -17,8 +33,8 @@
 
 /* A quiet chapter index; retain the shared anchors and accordion behaviour. */
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory {
-  --design-index-ink: #303d70;
-  --design-index-muted: #686d83;
+  --design-index-ink: var(--design-blue);
+  --design-index-muted: var(--design-muted);
   padding: 0 8px 8px 0;
 }
 
@@ -41,7 +57,7 @@
 }
 
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory > ol > li + li {
-  border-top: 1px solid #e1e3ec;
+  border-top: 1px solid var(--design-rule);
 }
 
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a {
@@ -78,7 +94,7 @@
 .content-page:has([data-content-source="docs/team/design-communication.md"]) [data-content-major]::before {
   content: counter(design-part, decimal-leading-zero);
   flex: 0 0 20px;
-  color: #8a8fa3;
+  color: var(--design-muted);
   font-size: 11px;
   font-weight: 400;
   font-variant-numeric: tabular-nums;
@@ -92,7 +108,7 @@
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__toggle {
   flex-basis: 28px;
   border-radius: 4px;
-  color: #858a9e;
+  color: var(--design-muted);
   background: transparent;
   cursor: pointer;
 }
@@ -158,7 +174,7 @@
 .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-directory a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
-  text-decoration-color: #b9bed1;
+  text-decoration-color: var(--design-lavender);
 }
 
 @media (min-width: 761px) and (max-width: 1100px) {
@@ -178,7 +194,7 @@
 
 @media (max-width: 760px) {
   .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-mobile-directory {
-    background: #fffefcf5;
+    background: rgba(255, 255, 255, .96);
   }
 
   .content-page:has([data-content-source="docs/team/design-communication.md"]) .content-group__head > a,
@@ -208,7 +224,7 @@
 
 [data-content-source="docs/team/design-communication.md"] .design-principle-quote .design-principle-quote__text {
   margin: 0 0 16px;
-  color: #171536;
+  color: var(--design-blue);
   font-family: "ORCA Quote Script", "Snell Roundhand", cursive;
   font-size: clamp(38px, 4.5vw, 52px);
   font-weight: 400;
@@ -292,7 +308,7 @@
 .content-page [data-content-source="docs/team/design-communication.md"] .markdown-content figure > figcaption {
   margin: 12px 0 0;
   padding: 0;
-  color: #6b6880;
+  color: var(--design-muted);
   font-family: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -325,8 +341,8 @@
   gap: 16px;
   min-width: 0;
   padding: 16px 0;
-  border-block: 1px solid #d9d7e5;
-  color: #2e267c;
+  border-block: 1px solid var(--design-rule);
+  color: var(--design-blue);
   text-decoration: none;
 }
 
@@ -339,7 +355,7 @@
 [data-content-source="docs/team/design-communication.md"] .design-document-links__meta {
   display: block;
   margin-top: 6px;
-  color: #6b6880;
+  color: var(--design-muted);
   font-size: 12px;
   line-height: 1.5;
 }
@@ -350,7 +366,7 @@
 }
 
 [data-content-source="docs/team/design-communication.md"] .design-document-links > a:focus-visible {
-  outline: 2px solid #5d5ad7;
+  outline: 2px solid var(--design-blue);
   outline-offset: 4px;
 }
 
@@ -405,7 +421,7 @@
 [data-content-source="docs/team/design-communication.md"] .design-panel__label {
   display: block;
   margin-top: 8px;
-  color: #6b6880;
+  color: var(--design-muted);
   font-family: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -474,7 +490,7 @@
 [data-content-source="docs/team/design-communication.md"] .design-story-read-link {
   display: block;
   margin-top: 8px;
-  color: #2e267c;
+  color: var(--design-blue);
   font-family: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.65;
@@ -583,7 +599,7 @@
 [data-content-source="docs/team/design-communication.md"] .markdown-content .design-gallery--apparel-patterns img {
   height: 220px;
   object-fit: contain;
-  background: #19143d;
+  background: var(--design-blue);
 }
 
 [data-content-source="docs/team/design-communication.md"] figure.design-badge {
@@ -630,5 +646,91 @@
 
   [data-content-source="docs/team/design-communication.md"] :is(.design-gallery--identity, .design-gallery--logos, .design-gallery--mascots) img {
     height: 160px;
+  }
+}
+
+/* The supplied board is a compact reference, with readable HTML color codes. */
+.content-page:has([data-content-source="docs/team/design-communication.md"]) .content-overview h1::after {
+  color: var(--design-coral);
+}
+
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content :is(a, a:hover, a:focus-visible) {
+  color: var(--design-blue);
+  text-decoration-color: var(--design-violet);
+}
+
+.content-page [data-content-source="docs/team/design-communication.md"] .markdown-content figure.design-palette {
+  container: design-palette / inline-size;
+  width: min(100%, 720px);
+  margin: 28px auto 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(155px, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__row > a {
+  display: block;
+  min-width: 0;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__key {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  color: var(--design-blue);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__key dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__key dd {
+  margin: 2px 0 0 23px;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+[data-content-source="docs/team/design-communication.md"] .design-palette__swatch {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  border-radius: 50%;
+}
+.design-palette__swatch--blush { background: var(--design-blush); }
+.design-palette__swatch--lavender { background: var(--design-lavender); }
+.design-palette__swatch--violet { background: var(--design-violet); }
+.design-palette__swatch--blue { background: var(--design-blue); }
+.design-palette__swatch--coral { background: var(--design-coral); }
+
+@container design-palette (max-width: 420px) {
+  [data-content-source="docs/team/design-communication.md"] .design-palette__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  [data-content-source="docs/team/design-communication.md"] .design-palette__key {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
   }
 }

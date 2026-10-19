@@ -48,10 +48,10 @@ class DesignCommunicationTest(unittest.TestCase):
         content = load_markdown_content('team/design-communication.md')
         self.assertEqual([x['name'] for x in content.toc if x['level'] == 2], [
             'Our Design Principles', 'Building an Identity', 'Design in Action', 'Science Meets People'])
-        self.assertEqual(re.findall(r'<figcaption>Figure (\d+)\.', content.html), [str(n) for n in range(1, 19)])
+        self.assertEqual(re.findall(r'<figcaption>Figure (\d+)\.', content.html), [str(n) for n in range(1, 20)])
         page = DesignImages()
         page.feed(content.html)
-        self.assertEqual(len(page.images), 34)
+        self.assertEqual(len(page.images), 35)
         for image in page.images:
             self.assertTrue(image.get('alt'))
             self.assertTrue(image['src'].startswith('https://static.igem.wiki/teams/6085/wiki/design/'))
@@ -62,11 +62,21 @@ class DesignCommunicationTest(unittest.TestCase):
         for url in page.pdf_links:
             self.assertEqual(urlsplit(url).hostname, 'static.igem.wiki')
 
+    def test_primary_palette_matches_approved_reference(self):
+        colors = ['#FFDBDD', '#C6CCF4', '#7375B2', '#303D72', '#FB95A3']
+        content = load_markdown_content('team/design-communication.md')
+        self.assertEqual(re.findall(r'<dd>(#[A-F0-9]{6})</dd>', content.html), colors)
+        self.assertIn('Figure 2. ORCA’s primary visual palette.', content.html)
+        self.assertNotIn('supplied by the team', content.html)
+        self.assertIn('https://static.igem.wiki/teams/6085/wiki/design/identity/visual-system-primary-colour-palette.avif', content.html)
+        css = ''.join((ROOT / name).read_text() for name in ['static/design-communication.css', 'static/design-opening.css'])
+        self.assertEqual({value.upper() for value in re.findall(r'#[A-Fa-f0-9]{3,8}\b', css)}, {*colors, '#FFF'})
+
     def test_every_design_media_dependency_is_verified_and_hosted(self):
         manifest = json.loads((ROOT / 'docs/design/design-communication-sources/igem-upload-links.json').read_text())
         rows = manifest['files']
-        self.assertEqual(len(rows), 42)
-        self.assertEqual(len({r['server_url'] for r in rows}), 42)
+        self.assertEqual(len(rows), 43)
+        self.assertEqual(len({r['server_url'] for r in rows}), 43)
         for row in rows:
             self.assertEqual(row['status'], 200)
             self.assertEqual(urlsplit(row['server_url']).hostname, 'static.igem.wiki')

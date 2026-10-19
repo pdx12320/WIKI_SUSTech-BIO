@@ -1,7 +1,7 @@
 {
   "naming": "figure-NN[-panel]-subject.ext",
-  "figures": 18,
-  "displayed_images": 34,
+  "figures": 19,
+  "displayed_images": 35,
   "assets": [
     {
       "figure": 1,
@@ -15,6 +15,25 @@
     {
       "figure": 2,
       "panel": "",
+      "previous_path": "user-supplied/primary-visual-colour-palette.jpg",
+      "upload_path": "identity/visual-system-primary-colour-palette.jpg",
+      "bytes": 39476,
+      "sha256": "20260eeaba61a43b216aa92c2c9fd07de7b093f5d1817bf551ea2b43f4164a9c",
+      "status": "uploaded-and-verified",
+      "palette": [
+        "#FFDBDD",
+        "#C6CCF4",
+        "#7375B2",
+        "#303D72",
+        "#FB95A3"
+      ],
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/visual-system-primary-colour-palette.avif",
+      "server_bytes": 17291,
+      "server_sha256": "6e75ef9d4af34b1029e50f806099189b944a7cd57174c243f2f7ac302cdda588"
+    },
+    {
+      "figure": 3,
+      "panel": "",
       "previous_path": "identity/logo-early.png",
       "upload_path": "identity/figure-02-early-logo.png",
       "bytes": 361416,
@@ -22,7 +41,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-02-early-logo.avif"
     },
     {
-      "figure": 3,
+      "figure": 4,
       "panel": "a",
       "previous_path": "identity/logo-rewire.png",
       "upload_path": "identity/figure-03-a-rewire-logo.png",
@@ -31,7 +50,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-03-a-rewire-logo.avif"
     },
     {
-      "figure": 3,
+      "figure": 4,
       "panel": "b",
       "previous_path": "identity/logo-rewire-sustech-bio.png",
       "upload_path": "identity/figure-03-b-rewire-sustech-bio-mark.png",
@@ -40,7 +59,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-03-b-rewire-sustech-bio-mark.avif"
     },
     {
-      "figure": 3,
+      "figure": 4,
       "panel": "c",
       "previous_path": "identity/mascot-rewire-sheet.png",
       "upload_path": "identity/figure-03-c-rewire-mascot-sheet.png",
@@ -49,7 +68,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-03-c-rewire-mascot-sheet.avif"
     },
     {
-      "figure": 4,
+      "figure": 5,
       "panel": "a",
       "previous_path": "identity/logo-orca.png",
       "upload_path": "identity/figure-04-a-orca-logo.png",
@@ -58,7 +77,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-a-orca-logo.avif"
     },
     {
-      "figure": 4,
+      "figure": 5,
       "panel": "b",
       "previous_path": "identity/logo-orca-mascot-lockup.png",
       "upload_path": "identity/figure-04-b-orca-mascot-lockup.png",
@@ -67,7 +86,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-b-orca-mascot-lockup.avif"
     },
     {
-      "figure": 4,
+      "figure": 5,
       "panel": "c",
       "previous_path": "identity/mascot-orca-v3-04.png",
       "upload_path": "identity/figure-04-c-orca-mascot-standing.png",
@@ -76,7 +95,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-c-orca-mascot-standing.avif"
     },
     {
-      "figure": 4,
+      "figure": 5,
       "panel": "d",
       "previous_path": "identity/mascot-orca-v3-01-white.png",
       "upload_path": "identity/figure-04-d-orca-mascot-thinking-white.png",
@@ -85,7 +104,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-d-orca-mascot-thinking-white.avif"
     },
     {
-      "figure": 4,
+      "figure": 5,
       "panel": "e",
       "previous_path": "identity/mascot-orca-v3-02-white.png",
       "upload_path": "identity/figure-04-e-orca-mascot-conch-white.png",
@@ -94,7 +113,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-e-orca-mascot-conch-white.avif"
     },
     {
-      "figure": 4,
+      "figure": 5,
       "panel": "f",
       "previous_path": "identity/mascot-orca-v3-03-white.png",
       "upload_path": "identity/figure-04-f-orca-mascot-sleepy-white.png",
@@ -103,7 +122,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-04-f-orca-mascot-sleepy-white.avif"
     },
     {
-      "figure": 5,
+      "figure": 6,
       "panel": "a",
       "previous_path": "identity/wiki-home-exploration-01.png",
       "upload_path": "identity/figure-05-a-wiki-home-flowing-layout.png",
@@ -112,7 +131,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-05-a-wiki-home-flowing-layout.avif"
     },
     {
-      "figure": 5,
+      "figure": 6,
       "panel": "b",
       "previous_path": "identity/wiki-home-exploration-02.png",
       "upload_path": "identity/figure-05-b-wiki-home-orca-header.png",
@@ -121,7 +140,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-05-b-wiki-home-orca-header.avif"
     },
     {
-      "figure": 5,
+      "figure": 6,
       "panel": "c",
       "previous_path": "identity/wiki-home-exploration-03.png",
       "upload_path": "identity/figure-05-c-wiki-home-character-layout.png",
@@ -130,7 +149,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/identity/figure-05-c-wiki-home-character-layout.avif"
     },
     {
-      "figure": 6,
+      "figure": 7,
       "panel": "",
       "previous_path": "applications/apparel-varsity-jacket-v1.png",
       "upload_path": "applications/figure-06-team-hoodie-v1.png",
@@ -139,7 +158,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-06-team-hoodie-v1.avif"
     },
     {
-      "figure": 7,
+      "figure": 8,
       "panel": "",
       "previous_path": "applications/apparel-tshirt-v2.png",
       "upload_path": "applications/figure-07-team-tshirt-v2.png",
@@ -148,7 +167,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-07-team-tshirt-v2.avif"
     },
     {
-      "figure": 8,
+      "figure": 9,
       "panel": "a",
       "previous_path": "applications/apparel-v3-pattern-project-name.png",
       "upload_path": "applications/figure-08-a-apparel-project-name.png",
@@ -157,7 +176,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-08-a-apparel-project-name.avif"
     },
     {
-      "figure": 8,
+      "figure": 9,
       "panel": "b",
       "previous_path": "applications/apparel-v3-pattern-team-wordmark.png",
       "upload_path": "applications/figure-08-b-apparel-team-wordmark.png",
@@ -166,7 +185,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-08-b-apparel-team-wordmark.avif"
     },
     {
-      "figure": 9,
+      "figure": 10,
       "panel": "",
       "previous_path": "applications/apparel-varsity-jacket-v3.png",
       "upload_path": "applications/figure-09-team-varsity-jacket-v3.png",
@@ -175,7 +194,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-09-team-varsity-jacket-v3.avif"
     },
     {
-      "figure": 10,
+      "figure": 11,
       "panel": "a",
       "previous_path": "applications/flag-v1.png",
       "upload_path": "applications/figure-10-a-team-flag-v1.png",
@@ -184,7 +203,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-10-a-team-flag-v1.avif"
     },
     {
-      "figure": 10,
+      "figure": 11,
       "panel": "b",
       "previous_path": "applications/flag-v2.png",
       "upload_path": "applications/figure-10-b-team-flag-v2-current.png",
@@ -193,7 +212,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-10-b-team-flag-v2-current.avif"
     },
     {
-      "figure": 11,
+      "figure": 12,
       "panel": "",
       "previous_path": "applications/tencent-meeting-background.png",
       "upload_path": "applications/figure-11-online-meeting-background.png",
@@ -202,7 +221,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-11-online-meeting-background.avif"
     },
     {
-      "figure": 12,
+      "figure": 13,
       "panel": "",
       "previous_path": "applications/worldproof-hackathon-badge.png",
       "upload_path": "applications/figure-12-worldproof-hackathon-badge.png",
@@ -211,7 +230,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-12-worldproof-hackathon-badge.avif"
     },
     {
-      "figure": 13,
+      "figure": 14,
       "panel": "",
       "previous_path": "applications/mascot-personality-stickers-triptych.png",
       "upload_path": "applications/figure-13-mascot-personality-stickers.png",
@@ -220,7 +239,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-13-mascot-personality-stickers.avif"
     },
     {
-      "figure": 14,
+      "figure": 15,
       "panel": "a",
       "previous_path": "applications/event-south-china-exchange-poster.png",
       "upload_path": "applications/figure-14-a-south-china-poster.png",
@@ -229,7 +248,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-a-south-china-poster.avif"
     },
     {
-      "figure": 14,
+      "figure": 15,
       "panel": "a",
       "previous_path": "applications/pdf-sources/event-south-china-exchange-poster.pdf",
       "upload_path": "applications/figure-14-a-south-china-poster.pdf",
@@ -238,7 +257,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-a-south-china-poster.pdf"
     },
     {
-      "figure": 14,
+      "figure": 15,
       "panel": "b",
       "previous_path": "applications/event-hp-community-outreach-poster-template-page-01.png",
       "upload_path": "applications/figure-14-b-hp-community-poster-page-01.png",
@@ -247,7 +266,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-b-hp-community-poster-page-01.avif"
     },
     {
-      "figure": 14,
+      "figure": 15,
       "panel": "bc",
       "previous_path": "applications/pdf-sources/event-hp-community-outreach-poster-template.pdf",
       "upload_path": "applications/figure-14-bc-hp-community-poster-template.pdf",
@@ -256,7 +275,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-bc-hp-community-poster-template.pdf"
     },
     {
-      "figure": 14,
+      "figure": 15,
       "panel": "c",
       "previous_path": "applications/event-hp-community-outreach-poster-template-page-02.png",
       "upload_path": "applications/figure-14-c-hp-community-poster-page-02.png",
@@ -265,7 +284,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-14-c-hp-community-poster-page-02.avif"
     },
     {
-      "figure": 15,
+      "figure": 16,
       "panel": "",
       "previous_path": "applications/presentation-apic-opening-slide-01.png",
       "upload_path": "applications/figure-15-apic-opening-slide-01.png",
@@ -274,7 +293,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/applications/figure-15-apic-opening-slide-01.avif"
     },
     {
-      "figure": 16,
+      "figure": 17,
       "panel": "a",
       "previous_path": "stories/figure-16-a-time-capsule-activity-materials.jpg",
       "upload_path": "stories/figure-16-a-time-capsule-activity-materials.jpg",
@@ -284,7 +303,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-a-time-capsule-activity-materials.avif"
     },
     {
-      "figure": 16,
+      "figure": 17,
       "panel": "b",
       "previous_path": "stories/figure-16-b-time-capsule-activity-mailbox.jpg",
       "upload_path": "stories/figure-16-b-time-capsule-activity-mailbox.jpg",
@@ -294,7 +313,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-b-time-capsule-activity-mailbox.avif"
     },
     {
-      "figure": 16,
+      "figure": 17,
       "panel": "c",
       "previous_path": "stories/figure-16-c-time-capsule-handwritten-cards.png",
       "upload_path": "stories/figure-16-c-time-capsule-handwritten-cards.png",
@@ -304,7 +323,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-c-time-capsule-handwritten-cards.avif"
     },
     {
-      "figure": 17,
+      "figure": 18,
       "panel": "",
       "previous_path": "stories/figure-17-aphasia-map-instructions.png",
       "upload_path": "stories/figure-17-aphasia-map-instructions.png",
@@ -314,7 +333,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif"
     },
     {
-      "figure": 18,
+      "figure": 19,
       "panel": "a",
       "previous_path": "stories/figure-18-a-time-capsule-post-zh-long.jpg",
       "upload_path": "stories/figure-18-a-time-capsule-post-zh-long.jpg",
@@ -324,7 +343,7 @@
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-a-time-capsule-post-zh-long.avif"
     },
     {
-      "figure": 18,
+      "figure": 19,
       "panel": "b",
       "previous_path": "stories/figure-18-b-time-capsule-post-en-long.jpg",
       "upload_path": "stories/figure-18-b-time-capsule-post-en-long.jpg",
@@ -333,5 +352,6 @@
       "sha256": "3e266749067a2dca8bd0e176f6589e7e7df1444582fd7a5e7b23d4895b4e01dc",
       "server_url": "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-b-time-capsule-post-en-long.avif"
     }
-  ]
+  ],
+  "asset_url_policy": "Existing CDN filenames remain stable; figure records the current caption number."
 }

@@ -4,7 +4,7 @@ html.design-opening-pending::after {
   position: fixed;
   inset: 0;
   z-index: 2147483640;
-  background: rgba(255, 254, 252, .64);
+  background: rgba(255, 255, 255, .64);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
@@ -28,7 +28,7 @@ html.design-opening-active {
   margin: 0;
   overflow: hidden;
   isolation: isolate;
-  background: rgba(255, 254, 252, .64);
+  background: rgba(255, 255, 255, .64);
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
@@ -72,7 +72,7 @@ html.design-opening-active {
   justify-content: center;
   gap: 14px;
   padding: 32px;
-  color: #2e267c;
+  color: var(--design-blue);
   text-align: center;
   font-family: Georgia, serif;
   font-weight: 400;
@@ -98,7 +98,7 @@ html.design-opening-active {
 
 .design-opening__skip,
 .design-opening-replay {
-  color: #2e267c;
+  color: var(--design-blue);
   background: transparent;
   border: 0;
   border-radius: 4px;
@@ -138,7 +138,7 @@ html.design-opening-active {
 
 .design-opening__skip:focus-visible,
 .design-opening-replay:focus-visible {
-  outline: 2px solid #5d5ad7;
+  outline: 2px solid var(--design-blue);
   outline-offset: 4px;
 }
 

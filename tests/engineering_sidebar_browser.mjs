@@ -15,7 +15,7 @@ try {
  const group=id=>page.locator(`[data-diagram-group="${id}"]`);
  const child=id=>page.locator(`[data-diagram-part="${id}"]`);
  const expectPart=part=>page.waitForFunction(p=>document.querySelector('[data-dbtl-wheel]').dataset.part===p,part);
- const geometry=()=>page.evaluate(()=>{const b=s=>document.querySelector(s).getBoundingClientRect();const l=b('.engineering-sidebar-left'),r=b('.engineering-sidebar-right'),paper=b('.engineering-paper'),o=b('[data-reading-orbit]'),text=b('.engineering-copy .markdown-content'),t=b('[data-engineering-cycles]'),w=b('.dbtl-directory'),back=b('[data-engineering-map-back]');return {equal:l.width===r.width,order:w.bottom<=t.top&&t.bottom<=back.top,gutter:o.left-text.right,inside:o.right<paper.right&&o.left>paper.left};});
+ const geometry=()=>page.evaluate(()=>{const b=s=>document.querySelector(s).getBoundingClientRect();const l=b('.engineering-sidebar-left'),r=b('.engineering-sidebar-right'),paper=b('.engineering-paper'),o=b('[data-reading-orbit]'),text=b('.engineering-copy .markdown-content'),t=b('[data-engineering-cycles]'),w=b('.dbtl-directory'),back=b('[data-engineering-chapter-jumps]');return {equal:l.width===r.width,order:w.bottom<=t.top&&t.bottom<=back.top,gutter:o.left-text.right,inside:o.right<paper.right&&o.left>paper.left};});
  let layout=await geometry();assert.ok(layout.equal&&layout.order&&layout.inside&&layout.gutter>=8);
  assert.equal(await page.locator('.engineering-sidebar-left [data-engineering-cycles]').count(),0);
  assert.equal(await page.locator('.engineering-sidebar-right [data-engineering-cycles]').count(),1);

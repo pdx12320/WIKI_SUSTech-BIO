@@ -12,7 +12,7 @@
   const headingPart = workspace.querySelector('[data-engineering-heading-part]');
   const headingRows = [...workspace.querySelectorAll('[data-engineering-heading-row]')];
   const paper = workspace.querySelector('.engineering-paper');
-  const back = workspace.querySelector('[data-engineering-map-back]');
+  const chapterJumps = workspace.querySelector('[data-engineering-chapter-jumps]');
   const { groups } = window.ORCAEngineering;
   const article = reader.querySelector('.markdown-content');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -186,7 +186,7 @@
     map.hidden = true;
     controls.hidden = false;
     paper.hidden = false;
-    back.hidden = false;
+    chapterJumps.hidden = false;
   }
 
   function showMap({ historyEntry = false, focus = false } = {}) {
@@ -197,7 +197,7 @@
     map.hidden = false;
     controls.hidden = true;
     paper.hidden = true;
-    back.hidden = true;
+    chapterJumps.hidden = true;
     pending = null;
     anchoredTarget = null;
     if (historyEntry && location.hash !== '#map') history.pushState(history.state, '', '#map');
@@ -275,6 +275,17 @@
 
   function selectStage({ part, number, stage, overview = false }) {
     const record = partRecords.get(part);
+    const panel = panels.get(part);
+    const jumpTargets = {
+      overview: document.getElementById(`${part}-overview`) || panel?.querySelector('[id$="-overview"]'),
+      conclusion: panel?.querySelector('.engineering-conclusion-title')
+        || (part === 'model' || part.startsWith('model-') ? document.getElementById('model-conclusion') : null),
+    };
+    for (const link of chapterJumps.querySelectorAll('[data-engineering-chapter-jump]')) {
+      const target = jumpTargets[link.dataset.engineeringChapterJump];
+      link.hidden = !target;
+      if (target) link.setAttribute('href', `#${target.id}`);
+    }
     const index = stages.indexOf(stage);
     const cycle = number ? `${part}-cycle-${number}` : '';
     wheel.dataset.part = part;
@@ -517,7 +528,7 @@
     event.preventDefault();
     // A cycle or part change is a direct jump. Only the four nearby DBTL
     // stages use smooth scrolling within their current record.
-    go(target, { instant: link.hasAttribute('data-engineering-cycle') || link.hasAttribute('data-overview-target') || link.hasAttribute('data-engineering-group') || link.hasAttribute('data-engineering-part') });
+    go(target, { instant: link.hasAttribute('data-engineering-chapter-jump') || link.hasAttribute('data-engineering-cycle') || link.hasAttribute('data-overview-target') || link.hasAttribute('data-engineering-group') || link.hasAttribute('data-engineering-part') });
   });
 
   function syncHash() {
@@ -662,7 +673,6 @@
     gesture = keyGesture;
     if (boundaryInput(direction, 40)) event.preventDefault();
   });
-  back.addEventListener('click', () => showMap({ historyEntry: true, focus: true }));
   workspace.querySelector('[data-engineering-overview-back]')?.addEventListener('click', () => {
     workspace.classList.remove('engineering-nav-open');
     workspace.querySelector('.engineering-nav-toggle')?.setAttribute('aria-expanded', 'false');

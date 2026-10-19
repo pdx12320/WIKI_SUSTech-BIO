@@ -130,3 +130,21 @@ body.engineering-workspace-page{background:#f5f6fb}
 /* Main icons animate their internal parts instead of scaling the whole symbol. */
 .diagram-tile.has-icon-gesture .diagram-symbol{transform:none}
 .compass-needle,.sonar-arc,.tile-deliver .diagram-symbol > path{transform-box:view-box;transform-origin:32px 32px}
+/* Shortcuts stay scoped to the chapter currently being read. */
+.engineering-chapter-jumps{display:grid;gap:8px;width:200px;max-width:100%;margin-top:auto;flex-shrink:0}
+.engineering-chapter-jumps[hidden],.engineering-chapter-jumps a[hidden]{display:none}
+.engineering-chapter-jumps a{display:flex;align-items:center;gap:8px;min-height:40px;padding:9px 12px;box-sizing:border-box;border:1px solid #c5cee0;border-radius:9px;background:#f9faff;color:#334071;text-decoration:none;font:600 12px/1.35 'Avenir Next','Segoe UI',sans-serif}
+.engineering-chapter-jumps a:hover{background:#e9edf8;border-color:#899abd}
+.engineering-chapter-jumps a:focus-visible{outline:2px solid #5f62cd;outline-offset:2px}
+.engineering-chapter-jumps a span{flex-shrink:0;font-size:17px}
+@media(max-width:900px){.engineering-chapter-jumps a{padding:8px 6px;gap:5px;font-size:11px}}
+@media(max-width:550px){.engineering-chapter-jumps{width:110px;margin-top:0}.engineering-chapter-jumps a{min-height:44px}}
+
+/* Keep the original character beside the two chapter shortcuts. */
+.engineering-chapter-jumps{grid-template-columns:85px minmax(0,1fr);align-items:center;width:240px;gap:8px}
+.engineering-chapter-jump-links{display:grid;gap:8px;min-width:0}
+.engineering-workspace .engineering-sidebar-right .engineering-chapter-jumps .engineering-map-back{width:85px;margin:0;align-self:center}
+@media(max-width:900px){.engineering-chapter-jumps{grid-template-columns:34px minmax(0,1fr);gap:3px}.engineering-workspace .engineering-sidebar-right .engineering-chapter-jumps .engineering-map-back{width:34px}.engineering-chapter-jumps a{padding:7px 4px;gap:3px;font-size:10px}}
+@media(max-width:550px){.engineering-chapter-jumps{width:136px;flex-shrink:1}.engineering-chapter-jumps a{min-height:44px}}
+
+.engineering-chapter-mascot{pointer-events:none!important;cursor:default;user-select:none}

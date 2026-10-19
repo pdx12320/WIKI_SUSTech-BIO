@@ -27,7 +27,8 @@ html.team-opening-scroll-locked body {
   touch-action: none;
   overscroll-behavior: none;
 }
-.js .team-opening[hidden] { display: none; }
+.js .team-opening[hidden],
+body.team-package-open .team-opening { display: none !important; }
 body.team-page--opening-blur > *:not(#main-content),
 body.team-page--opening-blur #main-content > :not(.team-opening) {
   filter: blur(13px);
@@ -74,7 +75,7 @@ body.team-page--opening-blur .member-card.is-ready .member-card__turn { transfor
 .team-opening__piece-label-motion {
   transform-box: view-box;
   opacity: .86;
-  animation: team-opening-unfold 1400ms 700ms cubic-bezier(.22,.72,.18,1) both;
+  animation: team-opening-unfold 2800ms 700ms cubic-bezier(.22,.72,.18,1) both;
 }
 .team-opening__piece--nw { --opening-x: -26%; --opening-y: -21%; --opening-turn: -3deg; transform-origin: 25% 25%; }
 .team-opening__piece--ne { --opening-x: 26%; --opening-y: -21%; --opening-turn: 3deg; transform-origin: 75% 25%; }
@@ -234,7 +235,7 @@ body.team-page--opening-blur .member-card.is-ready .member-card__turn { transfor
 .team-opening__pkg.is-complete .team-opening__pkg-art {
   border-color: #F58F9C;
   box-shadow: 0 0 0 5px #F58F9C22, 0 0 32px #F58F9C66;
-  animation: team-package-complete 840ms ease-out both;
+  animation: team-package-complete 1400ms ease-out both;
 }
 .team-opening__pkg.is-complete .team-opening__sr-status {
   position: static;

@@ -4,8 +4,8 @@
   "originals_untouched": true,
   "max_long_edge": 2560,
   "photo_budget_bytes": 8000000,
-  "total_source_bytes": 132942663,
-  "total_output_bytes": 7476335,
+  "total_source_bytes": 134309352,
+  "total_output_bytes": 7697455,
   "files": [
     {
       "source_name": "benxiang_xiao.JPG",
@@ -329,6 +329,33 @@
       "subsampling": "4:4:4",
       "orientation_applied": true,
       "icc_profile_preserved": false
+    },
+    {
+      "source_name": "fuxing_zeng_PI_1.png",
+      "source_bytes": 1366689,
+      "source_sha256": "44a0f7a16468859d6567ab4e2804a819059f31655f375b731214643aa35c7a3d",
+      "source_dimensions": [
+        1092,
+        1440
+      ],
+      "output_name": "candidate-a-card-2x3.jpg",
+      "output_asset": "assets/team/portrait-options/fuxing-zeng/candidate-a-card-2x3.jpg",
+      "output_bytes": 221120,
+      "output_dimensions": [
+        960,
+        1440
+      ],
+      "format": "JPEG",
+      "quality": 95,
+      "crop_xyxy": [
+        66,
+        0,
+        1026,
+        1440
+      ],
+      "user_selected": "A",
+      "original_untouched": true
     }
-  ]
+  ],
+  "updated_at": "2026-10-19T10:23:52.294387+08:00"
 }

@@ -1,0 +1,21 @@
+{% macro package_orbit() -%}
+<div class="team-package-orbit" data-team-package-orbit>{{ caller() }}</div>
+{%- endmacro %}
+
+{% macro mascot_heading(mode='page') -%}
+{% set poses = [('salmon', -1), ('coding', 1), ('singing', -1), ('fashion', 1), ('experiment', 1)] %}
+<div class="team-mascot-heading team-mascot-heading--{{ mode }}"{% if mode == 'opening' %} data-team-mascot-heading{% endif %}>
+  <div class="team-mascot-heading__cast"{% if mode == 'opening' %} data-team-package-mascots{% endif %} aria-hidden="true">
+    {% for side in ['left', 'right'] %}
+    <span class="team-mascot-heading__side team-mascot-heading__side--{{ side }}">
+      {% for pose, winding in poses %}{% if (side == 'left' and loop.index <= 3) or (side == 'right' and loop.index > 3) %}
+      <span class="team-mascot-heading__slot" data-team-mascot-slot>
+        <img class="team-mascot-heading__image" src="{{ url_for('static', filename='assets/team/mascots/' ~ pose ~ '.png') }}" alt="" width="1254" height="1254" decoding="async" draggable="false"{% if mode == 'opening' %} data-team-mascot="{{ pose }}" data-winding="{{ winding }}"{% else %} data-team-static-mascot="{{ pose }}"{% endif %}>
+      </span>
+      {% endif %}{% endfor %}
+    </span>
+    {% endfor %}
+  </div>
+  <div class="team-mascot-heading__label">{{ caller() }}</div>
+</div>
+{%- endmacro %}

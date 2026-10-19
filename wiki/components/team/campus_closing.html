@@ -1,0 +1,15 @@
+{% set campus_photo = url_for('static', filename=content.metadata.campus_photo_asset) if content.metadata.get('campus_photo_asset') else content.metadata.get('campus_photo', '') %}
+<section class="team-closing team-campus-closing" id="team-closing" data-team-campus-closing aria-labelledby="team-closing-title">
+  <div class="team-campus-closing__panel">
+    {% if campus_photo %}
+    <img class="team-campus-closing__photo" src="{{ campus_photo }}" alt="" loading="lazy" decoding="async" style="object-position: {{ content.metadata.get('campus_photo_position', '50% 50%') }}">
+    <span class="team-campus-closing__wash" aria-hidden="true"></span>
+    {% endif %}
+    <div class="team-campus-closing__copy">
+      <p class="team-eyebrow">ONE TEAM, MANY WAYS TO CONTRIBUTE</p>
+      <h2 id="team-closing-title">Science is a team sport.</h2>
+      <p class="team-campus-closing__summary">From the lab bench to the Wiki, see how our work comes together.</p>
+      <a href="{{ url_for('pages', page='attributions') }}">Explore attributions <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>

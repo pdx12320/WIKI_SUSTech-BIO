@@ -2,10 +2,39 @@
 (() => {
   'use strict';
   const opening = document.querySelector('[data-team-opening]');
-  if (!opening) return;
+  if (!opening || opening.dataset.initialized === 'true') return;
+  opening.dataset.initialized = 'true';
+  let finished = false;
+  const completionKey = 'orcaTeamPackageOpen';
+  let restoredPackage = false;
+  try {
+    const navigation = performance.getEntriesByType?.('navigation')?.[0];
+    const legacyType = performance.navigation?.type;
+    const freshNavigation = ['navigate', 'reload'].includes(navigation?.type)
+      || (!navigation && [0, 1].includes(legacyType));
+    const history = window.history;
+    const state = history?.state;
+    restoredPackage = !freshNavigation && state?.[completionKey] === true;
+    // Fresh visits/reloads replay; back/forward and unknown WebView recovery stay completed.
+    if (freshNavigation && state?.[completionKey] === true && history?.replaceState && !Array.isArray(state)) {
+      const freshState = { ...state };
+      delete freshState[completionKey];
+      history.replaceState(freshState, '');
+    }
+  } catch { /* Optional WebView state must not prevent an explicit package click. */ }
+  const rememberCompletion = () => {
+    try {
+      const history = window.history;
+      const state = history?.state;
+      if (!history?.replaceState || (state != null && (typeof state !== 'object' || Array.isArray(state)))) return;
+      history.replaceState({ ...state, [completionKey]: true }, '');
+    } catch { /* Completion must still work when history access is unavailable. */ }
+  };
   const scrollRoot = document.documentElement;
-  scrollRoot.style.setProperty('--team-opening-scroll-top', `${-window.scrollY}px`);
-  scrollRoot.classList.add('team-opening-scroll-locked');
+  if (!restoredPackage) {
+    scrollRoot.style.setProperty('--team-opening-scroll-top', `${-window.scrollY}px`);
+    scrollRoot.classList.add('team-opening-scroll-locked');
+  }
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const packageButton = opening.querySelector('[data-team-package]');
   const packageFrames = (packageButton?.dataset.teamPackageFrames || '').split('|').filter(Boolean);
@@ -27,8 +56,11 @@
     clearInterval(compileTimer);
     phaseTimers.splice(0).forEach(clearTimeout);
   };
+  const readCompiledLines = () => [...opening.querySelectorAll('[data-team-compile-order]')]
+    .sort((a, b) => Number(a.dataset.teamCompileOrder) - Number(b.dataset.teamCompileOrder))
+    .map(node => ({ node, text: node.textContent.trim() }));
   const setPhase = phase => {
-    if (opening.hidden) return;
+    if (finished || opening.hidden) return;
     opening.dataset.phase = phase;
     document.body.classList.toggle('team-page--opening-blur', ['preview', 'title', 'package'].includes(phase));
   };
@@ -67,16 +99,15 @@
   const listeners = new AbortController();
   const options = { signal: listeners.signal };
 
-  const finish = ({ packageOpen = false } = {}) => {
-    if (opening.hidden) return;
-    const restoreFocus = opening.contains(document.activeElement);
+  const finish = ({ packageOpen = false, restored = false } = {}) => {
+    if (finished || opening.hidden) return;
+    finished = true;
+    const restoreFocus = !restored && opening.contains(document.activeElement);
     clearTimers();
-    scrollRoot.classList.remove('team-opening-scroll-locked');
-    scrollRoot.style.removeProperty('--team-opening-scroll-top');
-    document.body.classList.remove('team-page--opening-blur');
     const deck = packageOpen ? document.querySelector('.team-deck') : null;
     const header = document.querySelector('[data-team-package-header]');
     if (packageOpen) {
+      if (!compiledLines.length) compiledLines = readCompiledLines();
       compiledLines.forEach(({ node, text }) => {
         node.hidden = false;
         node.textContent = text;
@@ -87,31 +118,39 @@
       button?.classList.remove('is-unpacking');
       button?.classList.remove('is-complete');
       button?.setAttribute('aria-busy', 'false');
-      if (button) button.disabled = false;
-      button?.setAttribute('data-team-overview', '');
-      button?.setAttribute('aria-label', 'Show all team members');
-      button?.setAttribute('aria-controls', 'team-deck');
+      button?.setAttribute('aria-label', 'ORCA team package unpacked');
+      if (button) button.disabled = true;
+      if (restored && packageFrames.length) {
+        const frame = button?.querySelector('[data-team-package-frame]');
+        if (frame) frame.src = packageFrames[packageFrames.length - 1];
+      }
       const status = button?.querySelector('[data-team-package-status]');
       if (status) status.textContent = 'ORCA team package unpacked.';
       if (compilation) document.querySelector('[data-team-package-mount]')?.replaceChildren(compilation);
       document.body.classList.add('team-package-open');
-      deck?.classList.add('team-deck--package-open');
+      if (!restored) deck?.classList.add('team-deck--package-open');
+      rememberCompletion();
       document.querySelectorAll('.team-deck .member-card').forEach((card, index) => {
         card.style.setProperty('--package-index', String(index));
       });
     }
-    setPhase('clear');
+    // Detach the fixed/filtered opening before unlocking the mobile viewport.
+    opening.dataset.phase = 'clear';
     opening.hidden = true;
+    opening.remove();
+    document.body.classList.remove('team-page--opening-blur');
+    scrollRoot.classList.remove('team-opening-scroll-locked');
+    scrollRoot.style.removeProperty('--team-opening-scroll-top');
     listeners.abort();
     motion.removeEventListener('change', motionChanged);
     if (restoreFocus) header?.focus({ preventScroll: true });
     if (packageOpen) {
       requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (!restored) window.scrollTo({ top: 0, behavior: 'auto' });
         header?.querySelectorAll('.team-opening__compile-code').forEach(panel => {
-          panel.scrollTo({ top: panel.scrollHeight, behavior: 'instant' });
+          panel.scrollTo({ top: panel.scrollHeight, behavior: 'auto' });
         });
-        requestAnimationFrame(() => createParticleBurst(deck, header?.querySelector('.team-opening__pkg-art')?.getBoundingClientRect()));
+        if (!restored) requestAnimationFrame(() => createParticleBurst(deck, header?.querySelector('.team-opening__pkg-art')?.getBoundingClientRect()));
       });
     }
   };
@@ -123,21 +162,57 @@
         return;
       }
       clearTimers();
+      opening.dataset.unfolding = 'complete';
       setPhase('title');
     }
   };
+  let timelineStarted = false;
   const startTimeline = () => {
-    if (opening.hidden) return;
-    if (document.documentElement.matches('[data-wh-cover], [data-wh-busy]')) {
+    if (opening.hidden || timelineStarted) return;
+    const collages = opening.querySelector('[data-team-puzzle-collages]');
+    if (document.documentElement.matches('[data-wh-cover], [data-wh-busy]')
+        || ['pending', 'error'].includes(collages?.dataset.teamPuzzleReady)) {
       startTimer = setTimeout(startTimeline, 120);
       return;
     }
+    timelineStarted = true;
+    // The blurred roster is already underneath the moving puzzle pieces.
+    document.body.classList.add('team-page--opening-blur');
     if (motion.matches) {
+      opening.dataset.unfolding = 'complete';
       setPhase('title');
       return;
     }
-    phaseTimers.push(setTimeout(() => setPhase('preview'), 2200));
-    phaseTimers.push(setTimeout(() => setPhase('title'), 3550));
+    let revealed = false;
+    const reveal = () => {
+      if (revealed || finished || opening.hidden) return;
+      revealed = true;
+      setPhase('preview');
+      phaseTimers.push(setTimeout(() => setPhase('title'), 1350));
+    };
+    const complete = () => {
+      if (finished || opening.hidden) return;
+      opening.dataset.unfolding = 'complete';
+      reveal();
+    };
+    const pieces = new Set(opening.querySelectorAll('.team-opening__piece'));
+    const ended = new Set();
+    let revealScheduled = false;
+    opening.addEventListener?.('animationstart', event => {
+      if (event.animationName !== 'team-opening-unfold' || !pieces.has(event.target) || revealScheduled) return;
+      revealScheduled = true;
+      // Bring in the letters earlier while the puzzle continues moving outward.
+      phaseTimers.push(setTimeout(reveal, 1500));
+    }, options);
+    opening.addEventListener?.('animationend', event => {
+      if (event.animationName !== 'team-opening-unfold' || !pieces.has(event.target)) return;
+      ended.add(event.target);
+      if (ended.size === pieces.size) complete();
+    }, options);
+    // Layout setup and the shared page transition finish before this arms CSS motion.
+    opening.dataset.unfolding = 'true';
+    // A missing animation event may reveal the PKG gate, never the formal page.
+    phaseTimers.push(setTimeout(complete, 3600));
   };
 
   packageButton?.addEventListener('click', event => {
@@ -149,9 +224,7 @@
     if (!frame || !sequence.length || button.disabled) return;
     clearTimers();
     const compilation = opening.querySelector('[data-team-compile]');
-    const lines = [...opening.querySelectorAll('[data-team-compile-order]')]
-      .sort((a, b) => Number(a.dataset.teamCompileOrder) - Number(b.dataset.teamCompileOrder))
-      .map(node => ({ node, text: node.textContent.trim() }));
+    const lines = readCompiledLines();
     compiledLines = lines;
     compilation?.classList.add('is-active');
     button.disabled = true;
@@ -166,10 +239,11 @@
       return;
     }
 
-    const durationScale = 0.6;
-    const holdDuration = 600 * durationScale;
+    const durationScale = .8;
+    const baseHoldDuration = 600;
+    const holdDuration = baseHoldDuration * durationScale;
     const outputSpeed = 1.1 * 1.3;
-    const outputDuration = (Math.max(8000, lines.length * 260 + 600) - 600) / outputSpeed * durationScale;
+    const outputDuration = (Math.max(8000, lines.length * 260 + baseHoldDuration) - baseHoldDuration) / outputSpeed * durationScale;
     const duration = outputDuration + holdDuration;
     const lineInterval = outputDuration / Math.max(lines.length, 1);
     const typingDuration = Math.min(190 / outputSpeed * durationScale, lineInterval * .75);
@@ -184,7 +258,7 @@
       button.classList.remove('is-unpacking');
       button.classList.add('is-complete');
       if (status) status.textContent = 'Unpacked';
-      phaseTimers.push(setTimeout(() => finish({ packageOpen: true }), 1400 * durationScale));
+      phaseTimers.push(setTimeout(() => finish({ packageOpen: true }), 1400));
     };
     const showFrame = index => {
       if (opening.hidden) return;
@@ -240,5 +314,41 @@
     showFrame(0);
   }, options);
   motion.addEventListener('change', motionChanged);
-  startTimeline();
+  if (restoredPackage) finish({ packageOpen: true, restored: true });
+  else {
+    // Opening is intentional: a click, downward scroll/swipe, or keyboard action.
+    let wheelDistance = 0;
+    let touchStartY = null;
+    const requestOpen = () => {
+      if (timelineStarted || opening.hidden) return;
+      const collages = opening.querySelector('[data-team-puzzle-collages]');
+      if (document.documentElement.matches('[data-wh-cover], [data-wh-busy]')
+          || ['pending', 'error'].includes(collages?.dataset.teamPuzzleReady)) return;
+      startTimeline();
+    };
+    opening.addEventListener('click', event => {
+      if (event.target.closest?.('[data-team-puzzle-retry], [data-team-package]')) return;
+      requestOpen();
+    }, options);
+    opening.addEventListener('wheel', event => {
+      if (timelineStarted) return;
+      event.preventDefault();
+      const pixels = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? innerHeight : 1);
+      wheelDistance = Math.max(0, wheelDistance + pixels);
+      if (wheelDistance >= 80) requestOpen();
+    }, { ...options, passive: false });
+    opening.addEventListener('touchstart', event => {
+      touchStartY = event.touches[0]?.clientY ?? null;
+    }, { ...options, passive: true });
+    opening.addEventListener('touchmove', event => {
+      if (timelineStarted || touchStartY == null) return;
+      if (touchStartY - (event.touches[0]?.clientY ?? touchStartY) >= 60) requestOpen();
+    }, { ...options, passive: true });
+    opening.addEventListener('touchend', () => { touchStartY = null; }, options);
+    document.addEventListener?.('keydown', event => {
+      if (timelineStarted || !['Enter', ' ', 'ArrowDown', 'PageDown'].includes(event.key)) return;
+      event.preventDefault();
+      requestOpen();
+    }, options);
+  }
 })();

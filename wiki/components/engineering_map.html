@@ -20,7 +20,13 @@
   {'id': 'functional-validation', 'label': 'Functional Validation', 'parts': [{'id': 'functional-validation', 'label': 'Functional Validation'}]}
 ] %}
 <script type="application/json" data-engineering-map-data>{{ engineering_groups | tojson }}</script>
-<section class="engineering-map" data-engineering-map data-selected-group="" aria-labelledby="engineering-map-title">
+<section class="engineering-map engineering-map--stacked" data-engineering-map data-selected-group="" aria-labelledby="engineering-map-title">
+  {% include 'components/engineering_overview_toolbar.html' %}
+  {% include 'components/engineering_project_overview.html' %}
+  <div class="engineering-mindmap-stage" id="engineering-mindmap" tabindex="-1" aria-label="Engineering mind map">
+    <div class="engineering-view-switch-row">
+      <button class="engineering-view-switch" type="button" data-overview-scroll="engineering-project-overview">Switch to overview <span aria-hidden="true">↑</span></button>
+    </div>
   <div class="engineering-map-canvas" data-map-canvas>
     <svg class="engineering-map-currents" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
       <path d="M-80 520C180 370 320 670 650 505S1040 365 1280 470"/>
@@ -53,7 +59,5 @@
     <a class="engineering-map-group engineering-map-peer engineering-map-peer--functional" data-engineering-group="functional-validation" href="#functional-validation" aria-label="Functional Validation, open overview"><span class="map-label">Functional Validation</span></a>
 
   </div>
-  <figure class="engineering-overview">
-    {% include 'components/engineering_overview.html' %}
-  </figure>
+  </div>
 </section>

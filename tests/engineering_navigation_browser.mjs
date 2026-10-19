@@ -391,7 +391,7 @@ try {
 
   const expectedPreviews = { pod: ['', '', '', 'CETUS'], mre: ['', '', 'GFA', 'ASO'],
     'integrated-orca': ['', 'Control', 'CETUS', 'GFA'], gfa: ['Edit', '', 'Integrated ORCA', 'MRE'],
-    'model-whole-body': ['', '', 'LAMAR Prioritization', ''] };
+    'model-whole-body': ['', '', 'LAMAR', ''] };
   for (const [part, expected] of Object.entries(expectedPreviews)) {
     await animatedJump(part);
     const { rows } = await readTurn();
@@ -414,7 +414,7 @@ try {
     const narrow = await browser.newPage({ viewport, reducedMotion: 'no-preference' });
     await narrow.goto(`${base}/engineering#model-whole-body-cycle-01`, { waitUntil: 'networkidle' });
     const current = await narrow.locator('[data-engineering-heading-part]').evaluate(node => ({ height: node.clientHeight, scrollHeight: node.scrollHeight, width: node.clientWidth, scrollWidth: node.scrollWidth, text: node.textContent, paper: document.querySelector('.engineering-paper').getBoundingClientRect().toJSON() }));
-    assert.equal(current.text, 'Whole-body Delivery Model');
+    assert.equal(current.text, 'Delivery Dynamics');
     assert.ok(current.scrollHeight <= current.height && current.scrollWidth <= current.width, JSON.stringify(current));
     assert.ok(current.paper.height >= 130 && current.paper.bottom <= viewport.height, JSON.stringify(current));
     await writeFile(path.join(output, `engineering-carousel-long-${viewport.width}.png`), await narrow.screenshot(), { flag: 'wx' });

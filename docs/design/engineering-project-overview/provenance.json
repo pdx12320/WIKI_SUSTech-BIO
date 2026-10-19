@@ -1,6 +1,16 @@
 {
   "source": "User-approved connected ORCA project overview; editable source.pptx stored alongside this record",
-  "png_sha256": "21327319225cb1970ec885c89ca6f99b5e9c4e54a7b06a1decd6c753563e3b52",
-  "pptx_sha256": "a6cc0961d0dd2446d00f89192e7f0960ca46bf658aa1d6b620b8b52cce574959",
-  "placement": "Engineering overview, before the mind map"
+  "png_sha256": "882fa65b4ac0e71b617b86ef4d267ea791f6637870add3e84407a3669c53df74",
+  "pptx_sha256": "bb622362e44fdef7c05de3a99857564827048cf7fb4b28b56266653e34557765",
+  "placement": "Engineering overview, before the mind map",
+  "model_labels": [
+    "Landscape",
+    "Recognition / Catalysis",
+    "LAMAR",
+    "Delivery"
+  ],
+  "cdn_url": "https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif",
+  "cdn_sha256": "aec50a1d7b06fc1bce80347b8bd9730a5b8781827650c48f334e8c9b57b129c9",
+  "verified_on": "2026-10-19",
+  "mean_absolute_rgb_error": 0.4408
 }

@@ -18,7 +18,10 @@ switch scenes; the explicit switch buttons navigate immediately.
 
 ## Production asset status
 
-The PNG is committed as the local source. Its iGEM upload URL has not been
-confirmed or added to the asset mapping. GitHub merge does not establish
-production deployment; upload and map this exact image before the production
-CDN audit and deployment.
+The PNG remains the local source. Its new iGEM AVIF upload has been verified
+against this source and added to the asset mapping. The URL and comparison
+record are in `provenance.json`. GitHub merge and production deployment are
+verified separately.
+
+Model branch labels now use Landscape, Recognition / Catalysis, LAMAR and Delivery.
+Full names appear in section headings and accessible link labels; chapter anchors are unchanged.

@@ -1804,7 +1804,7 @@ Most importantly, the real-editor experiments showed why these channels must be 
 
 #### Overview {#dry-dbtl-overview}
 
-<img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/dry-dbtl.png" alt="PUFFER modelling workflow: RNA-seq, PUF and APOBEC, LAMAR, and whole-body modelling." width="1800" height="1080" decoding="async">
+<img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/dry-dbtl.png" alt="PUFFER modelling workflow: Landscape, Recognition and Catalysis, LAMAR, and Delivery." width="1800" height="1080" decoding="async">
 
 ORCA aims to improve the specificity of programmable APOE4 RNA editing while preserving useful target activity. The PUF recognition domain, the APOBEC catalytic domain and the surrounding RNA sequence each contribute to this design problem. Our dry-lab workflow connects editor design and site prioritization with delivery, expression and RNA-product formation at the system scale.
 
@@ -1820,7 +1820,7 @@ Across the five models, Design–Build–Test–Learn cycles make the computatio
 
 ---
 
-### RNA-seq {#model-rna-seq .engineering-chapter-title}
+### Transcriptomic Landscape {#model-rna-seq .engineering-chapter-title}
 
 Mapping candidate RNA editing sites
 {.engineering-chapter-subtitle}
@@ -2006,7 +2006,7 @@ Callable-site density replaced counts as the basis for chromosome comparisons. W
 
 ---
 
-### PUF {#model-puf .engineering-chapter-title}
+### Recognition Code {#model-puf .engineering-chapter-title}
 
 Specificity ranking and structure-conditioned design
 {.engineering-chapter-subtitle}
@@ -2232,7 +2232,7 @@ The final workflow combined a supervised ranker with structure-conditioned explo
 
 ---
 
-### APOBEC {#model-apobec .engineering-chapter-title}
+### Catalytic Design {#model-apobec .engineering-chapter-title}
 
 Refining catalytic-module structural models
 {.engineering-chapter-subtitle}
@@ -2611,7 +2611,7 @@ The model now returned ordered cytidine candidates for the experimental team to 
 
 ---
 
-### Whole-body Model {#model-whole-body .engineering-chapter-title}
+### Delivery Dynamics {#model-whole-body .engineering-chapter-title}
 
 Modelling delivery and multisite editing
 {.engineering-chapter-subtitle}

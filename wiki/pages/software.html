@@ -4,7 +4,7 @@
 {% for stylesheet in ['model.css', 'model-typing.css', 'model-reading.css', 'model-navigation.css', 'model-entry.css', 'software-reading.css', 'software-delivery-body.css', 'software-delivery-mechanisms-3d.css', 'software-spatial-viewer.css'] %}<link rel="stylesheet" href="{{ url_for('static', filename=stylesheet) }}">{% endfor %}
 {% endblock %}
 {% set sections = [
-  ('rewire', 'Whole-body Delivery Model', [('rewire-purpose', 'Overview'), ('rewire-logic', 'Modeling approach'), ('rewire-results', 'Results'), ('rewire-library', 'State and flux profiles'), ('rewire-references', 'References'), ('rewire-reuse', 'Reproducibility')]),
+  ('rewire', 'Delivery Dynamics', [('rewire-purpose', 'Overview'), ('rewire-logic', 'Modeling approach'), ('rewire-results', 'Results'), ('rewire-library', 'State and flux profiles'), ('rewire-references', 'References'), ('rewire-reuse', 'Reproducibility')]),
   ('workbench', 'PUFFER', [('workbench-purpose', 'Overview'), ('workbench-logic', 'Modeling approach'), ('workbench-workflow', 'Workflow'), ('workbench-references', 'References'), ('workbench-reuse', 'Reproducibility')])
 ] %}
 {% macro figure(item) %}

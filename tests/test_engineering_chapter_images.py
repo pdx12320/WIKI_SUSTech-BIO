@@ -30,6 +30,6 @@ class EngineeringChapterImagesTest(unittest.TestCase):
                 self.assertEqual(len(candidates), 1)
                 image = candidates[0]
                 self.assertEqual(image.get('src'), card['url'])
-                self.assertTrue(card['url'].startswith('https://static.igem.wiki/teams/6085/wiki/engineering-new/'))
+                self.assertTrue(card['url'].startswith('https://static.igem.wiki/teams/6085/wiki/'))
                 self.assertEqual((image.get('width'), image.get('height')), ('1800', '1080'))
                 self.assertTrue(image.get('alt'))

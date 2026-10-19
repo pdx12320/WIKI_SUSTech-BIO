@@ -1,0 +1,36 @@
+/* Concise display copy, paraphrased from the local team report. Original excerpts remain in the evidence library. */
+window.BioSphereCopy={
+ names:{china:'Gaokao Biology',hongkong:'HKDSE Biology',ial:'Edexcel iAL Biology',japan:'Japan + AP Biology'},
+ domains:{
+  d1:{name:'Molecular foundations',meaning:'How DNA, gene expression and proteins connect to biological function.',
+   china:'Molecules, cells and genetics are connected to mechanisms, experiments and unfamiliar biological contexts.',
+   hongkong:'The compulsory curriculum connects molecular genetics with protein function, phenotype and biotechnology.',
+   ial:'Molecules, gene expression and mutation are applied to biological and medical examples.',
+   japan:'Japanese biology and AP Biology together cover molecular mechanisms and gene regulation.'},
+  d2:{name:'Biotechnology tools',meaning:'What tools such as PCR, electrophoresis and recombinant DNA are used for.',
+   china:'Biotechnology and Engineering covers major tools and applications; advanced workflows are less consistently required.',
+   hongkong:'Core applied genetics is extended by the optional Biotechnology elective; coverage depends on elective choice.',
+   ial:'Gene Technology covers major techniques and applications; advanced troubleshooting is more implicit.',
+   japan:'The combined configuration covers genetic technologies and inquiry labs, with advanced workflows mainly treated as enrichment.'},
+  d3:{name:'Synthetic biology',meaning:'Designing biological parts and systems to perform a defined function.',
+   china:'Relevant ideas appear within genetics and biotechnology, without a distinct synthetic biology framework.',
+   hongkong:'Genetic engineering is present, while parts, devices and genetic circuits are not developed as a distinct framework.',
+   ial:'Gene technology introduces useful engineered organisms, without an explicit synthetic biology framework.',
+   japan:'Both sources provide prerequisites, without treating synthetic biology as a distinct engineering discipline.'},
+  d4:{name:'Design–Build–Test–Learn',meaning:'Using test results to revise a biological design through repeated cycles.',
+   china:'Inquiry and experimental improvement are present; a full DBTL engineering cycle is not explicit.',
+   hongkong:'Inquiry and school-based practical work support revision; open-ended engineering iteration is not explicit.',
+   ial:'Practical work includes testing and improvement, without an explicit full DBTL cycle.',
+   japan:'Inquiry and experimental design are prominent, but iterative construction of synthetic biological systems is not explicit.'},
+  d5:{name:'Data & research',meaning:'Designing experiments, interpreting evidence and understanding models.',
+   china:'Experimental design, data interpretation, model analysis and evidence-based reasoning are prominent.',
+   hongkong:'Written papers and school-based investigations emphasize variables, data analysis and evidence-based conclusions.',
+   ial:'Practical assessments and unfamiliar data support design evaluation, interpretation and research literacy.',
+   japan:'The combined configuration emphasizes scientific practices, quantitative reasoning, models and argumentation.'},
+  d6:{name:'Ethics & biosafety',meaning:'Weighing benefits, risks and responsibilities when applying biotechnology.',
+   china:'Applications, safety and social responsibility are included; extended ethical analysis is less prominent in examinations.',
+   hongkong:'Bioethics is explicit in the Biotechnology elective, mainly through discussion of benefits, risks and social implications.',
+   ial:'The report identifies balanced discussion of benefits, risks and stakeholders, with less structured advanced analysis.',
+   japan:'Applications and social implications are included, while formal synthetic biology risk analysis remains limited.'}
+ }
+};

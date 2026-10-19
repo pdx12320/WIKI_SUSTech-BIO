@@ -201,7 +201,7 @@ class WikiRoutesTest(unittest.TestCase):
             with self.subTest(route=route):
                 page = self.get_text(route)
                 self.assertNotIn("onetake/", page)
-                if route == "/inclusivity":
+                if route == "/education":
                     # The requested STL viewers use local Three.js, without the
                     # homepage's particle scenes or animation dependencies.
                     importmap = re.search(r'<script type="importmap">(.*?)</script>', page, re.S)
@@ -214,28 +214,24 @@ class WikiRoutesTest(unittest.TestCase):
                 else:
                     self.assertNotIn('type="importmap"', page)
 
-    def test_inclusivity_owns_accessibility_content_and_model_viewers(self):
+    def test_hp_and_education_keep_distinct_content_and_legacy_destinations(self):
         hp = self.get_text("/human-practices")
-        inclusivity = self.get_text("/inclusivity")
-        for title in [
-            "Anjia Guardian: A home-safety mini-app designed for older adults",
-            "Biology Models to Explore by Touch: The Brain and the Cell",
-        ]:
-            self.assertIn(title, inclusivity)
-            self.assertNotIn(title, hp)
-        # Catch an empty inherited-template body as well as missing figures.
-        self.assertIn("The interface uses large text", inclusivity)
-        self.assertIn("Could we offer a more tangible way", inclusivity)
-        for filename in [
-            "biology-brain-model-render.webp", "biology-cell-model-render.webp",
-            "biology-brain-model.stl.zip", "biology-animal-cell-model.stl.zip",
-        ]:
-            self.assertIn(filename, inclusivity)
-            self.assertNotIn(filename, hp)
-        self.assertIn('/inclusivity#1-anjia-guardian-', hp)
-        self.assertNotIn("human-practices/model-viewers/viewers.js", hp)
-        self.assertEqual(hp.count('class="hp-media-row"'), 7)
-        self.assertEqual(inclusivity.count('class="hp-media-row"'), 2)
+        education = self.get_text("/education")
+        self.assertIn('id="hp-profile-zhou-name"', hp)
+        self.assertIn('id="hp-figure-10"', hp)
+        self.assertNotIn('<orca-interviews', hp)
+        self.assertNotIn('class="wp-jury"', hp)
+        self.assertIn('<orca-interviews', education)
+        self.assertIn('class="wp-jury"', education)
+        self.assertIn('class="hp-workbook-collage"', education)
+        self.assertIn('class="hp-garden"', education)
+        self.assertIn('id="hp-figure-12"', education)
+        routes = json.loads(Path('static/human-practices/page-split/moved-anchors.json').read_text())
+        for anchor, destination in routes.items():
+            with self.subTest(anchor=anchor):
+                self.assertEqual(destination, '/education#' + anchor)
+                self.assertIn(f'id="{anchor}"', education)
+                self.assertNotIn(f'id="{anchor}"', hp)
 
     def test_hero_assets_are_served_from_requested_path(self):
         response = self.client.get("/assets/hero/clearance/cleaners-ready.png")
@@ -294,6 +290,7 @@ class WikiRoutesTest(unittest.TestCase):
             "/engineering": "docs/project/engineering.md",
             "/experiments": "docs/wet-lab/experiments.md",
             "/human-practices": "docs/human-practices/human-practices.md",
+            "/education": "docs/human-practices/education.md",
             "/inclusivity": "docs/human-practices/inclusivity.md",
             "/measurement": "docs/wet-lab/measurement.md",
             "/attributions": "docs/team/attributions.md",

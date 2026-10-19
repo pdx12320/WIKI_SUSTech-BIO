@@ -1,0 +1,7 @@
+/* One paired figure, two unchanged full-resolution classroom photographs. */
+body.inner-page .markdown-content .hp-qinglan-pair { max-width:none; padding:0; background:none; border:0; box-shadow:none; }
+.hp-qinglan-pair__images { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.hp-qinglan-pair__images > a { display:block; min-width:0; }
+body.inner-page .markdown-content .hp-qinglan-pair__images img { display:block; width:100%; max-width:none; height:auto; aspect-ratio:4/3; object-fit:contain; margin:0; border-radius:6px; box-shadow:none; }
+.hp-qinglan-pair__images > a:focus-visible { outline:2px solid #5D5AD7; outline-offset:4px; }
+@media(max-width:560px) { .hp-qinglan-pair__images { gap:8px; } }

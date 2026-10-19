@@ -1,0 +1,31 @@
+{
+  "originalEntry": "education-transfer-map.html",
+  "originalSha256": "74351b2366d055613a2e309d78fbdd862b069707b5c03d7778d1dceb606945d4",
+  "backup": "education-transfer-map.before-20261019.html",
+  "files": {
+    "README-education-transfer.md": "71b73097dfc739b05a70c36ed3c0e9da816820a7249ce063c850a557868f0fc2",
+    "education-transfer.css": "35efc22ddda2fcb070d084263761d308d48214256ce902376c5a1c38681aef65",
+    "education-transfer.js": "e2f8f629da414e3b1b5b43594a5095037fe51e3aebbfa34981845e85e34dbd63",
+    "education-map.js": "76925f401832904621ea773e54cc6443874a370725f6348e6848b29949465e99",
+    "education-transfer-knowledge.json": "539c31f991b80129ceb100d88692666010cbaa71031ce784bf639a0d0c22f9e9",
+    "education-transfer-knowledge.js": "eb902770a677d54c45bca6be412889745ffb060e60bc944b6d5d30e31f5f4705",
+    "education-transfer-map.html": "180d8c5f8f09503efe8c64175087a960c84839e161a5c59fb1dd53680d3a87e2",
+    "transfer-model.js": "2ef9e149fa764494d9781a3b9f822def580df36b30a7f2cd506ef872c094df82",
+    "tools/check.mjs": "a6fe6243f97ef6220e0e3d9340c8c21e96fe9f9f0f07bfec61cba64643fed8d3",
+    "tools/sync-knowledge.mjs": "0ce4f6839b9ab837249f07ca98066c4286cab5bfa656a051bd2e0375290198f8",
+    "sources/curriculum-comparison-reference-framework.pdf": "917cff30c2afe2581368d125f498060aa04875eba7fa244304ce2183f0d3fd48",
+    "sources/curriculum-comparison-analysis.pdf": "445fcdd7467abcb6fc5c7325a033cbba5634ab9b4968e3371fb07d360c51ea92",
+    "education-transfer-report.html": "a2566ece8b1a9d0457b5e109fed725f902cde28b8a9bd337c97e40095ae990d9",
+    "education-loading.js": "a81895d35294d43c3b79349ede54fd6a3efc9dd5cef8eba819b1ebe8404de17f",
+    "tools/check-pages.mjs": "4f9cdacb88ba7a7fd2ab23c387067a12d79a17a957a7437799cff4f7859bf09e",
+    "education-copy.js": "a0251addbc11ba2d2c66b575563ac0080330febe54e46b845e68eae4e7526e3c",
+    "fonts/sono/Sono-variable.ttf": "247ca641ca7066e3addc8081d89613c06a79e4276cd4f2164d07a6493530010f",
+    "fonts/sono/OFL.txt": "19d06d19f1720e1873105ce859318099f1a5322361007ce8f5a2b48463c33ad7",
+    "fonts/sono/SOURCE.json": "3e30055ab391cd0172b4b12c53767aa521ec98c8b676ea53fbdd61f1ac402538",
+    "assets/collaboration/provenance.json": "ea1cc64c761e4d4d8cf757b500e3aee9d58b04344551a8ec7632c9137a269294",
+    "assets/collaboration/hg-tokyo.webp": "2baaa370267d02eb06aeb0253609643ed9528e31756854fe932a2a5c3bacce4e",
+    "assets/collaboration/sustech-bio.webp": "db59c1f131c55de8996a6067e00b0713a9bd35259642cf9fa2223f533368fb09",
+    "assets/collaboration/cuhk-hongkong-sbs.avif": "cd1f6b6f040608ec6576d2a9d4238ec1b9246795e84bc5027513d29547a1602a"
+  },
+  "latestRevision": "Added SUSTech-BIO, CUHK-HongKong-SBS and HG-Tokyo logos to both page footers."
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "source": "assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx",
+    "source_sha256": "b30419399203c5c8f66f32f00307b623dc8583fbe3ec91365c1e2ab8cd4cac8a",
+    "pdf": "assets/human-practices/attachments/older-adults-health-workbook-v2-zh.pdf",
+    "pdf_sha256": "ee23fe48e717824404fbaf457066c638013009d0ae29428812de73bbaa3a77dd",
+    "pages": 42,
+    "conversion": "Bundled LibreOffice PDF export with task-local fontconfig and Arial Unicode MS in conversion copy; original DOCX unchanged"
+  },
+  {
+    "source": "assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx",
+    "source_sha256": "5adfad94edf2422cfad9a1e07b1eb247b589b6951b7de763b7c8d7d7da898687",
+    "pdf": "assets/human-practices/attachments/older-adults-health-workbook-v2-en.pdf",
+    "pdf_sha256": "8bd39795508caa31a631fc10bd23b4c639bfc0412e97edc97f6db67247097c97",
+    "pages": 37,
+    "conversion": "Bundled LibreOffice PDF export, original DOCX unchanged"
+  }
+]

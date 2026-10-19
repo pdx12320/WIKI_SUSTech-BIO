@@ -1,0 +1,25 @@
+.hp-garden { margin:28px 0 36px; color:#171536; font-family:Futura,"Avenir Next",sans-serif; }
+.hp-garden * { box-sizing:border-box; }
+.hp-garden__entry { display:flex; align-items:center; justify-content:center; gap:24px; padding:10px 20px 22px; color:#2E267C; text-decoration:none; border-bottom:1px solid #D9D7E5; border-radius:16px 16px 0 0; transition:background 240ms ease; }
+.hp-garden__scene { display:block; flex:none; width:200px; height:auto; }
+.hp-garden__mascot { transition:transform 280ms ease; transform-origin:center; }
+.hp-garden__bamboo { transform-box:fill-box; transform-origin:50% 100%; }
+@media (prefers-reduced-motion:no-preference) {
+  .hp-garden__bamboo { animation:hp-garden-breeze 5s ease-in-out infinite alternate; }
+  .hp-garden__bamboo--right { animation-delay:-2.5s; animation-direction:alternate-reverse; }
+}
+@keyframes hp-garden-breeze { from { transform:rotate(-3deg); } to { transform:rotate(3deg); } }
+.hp-garden__copy { display:grid; gap:14px; }
+.hp-garden__label { font-size:10px; letter-spacing:.13em; color:#6B6880; line-height:1.6; }
+.hp-garden__copy strong { font-family:Georgia,serif; font-size:25px; line-height:1.25; font-weight:400; }
+body.inner-page .hp-manuscript .hp-garden__copy strong { font-family:Georgia,serif; font-weight:400; color:#2E267C; }
+.hp-garden__action { display:flex; gap:14px; align-items:center; font-size:14px; }
+.hp-garden__action > span { transition:transform 240ms ease; }
+.hp-garden__entry:focus-visible { outline:2px solid #5D5AD7; outline-offset:5px; }
+.hp-garden .hp-garden__poster { max-width:440px; margin:28px auto 0; padding:0; background:none; border:0; box-shadow:none; }
+.hp-garden__poster a { display:block; outline-offset:5px; }
+.hp-garden__poster img { display:block; width:100%; height:auto; margin:0; border:1px solid #D9D7E5; border-radius:3px; box-shadow:none; }
+.hp-garden__poster figcaption { margin:10px 0 0; text-align:center; font-size:12px; line-height:1.5; color:#6B6880; font-style:normal; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { .hp-garden__entry:hover { background:#E9E8FF; } .hp-garden__entry:hover .hp-garden__mascot { transform:translateY(-4px); } .hp-garden__entry:hover .hp-garden__action > span { transform:translate(3px,-3px); } }
+@media(max-width:560px) { .hp-garden__entry { gap:12px; padding:8px 0 20px; } .hp-garden__scene { width:140px; } .hp-garden__copy strong { font-size:21px; } .hp-garden__copy { gap:10px; } }
+@media(prefers-reduced-motion:reduce) { .hp-garden__entry,.hp-garden__mascot,.hp-garden__action > span { transition:none; } }

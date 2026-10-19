@@ -1,7 +1,13 @@
 {% extends "pages/content_page.html" %}
 
-{% set interviews %}{% include 'components/teacher_interviews.html' %}{% endset %}
-{% set manuscript = rendered_markdown | replace('<!-- teacher-interviews -->', interviews) %}
+{% set manuscript = rendered_markdown %}
+{% set zhou_card %}{% include 'components/human-practices/profiles/zhou.html' %}{% endset %}
+{% set ye_card %}{% include 'components/human-practices/profiles/ye.html' %}{% endset %}
+{% set dai_card %}{% include 'components/human-practices/profiles/dai.html' %}{% endset %}
+{% set zhou_portrait %}{% include 'components/human-practices/profiles/zhou-portrait.html' %}{% endset %}
+{% set ye_portrait %}{% include 'components/human-practices/profiles/ye-portrait.html' %}{% endset %}
+{% set dai_portrait %}{% include 'components/human-practices/profiles/dai-portrait.html' %}{% endset %}
+{% set manuscript = manuscript | replace('<!-- hp-profile-zhou -->', zhou_card) | replace('<!-- hp-profile-ye -->', ye_card) | replace('<!-- hp-profile-dai -->', dai_card) | replace('<!-- hp-portrait-zhou -->', zhou_portrait) | replace('<!-- hp-portrait-ye -->', ye_portrait) | replace('<!-- hp-portrait-dai -->', dai_portrait) %}
 {% set rendered_markdown %}
 <div class="hp-manuscript" lang="en">
   <p class="hp-subtitle">{{ content.metadata.subtitle }}</p>
@@ -18,12 +24,15 @@
 {{ super() }}
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/opening/opening.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/human-practices.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='human-practices/profiles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='human-practices/viewpoints.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/pdf-panels.css') }}">
 {% endblock %}
 
 {% block page_scripts %}
 {{ super() }}
 <script src="{{ url_for('static', filename='human-practices/opening/opening.js') }}" defer></script>
-<script src="{{ url_for('static', filename='human-practices/interviews/orca-interviews.js') }}" defer></script>
+<script src="{{ url_for('static', filename='human-practices/page-split/legacy-links.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/pdf-panels.js') }}" defer></script>
+<script src="{{ url_for('static', filename='human-practices/viewpoints.js') }}" defer></script>
 {% endblock %}

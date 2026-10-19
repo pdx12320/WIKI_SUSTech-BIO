@@ -1,0 +1,32 @@
+@import url("judges.css");
+
+/* Keep the approved panel's hierarchy within the shared reading styles. */
+body.inner-page .markdown-content .wp-jury h4 {
+  margin: 0;
+  font: 700 34px/1.15 Georgia, serif;
+  letter-spacing: -.025em;
+  color: #FFFEFC;
+}
+body.inner-page .markdown-content .wp-jury h5 {
+  margin: 0 0 12px;
+  font: 700 25px/1.2 Georgia, serif;
+  color: #2E267C;
+}
+body.inner-page .markdown-content .wp-jury .wp-jury__eyebrow {
+  margin: 0 0 14px;
+  color: #9D9CF4;
+  font-size: 11px;
+  letter-spacing: .16em;
+  line-height: 1.5;
+}
+body.inner-page .markdown-content .wp-jury .wp-jury__person p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #6B6880;
+}
+body.inner-page .markdown-content .wp-jury__person:last-child h5 { margin-bottom: 0; }
+@media (max-width: 560px) {
+  body.inner-page .markdown-content .wp-jury h4 { font-size: 29px; }
+  body.inner-page .markdown-content .wp-jury__person:last-child h5 { margin-bottom: 12px; }
+}

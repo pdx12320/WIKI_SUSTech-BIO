@@ -1,0 +1,20 @@
+{
+  "scope": "Entire question uses matching white/cream/green; THIS stays orange/purple/orange; production unchanged",
+  "colors": [
+    [
+      "white",
+      "Pure white",
+      "#ffffff"
+    ],
+    [
+      "cream",
+      "Original cream",
+      "#fff9e9"
+    ],
+    [
+      "mint",
+      "Macaron green",
+      "#b7ff85"
+    ]
+  ]
+}

@@ -1,0 +1,5 @@
+{% extends "pages/content_page.html" %}
+{% block page_scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='human-practices/page-split/inclusivity-legacy.js') }}" defer></script>
+{% endblock %}

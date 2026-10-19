@@ -1,0 +1,34 @@
+/* Scoped component; all names and roles remain selectable HTML. */
+.wp-jury { --wp-ink:#171536; --wp-indigo:#2E267C; --wp-line:#D9D7E5; margin:36px 0; color:var(--wp-ink); font-family:Futura,"Avenir Next",sans-serif; text-align:left; }
+.wp-jury * { box-sizing:border-box; }
+.wp-jury .wp-jury__header { position:relative; overflow:hidden; display:flex; align-items:center; justify-content:space-between; gap:20px; background:#19143D; padding:28px 30px; border-radius:22px 22px 0 0; color:#FFFEFC; }
+.wp-jury .wp-jury__eyebrow { margin:0 0 14px; color:#9D9CF4; font-size:11px; letter-spacing:.16em; line-height:1.5; }
+.wp-jury h4 { font-family:Georgia,serif; font-size:34px; line-height:1.15; letter-spacing:-.025em; margin:0; color:inherit; }
+.wp-jury__orbit { --radius:56px; position:relative; flex:none; width:112px; height:112px; border:1px solid #9D9CF4; border-radius:50%; transform:rotate(-20deg); opacity:.85; }
+.wp-jury__orbit::before { content:""; position:absolute; inset:17px; border:1px solid #5D5AD7; border-radius:50%; }
+.wp-jury__orbit span { position:absolute; top:50%; left:50%; width:14px; height:14px; border:3px solid #19143D; border-radius:50%; background:#9D9CF4; transform:translate(-50%,-50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))); }
+.wp-jury__orbit span:nth-child(1) { --angle:0deg; background:#F58F9C; }
+.wp-jury__orbit span:nth-child(2) { --angle:72deg; }
+.wp-jury__orbit span:nth-child(3) { --angle:144deg; background:#FFD1D5; }
+.wp-jury__orbit span:nth-child(4) { --angle:216deg; }
+.wp-jury__orbit span:nth-child(5) { --angle:288deg; background:#FFD1D5; }
+.wp-jury__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--wp-line); border:1px solid var(--wp-line); border-top:0; border-radius:0 0 18px 18px; overflow:hidden; }
+.wp-jury__person { position:relative; min-width:0; padding:26px 28px 30px; background:#FFFEFC; transition:background 240ms ease; }
+.wp-jury__person:last-child { grid-column:1 / -1; display:grid; grid-template-columns:1fr 1fr; column-gap:24px; align-items:center; }
+.wp-jury__person:last-child .wp-jury__top { grid-column:1; margin-bottom:12px; }
+.wp-jury__person:last-child h5 { grid-column:1; margin-bottom:0; }
+.wp-jury__person:last-child p { grid-column:2; grid-row:1 / span 2; }
+.wp-jury__top { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.wp-jury__initials { display:grid; place-items:center; width:42px; height:42px; flex:none; border:1px solid #D9D7E5; border-radius:50%; color:#2E267C; font-family:Georgia,serif; font-size:15px; transition:transform 240ms ease, background 240ms ease; }
+.wp-jury__field { font-size:11px; letter-spacing:.04em; line-height:1.5; color:#6B6880; }
+.wp-jury__portrait { display:block; width:72px; height:72px; flex:none; overflow:hidden; border-radius:50%; border:1px solid #D9D7E5; background:#E9E8FF; transition:transform 240ms ease; }
+.wp-jury__portrait svg { display:block; width:100%; height:100%; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) { .wp-jury__person:hover .wp-jury__portrait { transform:translateY(-3px); } }
+@media(prefers-reduced-motion:reduce) { .wp-jury__portrait { transition:none; } }
+.wp-jury h5 { margin:0 0 12px; font-family:Georgia,serif; font-size:25px; line-height:1.2; color:#2E267C; }
+.wp-jury .wp-jury__person p { margin:0; font-size:15px; line-height:1.65; color:#6B6880; }
+.wp-jury .wp-jury__closing { margin:0; border:1px solid var(--wp-line); border-top:0; border-radius:0 0 18px 18px; padding:17px 28px; font-size:14px; line-height:1.6; background:#E9E8FF; color:#2E267C; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) { .wp-jury__person:hover { background:#E9E8FF; } .wp-jury__person:hover .wp-jury__initials { transform:translateY(-3px); background:#FFD1D5; } }
+@media(max-width:560px) { .wp-jury__grid { grid-template-columns:1fr; } .wp-jury .wp-jury__header { padding:24px; } .wp-jury h4 { font-size:29px; } .wp-jury__orbit { --radius:38px; width:76px; height:76px; } .wp-jury__person { padding:24px; } .wp-jury__person:last-child { display:block; } .wp-jury__person:last-child .wp-jury__top { margin-bottom:20px; } .wp-jury__person:last-child h5 { margin-bottom:12px; } }
+@media(prefers-reduced-motion:reduce) { .wp-jury__person,.wp-jury__initials { transition:none; } }
+@media(max-width:560px) { .wp-jury__orbit { display:none; } }

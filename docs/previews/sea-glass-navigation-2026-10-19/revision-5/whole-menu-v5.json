@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "reports": [
+    {
+      "route": "/",
+      "group": "Team",
+      "frames": 37,
+      "lastRadius": 6.1879423009344485,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/",
+      "group": "Project",
+      "frames": 37,
+      "lastRadius": 6.1768819554090815,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/",
+      "group": "Wet Lab",
+      "frames": 37,
+      "lastRadius": 6.189966533988161,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/",
+      "group": "Dry Lab",
+      "frames": 37,
+      "lastRadius": 6.188568749705202,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/",
+      "group": "Engagement",
+      "frames": 37,
+      "lastRadius": 6.191093216862322,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/model",
+      "group": "Team",
+      "frames": 37,
+      "lastRadius": 6.17859526159585,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/model",
+      "group": "Project",
+      "frames": 37,
+      "lastRadius": 6.183839924377347,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/model",
+      "group": "Wet Lab",
+      "frames": 37,
+      "lastRadius": 6.190724993927333,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/model",
+      "group": "Dry Lab",
+      "frames": 37,
+      "lastRadius": 6.191093217123068,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "route": "/model",
+      "group": "Engagement",
+      "frames": 37,
+      "lastRadius": 6.191093217123068,
+      "wholePanelMask": true,
+      "singleTextLayer": true
+    },
+    {
+      "cleanupPixelDifference": 0,
+      "maxChannelDifference": 2,
+      "totalChannels": 275400
+    }
+  ]
+}

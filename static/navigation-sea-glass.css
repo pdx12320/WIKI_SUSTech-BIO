@@ -1,0 +1,271 @@
+/* Selected sea-glass / whale-tail identity. Scoped to the shared navigation. */
+:root { --nav-h: 112px; }
+
+body .site-nav.sea-glass-navigation {
+  --sea-ink: #171950;
+  --sea-line: #b1dfdf;
+  padding: 12px 24px;
+  min-height: var(--nav-h);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+body .sea-glass-navigation .nav-shell {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: none;
+  min-height: calc(var(--nav-h) - 24px);
+  margin: 0;
+  padding: 0 22px;
+  gap: 24px;
+  flex-wrap: nowrap;
+  border: 1px solid #d6fcf6;
+  border-radius: 24px;
+  background: linear-gradient(115deg, #edfff8f2, #e4f3f7f7 40%, #d7f1f1f5);
+  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px #73c6ce80, 0 9px 24px #254c6520;
+}
+body .sea-glass-navigation .nav-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  backdrop-filter: blur(22px) saturate(112%);
+  -webkit-backdrop-filter: blur(22px) saturate(112%);
+  pointer-events: none;
+}
+.sea-glass-navigation .sea-current {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.sea-glass-navigation :is(.site-brand, .whale-pod, .wiki-search) { z-index: 1; }
+body .sea-glass-navigation .site-brand {
+  position: relative;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  gap: 10px;
+  color: var(--sea-ink);
+}
+body .sea-glass-navigation .site-brand .site-logo {
+  display: block;
+  width: 67px;
+  height: 47px;
+  object-fit: contain;
+  filter: none;
+}
+.sea-glass-navigation .orca-wordmark { display: block; width: 140px; height: 53px; flex: 0 0 auto; overflow: visible; color: var(--sea-ink); }
+body .sea-glass-navigation .whale-pod {
+  position: relative;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  gap: 6px;
+}
+body .sea-glass-navigation .whale-pod > .nav-item { flex: 1 1 0; min-width: 0; }
+body .sea-glass-navigation .nav-list .nav-link {
+  color: var(--sea-ink);
+  height: calc(var(--nav-h) - 26px);
+  padding: 8px 4px;
+  font-size: 13px;
+  letter-spacing: .025em;
+}
+body .sea-glass-navigation .nav-list .nav-link:is(:hover, :focus, .active) { color: var(--sea-ink); }
+.sea-glass-navigation .nav-label { white-space: nowrap; }
+body .sea-glass-navigation { --nav-label-drop: 14px; --nav-whale-rise: 29px; }
+body .sea-glass-navigation .nav-link.active::after { content: none; display: none; }
+body .sea-glass-navigation .nav-whale { width: 62px; height: 36px; }
+body .sea-glass-navigation .nav-whale::after { content: none; }
+.sea-glass-navigation .nav-orca { display: block; width: 100%; height: 100%; overflow: visible; }
+.sea-glass-navigation .nav-orca__body { fill: #203c58; }
+.sea-glass-navigation .nav-orca__belly { fill: #f0fffc; }
+.sea-glass-navigation .nav-orca__fin { fill: #2b5369; }
+
+/* Enough opaque backing for text over either the dark Home or light articles. */
+body .sea-glass-navigation .rna-nav .rna-menu {
+  --base-size: 32px;
+  --rna-lane: 64px;
+  top: calc(100% + 8px);
+  left: 0;
+  right: auto;
+  width: max(100%, 260px);
+  padding: 14px 12px 17px;
+  transform: none;
+  /* Override the legacy Home margin/opacity entrance: moving a blurred panel
+     also moves its shadow and briefly overlaps the navigation bar. */
+  animation: none;
+  margin-top: 0;
+  opacity: 1;
+  color: var(--sea-ink);
+  border: 1px solid #dbfffb;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #eafff9f7, #e9f5f8fa 49%, #daf2f2f7);
+  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px #7acbd56b, 0 14px 30px #244d6726;
+  /* The near-opaque gradient already supplies the frosted surface. Avoid
+     resampling the animated Home canvas behind each opening dropdown. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  max-height: calc(100dvh - var(--nav-h) - 20px);
+  scrollbar-width: thin;
+  scrollbar-color: #98c6ca transparent;
+}
+body .sea-glass-navigation .rna-nav:last-child .rna-menu { left: auto; right: 0; }
+body .sea-glass-navigation .rna-menu::before { opacity: .025; }
+body .sea-glass-navigation .rna-menu::after { content: none; animation: none; }
+@media (min-width: 1060px) {
+  /* Keep pointer ownership while crossing the 8 px visual gap to a panel. */
+  body .sea-glass-navigation .rna-nav.is-open::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+  }
+}
+body .sea-glass-navigation .rna-menu .rna-branch { min-height: 54px; padding: 4px 0 4px 9px; color: var(--sea-ink); }
+body .sea-glass-navigation .rna-menu .rna-branch__label { padding: 11px 9px; border-radius: 13px; font-size: 14px; }
+body .sea-glass-navigation .rna-menu .rna-branch:is(:hover, :focus-visible, .active) .rna-branch__label { background: #bdcfe94d; color: var(--sea-ink); }
+body .sea-glass-navigation .rna-menu .rna-branch__bond { flex-basis: 9px; background: #b6d3db; }
+body .sea-glass-navigation .rna-menu__backbone .rna-chain-line { stroke: #91bcc8; opacity: .72; }
+body .sea-glass-navigation .rna-menu__backbone .rna-chain-halo { stroke: #fff; opacity: .7; }
+
+/* Keep base hues and the C-to-U transition, with legible ink on pale glass. */
+body .site-nav.sea-glass-navigation .rna-menu.rna-menu .rna-branches .rna-branch__base[data-base] {
+  color: var(--sea-ink);
+  text-shadow: none;
+  border-color: color-mix(in srgb, var(--rna-edge) 35%, white);
+  background: radial-gradient(circle at 28% 20%, #fff, transparent 55%), color-mix(in srgb, var(--rna-fill) 25%, #f5fbff);
+  box-shadow: inset 0 1px 2px #fff, 0 3px 7px #426b7d18;
+}
+body .sea-glass-navigation .wiki-search {
+  --search-ink: #171950;
+  --search-muted: #476679;
+  --search-line: #abcfd7;
+  --search-surface: #effbfafc;
+  --search-field: #f8ffff;
+  --search-hover: #c8e6e9;
+  --search-accent: #3d6482;
+  position: relative;
+  top: auto;
+  right: auto;
+  margin: 0;
+  height: calc(var(--nav-h) - 26px);
+  color-scheme: light;
+}
+body .sea-glass-navigation .wiki-search summary { background: #f4ffffb3; box-shadow: inset 0 1px 1px #fff, 0 3px 8px #426b7d12; }
+body .sea-glass-navigation .wiki-search-panel { top: calc(100% + 8px); }
+body .sea-glass-navigation :is(.site-brand, .nav-link, .rna-branch):focus-visible { outline: 2px solid #365f89; outline-offset: 3px; border-radius: 10px; }
+
+@media (min-width: 1060px) and (max-width: 1250px) {
+  body .sea-glass-navigation .nav-shell { padding-inline: 16px; gap: 14px; }
+  .sea-glass-navigation .orca-wordmark { width: 116px; }
+  body .sea-glass-navigation .site-brand .site-logo { width: 56px; height: 40px; }
+  body .sea-glass-navigation .nav-list .nav-link { font-size: 12px; }
+}
+@media (max-width: 1059px) {
+  :root { --nav-h: 124px; }
+  body .site-nav.sea-glass-navigation { padding: 8px 12px; }
+  body .sea-glass-navigation .nav-shell { min-height: calc(var(--nav-h) - 16px); padding: 7px 14px 0; gap: 0; flex-wrap: wrap; }
+  body .sea-glass-navigation .site-brand { width: calc(100% - 52px); height: 44px; }
+  body .sea-glass-navigation .site-brand .site-logo { width: 54px; height: 38px; }
+  .sea-glass-navigation .orca-wordmark { width: 112px; height: 42px; }
+  body .sea-glass-navigation .whale-pod { flex: 0 0 100%; width: 100%; order: 2; gap: 0; }
+  body .sea-glass-navigation .nav-list .nav-link { height: 54px; font-size: 12px; }
+  body .sea-glass-navigation .wiki-search { position: absolute; top: 7px; right: 14px; height: 44px; }
+  body .sea-glass-navigation .wiki-search-panel { top: calc(var(--nav-h) - 10px); }
+  body .sea-glass-navigation .rna-nav .rna-menu,
+  body .sea-glass-navigation .rna-nav:last-child .rna-menu {
+    position: fixed;
+    top: calc(var(--nav-h) + 4px);
+    left: 50%;
+    right: auto;
+    width: min(360px, calc(100vw - 24px));
+    transform: translateX(-50%);
+  }
+  body .sea-glass-navigation { --nav-label-drop: 10px; --nav-whale-rise: 24px; }
+  body .sea-glass-navigation .nav-whale { width: 44px; height: 32px; }
+  body .sea-glass-navigation .nav-whale img { width: 44px; height: 32px; }
+  body .sea-glass-navigation .nav-link.active::after { bottom: 3px; }
+}
+@media (max-width: 599px) {
+  :root { --nav-h: 170px; }
+  body .site-nav.sea-glass-navigation { padding-inline: 8px; }
+  body .sea-glass-navigation .nav-shell { padding: 7px 10px 5px; border-radius: 20px; }
+  body .sea-glass-navigation .whale-pod { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2px; }
+  body .sea-glass-navigation .nav-list .nav-link { height: 44px; padding: 5px 1px; font-size: 12px; }
+  body .sea-glass-navigation .nav-whale { display: none; }
+  body .sea-glass-navigation { --nav-label-drop: 0px; }
+  body .sea-glass-navigation .wiki-search { right: 10px; }
+  body .sea-glass-navigation .rna-menu .rna-branch__label { font-size: 15px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body .sea-glass-navigation .nav-shell,
+  body .sea-glass-navigation .rna-nav .rna-menu { background: #e8f6f5; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  body .sea-glass-navigation .nav-shell::before { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+
+/* Home only: night water, restrained luminous currents and plankton. */
+body .site-nav.night-ocean-navigation { --sea-ink: #e4fff8; --menu-plankton: #83f4de; }
+body .night-ocean-navigation .nav-shell {
+  border-color: #4eaca64f;
+  background: radial-gradient(ellipse at 87% 110%, #13656c85, transparent 46%), linear-gradient(112deg, #0a2634f7, #0d3544f7 56%, #103e4bf7);
+  box-shadow: inset 0 1px 0 #a4f5e02b, inset 0 -1px 0 #59b6b34a, 0 12px 35px #0005;
+}
+body .night-ocean-navigation .nav-shell::before { backdrop-filter: none; -webkit-backdrop-filter: none; }
+body .night-ocean-navigation .sea-current { opacity: .17; mix-blend-mode: screen; }
+body .night-ocean-navigation .nav-orca__body { fill: #a2ddd9; }
+body .night-ocean-navigation .nav-orca__belly { fill: #f2fffb; }
+body .night-ocean-navigation .nav-orca__fin { fill: #5bacae; }
+body .night-ocean-navigation .rna-nav .rna-menu {
+  background: radial-gradient(ellipse at 100% 100%, #13596380, transparent 65%), linear-gradient(125deg, #0c2a38fc, #103b48fc);
+  border-color: #6ac9bd55;
+  box-shadow: inset 0 1px 0 #bdfff125, 0 16px 32px #0005;
+}
+body .night-ocean-navigation .rna-menu .rna-branch:is(:hover, :focus-visible, .active) .rna-branch__label { background: #92e4d71a; }
+body .site-nav.night-ocean-navigation .rna-menu.rna-menu .rna-branches .rna-branch__base[data-base] {
+  color: #e4fff8;
+  border-color: color-mix(in srgb, var(--rna-edge) 45%, #236175);
+  background: radial-gradient(circle at 28% 20%, #ffffff20, transparent 65%), color-mix(in srgb, var(--rna-fill) 15%, #103c4b);
+  box-shadow: inset 0 1px 1px #d6fff32b, 0 0 10px #67d9ca12;
+}
+body .night-ocean-navigation .rna-menu__backbone .rna-chain-line { stroke: #6ec7c0; }
+body .night-ocean-navigation .rna-menu__backbone .rna-chain-halo { stroke: #70ead0; opacity: .12; }
+body .night-ocean-navigation .wiki-search {
+  --search-ink: #e4fff8; --search-muted: #a0c5ca; --search-line: #336774;
+  --search-surface: #0d303efc; --search-field: #123e4b; --search-hover: #23525c; --search-accent: #88eed9;
+  color-scheme: dark;
+}
+body .night-ocean-navigation .wiki-search summary { background: #98efda12; box-shadow: inset 0 1px 0 #c1ffeb30; }
+body .night-ocean-navigation :is(.site-brand, .nav-link, .rna-branch):focus-visible { outline-color: #91efd9; }
+/* The whole real menu grows from small particles; there is no second text
+   layer. Do not clip its shadow at the border while the mask is active. */
+body .sea-glass-navigation .rna-menu.is-particle-arrival {
+  -webkit-mask-image: radial-gradient(circle, #000 var(--menu-particle-radius), transparent calc(var(--menu-particle-radius) + .3px));
+  mask-image: radial-gradient(circle, #000 var(--menu-particle-radius), transparent calc(var(--menu-particle-radius) + .3px));
+  -webkit-mask-size: 8px 8px;
+  mask-size: 8px 8px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-clip: no-clip;
+  mask-clip: no-clip;
+}
+.night-plankton { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: inherit; pointer-events: none; overflow: hidden; z-index: 0; }
+.night-plankton g { transform-origin: center; animation: night-plankton-drift 9s ease-in-out infinite alternate; }
+.night-plankton g:nth-child(2) { animation-delay: -4s; animation-duration: 12s; }
+@keyframes night-plankton-drift { from { transform: translateY(2px); opacity: .45; } to { transform: translateY(-3px); opacity: .9; } }
+@media (prefers-reduced-motion: reduce) { .night-plankton g { animation: none; } }
+@media (prefers-reduced-transparency: reduce) {
+  body .night-ocean-navigation .nav-shell, body .night-ocean-navigation .rna-nav .rna-menu { background: #0d303e; }
+}

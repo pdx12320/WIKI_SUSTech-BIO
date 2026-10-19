@@ -32,11 +32,17 @@
 
   const storyRoot = document.querySelector('[data-ot]');
   if (storyRoot) {
+    let storyProgress = 0;
     const syncStory = () => {
-      navigation.inert = !storyRoot.classList.contains('ot--static') &&
+      // The opening frame offers navigation; tuck it away as the story starts.
+      const hidden = storyProgress > .001 && !storyRoot.classList.contains('ot--static') &&
         !storyRoot.classList.contains('is-story-complete');
+      navigation.inert = hidden;
+      if (hidden) navigation.classList.add('is-story-hidden');
+      else navigation.classList.remove('is-story-hidden');
     };
     storyRoot.addEventListener('ot:frame', event => {
+      storyProgress = event.detail.p;
       storyRoot.classList.toggle('is-story-complete', event.detail.p >= 1);
       syncStory();
     });

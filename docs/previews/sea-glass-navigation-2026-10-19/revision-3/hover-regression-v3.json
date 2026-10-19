@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "report": [
+    {
+      "route": "/",
+      "width": 1440,
+      "groups": 5,
+      "hoverGap": true,
+      "keyboard": true,
+      "search": true,
+      "errors": []
+    },
+    {
+      "route": "/human-practices",
+      "width": 1440,
+      "groups": 5,
+      "hoverGap": true,
+      "keyboard": true,
+      "search": true,
+      "errors": []
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "groups": 5,
+      "hoverGap": false,
+      "keyboard": true,
+      "search": true,
+      "errors": []
+    },
+    {
+      "route": "/human-practices",
+      "width": 390,
+      "groups": 5,
+      "hoverGap": false,
+      "keyboard": true,
+      "search": true,
+      "errors": []
+    }
+  ]
+}

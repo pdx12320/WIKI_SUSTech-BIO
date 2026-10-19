@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "reports": [
+    {
+      "route": "/",
+      "group": "Team",
+      "paintedPixels": 1840,
+      "frameCount": 61,
+      "maxGap": 18.09999990463257,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/",
+      "group": "Project",
+      "paintedPixels": 2895,
+      "frameCount": 61,
+      "maxGap": 17.59999990463257,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/",
+      "group": "Wet Lab",
+      "paintedPixels": 2269,
+      "frameCount": 61,
+      "maxGap": 18.199999809265137,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/",
+      "group": "Dry Lab",
+      "paintedPixels": 841,
+      "frameCount": 61,
+      "maxGap": 17.5,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/",
+      "group": "Engagement",
+      "paintedPixels": 1552,
+      "frameCount": 61,
+      "maxGap": 18,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/model",
+      "group": "Team",
+      "paintedPixels": 2178,
+      "frameCount": 61,
+      "maxGap": 17.5,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/model",
+      "group": "Project",
+      "paintedPixels": 3361,
+      "frameCount": 61,
+      "maxGap": 17.199999809265137,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/model",
+      "group": "Wet Lab",
+      "paintedPixels": 2799,
+      "frameCount": 61,
+      "maxGap": 17.100000143051147,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/model",
+      "group": "Dry Lab",
+      "paintedPixels": 892,
+      "frameCount": 61,
+      "maxGap": 17.200000047683716,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/model",
+      "group": "Engagement",
+      "paintedPixels": 2016,
+      "frameCount": 61,
+      "maxGap": 17.200000047683716,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/human-practices",
+      "group": "Team",
+      "paintedPixels": 2198,
+      "frameCount": 61,
+      "maxGap": 17.59999990463257,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/human-practices",
+      "group": "Project",
+      "paintedPixels": 3326,
+      "frameCount": 61,
+      "maxGap": 17.800000190734863,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/human-practices",
+      "group": "Wet Lab",
+      "paintedPixels": 2817,
+      "frameCount": 61,
+      "maxGap": 17.600000143051147,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/human-practices",
+      "group": "Dry Lab",
+      "paintedPixels": 901,
+      "frameCount": 61,
+      "maxGap": 17.59999990463257,
+      "stablePanel": true,
+      "cleanup": true
+    },
+    {
+      "route": "/human-practices",
+      "group": "Engagement",
+      "paintedPixels": 1958,
+      "frameCount": 61,
+      "maxGap": 17.600000143051147,
+      "stablePanel": true,
+      "cleanup": true
+    }
+  ],
+  "reducedMotion": true,
+  "rapidSwitch": true,
+  "keyboardReveal": true
+}

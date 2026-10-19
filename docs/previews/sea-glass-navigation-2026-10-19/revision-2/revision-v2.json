@@ -1,0 +1,31 @@
+{
+  "particles": {
+    "frames": 52,
+    "stable": true
+  },
+  "home": {
+    "initial": {
+      "inert": false,
+      "bottom": 112,
+      "top": 0,
+      "classes": "site-nav whale-navigation sea-glass-navigation night-ocean-navigation fixed-top",
+      "root": "ot-root is-ready"
+    },
+    "scrolled": {
+      "inert": true,
+      "bottom": -11.199996948242188,
+      "top": -123.19999694824219,
+      "classes": "site-nav whale-navigation sea-glass-navigation night-ocean-navigation fixed-top is-story-hidden is-scroll-hidden",
+      "root": "ot-root is-ready"
+    },
+    "restored": {
+      "inert": false,
+      "bottom": 112,
+      "top": 0,
+      "classes": "site-nav whale-navigation sea-glass-navigation night-ocean-navigation fixed-top",
+      "root": "ot-root is-ready"
+    }
+  },
+  "errors": [],
+  "passed": true
+}

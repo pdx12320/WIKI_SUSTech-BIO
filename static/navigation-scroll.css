@@ -13,14 +13,11 @@ body .site-nav[data-scroll-navigation].is-scroll-hidden {
   body .site-nav[data-scroll-navigation] { transition: none; }
 }
 
-/* CSS gates the first paint too, before the animation module has loaded.
-   Static/reduced-motion fallbacks retain their normal navigation. */
-body.ot:has([data-ot]:not(.ot--static):not(.is-story-complete)) .site-nav {
-  visibility: hidden;
-  opacity: 0;
+/* Home starts with navigation visible, then slides it above the story.
+   Keep the transform transition; inert prevents focus on hidden links. */
+body.ot .site-nav[data-scroll-navigation].is-story-hidden {
   pointer-events: none;
   transform: translateY(-110%);
-  transition: none;
 }
 
 /* Engineering shares one animated offset between menu and reading workspace. */

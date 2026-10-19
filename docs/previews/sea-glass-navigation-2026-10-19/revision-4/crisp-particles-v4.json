@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "reports": [
+    {
+      "route": "/",
+      "name": "Team",
+      "frames": 40,
+      "handoffMs": 407.30000019073486,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/",
+      "name": "Project",
+      "frames": 40,
+      "handoffMs": 423.89999985694885,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/",
+      "name": "Wet Lab",
+      "frames": 40,
+      "handoffMs": 425.2000000476837,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/",
+      "name": "Dry Lab",
+      "frames": 40,
+      "handoffMs": 427.39999985694885,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/",
+      "name": "Engagement",
+      "frames": 40,
+      "handoffMs": 427.10000014305115,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/model",
+      "name": "Team",
+      "frames": 40,
+      "handoffMs": 427.59999990463257,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/model",
+      "name": "Project",
+      "frames": 40,
+      "handoffMs": 417.89999985694885,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/model",
+      "name": "Wet Lab",
+      "frames": 40,
+      "handoffMs": 420.7000000476837,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/model",
+      "name": "Dry Lab",
+      "frames": 40,
+      "handoffMs": 423.5,
+      "overlap": false,
+      "stablePanel": true
+    },
+    {
+      "route": "/model",
+      "name": "Engagement",
+      "frames": 40,
+      "handoffMs": 423.09999990463257,
+      "overlap": false,
+      "stablePanel": true
+    }
+  ],
+  "keyboard": true,
+  "touch": true,
+  "reducedMotion": true
+}

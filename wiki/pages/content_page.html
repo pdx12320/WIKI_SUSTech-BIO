@@ -34,7 +34,6 @@
   {% endif %}
 {% endfor %}
 {% block page_styles %}
-{% if content.source_label == 'docs/project/blueprint.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='control-milestones.css') }}">{% endif %}
 {% if has_dbtl %}<link rel="stylesheet" href="{{ url_for('static', filename='reading-orbit/dbtl-wheel.css') }}">{% endif %}
 <link rel="stylesheet" href="{{ url_for('static', filename='content-reading.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='model-reading.css') }}">
@@ -46,7 +45,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='description-title.css') }}">
 {% endif %}
 {% if content.source_label == 'docs/wet-lab/measurement.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='measurement-reading.css') }}">{% endif %}
-{% if content.source_label in ['docs/project/blueprint.md', 'docs/project/results.md'] %}<link rel="stylesheet" href="{{ url_for('static', filename='experiment-prose.css') }}">{% endif %}
+{% if content.source_label == 'docs/project/results.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='experiment-prose.css') }}">{% endif %}
 {% if personality %}<link rel="stylesheet" href="{{ url_for('static', filename='chapter-personalities.css') }}">{% endif %}
 {% endblock %}
 {% block page_scripts %}
@@ -54,7 +53,7 @@
 <script src="{{ url_for('static', filename='content-reading.js') }}" defer></script>
 <script src="{{ url_for('static', filename='content-back-to-top.js') }}" defer></script>
 {% if content.source_label == 'docs/project/description.md' %}<script src="{{ url_for('static', filename='description-stats.js') }}" defer></script>{% endif %}
-{% if content.source_label in ['docs/project/blueprint.md', 'docs/project/results.md'] %}<script src="{{ url_for('static', filename='experiment-prose.js') }}" defer></script>{% endif %}
+{% if content.source_label == 'docs/project/results.md' %}<script src="{{ url_for('static', filename='experiment-prose.js') }}" defer></script>{% endif %}
 {% endblock %}
 
 {% block main %}

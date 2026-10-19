@@ -1,21 +1,22 @@
 // Scroll remains the story clock. This one, interruptible replay returns to
 // the actual C position, holds the molecular edit, then enters the project.
 export const REPLAY_TIMING = Object.freeze({ question: 2.4, rewind: 3.2, target: 1.1, edit: 8.5, return: 3.0 });
+export const HOME_REPLAY_TIMING = Object.freeze({ ...REPLAY_TIMING, question: REPLAY_TIMING.question / 2, rewind: REPLAY_TIMING.rewind / 2, edit: REPLAY_TIMING.edit / 2 });
 const clamp = x => Math.max(0, Math.min(1, x));
 const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
 
-export function replayFrame(seconds) {
+export function replayFrame(seconds, { timing = REPLAY_TIMING, questionFrom = .803 } = {}) {
   let t = Math.max(0, seconds);
-  if (t < REPLAY_TIMING.question) return { phase: 'question', take: .803 };
-  t -= REPLAY_TIMING.question;
-  if (t < REPLAY_TIMING.rewind) return { phase: 'rewind', take: .803 - .253 * ease(t / REPLAY_TIMING.rewind) };
-  t -= REPLAY_TIMING.rewind;
-  if (t < REPLAY_TIMING.target) return { phase: 'target', take: .55, edit: 0 };
-  t -= REPLAY_TIMING.target;
-  if (t < REPLAY_TIMING.edit) return { phase: 'edit', take: .55, edit: clamp(t / REPLAY_TIMING.edit) };
-  t -= REPLAY_TIMING.edit;
-  if (t < REPLAY_TIMING.return) {
-    const blend = ease(t / REPLAY_TIMING.return);
+  if (t < timing.question) return { phase: 'question', take: questionFrom + (.803 - questionFrom) * ease(t / timing.question) };
+  t -= timing.question;
+  if (t < timing.rewind) return { phase: 'rewind', take: .803 - .253 * ease(t / timing.rewind) };
+  t -= timing.rewind;
+  if (t < timing.target) return { phase: 'target', take: .55, edit: 0 };
+  t -= timing.target;
+  if (t < timing.edit) return { phase: 'edit', take: .55, edit: clamp(t / timing.edit) };
+  t -= timing.edit;
+  if (t < timing.return) {
+    const blend = ease(t / timing.return);
     return { phase: 'return', take: .89 + .065 * blend, cameraBlend: blend, edit: 1 };
   }
   return { phase: 'done', take: .955 };
@@ -26,7 +27,10 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   const startButton = root.querySelector('[data-edit-start]');
   let played = false, active = false, elapsed = 0, previous = -1, phase = '', ready = false, editingStarted = false;
   let session = 0, returning = false;
-  const editStart = REPLAY_TIMING.question + REPLAY_TIMING.rewind + REPLAY_TIMING.target;
+  const quickRewind = root.hasAttribute?.('data-edit-quick-rewind') || false;
+  const timing = quickRewind ? HOME_REPLAY_TIMING : REPLAY_TIMING;
+  let questionFrom = .803;
+  const editStart = timing.question + timing.rewind + timing.target;
   const scrollToTake = take => {
     const rect = story.getBoundingClientRect();
     // The journey version adds an opening before the shared biology story.
@@ -49,7 +53,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   };
   const interrupt = () => { if (active) finish(); };
   const beginEdit = () => { editingStarted = true; elapsed = editStart; };
-  startButton?.addEventListener('click', () => start(REPLAY_TIMING.question + REPLAY_TIMING.rewind));
+  startButton?.addEventListener('click', () => start(timing.question + timing.rewind));
   window.addEventListener('wheel', event => {
     if (!active) return;
     if (scrollReturn && phase === 'return') return;
@@ -85,6 +89,8 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
     setReady(value) { ready = value; },
     update(take, dt) {
       if (enabled && autoStart && !played && previous < .797 && take >= .797 && take < .94) {
+        // Continue from the live camera position instead of snapping to .803.
+        questionFrom = quickRewind ? take : .803;
         start();
       }
       previous = take;
@@ -92,7 +98,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
       if (!active) return null;
       // A background tab must not skip the readable edit when it resumes.
       elapsed += Math.min(dt, .05);
-      if (scrollReturn && editingStarted && elapsed >= editStart + REPLAY_TIMING.edit) {
+      if (scrollReturn && editingStarted && elapsed >= editStart + timing.edit) {
         // Hold the completed edit. Rebase the document once without moving
         // the camera; from here the reader's scroll is the only clock.
         const entering = !returning;
@@ -106,7 +112,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
         if (amount >= 1) finish();
         return frame;
       }
-      let frame = replayFrame(elapsed);
+      let frame = replayFrame(elapsed, { timing, questionFrom });
       if (!editingStarted && elapsed >= editStart) {
         elapsed = editStart;
         frame = { phase: 'placement', take: .55, edit: 0 };

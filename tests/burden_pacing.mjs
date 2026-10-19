@@ -47,3 +47,17 @@ for (let q = -.19; q <= 1; q += .001) {
 }
 assert.ok(Math.abs(after.scale * before.length - after.length) < 1e-10);
 console.log(`Passed: comparison occupies ${(share * 100).toFixed(1)}% of the take, surrounding speed unchanged, scroll reversible`);
+
+const quick = buildScrollTrack(keys, { quickEditExit: true });
+assert.ok(Math.abs(span(quick, .89, .935) - span(after, .89, .935) / 2) < 1e-10);
+for (const [a, b] of [[-.19, .89], [.935, 1]]) {
+  assert.ok(Math.abs(span(quick, a, b) - span(after, a, b)) < 1e-10,
+    'the introduction, editing sequence and conclusion reading distance must be preserved');
+}
+for (let q = -.19; q <= 1; q += .001) {
+  const d = distance(quick, q), s = quick.track.find(s => d <= s.end);
+  const reversed = s.from + (d - s.start) / (s.end - s.start) * (s.to - s.from);
+  assert.ok(Math.abs(reversed - q) < 1e-10);
+}
+assert.ok(Math.abs(quick.scale / after.scale - quick.length / after.length) < 1e-10);
+console.log('Passed homepage half-distance edit exit, unchanged reading distance and reversible mapping.');

@@ -9,7 +9,7 @@
 
 {% block page_scripts %}
 {{ super() }}
-<script src="{{ url_for('static', filename='design-communication.js') }}" defer></script>
+{# Use the same content-directory labels and interaction controller as HP. #}
 <script src="{{ url_for('static', filename='design-opening.js') }}" defer></script>
 {% endblock %}
 

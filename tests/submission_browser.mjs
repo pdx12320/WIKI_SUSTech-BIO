@@ -21,7 +21,6 @@ const checks = [];
 const figures = new Set();
 const importedPrefix = '/assets/images/submission-20261017/';
 const routes = [
-  {path: '/blueprint', title: 'Blueprint', figures: 2, heading: /Fundamental/},
   {path: '/results', title: 'Results', figures: 8, heading: /Functional Validation/},
   {path: '/future', title: 'Future', figures: 2, heading: /^Short-Term/},
   {path: '/measurement', title: 'Measurement', figures: 15, heading: /The Measurement Challenge/},
@@ -187,7 +186,7 @@ try {
         assert.deepEqual(await page.locator('.markdown-content h2').allTextContents(),
           ['Short-Term — Platform Optimization', 'Long-Term — Therapeutic Translation']);
       }
-      if (route.path === '/blueprint' || route.path === '/results') {
+      if (route.path === '/results') {
         const headings = await page.locator('.markdown-content :is(h2,h3)').allTextContents();
         assert.ok(headings.some(title => title.startsWith('05. MODEL')));
         assert.ok(!headings.some(title => title.includes('PROGRAM')));

@@ -1,0 +1,86 @@
+[
+  {
+    "chapter": "fundamental-research",
+    "source_filename": "FUNDAMENTAL_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/fundamental-research.png",
+    "sha256": "d1233bb3286f36dc73d60ad51163112601b7ffe244c3b872ee69f98e8daf9068",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "pod",
+    "source_filename": "POD_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/pod.png",
+    "sha256": "61d94dc761dd4bd8bbc748aa76c5c1fd00fbbca114d86d4016b5c9d1df28c961",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "cetus",
+    "source_filename": "CETUS_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/cetus.png",
+    "sha256": "aeeddcbfb850edbb7516fe295d16c5ad6b08c88d69b1d9fb24201955088ed480",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "integrated-orca",
+    "source_filename": "IO_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/integrated-orca.png",
+    "sha256": "772a87ace9d4122935480e34f1c9b2c39c0f41c53de5c01317599b9a16ec7fae",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "gfa",
+    "source_filename": "GFA_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/gfa.png",
+    "sha256": "b742d7878fbfb8f1cd29a91cce69e8be54396523c8975ab6b6b5070948c149f5",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "mre",
+    "source_filename": "MRE_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/mre.png",
+    "sha256": "1c2f261659de373be164474612fa9547d09bc41c5177105c7c992f04e3349d98",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "aso",
+    "source_filename": "ASO_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/aso.png",
+    "sha256": "58e7b732080b73896133e15f23849e0f6eff2dad7562e24e257cacf05bc19aad",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "cre-loxp",
+    "source_filename": "CRELOXP_Conclusion",
+    "asset": "assets/images/engineering-conclusions/cre-loxp.png",
+    "sha256": "bbe52f4f1116da478317ea3a61ff7722e2ce0c382bf8bfce8741ae9d69527ce0",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "deliver",
+    "source_filename": "DELIVER_Conclusion",
+    "asset": "assets/images/engineering-conclusions/deliver.png",
+    "sha256": "a5d85ed0b9d10a4e160af675615cd0108aaa3f60e9931194ed5be178f26b92e7",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "measure",
+    "source_filename": "MEASURE_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/measure.png",
+    "sha256": "bc808ee056071f91a8dd9aac2d121c224b0d790bef8bd7ae6628bcab2768aa12",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "functional-validation",
+    "source_filename": "FV_Conclusion",
+    "asset": "assets/images/engineering-conclusions/functional-validation.png",
+    "sha256": "21008a7f13fb3b2c00dec6c04046b0d2121ce9ea95f860210fc31f814a7e0703",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  },
+  {
+    "chapter": "model",
+    "source_filename": "MODEL_Conclusion.png",
+    "asset": "assets/images/engineering-conclusions/model.png",
+    "sha256": "66fdfa78b2c471ff349faeb4271bc473fe1e2389611ba7bc9022b910f346f7cf",
+    "source": "User-provided conclusion artwork; original bytes preserved"
+  }
+]

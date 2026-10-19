@@ -1,3 +1,11 @@
+/* The reading orbit replaces only the document scrollbar, not nested scrollers. */
+html.js:has([data-reading-orbit]) {
+  scrollbar-width: none;
+}
+html.js:has([data-reading-orbit])::-webkit-scrollbar {
+  display: none;
+}
+
 /* The shell follows reading position while its gold line fills the fixed path. */
 .reading-orbit {
   --orbit-ink: #285858;

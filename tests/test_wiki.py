@@ -16,7 +16,6 @@ PUBLIC_ROUTES = [
     "/team",
     "/attributions",
     "/description",
-    "/blueprint",
     "/engineering",
     "/results",
     "/contribution",
@@ -42,7 +41,6 @@ PLACEHOLDER_ROUTES = [
     "/team",
     "/attributions",
     "/description",
-    "/blueprint",
     "/engineering",
     "/results",
     "/contribution",
@@ -81,7 +79,7 @@ class WikiRoutesTest(unittest.TestCase):
                 self.get_text(route)
 
     def test_unknown_page_returns_designed_404(self):
-        for route in ("/this-page-does-not-exist",):
+        for route in ("/this-page-does-not-exist", "/blueprint"):
             with self.subTest(route=route):
                 response = self.client.get(route)
                 self.assertEqual(response.status_code, 404)

@@ -1,0 +1,83 @@
+/* Closing surfaces echo Overview, with a warm canvas and chapter-colored emphasis. */
+.engineering-conclusion-card {
+  --conclusion-accent: #3c607a;
+  position: relative;
+  margin: 34px -12px 42px;
+  padding: 26px 28px 28px;
+  border: 1px solid #e6dfd3;
+  border-top: 3px solid var(--conclusion-accent);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fffdf9, #f6f1e8);
+  box-shadow: 0 14px 30px -12px #675c4540, 0 3px 8px #675c450b;
+}
+[data-engineering-panel='pod'], [data-engineering-panel='cetus'], [data-engineering-panel='integrated-orca'] { --conclusion-color: #087e98; }
+[data-engineering-panel='gfa'], [data-engineering-panel='mre'], [data-engineering-panel='aso'], [data-engineering-panel='cre-loxp'] { --conclusion-color: #7540a6; }
+[data-engineering-panel='deliver'] { --conclusion-color: #315e99; }
+[data-engineering-panel='measure'] { --conclusion-color: #a5540c; }
+[data-engineering-panel='functional-validation'] { --conclusion-color: #a33f6a; }
+.engineering-conclusion-card { --conclusion-accent: var(--conclusion-color, #3c607a); }
+.engineering-copy .markdown-content .engineering-conclusion-card > :is(h3,h4,h5,h6):first-child {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 22px; padding: 0; border: 0;
+  color: var(--conclusion-accent);
+  font: 800 13px/1.4 'Source Sans 3', 'Segoe UI', sans-serif;
+  letter-spacing: .14em; text-transform: uppercase;
+}
+.engineering-conclusion-card > :first-child::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--conclusion-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--conclusion-accent) 12%, transparent);
+}
+.engineering-conclusion-card > p { margin: 0 0 22px; }
+.engineering-conclusion-card > :last-child { margin-bottom: 0; }
+.engineering-copy .markdown-content .engineering-conclusion-card strong { color: var(--conclusion-accent); font-weight: 750; }
+.engineering-copy .markdown-content .engineering-conclusion-card .engineering-figure-link { display: block; width: 100%; max-width: none; margin: 0; }
+.engineering-copy .markdown-content img.engineering-conclusion-illustration {
+  display: block; float: none; width: 100%; max-width: none; height: auto;
+  margin: 0; padding: 0; border: 0; border-radius: 10px; box-shadow: none;
+}
+@media (max-width:760px) {
+  .engineering-conclusion-card { margin: 26px -6px 34px; padding: 20px 16px 22px; border-radius: 16px; }
+}
+@media print { .engineering-conclusion-card { background: #fff; box-shadow: none; margin-inline: 0; } }
+
+[data-engineering-panel='model-whole-body'] { --conclusion-color: #087c67; }
+
+/* Shared title treatment for opening, transition and closing cards. */
+.engineering-copy .markdown-content :is(.engineering-overview-card, .engineering-conclusion-card) > :is(h3,h4,h5,h6):first-child {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: .09em;
+  gap: 14px;
+}
+.engineering-copy .markdown-content :is(.engineering-overview-card, .engineering-conclusion-card) > :is(h3,h4,h5,h6):first-child::before {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  animation: engineering-title-glow 3.2s ease-in-out infinite;
+}
+@keyframes engineering-title-glow {
+  0%, 100% {
+    opacity: .75;
+    box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 10%, transparent),
+                0 0 5px color-mix(in srgb, currentColor 20%, transparent);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 6px color-mix(in srgb, currentColor 15%, transparent),
+                0 0 16px color-mix(in srgb, currentColor 55%, transparent);
+  }
+}
+@media (max-width:760px) {
+  .engineering-copy .markdown-content :is(.engineering-overview-card, .engineering-conclusion-card) > :is(h3,h4,h5,h6):first-child {
+    font-size: 18px;
+    letter-spacing: .07em;
+  }
+}
+@media (prefers-reduced-motion:reduce), print {
+  .engineering-copy .markdown-content :is(.engineering-overview-card, .engineering-conclusion-card) > :is(h3,h4,h5,h6):first-child::before {
+    animation: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 12%, transparent);
+  }
+}

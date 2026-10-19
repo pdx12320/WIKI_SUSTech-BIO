@@ -1,6 +1,5 @@
 (() => {
   const rules = {
-    'docs/project/blueprint.md': /^Cycle [12]\s*[—–-]/,
     'docs/project/results.md': /^Experiment (?:I|II|III)\s*[—–-]/,
   };
   const source = document.querySelector('.markdown-page[data-content-source]');

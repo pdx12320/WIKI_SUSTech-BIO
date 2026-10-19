@@ -1,0 +1,31 @@
+<section class="burden paris-burden" data-burden data-burden-paris aria-label="Global dementia burden compared with the population of Paris">
+  <div class="paris-burden__layout">
+    <div class="paris-burden__copy">
+      <div class="paris-burden__steps">
+        <div class="paris-burden__step is-on" data-paris-step>
+          <h2 class="paris-burden__statement"><strong>57 million</strong> people are living with dementia worldwide.</h2>
+        </div>
+        <div class="paris-burden__step" data-paris-step>
+          <h2 class="paris-burden__statement">One <strong>Paris.</strong></h2>
+        </div>
+        <div class="paris-burden__step" data-paris-step>
+          <h2 class="paris-burden__statement">Nearly <strong>27 times</strong> the population of Paris.</h2>
+        </div>
+        <div class="paris-burden__step" data-paris-step>
+          <h2 class="paris-burden__closing">Every one of them<br>is <em>someone.</em></h2>
+        </div>
+      </div>
+    </div>
+    <figure class="paris-burden__figure">
+      <div class="paris-burden__grid" aria-hidden="true">
+        {% for city in range(27) %}
+        <svg class="paris-burden__cluster" data-paris-cluster viewBox="0 0 80 140" aria-hidden="true">
+          <g transform="translate(40 73) scale(53 -53)" fill="none" stroke="currentColor" stroke-width=".024" stroke-linejoin="round"{% if city == 26 %} opacity=".72"{% endif %}>
+            <path d="M0 .65V.46 M-.025 .46L-.04 .29 -.085 .01 -.16 -.27 -.33 -.55 M.025 .46L.04 .29 .085 .01 .16 -.27 .33 -.55 M-.23 -.55L-.17 -.37 -.10 -.29 0 -.26 .10 -.29 .17 -.37 .23 -.55 M-.35 -.55H-.23 M.23 -.55H.35 M-.17 -.25H.17 M-.105 .015H.105 M-.055 .29H.055 M-.04 .29L.06 .16 -.085 .015 .12 -.12 -.16 -.25 M.04 .29L-.06 .16 .085 .015 -.12 -.12 .16 -.25"/>
+          </g>
+        </svg>
+        {% endfor %}
+      </div>
+    </figure>
+  </div>
+</section>

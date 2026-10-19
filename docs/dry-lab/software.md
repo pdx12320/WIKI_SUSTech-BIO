@@ -1,6 +1,6 @@
 ---
 title: Software
-heading: Whole-body Delivery Model
+heading: Delivery Dynamics
 subtitle: Whole-body delivery modeling and PUFFER.
 figures:
 - title: Delivery-to-editing model
@@ -421,4 +421,4 @@ workbench_references:
 
 # Software
 
-## Whole-body Delivery Model
+## Delivery Dynamics

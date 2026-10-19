@@ -25,7 +25,7 @@ Neither a sequence match nor a model ranking establishes that a site is edited i
 
 ### Scale 02 — System Scale
 
-The current [Whole-body Delivery Model](/software) connects delivery, tissue distribution, cellular expression and RNA editing. It examines intended and unintended editing alongside exposure and tissue coverage. Sensitivity and uncertainty analyses show how conclusions depend on the model inputs.
+The current [Delivery Dynamics](/software) model connects delivery, tissue distribution, cellular expression and RNA editing. It examines intended and unintended editing alongside exposure and tissue coverage. Sensitivity and uncertainty analyses show how conclusions depend on the model inputs.
 
 These outputs are simulations under specified assumptions. Model units, comparison criteria and risk proxies must retain their original meaning; they are not clinical doses, validated safety limits or evidence of successful delivery in a living organism. The model helps identify unanswered questions rather than resolving them experimentally.
 

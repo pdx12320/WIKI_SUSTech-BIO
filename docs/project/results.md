@@ -70,7 +70,7 @@ Our [Model](/model) workflow connected measured editing profiles with editor des
 
 **LAMAR** translated RNA-seq-supported patterns into ranked shortlists for further site validation. In Stage II testing, the top 10 and top 20 candidates included a supported site in **77.9% and 92.1% of 140 positive windows**, respectively. These results describe prioritization within the evaluated data, rather than confirmed activity at every ranked site.
 
-The [Whole-body Delivery Model](/software#rewire) extended this workflow to delivery, tissue distribution, expression and multisite RNA reactions. Parameter scans, sensitivity analysis, uncertainty analysis and spatial simulations examined trade-offs among intended-product retention, unwanted editing and tissue coverage. These simulation outputs support comparisons of delivery and editing assumptions and identify processes for experimental follow-up.
+[Delivery Dynamics](/software#rewire) extended this workflow to delivery, tissue distribution, expression and multisite RNA reactions. Parameter scans, sensitivity analysis, uncertainty analysis and spatial simulations examined trade-offs among intended-product retention, unwanted editing and tissue coverage. These simulation outputs support comparisons of delivery and editing assumptions and identify processes for experimental follow-up.
 
 ## 06. Functional Validation — Toward Disease-Relevant Cellular Effects
 

@@ -308,11 +308,11 @@ class FourModelModulesTest(unittest.TestCase):
             self.assertIn(f"Module {number}", item.text())
             self.assertIn(f"module{number}", self.modules)
             self.assertFalse(any(node.tag == "a" for node in item.walk()))
-        self.assertIn("Whole-body Delivery Model", items[4].text())
+        self.assertIn("Delivery Dynamics", items[4].text())
         paragraphs = [node for node in introduction.walk() if node.tag == "p"]
         second_paragraph_links = [node for node in paragraphs[1].walk() if node.tag == "a"]
         self.assertEqual([node.attrs.get("href") for node in second_paragraph_links], ["/software#rewire"])
-        self.assertTrue(normalized(paragraphs[1].text()).endswith("Whole-body Delivery Model."))
+        self.assertTrue(normalized(paragraphs[1].text()).endswith("Delivery Dynamics."))
         software = Document(self.client.get("/software").get_data(as_text=True))
         self.assertTrue(any(node.attrs.get("id") == "rewire" for node in software.root.walk()))
 

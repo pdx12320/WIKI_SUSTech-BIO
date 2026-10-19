@@ -12,11 +12,11 @@
   {'id': 'deliver', 'label': 'Deliver', 'parts': [{'id': 'deliver', 'label': 'Deliver'}]},
   {'id': 'measure', 'label': 'Measure', 'parts': [{'id': 'measure', 'label': 'Measure'}]},
   {'id': 'model', 'label': 'Model', 'parts': [
-    {'id': 'model-rna-seq', 'label': 'RNA-seq Off-target Analysis'},
-    {'id': 'model-puf', 'label': 'PUF Specificity Design'},
-    {'id': 'model-apobec', 'label': 'APOBEC Engineering'},
-    {'id': 'model-lamar', 'label': 'LAMAR Prioritization'},
-    {'id': 'model-whole-body', 'label': 'Whole-body Delivery Model'}]},
+    {'id': 'model-rna-seq', 'label': 'Transcriptomic Landscape', 'short': 'Landscape'},
+    {'id': 'model-puf', 'label': 'Recognition Code', 'short': 'Recognition'},
+    {'id': 'model-apobec', 'label': 'Catalytic Design', 'short': 'Catalysis'},
+    {'id': 'model-lamar', 'label': 'LAMAR', 'short': 'LAMAR'},
+    {'id': 'model-whole-body', 'label': 'Delivery Dynamics', 'short': 'Delivery'}]},
   {'id': 'functional-validation', 'label': 'Functional Validation', 'parts': [{'id': 'functional-validation', 'label': 'Functional Validation'}]}
 ] %}
 <script type="application/json" data-engineering-map-data>{{ engineering_groups | tojson }}</script>
@@ -50,7 +50,7 @@
       {% if group.parts | length > 1 %}
       <div class="engineering-map-leaves" id="engineering-map-{{ group.id }}" data-map-branch-group="{{ group.id }}" style="--map-row: {{ loop.index + 2 }}" role="group" aria-label="{{ group.label }} branches" hidden>
         {% for part in group.parts %}
-        <a class="engineering-map-leaf" data-engineering-part="{{ part.id }}" href="#{{ part.id }}" aria-label="{{ part.label }}, open overview"><span class="map-label">{{ part.label }}</span></a>
+        <a class="engineering-map-leaf" data-engineering-part="{{ part.id }}" href="#{{ part.id }}" title="{{ part.label }}" aria-label="{{ part.label }}, open overview"><span class="map-label">{{ part.short | default(part.label) }}</span></a>
         {% endfor %}
       </div>
       {% endif %}

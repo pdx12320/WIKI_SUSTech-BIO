@@ -74,9 +74,9 @@ We redesigned a fluorescence-based editing reporter and developed **SONAR (Syste
 
 ### 05. MODEL — Connecting Editing Evidence, Editor Design and Delivery
 
-Our [Model](/model) workflow connects experimental editing profiles with computational design to improve specificity while preserving useful target activity. **RNA-seq analysis** establishes candidate editing evidence under a common screening procedure. **PUF modeling** ranks recognition-domain variants and explores additional sequence designs, while **APOBEC modeling** connects structural hypotheses with experimental evaluation of catalytic-domain variants. **LAMAR** uses RNA-seq-derived labels to prioritize RNA regions and cytidines for further testing.
+Our [Model](/model) workflow connects experimental editing profiles with computational design to improve specificity while preserving useful target activity. **Transcriptomic Landscape** uses RNA-seq analysis to establish candidate editing evidence under a common screening procedure. **Recognition Code** ranks recognition-domain variants and explores additional sequence designs, while **Catalytic Design** connects structural hypotheses with experimental evaluation of catalytic-domain variants. **LAMAR** uses RNA-seq-derived labels to prioritize RNA regions and cytidines for further testing.
 
-At the system scale, the [Whole-body Delivery Model](/software#rewire) connects delivery, tissue distribution, cellular expression and multisite RNA editing. Parameter scans, uncertainty analysis and complementary spatial simulations examine how these processes shape intended RNA products, unwanted editing and tissue coverage. Together, these models guide experimental choices and help evaluate trade-offs across the complete delivery and editing strategy.
+At the system scale, [Delivery Dynamics](/software#rewire) connects delivery, tissue distribution, cellular expression and multisite RNA editing. Parameter scans, uncertainty analysis and complementary spatial simulations examine how these processes shape intended RNA products, unwanted editing and tissue coverage. Together, these models guide experimental choices and help evaluate trade-offs across the complete delivery and editing strategy.
 
 ### Bringing the Routes Together
 

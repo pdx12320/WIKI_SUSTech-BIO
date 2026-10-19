@@ -1,0 +1,555 @@
+[
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-001.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 60428,
+    "sha256": "37908fdb908a229a2e870f357ced3669a50513bb5c53f3958589fec3e390831a"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-002.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 106772,
+    "sha256": "9000c3d078b00fbdf4fc24fbd8d645067dbca0dccbe9c0cad29dfb260778b997"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-003.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 121426,
+    "sha256": "ef8794fc5b1358123429e94b2dd19a73afb0ba990d253cf6b1bd71e77eb22903"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-004.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 66246,
+    "sha256": "68272a90318a85a527a33615d05d47cc3e8bb7cbbaec7ac60e1a445b156fceb8"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-005.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 103216,
+    "sha256": "eee739d27bf0ef1be7d19b29f7c6db85af9def2c3a777a0acbf19f637946c386"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-006.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 99276,
+    "sha256": "3264f4be448036b2a31207de9bcc82b63cf24ffc70d8fd61281104e29a786739"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-007.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 109812,
+    "sha256": "979d551e49bb03dcf2a3110b4f6c239fd965dfc242e6ab84b4214cfca39a7c00"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-008.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 104766,
+    "sha256": "d50a924074ca0531d78aef580645498ad2fbd80461d02b472f2723b55dc02c29"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-009.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 72350,
+    "sha256": "e327fe1241f02a624106f5f4d71f2290ac14a933a80bf57d9dd63305663af1b0"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-010.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 108038,
+    "sha256": "6530ec434e4c539f6fce54c5940c79b92b4b11b566e73156e3adb43a8280580e"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-011.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 123828,
+    "sha256": "f77be6c9e9124a11299b524ee2d6b3e646d6c979669a4d60d86a88e8ca59f485"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-012.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 68492,
+    "sha256": "aa3a8d608f236e8fbf918607e42a2cbdb39536b72131031404aa28aa74cdf40c"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-013.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 96658,
+    "sha256": "7dcc3afa75dbf51612c94205ea59b90479fa00365639179d18a29f8b53446667"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-014.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 71838,
+    "sha256": "6aeeed784a45e4ebabad89ff003237b8932226e31e72e7b09e77080fe7801bdd"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-015.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 72436,
+    "sha256": "6e72a847416cbbac9bd576ab0e68e6029668e83b2371421cc5edbde44500b801"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-016.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 100552,
+    "sha256": "ff2f3ab28efb83751e77ab826dd6d9175b383b9dddccaaeff22c2780984fb5e5"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-017.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 78594,
+    "sha256": "21cb4af6a884f9210f7031fa05f62364f02002328a2d2b998bf3f3e063afc5df"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-018.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 126598,
+    "sha256": "d86caa4b1f118b4684096fb51694047f48adebfd33c977cb158ffa5e356f01eb"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-019.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 79962,
+    "sha256": "6bbfc59f024ba3f5908a7dc730fb067f9bdc7d78d49e02f7235b0ed9de9ebf8e"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-020.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 104380,
+    "sha256": "dc48f9eeea41a0c368667431378b0cab01e32117f572b7183ccaab808269a8db"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-021.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 62322,
+    "sha256": "a9a18793ff027c26de6cf9e3add0310d34958de02c29c7283090bd804f6d76bb"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-022.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 64186,
+    "sha256": "c09901de0441818155a5c2d5cf9b46bac77a89ede7c705976c1f236fd61a55c9"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-023.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 87480,
+    "sha256": "b2029f53140be580cc640fc03351b136c8be352304e47148c1ab8ba480d563f7"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-024.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 80962,
+    "sha256": "37b4bbd3398372f6f372441395a666b67df58ad6eea6d8b959a5699890c66f6d"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-025.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 96340,
+    "sha256": "624482b622af34bd361a31d2428ef8383311bf200a0134bd7e3b19a5e3162fd2"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-026.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 53522,
+    "sha256": "e568ea2a0a7ad998ff0ef5d4935efd9e961cb5da1cd567656ff341dfa43c8dbb"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-027.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 108918,
+    "sha256": "445592627d7a0aa23456424cf5391deee616113329fd45246233c07cbbafb40c"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-028.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 46196,
+    "sha256": "d4ae601b44d1b0e9aceb924e1b7c996db4f039d00e63dc7f106e58885a8f0b8d"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-029.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 100218,
+    "sha256": "d5a6a0899537906b6122f57c1df356105dcdfaf405cf707f5ca5c9b2020facde"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-030.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 49230,
+    "sha256": "9d0f78e39f231afb0ce1b845680393e0233dda2ba931bd6b6a775bb744f17c43"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-031.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 86834,
+    "sha256": "29a54f25e32f7672096959ba019343b17843a74af09d40f97a75764332c63e7a"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-032.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 33828,
+    "sha256": "8a20b4e25bd3eaea2784b88f0490d9418cc7c072a10492a645d34c8402760a44"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-033.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 94920,
+    "sha256": "b46129dbd20b4b5444031e12a0d50ae0782ffdf2a27ef214db62e050d4df74cd"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-034.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 44230,
+    "sha256": "67dd78ac3712693c433d0fba605c41bb5cfbba4c367ef7f01256c3e3ca0813b0"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-035.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 62186,
+    "sha256": "5598ecf6870e8318e7224ddb4f5a07c5f35a32cb0e18a0c618042588e81a1100"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-036.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 25478,
+    "sha256": "c4ff76adf825f79aedac71bc141a293fce42616c10271105edda8d21fb2f9340"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-037.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 104928,
+    "sha256": "415011c3d7aa13bb6622091670ebba6fdb07152cc7bbac42597ca4b190766a74"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-001.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 56198,
+    "sha256": "7e587223816693a7fc224ee37c815453acef1f4864b0e15bf6593e86dc913379"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-002.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 72462,
+    "sha256": "7822c95abafb4c1da0f5f7b1d355d4aa4d3f6cb9286361a7297c5145538a7b80"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-003.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 84840,
+    "sha256": "167e7310b493734c919c1d7c3cab1db1f84687baf28d8093a26652c699dda57b"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-004.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 50372,
+    "sha256": "f36bd5a3e0d75274fd6b36a09c4a53c36d19ed8c7747d4e4962501d17ffb6d01"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-005.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 80802,
+    "sha256": "91b262744103144149a624ea8bee3ebc5ab910bf6ed20a137a0955eb4ee3725b"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-006.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 64672,
+    "sha256": "ecfe6aa74550d4edc722643fe413807243d07acab3f21ca18c9c0b7556391ef9"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-007.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 83964,
+    "sha256": "9498eaedf854bb190dc43b6f4fb3f199088383ee8686335a8509b36e7ac678e1"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-008.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 73268,
+    "sha256": "4d7005c673090dc3dda999e9c254c5fff960cf605fc0f8221e7fe79202d30830"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-009.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 43820,
+    "sha256": "1dbd583255ae5e98d386c4379c776786e9378f531b670a04f9c228be5abe65a4"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-010.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 21652,
+    "sha256": "036b75a47f6c2b2266d95de4727ccc030ea5540fb9a5accead6e9875c820d449"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-011.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 73956,
+    "sha256": "6b03624ad2429f1178469857337b56c6505917125bffbe0e1691134ce74fe788"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-012.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 74656,
+    "sha256": "db4d29724ccc838744f65a09e16b49560d9946eb726fa0d67f4cb25ad42b6bbb"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-013.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 52062,
+    "sha256": "d459dc90c81a1a8b9c9cc78483af6eabcaba3a4cb34ed4b432d5b869ba8aee24"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-014.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 71524,
+    "sha256": "26ebf76bb977b79ad74cb54afe670807f3cfb47ad12438d0115116917e40f5ca"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-015.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 54040,
+    "sha256": "049f78bc4b0b5282b49bab60a757cde3a072b0fc5fcc30c0b493cdd1bb32b51f"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-016.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 56150,
+    "sha256": "093e4d053c09087ee1082f22f74c59608806f9557f3c68bb99c9d0fc130686cd"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-017.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 72610,
+    "sha256": "57e591c27785ff08617c730edef24fa9664ac9586607a89ec381c079f5cad166"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-018.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 60186,
+    "sha256": "c0d83e4da0641fd2e3fa224e5f9bda2a83d6c90e53f0ed8d72e28f323772f8a1"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-019.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 98684,
+    "sha256": "6a832273038d5c1647fc7748eca9e9b84e632c1e3fbef802b902deebc27567ce"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-020.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 62210,
+    "sha256": "de2f9477f3f430e69b2116e9293d5ded36e0544bce48f9041b4296ef9313c4b1"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-021.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 74908,
+    "sha256": "59123cf0c9b85cef759a279db26305672944f83623ecee48c3924afae9e60307"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-022.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 53436,
+    "sha256": "df5eddac01124074cd6e44234780983ac920b31c7453d32ee6f85d1ecb3c9ec3"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-023.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 4274,
+    "sha256": "ba779f1b7d2af2781933ed0ff98bbc2d8e6ec76bb97cdc37031599d86eac27fc"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-024.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 48102,
+    "sha256": "81427d7d79ed4356b63f59d98b5e7a6fb90068dfa3c77b2dc406ac8592fcd1ab"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-025.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 67208,
+    "sha256": "23b677d01582a302e06c5a1d08245784ed4b02d8b707007b5e51321969e21817"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-026.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 64352,
+    "sha256": "afddc454e6593f5d421d0228852e1d463036bc3ad459ea60b9c72b5b1a7e24ee"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-027.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 66308,
+    "sha256": "5ba182edcbf8a3dcda185c04ca509f2ed73510abfafd55d1ea4054666f724f36"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-028.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 43704,
+    "sha256": "404e1f4a0250228f6ad9c05b7c730d014280bd36b5713fcd371ba0e54445281d"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-029.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 79916,
+    "sha256": "b094b6ca9939f0e8cc1ba950105cd0416e7dc501a622fe95980db8d6c5493f09"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-030.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 37332,
+    "sha256": "0ee5687f94fea7a0c286e8f04ebeaeaec0756b1d5f670e632e7335197a1eab7c"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-031.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 84012,
+    "sha256": "1155d0ba138b96187797e2d2ed969f7409dc401dfb10f2aa6809f5de1c04a3f4"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-032.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 45180,
+    "sha256": "36eff24271af2822f523630d8d20fe5244a12ab65fa6445f98468eef2e62fad7"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-033.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 4284,
+    "sha256": "c537e15d3f37a73f46c8d1b1785b4cb174a907ec7fbe45445a3f0c4ac2b13ede"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-034.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 68514,
+    "sha256": "5b47b6c03cecce32bbe8d20f1f0678d794450df2d1ad6298d10bd155e1cfe958"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-035.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 30836,
+    "sha256": "062ae400cd54c229ef94ed27a94a08660a5fd02fb32d5fc151b9ce39fd90eea3"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-036.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 4294,
+    "sha256": "8a09427d98d7064c15f200873b29724ad59809b7368f268bd26e8fc7f0405c9d"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-037.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 74664,
+    "sha256": "d5ca7e01f227cb1cec77251c1e248ad5ee42f7c7453fa6382f5707ee5bfa6a1e"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-038.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 38698,
+    "sha256": "5ce57af8567f0a48a32942e545a60d0fd77276a5f2cdadc8bae8d831a20ce966"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-039.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 4284,
+    "sha256": "1faab18161e26e0e284c02d1cfc75b6139bc824637fde8dc233430b247e4e923"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-040.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 47430,
+    "sha256": "b93ed54b3bab30cdd388089ec9c914d8d1ddd323d2dd32ab4f37a7b7b42d2b9a"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-041.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 20786,
+    "sha256": "f874bb914750361d2b4c84ac979a43ce77faf7dbd9384ebdae4627d2d088ad64"
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-042.webp",
+    "status": 200,
+    "content_type": "image/webp",
+    "bytes": 84094,
+    "sha256": "18bd6f575c13636f1fa749c8071e84422e90ed47e54e01a2e746528e5b6047bf"
+  }
+]

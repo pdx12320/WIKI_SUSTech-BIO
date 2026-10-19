@@ -1,0 +1,41 @@
+{
+  "description": "Existing local Wiki team logo assets, reused for the education collaboration footer.",
+  "logos": [
+    {
+      "team": "SUSTech-BIO",
+      "source": "static/assets/brand/sustech-bio-logo.png",
+      "sourceSha256": "da3397225273db6d2cfa5e66a4fc1c257899de3ccabe4e7ac755435a4139f9d6",
+      "file": "sustech-bio.webp",
+      "sha256": "db59c1f131c55de8996a6067e00b0713a9bd35259642cf9fa2223f533368fb09",
+      "processing": "Proportional thumbnail; original artwork and colors retained.",
+      "dimensions": [
+        320,
+        224
+      ]
+    },
+    {
+      "team": "CUHK-HongKong-SBS",
+      "source": "static/human-practices/organizations/team-cuhk-hongkong-sbs.avif",
+      "sourceSha256": "cd1f6b6f040608ec6576d2a9d4238ec1b9246795e84bc5027513d29547a1602a",
+      "file": "cuhk-hongkong-sbs.avif",
+      "sha256": "cd1f6b6f040608ec6576d2a9d4238ec1b9246795e84bc5027513d29547a1602a",
+      "processing": "Original file copied unchanged.",
+      "dimensions": [
+        63,
+        72
+      ]
+    },
+    {
+      "team": "HG-Tokyo",
+      "source": "static/human-practices/organizations/team-hg-tokyo.webp",
+      "sourceSha256": "d7ec1daabd803a1430de155eda190ff8a807cf9cdd3834124869e4b8d69267c3",
+      "file": "hg-tokyo.webp",
+      "sha256": "2baaa370267d02eb06aeb0253609643ed9528e31756854fe932a2a5c3bacce4e",
+      "processing": "Proportional thumbnail; original artwork and colors retained.",
+      "dimensions": [
+        160,
+        160
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+/* One self-contained vector collage; original JPEGs stay untouched. */
+body.inner-page .markdown-content .hp-northwest-gallery { display:block; width:100%; max-width:none; margin:28px 0; padding:0; border:0; background:none; box-shadow:none; }
+.hp-northwest-gallery > a { display:block; }
+body.inner-page .markdown-content .hp-northwest-gallery img { display:block; width:100%; max-width:none; height:auto; margin:0; border-radius:6px; box-shadow:none; }
+body.inner-page .markdown-content .hp-northwest-gallery figcaption { margin:10px 0 0; padding:0; font-size:12px; line-height:1.5; color:#6B6880; }
+.hp-northwest-gallery a:focus-visible { outline:2px solid #5D5AD7; outline-offset:4px; }

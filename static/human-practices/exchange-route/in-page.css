@@ -1,0 +1,25 @@
+/* A compact visual overview above the activities; the page TOC stays primary. */
+.hp-route--in-page { margin:28px 0 48px; }
+.hp-route--in-page .hp-route__layout { display:block; }
+.hp-route--in-page .hp-route__nav { position:relative; margin:0 0 42px; padding:12px 0 0; }
+.hp-route--in-page .hp-route__strip { overflow-x:auto; overscroll-behavior-x:contain; padding:4px 0 8px; }
+.hp-route--in-page .hp-route__map { position:relative; min-width:700px; }
+body.inner-page .markdown-content .hp-route--in-page ol { position:relative; display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:0; list-style:none; margin:0; padding:0; }
+body.inner-page .markdown-content .hp-route--in-page li { margin:0; padding:0; min-width:0; }
+.hp-route--in-page .hp-route__nav a { display:flex; flex-direction:column; align-items:center; gap:9px; padding:4px 2px; color:#6B6880; text-decoration:none; text-align:center; }
+.hp-route--in-page .hp-route__icon { display:block; box-sizing:border-box; width:42px; height:42px; padding:9px; border:1px solid #D9D7E5; border-radius:50%; background:#FFFEFC; color:#5D5AD7; transition:transform 200ms ease,background 200ms ease; }
+.hp-route--in-page .hp-route__icon path { fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.hp-route--in-page .hp-route__short { font:400 11px/1.4 Futura,"Avenir Next",sans-serif; }
+.hp-route--in-page .hp-route__nav a[aria-current] { color:#2E267C; }
+.hp-route--in-page .hp-route__nav a[aria-current] .hp-route__icon { background:#E9E8FF; border-color:#9D9CF4; color:#2E267C; }
+.hp-route--in-page .hp-route__track { position:absolute; top:25px; left:5%; width:90%; height:1px; background:#D9D7E5; }
+.hp-route--in-page .hp-route__progress { display:block; height:1px; width:var(--route-progress,0px); background:#9D9CF4; }
+.hp-route--in-page .hp-route__traveller { position:absolute; top:-20px; left:var(--route-progress,0px); width:19px; height:14px; margin-left:-9px; transition:left 200ms ease; }
+body.inner-page .markdown-content .hp-route--in-page .hp-route__caption { margin:10px 0 0; min-height:1.6em; text-align:center; font-size:12px; line-height:1.6; color:#6B6880; }
+.hp-route--in-page .hp-route__stops { min-width:0; }
+.hp-route--in-page .hp-route__stop { min-width:0; margin-bottom:56px; scroll-margin-top:20px; }
+body.inner-page .markdown-content .hp-route--in-page .hp-route__stop > h3:first-child { margin-top:0; }
+.hp-route--in-page .hp-route__stop:last-child { margin-bottom:0; }
+.hp-route--in-page .hp-route__nav a:focus-visible { outline:2px solid #5D5AD7; outline-offset:1px; border-radius:8px; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) { .hp-route--in-page .hp-route__nav a:hover .hp-route__icon { transform:translateY(-3px); background:#E9E8FF; } }
+@media(prefers-reduced-motion:reduce) { .hp-route--in-page .hp-route__icon,.hp-route--in-page .hp-route__traveller { transition:none; } }

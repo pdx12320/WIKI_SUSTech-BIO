@@ -46,3 +46,39 @@
   .hp-pdf-preview { display: none; }
   .hp-manuscript .hp-pdf-source[hidden] { display: block !important; }
 }
+
+/* Both editions retain their own scroll position and resize handle. */
+.hp-manuscript .hp-handbook-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-block: 26px 32px;
+}
+.hp-handbook-edition { min-width: 0; }
+.hp-manuscript .hp-handbook-edition > h5 { margin: 0 0 12px; font-size: 20px; }
+.hp-manuscript .hp-handbook-edition .hp-pdf-preview { margin: 0 0 12px; width: 100%; }
+.hp-handbook-edition .hp-pdf-viewport { height: 430px; }
+.hp-handbook-edition .hp-pdf-pages { padding: 6px; }
+body.inner-page .hp-manuscript .hp-handbook-edition > p { margin: 6px 0; font-size: 15px; line-height: 1.5; }
+body.inner-page .hp-manuscript .hp-workbook-comparison table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 15px;
+  line-height: 1.55;
+}
+body.inner-page .hp-manuscript .hp-workbook-comparison :is(th, td) {
+  min-width: 0;
+  padding: 12px 10px;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+.hp-workbook-comparison :is(th, td):nth-child(1) { width: 16%; }
+.hp-workbook-comparison :is(th, td):nth-child(2) { width: 22%; }
+.hp-workbook-comparison :is(th, td):nth-child(3) { width: 27%; }
+.hp-workbook-comparison :is(th, td):nth-child(4) { width: 35%; }
+@container (max-width: 600px) {
+  .hp-manuscript .hp-handbook-pair { grid-template-columns: minmax(0, 1fr); }
+  .hp-workbook-comparison { overflow-x: auto; }
+  body.inner-page .hp-manuscript .hp-workbook-comparison table { min-width: 620px; }
+}

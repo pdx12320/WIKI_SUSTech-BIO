@@ -1,12 +1,12 @@
 /* Quiet, resizable previews rendered from the unchanged source PDFs. */
 (() => {
   const base = new URL('pdf-previews/', document.currentScript.src);
-  const links = [...document.querySelectorAll('.hp-manuscript a[href]')].filter(link => /\/attachments\/[^/]+\.pdf(?:[?#]|$)/i.test(link.href));
+  const links = [...document.querySelectorAll('.hp-manuscript a[href]')].filter(link => !link.querySelector('img, svg') && /\.pdf(?:[?#]|$)/i.test(link.href));
   if (!links.length) return;
 
   function sourceDetails(link) {
     const filename = decodeURIComponent(new URL(link.href).pathname.split('/').pop());
-    const title = filename.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ');
+    const title = link.dataset.pdfTitle || filename.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ');
     const paragraph = link.closest('p');
     const anchor = paragraph && paragraph.children.length === 1 && paragraph.textContent.trim() === link.textContent.trim() ? paragraph : link;
     anchor.classList.add('hp-pdf-source');
@@ -14,7 +14,7 @@
     link.setAttribute('aria-label', `Download original PDF: ${title}`);
     link.setAttribute('target', '_blank');
     link.setAttribute('rel', 'noopener');
-    return { filename, title, anchor };
+    return { filename, title, anchor, keepLink: Boolean(link.closest('.hp-handbook-pair')) };
   }
 
   const sources = links.map(link => ({link, ...sourceDetails(link)}));
@@ -87,14 +87,16 @@
     });
     panel.append(viewport, resize);
     anchor.before(panel);
-    anchor.hidden = true;
+    anchor.hidden = !source.keepLink;
     resize.setAttribute('aria-valuenow', String(viewport.clientHeight));
   }
 
-  fetch(new URL('manifest.json', base)).then(response => {
+  const manifests = ['manifest.json'];
+  if (sources.some(source => source.keepLink)) manifests.push('workbook-v2-manifest.json');
+  Promise.all(manifests.map(file => fetch(new URL(file, base)).then(response => {
     if (!response.ok) throw new Error('PDF preview manifest unavailable');
     return response.json();
-  }).then(manifest => sources.forEach((source, index) => {
+  }).catch(() => ({})))).then(parts => Object.assign({}, ...parts)).then(manifest => sources.forEach((source, index) => {
     if (manifest[source.filename]) build(source, manifest[source.filename], index);
   })).catch(() => {
     // English source links remain visible when preview enhancement is unavailable.

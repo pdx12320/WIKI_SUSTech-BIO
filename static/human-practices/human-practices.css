@@ -1,3 +1,9 @@
+@import url("northwest-meetup.css");
+@import url("qinglan-lesson.css");
+@import url("exchange-route/in-page.css");
+@import url("worldproof-judges/in-page.css");
+@import url("collages-in-page.css");
+@import url("garden-invitation/garden.css");
 /* Model's shared reading styles set typography, figure widths and captions. */
 .hp-manuscript {
   min-width: 0;
@@ -5,83 +11,57 @@
   container-type: inline-size;
 }
 .hp-manuscript .hp-subtitle { margin: 0 0 24px; }
+.hp-manuscript .hp-opening-line {
+  display: inline-block;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.hp-manuscript { container-type: inline-size; }
+.hp-manuscript .hp-media-row { margin-block: 28px; }
+.hp-manuscript .hp-media-copy > :last-child { margin-bottom: 0; }
+.hp-manuscript .hp-paired-image { display: block; }
+.hp-manuscript .hp-media-row .hp-figure { max-width: 340px; }
+body.inner-page .hp-manuscript .hp-figure--compact { max-width: 340px; }
 
-/* HP's opening note and introduction; Inclusivity shares this stylesheet. */
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle {
-  max-width: 36ch;
-  margin: 4px auto 32px;
-  color: #51466c;
-  font-family: Baskerville, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  font-size: clamp(25px, 4.3cqw, 34px);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.4;
-  text-align: center;
-  text-wrap: balance;
+/* Text sets the row height. The image fits inside it without cropping, and
+   later paragraphs return to full width rather than extending an empty column. */
+@container (min-width: 620px) {
+  .hp-manuscript .hp-media-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 32%);
+    gap: 28px;
+  }
+  .hp-manuscript .hp-media-copy { grid-column: 1; min-width: 0; }
+  body.inner-page .hp-manuscript .hp-media-row > .hp-figure {
+    position: absolute;
+    grid-column: 2;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .hp-manuscript .hp-paired-image { flex: 1; min-height: 0; }
+  body.inner-page .hp-manuscript .hp-media-row .hp-paired-image > img {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center top;
+  }
+  body.inner-page .hp-manuscript .hp-media-row figcaption {
+    flex: none;
+    padding: 8px 0 0;
+    text-align: center;
+  }
 }
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  margin: 0 0 38px;
-  padding: clamp(24px, 4.5cqw, 36px);
-  border: 1px solid #d9dce8;
-  border-radius: 22px;
-  background:
-    radial-gradient(ellipse at 100% 0%, #dcece9a6, transparent 62%),
-    radial-gradient(ellipse at 0% 100%, #f8e7e459, transparent 65%),
-    linear-gradient(125deg, #f0edf8, #f5f8f8);
-  box-shadow: 0 12px 32px #38304e0a, inset 0 1px 0 #ffffffd9;
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote::before {
-  content: "";
-  display: block;
-  width: 64px;
-  height: 3px;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, #a66b7d, #739c9b);
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote::after {
-  content: "";
-  position: absolute;
-  top: -150px;
-  right: -120px;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  background: repeating-radial-gradient(circle, transparent 0 27px, #6e989b1a 28px 29px, transparent 30px 48px);
-  pointer-events: none;
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote > p {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 18px;
-  color: #4b5263;
-  font-size: 18px;
-  line-height: 1.65;
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote > p:first-child {
-  color: #303650;
-  font-size: clamp(21px, 3.3cqw, 25px);
-  line-height: 1.35;
-  text-wrap: balance;
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote > p:nth-child(2) {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #697b9629;
-  color: #555175;
-  font-size: 17px;
-  line-height: 1.65;
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote strong {
-  color: inherit;
-  font-weight: 650;
-}
-[data-content-source="docs/human-practices/human-practices.md"] .hp-manuscript > .hp-subtitle + blockquote > p:last-child {
-  margin-bottom: 0;
-}
-
 .hp-manuscript > p > img,
 .hp-manuscript .hp-figure > img {
   display: block;
@@ -98,55 +78,95 @@
   overflow-wrap: normal;
 }
 
-/* Each portrait stays with its selected source paragraphs, even without JS. */
-.hp-manuscript .hp-media-row {
+/* Four original photographs stay sharp and uncropped, with a full-size link. */
+.hp-manuscript .hp-workbook-collage {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: 24px;
-  margin-block: 32px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+  margin-block: 30px 36px;
 }
-.hp-manuscript .hp-media-copy { min-width: 0; }
-.hp-manuscript .hp-media-copy > :first-child { margin-top: 0; }
-.hp-manuscript .hp-media-copy > :last-child { margin-bottom: 0; }
-.hp-manuscript .hp-media-row > .hp-figure {
+body.inner-page .hp-manuscript .hp-workbook-collage > .hp-figure {
   width: 100%;
   min-width: 0;
-  max-width: 360px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
 }
-.hp-manuscript .hp-media-row > .hp-figure > img {
+.hp-workbook-collage__image { display: block; border-radius: 8px; }
+.hp-workbook-collage__image:focus-visible { outline: 2px solid #5f62cd; outline-offset: 4px; }
+body.inner-page .hp-manuscript .hp-workbook-collage__image > img {
+  display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: contain;
+  border-radius: 8px;
 }
-.hp-manuscript .hp-media-row figcaption { padding-inline: 4px; }
-@container (min-width: 560px) {
-  .hp-manuscript .hp-media-row {
-    grid-template-columns: minmax(0, 1fr) minmax(200px, 40%);
-  }
-  /* Figure 23: keep the poster proportional and align the two final text lines. */
-  .hp-manuscript .hp-media-row:has(> #hp-figure-26) {
-    align-items: last baseline;
-  }
-  .hp-manuscript #hp-figure-26 > img {
-    width: 95%;
-  }
+body.inner-page .hp-manuscript .hp-workbook-collage figcaption { padding: 9px 0 0; }
+@container (max-width: 520px) {
+  .hp-manuscript .hp-workbook-collage { grid-template-columns: minmax(0, 1fr); gap: 20px; }
 }
 
-/* The same portrait column hosts the optional 3D view and original image. */
-.hp-manuscript .hp-media-row .hp-model-header { padding: 12px; flex-wrap: wrap; gap: 8px; }
-.hp-manuscript .hp-media-row .hp-model-viewer .hp-model-heading strong { font-size: 20px; }
-.hp-manuscript .hp-media-row .hp-model-badge { font-size: 12px; }
-.hp-manuscript .hp-media-row .hp-model-stage { height: 340px; }
-.hp-manuscript .hp-media-row .hp-model-stage > img.hp-model-poster { padding: 12px 12px 66px; }
-.hp-manuscript .hp-media-row .hp-model-toolbar { padding: 12px 8px 0; gap: 6px; }
-.hp-manuscript .hp-media-row .hp-model-button { font-size: 14px; padding-inline: 10px; }
-.hp-manuscript .hp-media-row .hp-model-activate { padding-inline: 16px; }
-.hp-manuscript .hp-media-row .hp-model-viewer p.hp-model-status,
-.hp-manuscript .hp-media-row .hp-model-viewer p.hp-model-note { padding-inline: 12px; font-size: 14px; }
+/* Reframe the three original call tiles using the same, unchanged screenshot. */
+.hp-manuscript .hp-interview-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(6px, 1.6cqi, 12px);
+}
+.hp-manuscript .hp-interview-frame {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  border-radius: 8px;
+  background: #beb6e8;
+}
+.hp-manuscript .hp-interview-frame--doctor { grid-row: 1 / span 2; }
+.hp-manuscript .hp-interview-frame--student-one { aspect-ratio: 632 / 360; }
+.hp-manuscript .hp-interview-frame--student-two { aspect-ratio: 640 / 359; }
+body.inner-page .hp-manuscript .hp-interview-frame > img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  object-fit: fill;
+}
+body.inner-page .hp-manuscript .hp-interview-frame--doctor > img {
+  height: 262%;
+  width: auto;
+  top: -53.14286%;
+  left: 50%;
+  transform: translateX(-80.46875%);
+}
+body.inner-page .hp-manuscript .hp-interview-frame--student-one > img {
+  width: 202.53165%;
+  height: auto;
+  top: -50.55556%;
+  left: 0;
+}
+body.inner-page .hp-manuscript .hp-interview-frame--student-two > img {
+  width: 200%;
+  height: auto;
+  top: -151.81058%;
+  left: -49.0625%;
+}
+.hp-manuscript .hp-interview-name {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: #191a59c9;
+  color: #fff;
+  font-size: clamp(11px, 1.9cqi, 14px);
+  line-height: 1.5;
+}
 @media (max-width: 760px) {
   .hp-manuscript .hp-figure > figcaption { padding: 12px 7px 6px; }
 }
+
+/* Engagement quotations remain unboxed. */
+.markdown-content .hp-manuscript blockquote { padding: 0; border: 0; background: transparent; box-shadow: none; }

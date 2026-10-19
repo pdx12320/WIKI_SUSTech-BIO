@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Compare four high school biology curriculum configurations on an interactive map, supported by preliminary team analysis and a provisional synthetic biology education framework.">
+<title>BioSphere · Biology Curriculum Transfer</title>
+<link rel="stylesheet" href="education-transfer.css?v=35efc22ddda2">
+</head>
+<body data-page="map">
+<div class="ambient-orbs" aria-hidden="true"><i class="ambient-orb one"></i><i class="ambient-orb two"></i><i class="ambient-orb three"></i></div>
+<a class="skip" href="#systems-title">Skip to curriculum selection</a>
+<header class="nav"><a class="nav-logo" href="#map"><span class="nav-logo-i" aria-hidden="true">B.</span><span class="nav-logo-t">BioSphere<span class="brand-sub">BIOLOGY EDUCATION</span></span></a><button class="text-button" id="evidence-button">Sources & scope</button></header>
+<main class="main">
+<section class="globe-p" id="map" aria-labelledby="map-title">
+ <div class="map-heading"><h1 id="map-title">Biology curriculum transfer</h1><p>Drag a curriculum onto a map label, or click a source and then a target.</p></div>
+ <div id="globe-wrap">
+  <canvas id="globe-c" aria-hidden="true"></canvas>
+  <div id="map-targets" role="group" aria-label="Choose a target curriculum on the map">
+   <button class="r-label" id="rl-china" data-target="china"><span class="rd" aria-hidden="true"></span>Mainland / Gaokao</button>
+   <button class="r-label" id="rl-hongkong" data-target="hongkong"><span class="rd" aria-hidden="true"></span>HKDSE</button>
+   <button class="r-label" id="rl-ial" data-target="ial"><span class="rd" aria-hidden="true"></span>iAL · Hong Kong</button>
+   <button class="r-label" id="rl-japan" data-target="japan"><span class="rd" aria-hidden="true"></span>Japan + AP</button>
+  </div>
+  <div class="map-controls" role="group" aria-label="Map view controls"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="reset-view">Reset view</button></div>
+  <div class="drop-ind" id="drop-ind" aria-hidden="true"></div>
+ </div>
+ <div class="route-strip"><p id="route-label">Select a source to begin.</p><a id="view-comparison" href="education-transfer-report.html" hidden>Open report ↗</a><button class="text-button" id="clear-route" hidden>Clear route</button></div>
+
+</section>
+<aside class="cards-p" aria-labelledby="systems-title">
+ <div class="ph"><h2 id="systems-title">Choose a source</h2></div>
+ <div id="system-list"></div>
+ <details class="target-fallback"><summary>Choose a target without the map</summary><label class="sr-only" for="target-choice">Target curriculum</label><div class="target-row"><select id="target-choice"><option value="">Choose a target</option></select><button id="compare-button" disabled>Compare →</button></div></details>
+ <p class="interaction-status" id="interaction-status" role="status" aria-live="polite"></p>
+
+</aside>
+
+</main>
+<footer class="site-footer collaboration-footer"><div class="footer-teams" aria-label="Collaborating teams"><figure class="footer-team"><div class="footer-logo-slot"><img src="assets/collaboration/sustech-bio.webp" alt="SUSTech-BIO logo" width="320" height="224" loading="lazy" decoding="async"></div><figcaption>SUSTech-BIO</figcaption></figure><figure class="footer-team"><div class="footer-logo-slot"><img src="assets/collaboration/cuhk-hongkong-sbs.avif" alt="CUHK-HongKong-SBS logo" width="63" height="72" loading="lazy" decoding="async"></div><figcaption>CUHK-HongKong-SBS</figcaption></figure><figure class="footer-team footer-team--tokyo"><div class="footer-logo-slot"><img src="assets/collaboration/hg-tokyo.webp" alt="HG-Tokyo logo" width="160" height="160" loading="lazy" decoding="async"></div><figcaption>HG-Tokyo</figcaption></figure></div><div class="footer-notes"><p>Locations identify study contexts, not curriculum boundaries.</p><p>Preliminary document analysis · Local research preview</p></div></footer>
+<dialog id="evidence-dialog" aria-labelledby="evidence-title"><div class="dialog-head"><h2 id="evidence-title">Sources & scope</h2><button data-close="evidence-dialog" aria-label="Close sources and scope">×</button></div><div id="evidence-content"></div></dialog>
+
+<script src="assets/d3-array.min.js"></script>
+<script src="assets/d3-geo.min.js"></script>
+<script src="assets/topojson-client.min.js"></script>
+<script src="assets/map-topology.js"></script>
+<script src="education-transfer-knowledge.js"></script>
+<script src="transfer-model.js"></script>
+<script src="education-map.js?v=76925f401832"></script>
+<dialog class="ld-ov" id="transfer-loading" aria-labelledby="loading-title" aria-describedby="loading-route loading-note">
+ <div class="ld-b"><div class="dna-w" id="dna-w" aria-hidden="true"></div>
+ <p class="eyebrow">CURRICULUM TRANSFER</p><h2 class="ld-t" id="loading-title">Preparing your comparison</h2>
+ <p class="loading-route" id="loading-route"></p>
+ <ol class="ld-st" id="loading-steps">
+  <li class="ld-s"><span class="ld-ck" aria-hidden="true"></span><span>Reading source curriculum records</span></li>
+  <li class="ld-s"><span class="ld-ck" aria-hidden="true"></span><span>Reading target curriculum records</span></li>
+  <li class="ld-s"><span class="ld-ck" aria-hidden="true"></span><span>Aligning six evidence domains</span></li>
+  <li class="ld-s"><span class="ld-ck" aria-hidden="true"></span><span>Attaching source references</span></li>
+  <li class="ld-s"><span class="ld-ck" aria-hidden="true"></span><span>Opening the analysis report</span></li>
+ </ol><p class="sr-only" id="loading-status" role="status" aria-live="polite"></p>
+ <div class="ld-pg" aria-hidden="true"><div class="ld-br" id="loading-bar"></div></div>
+ <p class="loading-note" id="loading-note">Using locally stored team evidence. No student performance is predicted.</p>
+ <div class="loading-actions"><button id="cancel-loading">Back to map</button><button id="skip-loading">Open report now →</button></div>
+ </div>
+</dialog>
+<script src="education-loading.js"></script>
+<script src="education-copy.js"></script>
+<script src="education-transfer.js"></script>
+</body>
+</html>

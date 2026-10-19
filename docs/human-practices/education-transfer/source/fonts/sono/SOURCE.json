@@ -1,0 +1,20 @@
+{
+  "project": "https://github.com/sursly/sono",
+  "distribution": "https://github.com/google/fonts/tree/main/ofl/sono",
+  "download": "https://raw.githubusercontent.com/google/fonts/main/ofl/sono/Sono%5BMONO%2Cwght%5D.ttf",
+  "license": "SIL Open Font License 1.1",
+  "usage": "Locally served heading font; MONO axis set to 1 in CSS.",
+  "sha256": "247ca641ca7066e3addc8081d89613c06a79e4276cd4f2164d07a6493530010f",
+  "verifiedAxes": {
+    "wght": [
+      200.0,
+      200.0,
+      800.0
+    ],
+    "MONO": [
+      0.0,
+      1.0,
+      1.0
+    ]
+  }
+}

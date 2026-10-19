@@ -1,0 +1,74 @@
+[
+  {
+    "id": "clinical",
+    "title": "Clinical care",
+    "who": "Dr. Zhifan Zhou",
+    "concern": "Delivery, repeat dosing and treatment burden",
+    "response": "Gave delivery and care burdens greater priority",
+    "x": 80,
+    "y": 148,
+    "side": "left",
+    "anchor": "dr-zhifan-zhou-from-editing-in-the-laboratory-to-treatment-arrangements-patients-can-accept",
+    "detail": "Dr. Zhou helped us consider the person who might receive an edit: reaching the brain, repeated procedures and how long an effect might last. These conversations informed research priorities; they do not establish clinical readiness."
+  },
+  {
+    "id": "older",
+    "title": "Older participants",
+    "who": "Shahe & Taoyuan service centers",
+    "concern": "Useful explanations and materials they can use",
+    "response": "Revised the workbook; gathered early app feedback",
+    "x": 80,
+    "y": 395,
+    "side": "left",
+    "anchor": "2-3-a-workbook-for-older-learners-involving-users-in-revision",
+    "detail": "The question about the everyday use of extracted DNA changed how we introduced activities. Workbook discussions and early Anjia Guardian use helped us revisit practical support. These are older participants’ experiences, not a substitute for direct consultation with people with AD."
+  },
+  {
+    "id": "care",
+    "title": "Everyday care",
+    "who": "Ms. Wu · Shahe service staff",
+    "concern": "Readable pages, writing space and staff time",
+    "response": "Changed workbook layout and practical support",
+    "x": 80,
+    "y": 642,
+    "side": "left",
+    "anchor": "ms-wu-understanding-daily-life-and-care-needs-through-an-elderly-service-center",
+    "detail": "Ms. Wu (a pseudonym), an administrative receptionist, described reading difficulties, limited staff time, room for notes and printing costs. Her perspective helped us revise the workbook; it is a service-staff perspective, not an independent family-caregiver interview."
+  },
+  {
+    "id": "research",
+    "title": "Research & choice",
+    "who": "Prof. Keqiang Ye · Dr. Ziwei Dai",
+    "concern": "Specificity, evidence and the freedom to decline",
+    "response": "Expanded safety assessment and explanations",
+    "x": 945,
+    "y": 148,
+    "side": "right",
+    "anchor": "professor-keqiang-ye-how-should-we-judge-whether-an-edit-warrants-further-development",
+    "detail": "Prof. Ye informed our work on editing, off-target effects, cell types and delivery. Dr. Dai brought dose, uncertainty, costs and choices into the discussion. Their distinct contributions shape both research questions and how we communicate limits."
+  },
+  {
+    "id": "public",
+    "title": "Public understanding",
+    "who": "103 survey respondents",
+    "concern": "Benefits, risks, intended users and evidence",
+    "response": "Put these questions before technical detail",
+    "x": 945,
+    "y": 395,
+    "side": "right",
+    "anchor": "2-2-public-understanding-survey-addressing-what-people-want-to-know-first",
+    "detail": "The survey guided the order and format of our explanations. Of 103 respondents, 96 were aged 18–30, and only five reported direct experience of cognitive disorders or caregiving. It mainly reflects younger respondents and cannot represent patients and families as a whole."
+  },
+  {
+    "id": "partners",
+    "title": "Implementation partners",
+    "who": "Shokz · university laboratory discussions",
+    "concern": "Safety, technical support and partner priorities",
+    "response": "Ended the wearable route; reconsidered feasibility",
+    "x": 945,
+    "y": 642,
+    "side": "right",
+    "anchor": "1-4-adjusting-the-implementation-path-from-a-bone-conduction-hardware-concept-to-a-software-tool",
+    "detail": "Laboratory safety requirements ruled out the initial laboratory application. Later discussions did not align Shokz’s interest in talent and university collaboration with laboratories’ funding and hardware priorities. The proposed collaboration did not proceed; no wearable outcome was validated."
+  }
+]

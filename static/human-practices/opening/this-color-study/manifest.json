@@ -1,0 +1,66 @@
+{
+  "scope": "preview only; surrounding question pure white; small text unchanged",
+  "colors": {
+    "orange": "#ff7800",
+    "purple": "#b000ff",
+    "green": "#b7ff85"
+  },
+  "variants": [
+    {
+      "file": "orange-green.html",
+      "label": "橙绿橙",
+      "rows": [
+        "#ff7800",
+        "#b7ff85",
+        "#ff7800"
+      ]
+    },
+    {
+      "file": "purple-green.html",
+      "label": "紫绿紫",
+      "rows": [
+        "#b000ff",
+        "#b7ff85",
+        "#b000ff"
+      ]
+    },
+    {
+      "file": "purple-orange.html",
+      "label": "紫橙紫",
+      "rows": [
+        "#b000ff",
+        "#ff7800",
+        "#b000ff"
+      ]
+    },
+    {
+      "file": "orange-purple.html",
+      "label": "橙紫橙",
+      "rows": [
+        "#ff7800",
+        "#b000ff",
+        "#ff7800"
+      ]
+    },
+    {
+      "file": "green-purple.html",
+      "label": "绿紫绿",
+      "rows": [
+        "#b7ff85",
+        "#b000ff",
+        "#b7ff85"
+      ]
+    },
+    {
+      "file": "green-orange.html",
+      "label": "绿橙绿",
+      "rows": [
+        "#b7ff85",
+        "#ff7800",
+        "#b7ff85"
+      ]
+    }
+  ],
+  "placement": "Cylindrical projection, narrowing at both edges and curving downward around the tapered cup wall",
+  "implementation": "Three precomputed curved SVG outline paths; no runtime glyph mesh or clipping"
+}

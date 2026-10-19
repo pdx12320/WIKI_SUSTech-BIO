@@ -1,0 +1,59 @@
+/* Profile copy is native HTML; only the original portrait remains artwork. */
+.hp-manuscript .hp-profile {
+  position: relative;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid #D9D7E5;
+  border-radius: 24px;
+  background: #FFFEFC;
+  color: #171536;
+  text-align: left;
+  user-select: text;
+  transition: border-color 240ms ease, box-shadow 240ms ease;
+  isolation: isolate;
+}
+.hp-profile__header { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 24px; align-items: center; }
+.hp-profile__art { display: grid; place-items: center; padding: 10px; border-radius: 24px; background: #E9E8FF; }
+.hp-profile__portrait { display: block; width: 100%; height: auto; max-height: 150px; transition: transform 300ms ease; }
+.hp-profile__identity { min-width: 0; }
+body.inner-page .hp-manuscript .hp-profile p { margin: 0; font-size: 15px; line-height: 1.6; }
+body.inner-page .hp-manuscript .hp-profile .hp-profile__eyebrow { font-size: 11px; letter-spacing: .09em; line-height: 1.5; color: #5D5AD7; font-weight: 600; }
+.hp-manuscript .hp-profile h5 { margin: 6px 0 12px; font-family: Georgia, serif; font-size: clamp(26px, 2.8vw, 34px); line-height: 1.15; color: #2E267C; }
+body.inner-page .hp-manuscript .hp-profile .hp-profile__role { font-weight: 600; }
+body.inner-page .hp-manuscript .hp-profile .hp-profile__place { color: #6B6880; margin-top: 4px; }
+.hp-profile__insights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 26px; }
+.hp-profile__panel { min-width: 0; border-top: 2px solid #9D9CF4; padding-top: 15px; transition: border-color 240ms ease; }
+.hp-profile__panel:nth-child(2) { border-color: #FFD1D5; }
+.hp-manuscript .hp-profile h6 { font-family: Georgia, serif; font-size: 20px; line-height: 1.35; color: #2E267C; margin: 5px 0 12px; }
+.hp-manuscript .hp-profile ul { margin: 0; padding-left: 17px; font-size: 15px; line-height: 1.6; }
+.hp-manuscript .hp-profile li { margin: 0 0 10px; padding-left: 3px; }
+.hp-profile li::marker { color: #5D5AD7; }
+.hp-profile__background { margin-top: 18px; border-top: 1px solid #D9D7E5; padding-top: 14px; font-size: 14px; }
+.hp-profile__background summary { cursor: pointer; color: #2E267C; width: fit-content; }
+.hp-profile__background summary:focus-visible { outline: 2px solid #5D5AD7; outline-offset: 5px; }
+.hp-profile__background-copy { display: grid; gap: 8px; margin-top: 16px; }
+.hp-profile__metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin: 8px 0; }
+.hp-profile__metrics > div { display: flex; flex-direction: column-reverse; gap: 4px; background: #E9E8FF; border-radius: 12px; padding: 12px; }
+.hp-profile__metrics dt { font-size: 11px; font-weight: 400; line-height: 1.4; }
+.hp-profile__metrics dd { margin: 0; font-family: Georgia, serif; font-size: 24px; color: #2E267C; }
+.hp-profile__tide { display: flex; align-items: center; justify-content: end; gap: 7px; height: 12px; margin-top: 12px; }
+.hp-profile__tide span { height: 5px; width: 5px; border-radius: 50%; background: #9D9CF4; transition: transform 300ms ease; }
+.hp-profile__tide span:nth-child(2) { background: #F58F9C; transition-delay: 50ms; }
+.hp-profile__tide span:nth-child(3) { transition-delay: 100ms; }
+.hp-voice__avatar > .hp-profile__portrait { width: 100%; height: 100%; max-height: none; }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .hp-profile:hover { border-color: #9D9CF4; box-shadow: 0 12px 32px #2E267C12; }
+  .hp-profile:hover .hp-profile__portrait { transform: translateY(-3px) rotate(-1deg); }
+  .hp-profile:hover .hp-profile__panel { border-color: #5D5AD7; }
+  .hp-profile:hover .hp-profile__panel:nth-child(2) { border-color: #F58F9C; }
+  .hp-profile:hover .hp-profile__tide span { transform: translateY(-5px); }
+}
+@media (max-width:600px) {
+  .hp-profile__header { grid-template-columns: 76px minmax(0,1fr); gap: 16px; }
+  .hp-profile__art { padding: 6px; border-radius: 16px; }
+  .hp-manuscript .hp-profile h5 { font-size: 25px; }
+  .hp-profile__insights { grid-template-columns: 1fr; gap: 16px; }
+  .hp-profile__metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hp-profile, .hp-profile__portrait, .hp-profile__panel, .hp-profile__tide span { transition: none; }
+}

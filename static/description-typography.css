@@ -1,4 +1,19 @@
 /* Description's title continuations and workstream labels. */
+/* Module palette from the editable ORCA project overview. */
+.description-card--fundamental { --description-title-color: #3d5d7c; }
+.description-card--edit { --description-title-color: #0788b5; }
+.description-card--control { --description-title-color: #7943b4; }
+.description-card--deliver { --description-title-color: #2c66af; }
+.description-card--measure { --description-title-color: #bc5b0c; }
+.description-card--model { --description-title-color: #007e63; }
+.description-card--validation { --description-title-color: #a44869; }
+.content-page--model-reading .markdown-content .description-card h3,
+.content-page--model-reading .markdown-content .description-card .description-heading-subtitle,
+.content-page--model-reading .markdown-content .description-card .description-workstream-title,
+.content-page--model-reading .markdown-content .description-card .description-workstream-title strong {
+  color: var(--description-title-color);
+}
+
 .markdown-content .description-heading-line {
   display: block;
 }

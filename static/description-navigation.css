@@ -1,4 +1,33 @@
 /* Continue-reading links follow the Wiki's soft indigo reading navigation. */
+.markdown-content .description-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 22px;
+}
+.markdown-content .description-card__engineering {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--description-title-color, #464786);
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.markdown-content .description-card__engineering:hover {
+  color: var(--description-title-color, #464786);
+  background: color-mix(in srgb, currentColor 8%, white);
+}
+.markdown-content .description-card__engineering:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
 .markdown-content .description-next {
   display: flex;
   flex-wrap: wrap;

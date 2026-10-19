@@ -166,6 +166,21 @@
     }
   }
 
+  // Wrap only explicitly authored closing summaries; POD discussion stays in place.
+  for (const heading of article.querySelectorAll('.engineering-conclusion-title')) {
+    const card = document.createElement('section');
+    card.className = 'engineering-conclusion-card';
+    card.setAttribute('aria-labelledby', heading.id);
+    heading.before(card);
+    card.append(heading);
+    while (card.nextSibling) {
+      const node = card.nextSibling;
+      if (node.nodeType === Node.ELEMENT_NODE &&
+          (/^H[1-6]$/.test(node.tagName) || node.matches('nav, hr'))) break;
+      card.append(node);
+    }
+  }
+
   function showReader() {
     workspace.dataset.engineeringView = 'reader';
     map.hidden = true;
@@ -226,7 +241,7 @@
   function destination(target) {
     target = readingTarget(target);
     // Card-heading links reveal the whole raised surface, including its top edge.
-    if (target.matches('.engineering-overview-card > :is(h3,h4,h5,h6):first-child')) target = target.parentElement;
+    if (target.matches(':is(.engineering-overview-card, .engineering-conclusion-card) > :is(h3,h4,h5,h6):first-child')) target = target.parentElement;
     return Math.max(0, Math.min(reader.scrollHeight - reader.clientHeight,
       reader.scrollTop + target.getBoundingClientRect().top - reader.getBoundingClientRect().top - 24));
   }

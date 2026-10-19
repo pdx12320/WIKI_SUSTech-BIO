@@ -1,0 +1,30 @@
+{# Inline decoration travels with the template; no external image/font requests. #}
+{% macro sea_current(kind, key) -%}
+<svg class="sea-current sea-current--{{ kind }}" viewBox="{{ '0 0 1440 100' if kind == 'bar' else '0 0 300 420' }}" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="{{ key }}-wash" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#e5fff9" stop-opacity=".18"/>
+      <stop offset=".58" stop-color="#bcebe7" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#65bdc8" stop-opacity=".66"/>
+    </linearGradient>
+    <linearGradient id="{{ key }}-light" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f7fffe" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#94d7d4" stop-opacity=".26"/>
+    </linearGradient>
+  </defs>
+  {% if kind == 'bar' %}
+  <path d="M740 100C895 94 980 97 1060 66S1180 12 1270 37 1403 57 1440 4V100Z" fill="url(#{{ key }}-wash)"/>
+  <path d="M870 100C976 95 1057 85 1130 50S1247 20 1320 58 1410 72 1440 35V100Z" fill="url(#{{ key }}-light)" stroke="#fff" stroke-opacity=".72" stroke-width=".8"/>
+  <path d="M940 100C1035 96 1110 79 1171 62S1280 58 1332 81 1414 88 1440 58V100Z" fill="url(#{{ key }}-wash)" stroke="#eafffc" stroke-width="1"/>
+  <path d="M1120 100C1200 77 1272 73 1324 91S1409 103 1440 79V100Z" fill="#8fd1d3" fill-opacity=".4" stroke="#effffb" stroke-opacity=".7"/>
+  <path d="M0 0C-2 57 70 81 190 100H0Z" fill="url(#{{ key }}-light)" stroke="#f4fffc" stroke-width="1"/>
+  <path d="M0 56C38 88 115 97 227 100H0Z" fill="#7ad8ca" fill-opacity=".12"/>
+  {% else %}
+  <path d="M300 84C269 157 304 219 263 287S162 395 29 420H300Z" fill="url(#{{ key }}-wash)"/>
+  <path d="M300 154C274 226 306 263 250 330S129 407 3 420H300Z" fill="url(#{{ key }}-light)" stroke="#fff" stroke-opacity=".82" stroke-width="1"/>
+  <path d="M300 238C267 281 298 317 230 365S126 408 72 420H300Z" fill="url(#{{ key }}-wash)" stroke="#f3fffc" stroke-width="1.1"/>
+  <path d="M300 315C268 355 256 388 208 397S120 411 96 420H300Z" fill="#8dcfd2" fill-opacity=".38" stroke="#effffa" stroke-opacity=".85"/>
+  <path d="M300 375C273 401 246 403 220 420H300Z" fill="#69b9c6" fill-opacity=".23"/>
+  {% endif %}
+</svg>
+{%- endmacro %}

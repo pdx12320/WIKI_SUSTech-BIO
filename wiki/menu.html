@@ -1,16 +1,19 @@
 {% macro whale(label=none) -%}
-  <span class="nav-whale" aria-hidden="true"><img src="{{ url_for('static', filename='assets/intro/fish-large-01.png') }}" alt="" width="174" height="128"><i></i><i></i><i></i></span>{% if label is not none %}<span class="nav-label">{{ label }}</span>{% endif %}
+  <span class="nav-whale" aria-hidden="true">{% include 'components/navigation/swimming_orca.html' %}</span>{% if label is not none %}<span class="nav-label">{{ label }}</span>{% endif %}
 {%- endmacro %}
 
 {% macro editable_label(label) -%}
   <span class="nav-label" aria-hidden="true">{%- for letter in label -%}{% if letter in ['C', 'c'] %}<span class="nav-letter-flip"><span class="nav-letter-flip__turn"><span class="nav-letter-flip__front">{{ letter }}</span><span class="nav-letter-flip__back">{{ 'U' if letter == 'C' else 'u' }}</span></span></span>{% else %}{{ letter }}{% endif %}{%- endfor -%}</span>
 {%- endmacro %}
 
-<nav class="site-nav whale-navigation fixed-top" aria-label="Primary navigation">
+{% from 'components/navigation/sea_current.html' import sea_current %}
+<nav class="site-nav whale-navigation sea-glass-navigation{% if request.endpoint == 'home' %} night-ocean-navigation{% endif %} fixed-top" aria-label="Primary navigation">
   <div class="shell nav-shell">
+    {{ sea_current('bar', 'sea-glass-bar') }}
+    {% if request.endpoint == 'home' %}{% include 'components/navigation/night_plankton.html' %}{% endif %}
     <a class="site-brand" href="{{ url_for('home') }}" aria-label="SUSTech ORCA home">
       <img class="site-logo" src="{{ url_for('static', filename='assets/brand/sustech-bio-logo.png') }}" alt="SUSTech-BIO" width="1498" height="1050">
-      <span><strong>ORCA</strong></span>
+      {% include 'components/navigation/orca_wordmark.html' %}
     </a>
     <ul class="nav-list whale-pod">
       <li class="nav-item"><a class="nav-link{% if request.path == '/' %} active{% endif %}" href="{{ url_for('home') }}"{% if request.path == '/' %} aria-current="page"{% endif %}>{{ whale('Home') }}</a></li>
@@ -20,6 +23,7 @@
       <li class="nav-item rna-nav" data-rna-nav>
         <button class="nav-link rna-toggle{% if group_active %} active{% endif %}" id="whale-{{ key }}" type="button" aria-label="{{ group.label }}" aria-expanded="false" aria-controls="rna-{{ key }}">{{ whale() }}{{ editable_label(group.label) }}</button>
         <div class="rna-menu" id="rna-{{ key }}" aria-labelledby="whale-{{ key }}" hidden>
+          {{ sea_current('panel', 'sea-glass-' ~ key) }}
           <div class="rna-strand">
             <svg class="rna-menu__backbone" viewBox="0 0 72 1" aria-hidden="true" focusable="false" preserveAspectRatio="xMinYMin meet"><path class="rna-chain-halo"/><path class="rna-chain-line"/></svg>
           <ul class="rna-branches">

@@ -1,0 +1,290 @@
+[
+  {
+    "route": "/",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.700000047683716,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.700000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/",
+    "group": "Project",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.09999990463257,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.799999952316284,
+    "topRange": 0
+  },
+  {
+    "route": "/",
+    "group": "Wet Lab",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.90000009536743,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.299999952316284,
+    "topRange": 0
+  },
+  {
+    "route": "/",
+    "group": "Dry Lab",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.799999952316284,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.5,
+    "topRange": 0
+  },
+  {
+    "route": "/",
+    "group": "Engagement",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 17.5,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "maxGap": 18.199999809265137,
+    "topRange": 0
+  },
+  {
+    "route": "/",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.700000047683716,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "none"
+    },
+    "maxGap": 18.700000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.299999952316284,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.299999952316284,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Project",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.5,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.200000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Wet Lab",
+    "first": {
+      "gap": 0.10000014305114746,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.600000143051147,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.399999856948853,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Dry Lab",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 17.399999856948853,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.5,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Engagement",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 16.5,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.199999809265137,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "last": {
+      "gap": 17.300000190734863,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "none"
+    },
+    "maxGap": 17.40000009536743,
+    "topRange": 0
+  }
+]

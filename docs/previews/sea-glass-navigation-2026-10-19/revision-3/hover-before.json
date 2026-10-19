@@ -1,0 +1,290 @@
+[
+  {
+    "route": "/",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 99,
+      "margin": "-8px",
+      "opacity": "0",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.700000047683716,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17,
+    "topRange": 8
+  },
+  {
+    "route": "/",
+    "group": "Project",
+    "first": {
+      "gap": 0,
+      "top": 99,
+      "margin": "-8px",
+      "opacity": "0",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.899999856948853,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.199999809265137,
+    "topRange": 8
+  },
+  {
+    "route": "/",
+    "group": "Wet Lab",
+    "first": {
+      "gap": 0,
+      "top": 99,
+      "margin": "-8px",
+      "opacity": "0",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 17.09999990463257,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.899999856948853,
+    "topRange": 8
+  },
+  {
+    "route": "/",
+    "group": "Dry Lab",
+    "first": {
+      "gap": 0,
+      "top": 99,
+      "margin": "-8px",
+      "opacity": "0",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 15.700000047683716,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.59999990463257,
+    "topRange": 8
+  },
+  {
+    "route": "/",
+    "group": "Engagement",
+    "first": {
+      "gap": 0,
+      "top": 99,
+      "margin": "-8px",
+      "opacity": "0",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.200000047683716,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.700000047683716,
+    "topRange": 8
+  },
+  {
+    "route": "/",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 99,
+      "margin": "-8px",
+      "opacity": "0",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.09999990463257,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "rna-arrive",
+      "shadow": "rgba(189, 255, 241, 0.145) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.333) 0px 16px 32px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.699999809265137,
+    "topRange": 8
+  },
+  {
+    "route": "/human-practices",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.90000009536743,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.200000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Project",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.5,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.200000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Wet Lab",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 17,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.09999990463257,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Dry Lab",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 17.200000047683716,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.200000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Engagement",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 17.100000143051147,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.200000047683716,
+    "topRange": 0
+  },
+  {
+    "route": "/human-practices",
+    "group": "Team",
+    "first": {
+      "gap": 0,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "last": {
+      "gap": 16.59999990463257,
+      "top": 107,
+      "margin": "0px",
+      "opacity": "1",
+      "animation": "none",
+      "shadow": "rgb(255, 255, 255) 0px 1px 1px 0px inset, rgba(122, 203, 213, 0.42) 0px -1px 1px 0px inset, rgba(36, 77, 103, 0.15) 0px 14px 30px 0px",
+      "blur": "blur(24px) saturate(1.15)"
+    },
+    "maxGap": 17.299999952316284,
+    "topRange": 0
+  }
+]

@@ -88,8 +88,11 @@ runInNewContext(source, {
   MutationObserver: class { constructor(callback) { classChanged = callback; } observe() {} },
   requestAnimationFrame: handler => { nextFrame = handler; return 1; },
 });
-assert.equal(navigation.inert, true, 'Hide interaction before the first animation frame');
+assert.equal(navigation.inert, false, 'Opening navigation is usable before the first animation frame');
+frameHandler({ detail: { p: 0 } });
+assert.equal(navigation.inert, false, 'Opening frame keeps navigation visible');
 frameHandler({ detail: { p: .8 } });
+assert.equal(classes.has('is-story-hidden'), true, 'Entering the story slides navigation away');
 for (const name of ['resize', 'pageshow']) events.get(name)();
 scroll(200);
 scroll(100);
@@ -98,6 +101,10 @@ frameHandler({ detail: { p: 1 } });
 assert.equal(navigation.inert, false, 'Restore the menu at the project index');
 frameHandler({ detail: { p: .9 } });
 assert.equal(navigation.inert, true, 'Hide it when returning into the story');
+frameHandler({ detail: { p: 0 } });
+assert.equal(navigation.inert, false, 'Returning to the opening restores navigation');
+assert.equal(classes.has('is-story-hidden'), false);
+frameHandler({ detail: { p: .5 } });
 storyClasses.add('ot--static');
 classChanged();
 assert.equal(navigation.inert, false, 'A WebGL failure or static fallback restores navigation');

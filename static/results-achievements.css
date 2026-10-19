@@ -1,0 +1,51 @@
+/* The approved two-column cards, scoped to Results. */
+.results-page .content-page { --reading-page-gutter:clamp(18px,2.5vw,48px); }
+.results-page .content-page .markdown-page { max-width:1520px; grid-template-columns:172px minmax(0,1fr); gap:28px; padding-right:0; }
+.results-page .content-page .content-reading { padding:36px 28px 40px; }
+.results-page .content-page .markdown-content { max-width:none; }
+@media(min-width:761px) {
+  .results-page .content-page .content-model-stage { margin-inline:calc(-1 * clamp(24px,4.5vw,88px)); padding-inline:20px; }
+  .results-page .content-page .markdown-page { width:100%; grid-template-columns:160px minmax(0,1fr); gap:24px; }
+  .results-page .content-page .content-reading { padding-inline:24px; }
+}
+.results-page .content-page .results-achievements { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin:28px 0 52px; }
+.results-page .results-achievements .achievement-card { --accent:#0784a5; --tint:#eff8fc; min-width:0; display:flex; flex-direction:column; overflow:hidden; padding:18px; border:1px solid color-mix(in srgb,var(--accent) 22%,transparent); border-radius:14px; background:var(--tint); }
+.results-page .results-achievements .control { --accent:#7646ad; --tint:#f3eefa; }
+.results-page .results-achievements .deliver { --accent:#285fa8; --tint:#eff4fd; }
+.results-page .results-achievements .measure { --accent:#b65307; --tint:#fff5eb; }
+.results-page .results-achievements .model { --accent:#00836b; --tint:#ecf7f2; }
+.results-page .results-achievements .fv { --accent:#ad416f; --tint:#fbf0f4; }
+.results-page .results-achievements .card-figure { display:flex; align-items:center; justify-content:center; width:100%; aspect-ratio:3600/2840; text-decoration:none; }
+.results-page .results-achievements .card-figure img { display:block; width:100%; max-height:100%; height:auto; object-fit:contain; margin:0; border:0; border-radius:10px; box-shadow:none; }
+.results-page .results-achievements .card-copy { display:flex; flex:1; flex-direction:column; padding:26px 14px 0; }
+.results-page .results-achievements .card-copy h3 { margin:0 0 18px; padding:0; border:0; color:var(--accent); font:normal clamp(25px,2.1vw,33px)/1.2 Georgia,serif; letter-spacing:-.025em; }
+.results-page .results-achievements .card-description { margin:0 0 20px; color:#354b57; font:16px/1.75 var(--sans); }
+.results-page .results-achievements .card-takeaway { margin:auto 0 24px; color:#536474; font:16px/1.65 Georgia,serif; }
+.results-page .results-achievements .card-link { align-self:flex-start; margin:0 14px 8px; color:var(--accent); font:500 13px/1.5 var(--sans); text-underline-offset:4px; text-decoration:underline; text-decoration-color:currentColor; text-decoration-thickness:1px; }
+.results-page .results-achievements .card-link:hover { color:var(--accent); text-decoration-thickness:2px; }
+.results-figure-dialog { position:fixed; margin:auto; padding:48px 16px 16px; width:min(1300px,94vw); max-height:92dvh; border:1px solid #dce1dc; border-radius:12px; background:#fffefa; box-shadow:0 20px 100px #122a3d40; }
+.results-figure-dialog::backdrop { background:#162d3dcc; }
+.results-figure-dialog img { display:block; width:100%; height:auto; max-height:calc(92dvh - 72px); object-fit:contain; }
+.results-figure-dialog .dialog-close { position:absolute; right:16px; top:12px; border:0; background:transparent; color:#314d56; font:600 13px/1.6 var(--sans); cursor:pointer; }
+.results-figure-dialog .dialog-close span { margin-left:9px; font-size:21px; }
+.results-page .results-achievements :is(a,button):focus-visible { outline:3px solid #3b8e9f; outline-offset:4px; }
+@media(max-width:1100px) {
+  .results-page .content-page .markdown-page { grid-template-columns:145px minmax(0,1fr); gap:20px; }
+  .results-page .content-page .content-reading { padding:30px 20px; }
+  .results-page .content-page .results-achievements { gap:20px; }
+  .results-page .results-achievements .achievement-card { padding:12px; }
+  .results-page .results-achievements .card-copy { padding:22px 10px 0; }
+  .results-page .results-achievements .card-copy h3 { font-size:25px; }
+  .results-page .results-achievements :is(.card-description,.card-takeaway) { font-size:15px; }
+  .results-page .results-achievements .card-link { margin-inline:10px; }
+}
+@media(max-width:760px) {
+  .results-page .content-page .content-model-stage { margin-inline:-14px; padding-inline:14px; }
+  .results-page .content-page .markdown-page { display:block; }
+  .results-page .content-page .content-reading { padding:28px 14px; }
+  .results-page .content-page .results-achievements { grid-template-columns:1fr; gap:24px; }
+  .results-page .results-achievements .card-figure { aspect-ratio:auto; }
+  .results-page .results-achievements .card-copy { padding-top:24px; }
+  .results-page .results-achievements .card-copy h3 { font-size:28px; }
+}
+@media print { .results-page .results-achievements .achievement-card { break-inside:avoid; } }

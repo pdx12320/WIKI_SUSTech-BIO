@@ -1,0 +1,19 @@
+{% extends 'pages/content_page.html' %}
+{% block body_class %}inner-page results-page{% endblock %}
+{% block page_styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='results-achievements.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='results-sonar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='results-conclusion.css') }}">
+{% endblock %}
+{% block main %}
+{{ super() }}
+<dialog class="results-figure-dialog" data-results-figure-dialog aria-label="Enlarged summary figure">
+  <button class="dialog-close" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button>
+  <img alt="">
+</dialog>
+{% endblock %}
+{% block page_scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='results-achievements.js') }}" defer></script>
+{% endblock %}

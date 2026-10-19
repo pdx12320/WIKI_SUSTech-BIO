@@ -1,0 +1,87 @@
+/* The team's closing reflection: a quiet, readable editorial layout. */
+.results-page .content-page .markdown-content .orca-journey {
+  max-width:68ch;
+  margin:80px auto 64px;
+  color:#354654;
+  font:18px/1.9 Georgia,'Times New Roman',serif;
+  text-align:left;
+  overflow-wrap:break-word;
+}
+.results-page .content-page .markdown-content .orca-journey #integrated-conclusion {
+  margin:0 0 14px;
+  padding:0;
+  border:0;
+  color:#26394a;
+  font:normal clamp(36px,4vw,52px)/1.15 Georgia,'Times New Roman',serif;
+  letter-spacing:-.035em;
+  text-align:center;
+}
+.results-page .content-page .markdown-content .orca-journey .journey-subtitle {
+  margin:0 0 40px;
+  color:#6a7881;
+  font:18px/1.5 Georgia,'Times New Roman',serif;
+  text-align:center;
+}
+.results-page .content-page .markdown-content .orca-journey > p {
+  margin:0 0 1.2em;
+  color:inherit;
+  font:inherit;
+}
+.results-page .content-page .markdown-content .journey-subtitle + p {
+  color:#293e4b;
+  font-size:19px;
+}
+.results-page .content-page .markdown-content .orca-journey strong {
+  color:#26394a;
+  font-weight:700;
+}
+.results-page .content-page .markdown-content .orca-journey .journey-signature {
+  margin:36px 0 0;
+  color:#65747e;
+  text-align:right;
+  font-size:16px;
+}
+.results-page .content-page .markdown-content .results-thank-you {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  margin:48px auto 0;
+  padding:48px 12px 28px;
+  text-align:center;
+}
+.results-page .content-page .markdown-content .results-thank-you img {
+  display:block;
+  width:auto;
+  height:180px;
+  max-width:100%;
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  object-fit:contain;
+}
+.results-page .content-page .markdown-content .results-thank-you p {
+  margin:0;
+  color:#3f456a;
+  font:normal clamp(20px,2.1vw,25px)/1.5 Georgia,'Times New Roman',serif;
+  text-wrap:balance;
+}
+@media(max-width:650px) {
+  .results-page .content-page .markdown-content .orca-journey {
+    margin:56px auto 44px;
+    font-size:17px;
+    line-height:1.8;
+  }
+  .results-page .content-page .markdown-content .orca-journey .journey-subtitle { margin-bottom:28px; }
+  .results-page .content-page .markdown-content .journey-subtitle + p { font-size:18px; }
+  .results-page .content-page .markdown-content .orca-journey .journey-signature { font-size:15px; }
+  .results-page .content-page .markdown-content .results-thank-you { margin-top:32px; padding-top:36px; }
+  .results-page .content-page .markdown-content .results-thank-you img { height:160px; }
+}
+@media print {
+  .results-page .orca-journey p { orphans:3; widows:3; }
+  .results-page #integrated-conclusion { break-after:avoid; }
+  .results-page .results-thank-you { break-inside:avoid; }
+}

@@ -108,10 +108,9 @@ function demoTourElements(){
  let card=$('#demo-coach'),ring=$('#demo-target-ring'),resume=$('#demo-guide-resume');
  if(!card){
   card=document.createElement('section');card.id='demo-coach';card.setAttribute('role','dialog');card.setAttribute('aria-modal','false');card.setAttribute('aria-labelledby','demo-coach-title');
-  card.innerHTML='<div class="demo-coach-top"><span id="demo-coach-progress"></span><button type="button" id="demo-guide-hide" aria-label="Hide walkthrough">×</button></div><h2 id="demo-coach-title"></h2><p id="demo-coach-text" aria-live="polite"></p><div class="demo-coach-bottom"><span>Click the green-framed control</span><button type="button" id="demo-guide-locate">Show me ↗</button></div>';
+  card.innerHTML='<div class="demo-coach-top"><span id="demo-coach-progress"></span><button type="button" id="demo-guide-hide" aria-label="Hide walkthrough">×</button></div><h2 id="demo-coach-title"></h2><p id="demo-coach-text" aria-live="polite"></p>';
   document.body.append(card);
   $('#demo-guide-hide').onclick=()=>{demoTour.hidden=true;demoGuide();};
-  $('#demo-guide-locate').onclick=()=>{demoTour.target?.scrollIntoView({block:'center',inline:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});demoTour.target?.focus({preventScroll:true});};
   ring=document.createElement('div');ring.id='demo-target-ring';ring.setAttribute('aria-hidden','true');document.body.append(ring);
   resume=document.createElement('button');resume.id='demo-guide-resume';resume.type='button';resume.textContent='Resume walkthrough';resume.onclick=()=>{demoTour.hidden=false;demoTour.key='';demoGuide();};document.body.append(resume);
  }

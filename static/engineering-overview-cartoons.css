@@ -104,5 +104,6 @@
 @media print {
   .mascot-flip-toggle { display: none; }
   .mascot-flip-stage { transition: none; transform: none !important; }
+  .mascot-flip-front { visibility: visible; transform: none; }
   .mascot-flip-back { display: none; }
 }

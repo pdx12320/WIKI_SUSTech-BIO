@@ -1,7 +1,7 @@
 // A shared 48px drawing grid, rounded strokes and small solid accents keep the
 // nine editorial symbols consistent. These are navigation icons, not diagrams.
 const drawings = {
-  fundmental: [
+  fundamental: [
     ['path', {d:'M15 6c0 15 18 21 18 36M33 6c0 15-18 21-18 36M16 10h16M18 17h12M19 31h10M16 38h16'}],
     ['circle', {cx:24,cy:24,r:3,fill:'currentColor',stroke:'none'}],
   ],

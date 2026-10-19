@@ -79,18 +79,18 @@ unchanged. The expanded QX01 page remains 498px wide.
 - [Expanded activity card](qa/reader-original.png)
 
 
-## Fundmental publication cutoff
+## Fundamental publication cutoff
 
-At the owner's request, the website excludes Fundmental records after
+At the owner's request, the website excludes Fundamental records after
 2026-07-31: ten records, ten PDFs and ten previews removed. Current coverage is
-168 records / 171 pages; Fundmental contains 15 records ending 2026-07-31.
+168 records / 171 pages; Fundamental contains 15 records ending 2026-07-31.
 The catalog, importer selection policy and expected inventory checks are
 synchronized. Earlier counts in this log describe the preceding versions.
 
 Notebook Python checks, Node core checks, frozen build/link audit and exact
 PDF/preview inventory checks passed after removal. Chrome confirmed the updated
 overview totals, 15 focused records, no date options after July 31, and a
-390px layout without document overflow. See [Fundmental cutoff](qa/fundmental-cutoff.png).
+390px layout without document overflow. See [Fundamental cutoff](qa/fundamental-cutoff.png).
 
 
 ## Timeline-first descending overview — 2026-10-18

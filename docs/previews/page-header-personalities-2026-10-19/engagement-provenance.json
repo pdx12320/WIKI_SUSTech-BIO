@@ -1,0 +1,22 @@
+{
+  "tool": "Built-in image_gen",
+  "prompts": {
+    "inclusivity": "Use case: illustration-story. Generate a new website header illustration using reference image only for exact mascot identity and style. Same indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, tiny legs, indigo shoes, thick clean indigo outlines and restrained lavender shading. One full-body mascot centered with all props inside square canvas, 8 percent clear margins, genuinely transparent background. Match reference proportions. No watermark, no surrounding scene. Mascot smiling warmly, making a clear heart shape with BOTH gloved hands together in front of chest, small coral heart between hands. No text.",
+    "education": "Use case: illustration-story. Generate a new website header illustration using reference image only for exact mascot identity and style. Same indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, tiny legs, indigo shoes, thick clean indigo outlines and restrained lavender shading. One full-body mascot centered with all props inside square canvas, 8 percent clear margins, genuinely transparent background. Match reference proportions. No watermark, no surrounding scene. Mascot as friendly teacher standing in front of a small freestanding dark muted indigo chalkboard positioned behind and to the left of the mascot. One gloved index finger points clearly at chalkboard. Chalkboard has simple white chalk sketches of a DNA helix and open book, no text. Board and character form compact balanced silhouette. Keep mascot face fully visible.",
+    "hp": "Use case: illustration-story. Generate a new website header illustration using reference image only for exact mascot identity and style. Same indigo orca hood with white forehead patch, peach face, coral cheeks, white gloves, tiny legs, indigo shoes, thick clean indigo outlines and restrained lavender shading. One full-body mascot centered with all props inside square canvas, 8 percent clear margins, genuinely transparent background. Match reference proportions. No watermark, no surrounding scene. Mascot cheerfully raising and holding a wide pale cream cloth banner with both hands at chest height. Banner text exactly 'Human Practice' on two readable centered lines in dark indigo, correct spelling. Face fully visible above banner. Banner no wider than character hood by more than 20 percent. No other text."
+  },
+  "assets": [
+    [
+      "hp",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-ed64f6c4-3b22-4e3e-9558-9d63146ec4bb.png"
+    ],
+    [
+      "education",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-70996488-92bb-4d54-a778-57ddb58e005c.png"
+    ],
+    [
+      "inclusivity",
+      "/Users/hansensmbp/.codex/generated_images/01a15348-5c25-7853-ac3e-ed866c32bba0/exec-47ba1a02-57fc-4a0b-aa26-13932c8ae77e.png"
+    ]
+  ]
+}

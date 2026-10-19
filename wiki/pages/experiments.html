@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
 {% block title %}{{ content.title }}{% endblock %}
-{% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='experiments/experiments.css') }}">{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='experiments/experiments.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='chapter-personalities.css') }}">{% endblock %}
 {% set groups = content.metadata.protocol_groups %}
 {% block main %}
 <main id="main-content" class="experiments-page" data-experiments data-content-source="{{ content.source_label }}">
-  <header class="exp-intro">
-    <h1>{{ content.title }}<span>.</span></h1>
-  </header>
+  {% from 'components/chapter_personality.html' import chapter_header %}
+  {{ chapter_header('experiments', content.title, 'exp-intro') }}
   {% include 'components/experiments/how-to-read.html' %}
 
   <div class="exp-layout" id="experiment-workspace">

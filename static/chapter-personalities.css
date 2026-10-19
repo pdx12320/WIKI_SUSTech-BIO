@@ -1,0 +1,74 @@
+@font-face { font-family: 'ORCA Rajdhani'; src: url('fonts/headers/Rajdhani-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'ORCA Courier Prime'; src: url('fonts/headers/CourierPrime-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'ORCA Barlow Condensed'; src: url('fonts/headers/BarlowCondensed-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+
+/* Shared placement and palette, distinct typography for each page's purpose. */
+body:not(.ot) main:has(> .chapter-personality):not(:has(.nb-app.is-focus)) { padding-top: 54px; }
+header.chapter-personality {
+  width: min(1120px, calc(100vw - 2 * clamp(24px, 4.5vw, 88px)));
+  max-width: none;
+  margin: 0 auto 24px;
+  padding: 0 0 30px;
+}
+.chapter-personality__row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-right: 34px; height: 228px; }
+.chapter-personality__type { min-width: 0; display: flex; align-items: center; height: 100%; }
+.chapter-personality__mascot { display: block; flex: 0 0 auto; width: clamp(140px, 18vw, 228px); height: auto; }
+header.chapter-personality h1 { margin: 0; color: #2e3065; font-style: normal; line-height: 1.12; overflow-wrap: normal; }
+header.chapter-personality h1::after { content: none; }
+header.chapter-personality h1 > .chapter-personality__accent { color: #c47b8b; }
+.chapter-personality__rule { position: relative; height: 1px; background: #d4d7e4; margin-top: 20px; }
+.chapter-personality__rule::before { content: ''; position: absolute; left: 0; bottom: 0; width: 64px; height: 3px; background: #c47b8b; }
+
+header.chapter-personality--results h1 { font-family: 'ORCA Rajdhani', 'Arial Black', sans-serif; font-weight: 700; font-size: clamp(76px, 11.8vw, 160px); letter-spacing: -.025em; text-transform: uppercase; }
+.chapter-personality--results .chapter-personality__accent { display: inline-block; width: .12em; height: .12em; margin-left: .07em; background: #c47b8b; font-size: 0; }
+.chapter-personality--results .chapter-personality__accent::after { content: ''; display: inline-block; width: 15px; height: 15px; background: #c47b8b; }
+
+header.chapter-personality--notebook h1 { font-family: 'ORCA Courier Prime', 'Courier New', monospace; font-weight: 700; font-size: clamp(54px, 8vw, 108px); letter-spacing: -.045em; }
+.chapter-personality--notebook .chapter-personality__accent { font-weight: 700; }
+
+header.chapter-personality--experiments h1 { font-family: 'ORCA Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: clamp(68px, 10.4vw, 144px); letter-spacing: .015em; text-transform: uppercase; }
+.chapter-personality--experiments .chapter-personality__accent { display: none; }
+
+@media (max-width: 760px) {
+  body:not(.ot) main:has(> .chapter-personality):not(:has(.nb-app.is-focus)) { padding-top: 28px; }
+  header.chapter-personality { width: calc(100vw - 36px); padding-bottom: 20px; margin-bottom: 20px; }
+  .chapter-personality__row { gap: 8px; padding-right: 18px; height: 128px; }
+  .chapter-personality__mascot { width: clamp(76px, 20vw, 140px); }
+  header.chapter-personality--results h1 { font-size: clamp(42px, 14vw, 100px); }
+  header.chapter-personality--notebook h1 { font-size: clamp(28px, 9.6vw, 70px); }
+  header.chapter-personality--experiments h1 { font-size: clamp(37px, 12.2vw, 88px); }
+  .chapter-personality--results .chapter-personality__accent::after { width: 7px; height: 7px; }
+  .chapter-personality__rule { margin-top: 12px; }
+}
+
+header.chapter-personality--description h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-style: italic; font-size: clamp(64px, 10.2vw, 142px); letter-spacing: -.055em; }
+@media(max-width:760px) {
+  header.chapter-personality--description h1 { font-size: clamp(34px, 11.4vw, 84px); }
+  .chapter-personality__rule::before { width: 36px; height: 3px; }
+}
+
+/* Additional chapter voices share the existing header geometry and rule. */
+@font-face { font-family: 'ORCA Nunito'; src: url('fonts/headers/Nunito[wght].ttf') format('truetype'); font-weight: 200 1000; font-display: swap; }
+@font-face { font-family: 'ORCA Quicksand'; src: url('fonts/headers/Quicksand[wght].ttf') format('truetype'); font-weight: 300 700; font-display: swap; }
+@font-face { font-family: 'ORCA Plex Mono'; src: url('fonts/headers/IBMPlexMono-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'ORCA Manrope'; src: url('fonts/headers/Manrope[wght].ttf') format('truetype'); font-weight: 200 800; font-display: swap; }
+header.chapter-personality--contribution h1 { font-family: 'ORCA Nunito', sans-serif; font-weight: 850; font-size: clamp(48px, 7.7vw, 108px); letter-spacing: -.045em; }
+header.chapter-personality--future h1 { font-family: 'ORCA Quicksand', sans-serif; font-weight: 400; font-size: clamp(70px, 10.5vw, 146px); letter-spacing: .035em; }
+header.chapter-personality--measurement h1 { font-family: 'ORCA Plex Mono', monospace; font-weight: 500; font-size: clamp(40px, 6.4vw, 88px); letter-spacing: -.055em; }
+header.chapter-personality--safety h1 { font-family: 'ORCA Manrope', sans-serif; font-weight: 650; font-size: clamp(48px, 6.4vw, 88px); letter-spacing: -.035em; line-height: 1.08; }
+@media(max-width:760px) {
+ header.chapter-personality--contribution h1 { font-size: clamp(23px, 7.1vw, 54px); }
+ header.chapter-personality--future h1 { font-size: clamp(38px, 11vw, 78px); }
+ header.chapter-personality--measurement h1 { font-size: clamp(20px, 6.1vw, 46px); }
+ header.chapter-personality--safety h1 { font-size: clamp(28px, 8.2vw, 60px); }
+}
+
+/* Engagement: approachable voices within the same chapter header system. */
+header.chapter-personality--hp h1 { font-family: 'ORCA Manrope', sans-serif; font-weight: 600; font-size: clamp(48px, 6.4vw, 88px); letter-spacing: -.035em; line-height: 1.08; }
+header.chapter-personality--education h1 { font-family: 'ORCA Nunito', sans-serif; font-weight: 750; font-size: clamp(54px, 8.5vw, 118px); letter-spacing: -.035em; }
+header.chapter-personality--inclusivity h1 { font-family: 'ORCA Quicksand', sans-serif; font-weight: 600; font-size: clamp(52px, 8vw, 112px); letter-spacing: -.035em; }
+@media(max-width:760px) {
+ header.chapter-personality--hp h1 { font-size: clamp(28px, 8.2vw, 60px); }
+ header.chapter-personality--education h1 { font-size: clamp(28px, 8.8vw, 64px); }
+ header.chapter-personality--inclusivity h1 { font-size: clamp(27px, 8.3vw, 60px); }
+}

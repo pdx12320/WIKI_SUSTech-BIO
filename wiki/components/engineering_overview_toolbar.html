@@ -1,5 +1,9 @@
 <header class="engineering-overview-toolbar">
-  <h2 class="engineering-overview-toolbar-title">Engineering overview</h2>
+  <div class="engineering-overview-identity">
+    <img class="engineering-overview-mascot" src="{{ url_for('static', filename='assets/mascots/orca-engineering-header.png') }}" alt="" width="1024" height="1024">
+    <h2 class="engineering-overview-toolbar-title">Engineering<br><span>Overview</span></h2>
+    <div class="engineering-overview-title-rule" aria-hidden="true"></div>
+  </div>
   <nav class="engineering-overview-actions" aria-label="Engineering overview navigation">
     <a href="{{ url_for('pages', page='description') }}"><svg class="engineering-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"/></svg><span>Back to description</span></a>
     <a class="engineering-overview-actions-primary" href="#fundamental-research"><svg class="engineering-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 5 10 7-10 7Z" fill="currentColor" stroke="none"/></svg><span>Start engineering</span></a>

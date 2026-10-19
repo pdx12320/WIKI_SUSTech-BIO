@@ -1,12 +1,2 @@
-<header class="content-overview orca-chapter-title">
-  <div class="orca-chapter-title__row">
-  <div class="orca-chapter-title__display">
-    <h1>{{ content.title }}<span class="orca-chapter-title__dot" aria-hidden="true">.</span></h1>
-    <svg class="orca-chapter-title__current" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M 4 73 C 210 12 490 13 720 48 S 930 95 996 24"/>
-    </svg>
-  </div>
-  <img class="orca-chapter-title__mascot" src="{{ url_for('static', filename='assets/mascots/orca-description-guide.png') }}" alt="" width="1024" height="1024">
-  </div>
-  <div class="orca-chapter-title__rule" aria-hidden="true"><span></span><i></i><span></span></div>
-</header>
+{% from 'components/chapter_personality.html' import chapter_header %}
+{{ chapter_header('description', content.title, 'content-overview') }}

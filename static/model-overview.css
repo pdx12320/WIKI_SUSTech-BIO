@@ -65,3 +65,91 @@
     transition: none;
   }
 }
+
+/* Lead with the findings; circled links take readers to the supporting results. */
+.model-page #model-content .model-prose .model-result-links,
+.model-page .model-prose .model-result-links {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.model-page #model-content .model-prose .model-result-links > li,
+.model-page .model-prose .model-result-links > li {
+  margin: 0;
+  padding: 0 0 16px;
+  border-bottom: 1px solid #e1dfee;
+}
+
+.model-page .model-prose .model-result-links a {
+  color: #56547b;
+  text-decoration: underline;
+  text-decoration-color: #b7afd0;
+  text-underline-offset: 4px;
+}
+
+.model-page .model-prose .model-result-links a:hover {
+  color: #3d409b;
+  text-decoration-color: currentColor;
+}
+
+.model-page .model-prose .model-result-links a:focus-visible {
+  outline: 2px solid #5f62cd;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.model-page .model-prose .model-result-links p {
+  margin: 6px 0 0;
+}
+
+.model-page .result-number {
+  color: #78709e;
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.model-page .model-prose .model-opening-quote {
+  position: relative;
+  margin: 0 0 30px;
+  padding: 30px 26px 28px 48px;
+  border: 1px solid #e1ddee;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff 0%, #f4f1fb 100%);
+  box-shadow: 0 14px 30px -12px #41487342, 0 3px 8px #4148730c;
+}
+
+.model-page .model-opening-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  color: #aaa1cc;
+  font: 400 60px/1 Georgia, 'Times New Roman', serif;
+  pointer-events: none;
+}
+
+.model-page .model-prose .model-opening-quote p {
+  margin: 0;
+  color: #56547b;
+  font: italic 400 clamp(22px, 2.2vw, 30px)/1.5 Georgia, 'Times New Roman', serif;
+}
+
+@media (max-width: 760px) {
+  .model-page .model-prose .model-opening-quote {
+    padding: 28px 20px 24px 38px;
+  }
+  .model-page .model-opening-quote::before {
+    left: 10px;
+    font-size: 48px;
+  }
+}
+
+@media print {
+  .model-page .model-prose .model-opening-quote {
+    box-shadow: none;
+    background: #fff;
+  }
+}

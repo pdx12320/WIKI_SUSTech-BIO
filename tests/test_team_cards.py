@@ -94,6 +94,8 @@ class TeamCardsTest(unittest.TestCase):
         self.assertEqual([m['name'] for m in members if m['category']=='instructor'], ['Hengwei Su','Xueyin Lu'])
         self.assertEqual(by_name['Jacky Man-leuk Yuen']['category'], 'advisors')
         self.assertEqual(sum(m['category']=='team-members' for m in members), 15)
+        self.assertEqual([m['number'] for m in members if m['category']=='team-members'],
+                         [f'{number:02d}' for number in range(1, 16)])
         self.assertEqual(sum(m['category']=='advisors' for m in members), 5)
         pis = [m for m in members if m['category']=='pi']
         self.assertEqual([m['name'] for m in pis], ['Zefeng Wang', 'Fuxing Zeng', 'Min Zhang'])

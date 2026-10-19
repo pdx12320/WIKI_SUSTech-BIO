@@ -84,7 +84,21 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
     else if (['edit','question','rewind','target','return'].includes(phase) && ['ArrowDown','PageDown',' '].includes(event.key)) event.preventDefault();
     else if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' ', 'Escape'].includes(event.key)) interrupt();
   });
-  skip?.addEventListener('click', () => { scrollToTake(.955); finish(); });
+  skip?.addEventListener('click', () => {
+    if (!enabled) return;
+    if (scrollReturn) {
+      // Skip the timed replay, then hold the completed UGC edit until the
+      // reader scrolls. Reuse the normal scroll-controlled return below.
+      active = played = editingStarted = true;
+      elapsed = editStart + timing.edit;
+      returning = false;
+      phase = 'return';
+      if (skip) skip.hidden = true;
+      return;
+    }
+    scrollToTake(.955);
+    finish();
+  });
   return {
     setReady(value) { ready = value; },
     update(take, dt) {

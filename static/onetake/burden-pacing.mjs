@@ -7,12 +7,13 @@ export const BURDEN_OUT = .78;
 // which stretched it to ~2.8 screens and made it read as a separate page.
 const BURDEN_WEIGHT = 4.5;
 
-export function buildScrollTrack(keys, { burden = true, quickEditExit = false } = {}) {
+export function buildScrollTrack(keys, { burden = true, quickEditExit = false, stagedConclusions = false } = {}) {
   let baselineLength = 0, length = 0;
   const track = [];
   const cuts = burden ? [BURDEN_IN, BURDEN_OUT] : [];
   // Shorten only the completed-edit exit, ending before the wet-lab copy.
   if (quickEditExit) cuts.push(.89, .935);
+  if (stagedConclusions) cuts.push(.935);
   cuts.sort((a, b) => a - b);
   keys.slice(1).forEach((key, i) => {
     const previous = keys[i];
@@ -25,7 +26,8 @@ export function buildScrollTrack(keys, { burden = true, quickEditExit = false } 
       const start = length;
       const inBurden = middle >= BURDEN_IN && middle <= BURDEN_OUT;
       const exitScale = quickEditExit && middle >= .89 && middle <= .935 ? .5 : 1;
-      length += (to - from) * (inBurden ? BURDEN_WEIGHT : weight) * exitScale;
+      const readingScale = stagedConclusions && middle >= .935 ? 3 : 1;
+      length += (to - from) * (inBurden ? BURDEN_WEIGHT : weight) * exitScale * readingScale;
       track.push({ start, end: length, from, to });
     }
   });

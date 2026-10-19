@@ -61,3 +61,14 @@ for (let q = -.19; q <= 1; q += .001) {
 }
 assert.ok(Math.abs(quick.scale / after.scale - quick.length / after.length) < 1e-10);
 console.log('Passed homepage half-distance edit exit, unchanged reading distance and reversible mapping.');
+
+assert.doesNotMatch(source, /quickEditExit:\s*!!root/, 'Home must use the full scroll-driven exit distance');
+
+const staged = buildScrollTrack(keys, { stagedConclusions: true });
+for (const [a, b] of [[.935, .966], [.974, 1]]) {
+  assert.ok(Math.abs(span(staged, a, b) - 3 * span(after, a, b)) < 1e-10,
+    'Both conclusion screens need three times their previous reading distance');
+}
+assert.ok(Math.abs(span(staged, -.19, .935) - span(after, -.19, .935)) < 1e-10,
+  'Staging conclusions must preserve every earlier chapter and the restored edit exit');
+console.log('Passed staged conclusion distance and unchanged earlier scroll pacing.');

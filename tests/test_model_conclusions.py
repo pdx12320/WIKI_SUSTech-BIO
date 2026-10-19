@@ -119,14 +119,11 @@ class ModelConclusionAdditionsTest(unittest.TestCase):
         self.assertEqual(sum(node.tag == "figure" for node in module4.walk()), 2)
         introduction = next(node for node in self.document.root.walk() if node.attrs.get("id") == "model-content")
         disease_heading = [node for node in self.document.root.walk() if node.attrs.get("id") == "module4-therapeutic-window"]
-        self.assertEqual(len(disease_heading), 1)
-        self.assertIn(disease_heading[0], list(introduction.walk()))
-        self.assertNotIn(disease_heading[0], list(module4.walk()))
+        self.assertEqual(disease_heading, [])
+        self.assertNotIn("Toward RNA editing for Alzheimer's disease", introduction.text())
         article = next(node for node in introduction.children if isinstance(node, Element) and node.tag == "article")
         elements = [node for node in article.children if isinstance(node, Element)]
-        self.assertEqual(elements[-4].tag, "ol")
-        self.assertIs(elements[-3], disease_heading[0])
-        self.assertEqual(elements[-1].attrs.get("data-claim"), "T-A")
+        self.assertEqual(elements[-1].attrs.get("id"), "model-figure-1")
         self.assertNotIn("The next translational questions", introduction.text())
 
 

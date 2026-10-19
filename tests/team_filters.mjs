@@ -28,7 +28,7 @@ function setup(specs = memberSpecs) {
       click() {
         assert.equal(this.disabled, false, 'A usable filter must be enabled after initialization.');
         assert.ok(listeners.has('click'), 'The control must have a click handler.');
-        listeners.get('click')({ currentTarget: this });
+        listeners.get('click')({ currentTarget: this, target: { closest: selector => selector === '[data-team-overview]' ? this : null } });
       },
       ...options, attributes,
     };
@@ -44,7 +44,7 @@ function setup(specs = memberSpecs) {
   const empty = node({ hidden: true });
   const summary = node({ hidden: true });
   const status = node();
-  const reset = node({ hidden: true });
+  const header = node();
   const members = node({
     querySelectorAll(selector) {
       assert.equal(selector, '[data-member-card]');
@@ -73,7 +73,7 @@ function setup(specs = memberSpecs) {
       return ({
         '#team-members': members, '#team-deck': deck,
         '[data-team-filter-summary]': summary, '[data-team-filter-status]': status,
-        '[data-team-filter-reset]': reset,
+        '[data-team-package-header]': header,
       })[selector] ?? null;
     },
     querySelectorAll(selector) {
@@ -84,7 +84,7 @@ function setup(specs = memberSpecs) {
   };
   vm.runInNewContext(source, { document });
   return {
-    cards, buttons, count, empty, summary, status, reset, deck, otherGroups, advisor, instructor,
+    cards, buttons, count, empty, summary, status, header, deck, otherGroups, advisor, instructor,
     get focused() { return focused; },
     select(label) { buttons.find(button => button.dataset.teamFilter === label).click(); },
     visibleNames() { return cards.filter(card => !card.hidden).map(card => card.name); },
@@ -96,7 +96,6 @@ const run = setup();
 assert.deepEqual(run.visibleNames(), memberSpecs.map(([name]) => name));
 assert.deepEqual(run.pressedLabels(), []);
 assert.equal(run.summary.hidden, false);
-assert.equal(run.reset.hidden, true);
 assert.equal(run.empty.hidden, true);
 assert.equal(run.status.textContent, 'All 6 team members');
 assert.equal(run.count.textContent, '6');
@@ -117,7 +116,6 @@ for (const [label, names] of expected) {
   assert.deepEqual(run.pressedLabels(), [label], 'Switching filters must leave exactly one selected folder.');
   assert.equal(run.status.textContent, `${label} · ${names.length} of 6 team members`);
   assert.equal(run.count.textContent, `${names.length} / 6`);
-  assert.equal(run.reset.hidden, false);
   assert.equal(run.empty.hidden, true);
   assert.ok(run.otherGroups.every(group => group.hidden), 'Active filters must show formal members only.');
   assert.equal(run.advisor.hidden, false, 'Advisor cards must remain untouched inside their hidden section.');
@@ -130,16 +128,14 @@ assert.deepEqual(run.visibleNames(), memberSpecs.map(([name]) => name), 'Clickin
 assert.deepEqual(run.pressedLabels(), []);
 assert.equal(run.count.textContent, '6');
 assert.equal(run.status.textContent, 'All 6 team members');
-assert.equal(run.reset.hidden, true);
 assert.deepEqual(run.otherGroups.map(group => group.hidden), [false, false, true], 'Reset must preserve each nonmember section’s original visibility.');
 
 run.select('Human Practices');
-run.reset.click();
+run.header.click();
 assert.deepEqual(run.visibleNames(), memberSpecs.map(([name]) => name));
 assert.deepEqual(run.pressedLabels(), []);
-assert.equal(run.focused.dataset.teamFilter, 'Human Practices', 'Show all must return keyboard focus to the previously selected folder.');
+assert.equal(run.focused, null, 'The package reset must not move focus away from the clicked control.');
 assert.equal(run.empty.hidden, true);
-assert.equal(run.reset.hidden, true);
 assert.deepEqual(run.otherGroups.map(group => group.hidden), [false, false, true]);
 run.select('Dry Lab');
 run.select('Wiki');

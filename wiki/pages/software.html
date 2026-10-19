@@ -5,7 +5,7 @@
 {% endblock %}
 {% set sections = [
   ('rewire', 'Delivery Dynamics', [('rewire-purpose', 'Overview'), ('rewire-logic', 'Modeling approach'), ('rewire-results', 'Results'), ('rewire-library', 'State and flux profiles'), ('rewire-references', 'References'), ('rewire-reuse', 'Reproducibility')]),
-  ('workbench', 'PUFFER', [('workbench-purpose', 'Overview'), ('workbench-logic', 'Modeling approach'), ('workbench-workflow', 'Workflow'), ('workbench-references', 'References'), ('workbench-reuse', 'Reproducibility')])
+  ('workbench', 'PUFFER', [('workbench-purpose', 'Overview'), ('workbench-tutorial', 'Tutorial'), ('workbench-logic', 'Modeling approach'), ('workbench-workflow', 'Workflow'), ('workbench-references', 'References'), ('workbench-reuse', 'Reproducibility')])
 ] %}
 {% macro figure(item) %}
 <figure class="software-figure" id="software-figure-{{ item.number }}" data-figure-number="{{ item.number }}" data-panel-count="{{ item.panels }}">
@@ -34,21 +34,25 @@
       <section class="model-module" id="rewire" data-model-module>
         <header class="module-heading"><div><article class="markdown-content markdown-content--custom" data-content-source="{{ content.source_label }}">{{ rendered_markdown }}</article></div></header>
         <div class="model-prose">
-          {% for item in content.metadata.figures if item.section == 'overview' %}{{ figure(item) }}{% endfor %}
           <h3 id="rewire-purpose" data-model-chapter><span class="chapter-number">1.1</span>Overview</h3>
-          <p>The whole-body model connects delivery, tissue distribution, cellular expression and RNA editing in a single dynamical model. It asks how losses along the delivery pathway and competing editing reactions shape the final APOE RNA profile.</p>
+          <p>We built a multiscale framework coupling whole-body ODE modeling with spatial simulation to examine how delivery, expression and competing edits shape RNA products and tissue coverage.</p>
+          <ol class="software-overview-results" aria-label="Delivery Dynamics simulation findings">
+            <li><a href="#rewire-result-dose"><span>①</span> <strong>Intermediate doses maximize the intended RNA product in the simulated scan.</strong></a></li>
+            <li><a href="#rewire-result-sites"><span>②</span> <strong>Single-site selectivity better preserved the intended product in the simulated comparison.</strong></a></li>
+            <li><a href="#rewire-result-expression"><span>③</span> <strong>Delivery and expression affected specificity more strongly than catalysis near the reference state.</strong></a></li>
+            <li><a href="#rewire-result-coverage"><span>④</span> <strong>Persistent spatial gradients make tissue coverage a distinct delivery objective.</strong></a></li>
+          </ol>
+
+          <h3 id="rewire-logic" data-model-chapter><span class="chapter-number">1.2</span>Modeling approach</h3>
           <p>An editor's activity in a cellular assay does not describe the entire delivery-to-editing process. Editor availability in brain cells depends on tissue distribution and clearance, blood–brain barrier transport, cellular uptake and expression. Each process can alter how much editor reaches its substrate and how long it remains available. Meanwhile, additional editing can convert an intended APOE3-like product into a different RNA state. We therefore needed to relate delivery and exposure to both product composition and unwanted editing, beyond the aggregate editing yield.</p>
           <p>We built the whole-body model to examine these connected processes under a shared set of assumptions. It allows us to compare delivery, expression and reaction parameters and identify which processes most strongly affect the outputs. Dose scans ask whether increasing input improves the intended product or mainly increases competing reactions. The accompanying tissue simulation asks whether a higher average editing fraction also provides more even coverage across cells at different distances from a vessel.</p>
           <p>Programmable PUF–APOBEC editing provides the biological starting point (Han et al., 2022). The model extends this concept with explicit transport and reaction assumptions.</p>
-          <p><strong>Our modeling contribution connects systemic delivery, intracellular expression and explicit multisite RNA reactions within one interpretable framework.</strong> A complementary spatial model examines tissue coverage. This design distinguishes intended-product retention, unwanted-edit burden and spatial coverage, allowing each to inform a different engineering decision.</p>
-          <p>In the saved 168-hour dose scan, APOE3-like RNA reached about 46% at normalized doses of 0.7–1.0 before declining at higher doses. In the 72-hour spatial simulations, a tenfold dose increase raised mean editing nearly tenfold but retained an approximately fourfold near-vessel versus far-vessel gap. These model-derived findings distinguish two effects that a single editing-efficiency value would miss. More editing need not preserve more of the intended product, and a higher tissue average need not provide more even coverage.</p>
-          <p><strong>The reproducible software makes these modeling decisions inspectable and reusable.</strong> We share the ODE source, configuration and parameter records, frozen plotting inputs and viewers for saved outputs. These resources let other teams reproduce the supplied ODE workflows and regenerate figures from saved data. Readers can trace figures to their inputs, compare assumptions and inspect the processes behind aggregate results when developing their own models.</p>
+          {% for item in content.metadata.figures if item.section == 'overview' %}{{ figure(item) }}{% endfor %}
           <figure class="software-figure" id="software-figure-2" data-figure-number="2" data-panel-count="3">
             {% include 'components/software/delivery-body.html' %}
-            <figcaption><strong>Figure 2. Whole-body delivery.</strong> From systemic transport to RNA editing.</figcaption>
+            <figcaption><strong>Figure 2. Whole-body delivery.</strong> From systemic transport to RNA editing. Follow the highlighted route from the depot and blood through the brain barrier, then into cellular expression and RNA conversion. The enlarged views separate transport from intracellular reactions. Moving markers illustrate pathway direction; they are schematic rather than measured particle tracks.</figcaption>
           </figure>
 
-          <h3 id="rewire-logic" data-model-chapter><span class="chapter-number">1.2</span>Modeling approach</h3>
           <h4>Delivery and expression determine editor availability</h4>
           <p>The input specifies dose, route and a parameter set. Compartment balances track absorption, exchange between blood and tissues, clearance, barrier transport and intracellular expression. AAV distribution modeling provides a basis for this compartmental representation (Liu et al., 2024).</p>
           <p>Each state changes through incoming and outgoing fluxes, production and loss. The coupled ordinary differential equations share a state vector, so upstream delivery changes propagate to editor availability.</p>
@@ -67,22 +71,22 @@
           <p data-evidence="software">Across the whole-body, cellular and tissue simulations, four stories turn model outputs into design choices. All dose comparisons use normalized model inputs.</p>
           <ol class="software-stories" id="software-stories" data-software-stories>
             <li data-software-story="dose">
-              <h4>More dose can erase the gain</h4>
+              <h4 id="rewire-result-dose">Intermediate dosing preserves the intended product</h4>
               <p>The dose response unfolds in three regimes: product accumulation, a plateau, and overediting. At 168 h, APOE3-like RNA reaches <strong>about 46% at doses 0.7–1.0</strong>, peaking at 0.9, then declines. At dose 10, APOE2-like RNA outnumbers the desired APOE3-like product <strong>3.5 to 1</strong>. The second edit consumes molecules that had already reached the intended state (Figures 4 and 6).</p>
-              <p class="software-story-choice">Every scanned dose misses at least one joint criterion. The result makes design improvement the next priority, rather than continued dose escalation.</p>
+              <p class="software-story-choice">The scan identifies a trade-off between product yield, unwanted editing and exposure. Improving delivery and selectivity becomes the next priority for meeting the joint criteria.</p>
             </li>
             <li data-software-story="sites">
-              <h4>The dual-site trap</h4>
+              <h4 id="rewire-result-sites">Single-site selectivity preserves the intended product</h4>
               <p>Targeting both positions, 112 and 158, sounds more complete. At matched dose 2 and 72 h, the dual-site candidate's <strong>APOE2-like fraction is about 170 times that of</strong> the single-site 10R A3A comparator. Its APOE3-like yield is also lower: <strong>4.44% versus 5.52%</strong>. The single-site candidate wins on both measures, placing the dual-site design behind the Pareto front (Figure 8B).</p>
               <p class="software-story-choice">Preserving the intended product makes single-site selectivity a design priority.</p>
             </li>
             <li data-software-story="expression">
-              <h4>Expression and delivery dominate specificity</h4>
+              <h4 id="rewire-result-expression">Expression and delivery dominate specificity</h4>
               <p>At the local sensitivity screen's reference state, a 20% increase in transcription, translation or brain-entry rates changes specificity <strong>roughly 8–9 times more strongly</strong> than the same increase in on-target catalysis. These upstream increases reduce specificity, revealing the cost of excess editor exposure (Figure 8A).</p>
               <p class="software-story-choice">Editor mRNA and protein time courses become the next priority: tune when and how much editor is available before pursuing faster catalysis.</p>
             </li>
             <li data-software-story="coverage">
-              <h4>Tenfold more dose, the same fourfold gap</h4>
+              <h4 id="rewire-result-coverage">Spatial gradients identify where delivery coverage needs improvement</h4>
               <p>At 72 h, brain cells in the nearest vessel-distance quartile have <strong>about four times the mean editing fraction</strong> of cells in the farthest quartile. This gap persists at all three doses: 0.3, 1 and 3. Raising the dose tenfold raises mean editing almost tenfold, yet leaves the spatial imbalance intact (Figures 3 and 8C).</p>
               <p class="software-story-choice">The tissue story shifts the design goal toward broader coverage: reach the distant cells as well as those beside the vessel.</p>
             </li>
@@ -90,7 +94,7 @@
           <p>PhysiCell places individual cells within a three-dimensional tissue volume, and BioFVM resolves extracellular transport (Ghaffarizadeh et al., 2018; 2016).</p>
           <figure class="software-figure" id="software-figure-3" data-figure-number="3" data-panel-count="2">
             {% include 'components/software/spatial-viewer.html' %}
-            <figcaption><strong>Figure 3. Delivery across brain tissue.</strong> AAV distribution and editing in 1,480 cells over 0–72 h.</figcaption>
+            <figcaption><strong>Figure 3. Delivery across brain tissue.</strong> AAV distribution and editing in 1,480 cells over 0–72 h. The left view colors extracellular grid locations by normalized AAV amount; the right colors cells by edited RNA fraction. Color scales stay fixed across saved times and doses. Change dose or time, and rotate either view to compare delivery with cell editing. At 72 h, near-vessel cells remain more strongly edited, exposing uneven coverage behind the average.</figcaption>
           </figure>
           {% for item in content.metadata.figures if item.section == 'dose' %}{{ figure(item) }}{% endfor %}
           {% for item in content.metadata.figures if item.section == 'trajectories' %}{{ figure(item) }}{% endfor %}
@@ -99,6 +103,7 @@
 
           <h3 id="rewire-library" data-model-chapter><span class="chapter-number">1.4</span>State and flux profiles</h3>
           <p>The profiles below trace the processes behind the aggregate outputs. The archived baseline ends at its saved time limit; the earlier notebook model is shown separately.</p>
+          <p>For Figures 11–38, read time along the horizontal axis and the named state or flux on the vertical axis. A state is the amount present; a flux is the amount transferred, produced or removed per unit time. Panel scales differ, so compare labeled values rather than curve height alone. Use each group to trace how upstream delivery becomes editor exposure and then RNA products.</p>
           {% for group in content.metadata.figure_groups %}
           <details class="software-figure-group"><summary>{{ group.title }}</summary>
             <p>{{ group.description }}</p>
@@ -109,6 +114,7 @@
           <ol class="software-references">{% for reference in content.metadata.rewire_references %}<li>{{ reference }}</li>{% endfor %}</ol>
 
           <h3 id="rewire-reuse" data-model-chapter><span class="chapter-number">1.6</span>Reproducible Code</h3>
+          <p><strong>The reproducible software makes these modeling decisions inspectable and reusable.</strong> We share the ODE source, configuration and parameter records, frozen plotting inputs and viewers for saved outputs. These resources let other teams reproduce the supplied ODE workflows and regenerate figures from saved data. Readers can trace figures to their inputs, compare assumptions and inspect the processes behind aggregate results when developing their own models.</p>
           <p>Python models, frozen plot data, drawing scripts and the interactive viewer source are included in one package.</p>
           <div class="software-actions">
             <a class="software-action software-action--primary" href="{{ url_for('static', filename='downloads/delivery-reproducibility.zip') }}" download>Reproducible Code</a>
@@ -125,25 +131,20 @@
           <p>The website and its companion local application connect two workflows from our Model page: <strong>Module 2's assay-informed PUF specificity ranking</strong> and <strong>Module 4's LAMAR-based RNA-site prioritization</strong>. The browser organizes target sequences, PUF candidates and assay records; the local application performs the supported protein-ranking and RNA-context analyses. The outputs prioritize candidate proteins and RNA sites, respectively, and remain separate in the exported results.</p>
           <p>PUF repeat recognition provides the basis for assigning RNA-binding motifs (Wang et al., 2002; Zhou et al., 2021). The interface supports complete built-in 8R and 12R scaffolds; other lengths require compatible scaffold input.</p>
 
-          {# Temporarily disabled until the team provides official Video Universe URLs.
           <div class="software-tutorial software-demo" id="workbench-demo">
-            <h4>Website demonstration</h4>
-            <video controls playsinline preload="metadata" width="1280" height="832" poster="{{ url_for('static', filename='assets/software/demo/orca-software-demo-20261016.jpg') }}" aria-label="ORCA website demonstration">
-              <source src="{{ url_for('static', filename='assets/software/demo/orca-software-demo-20261016.mp4') }}" type="video/mp4">
-              Your browser does not support HTML video.
-            </video>
+            <h4>One-minute demonstration</h4>
+            <iframe src="https://video.igem.org/videos/embed/i2fLRahC8pGYzLGTc7X1SS" title="PUFFER one-minute demonstration" width="1280" height="832" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <p><a href="https://video.igem.org/w/i2fLRahC8pGYzLGTc7X1SS" target="_blank" rel="noopener noreferrer">Watch on iGEM Video Universe</a> · 0:59</p>
           </div>
+          <p class="software-website-link"><a href="https://puffer-43e67d.igem.wiki/" target="_blank" rel="noopener noreferrer">Explore the PUFFER website ↗</a></p>
 
           <h3 id="workbench-tutorial" data-model-chapter><span class="chapter-number">2.2</span>Tutorial</h3>
           <div class="software-tutorial">
-            <video controls playsinline preload="metadata" width="3024" height="2144" poster="{{ url_for('static', filename='assets/software/puf-tutorial/poster.jpg') }}" aria-label="PUFFER tutorial with English subtitles">
-              <source src="{{ url_for('static', filename='assets/software/puf-tutorial/puf-website-tutorial-en.mp4') }}" type="video/mp4">
-              Your browser does not support HTML video.
-            </video>
+            <iframe src="https://video.igem.org/videos/embed/i5ucCjeFKN3JoWaDeSiLiU" title="PUFFER tutorial with English subtitles" width="3024" height="2144" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <p><a href="https://video.igem.org/w/i5ucCjeFKN3JoWaDeSiLiU" target="_blank" rel="noopener noreferrer">Watch the full tutorial on iGEM Video Universe</a> · 4:42</p>
           </div>
 
-          #}
-          <h3 id="workbench-logic" data-model-chapter><span class="chapter-number">2.2</span>Modeling approach</h3>
+          <h3 id="workbench-logic" data-model-chapter><span class="chapter-number">2.3</span>Modeling approach</h3>
           <h4>Protein sequence supports candidate ranking</h4>
           <p>The local application sums mutant-minus-reference masked log-probability differences in the original reference sequence to obtain an ESM-2 score (Lin et al., 2023). Frozen Ridge regressors combine the standardized score with mutation indicators to predict the team's C295, C388 and C871 assay readouts (Hoerl and Kennard, 1970).</p>
           <p>The ranking score subtracts the mean predicted C295 and C871 readouts from predicted C388. The fitted coefficients and scoring definition come from the team's assay data.</p>
@@ -152,7 +153,7 @@
           <p>LAMAR represents RNA sequence context using a pretrained RNA language model (Zhou et al., 2025). The local application uses an adapted model to prioritize cytidines within RNA windows.</p>
           <p>The RNA-context score is independent of the selected PUF and is not an editing probability. Protein ranking and RNA-site ranking therefore remain separate outputs.</p>
 
-          <h3 id="workbench-workflow" data-model-chapter><span class="chapter-number">2.3</span>Workflow</h3>
+          <h3 id="workbench-workflow" data-model-chapter><span class="chapter-number">2.4</span>Workflow</h3>
           <ol class="software-workflow">
             <li><span class="software-step"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="6" width="30" height="28" rx="4"/><path d="M12 14h16M12 20h10M12 26h13"/></svg>Input</span><strong>Define the target</strong><p>Enter RNA, DNA or a single-record FASTA sequence. Select a cytidine using 1-based coordinates and inspect 8–12-nucleotide recognition windows.</p></li>
             <li><span class="software-step"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 12h12l4 5h14v17H5z"/><path d="M12 9V5h21v8M12 24h16M12 29h10"/></svg>Design</span><strong>Save the candidates</strong><p>Review repeat assignments, build or import candidate proteins, and retain the project as JSON.</p></li>
@@ -160,10 +161,10 @@
           </ol>
           <p>Additional exports include protein FASTA, matching-site TSV and a local HTML report. The run manifest records input and model hashes, software versions and completion status.</p>
 
-          <h3 id="workbench-references" data-model-chapter><span class="chapter-number">2.4</span>References</h3>
+          <h3 id="workbench-references" data-model-chapter><span class="chapter-number">2.5</span>References</h3>
           <ol class="software-references">{% for reference in content.metadata.workbench_references %}<li>{{ reference }}</li>{% endfor %}</ol>
 
-          <h3 id="workbench-reuse" data-model-chapter><span class="chapter-number">2.5</span>Reproducible Code</h3>
+          <h3 id="workbench-reuse" data-model-chapter><span class="chapter-number">2.6</span>Reproducible Code</h3>
           <p>The source repository is <code>pdx12320/igem_software</code>, released under the MIT license. Use Node.js 22.13 or newer:</p>
           <pre class="software-code"><code>git clone https://github.com/pdx12320/igem_software.git
 cd igem_software

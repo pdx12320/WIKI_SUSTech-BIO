@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { createEditReplay, replayFrame, REPLAY_TIMING, HOME_REPLAY_TIMING } from '../static/onetake/edit-replay.mjs';
-import { editState } from '../static/onetake/biology-scene.mjs';
+import { editState, editAnnotationFade } from '../static/onetake/biology-scene.mjs';
 
 const editStart = REPLAY_TIMING.question + REPLAY_TIMING.rewind + REPLAY_TIMING.target;
 assert.equal(replayFrame(0).phase, 'question');
@@ -135,3 +135,37 @@ assert.equal(replayFrame(homeEditStart + 4.2, homeOptions).phase, 'edit');
 assert.equal(replayFrame(homeEditStart + 4.3, homeOptions).phase, 'return');
 assert.equal(replayFrame(homeEditStart + 4.3, homeOptions).edit, 1);
 console.log('Passed homepage half-duration timing, continuous handoff, fast-scroll entry and completed edit before return.');
+
+for (const from of ['question', 'placement', 'edit']) {
+  const skipped = createEditReplay({ root, story, toProgress: x => x, enabled: true, scrollReturn: true });
+  skipped.update(.8, .05);
+  if (from !== 'question') {
+    for (let i = 0; i < 250; i++) skipped.update(.8, .05);
+    if (from === 'edit') {
+      skipped.setReady(true);
+      events.get('wheel')({ deltaY: 100, preventDefault() {} });
+      skipped.update(.8, .05);
+    }
+  }
+  button.click();
+  const frame = skipped.update(.8, .05);
+  assert.deepEqual(frame, { phase: 'return', take: .89, cameraBlend: 0, edit: 1 });
+  assert.equal(scrolls.at(-1), 8900, 'Skip lands on the completed molecular edit');
+  const count = scrolls.length;
+  for (let i = 0; i < 300; i++) assert.equal(skipped.update(.89, .05).cameraBlend, 0);
+  assert.equal(scrolls.length, count, 'Waiting after Skip must not advance the document');
+  assert.ok(skipped.update(.91, .05).cameraBlend > 0, 'Native scrolling resumes the camera pullback');
+}
+console.log('Skip animation: question, placement and edit all stop at UGC; only scrolling advances.');
+
+// The completed edit remains readable at rest; a short scroll hides all
+// close-up annotations before the long camera return has completed.
+assert.equal(editAnnotationFade(.89, { phase: 'return', cameraBlend: 0 }), 1);
+assert.ok(editAnnotationFade(.895, { phase: 'return', cameraBlend: .02 }) < 1);
+assert.equal(editAnnotationFade(.9, { phase: 'return', cameraBlend: .04 }), 0);
+assert.equal(editAnnotationFade(.94, { phase: 'return', cameraBlend: .8 }), 0);
+assert.equal(editAnnotationFade(.55, { phase: 'placement' }), 1);
+assert.equal(editAnnotationFade(.55, { phase: 'edit' }), 1);
+assert.equal(editAnnotationFade(.89, null), 1);
+assert.equal(editAnnotationFade(.902, null), 0);
+assert.ok(editAnnotationFade(.895, null) > editAnnotationFade(.9, null), 'scrolling back restores labels smoothly');

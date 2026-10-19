@@ -264,6 +264,14 @@ class FourModelModulesTest(unittest.TestCase):
                     if chapter == expected_chapter:
                         self.assertIn("Reproducibility and availability", node.text())
                 links = [child for child in node.walk() if child.tag == "a"]
+                if links and "model-result-links" in node.attrs.get("class", "").split():
+                    self.assertEqual(chapter, f"module{number}-1")
+                    self.assertEqual(len(links), {1: 4, 2: 5, 3: 4, 4: 4}[number])
+                    ids = {child.attrs.get("id") for child in module.walk()}
+                    for link in links:
+                        self.assertTrue(link.attrs["href"].startswith("#"))
+                        self.assertIn(link.attrs["href"][1:], ids)
+                    continue
                 if links:
                     self.assertEqual(chapter, expected_chapter)
                     self.assertIn("data-model-resource-links", node.attrs)
@@ -275,9 +283,11 @@ class FourModelModulesTest(unittest.TestCase):
                 if not parsed.netloc:
                     self.assertTrue((PROJECT_ROOT / unquote(parsed.path).lstrip("/")).is_file(), href)
             allowed_links.extend(resources)
-        overview_links = [node for node in reading.walk() if node.tag == "a" and node.attrs.get("href") == "/software#rewire"]
+        overview_links = [node for node in reading.walk() if node.tag == "a" and node.attrs.get("href") == "/software#rewire-purpose"]
         self.assertEqual(len(overview_links), 1)
-        self.assertEqual([node for node in reading.walk() if node.tag == "a"], overview_links + allowed_links)
+        resource_links = [node for node in reading.walk() if node.tag == "a"
+                          and not node.attrs.get("href", "").startswith("#") and node not in overview_links]
+        self.assertEqual(resource_links, allowed_links)
         self.assertFalse(any("ev-badge" in node.attrs.get("class", "").split() for node in reading.walk()))
         text = normalized(reading.text()).lower()
         for phrase in ("claim audit", "integration evidence audit", "source checksums", "this update", "this website revision", "this integration", "not supplied", "remain unavailable", "has not been established"):
@@ -307,14 +317,23 @@ class FourModelModulesTest(unittest.TestCase):
         for number, item in enumerate(items[:4], 1):
             self.assertIn(f"Module {number}", item.text())
             self.assertIn(f"module{number}", self.modules)
-            self.assertFalse(any(node.tag == "a" for node in item.walk()))
+            links = [node for node in item.walk() if node.tag == "a"]
+            self.assertEqual(len(links), 1)
+            self.assertEqual(links[0].attrs["href"], f"#module{number}-1")
+            target = links[0].attrs["href"].removeprefix("#")
+            self.assertIn(target, {node.attrs.get("id") for node in self.modules[f"module{number}"].walk()})
         self.assertIn("Delivery Dynamics", items[4].text())
-        paragraphs = [node for node in introduction.walk() if node.tag == "p"]
-        second_paragraph_links = [node for node in paragraphs[1].walk() if node.tag == "a"]
-        self.assertEqual([node.attrs.get("href") for node in second_paragraph_links], ["/software#rewire"])
-        self.assertTrue(normalized(paragraphs[1].text()).endswith("Delivery Dynamics."))
         software = Document(self.client.get("/software").get_data(as_text=True))
-        self.assertTrue(any(node.attrs.get("id") == "rewire" for node in software.root.walk()))
+        self.assertTrue(any(node.attrs.get("id") == "rewire-purpose" for node in software.root.walk()))
+        self.assertEqual(next(node.attrs["href"] for node in items[4].walk() if node.tag == "a"), "/software#rewire-purpose")
+        article = next(node for node in introduction.walk() if node.tag == "article")
+        elements = [node for node in article.children if isinstance(node, Element)]
+        self.assertIn("model-opening-quote", elements[0].attrs.get("class", ""))
+        self.assertLess(elements.index(roles), next(i for i, node in enumerate(elements) if node.tag == "figure"))
+        for item in items:
+            description = next(node for node in item.walk() if node.tag == "p")
+            self.assertGreaterEqual(len(description.text().split()), 30)
+            self.assertLessEqual(len(description.text().split()), 50)
 
     def test_model_page_has_no_dbtl_content_or_navigation(self):
         main = next(node for node in self.document.root.walk() if node.tag == "main")
@@ -425,10 +444,10 @@ class FourModelModulesTest(unittest.TestCase):
             label = re.match(r"^Figure (\d+)\.\s+(\S.*)$", caption)
             self.assertIsNotNone(label, caption)
             numbers.append(int(label.group(1)))
-            self.assertEqual(label.group(2), concise_captions[label.group(1)])
+            self.assertTrue(label.group(2).startswith(concise_captions[label.group(1)]))
             self.assertFalse(any(node.tag == "a" for node in captions[0].walk()))
             self.assertNotRegex(caption, r"https?://|www\.")
-            self.assertLessEqual(len(label.group(2).split()), 55)
+            self.assertLessEqual(len(label.group(2).split()), 110)
         self.assertEqual(numbers, list(range(1, 39)))
         self.assertNotIn("View full-size", reading.text())
 

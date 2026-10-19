@@ -1,16 +1,16 @@
-/* Project and Human Practices reuse Model's reading design below their hero. */
-.content-page--model-reading {
+/* Share Model reading styles; selected Wet Lab pages reuse only the surfaces. */
+:is(.content-page--model-reading, .content-page--model-surface) {
   --reading-page-gutter: clamp(24px, 4.5vw, 88px);
   --reading-page-bottom: 90px;
 }
 
-.content-page--model-reading .content-model-stage {
+:is(.content-page--model-reading, .content-page--model-surface) .content-model-stage {
   margin: 0 calc(-1 * var(--reading-page-gutter)) calc(-1 * var(--reading-page-bottom));
   padding: 0 var(--reading-page-gutter) var(--reading-page-bottom);
   background: #edf0f4;
 }
 
-.content-page--model-reading .content-reading {
+:is(.content-page--model-reading, .content-page--model-surface) .content-reading {
   --reading-surface-feather: 22px;
   padding-top: 54px;
   border-color: #e0e3e8;
@@ -158,18 +158,18 @@ body:not(.ot) .content-page--model-reading .markdown-content :is(th, td) {
     grid-template-columns: minmax(0, 820px);
   }
 
-  .content-page--model-reading .content-reading {
+  :is(.content-page--model-reading, .content-page--model-surface) .content-reading {
     --reading-surface-feather: 16px;
   }
 }
 
 @media (max-width: 760px) {
-  .content-page--model-reading {
+  :is(.content-page--model-reading, .content-page--model-surface) {
     --reading-page-gutter: 14px;
     --reading-page-bottom: 50px;
   }
 
-  .content-page--model-reading .content-reading {
+  :is(.content-page--model-reading, .content-page--model-surface) .content-reading {
     --reading-surface-feather: 10px;
     padding-top: 32px;
     padding-right: 24px;
@@ -184,7 +184,7 @@ body:not(.ot) .content-page--model-reading .markdown-content :is(th, td) {
     font-size: 18px;
   }
 
-  .content-page--model-reading .content-mobile-directory {
+  :is(.content-page--model-reading, .content-page--model-surface) .content-mobile-directory {
     background: #edf0f4f5;
   }
 
@@ -213,13 +213,13 @@ body:not(.ot) .content-page--model-reading .markdown-content :is(th, td) {
 }
 
 @media print {
-  .content-page--model-reading .content-model-stage {
+  :is(.content-page--model-reading, .content-page--model-surface) .content-model-stage {
     margin: 0;
     padding: 0;
     background: #fff;
   }
 
-  .content-page--model-reading .content-reading {
+  :is(.content-page--model-reading, .content-page--model-surface) .content-reading {
     padding: 0;
     background: #fff;
     box-shadow: none;

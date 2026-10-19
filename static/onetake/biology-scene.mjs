@@ -16,6 +16,14 @@ export function editState(progress) {
   };
 }
 
+// Close-up annotations leave before the camera travels; particles and the
+// lower narrative retain their own, longer scroll timing.
+export function editAnnotationFade(q, replay) {
+  return replay?.phase === 'return'
+    ? 1 - smooth(ramp(replay.cameraBlend, 0, .04))
+    : 1 - smooth(ramp(q, .89, .902));
+}
+
 const vertex = `
 attribute vec3 aEnd, aColor;
 attribute float aKind, aSeed;
@@ -329,17 +337,19 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
         u.uPR.value = Math.min(devicePixelRatio,small?1.5:1.75);
         layer.visible = u.uOpacity.value > .001;
       }
+      const annotationFade = root.hasAttribute('data-edit-scroll-return') ? editAnnotationFade(q, replay) : 1;
+      const annotationVisible = editVisible * annotationFade;
       const codonOn = replayEdit ? editVisible : windowOf(q,.495,.523,.598,.622)+windowOf(q,.806,.826,.902,.924);
       const codon = labels.codon;
       if (codon) {
         codon.style.setProperty('--fix', editVisible > .01 ? edit.fix.toFixed(3) : '0');
         codon.setAttribute('aria-label', edit.fix > .5 && editVisible > .01 ? 'UGC, intended APOE3-like RNA sequence' : 'CGC, APOE4 RNA target');
       }
-      label('codon', final.clone().add(new THREE.Vector3(.62,.95,.2)),codonOn,camera,-18);
-      label('pod', fixedCenter(items.pod).add(new THREE.Vector3(-.45,-.25,0)),placement?0:editVisible*edit.pod,camera,22);
-      label('cetus', fixedCenter(items.cetus),placement?0:editVisible*edit.cetus,camera,small?-85:-28);
+      label('codon', final.clone().add(new THREE.Vector3(.62,.95,.2)),codonOn*annotationFade,camera,-18);
+      label('pod', fixedCenter(items.pod).add(new THREE.Vector3(-.45,-.25,0)),placement?0:annotationVisible*edit.pod,camera,22);
+      label('cetus', fixedCenter(items.cetus),placement?0:annotationVisible*edit.cetus,camera,small?-85:-28);
       let calloutBottom = innerHeight * .8;
-      if (labels.pod?.hasAttribute('data-bio-callout') && (placement || editVisible > .02)) {
+      if (labels.pod?.hasAttribute('data-bio-callout') && (placement || annotationVisible > .02)) {
         const narrative = root.querySelector('.ot-ch.is-on .ot-narrative');
         if (narrative) calloutBottom = Math.min(calloutBottom, narrative.getBoundingClientRect().top);
         if (placement && instruction) calloutBottom = Math.min(calloutBottom, instruction.getBoundingClientRect().top);
@@ -348,7 +358,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
         if (!labels[name]?.hasAttribute('data-bio-callout')) continue;
         const anchor = item.layer.object.position.clone().add(item.center);
         positionCallout(labels[name], calloutLines[name], screenOf(anchor), codon.getBoundingClientRect(),
-          placement ? 1 : editVisible * edit[name], name === 'cetus', calloutBottom);
+          placement ? 1 : annotationVisible * edit[name], name === 'cetus', calloutBottom);
       }
       label('amyloid',new THREE.Vector3(-2.7,2.1,1.2),amyloid.uniforms.uOpacity.value,camera,-14);
       label('nucleus',new THREE.Vector3(.15,-.3,.45),windowOf(q,.26,.28,.326,.348),camera,30);

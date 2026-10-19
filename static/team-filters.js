@@ -22,7 +22,7 @@
   const empty = members.querySelector('[data-team-filter-empty]');
   const summary = document.querySelector('[data-team-filter-summary]');
   const status = document.querySelector('[data-team-filter-status]');
-  const reset = document.querySelector('[data-team-filter-reset]');
+  const header = document.querySelector('[data-team-package-header]');
   let active = '';
 
   const show = (label, interacted = true) => {
@@ -43,7 +43,6 @@
       empty.hidden = visible > 0;
       empty.textContent = visible ? '' : `No team members tagged ${label}.`;
     }
-    if (reset) reset.hidden = !role;
     if (interacted) deck.classList.add('team-deck--filter-used');
   };
 
@@ -51,10 +50,10 @@
     button.addEventListener('click', () => show(active === button.dataset.teamFilter ? '' : button.dataset.teamFilter));
     button.disabled = false;
   }
-  reset?.addEventListener('click', () => {
-    const selected = buttons.find(button => button.dataset.teamFilter === active);
+  // The opening moves its package button here, so delegate to the stable header.
+  header?.addEventListener('click', event => {
+    if (!event.target.closest('[data-team-overview]')) return;
     show('');
-    selected?.focus();
   });
   show('', false);
   if (summary) summary.hidden = false;

@@ -1,0 +1,55 @@
+.ot-edit-status {
+  position: fixed; z-index: 38; left: 50%; top: max(112px, 14vh);
+  transform: translateX(-50%); width: min(620px, calc(100% - 40px));
+  margin: 0; text-align: center; pointer-events: none;
+  color: #d0d7e5; font: 400 clamp(12px, 1.2vw, 15px)/1.5 var(--ot-sans);
+  text-shadow: 0 1px 12px #03050b;
+}
+.ot-edit-status[hidden], .ot--static .ot-edit-status { display: none; }
+[data-edit-auto-confirm] .ot-bio-interaction { --puf-guide: #c5afff; --apobec-guide: #93d9ff; }
+[data-edit-auto-confirm][data-edit-replay="placement"] .ot-bio-callout,
+[data-edit-auto-confirm][data-edit-replay="placement"] .ot-bio-callout-lines { display: none; }
+[data-edit-auto-confirm] [data-bio-handle="pod"],
+[data-edit-auto-confirm] [data-drop-site="pod"] { color: var(--puf-guide); }
+[data-edit-auto-confirm] [data-bio-handle="cetus"],
+[data-edit-auto-confirm] [data-drop-site="cetus"] { color: var(--apobec-guide); }
+[data-edit-auto-confirm] .ot-bio-handle { border: 1px solid currentColor; background: #080e20c9; }
+[data-edit-auto-confirm] .ot-bio-handle small { color: inherit; }
+body.ot-crt-home [data-edit-auto-confirm] .ot-bio-handle > span {
+  position: static; width: auto; height: auto; overflow: visible; clip-path: none;
+}
+[data-edit-auto-confirm] [data-bio-guide="pod"] { stroke: var(--puf-guide); stroke-width: 1.5; }
+[data-edit-auto-confirm] [data-bio-guide="cetus"] { stroke: var(--apobec-guide); stroke-width: 1.5; }
+[data-edit-auto-confirm] .ot-drop-site {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100px; height: 78px; border: 2px dashed currentColor; border-radius: 50%;
+  background: #080e2070; font: 500 13px/1.4 var(--ot-sans); text-shadow: 0 1px 8px #03050b;
+}
+[data-edit-auto-confirm] .ot-drop-site small { font-size: 10px; }
+[data-edit-auto-confirm] .ot-drop-site.is-near { border-style: solid; box-shadow: 0 0 24px currentColor; }
+[data-edit-auto-confirm] .ot-drop-site.is-placed { opacity: 0; }
+[data-edit-auto-confirm] .ot-bio-handle.is-placed { border-color: transparent; background: transparent; color: #a4e5cf; }
+[data-edit-auto-confirm] .ot-placement-instruction {
+  top: max(112px, 14vh); bottom: auto; font-size: clamp(15px, 1.6vw, 20px);
+}
+.ot-placement-auto-note {
+  position: absolute; top: calc(max(112px, 14vh) + 36px); left: 20px; right: 20px;
+  margin: 0; text-align: center; color: #b8c4d9; font: 400 13px/1.5 var(--ot-sans);
+}
+@media (max-width: 760px) {
+  .ot-edit-status { top: max(136px, 17vh); }
+  [data-edit-auto-confirm] .ot-placement-instruction { top: 112px; left: 24px; right: 24px; }
+  .ot-placement-auto-note { top: 162px; font-size: 12px; }
+  [data-edit-auto-confirm] .ot-drop-site { width: 84px; height: 68px; font-size: 12px; }
+  [data-edit-auto-confirm][data-edit-replay="placement"] .ot-codon__protein { visibility: hidden; }
+}
+[data-edit-stage="highlight"] .ot-codon__target {
+  animation: confirmed-c-highlight 1s ease-in-out both;
+}
+@keyframes confirmed-c-highlight {
+  0%, 100% { text-shadow: 0 0 10px rgba(245,143,156,.25); }
+  50% { text-shadow: 0 0 18px rgba(245,143,156,.95), 0 0 38px rgba(245,143,156,.55); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-edit-stage="highlight"] .ot-codon__target { animation: none; }
+}

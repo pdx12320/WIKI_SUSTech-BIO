@@ -25,9 +25,9 @@ export function editAnnotationFade(q, replay) {
 }
 
 const vertex = `
-attribute vec3 aEnd, aColor;
+attribute vec3 aEnd, aColor, aParis;
 attribute float aKind, aSeed;
-uniform float uTime, uOpacity, uGather, uFix, uPulse, uMotion, uPR, uScale, uSize, uDock;
+uniform float uTime, uOpacity, uGather, uFix, uPulse, uMotion, uPR, uScale, uSize, uDock, uParisMorph;
 varying vec3 vColor;
 varying float vAlpha;
 void main(){
@@ -36,11 +36,13 @@ void main(){
   float cargo = step(3.5, aKind);
   float drift = mix(.008, .07 * (1. - uGather) + .008, cargo) * uMotion;
   p += vec3(sin(uTime*.42+aSeed*43.),cos(uTime*.33+aSeed*71.),sin(uTime*.29+aSeed*91.)) * drift;
+  p = mix(p, aParis, uParisMorph);
   vec4 mv = modelViewMatrix * vec4(p,1.);
   gl_Position = projectionMatrix * mv;
   gl_PointSize = clamp(uSize * uPR * (11./max(1.,-mv.z)) * sqrt(uScale), 1., 5. * uPR);
   vColor = mix(aColor, mix(vec3(.96,.56,.61),vec3(.36,1.,.72),uFix),target);
   vColor = mix(vColor,vec3(.55,.9,.79),uDock);
+  vColor = mix(vColor,vec3(.96,.24,.04),uParisMorph);
   vColor += vec3(.12,.26,.18) * uPulse * target;
   vAlpha = uOpacity * (.65 + .35*aSeed) * (1. + .35*uPulse*target);
   vAlpha *= mix(.025,1.,smoothstep(.03,.2,uScale));
@@ -69,12 +71,13 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
     const uniforms = {
       uTime: { value: 0 }, uOpacity: { value: 0 }, uGather: { value: 0 },
       uFix: { value: 0 }, uPulse: { value: 0 }, uMotion: { value: 1 },
-      uPR: { value: 1 }, uScale: { value: 1 }, uSize: { value: size }, uDock: { value: 0 },
+      uPR: { value: 1 }, uScale: { value: 1 }, uSize: { value: size }, uDock: { value: 0 }, uParisMorph: { value: 0 },
     };
     const object = new THREE.Points(geometry, new THREE.ShaderMaterial({ uniforms,
       vertexShader: vertex, fragmentShader: fragment, transparent: true,
       depthWrite: false, blending: THREE.AdditiveBlending }));
     object.name = name;
+    object.material.defaultAttributeValues.aParis = [0, 0, 0];
     object.frustumCulled = false;
     scene.add(object);
     layers.push(object);
@@ -206,7 +209,11 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
     item.offset.set(0,0,0); item.placed = true;
     const ready = Object.values(items).every(i => i.placed);
     onReady?.(ready);
-    if (instruction) instruction.textContent = ready ? 'Both are in place. Scroll once to edit.' : 'Drag the other module to the RNA.';
+    if (instruction) instruction.textContent = ready
+      ? (root.hasAttribute('data-edit-auto-confirm') ? 'Both are in place. Editing starts automatically.' : 'Both are in place. Scroll once to edit.')
+      : (root.hasAttribute('data-edit-auto-confirm')
+        ? (items.pod.placed ? 'PUF is in place. Drag APOBEC into ring ②.' : 'APOBEC is in place. Drag PUF into ring ①.')
+        : 'Drag the other module to the RNA.');
   }
   for (const [name,item] of Object.entries(items)) {
     item.button = root.querySelector(`[data-bio-handle="${name}"]`);
@@ -250,7 +257,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
     });
   }
   return {
-    update(q, time, camera, motion, replay) {
+    update(q, time, camera, motion, replay, backgroundOpacity = 1) {
       const entrance = smooth(ramp(q,.335,.435));
       const transcript = windowOf(q,.272,.302,.602,.657) + windowOf(q,.775,.81,.9,.939);
       const placement = replay?.phase === 'placement';
@@ -266,7 +273,8 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
           item.placed = false;
           const target = screenOf(fixedCenter(item));
           const x = name === 'pod' ? (small?.19:.18) : (small?.81:.82);
-          world.set(x*2-1,1-.59*2,target.z).unproject(camera);
+          const y = small && root.hasAttribute('data-edit-auto-confirm') ? (name === 'pod' ? .72 : .67) : .59;
+          world.set(x*2-1,1-y*2,target.z).unproject(camera);
           item.home.copy(world).sub(fixedCenter(item)); item.offset.copy(item.home);
         }
       }
@@ -274,8 +282,9 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       const edit = editState(progress || 0);
       if (placementInitialized && replay && ['edit','return'].includes(replay.phase)) {
         edit.pod = edit.cetus = 1;
-        edit.fix = smooth(ramp(progress,.12,.6));
-        edit.pulse = Math.sin(Math.PI*ramp(progress,.1,.65));
+        edit.fix = replay.autoEdit ? replay.fix : smooth(ramp(progress,.12,.6));
+        edit.pulse = replay.autoEdit ? replay.pulse : Math.sin(Math.PI*ramp(progress,.1,.65));
+        if (replay.autoEdit) edit.leave = replay.phase === 'return' ? replay.cameraBlend : 0;
       }
       const editVisible = replayEdit ? (replay.phase === 'return' ? 1-replay.cameraBlend : 1) : windowOf(q,.782,.8,.906,.928);
       rna.object.position.copy(preview).lerp(final, entrance);
@@ -310,6 +319,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
           if (item.drop) {
             item.drop.style.transform = `translate3d(${target.x}px,${target.y}px,0) translate(-50%,-50%)`;
             item.drop.classList.toggle('is-near',close);
+            item.drop.classList.toggle('is-placed',item.placed);
           }
           if (item.guide) {
             item.guide.setAttribute('d',`M${actual.x},${actual.y} Q${(actual.x+target.x)/2},${Math.min(actual.y,target.y)-40} ${target.x},${target.y}`);
@@ -329,7 +339,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
         layer.uniforms.uPulse.value = editVisible > .01 ? edit.pulse : 0;
       }
       context.uniforms.uOpacity.value = windowOf(q,.31,.34,.415,.47)*.32;
-      amyloid.uniforms.uOpacity.value = windowOf(q,.608,.647,.785,.815)*.85;
+      amyloid.uniforms.uOpacity.value = windowOf(q,.608,.647,.785,.815)*.85*backgroundOpacity;
       amyloid.uniforms.uGather.value = smooth(ramp(q,.615,.755));
       for (const layer of layers) {
         const u = layer.material.uniforms;
@@ -343,7 +353,8 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       const codon = labels.codon;
       if (codon) {
         codon.style.setProperty('--fix', editVisible > .01 ? edit.fix.toFixed(3) : '0');
-        codon.setAttribute('aria-label', edit.fix > .5 && editVisible > .01 ? 'UGC, intended APOE3-like RNA sequence' : 'CGC, APOE4 RNA target');
+        const editedName = root.hasAttribute('data-edit-auto-confirm') ? 'UGC, APOE3 RNA sequence' : 'UGC, intended APOE3-like RNA sequence';
+        codon.setAttribute('aria-label', edit.fix > .5 && editVisible > .01 ? editedName : 'CGC, APOE4 RNA target');
       }
       label('codon', final.clone().add(new THREE.Vector3(.62,.95,.2)),codonOn*annotationFade,camera,-18);
       label('pod', fixedCenter(items.pod).add(new THREE.Vector3(-.45,-.25,0)),placement?0:annotationVisible*edit.pod,camera,22);

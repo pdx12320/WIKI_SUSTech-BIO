@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/onetake.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/crt-opening.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/dementia-burden.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='onetake/dementia-paris.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='onetake/confirmed-edit.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/explore-slides.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/home-labels.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/home-entry-art.css') }}">
@@ -14,19 +16,19 @@
 {% if not three_url.startswith('/') %}{% set three_url = './' ~ three_url %}{% endif %}
 <script type="importmap">{"imports": {"three": "{{ three_url }}", "three/addons/": "{{ three_url | replace('three.module.js', 'addons/') }}"}}</script>
 <script type="module" data-ot-module src="{{ url_for('static', filename='onetake/onetake.js') }}"></script>
-<script type="module" src="{{ url_for('static', filename='onetake/dementia-burden.mjs') }}"></script>
+<script type="module" src="{{ url_for('static', filename='onetake/dementia-paris.mjs') }}"></script>
 <script defer src="{{ url_for('static', filename='onetake/explore-slides.js') }}"></script>
 {% endblock %}
 
 {% block navigation %}{% include 'menu.html' %}{% endblock %}
 
 {% block main %}
-<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-quick-rewind data-staged-conclusions data-ot>
+<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-auto-confirm data-edit-quick-rewind data-staged-conclusions data-ot>
   <script src="{{ url_for('static', filename='onetake/home-entry.js') }}"></script>
   {% include 'components/crt_opening.html' %}
   <div class="ot-bio-labels" aria-hidden="true">
     <div class="ot-bio-label ot-codon" data-bio-label="codon">
-      <span class="ot-codon__name"><span class="ot-before">APOE4 RNA</span><span class="ot-after">APOE3-like RNA</span></span>
+      <span class="ot-codon__name"><span class="ot-before">APOE4 RNA</span><span class="ot-after">APOE3 RNA</span></span>
       <span class="ot-codon__sequence"><span class="ot-codon__target"><span class="ot-before">C</span><span class="ot-after">U</span></span><span>G</span><span>C</span></span>
       <span class="ot-codon__protein"><span class="ot-before">Arg112</span><span class="ot-after">Cys112</span></span>
     </div>
@@ -37,12 +39,14 @@
   </div>
   <div class="ot-bio-interaction" data-bio-interaction hidden>
     <svg class="ot-bio-guides" aria-hidden="true"><path data-bio-guide="pod"></path><path data-bio-guide="cetus"></path><path class="ot-bio-hit" data-bio-hit="pod"></path><path class="ot-bio-hit" data-bio-hit="cetus"></path></svg>
-    <span class="ot-drop-site" data-drop-site="pod" aria-hidden="true"></span>
-    <span class="ot-drop-site" data-drop-site="cetus" aria-hidden="true"></span>
-    <button class="ot-bio-handle" data-bio-handle="pod" aria-label="Place PUF at the RNA recognition site" aria-pressed="false"><span>PUF</span><small>Drag to RNA</small></button>
-    <button class="ot-bio-handle" data-bio-handle="cetus" aria-label="Place APOBEC beside the target C" aria-pressed="false"><span>APOBEC</span><small>Drag to RNA</small></button>
-    <p class="ot-placement-instruction" data-placement-instruction aria-live="polite">Drag PUF and APOBEC to the RNA.</p>
+    <span class="ot-drop-site" data-drop-site="pod" aria-hidden="true"><span>① PUF</span><small>Drop here</small></span>
+    <span class="ot-drop-site" data-drop-site="cetus" aria-hidden="true"><span>② APOBEC</span><small>Drop here</small></span>
+    <button class="ot-bio-handle" data-bio-handle="pod" aria-label="Drag PUF to the matching purple ring marked 1 PUF on the RNA, or press Enter to place" aria-pressed="false"><span>① PUF</span><small>Drag to ①</small></button>
+    <button class="ot-bio-handle" data-bio-handle="cetus" aria-label="Drag APOBEC to the matching blue ring marked 2 APOBEC beside C, or press Enter to place" aria-pressed="false"><span>② APOBEC</span><small>Drag to ②</small></button>
+    <p class="ot-placement-instruction" data-placement-instruction aria-live="polite">Drag each module into its matching numbered ring.</p>
+    <p class="ot-placement-auto-note">Both in place → animation plays automatically.<br>No more dragging needed.</p>
   </div>
+  <p class="ot-edit-status" data-edit-status role="status" aria-live="polite" hidden></p>
   <button class="ot-edit-skip" data-edit-skip hidden>Skip animation</button>
 
   <!-- One continuous scroll track. Every chapter is pinned over the same
@@ -90,7 +94,7 @@
       </div>
 
       <div class="ot-ch ot-ch--stats" data-ot-chapter data-in="0.747" data-out="0.798">
-        {% with compact_burden=true %}{% include 'components/dementia_burden.html' %}{% endwith %}
+        {% include 'components/dementia_paris.html' %}
       </div>
 
       <div class="ot-ch ot-ch--question" data-ot-chapter data-in="0.784" data-out="0.814">
@@ -120,6 +124,7 @@
 
 {% block footer %}
 <footer class="site-footer ot-home-footer">
+  {% include 'components/dementia_paris_sources.html' %}
   <p>© 2026 SUSTech. Content is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.<br>
     The source repository for this wiki is available at <a href="https://gitlab.igem.org/2026/sustech">gitlab.igem.org/2026/sustech</a>. See the <a href="{{ url_for('pages', page='attributions') }}">Attributions</a> page for credit information.</p>
 </footer>

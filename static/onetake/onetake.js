@@ -20,6 +20,7 @@ import { matchBrainToMaze } from './brain-correspondence.mjs';
 import { createBiologyScene } from './biology-scene.mjs';
 import { createEditReplay } from './edit-replay.mjs';
 import { buildScrollTrack } from './burden-pacing.mjs';
+import { createParisParticles } from './paris-particles.mjs';
 
 const root = document.querySelector('[data-ot]');
 const canvas = root?.querySelector('[data-ot-canvas]');
@@ -585,6 +586,7 @@ const KEYS = [
 const { track: TRACK, length: trackLength, scale: trackScale } = buildScrollTrack(KEYS, {
   burden: !!root?.querySelector('[data-burden]'),
   stagedConclusions: !!root?.hasAttribute('data-staged-conclusions'),
+  paris: !!root?.querySelector('[data-burden-paris]'),
 });
 // Add the comparison's reading distance without speeding up other chapters.
 story?.style.setProperty('--ot-track-scale', trackScale);
@@ -820,6 +822,8 @@ function boot() {
   };
   resize();
   addEventListener('resize', resize);
+  const parisParticles = createParisParticles(THREE, scene, root,
+    camCurve.getPoint(sample(.765).t), lookCurve.getPoint(sample(.765).t));
   root.dispatchEvent(new CustomEvent('ot:ready', { bubbles: true, detail: { THREE, scene, camera, renderer } }));
 
   const mouse = new THREE.Vector2(9, 9), mouseSmooth = new THREE.Vector2(0, 0);
@@ -929,6 +933,7 @@ function boot() {
     const aspect = innerWidth / innerHeight;
     const pull = Math.max(1, 1.15 / aspect);
     camPos.sub(camLook).multiplyScalar(pull).add(camLook);
+    parisParticles.camera(P, camPos, camLook);
     mouseSmooth.lerp(mouseOn ? mouse : tmp.set(0, 0, 0), 1 - Math.exp(-dt * 3));
     // Dragging needs stable destinations: pointer parallax resumes on the pullback.
     const pointerMotion = replayState && ['target','placement','edit','return'].includes(replayState.phase)
@@ -956,6 +961,7 @@ function boot() {
     uniforms.uSceneAlpha.value = (1-smooth(ramp(P,.335,.387)))
       + smooth(ramp(P,.634,.674))*(1-smooth(ramp(P,.786,.808)))
       + smooth(ramp(P,.914,.95));
+    uniforms.uSceneAlpha.value *= parisParticles.backdrop(P);
     uniforms.uMouse.value.copy(mouseSmooth);
     const openingPointer = stage < 0 ? 1 - smooth(ramp(stage, -0.98, -0.65)) : 1;
     uniforms.uMouseOn.value = mouseOn * motion * openingPointer;
@@ -968,7 +974,7 @@ function boot() {
     foldMaterial.opacity = brainAmount * 0.22;
     foldContours.visible = brainAmount > 0.001;
 
-    biology.update(P,time,camera,motion,replayState);
+    biology.update(P,time,camera,motion,replayState,parisParticles.backdrop(P));
 
     grade.uniforms.uTime.value = time;
     grade.uniforms.uAberration.value = P > .22 && P < .94 ? .00015 : .0007;
@@ -977,6 +983,7 @@ function boot() {
 
     root.style.setProperty('--ot-p', P.toFixed(4));
     root.dispatchEvent(new CustomEvent('ot:frame', { detail: { p, take: P, reduced: reduce } }));
+    parisParticles.update(P, time);
     composer.render();
     if (!started) { started = true; root.classList.add('is-ready'); }
     raf = requestAnimationFrame(frame);

@@ -1,0 +1,18 @@
+{
+  "record_date": "2026-09-01",
+  "packaged_date": "2026-10-20",
+  "kind": "internal project design record and predicted-accessibility output",
+  "scope": "Historical synonymous StemBreak design; not the distinct GSGS-insertion RepOpen_HR design, and not evidence of experimental RNA editing.",
+  "files": [
+    {
+      "file": "StemBreak_synonymous_design_2026-09-01.md",
+      "source": "Reporter/S5 bfp+repopen/OPEN/设计与引物/StemBreak_synonymous_design_2026-09-01.md",
+      "sha256": "708a0f7f12b8b874bc3c55d03f71f9d049f4b2b1863810f66ea834b75b8622da"
+    },
+    {
+      "file": "rnaplfold_accessibility.csv",
+      "source": "Reporter/S5 bfp+repopen/OPEN/分析报告/data_processed/rnaplfold_accessibility.csv",
+      "sha256": "77f7993a33f743166b984eddd18bd4e14433c21de38653a1dc790a6b2500093b"
+    }
+  ]
+}

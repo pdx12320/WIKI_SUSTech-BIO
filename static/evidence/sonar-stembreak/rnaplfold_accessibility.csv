@@ -1,0 +1,19 @@
+construct,window_W_nt,region_length_nt,unpaired_probability_percent,max_pair_span_L_nt,temperature_C,rna_sequence_length_nt,RNAplfold_u_nt,region_definition,fold_vs_WT
+WT,70,12,0.646,70,37,2007,15,PUF12 binding site,1.0
+StemBreak-A,70,12,5.209,70,37,2007,15,PUF12 binding site,8.063467492260061
+StemBreak-B,70,12,2.778,70,37,2007,15,PUF12 binding site,4.30030959752322
+WT,120,12,0.236,120,37,2007,15,PUF12 binding site,1.0
+StemBreak-A,120,12,1.914,120,37,2007,15,PUF12 binding site,8.110169491525424
+StemBreak-B,120,12,1.069,120,37,2007,15,PUF12 binding site,4.529661016949152
+WT,150,12,0.0011,150,37,2007,15,PUF12 binding site,1.0
+StemBreak-A,150,12,1.382,150,37,2007,15,PUF12 binding site,1256.3636363636363
+StemBreak-B,150,12,0.5426,150,37,2007,15,PUF12 binding site,493.2727272727272
+WT,70,15,0.0457,70,37,2007,15,PUF12 + 2-nt spacer + target C,1.0
+StemBreak-A,70,15,0.0569,70,37,2007,15,PUF12 + 2-nt spacer + target C,1.2450765864332605
+StemBreak-B,70,15,0.1018,70,37,2007,15,PUF12 + 2-nt spacer + target C,2.227571115973742
+WT,120,15,0.00234,120,37,2007,15,PUF12 + 2-nt spacer + target C,1.0
+StemBreak-A,120,15,0.0219,120,37,2007,15,PUF12 + 2-nt spacer + target C,9.358974358974358
+StemBreak-B,120,15,0.0293,120,37,2007,15,PUF12 + 2-nt spacer + target C,12.521367521367521
+WT,150,15,1.66e-05,150,37,2007,15,PUF12 + 2-nt spacer + target C,1.0
+StemBreak-A,150,15,0.0157,150,37,2007,15,PUF12 + 2-nt spacer + target C,945.7831325301204
+StemBreak-B,150,15,0.0316,150,37,2007,15,PUF12 + 2-nt spacer + target C,1903.6144578313254

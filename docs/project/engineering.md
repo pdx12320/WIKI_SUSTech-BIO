@@ -561,7 +561,7 @@ Integrated ORCA brings POD recognition variants and CETUS catalytic variants int
 
 #### Why integrate two independently optimized modules? {#integrated-orca-why-integrate-two-independently-optimized-modules}
 
-ORCA combines programmable RNA recognition with cytidine deamination. Its recognition module, **POD (Programmable On-target Docking)**, uses engineered PUF repeats to position the editor near the intended RNA site. Its catalytic module, **CETUS (Cytidine Editing, Tethered for Uridine Switching)**, modifies APOBEC to reshape catalytic activity and sequence preference. In their respective engineering efforts, we explored ways to reduce unwanted editing without losing the C388 activity needed for APOE4-to-APOE3 conversion.
+ORCA combines programmable RNA recognition with cytidine deamination. Its recognition module, **POD (Programmable On-target Docking)**, uses engineered PUF repeats to position the editor near the intended RNA site [1](#integrated-orca-ref-1), [3](#integrated-orca-ref-3). Its catalytic module, **CETUS (Cytidine Editing, Tethered for Uridine Switching)**, modifies APOBEC to reshape catalytic activity and sequence preference, building on the ProAPOBEC–PUF architecture [2](#integrated-orca-ref-2). In their respective engineering efforts, we explored ways to reduce unwanted editing without losing the C388 activity needed for APOE4-to-APOE3 conversion.
 
 These improvements address different molecular functions, but the functions are coupled. Altering PUF recognition may change how a cytidine is presented to APOBEC; altering APOBEC may change which accessible cytidines are favored. Consequently, a POD variant with an advantageous editing profile and a CETUS variant with an advantageous editing profile might not preserve those properties when fused into the same editor. Their combined behavior must be measured rather than inferred.
 
@@ -761,6 +761,14 @@ Both share the **P9-NTQ recognition domain**, while their different CETUS partne
 ![Integrated Orca — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/integrated-orca.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
 Integrated ORCA combined independently engineered recognition and catalytic modules, yielding **14 sequence-verified editors from 16 designed combinations**. Evaluating target activity, bystander consequences, and read-level co-editing revealed pairing-dependent performance and complementary strengths in **IO-02 and IO-03**. We retained both for downstream evaluation, establishing a complete-editor selection strategy that balances multiple outcomes rather than relying on a single activity or selectivity score.
+
+### References {#integrated-orca-references}
+
+1. <span id="integrated-orca-ref-1" style="scroll-margin-top:72px"></span>Han W, Huang W, Wei T, et al. Programmable RNA base editing with a single gRNA-free enzyme. Nucleic Acids Research. 2022;50(16):9580–9595. [Source](https://doi.org/10.1093/nar/gkac713).
+
+2. <span id="integrated-orca-ref-2" style="scroll-margin-top:72px"></span>Han W, Yuan B, Fan X, et al. Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. Nature Communications. 2025;16:9727. [Source](https://doi.org/10.1038/s41467-025-64748-6). See also the [2026 Author Correction](https://doi.org/10.1038/s41467-026-76669-z), *Nature Communications* 17, 8256.
+
+3. <span id="integrated-orca-ref-3" style="scroll-margin-top:72px"></span>Zhou W, Melamed D, Banyai G, et al. Expanding the binding specificity for RNA recognition by a PUF domain. Nature Communications. 2021;12:5107. [Source](https://doi.org/10.1038/s41467-021-25433-6).
 
 ## GFA {#gfa .engineering-chapter-title .control-module-title}
 
@@ -991,19 +999,19 @@ We investigated antisense oligonucleotides (ASOs) as an externally administered 
 
 ### **Engineering Rationale** {#aso-engineering-rationale-why-an-aso-controlled-interface .engineering-section-title}
 
-An externally triggered OFF mechanism should act independently of the transcriptional controls already built into ORCA. Endogenous miRNA regulation is useful for exploiting cell-specific expression patterns, while engineered ribozymes and aptazymes can make RNA output responsive to molecular cues. For an intervention that could be administered separately from the editor, however, we favored a **gapmer ASO** (Figure 1).
+An externally triggered OFF mechanism should act independently of the transcriptional controls already built into ORCA. Endogenous miRNA regulation is useful for exploiting cell-specific expression patterns [3](#aso-ref-3), while engineered ribozymes and aptazymes can make RNA output responsive to molecular cues [4](#aso-ref-4). For an intervention that could be administered separately from the editor, however, we favored a **gapmer ASO** (Figure 1).
 
-A gapmer contains a central DNA segment flanked by chemically modified nucleotides. Hybridization to a complementary RNA can recruit endogenous **RNase H1**, promoting cleavage of the target transcript without requiring another regulatory protein or an additional expression cassette (Figure 2). Because this acts on RNA rather than removing the DNA template, expression could in principle resume as ASO exposure declines. Such recovery must still be demonstrated experimentally. The clinical use of ASOs for CNS disorders also provided a relevant precedent for an externally administered RNA-targeting modality.
+A gapmer contains a central DNA segment flanked by chemically modified nucleotides. Hybridization to a complementary RNA can recruit endogenous **RNase H1**, promoting cleavage of the target transcript without requiring another regulatory protein or an additional expression cassette (Figure 2; [5](#aso-ref-5)). Because this acts on RNA rather than removing the DNA template, expression could in principle resume as ASO exposure declines. Such recovery must still be demonstrated experimentally. The clinical use of ASOs for CNS disorders, including the accelerated approval of tofersen for SOD1-associated ALS, also provided a relevant precedent for an externally administered RNA-targeting modality [6](#aso-ref-6).
 
 The central engineering challenge was **target-site design**. A suitable ASO sequence should have few close matches to human RNAs, remain accessible within the folded ORCA transcript, and avoid concerning near-matches in relevant CNS cell types. Rather than treating these requirements as constraints on ASO selection alone, we asked whether the *target RNA itself* could become an independently designed component of ORCA.
 
 ![Comparison of RNA-level regulatory strategies](/assets/images/submission-20261017/engineering/aso/Figure_01.png){.engineering-figure style="--engineering-figure-width:640px;--engineering-detail-width:960px"}
 
-*Figure 1. Comparison of miRNA, aptazyme, and gapmer ASO regulation for an externally triggered ORCA OFF interface; the aptazyme illustration was adapted from Xiang et al. (2019), CC BY 4.0.*
+*Figure 1. Comparison of miRNA, aptazyme, and gapmer ASO regulation for an externally triggered ORCA OFF interface; the aptazyme illustration was adapted from Xiang et al. (2019), CC BY 4.0 [1](#aso-ref-1).*
 
 ![RNase H1 mechanism of gapmer action](/assets/images/submission-20261017/engineering/aso/Figure_02.png){.engineering-figure style="--engineering-figure-width:880px;--engineering-detail-width:1040px"}
 
-*Figure 2. RNase H1 recognition and cleavage of ASO–RNA hybrids; reproduced from Chiglintseva et al. (2025), CC BY 4.0.*
+*Figure 2. RNase H1 recognition and cleavage of ASO–RNA hybrids; reproduced from Chiglintseva et al. (2025), CC BY 4.0 [2](#aso-ref-2).*
 
 ---
 
@@ -1011,15 +1019,15 @@ The central engineering challenge was **target-site design**. A suitable ASO seq
 
 #### Design {#aso-cycle-01-design}
 
-We first evaluated whether a suitable ASO-binding site already existed within a GFA–ORCA reference transcript. Sliding **18-, 20-, and 22-nt windows** across the sequence allowed us to compare potential human-RNA cross-recognition with predicted target accessibility. Longer windows offer more sequence information for distinguishing targets, but do not necessarily remain accessible or behave identically as ASOs.
+We first evaluated whether a suitable ASO-binding site already existed within a GFA–ORCA reference transcript. Sliding **18-, 20-, and 22-nt windows** across the sequence allowed us to compare potential human-RNA cross-recognition with predicted target accessibility. Longer windows offer more sequence information for distinguishing targets, but do not necessarily remain accessible or behave identically as ASOs [7](#aso-ref-7), [8](#aso-ref-8).
 
 #### Build {#aso-cycle-01-build}
 
 We developed a computational screen with three successive components:
 
 1. **Sequence quality:** GC content of 30–70%, no homopolymer longer than three nucleotides, and exclusion of short periodic repeats.
-2. **Human near-match screening:** comparisons against GENCODE v50 mature RNAs and genome-annotation-derived pre-mRNA regions, including indels and terminally trimmed near-full windows. Candidates with any qualifying match at **edit distance (ED) ≤ 2** were rejected.
-3. **RNA accessibility:** RNAplfold estimates for the probability that the complete recognition window was unpaired. We used the more conservative result from two parameter settings:
+2. **Human near-match screening:** comparisons against GENCODE v50 mature RNAs and genome-annotation-derived pre-mRNA regions [9](#aso-ref-9), including indels and terminally trimmed near-full windows. Including pre-mRNA accounts for the nuclear activity of RNase H1-dependent ASOs [5](#aso-ref-5). Candidates with any qualifying match at **edit distance (ED) ≤ 2** were rejected.
+3. **RNA accessibility:** RNAplfold estimates for the probability that the complete recognition window was unpaired [10](#aso-ref-10). We used the more conservative result from two parameter settings:
 
    <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>P</mi><mrow><mn>240</mn><mi>/</mi><mn>160</mn></mrow></msub><mo>,</mo><mspace width="0.167em" /><msub><mi>P</mi><mrow><mn>360</mn><mi>/</mi><mn>240</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">&#65;&#61;&#92;&#109;&#105;&#110;&#40;&#80;&#95;&#123;&#50;&#52;&#48;&#47;&#49;&#54;&#48;&#125;&#44;&#92;&#44;&#80;&#95;&#123;&#51;&#54;&#48;&#47;&#50;&#52;&#48;&#125;&#41;&#46;</annotation></semantics></math></div>
 
@@ -1089,7 +1097,7 @@ Each candidate was evaluated across **three linked contexts** (Figure 8):
 - **ORCA:** validity of the tag junction and predicted accessibility **A** in the complete reference transcript.
 - **CNS:** expression-weighted near-match burdens in astrocytes and neurons, plus functional concern associated with dosage-sensitive, loss-of-function-intolerant, or neurologically relevant genes, including APOE.
 
-The CNS expression reference covered **32 astrocyte and neuronal populations** from adult human cortical and hippocampal datasets, with additional sensitivity checks using an independent dataset. ED3 matches received full weight; ED4-only matches received a reduced weight, with alternative weights examined for robustness.
+The CNS expression reference covered **32 astrocyte and neuronal populations** selected from the Human Protein Atlas representation of Siletti’s adult human brain data [11](#aso-ref-11), [12](#aso-ref-12), with additional sensitivity checks using Zhang’s human-cell dataset [13](#aso-ref-13). Functional annotations used ClinGen haploinsufficiency evidence, gnomAD v4.1.1 loss-of-function constraint metrics and Gene Ontology biological-process terms [14](#aso-ref-14), [15](#aso-ref-15), [16](#aso-ref-16). ED3 matches received full weight; ED4-only matches received a reduced weight, with alternative weights examined for robustness.
 
 We treated the six resulting metrics—**H3, H4, astrocyte burden, neuronal burden, functional burden, and A**—as a multi-objective problem. A candidate belonged to the **Pareto frontier** if no other candidate was at least as favorable across every metric and strictly better in at least one. This avoided assigning an arbitrary single score to competing design goals.
 
@@ -1237,10 +1245,38 @@ The **Synthetic ASO Tag** established an externally addressable suppression inte
 
 ### References and Figure Credits {#aso-references-and-figure-credits}
 
-1. Xiang JS, Kaplan M, Dykstra P, et al. *Massively parallel RNA device engineering in mammalian cells with RNA-Seq.* Nature Communications. 2019;10:4327. [doi:10.1038/s41467-019-12334-y](https://doi.org/10.1038/s41467-019-12334-y). Figure 1 includes an adapted aptazyme schematic; CC BY 4.0.
-2. Chiglintseva DA, Patutina OA, Zenkova MA. *Endogenous Ribonucleases: Therapeutic Targeting of the Transcriptome Through Oligonucleotide-Triggered RNA Inactivation.* Biomolecules. 2025;15(7):965. [doi:10.3390/biom15070965](https://doi.org/10.3390/biom15070965). Figure 2 is reproduced from the original publication; CC BY 4.0.
+1. <span id="aso-ref-1" style="scroll-margin-top:72px"></span>Xiang JS, Kaplan M, Dykstra P, et al. *Massively parallel RNA device engineering in mammalian cells with RNA-Seq.* Nature Communications. 2019;10:4327. [doi:10.1038/s41467-019-12334-y](https://doi.org/10.1038/s41467-019-12334-y). Figure 1 includes an adapted aptazyme schematic; CC BY 4.0.
+2. <span id="aso-ref-2" style="scroll-margin-top:72px"></span>Chiglintseva DA, Patutina OA, Zenkova MA. *Endogenous Ribonucleases: Therapeutic Targeting of the Transcriptome Through Oligonucleotide-Triggered RNA Inactivation.* Biomolecules. 2025;15(7):965. [doi:10.3390/biom15070965](https://doi.org/10.3390/biom15070965). Figure 2 is reproduced from the original publication; CC BY 4.0.
 
-<!-- Editorial QA (not rendered): Scientific content is adapted exclusively from the three supplied Chinese ASO drafts, covering Cycles 1–6. Detailed bibliography entries corresponding to numerical source markers [1]–[14] and internal dataset references [D1]–[D5] were not contained in the uploaded manuscripts and should be supplied/verified before publication. Figure 5 includes a 4×6T element as part of the historical computational reference schematic; do not present it as a component of the final experimental ORCA cassette. Figure 2 is reproduced from a CC BY 4.0 article; preserve full attribution and license. -->
+3. <span id="aso-ref-3" style="scroll-margin-top:72px"></span>Brown BD, Venneri MA, Zingale A, et al. Endogenous microRNA regulation suppresses transgene expression in hematopoietic lineages and enables stable gene transfer. Nature Medicine. 2006;12:585–591. [Source](https://doi.org/10.1038/nm1398).
+
+4. <span id="aso-ref-4" style="scroll-margin-top:72px"></span>Zhong G, Wang H, He W, et al. A reversible RNA on-switch that controls gene expression of AAV-delivered therapeutics in vivo. Nature Biotechnology. 2020;38:169–175. [Source](https://doi.org/10.1038/s41587-019-0357-y).
+
+5. <span id="aso-ref-5" style="scroll-margin-top:72px"></span>Liang X-H, Sun H, Nichols JG, Crooke ST. RNase H1-Dependent Antisense Oligonucleotides Are Robustly Active in Directing RNA Cleavage in Both the Cytoplasm and the Nucleus. Molecular Therapy. 2017;25:2075–2092. [Source](https://doi.org/10.1016/j.ymthe.2017.06.002).
+
+6. <span id="aso-ref-6" style="scroll-margin-top:72px"></span>U.S. FDA. FDA approves treatment of amyotrophic lateral sclerosis associated with a mutation in the SOD1 gene: Qalsody (tofersen). 25 April 2023. [Source](https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-amyotrophic-lateral-sclerosis-associated-mutation-sod1-gene).
+
+7. <span id="aso-ref-7" style="scroll-margin-top:72px"></span>Yasuhara H, Yoshida T, Sasaki K, et al. Reduction of Off-Target Effects of Gapmer Antisense Oligonucleotides by Oligonucleotide Extension. Molecular Diagnosis & Therapy. 2022;26:117–127. [Source](https://doi.org/10.1007/s40291-021-00573-z).
+
+8. <span id="aso-ref-8" style="scroll-margin-top:72px"></span>Yoshida T, Naito Y, Yasuhara H, et al. Evaluation of off-target effects of gapmer antisense oligonucleotides using human cells. Genes to Cells. 2019;24:827–835. [Source](https://doi.org/10.1111/gtc.12730).
+
+9. <span id="aso-ref-9" style="scroll-margin-top:72px"></span>GENCODE Consortium. Human Release 50, GRCh38.p14: comprehensive annotation and transcript sequences. Accessed 20 October 2026. [Source](https://www.gencodegenes.org/human/release_50.html).
+
+10. <span id="aso-ref-10" style="scroll-margin-top:72px"></span>ViennaRNA Package. RNAplfold 2.7.2 manual: local pairing and consecutive-region unpaired probabilities. Accessed 20 October 2026. [Source](https://viennarna.readthedocs.io/en/latest/man/RNAplfold.html).
+
+11. <span id="aso-ref-11" style="scroll-margin-top:72px"></span>Siletti K, Hodge R, Mossi Albiach A, et al. Transcriptomic diversity of cell types across the adult human brain. Science. 2023;382:eadd7046. [Source](https://doi.org/10.1126/science.add7046).
+
+12. <span id="aso-ref-12" style="scroll-margin-top:72px"></span>Human Protein Atlas. Single nuclei brain: source data and methods. Accessed 20 October 2026. [Source](https://www.proteinatlas.org/humanproteome/single%2Bcell/single%2Bnuclei%2Bbrain/data).
+
+13. <span id="aso-ref-13" style="scroll-margin-top:72px"></span>Zhang Y, Sloan SA, Clarke LE, et al. Purification and Characterization of Progenitor and Mature Human Astrocytes Reveals Transcriptional and Functional Differences with Mouse. Neuron. 2016;89:37–53. [Source](https://doi.org/10.1016/j.neuron.2015.11.013).
+
+14. <span id="aso-ref-14" style="scroll-margin-top:72px"></span>ClinGen. Dosage Sensitivity Curation: haploinsufficiency evidence and downloadable gene curation data. Accessed 20 October 2026. [Source](https://search.clinicalgenome.org/kb/gene-dosage).
+
+15. <span id="aso-ref-15" style="scroll-margin-top:72px"></span>gnomAD. v4.1.1 gene constraint metrics and LOEUF interpretation. 2026. Accessed 20 October 2026. [Source](https://gnomad.broadinstitute.org/news/2026-03-gnomad-v4-1-1/).
+
+16. <span id="aso-ref-16" style="scroll-margin-top:72px"></span>Gene Ontology Consortium. Gene Ontology overview: functional annotations and biological-process terms. Accessed 20 October 2026. [Source](https://geneontology.org/docs/ontology-documentation/).
+
+<!-- Historical Figure 5 includes a 4×6T element in the computational reference; it does not establish that element in the final experimental cassette. -->
 
 ## Cre–loxP {#cre-loxp .engineering-chapter-title .control-module-title}
 
@@ -1806,7 +1842,7 @@ SONAR developed into a **modular, multichannel reporter platform** supported by 
 3. Kim JH, et al. High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. *PLoS ONE*. 2011;6(4):e18556. https://doi.org/10.1371/journal.pone.0018556
 4. Engler C, Kandzia R, Marillonnet S. A one pot, one step, precision cloning method with high throughput capability. *PLoS ONE*. 2008;3(11):e3647. https://doi.org/10.1371/journal.pone.0003647
 5. NCBI. *The Genetic Codes: Standard Code (transl_table=1).* https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
-6. Internal project design record: `StemBreak_synonymous_design_2026-09-01.md` and associated `rnaplfold_accessibility.csv` (source cited in the Chinese manuscript; not included in this archive).
+6. SUSTech-BIO. *Rep-gib WT synonymous StemBreak design*. 1 September 2026. Internal project record: [original design note (Chinese, Markdown)](/static/evidence/sonar-stembreak/StemBreak_synonymous_design_2026-09-01.md), [RNAplfold accessibility table (CSV)](/static/evidence/sonar-stembreak/rnaplfold_accessibility.csv) and [source checksums](/static/evidence/sonar-stembreak/provenance.json). These are computational design records, distinct from the GSGS-insertion RepOpen_HR proposal.
 
 ## Model
 

@@ -1,0 +1,19 @@
+{% extends "pages/content_page.html" %}
+
+{% block page_styles %}
+{{ super() }}
+<script src="{{ url_for('static', filename='design-opening-boot.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='design-communication.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='design-opening.css') }}">
+{% endblock %}
+
+{% block page_scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='design-communication.js') }}" defer></script>
+<script src="{{ url_for('static', filename='design-opening.js') }}" defer></script>
+{% endblock %}
+
+{% block main %}
+{% include 'components/design-communication/opening.html' %}
+{{ super() }}
+{% endblock %}

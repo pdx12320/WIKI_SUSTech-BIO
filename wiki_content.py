@@ -45,6 +45,7 @@ class MarkdownContent:
 # The homepage and 404 page intentionally remain special Jinja implementations.
 CONTENT_PAGES: dict[str, PageConfig] = {
     "team": PageConfig("team/team.md", "pages/team.html"),
+    "design-communication": PageConfig("team/design-communication.md", "pages/design-communication.html"),
     "attributions": PageConfig("team/attributions.md"),
     "description": PageConfig("project/description.md"),
     "blueprint": PageConfig("project/blueprint.md"),
@@ -74,7 +75,10 @@ CONTENT_PAGES: dict[str, PageConfig] = {
 # Navigation is a curated subset of CONTENT_PAGES. Unlisted pages remain
 # available by their direct routes and through contextual links.
 NAVIGATION = (
-    {"label": "Team", "items": (("team", "Team"), ("attributions", "Attributions"))},
+    {
+        "label": "Team",
+        "items": (("team", "Team"), ("design-communication", "Design & Media Promotion"), ("attributions", "Attributions")),
+    },
     {
         "label": "Project",
         "items": (

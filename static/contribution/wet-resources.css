@@ -1,0 +1,98 @@
+/* Wet Resources uses the Contribution paper, violet ink and catalog geometry. */
+[data-content-source="docs/project/contribution.md"] #wet-resources,
+[data-content-source="docs/project/contribution.md"] #parts-collections,
+[data-content-source="docs/project/contribution.md"] #supporting-data { scroll-margin-top: 110px; }
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-resource-jumps { margin-bottom: 36px; }
+[data-content-source="docs/project/contribution.md"] .markdown-content h4.parts-group-title {
+  color: #302875;
+  font-size: 1.1rem;
+  font-weight: 650;
+  line-height: 1.45;
+  margin: 32px 0 20px;
+}
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-directory {
+  --wet-line: #e5e2ef;
+  --wet-wash: #f7f6fc;
+  margin: 26px 0 24px;
+  color: #19143d;
+}
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-note {
+  margin: 0 0 24px;
+  padding: 14px 18px;
+  border-left: 3px solid #b9b0d9;
+  background: var(--wet-wash);
+  border-radius: 0 10px 10px 0;
+  color: #625c78;
+  font-size: .85rem;
+  line-height: 1.65;
+}
+.wet-data-symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
+.wet-data-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--wet-line);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 5px 20px #19143d04;
+}
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-card h4 {
+  align-self: flex-start;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 16px;
+  padding: 7px 12px;
+  border-radius: 7px;
+  background: #eae8fb;
+  color: #5d56a2;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  font-weight: 650;
+}
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-scope { margin: 0 0 12px; color: #716d85; font-size: .875rem; line-height: 1.5; }
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-description { margin: 0 0 22px; color: #514b65; font-size: 1.06rem; line-height: 1.65; }
+.wet-data-access { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--wet-line); }
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-zenodo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 13px;
+  border: 1px solid #d6d9e8;
+  border-radius: 9px;
+  background: #f4f4fb;
+  color: #4c527a;
+  font: 700 18px/1.4 'Source Sans 3', 'Segoe UI', sans-serif;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+[data-content-source="docs/project/contribution.md"] .markdown-content a.wet-data-zenodo:hover {
+  color: #302875;
+  background: #eeecf8;
+  border-color: #b9b0d9;
+}
+.wet-data-zenodo:focus-visible { outline: 2px solid #6254a7; outline-offset: 4px; }
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-zenodo .wet-data-doi {
+  display: block;
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+[data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-guide { margin: 22px 0 0; color: #716d85; font-size: .875rem; line-height: 1.6; }
+@media (max-width: 900px) {
+  .wet-data-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  [data-content-source="docs/project/contribution.md"] .markdown-content .wet-data-card { padding: 20px 18px; }
+}

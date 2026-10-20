@@ -85,46 +85,9 @@ Another strategy is to add a protective isoform. LX1001, an investigational AAVr
 
 *Figure 7. LX1001 APOE2 gene therapy overview.*
 
-Protective APOE variants may extend this idea further. Prof. Keqiang Ye and colleagues showed that AAV-mediated expression of APOE3 Christchurch (R136S) produced protective effects in AD mouse models [9].
+Protective APOE variants may extend this idea further. Prof. Keqiang Ye and colleagues showed that AAV-mediated expression of APOE3 Christchurch (R136S) produced protective effects in AD mouse models [9]. We later discussed APOE biology and therapeutic development directly with Prof. Ye; more about this conversation can be found on our [Human Practices page](/human-practices).
 
 Together, these approaches establish APOE as a therapeutically actionable target. They also highlight two major strategies: reducing harmful apoE4 or adding a protective apoE variant. Our project pursued a different goal — preserving endogenous APOE expression while directly changing the disease-associated information carried by the APOE4 transcript.
-
-## Questions that shaped our approach {#questions-that-shaped-our-approach}
-
-<div class="description-practice-brief">
-  <p class="description-practice-brief__intro">Clinical and research conversations helped us clarify what correcting APOE4 would require beyond a C-to-U edit.</p>
-  <div class="description-practice-brief__row description-practice-brief__row--cell">
-    <div class="description-practice-brief__question">
-      <h3>How will it reach the relevant cells?</h3>
-      <small><a href="/human-practices#dr-zhifan-zhou-from-editing-in-the-laboratory-to-treatment-arrangements-patients-can-accept">Dr. Zhifan Zhou · Neurology, Shenzhen People's Hospital</a></small>
-    </div>
-    <div class="description-practice-brief__requirement">
-      <p>Brain delivery, repeated doses, invasiveness and duration were linked concerns in this discussion. For ORCA, delivery research needs to weigh routes and persistence alongside the burden of treatment on patients and families.</p>
-    </div>
-    <img class="description-practice-brief__mascot description-practice-brief__mascot--cell" src="https://static.igem.wiki/teams/6085/wiki/description/cell-v1.avif" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
-  </div>
-  <div class="description-practice-brief__row description-practice-brief__row--rate">
-    <div class="description-practice-brief__question">
-      <h3>What should change beyond the editing rate?</h3>
-      <small><a href="/human-practices#professor-keqiang-ye-how-should-we-judge-whether-an-edit-warrants-further-development">Prof. Keqiang Ye · Shenzhen University of Advanced Technology</a></small>
-    </div>
-    <div class="description-practice-brief__requirement">
-      <p>APOE's normal functions, editing specificity and differences between cell types broadened the evaluation question. Our engineering and functional evaluation must examine nearby and other unintended edits, preservation of normal function, and changes in disease-related cellular phenotypes.</p>
-    </div>
-    <img class="description-practice-brief__mascot description-practice-brief__mascot--rate" src="https://static.igem.wiki/teams/6085/wiki/description/percent-left-v2.avif" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
-  </div>
-  <div class="description-practice-brief__row description-practice-brief__row--choice">
-    <div class="description-practice-brief__question">
-      <h3>What would make an intervention acceptable?</h3>
-      <small><a href="/human-practices#dr-ziwei-dai-how-do-people-make-choices-after-learning-about-a-technology">Dr. Ziwei Dai · Systems Biology, SUSTech</a></small>
-    </div>
-    <div class="description-practice-brief__requirement">
-      <p>Risks, costs and alternatives affect willingness to accept an intervention. Future translation would require clear explanations of intended use, uncertainty and available choices, leaving individuals room to wait or decline.</p>
-    </div>
-    <img class="description-practice-brief__mascot description-practice-brief__mascot--choice" src="https://static.igem.wiki/teams/6085/wiki/description/choice-paddle-fist-v4.avif" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
-  </div>
-  <p class="description-practice-brief__outro">These remain research and translation requirements as we develop an editor for endogenous APOE4 transcripts.</p>
-</div>
 
 ## Why mRNA Editing?
 

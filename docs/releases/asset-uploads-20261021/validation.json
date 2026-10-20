@@ -1,0 +1,47 @@
+{
+  "source_baseline": "5ff1861bf2c10068d4eacc40966529c90813ee10",
+  "python": "3.12.14",
+  "dependencies": {
+    "Flask": "3.1.3",
+    "Frozen-Flask": "1.0.2",
+    "Markdown": "3.11",
+    "PyYAML": "6.0.3",
+    "lxml": "6.1.1"
+  },
+  "new_dependencies_installed": false,
+  "unit_tests": {
+    "command": "WIKI_ASSET_MODE=local python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "passed": 171
+  },
+  "production_freeze": {
+    "command": "WIKI_ASSET_MODE=igem FREEZER_DESTINATION=<task-output> python -m flask --app app freeze",
+    "exit_code": 0
+  },
+  "strict_cdn_audit": {
+    "command": "python scripts/audit_build.py --public-dir <task-output> --require-cdn --asset-report <report>",
+    "exit_code": 0,
+    "required_routes": 24,
+    "local_media": 0,
+    "missing_dependencies": 0
+  },
+  "internal_links": {
+    "command": "python scripts/check_internal_links.py <task-output>",
+    "passed": false,
+    "baseline_checked_links": 2853,
+    "baseline_issues": 698,
+    "updated_checked_links": 2833,
+    "updated_issues": 698,
+    "new_issues": [],
+    "issues_by_root_page": {
+      "contribution": 4,
+      "education": 6,
+      "engineering": 3,
+      "human-practices": 2,
+      "safety-and-security": 7
+    }
+  },
+  "changed_asset_destinations": 73,
+  "frozen_runtime_matches_final_mapping": true,
+  "original_pdf_and_preview_assets_unchanged": true
+}

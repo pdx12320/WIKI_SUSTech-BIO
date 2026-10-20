@@ -1,6 +1,6 @@
 {
-  "verified_on": "2026-10-18",
-  "source": "User-provided official upload lists; flat-package additions matched by normalized filename and source Git blob fingerprint. This import does not claim remote byte identity after image conversion. M132E update on 2026-10-19: eight user-uploaded IO figures verified via HTTP 200 and AVIF decode; local hashes identify approved PNG originals, not converted AVIF bytes. Final Engineering chapter illustrations verified 2026-10-19: twelve approved PNG originals matched to uploaded AVIFs by filename SHA-256 suffix, HTTP 200, AVIF decode, exact dimensions and pixel comparison. Includes restored titles on Fundamental Research and Functional Validation; PNG and AVIF hashes identify different encodings. User-provided flat-package additions matched by normalized filename and source Git blob fingerprint, including documents and runtime data. This import does not claim remote byte identity after image conversion. October 20 upload batch: all 60 supplied URLs returned HTTP 200; 16 PDFs, seven TTF fonts and six JSON/CSV files were downloaded and matched the local SHA-256 (29 files). The 31 image URLs were checked with HEAD; converted image byte equality is not claimed. Contribution PDF preview uploads verified 2026-10-20: all 493 user-provided flat category-page WebP URLs returned HTTP 200 and matched the current local originals byte for byte (SHA-256). Local preview manifest paths are preserved; the existing asset resolver substitutes these URLs only in igem mode.",
+  "verified_on": "2026-10-21",
+  "source": "User-provided official upload lists; flat-package additions matched by normalized filename and source Git blob fingerprint. This import does not claim remote byte identity after image conversion. M132E update on 2026-10-19: eight user-uploaded IO figures verified via HTTP 200 and AVIF decode; local hashes identify approved PNG originals, not converted AVIF bytes. Final Engineering chapter illustrations verified 2026-10-19: twelve approved PNG originals matched to uploaded AVIFs by filename SHA-256 suffix, HTTP 200, AVIF decode, exact dimensions and pixel comparison. Includes restored titles on Fundamental Research and Functional Validation; PNG and AVIF hashes identify different encodings. User-provided flat-package additions matched by normalized filename and source Git blob fingerprint, including documents and runtime data. This import does not claim remote byte identity after image conversion. October 20 upload batch: all 60 supplied URLs returned HTTP 200; 16 PDFs, seven TTF fonts and six JSON/CSV files were downloaded and matched the local SHA-256 (29 files). The 31 image URLs were checked with HEAD; converted image byte equality is not claimed. Contribution PDF preview uploads verified 2026-10-20: all 493 user-provided flat category-page WebP URLs returned HTTP 200 and matched the current local originals byte for byte (SHA-256). Local preview manifest paths are preserved; the existing asset resolver substitutes these URLs only in igem mode. October 21 user upload batch: all 73 supplied URLs returned HTTP 200; 29 uploaded originals matched byte for byte, 43 converted images retained the source Git filename fingerprint and passed decode/aspect-ratio/thumbnail checks, including platform downscaling. The 9,738,811-byte model-figures PDF matched the compressed deliverable SHA-256 and retained all 95 pages, extracted text and page dimensions. Its original local PDF remains unchanged; source and uploaded SHA-256 values are recorded separately. Detailed evidence: docs/releases/asset-uploads-20261021/verification.json.",
   "urls": [
     "https://static.igem.wiki/teams/6085/wiki/10-18-10-44/assets-figures-apoe112-1b68-domain-525ae93f89.webp",
     "https://static.igem.wiki/teams/6085/wiki/10-18-10-44/assets-figures-apoe112-1b68-plate-3901fa4861.avif",
@@ -1960,6 +1960,79 @@
     "https://static.igem.wiki/teams/6085/wiki/10-20/dry/transcriptomic-landscape-code-page-013.webp",
     "https://static.igem.wiki/teams/6085/wiki/10-20/dry/transcriptomic-landscape-code-page-014.webp",
     "https://static.igem.wiki/teams/6085/wiki/10-20/dry/transcriptomic-landscape-code-page-015.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-hero-story-x-clearance-overwhelmed-38c488f68e.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-health-rumor-detectives-activity-plan-en-d03690f557.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-health-rumor-detectives-activity-plan-zh-a70c981e8e.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-shokz-industry-university-cooperation-proposal-en-b2e3d89319.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-shokz-industry-university-cooperation-proposal-zh-81298b0779.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-overview-emit-echo-evolve-layered-static-6f203ab324.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/model-figures-under-10mb.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-model-igem-module3-wiki-figures-n4-third-batch-n4-third-batch-04ce42406f.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-model-integration-20261013-figures-shared-puf10-puf12-rates-figure-3d1d1008de.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-02-e06f71837f.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-03-7dc77399e6.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-05-199b330b43.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-06-9a6a69de16.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-07-b847e84bb1.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-12-c8af3c9179.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-13-351258e4de.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-14-fadcfcf3b4.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-16-18305a5da8.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-17-c2dbaf78ef.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-18-91fa9444fb.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-19-a589104c01.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-20-925fb31b91.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-21-3d21a403df.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-22-9dde4909fa.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-24-a9fcca7e7c.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-25-7832fe43ac.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-27-820f438279.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-28-d673ae0a15.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-29-bcfda7af01.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-30-f9f4881729.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-31-09a4b192fc.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-33-a43f0c8dd8.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-34-d335410b52.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-35-643d40670a.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-36-d22765282c.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-39-fc4448403d.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-40-6594ff6063.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-41-c525cfe020.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-42-a1e7b86a7b.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-43-cdabdd31fc.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-44-d903cb364b.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-45-8583491440.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-46-92cfa8eb7c.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-47-f5693ab46d.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-48-662f6dfa12.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-49-f79724aa04.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-50-f3e9142e49.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-51-4939cb436c.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-52-b32bd4d5e2.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-b90d753193.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-c775f95848.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-fcfe8fc77c.woff2",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-selectable-afcfeb21df.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-wordmark-study-4c297faabd.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-bold-ee23715404.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-bolditalic-42b5717ddb.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-italic-0cf6126349.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-regular-366d1489cd.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-catalytic-design-code-c16b5976e0.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-delivery-dynamics-code-272659a455.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-lamar-code-7569e44492.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-puffer-code-7483500aff.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-recognition-code-6938d69ee8.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-transcriptomic-landscape-code-f8b4578b3e.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-fonts-headers-librebaskerville-italic-22a7e0fa0e.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-human-practices-stakeholder-map-v2-stakeholder-map-v1-b833fe3199.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-human-practices-stakeholder-map-v2-stakeholder-map-v2-c1db477476.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-safety-security-control-circuit-838b215807.svg",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sap-demo-downloads-rp02-target-reporter-construction-by-golden-gate-assembly-3d1740bd7e.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-c04-7228d8de60.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp01-44ae3fcfc5.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp02-3d1740bd7e.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp06-230c3078e9.pdf",
     "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-01-pod-ed3effe3b888.avif",
     "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-02-cetus-b421b1c0212d.avif",
     "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-03-integrated-orca-cb14f211df45.avif",
@@ -2084,6 +2157,7 @@
     "https://static.igem.wiki/teams/6085/wiki/home/team.avif",
     "https://static.igem.wiki/teams/6085/wiki/home/wet-lab.avif",
     "https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif",
+    "https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg",
     "https://static.igem.wiki/teams/6085/wiki/io-new-upload/io-figure-01-m132e-20261019.avif",
     "https://static.igem.wiki/teams/6085/wiki/io-new-upload/io-figure-02-m132e-20261019.avif",
     "https://static.igem.wiki/teams/6085/wiki/io-new-upload/io-figure-03-m132e-20261019.avif",
@@ -2442,8 +2516,7 @@
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-16.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-17.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-18.avif",
-    "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
-    "https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg"
+    "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2"
   ],
   "confirmed_mapping": [
     {
@@ -11211,6 +11284,591 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
       "sha256": "b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4",
       "evidence": "user_provided_official_url_http200_font_woff2_identical_sha256_20261021"
+    },
+    {
+      "local_path": "assets/hero_story/x_clearance_overwhelmed.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-hero-story-x-clearance-overwhelmed-38c488f68e.avif",
+      "sha256": "be0805ee3622b6989b685ce33355bdb4251347b05fc1c24bed502b2f9224da61",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "2027235342bd17df5e5f12db10ad2ab29385f8764bdc194b097dd6f821a39725",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "assets/human-practices/attachments/health-rumor-detectives-activity-plan-en.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-health-rumor-detectives-activity-plan-en-d03690f557.pdf",
+      "sha256": "2157145c9b4af6c2ad6362ca3324f3542487c38aa16b6489b90ab18f4a4fed08",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "2157145c9b4af6c2ad6362ca3324f3542487c38aa16b6489b90ab18f4a4fed08",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "assets/human-practices/attachments/health-rumor-detectives-activity-plan-zh.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-health-rumor-detectives-activity-plan-zh-a70c981e8e.pdf",
+      "sha256": "aacfc97fda1da933e0e04dcf990bad6939099b3763151f51317865403fe00a29",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "aacfc97fda1da933e0e04dcf990bad6939099b3763151f51317865403fe00a29",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "assets/human-practices/attachments/shokz-industry-university-cooperation-proposal-en.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-shokz-industry-university-cooperation-proposal-en-b2e3d89319.pdf",
+      "sha256": "d8cc977ddcebcca1a21d865e7dd8b550289c8b981ce5d8ca6e90229ced7b6390",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "d8cc977ddcebcca1a21d865e7dd8b550289c8b981ce5d8ca6e90229ced7b6390",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "assets/human-practices/attachments/shokz-industry-university-cooperation-proposal-zh.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-shokz-industry-university-cooperation-proposal-zh-81298b0779.pdf",
+      "sha256": "cc27c604682a1396fc226eaf48917b5e8f82713feca573f8c75825739b314fad",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "cc27c604682a1396fc226eaf48917b5e8f82713feca573f8c75825739b314fad",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "assets/human-practices/overview/emit-echo-evolve-layered-static.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-overview-emit-echo-evolve-layered-static-6f203ab324.svg",
+      "sha256": "6a9f74ec93bb02e6a7324c95fa71da5a176d68e9c47ad882e73da948cb5e6c6a",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "6a9f74ec93bb02e6a7324c95fa71da5a176d68e9c47ad882e73da948cb5e6c6a",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/assets/model/igem_module3/wiki/figures/N4_third_batch/N4_third_batch.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-model-igem-module3-wiki-figures-n4-third-batch-n4-third-batch-04ce42406f.avif",
+      "sha256": "27137f3b88fb226247c5cba2cb1e6e3358dadb21a8304f6c5fb81c11947a2c51",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a321cb2eb073e0592a9059ffd4c2421374aebbb2efd06d469a49e58868bff856",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/model/integration-20261013/figures/shared_PUF10_PUF12_rates/figure.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-model-integration-20261013-figures-shared-puf10-puf12-rates-figure-3d1d1008de.svg",
+      "sha256": "6cc1c09f583bb9e853a2fae242917165090eee8461e8cb30d782c3e6b8d376ef",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "6cc1c09f583bb9e853a2fae242917165090eee8461e8cb30d782c3e6b8d376ef",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-02.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-02-e06f71837f.avif",
+      "sha256": "4791b9ca8d2bb4da3e759640d651043179293d856250729b6d95317aa142ff24",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "16804d364337f3d3b2e5cfd4fa93d249f63d25f713f74bd56dd5a886d08a1163",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-03.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-03-7dc77399e6.avif",
+      "sha256": "b46ae42addab0704abc219eb0f0487cec2a07a3ed27b98f5d72bfdb732ae2a67",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "3f6211e6b8a6a3a244801e06c8a478c0b264677d44155e63a77a4d67f4abc2c9",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-05.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-05-199b330b43.avif",
+      "sha256": "db07a114f266bc45404700cc67854dec8296461231d67e36618e9aa11a3cbe06",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "33ae1071afea20ef5a85f5ee856fb812da458c137c4b726ee5175820862e7aa1",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-06.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-06-9a6a69de16.avif",
+      "sha256": "2d603b1501e276a386cb806f88360f4cbcc0fcabdccc9d03abee203e8244ee36",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "17de89c1fc92bf9e5310683228e3f54c5bb5b6171164fd49627d400519ff8709",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-07.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-07-b847e84bb1.avif",
+      "sha256": "881f791f89de24e58ba4732ec8e14c98e168136f1f5a571ddcbb8ec65cffa462",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "2e2afaa531cc44cc15092d40c4de05757a2f31699aa857023c6b2abe4c142664",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-12.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-12-c8af3c9179.avif",
+      "sha256": "b4d6de49da2084b7cdefd1f332902550f85952e5bfd25c2fd5534590d764a789",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "3957c29dcb5828dbe6613ba2a0b253a978bb415e4f618159f3269d8c726ec3a1",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-13.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-13-351258e4de.avif",
+      "sha256": "f85ec1f887e05e49705a74e0d684a34833c74c6f9ce4f7c7087dcfb50f61c5a7",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "eefafd479acf931e88cf21c67f77e1b96d6c3d56a065491b6f1785835d8ca1f1",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-14.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-14-fadcfcf3b4.avif",
+      "sha256": "e7c1bf06ac5c764d5fa69bba5b76b591eebd2cfa00f0e754904d40800de12f7c",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "3f8d3c63861e088398bf939aae0f85c6aa7836d444f3d13e13cd8c3075df555e",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-16.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-16-18305a5da8.avif",
+      "sha256": "6ee1f09330e4978db5c77f70af9c9475cfa7da25b68905a9e67bd003eb9f43e6",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "316c230fb11a7d7b20dd7043f90b62d2185f340899d0fc85b2ac57e6c51ada74",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-17.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-17-c2dbaf78ef.avif",
+      "sha256": "48317e679e5ffae6c82cbdb0b045d8a56d7d85c477692637df6f855834575c8e",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "77c6c39d1fd5d6dce8d89e3e4e850f095f28d99b18caef2bd5c1a6aaa48a0afa",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-18.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-18-91fa9444fb.avif",
+      "sha256": "098268e489a08c5a52a48dda0a3f653ccc294462d9f55994c2de99e6646a4c51",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "2cdb766dcab9aeed8fe2180900a13d93d6b0068e010a4bdf62e0bf24eaf73187",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-19.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-19-a589104c01.avif",
+      "sha256": "43cec3ae3c153980f4b4d139b30cf544000520b68480952197cc49ff3a8ee1a2",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "233d46a7b387e394ce7a95c2c6c675a2482388669bfdbc5f9243fdf74d0f4525",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-20.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-20-925fb31b91.avif",
+      "sha256": "43bb19a29fa1e276fdbb575a62f55298f260a896b88a7baf8817865abdf5408c",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "58dc01167b5b06521a8e6eaee42dc97b997a02708466a37cdc5f24b9784d6254",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-21.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-21-3d21a403df.avif",
+      "sha256": "83bc95277b12dc5bb23a67ddbe9a0aa05bcf991cb4da88e948ecd750a9d15383",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "895e47e89736c04a0de26e8c646b85386b92dce5882d2ee8df3f2d743ca3a60b",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-22.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-22-9dde4909fa.avif",
+      "sha256": "6ee8dece0d50c8fde2a29edb7e71a4e1514e79ccfd043edd2940cbcebda7ed7f",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "1091124ffc982471d46fac68b8bab93b959eae0d3b69e997ecdaca3f27b9fea2",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-24.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-24-a9fcca7e7c.avif",
+      "sha256": "ffd589769d7bbedc21c889bd17aff81d1013e1ce251d137e4452534cbd4a2e05",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "12e52c0b915c0042108c2dc274c3ecd786f78fc3b4a64338f04c02a53f0af14c",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-25.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-25-7832fe43ac.avif",
+      "sha256": "65029793cd5313c9092e4400ce20edfa23c232d1096bdbb442e3633886bda960",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "8294933475692d4e5c65fb7ac43b6db1553d9b4644052106815b41a24ddcd1ed",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-27.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-27-820f438279.avif",
+      "sha256": "37e457150af1d2aaf645ebf65b1515ab88e6686841d8bf424005d550cace8590",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "43c03ceaadf43529d87f23f716f6b6ba8b8f425941b30f6ce3836e68d92e77a2",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-28.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-28-d673ae0a15.avif",
+      "sha256": "45778ad6001c8e509190dc3ab69a4d1bc2c0aff41e328f716bb93d2c28cb4c2d",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "41d4baaba731b4cd7080a3578afe2ac00c99b0203962183f0221f1798504eee5",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-29.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-29-bcfda7af01.avif",
+      "sha256": "93c8977e185a06fac09c88d051a7f5d67d57c3a4aba5cffda863a8570bd75f9f",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "fdb92690e0c23ee3cf82a49af710248886fcb25c6b368fb646b35ea88805bbfa",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-30.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-30-f9f4881729.avif",
+      "sha256": "18f5efdc72f2aff76b77785c5b05c37536cc07a00cfa8248a6f1444b0208fd9e",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a46a6476fc6ae04881dc414321638913727ab31b1fd826153bc1a486ee23b0f7",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-31.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-31-09a4b192fc.avif",
+      "sha256": "5302b4c90768adea5903e29899f2842a021726a8856a3e548f17b42bd4bb0c94",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a80a50d49d87a6a03a9a13c70c6f262be2a384f0549d55c997c7be2ade2584ec",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-33.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-33-a43f0c8dd8.avif",
+      "sha256": "1e3efbbc22091f7bee04229cc62b4d8b64d93a93ba9bbbb5d2d9bd50c032a24a",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "416f66715a48edcdbc696c0238241cb2d731da52e4f5c228905ec8afa8ef5983",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-34.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-34-d335410b52.avif",
+      "sha256": "9bfc6d97239151666009bcc4248f749044c08fb7cf9939603aed7212ee9a4db2",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "6c42ad8339645ba87b4db94df471f73f290088e854e3a1dd8b0e8dff03c3c742",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-35.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-35-643d40670a.avif",
+      "sha256": "046021dcb0273ded26d7dcc043ddab84d96433a5d5f62ab1ca70f389fb354714",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "54c11c3b0845ee5fd56afe460b5182d6cc32c900daa96e1b19670474156ca185",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-36.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-36-d22765282c.avif",
+      "sha256": "453e54e69dc2418a572c8d176aa5341cfd07c1c3e45c85bdbf4c34744d344e21",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a3bbb0b58f5d46ac9c6e11faa9b200914717aae7f6d52f8b6d99ef3ea153f535",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-39.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-39-fc4448403d.avif",
+      "sha256": "755d6ada536747fa64611cf12a180862a179459d1e64547e0ba418827b739024",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "f4b9d3d4348fd77e543e7a0d698c15ec837110b3fd5049d10f1160547880dc9a",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-40.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-40-6594ff6063.avif",
+      "sha256": "1a6db014cb750c8e315a49381afe1336b995ca75e4b22fe8a461507ed931fd63",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "68bb434706c8ee58289313188715b66fa3cdd4d473f1636248eb2e6bce2248a7",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-41.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-41-c525cfe020.avif",
+      "sha256": "2c3aa7f9d3ff648a122adf3e2eba7ee607ca3f02d8931369e866b6b40ac5fa18",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "e2767386d0043268375e52709d970b36c0d84a5cdef99c99d73652b51aad5feb",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-42.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-42-a1e7b86a7b.avif",
+      "sha256": "2992e184a23318138a0f809619c1b8dc6245d6487764fd9112416e1ba991c31c",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "9bcab698b358bd1e4c2d208ddc134e51d51bca11a28399d386ac2eb318d78edb",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-43.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-43-cdabdd31fc.avif",
+      "sha256": "585170c8fe35fe0dee44a20234953bfb1a8e45f780409a0cd56ce9aa24853839",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "7f845e9b3320213c5ffa27229557d3af11cf08951c63cb6e62bb65886950747a",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-44.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-44-d903cb364b.avif",
+      "sha256": "b716db197365e5b0c6ac41bccce2dd8ad427d75b9b53ee3a7f17562cd5490377",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "aef633dba66d316fc99f09e1b248350e5b5e652e193f31beda8a212fa67fe4c4",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-45.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-45-8583491440.avif",
+      "sha256": "10005815adb8919238aaa7c9670c8aa91dc7b5db9586b81f0fa661e800f593ac",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "57ee739af6c4d005930d223e8cf27d78913dce371580ac1dca5076f60b0f1713",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-46.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-46-92cfa8eb7c.avif",
+      "sha256": "171958a21d0c9957edb889e7c94b2c0fd439a78d325c6087060d0a19aad953d9",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "d5cb745b8de4218f5ae035523d55064ae05f375789ce5c83dcaf846d15003820",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-47.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-47-f5693ab46d.avif",
+      "sha256": "c8b35d334f83417b17cd86ffa85a83787dd6a72855235c77822f7e3bd14ab842",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "600a31d02eb9b76c7ec69fa940a86d284dfd278abca19558d75a88d537c0584e",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-48.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-48-662f6dfa12.avif",
+      "sha256": "5d79aaa9d4db2ab21033d05a209f1c8e87f5907ee561cc589728b4f68959401e",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "3bbee7537a06771d475c858190392adc49ab8bed6890aaf546c76af3c604aab2",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-49.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-49-f79724aa04.avif",
+      "sha256": "66c5cd3d1258676433b99d800f28eba4cd2b792911e43912d96b8924c1f2bf78",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "e6d2a439bf2f14a8f55ba0776b15b296cd15f64728248a50fce10eaf641f0940",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-50.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-50-f3e9142e49.avif",
+      "sha256": "326072edbf1e543e7c08f6c46fad522f0a34a26032d3549c248f55c3c4e17d2b",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "30758e5635bd957654687408491db050c27267b2780f39c3ee840c5661100184",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-51.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-51-4939cb436c.avif",
+      "sha256": "f3e6d7a8cf9f33d63003c3ee4ac9d6b4a1ed2c0accd84cf175c66a30817b6891",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "e7d7dc2682bd3d466f19bb98310204c9388c610bb7588186085e0bc75d073143",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/assets/team/puzzle-collage/photo-52.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-52-b32bd4d5e2.avif",
+      "sha256": "f518a464d999997ac558625cc338eff87fb45958a0c1aa1c4d2aafabbeecafe8",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a4611e409fc8649450b0c16c9dad55b3e46fa4c9e4cc63fa08b3f76838f3f661",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/brand/orca-mono-selectable.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-selectable-afcfeb21df.svg",
+      "sha256": "27f6831097d19d48fd01b74710e1573c6f56d243ee80001d4c8f655b577d6212",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "27f6831097d19d48fd01b74710e1573c6f56d243ee80001d4c8f655b577d6212",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/brand/orca-mono.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-b90d753193.svg",
+      "sha256": "7789c7231308e4765006ca1282f83dff61498505ba97a3c185726be8a1bcb1b4",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "7789c7231308e4765006ca1282f83dff61498505ba97a3c185726be8a1bcb1b4",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/brand/orca-mono.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-c775f95848.ttf",
+      "sha256": "dee880e34e6d399ab36d7d44fe3a8b44cff7ec622541c5b372b088743a6e14f9",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "dee880e34e6d399ab36d7d44fe3a8b44cff7ec622541c5b372b088743a6e14f9",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/brand/orca-mono.woff2",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-fcfe8fc77c.woff2",
+      "sha256": "e9bd2d8349fed8c1e1522ce59eaf98e038d16e5b5567d00678370630160360e4",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "e9bd2d8349fed8c1e1522ce59eaf98e038d16e5b5567d00678370630160360e4",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/brand/orca-wordmark-study.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-wordmark-study-4c297faabd.svg",
+      "sha256": "134f594a8cf525ffba085cc9424b19c236b9c8809252ec231d06d972fab6671c",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "134f594a8cf525ffba085cc9424b19c236b9c8809252ec231d06d972fab6671c",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution-assets/pdfjs/standard_fonts/LiberationSans-Bold.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-bold-ee23715404.ttf",
+      "sha256": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution-assets/pdfjs/standard_fonts/LiberationSans-BoldItalic.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-bolditalic-42b5717ddb.ttf",
+      "sha256": "a224075ac17495ad0a3af3bc0a419ac0704a8b3fd1095456201fb9b095fc281d",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a224075ac17495ad0a3af3bc0a419ac0704a8b3fd1095456201fb9b095fc281d",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution-assets/pdfjs/standard_fonts/LiberationSans-Italic.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-italic-0cf6126349.ttf",
+      "sha256": "832b4406dbef23628800d3aaad21048534ac84d7e3ad955be83b8172ed8ef512",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "832b4406dbef23628800d3aaad21048534ac84d7e3ad955be83b8172ed8ef512",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution-assets/pdfjs/standard_fonts/LiberationSans-Regular.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-regular-366d1489cd.ttf",
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/catalytic-design-code.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-catalytic-design-code-c16b5976e0.pdf",
+      "sha256": "2ba7ce28f597cac0dc0314b7781dc2dd2306d9cd3bc29cbc270740a40a423057",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "2ba7ce28f597cac0dc0314b7781dc2dd2306d9cd3bc29cbc270740a40a423057",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/delivery-dynamics-code.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-delivery-dynamics-code-272659a455.pdf",
+      "sha256": "30767dba51722a8ba78415e45f218d717702aa67ac32fb345013c473f20a80bc",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "30767dba51722a8ba78415e45f218d717702aa67ac32fb345013c473f20a80bc",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/lamar-code.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-lamar-code-7569e44492.pdf",
+      "sha256": "ee69ea5190a1116de06bd9ff1319b2dc782c8e0e030ed2e5d0611493174bfd90",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "ee69ea5190a1116de06bd9ff1319b2dc782c8e0e030ed2e5d0611493174bfd90",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/puffer-code.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-puffer-code-7483500aff.pdf",
+      "sha256": "a4278e053bf4e8f19e16a3660a1cec4da7372ad5fb17007dc75e0ac669672f77",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "a4278e053bf4e8f19e16a3660a1cec4da7372ad5fb17007dc75e0ac669672f77",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/recognition-code.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-recognition-code-6938d69ee8.pdf",
+      "sha256": "7e12b93aa3f8c3e74ce0de34c9797db24c961a62666aebea5fc5d5df9244d107",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "7e12b93aa3f8c3e74ce0de34c9797db24c961a62666aebea5fc5d5df9244d107",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/transcriptomic-landscape-code.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-transcriptomic-landscape-code-f8b4578b3e.pdf",
+      "sha256": "07353d35975ae0dda9a3b231368e6e459c28cf5a0a097da8ee06a1047b180e25",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "07353d35975ae0dda9a3b231368e6e459c28cf5a0a097da8ee06a1047b180e25",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/fonts/headers/LibreBaskerville-Italic.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-fonts-headers-librebaskerville-italic-22a7e0fa0e.ttf",
+      "sha256": "223959683dc73ec4437bd61fabaa4b3f22209e22855ffd3aee36ba61a5116e97",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "223959683dc73ec4437bd61fabaa4b3f22209e22855ffd3aee36ba61a5116e97",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/human-practices/stakeholder-map-v2/stakeholder-map-v1.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-human-practices-stakeholder-map-v2-stakeholder-map-v1-b833fe3199.avif",
+      "sha256": "94fc9fb73d9ac8e80b5d92ebe85498822b7e2f6bcc6375b23442cb6eaede01f5",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "ee28d546521bafacb7ec86a1a0ec444a45fed5f3a6e6bafe55047fb7c683833b",
+      "remote_verification": "source_git_filename_fingerprint_and_decodable_conversion_preserved_aspect_ratio"
+    },
+    {
+      "local_path": "static/human-practices/stakeholder-map-v2/stakeholder-map-v2.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-human-practices-stakeholder-map-v2-stakeholder-map-v2-c1db477476.svg",
+      "sha256": "ea056d8d520c4262db4c5d6521a8110617e50d587bdfd3b15d979c4d8d7e5726",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "ea056d8d520c4262db4c5d6521a8110617e50d587bdfd3b15d979c4d8d7e5726",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/safety-security/control-circuit.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-safety-security-control-circuit-838b215807.svg",
+      "sha256": "38a24efb2875e104539e5e76272e0a47bce15d21a856c65d45e977da9eb7ee02",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "38a24efb2875e104539e5e76272e0a47bce15d21a856c65d45e977da9eb7ee02",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/sap-demo/downloads/RP02_Target_Reporter_Construction_by_Golden_Gate_Assembly.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sap-demo-downloads-rp02-target-reporter-construction-by-golden-gate-assembly-3d1740bd7e.pdf",
+      "sha256": "1a7bd2cc7f3e478de85eda387fe87e563f608b08852ff16a055e7143e98a8f7b",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "1a7bd2cc7f3e478de85eda387fe87e563f608b08852ff16a055e7143e98a8f7b",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/sonar-contribution/resources/C04.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-c04-7228d8de60.pdf",
+      "sha256": "d3304fd6ea2ae68cd0f60f476afcc5031161174f9404639d77b8392507377b3c",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "d3304fd6ea2ae68cd0f60f476afcc5031161174f9404639d77b8392507377b3c",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/sonar-contribution/resources/RP01.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp01-44ae3fcfc5.pdf",
+      "sha256": "d247d916da6bc55831ac3ad18d37f9aaf479cd4841e362f3ebdab1b7864f7fae",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "d247d916da6bc55831ac3ad18d37f9aaf479cd4841e362f3ebdab1b7864f7fae",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/sonar-contribution/resources/RP02.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp02-3d1740bd7e.pdf",
+      "sha256": "1a7bd2cc7f3e478de85eda387fe87e563f608b08852ff16a055e7143e98a8f7b",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "1a7bd2cc7f3e478de85eda387fe87e563f608b08852ff16a055e7143e98a8f7b",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/sonar-contribution/resources/RP06.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp06-230c3078e9.pdf",
+      "sha256": "11dcc723580b2efe1666042ba5737624ea5572eeaa189078c4433d68e988e880",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint",
+      "uploaded_sha256": "11dcc723580b2efe1666042ba5737624ea5572eeaa189078c4433d68e988e880",
+      "remote_verification": "remote_bytes_equal_expected_upload_sha256"
+    },
+    {
+      "local_path": "static/contribution/resources/model-figures.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/model-figures-under-10mb.pdf",
+      "sha256": "9f8f0f255cf5ad88d514b4bf70e0747e42b8fa9725315304be844ab96a481b29",
+      "uploaded_sha256": "92d91f835707ee0583be8eeee4da8bf5513fac396c2216016d483071c5c263b7",
+      "uploaded_bytes": 9738811,
+      "page_count": 95,
+      "evidence": "user_uploaded_compressed_pdf_exact_sha256_same_95_page_text_and_dimensions"
     }
   ],
   "content_hashes": [
@@ -12101,6 +12759,298 @@
     {
       "url": "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
       "sha256": "b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-hero-story-x-clearance-overwhelmed-38c488f68e.avif",
+      "sha256": "2027235342bd17df5e5f12db10ad2ab29385f8764bdc194b097dd6f821a39725"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-health-rumor-detectives-activity-plan-en-d03690f557.pdf",
+      "sha256": "2157145c9b4af6c2ad6362ca3324f3542487c38aa16b6489b90ab18f4a4fed08"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-health-rumor-detectives-activity-plan-zh-a70c981e8e.pdf",
+      "sha256": "aacfc97fda1da933e0e04dcf990bad6939099b3763151f51317865403fe00a29"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-shokz-industry-university-cooperation-proposal-en-b2e3d89319.pdf",
+      "sha256": "d8cc977ddcebcca1a21d865e7dd8b550289c8b981ce5d8ca6e90229ced7b6390"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-attachments-shokz-industry-university-cooperation-proposal-zh-81298b0779.pdf",
+      "sha256": "cc27c604682a1396fc226eaf48917b5e8f82713feca573f8c75825739b314fad"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-human-practices-overview-emit-echo-evolve-layered-static-6f203ab324.svg",
+      "sha256": "6a9f74ec93bb02e6a7324c95fa71da5a176d68e9c47ad882e73da948cb5e6c6a"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/model-figures-under-10mb.pdf",
+      "sha256": "92d91f835707ee0583be8eeee4da8bf5513fac396c2216016d483071c5c263b7"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-model-igem-module3-wiki-figures-n4-third-batch-n4-third-batch-04ce42406f.avif",
+      "sha256": "a321cb2eb073e0592a9059ffd4c2421374aebbb2efd06d469a49e58868bff856"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-model-integration-20261013-figures-shared-puf10-puf12-rates-figure-3d1d1008de.svg",
+      "sha256": "6cc1c09f583bb9e853a2fae242917165090eee8461e8cb30d782c3e6b8d376ef"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-02-e06f71837f.avif",
+      "sha256": "16804d364337f3d3b2e5cfd4fa93d249f63d25f713f74bd56dd5a886d08a1163"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-03-7dc77399e6.avif",
+      "sha256": "3f6211e6b8a6a3a244801e06c8a478c0b264677d44155e63a77a4d67f4abc2c9"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-05-199b330b43.avif",
+      "sha256": "33ae1071afea20ef5a85f5ee856fb812da458c137c4b726ee5175820862e7aa1"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-06-9a6a69de16.avif",
+      "sha256": "17de89c1fc92bf9e5310683228e3f54c5bb5b6171164fd49627d400519ff8709"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-07-b847e84bb1.avif",
+      "sha256": "2e2afaa531cc44cc15092d40c4de05757a2f31699aa857023c6b2abe4c142664"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-12-c8af3c9179.avif",
+      "sha256": "3957c29dcb5828dbe6613ba2a0b253a978bb415e4f618159f3269d8c726ec3a1"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-13-351258e4de.avif",
+      "sha256": "eefafd479acf931e88cf21c67f77e1b96d6c3d56a065491b6f1785835d8ca1f1"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-14-fadcfcf3b4.avif",
+      "sha256": "3f8d3c63861e088398bf939aae0f85c6aa7836d444f3d13e13cd8c3075df555e"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-16-18305a5da8.avif",
+      "sha256": "316c230fb11a7d7b20dd7043f90b62d2185f340899d0fc85b2ac57e6c51ada74"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-17-c2dbaf78ef.avif",
+      "sha256": "77c6c39d1fd5d6dce8d89e3e4e850f095f28d99b18caef2bd5c1a6aaa48a0afa"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-18-91fa9444fb.avif",
+      "sha256": "2cdb766dcab9aeed8fe2180900a13d93d6b0068e010a4bdf62e0bf24eaf73187"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-19-a589104c01.avif",
+      "sha256": "233d46a7b387e394ce7a95c2c6c675a2482388669bfdbc5f9243fdf74d0f4525"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-20-925fb31b91.avif",
+      "sha256": "58dc01167b5b06521a8e6eaee42dc97b997a02708466a37cdc5f24b9784d6254"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-21-3d21a403df.avif",
+      "sha256": "895e47e89736c04a0de26e8c646b85386b92dce5882d2ee8df3f2d743ca3a60b"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-22-9dde4909fa.avif",
+      "sha256": "1091124ffc982471d46fac68b8bab93b959eae0d3b69e997ecdaca3f27b9fea2"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-24-a9fcca7e7c.avif",
+      "sha256": "12e52c0b915c0042108c2dc274c3ecd786f78fc3b4a64338f04c02a53f0af14c"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-25-7832fe43ac.avif",
+      "sha256": "8294933475692d4e5c65fb7ac43b6db1553d9b4644052106815b41a24ddcd1ed"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-27-820f438279.avif",
+      "sha256": "43c03ceaadf43529d87f23f716f6b6ba8b8f425941b30f6ce3836e68d92e77a2"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-28-d673ae0a15.avif",
+      "sha256": "41d4baaba731b4cd7080a3578afe2ac00c99b0203962183f0221f1798504eee5"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-29-bcfda7af01.avif",
+      "sha256": "fdb92690e0c23ee3cf82a49af710248886fcb25c6b368fb646b35ea88805bbfa"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-30-f9f4881729.avif",
+      "sha256": "a46a6476fc6ae04881dc414321638913727ab31b1fd826153bc1a486ee23b0f7"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-31-09a4b192fc.avif",
+      "sha256": "a80a50d49d87a6a03a9a13c70c6f262be2a384f0549d55c997c7be2ade2584ec"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-33-a43f0c8dd8.avif",
+      "sha256": "416f66715a48edcdbc696c0238241cb2d731da52e4f5c228905ec8afa8ef5983"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-34-d335410b52.avif",
+      "sha256": "6c42ad8339645ba87b4db94df471f73f290088e854e3a1dd8b0e8dff03c3c742"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-35-643d40670a.avif",
+      "sha256": "54c11c3b0845ee5fd56afe460b5182d6cc32c900daa96e1b19670474156ca185"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-36-d22765282c.avif",
+      "sha256": "a3bbb0b58f5d46ac9c6e11faa9b200914717aae7f6d52f8b6d99ef3ea153f535"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-39-fc4448403d.avif",
+      "sha256": "f4b9d3d4348fd77e543e7a0d698c15ec837110b3fd5049d10f1160547880dc9a"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-40-6594ff6063.avif",
+      "sha256": "68bb434706c8ee58289313188715b66fa3cdd4d473f1636248eb2e6bce2248a7"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-41-c525cfe020.avif",
+      "sha256": "e2767386d0043268375e52709d970b36c0d84a5cdef99c99d73652b51aad5feb"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-42-a1e7b86a7b.avif",
+      "sha256": "9bcab698b358bd1e4c2d208ddc134e51d51bca11a28399d386ac2eb318d78edb"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-43-cdabdd31fc.avif",
+      "sha256": "7f845e9b3320213c5ffa27229557d3af11cf08951c63cb6e62bb65886950747a"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-44-d903cb364b.avif",
+      "sha256": "aef633dba66d316fc99f09e1b248350e5b5e652e193f31beda8a212fa67fe4c4"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-45-8583491440.avif",
+      "sha256": "57ee739af6c4d005930d223e8cf27d78913dce371580ac1dca5076f60b0f1713"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-46-92cfa8eb7c.avif",
+      "sha256": "d5cb745b8de4218f5ae035523d55064ae05f375789ce5c83dcaf846d15003820"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-47-f5693ab46d.avif",
+      "sha256": "600a31d02eb9b76c7ec69fa940a86d284dfd278abca19558d75a88d537c0584e"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-48-662f6dfa12.avif",
+      "sha256": "3bbee7537a06771d475c858190392adc49ab8bed6890aaf546c76af3c604aab2"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-49-f79724aa04.avif",
+      "sha256": "e6d2a439bf2f14a8f55ba0776b15b296cd15f64728248a50fce10eaf641f0940"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-50-f3e9142e49.avif",
+      "sha256": "30758e5635bd957654687408491db050c27267b2780f39c3ee840c5661100184"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-51-4939cb436c.avif",
+      "sha256": "e7d7dc2682bd3d466f19bb98310204c9388c610bb7588186085e0bc75d073143"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-assets-team-puzzle-collage-photo-52-b32bd4d5e2.avif",
+      "sha256": "a4611e409fc8649450b0c16c9dad55b3e46fa4c9e4cc63fa08b3f76838f3f661"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-b90d753193.svg",
+      "sha256": "7789c7231308e4765006ca1282f83dff61498505ba97a3c185726be8a1bcb1b4"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-c775f95848.ttf",
+      "sha256": "dee880e34e6d399ab36d7d44fe3a8b44cff7ec622541c5b372b088743a6e14f9"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-fcfe8fc77c.woff2",
+      "sha256": "e9bd2d8349fed8c1e1522ce59eaf98e038d16e5b5567d00678370630160360e4"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-mono-selectable-afcfeb21df.svg",
+      "sha256": "27f6831097d19d48fd01b74710e1573c6f56d243ee80001d4c8f655b577d6212"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-brand-orca-wordmark-study-4c297faabd.svg",
+      "sha256": "134f594a8cf525ffba085cc9424b19c236b9c8809252ec231d06d972fab6671c"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-bold-ee23715404.ttf",
+      "sha256": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-bolditalic-42b5717ddb.ttf",
+      "sha256": "a224075ac17495ad0a3af3bc0a419ac0704a8b3fd1095456201fb9b095fc281d"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-italic-0cf6126349.ttf",
+      "sha256": "832b4406dbef23628800d3aaad21048534ac84d7e3ad955be83b8172ed8ef512"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-assets-pdfjs-standard-fonts-liberationsans-regular-366d1489cd.ttf",
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-catalytic-design-code-c16b5976e0.pdf",
+      "sha256": "2ba7ce28f597cac0dc0314b7781dc2dd2306d9cd3bc29cbc270740a40a423057"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-delivery-dynamics-code-272659a455.pdf",
+      "sha256": "30767dba51722a8ba78415e45f218d717702aa67ac32fb345013c473f20a80bc"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-lamar-code-7569e44492.pdf",
+      "sha256": "ee69ea5190a1116de06bd9ff1319b2dc782c8e0e030ed2e5d0611493174bfd90"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-puffer-code-7483500aff.pdf",
+      "sha256": "a4278e053bf4e8f19e16a3660a1cec4da7372ad5fb17007dc75e0ac669672f77"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-recognition-code-6938d69ee8.pdf",
+      "sha256": "7e12b93aa3f8c3e74ce0de34c9797db24c961a62666aebea5fc5d5df9244d107"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-contribution-resources-transcriptomic-landscape-code-f8b4578b3e.pdf",
+      "sha256": "07353d35975ae0dda9a3b231368e6e459c28cf5a0a097da8ee06a1047b180e25"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-fonts-headers-librebaskerville-italic-22a7e0fa0e.ttf",
+      "sha256": "223959683dc73ec4437bd61fabaa4b3f22209e22855ffd3aee36ba61a5116e97"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-human-practices-stakeholder-map-v2-stakeholder-map-v1-b833fe3199.avif",
+      "sha256": "ee28d546521bafacb7ec86a1a0ec444a45fed5f3a6e6bafe55047fb7c683833b"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-human-practices-stakeholder-map-v2-stakeholder-map-v2-c1db477476.svg",
+      "sha256": "ea056d8d520c4262db4c5d6521a8110617e50d587bdfd3b15d979c4d8d7e5726"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-safety-security-control-circuit-838b215807.svg",
+      "sha256": "38a24efb2875e104539e5e76272e0a47bce15d21a856c65d45e977da9eb7ee02"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sap-demo-downloads-rp02-target-reporter-construction-by-golden-gate-assembly-3d1740bd7e.pdf",
+      "sha256": "1a7bd2cc7f3e478de85eda387fe87e563f608b08852ff16a055e7143e98a8f7b"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-c04-7228d8de60.pdf",
+      "sha256": "d3304fd6ea2ae68cd0f60f476afcc5031161174f9404639d77b8392507377b3c"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp01-44ae3fcfc5.pdf",
+      "sha256": "d247d916da6bc55831ac3ad18d37f9aaf479cd4841e362f3ebdab1b7864f7fae"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp02-3d1740bd7e.pdf",
+      "sha256": "1a7bd2cc7f3e478de85eda387fe87e563f608b08852ff16a055e7143e98a8f7b"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20/new/static-sonar-contribution-resources-rp06-230c3078e9.pdf",
+      "sha256": "11dcc723580b2efe1666042ba5737624ea5572eeaa189078c4433d68e988e880"
     }
   ]
 }

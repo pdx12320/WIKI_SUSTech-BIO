@@ -1,0 +1,8 @@
+.memory-room__skip {display:inline-flex;align-items:center;justify-content:center;gap:16px;margin-top:25px;
+ min-height:44px;padding:10px 20px;border:1px solid #c8b5ed80;border-radius:999px;pointer-events:auto;
+ color:#eee8ff;background:#201631b8;backdrop-filter:blur(8px);font:500 12px/1.4 var(--ot-sans);
+ letter-spacing:.025em;text-decoration:none;transition:background .18s,border-color .18s;}
+.memory-room__skip:hover {color:#fff;background:#47305e;border-color:#eadcff;}
+.memory-room__skip:focus-visible {outline:2px solid #eadcff;outline-offset:5px;}
+.memory-room__skip span {font-size:17px;}
+@media(max-width:760px){.memory-room__skip{margin-top:20px;padding:10px 16px;font-size:11px;gap:12px;}}

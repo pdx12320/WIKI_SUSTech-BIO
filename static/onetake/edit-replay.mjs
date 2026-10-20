@@ -145,6 +145,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
     finish();
   });
   return {
+    skipToProject() { played = true; finish(); },
     setReady(value) {
       ready = value;
       if (autoEdit && active && phase === 'placement' && ready && !editingStarted) beginEdit();

@@ -121,13 +121,39 @@ const returnedHome = run({ storage: homeClick.storage });
 assert.equal(returnedHome.root.dataset.entryLoading, 'active', 'Clicking Home replays the entry loader after a previous visit');
 assert.equal(returnedHome.storage.has('orca.entry-home.v1'), false, 'Home intent is consumed once');
 const genericClick = run({ seen: true });
-assert.equal(click(genericClick, '/description').defaultPrevented, false, 'Home-to-content keeps the original white-hole handling');
+assert.equal(click(genericClick, '/description').defaultPrevented, true, 'Ordinary pages bypass the old tunnel and use the whale on arrival');
+for (const path of ['/description', '/model', '/education', '/inclusivity', '/notebook']) {
+  const arrival = run({ seen: true, content: true, path });
+  assert.equal(arrival.root.dataset.entryLoading, 'active', `${path} replays the whale after the first visit`);
+  arrival.ready(); arrival.advance(1260);
+  assert.ok(arrival.removed, `${path} releases its cover when ready`);
+}
+for (const path of ['/team', '/design-communication', '/human-practices']) {
+  assert.equal(click(genericClick, path).defaultPrevented, false, `${path} keeps its original navigation`);
+  assert.ok(run({ content: true, path }).removed, `${path} keeps its own opening even on a first visit`);
+}
+for (const href of ['/next', '/next-journey', '/404.html', '/static/file.pdf', '/other/site']) {
+  assert.equal(click(genericClick, href).defaultPrevented, false, `${href} is outside ordinary page navigation`);
+}
+const sectionClick = run({ seen: true, content: true, path: '/description' });
+assert.equal(click(sectionClick, '/description#details').defaultPrevented, false, 'Same-page anchors stay native');
+assert.equal(click(sectionClick, '/model#details').defaultPrevented, true, 'Cross-page anchors use the destination cover');
+assert.equal(sectionClick.assigned.at(-1), 'https://wiki.test/model#details', 'Destination fragments are preserved');
+assert.ok(run({ seen: true, content: true, path: '/model', history: true }).removed);
+assert.ok(run({ seen: true, content: true, path: '/model', reduced: true }).removed);
+const blockedContent = run({ seen: true, blocked: true, content: true, path: '/model' });
+assert.equal(blockedContent.root.dataset.entryLoading, 'active', 'Content arrivals work without session storage');
+blockedContent.advance(3500); assert.ok(blockedContent.removed, 'Failed content readiness cannot trap the visitor');
 assert.equal(click(genericClick, '/#chapter').defaultPrevented, false, 'Home section anchors stay native');
 assert.equal(click(genericClick, '/', { ctrlKey: true }).defaultPrevented, false);
 assert.equal(click(genericClick, 'https://other.test/').defaultPrevented, false);
 const frozenClick = run({ seen: true, content: true, path: '/sustech/team', home: '/sustech/' });
 assert.ok(click(frozenClick, '/sustech/index.html').defaultPrevented);
 assert.equal(run({ storage: frozenClick.storage, path: '/sustech/', home: '/sustech/' }).root.dataset.entryLoading, 'active');
+assert.ok(click(frozenClick, '/sustech/model/index.html').defaultPrevented);
+assert.equal(run({ seen: true, content: true, path: '/sustech/model/index.html', home: '/sustech/index.html' }).root.dataset.entryLoading, 'active');
+assert.equal(click(frozenClick, '/sustech/team/index.html').defaultPrevented, false);
+assert.ok(run({ content: true, path: '/sustech/team/index.html', home: '/sustech/index.html' }).removed);
 assert.ok(run({ seen: true }).removed, 'Returning Home does not replay the loader');
 assert.ok(run({ cover: true }).removed, 'A white-hole return does not add a second loader');
 assert.ok(run({ reduced: true }).removed); assert.ok(run({ history: true }).removed);

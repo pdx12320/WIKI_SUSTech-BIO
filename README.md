@@ -124,3 +124,13 @@ image conversion and corrected font extensions, and rejects ambiguous matches.
 It does not invent CDN URLs or alter the original images. Unknown mappings remain
 local and the production audit reports reachable media that still needs attention.
 Notebook archival JSON and the standalone SAP dataset retain their original bytes.
+
+The upload importer also accepts fingerprint-confirmed PDFs, JSON/CSV data,
+subtitles, and model/structure files. These documents are mapped only when an
+explicit upload record exists; code and unregistered data stay in the Wiki build.
+Notebook fetches its uploaded index in production while retaining its original
+local base URL for relative PDF, preview, and page links. The HP redirect table
+and workbook preview manifest use the same runtime resolver. In local mode they
+continue to load from the repository. The sealed SAP integrity manifest remains
+served with the standalone app, unchanged; its uploaded copy is recorded but is
+not substituted into the sealed package.

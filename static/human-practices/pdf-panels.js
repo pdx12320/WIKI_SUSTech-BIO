@@ -93,7 +93,11 @@
 
   const manifests = ['manifest.json'];
   if (sources.some(source => source.keepLink)) manifests.push('workbook-v2-manifest.json');
-  Promise.all(manifests.map(file => fetch(new URL(file, base)).then(response => {
+  const manifestURL = file => {
+    const url = new URL(file, base).href;
+    return globalThis.wikiAssetURL?.(url) ?? url;
+  };
+  Promise.all(manifests.map(file => fetch(manifestURL(file)).then(response => {
     if (!response.ok) throw new Error('PDF preview manifest unavailable');
     return response.json();
   }).catch(() => ({})))).then(parts => Object.assign({}, ...parts)).then(manifest => sources.forEach((source, index) => {

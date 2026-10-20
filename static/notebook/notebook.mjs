@@ -365,7 +365,9 @@ function renderState(state,userAction=false) {
 }
 async function init() {
   try {
-    const response=await fetch(baseURL);if(!response.ok)throw new Error('Source index request failed.');index=validateIndex(await response.json());bounds=dateBounds(index.records);
+    // Fetch the uploaded index in production, but keep baseURL local: its PDF,
+    // preview and Engineering links are relative to the original notebook.
+    const response=await fetch(sourceURL(baseURL.href));if(!response.ok)throw new Error('Source index request failed.');index=validateIndex(await response.json());bounds=dateBounds(index.records);
     if(!bounds){$('status').textContent='Original notebook records will appear here after they have been verified and indexed.';return;}
     for(const track of index.tracks) {
       const records=index.records.filter(r=>r.trackId===track.id),range=dateBounds(records);if(!range)continue;

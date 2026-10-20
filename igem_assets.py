@@ -16,6 +16,12 @@ MEDIA_EXTENSIONS = frozenset({
     '.woff', '.woff2', '.ttf', '.otf', '.eot', '.ktx', '.ktx2', '.hdr',
     '.exr', '.basis', '.mp4', '.webm', '.mp3', '.wav',
 })
+# Documents are opt-in: only fingerprint-confirmed uploads enter the mapping.
+# Keep them separate from media so JSON indexes are still traversed as code by
+# the build audit rather than treating every local JSON file as an image.
+UPLOAD_EXTENSIONS = MEDIA_EXTENSIONS | frozenset({
+    '.pdf', '.json', '.csv', '.vtt', '.gltf', '.glb', '.stl', '.pdb', '.cif',
+})
 CSS_URL = re.compile(r'''url\(\s*(["']?)([^\s)'"<>]+)\1\s*\)''', re.I)
 HTML_URL = re.compile(
     r'''(?P<prefix>\b(?:src|href|xlink:href|poster|data-src|data-image|data-texture)\s*=\s*)(?P<q>["'])(?P<url>[^"']*)(?P=q)''', re.I)

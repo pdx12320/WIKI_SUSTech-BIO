@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from igem_assets import MEDIA_EXTENSIONS
+from igem_assets import MEDIA_EXTENSIONS, UPLOAD_EXTENSIONS
 
 TEXT_EXTENSIONS = {'.html', '.jinja', '.jinja2', '.j2', '.md', '.css', '.js', '.mjs', '.py', '.json', '.svg'}
 TOKEN = re.compile(r'''(?<![\w@%+./~:-])(?:https?://)?[\w@%+./~:-]{1,500}\.(?:png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf|eot|ktx2?|hdr|exr|basis|mp4|webm|mp3|wav)(?:[?#][^\s"'<>)]*)?''', re.I)
@@ -25,9 +25,11 @@ def normal(value):
     return re.sub(r'[^a-z0-9]', '', Path(unquote(value)).stem.lower())
 
 
-def inventory(root, uploads):
+def inventory(root, uploads, confirmed_paths=()):
     paths = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=root).decode().split('\0')
     media = {p for p in paths if Path(p).suffix.lower() in MEDIA_EXTENSIONS and (root / p).is_file()}
+    media.update(p for p in confirmed_paths if p in paths and
+                 Path(p).suffix.lower() in UPLOAD_EXTENSIONS and (root / p).is_file())
     references = defaultdict(set)
     candidates = defaultdict(set)
     external = defaultdict(set)
@@ -75,7 +77,8 @@ def inventory(root, uploads):
 def build(root):
     evidence = json.loads((root / 'asset_uploads.json').read_text())
     urls = set(evidence['urls'])
-    media, references, candidates, external = inventory(root, urls)
+    media, references, candidates, external = inventory(root, urls,
+        (record['local_path'] for record in evidence['confirmed_mapping']))
     by_name = defaultdict(set)
     for url in urls:
         by_name[normal(urlsplit(url).path)].add(url)

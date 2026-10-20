@@ -45,6 +45,20 @@ Our approach is **Emit, Echo, Evolve: ask, listen, change.** People join us with
 
 We asked clinicians, researchers and care staff what our plans were missing. Their answers changed both our research priorities and how we explain ORCA.
 
+### Advisor Guidance: Bridging Strategic Vision and Wet-Lab Feasibility {#advisor-guidance}
+
+Throughout the entire project, we were incredibly fortunate to receive continuous, hands-on guidance from our advisors: **Prof. Zefeng Wang** (Chair Professor at SUSTech, renowned expert in RNA biology) and **Ms. Min Zhang** (Research Technician at SUSTech). Their complementary expertise shaped our project from its inception to overcoming logistical barriers.
+
+#### Strategic Direction and Model Selection {#advisor-model-selection}
+
+Prof. Wang’s extensive background in RNA system biology provided the strategic compass for our project. During our initial brainstorming sessions, Prof. Wang and Ms. Zhang discussed with us the importance of selecting a physiologically relevant model. This led to the conceptualization of using iPSC-induced apoE4/4 astrocytes. While Prof. Wang focused on the scientific rationale and phenotype selection, Ms. Zhang evaluated the practical feasibility of culturing and maintaining these cells in our lab.
+
+#### Troubleshooting the "Customs Bottleneck" {#advisor-customs-bottleneck}
+
+A critical turning point in our experimental design occurred during cell procurement. Following recommendations from both domestic suppliers (e.g., Cellapy, Yuanjing Bio) and Prof. Wang's suggestion of the international vendor BrainXell, we faced a severe delay when the imported cells were blocked at customs.
+
+Instead of letting the project stall, Prof. Wang made a decisive strategic call: "Do not get stuck here; we must pivot." He actively assisted the team in investigating customs regulations while steering us toward alternative solutions. Under his strategic direction and Ms. Zhang’s technical verification, we successfully switched to the CCFSTTG1 cell line, ensuring that our wet-lab experiments could proceed without further delay.
+
 ### People we listened to {#1-1-interviews-across-clinical-care-research-and-older-adult-services-defining-the-questions}
 
 #### Dr. Zhou: treatment burdens {#dr-zhifan-zhou-from-editing-in-the-laboratory-to-treatment-arrangements-patients-can-accept}
@@ -289,6 +303,8 @@ We began this year with a research idea and many questions. We end it with peopl
 **To the experts who helped us think more carefully:** thank you to **Dr. Zhifan Zhou, Professor Keqiang Ye and Dr. Ziwei Dai**. You brought delivery, safety, treatment burdens and the freedom to choose into our discussions. You helped us see the family, the appointment and the repeated dose behind a proposed treatment. We are grateful for your time and for the difficult questions that gave our next steps more purpose.
 
 **To the builders who shared their products with us:** thank you for helping us think about the people behind memory, care and communication. We carry those questions into our reflection on ORCA. Our fuller account of these conversations is on the [Inclusivity page](/inclusivity#builder-interviews).
+
+**To Prof. Zefeng Wang and Ms. Min Zhang:** We express our deepest gratitude to Prof. Zefeng Wang and Ms. Min Zhang for being our "troubleshooters" and mentors. Their combined expertise—from high-level scientific strategy to meticulous wet-lab execution—was instrumental in the success of our iGEM project.
 
 **To our own team, instructors and advisors:** thank you for the work behind every visit, lesson, model, tool and page. Much of that work is easy to miss in a finished photograph. We want to thank the people who prepared materials, arranged interviews, wrote and revised explanations, built the tools, and helped the rest of us carry an idea through to something we could share. This page belongs to your effort as much as to the people pictured on it.
 

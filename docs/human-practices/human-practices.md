@@ -17,7 +17,7 @@ status_message: Supplied manuscript and interview summaries are presented for te
 > People’s questions shape what we do next.
 
 <figure class="hp-figure" id="hp-figure-1">
-  <img src="https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v2.svg" alt="Emit, Echo, Evolve. Three waves spread outward in sequence; a rounded arrow completes one circle around the final whale, joins its tail, then floats gently up and down." width="1540" height="485" decoding="async">
+  <img src="https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg" alt="Emit, Echo, Evolve. Three waves spread outward in sequence; a rounded arrow completes one circle around the final whale, joins its tail, then floats gently up and down." width="1540" height="485" decoding="async">
   <figcaption>Figure 1. Emit, Echo, Evolve.</figcaption>
 </figure>
 

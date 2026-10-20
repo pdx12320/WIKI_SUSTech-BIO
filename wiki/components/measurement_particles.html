@@ -1,0 +1,13 @@
+<header class="measurement-particles" aria-labelledby="measurement-title" data-phase="settled">
+  <canvas class="measurement-particles__field" aria-hidden="true"></canvas>
+  <div class="measurement-particles__copy">
+    <h1 id="measurement-title" aria-label="Measurement">{% for letter in 'Measurement' %}<span class="measurement-particles__letter" aria-hidden="true">{{ letter }}</span>{% endfor %}</h1>
+    <p>Beyond brightness</p>
+  </div>
+  <button class="measurement-particles__replay" type="button" aria-label="Replay measurement animation">
+    <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-.3 7M5 3v5h5" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <a class="measurement-particles__read" href="#measurement-overview-title" aria-label="Read the Measurement chapter">
+    <svg width="20" height="29" viewBox="0 0 20 29" fill="none" aria-hidden="true"><path d="M10 3V25M4 19L10 25L16 19" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</header>

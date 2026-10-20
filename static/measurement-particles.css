@@ -1,0 +1,76 @@
+/* Particle sampling opening. The field is conceptual, not experimental data. */
+body:not(.ot) main:has(> .measurement-particles) { padding-top: 0; }
+.measurement-particles {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: max(460px, calc(100svh - var(--nav-h, 112px)));
+  margin: 0 0 26px;
+  overflow: clip;
+  isolation: isolate;
+  color: #2e3065;
+}
+.measurement-particles__field { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.measurement-particles__copy {
+  position: absolute;
+  left: 50%; top: 44%;
+  width: max-content;
+  max-width: calc(100% - 74px);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.measurement-particles h1 {
+  margin: 0; padding: 0;
+  color: #2e3065;
+  font: 500 clamp(32px, 7.6vw, 104px)/1.12 'ORCA Plex Mono', monospace;
+  letter-spacing: -.065em;
+  white-space: nowrap;
+}
+.measurement-particles h1::after { content: none; }
+.measurement-particles__letter { display: inline-block; }
+.measurement-particles__copy p {
+  position: absolute;
+  top: calc(100% + 31px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  margin: 0;
+  color: #74758e;
+  font: 400 18px/1.6 'Source Sans 3', 'Segoe UI', sans-serif;
+  letter-spacing: .055em;
+}
+.measurement-particles__replay,
+.measurement-particles__read {
+  display: grid; place-items: center;
+  position: absolute;
+  z-index: 2;
+  width: 44px; height: 44px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  color: #9894b0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.measurement-particles__replay { left: calc(50% - 22px); bottom: 94px; opacity: .65; }
+.measurement-particles__read { left: calc(50% - 22px); bottom: 23px; color: #bc879e; }
+.measurement-particles__replay:hover { opacity: 1; background: #f5f7fbbf; border-color: #dcdeeb; }
+.measurement-particles__read:hover svg { transform: translateY(3px); }
+.measurement-particles__read svg { transition: transform .2s ease; }
+.measurement-particles__replay:focus-visible,
+.measurement-particles__read:focus-visible { outline: 2px solid #bc879e; outline-offset: 3px; }
+body.measurement-particles-in-view .reading-orbit__value { visibility: hidden; }
+#measurement-overview-title { scroll-margin-top: calc(var(--nav-h, 112px) + 32px); }
+@media(max-width:760px) {
+  .measurement-particles { height: max(440px, calc(100svh - var(--nav-h, 170px))); }
+  .measurement-particles h1 { font-size: clamp(26px, 9vw, 64px); }
+  .measurement-particles__copy { top: 43%; }
+  .measurement-particles__copy p { top: calc(100% + 26px); font-size: 16px; letter-spacing: .025em; }
+  .measurement-particles__replay { bottom: 100px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .measurement-particles *, .measurement-particles__read svg { transition: none !important; }
+}

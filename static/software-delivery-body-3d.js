@@ -1,8 +1,10 @@
 /* Original anatomy scene. Local three.js; original continuous mesh; no model simulation. */
 import * as THREE from './vendor/three/three.module.js';
+import { tissue, refineBodySurface } from './software-anatomy-detail.js';
+import { anatomyPoint, anatomyScale } from './software-body-proportions.js';
 
 const clamp = (v, low, high) => Math.max(low, Math.min(high, v));
-const V = p => new THREE.Vector3(...p);
+const V = p => new THREE.Vector3(...anatomyPoint(p));
 const STAGES = ['Administration and absorption', 'Circulation and tissue distribution', 'Blood–brain barrier transport', 'Cell uptake and expression', 'RNA editing', 'Clearance and degradation'];
 
 async function readGeometry(url) {
@@ -33,12 +35,13 @@ export async function mountBody(root) {
   const viewport = root.querySelector('[data-body-3d]');
   if (!viewport || viewport.hasAttribute('data-body-3d-ready')) return;
   const geometry = await readGeometry(viewport.getAttribute('data-body-mesh'));
+  refineBodySurface(geometry);
   const renderer = new THREE.WebGLRenderer({alpha: true, antialias: true, powerPreference: 'low-power'});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.setClearColor(0xffffff, 0);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = .94;
   const canvas = renderer.domElement;
   canvas.setAttribute('data-body-3d-canvas', '');
   canvas.setAttribute('role', 'img'); canvas.tabIndex = 0;
@@ -48,11 +51,11 @@ export async function mountBody(root) {
   const pivot = new THREE.Group(); pivot.position.y = .88; scene.add(pivot);
   const anatomy = new THREE.Group(); anatomy.position.y = -.88; pivot.add(anatomy);
   const internal = new THREE.Group(); anatomy.add(internal);
-  const ambient = new THREE.HemisphereLight(0xfff9f1, 0x78748f, 1.45); scene.add(ambient);
-  const key = new THREE.DirectionalLight(0xffe8d5, 2.7); key.position.set(-2, 3.4, 3.3); scene.add(key);
-  const fill = new THREE.DirectionalLight(0xd8dfff, 1.2); fill.position.set(2.4, 1.7, 1.6); scene.add(fill);
-  const rim = new THREE.DirectionalLight(0xe4dbfa, 2.8); rim.position.set(1.1, 2.5, -2); scene.add(rim);
-  const skin = new THREE.MeshPhysicalMaterial({color: 0xd3b1a3, roughness: .48, metalness: 0, transparent: true, opacity: .55, depthWrite: false, side: THREE.FrontSide, clearcoat: .08, clearcoatRoughness: .65, sheen: .25, sheenColor: new THREE.Color(0xf2d6c1), sheenRoughness: .8});
+  const ambient = new THREE.HemisphereLight(0xfff9f1, 0x8d8791, 1.7); scene.add(ambient);
+  const key = new THREE.DirectionalLight(0xfff0e6, 1.65); key.position.set(-2, 3.4, 3.3); scene.add(key);
+  const fill = new THREE.DirectionalLight(0xe8edff, .75); fill.position.set(2.4, 1.7, 1.6); scene.add(fill);
+  const rim = new THREE.DirectionalLight(0xe4dbfa, .55); rim.position.set(1.1, 2.5, -2); scene.add(rim);
+  const skin = tissue(0xffffff,{vertexColors:true,transparent:true,opacity:.30,depthWrite:false,side:THREE.FrontSide,roughness:.91,specularIntensity:.12});
   const body = new THREE.Mesh(geometry, skin); body.renderOrder = 5; anatomy.add(body);
   const floorCanvas = document.createElement('canvas'); floorCanvas.width = floorCanvas.height = 128;
   const floorContext = floorCanvas.getContext('2d');
@@ -61,18 +64,18 @@ export async function mountBody(root) {
   floor.rotation.x = -Math.PI/2; floor.position.set(0,.003,.035); scene.add(floor);
 
   const materials = {
-    brain: new THREE.MeshStandardMaterial({color:0xa784b9,roughness:.56,emissive:0x22112f,emissiveIntensity:.1}),
-    liver: new THREE.MeshStandardMaterial({color:0xa5654b,roughness:.52,emissive:0x562611,emissiveIntensity:.04}),
-    heart: new THREE.MeshStandardMaterial({color:0xad596d,roughness:.55}),
-    lung: new THREE.MeshStandardMaterial({color:0x8facb4,roughness:.7,transparent:true,opacity:.26,depthWrite:false}),
-    blood: new THREE.MeshStandardMaterial({color:0xb76a80,roughness:.5,emissive:0x5c2238,emissiveIntensity:.15}),
-    vein: new THREE.MeshStandardMaterial({color:0x7791b0,roughness:.5,transparent:true,opacity:.6,depthWrite:false}),
-    lymph: new THREE.MeshStandardMaterial({color:0x369b87,roughness:.46,emissive:0x123f35,emissiveIntensity:.15}),
-    barrier: new THREE.MeshStandardMaterial({color:0x7d70be,roughness:.5,transparent:true,opacity:.35,depthWrite:false}),
-    signal: new THREE.MeshStandardMaterial({color:0xcfa35d,roughness:.32,emissive:0xc27a1c,emissiveIntensity:.22})
+    brain: tissue(0xffffff,{color:0xa784b9,roughness:.82,emissive:0x22112f,emissiveIntensity:.1}),
+    liver: tissue(0xffffff,{color:0xa5654b,roughness:.82,emissive:0x562611,emissiveIntensity:.04}),
+    heart: tissue(0xffffff,{color:0xad596d,roughness:.82}),
+    lung: tissue(0xffffff,{color:0x8facb4,roughness:.82,transparent:true,opacity:.26,depthWrite:false}),
+    blood: tissue(0xffffff,{color:0xb76a80,roughness:.82,emissive:0x5c2238,emissiveIntensity:.15}),
+    vein: tissue(0xffffff,{color:0x7791b0,roughness:.82,transparent:true,opacity:.6,depthWrite:false}),
+    lymph: tissue(0xffffff,{color:0x369b87,roughness:.82,emissive:0x123f35,emissiveIntensity:.15}),
+    barrier: tissue(0xffffff,{color:0x7d70be,roughness:.82,transparent:true,opacity:.35,depthWrite:false}),
+    signal: tissue(0xffffff,{color:0xcfa35d,roughness:.82,emissive:0xc27a1c,emissiveIntensity:.22})
   };
   function ellipsoid(position, scale, material, segments=36) {
-    const mesh = new THREE.Mesh(new THREE.SphereGeometry(1,segments,24),material); mesh.position.copy(V(position)); mesh.scale.set(...scale); internal.add(mesh); return mesh;
+    const mesh = new THREE.Mesh(new THREE.SphereGeometry(1,segments,24),material); mesh.position.copy(V(position)); mesh.scale.set(...anatomyScale(position,scale)); internal.add(mesh); return mesh;
   }
   function tube(points, radius, material, segments=50) {
     const curve = new THREE.CatmullRomCurve3(points.map(V));
@@ -88,13 +91,49 @@ export async function mountBody(root) {
       p.setXYZ(i,x*fold,y*fold,z*fold);
     }
     g.computeVertexNormals();
-    const hemi=new THREE.Mesh(g,materials.brain); hemi.position.set(side*.029,1.64,-.003); hemi.scale.set(.040,.064,.065); internal.add(hemi);
+    const hemi=new THREE.Mesh(g,materials.brain); hemi.position.copy(V([side*.029,1.64,-.003])); hemi.scale.set(...anatomyScale([side*.029,1.64,-.003],[.040,.064,.065])); internal.add(hemi);
     ellipsoid([side*.027,1.594,-.036],[.032,.023,.027],materials.brain);
-    ellipsoid([side*.068,1.245,.005],[.048,.103,.047],materials.lung);
+    const lung=ellipsoid([side*.068,1.245,.005],[.048,.103,.047],materials.lung);
+    const lp=lung.geometry.attributes.position;
+    for(let j=0;j<lp.count;j++){
+      const x=lp.getX(j),y=lp.getY(j),z=lp.getZ(j);
+      const medial=Math.max(0,-side*x),hilum=Math.exp(-(((y+.05)/.40)**2));
+      lp.setXYZ(j,x*(.88+.12*(1-y)/2)+side*.23*medial*hilum,y,z*(.91+.09*(1-y)/2));
+    }
+    lung.geometry.computeVertexNormals();
+    // Shallow cortical sulci follow each hemisphere.
+    for(let j=0;j<5;j++){
+      const points=[],latitude=-.80+j*.36;
+      for(let k=0;k<=22;k++){
+        const a=-1.2+k/22*2.5,phi=latitude+.075*Math.sin(a*4+j);
+        points.push([side*.029+side*.0405*Math.cos(phi)*Math.cos(a),1.64+.0645*Math.sin(phi),-.003+.0655*Math.cos(phi)*Math.sin(a)]);
+      }
+      tube(points,.0008,tissue(0x80688d),32);
+    }
   });
   const liver=ellipsoid([-.040,1.115,.015],[.065,.040,.040],materials.liver); liver.rotation.z=-.15;
   const liverLeft=ellipsoid([.025,1.125,.015],[.045,.025,.028],materials.liver); liverLeft.rotation.z=-.1;
-  const heart=ellipsoid([.022,1.235,.052],[.030,.048,.030],materials.heart); heart.rotation.z=-.22;
+  [liver,liverLeft].forEach(lobe=>{
+    const p=lobe.geometry.attributes.position;
+    for(let i=0;i<p.count;i++){
+      const x=p.getX(i),y=p.getY(i),z=p.getZ(i);
+      p.setXYZ(i,x,y*(.80+.20*(1-x)/2),z*(.77+.23*(1-x)/2));
+    }
+    lobe.geometry.computeVertexNormals();
+  });
+  const heart=ellipsoid([.022,1.235,.052],[.030,.048,.030],materials.heart); heart.rotation.z=-.28;
+  const hp=heart.geometry.attributes.position;
+  for(let i=0;i<hp.count;i++){const y=hp.getY(i),t=.68+.32*(y+1)/2;hp.setX(i,hp.getX(i)*t);hp.setZ(i,hp.getZ(i)*t);}
+  heart.geometry.computeVertexNormals();
+  ellipsoid([.011,1.265,.046],[.019,.016,.022],materials.heart);
+  tube([[.013,1.27,.052],[-.006,1.285,.04],[-.012,1.266,.024],[.005,1.248,.027]],.005,materials.blood,28);
+  tube([[.024,1.263,.080],[.020,1.24,.081],[.027,1.215,.069]],.0015,materials.blood,24);
+  // Renal forms and branching bronchi add anatomical context to systemic flow.
+  [-1,1].forEach(side=>{
+    const kidney=ellipsoid([side*.060,1.047,-.040],[.022,.037,.020],materials.liver);kidney.rotation.z=side*-.23;
+    tube([[0,1.422,.008],[0,1.34,.008],[side*.042,1.30,.008],[side*.069,1.25,.015]],.004,materials.lung,28);
+    for(let j=0;j<3;j++)tube([[side*.042,1.30,.008],[side*(.064+j*.009),1.28-j*.035,.016],[side*(.080+j*.007),1.25-j*.035,.018]],.002,materials.lung,20);
+  });
   const brainHalo=ellipsoid([0,1.64,-.002],[.078,.075,.078],materials.barrier);
   const depot=ellipsoid([-.112,.54,.078],[.016,.018,.009],materials.lymph);
   [.65,.77,.86].forEach((y,i)=>ellipsoid([-.105+i*.012,y,.047],[.006,.009,.006],materials.lymph,16));
@@ -129,7 +168,7 @@ export async function mountBody(root) {
   ];
   const particleGeometry=new THREE.SphereGeometry(.007,12,8);
   const routes=paths.map(path=>{
-    const activeMaterial=new THREE.MeshStandardMaterial({color:path.stage===5?0xc99440:path.stage===0?0x258d78:0x7a55bd,emissive:path.stage===5?0xc47d16:0x6f44aa,emissiveIntensity:.35,roughness:.32});
+    const activeMaterial=tissue(0xffffff,{color:path.stage===5?0xc99440:path.stage===0?0x258d78:0x7a55bd,emissive:path.stage===5?0xc47d16:0x6f44aa,emissiveIntensity:.35,roughness:.82});
     const route=tube(path.points,.0026,activeMaterial,path.stage>1?28:54);
     const particles=Array.from({length:3},()=>{const dot=new THREE.Mesh(particleGeometry,activeMaterial);internal.add(dot);return dot;});
     return {...path,...route,particles};
@@ -158,7 +197,7 @@ export async function mountBody(root) {
     brainHalo.visible=[2,3,4].includes(stage)&&!surface;
     brainHalo.material.opacity=(stage===2?.23:.12)+.035*Math.sin(phase*Math.PI*2);
     routes.forEach(route=>{
-      const active=route.stage===stage&&!surface;route.mesh.visible=active;
+      const active=route.stage===stage;route.mesh.visible=active;
       route.particles.forEach((dot,i)=>{
         const t=stage===5?clamp(stageProgress*1.2-i*.1,0,1):(phase+i/3)%1;
         dot.visible=active;dot.position.copy(route.curve.getPoint(t));
@@ -193,8 +232,8 @@ export async function mountBody(root) {
   const surfaceControl=root.querySelector('[data-body-3d-surface]');
   surfaceControl.addEventListener('click',()=>{
     surface=!surface;surfaceControl.setAttribute('aria-pressed',String(surface));surfaceControl.textContent=surface?'Show pathways':'Surface view';
-    skin.opacity=surface?1:.55;skin.transparent=!surface;skin.depthWrite=surface;skin.needsUpdate=true;
-    internal.visible=!surface;applyStage();
+    skin.opacity=surface?.42:.30;skin.transparent=true;skin.depthWrite=false;skin.needsUpdate=true;
+    internal.visible=true;applyStage();
   });
   canvas.addEventListener('webglcontextlost',event=>{event.preventDefault();root.querySelector('[data-body-3d-status]').textContent='3D view temporarily unavailable. Reload to restore the view.';});
   if(window.ResizeObserver)new ResizeObserver(requestDraw).observe(viewport);else window.addEventListener('resize',requestDraw,{passive:true});

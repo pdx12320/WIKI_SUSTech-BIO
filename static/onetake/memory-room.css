@@ -1,3 +1,4 @@
+@import url("home-skip.css");
 @import url("./orca-opening-wordmark.css");
 /* A still composition first; its fragments share one entrance. */
 .memory-room { position:fixed; inset:0; z-index:6; overflow:hidden; pointer-events:none;

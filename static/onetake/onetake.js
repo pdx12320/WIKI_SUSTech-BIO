@@ -902,6 +902,10 @@ function boot() {
   const camPos = new THREE.Vector3(), camLook = new THREE.Vector3(), tmp = new THREE.Vector3();
   const clock = new THREE.Clock();
   let p = progressOf(), time = Number.isNaN(pinned) ? 0 : 4, intro = 0, started = false;
+  root.addEventListener('ot:skip-story', () => {
+    replay.skipToProject();
+    p = progressOf();
+  });
 
   function frame() {
     const dt = Math.min(clock.getDelta(), 0.05);

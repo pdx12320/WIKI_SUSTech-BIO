@@ -385,3 +385,22 @@ The English translation shares the same community lesson plan and activity dates
 **For:** English-speaking community educators, elderly-service staff and future iGEM teams
 
 <a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/health-rumor-detectives-activity-plan-en.pdf" target="_blank" rel="noopener" aria-label="Download Health Rumor Detectives Activity Plan — English Edition, PDF">Download PDF · English <span aria-hidden="true">↓</span></a>
+
+### Education Transfer: Curriculum Comparison Toolkit {#education-transfer-toolkit}
+
+Developed from our curriculum comparison with **CUHK-HongKong-SBS** and **HG-Tokyo**, Education Transfer lets readers compare four high-school biology configurations on an interactive map. Choose a source and target, prioritize domains, inspect curriculum and examination depth separately, download an A4 report and save reference learning goals.
+
+Future teams can reuse the map interaction, evidence data structure and reporting workflow for their own documented curriculum reviews. The toolkit includes a user guide, scoring and reuse notes, a fixed-version source ZIP, a code PDF organized by file, and an example report. The comparison is preliminary document analysis, not a measure of student ability or transfer success; the 76 reference goals are not a verified per-curriculum coverage checklist.
+
+**Language:** English<br>
+**For:** Biology teachers, students, education researchers and future iGEM teams<br>
+**Version:** Documentation 1.0.0; implemented source snapshot `9a20542`<br>
+**Code license:** Apache 2.0; third-party assets retain their own terms.
+
+[Open Education Transfer →](https://education-transfer-2fbbbd.igem.wiki/education-transfer-map.html) · [Toolkit files →](https://gitlab.igem.org/2026/software/sustech/education-transfer/-/tree/main/downloads) · [Official source repository →](https://gitlab.igem.org/2026/software/sustech/education-transfer)
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-user-guide.pdf" target="_blank" rel="noopener">User guide · PDF · 7 pages</a>
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-source-code.pdf" target="_blank" rel="noopener">Source code · PDF · 96 pages</a>
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-methods-reuse.pdf" target="_blank" rel="noopener">Methods &amp; reuse · PDF · 5 pages</a>
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-example-report.pdf" target="_blank" rel="noopener">Example report · PDF · 8 pages</a>
+<a class="button" href="https://gitlab.igem.org/2026/software/sustech/education-transfer/-/archive/9a2054211637e5882f85d2eb2f484cad870a98ad/education-transfer-9a2054211637e5882f85d2eb2f484cad870a98ad.zip">Source package · ZIP</a>

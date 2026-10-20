@@ -160,6 +160,36 @@ The mascot extends the identity into a more personal form. It gives the team a c
   <figcaption>Figure 5. Third-version ORCA identity after the project-name change and headwear refinement: (a) ORCA logo; (b) mascot-logo lockup; (c) standing mascot; (d) Thinking; (e) conch-shell pose; (f) Sleepy.</figcaption>
 </figure>
 
+<figure class="design-orca-wordmark" id="orca-wordmark-design" aria-label="ORCA wordmark design">
+  <div class="design-orca-wordmark__hero"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 100" class="design-orca-selectable" aria-label="ORCA wordmark"><g aria-hidden="true" pointer-events="none"><defs><linearGradient id="orca-copy-hero-back" gradientUnits="userSpaceOnUse" x1="28" y1="48" x2="64" y2="73"><stop stop-color="#9D9CF4"/><stop offset="1" stop-color="#5D5AD7"/></linearGradient><linearGradient id="orca-copy-hero-front" gradientUnits="userSpaceOnUse" x1="29" y1="57" x2="61" y2="73"><stop stop-color="#5D5AD7"/><stop offset="1" stop-color="#2E267C"/></linearGradient><clipPath id="orca-copy-hero-water-clip"><path transform="translate(48 50) scale(1.03) translate(-48 -50)" d="M48 27C63 27 68 35 68 50S63 73 48 73 28 65 28 50 33 27 48 27Z"/></clipPath></defs>
+    <g clip-path="url(#orca-copy-hero-water-clip)">
+      <path class="orca-wordmark__wave-back" fill="url(#orca-copy-hero-back)" d="M20 54C36 38 48 58 59 60C67 63 73 55 76 54V82H20Z"/>
+      <path class="orca-wordmark__wave-front" fill="url(#orca-copy-hero-front)" d="M20 65C34 46 47 66 58 66C66 67 72 60 76 58V82H20Z"/>
+      <path class="orca-wordmark__sea-light" fill="#FFFFFF" d="M26 59C38 53 47 65 58 65C64 65 68 62 71 60C67 66 62 68 57 68C45 68 39 55 26 59Z"/>
+    </g></g><text class="orca-copyable-letters" x="0" y="90" fill="currentColor">ORCA</text><path aria-hidden="true" pointer-events="none" fill="#F58F9C" d="M257 41H269V53H257Z"/></svg></div>
+  <div class="design-orca-wordmark__backgrounds">
+    <div class="design-orca-wordmark__sample design-orca-wordmark__sample--lavender"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 100" class="design-orca-selectable" aria-label="ORCA wordmark"><g aria-hidden="true" pointer-events="none"><defs><linearGradient id="orca-copy-lavender-back" gradientUnits="userSpaceOnUse" x1="28" y1="48" x2="64" y2="73"><stop stop-color="#9D9CF4"/><stop offset="1" stop-color="#5D5AD7"/></linearGradient><linearGradient id="orca-copy-lavender-front" gradientUnits="userSpaceOnUse" x1="29" y1="57" x2="61" y2="73"><stop stop-color="#5D5AD7"/><stop offset="1" stop-color="#2E267C"/></linearGradient><clipPath id="orca-copy-lavender-water-clip"><path transform="translate(48 50) scale(1.03) translate(-48 -50)" d="M48 27C63 27 68 35 68 50S63 73 48 73 28 65 28 50 33 27 48 27Z"/></clipPath></defs>
+    <g clip-path="url(#orca-copy-lavender-water-clip)">
+      <path class="orca-wordmark__wave-back" fill="url(#orca-copy-lavender-back)" d="M20 54C36 38 48 58 59 60C67 63 73 55 76 54V82H20Z"/>
+      <path class="orca-wordmark__wave-front" fill="url(#orca-copy-lavender-front)" d="M20 65C34 46 47 66 58 66C66 67 72 60 76 58V82H20Z"/>
+      <path class="orca-wordmark__sea-light" fill="#FFFFFF" d="M26 59C38 53 47 65 58 65C64 65 68 62 71 60C67 66 62 68 57 68C45 68 39 55 26 59Z"/>
+    </g></g><text class="orca-copyable-letters" x="0" y="90" fill="currentColor">ORCA</text><path aria-hidden="true" pointer-events="none" fill="#F58F9C" d="M257 41H269V53H257Z"/></svg></div>
+    <div class="design-orca-wordmark__sample design-orca-wordmark__sample--navy"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 100" class="design-orca-selectable" aria-label="ORCA wordmark"><g aria-hidden="true" pointer-events="none"><defs><linearGradient id="orca-copy-navy-back" gradientUnits="userSpaceOnUse" x1="28" y1="48" x2="64" y2="73"><stop stop-color="#9D9CF4"/><stop offset="1" stop-color="#5D5AD7"/></linearGradient><linearGradient id="orca-copy-navy-front" gradientUnits="userSpaceOnUse" x1="29" y1="57" x2="61" y2="73"><stop stop-color="#5D5AD7"/><stop offset="1" stop-color="#2E267C"/></linearGradient><clipPath id="orca-copy-navy-water-clip"><path transform="translate(48 50) scale(1.03) translate(-48 -50)" d="M48 27C63 27 68 35 68 50S63 73 48 73 28 65 28 50 33 27 48 27Z"/></clipPath></defs>
+    <g clip-path="url(#orca-copy-navy-water-clip)">
+      <path class="orca-wordmark__wave-back" fill="url(#orca-copy-navy-back)" d="M20 54C36 38 48 58 59 60C67 63 73 55 76 54V82H20Z"/>
+      <path class="orca-wordmark__wave-front" fill="url(#orca-copy-navy-front)" d="M20 65C34 46 47 66 58 66C66 67 72 60 76 58V82H20Z"/>
+      <path class="orca-wordmark__sea-light" fill="#FFFFFF" d="M26 59C38 53 47 65 58 65C64 65 68 62 71 60C67 66 62 68 57 68C45 68 39 55 26 59Z"/>
+    </g></g><text class="orca-copyable-letters" x="0" y="90" fill="currentColor">ORCA</text><path aria-hidden="true" pointer-events="none" fill="#F58F9C" d="M257 41H269V53H257Z"/></svg></div>
+  </div>
+  <dl class="design-orca-wordmark__notes">
+    <div><dt>O · Eye patch</dt><dd>An eye patch above a purple sea, with an S-shaped reflection.</dd></div>
+    <div><dt>R · Swimming motion</dt><dd>A curved leg carries the movement of a swimming tail.</dd></div>
+    <div><dt>C · Precise editing</dt><dd>A coral point at the opening evokes precise RNA editing.</dd></div>
+    <div><dt>A · Dorsal fin</dt><dd>A swept dorsal-fin silhouette gives the letter its distinctive profile.</dd></div>
+  </dl>
+<div class="design-orca-wordmark__downloads"><a href="https://static.igem.wiki/teams/6085/wiki/design/identity/orca-wordmark-study.svg" download>Download SVG</a><a href="https://static.igem.wiki/teams/6085/wiki/design/identity/orca-mono.ttf" download>Download font</a></div>
+</figure>
+
 ### Wiki home style explorations
 
 Our early Wiki home explorations tested different ways to bring the project's visual language into a webpage: a long composition with flowing lines and puzzle shapes, an expressive ORCA header, and a pink character-based scene. These designs document the visual exploration behind the Wiki.

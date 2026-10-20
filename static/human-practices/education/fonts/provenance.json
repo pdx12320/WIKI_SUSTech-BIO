@@ -1,0 +1,22 @@
+{
+  "font": "Fraunces",
+  "source": "https://github.com/google/fonts/tree/main/ofl/fraunces",
+  "download": "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+  "licence": "SIL Open Font License 1.1",
+  "use": "Education page title only",
+  "processing": "Lossless WOFF2 compression with fontTools; full glyph set and variation axes retained. No system installation.",
+  "files": {
+    "Fraunces-Variable.woff2": {
+      "sha256": "d46903fa348fa5d63fb6d658e0d6b3cf44186d799f228f9f49be59d827a1043b",
+      "bytes": 194660
+    },
+    "Fraunces-Variable.ttf": {
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "bytes": 360440
+    },
+    "Fraunces-OFL.txt": {
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+      "bytes": 4391
+    }
+  }
+}

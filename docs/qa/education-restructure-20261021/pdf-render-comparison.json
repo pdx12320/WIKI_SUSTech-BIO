@@ -1,0 +1,71 @@
+[
+  {
+    "edition": "student-en",
+    "pages_compared": 56,
+    "max_mean_channel_difference": 0.84593,
+    "max_fraction_above_40_levels": 0.0028917,
+    "most_changed": [
+      {
+        "page": 4,
+        "mean_channel_difference": 0.84593,
+        "fraction_above_40_levels": 0.0014893
+      },
+      {
+        "page": 21,
+        "mean_channel_difference": 0.82279,
+        "fraction_above_40_levels": 0.0028917
+      },
+      {
+        "page": 28,
+        "mean_channel_difference": 0.55235,
+        "fraction_above_40_levels": 0.0010118
+      }
+    ]
+  },
+  {
+    "edition": "student-zh",
+    "pages_compared": 56,
+    "max_mean_channel_difference": 0.86671,
+    "max_fraction_above_40_levels": 0.0024287,
+    "most_changed": [
+      {
+        "page": 4,
+        "mean_channel_difference": 0.86671,
+        "fraction_above_40_levels": 0.0019378
+      },
+      {
+        "page": 21,
+        "mean_channel_difference": 0.76331,
+        "fraction_above_40_levels": 0.0024287
+      },
+      {
+        "page": 28,
+        "mean_channel_difference": 0.68369,
+        "fraction_above_40_levels": 0.0016453
+      }
+    ]
+  },
+  {
+    "edition": "teacher-zh",
+    "pages_compared": 54,
+    "max_mean_channel_difference": 0.96408,
+    "max_fraction_above_40_levels": 0.0027357,
+    "most_changed": [
+      {
+        "page": 40,
+        "mean_channel_difference": 0.96408,
+        "fraction_above_40_levels": 0.0018655
+      },
+      {
+        "page": 5,
+        "mean_channel_difference": 0.90233,
+        "fraction_above_40_levels": 0.00219
+      },
+      {
+        "page": 21,
+        "mean_channel_difference": 0.87379,
+        "fraction_above_40_levels": 0.0025073
+      }
+    ]
+  }
+]

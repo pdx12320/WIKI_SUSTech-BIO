@@ -9,6 +9,8 @@ status_message: Supplied manuscript and interview summaries are presented for te
 
 # Human Practices {#human-practices}
 
+<link rel="stylesheet" href="static/human-practices/title-fonts/human-practices-title.css">
+
 > **ORCA: On-target RNA Correction of APOE4 for Alzheimer's Disease**
 >
 > <strong class="hp-opening-line">SUSTech-BIO</strong><br>

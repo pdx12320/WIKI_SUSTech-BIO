@@ -4,6 +4,8 @@
 {% set manuscript = rendered_markdown | replace('<!-- teacher-interviews -->', interviews) %}
 {% set mascot_url = url_for('assets', filename='images/design-communication/identity/figure-04-c-orca-mascot-standing.png') %}
 {% set manuscript = manuscript | replace('/assets/images/design-communication/identity/figure-04-c-orca-mascot-standing.png', mascot_url) %}
+{% set assets_base = url_for('assets', filename='human-practices/education/workbook-current-student-zh.docx').rsplit('human-practices/education/workbook-current-student-zh.docx', 1)[0] %}
+{% set manuscript = manuscript | replace('href="/assets/' | safe, ('href="' | safe) ~ assets_base) %}
 {% set rendered_markdown %}
 <div class="hp-manuscript education-manuscript" lang="en">
   <p class="hp-subtitle">{{ content.metadata.subtitle }}</p>
@@ -13,6 +15,7 @@
 
 {% block page_styles %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='human-practices/education/chapters.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/human-practices.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/pdf-panels.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/viewpoints.css') }}">
@@ -21,6 +24,7 @@
 
 {% block page_scripts %}
 {{ super() }}
+<script src="{{ url_for('static', filename='human-practices/education/chapters.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/interviews/orca-interviews.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/pdf-panels.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/viewpoints.js') }}" defer></script>

@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'HP Patrick Hand';
+  src: url('./fonts/PatrickHand-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.content-page:has([data-content-source="docs/human-practices/human-practices.md"]) .content-overview {
+  padding-inline: 0;
+}
+.content-page:has([data-content-source="docs/human-practices/human-practices.md"]) .content-overview h1 {
+  font-family: 'HP Patrick Hand', cursive;
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: -.025em;
+  font-size: clamp(52px, 8.5vw, 120px);
+  line-height: 1.08;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .content-page:has([data-content-source="docs/human-practices/human-practices.md"]) .content-overview h1 {
+    font-size: 46px;
+  }
+}

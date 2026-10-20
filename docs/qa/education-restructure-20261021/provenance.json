@@ -1,0 +1,58 @@
+{
+  "evidence_sources": [
+    {
+      "path": "assets/human-practices/attachments/curriculum-comparison-analysis.pdf",
+      "sha256": "445fcdd7467abcb6fc5c7325a033cbba5634ab9b4968e3371fb07d360c51ea92"
+    },
+    {
+      "path": "assets/human-practices/attachments/curriculum-comparison-reference-framework.pdf",
+      "sha256": "917cff30c2afe2581368d125f498060aa04875eba7fa244304ce2183f0d3fd48"
+    },
+    {
+      "path": "assets/human-practices/attachments/worldproof-hackathon-challenges-en.pdf",
+      "sha256": "37de7ab01bd85c1dd9739ee492bdc3c220c3b6e93a1e2a0e45300a7163b82ca6"
+    },
+    {
+      "path": "assets/human-practices/attachments/older-adults-health-workbook-v1-zh.pdf",
+      "sha256": "b897f225ceb9bde714da353a06603e3f7bdfe7ec08cfde750e0c37a54ad9e341"
+    },
+    {
+      "path": "output/pdf/老年大学健康生活教材/老年大学健康生活教材_学生版_中文版.pdf",
+      "sha256": "60e1529eb2d76132a43bfe0f15c92c444fabbb826ddf852f4596346bfe468286"
+    },
+    {
+      "path": "output/pdf/老年大学健康生活教材/Healthy_Living_for_Older_Adults_Student_Edition_EN.pdf",
+      "sha256": "710b11cd9328e83584d3ea72e8aff059476843108d03395be464345e9cbbd315"
+    },
+    {
+      "path": "output/pdf/老年大学健康生活教材/老年大学健康生活教材_教师讲义版_中文版.pdf",
+      "sha256": "7dbf680217708db5568eaa37f1f9cd43c143393a714bbf7d3620bb81b06c0972"
+    },
+    {
+      "path": "static/human-practices/interviews/Interview-transcript-EN.txt",
+      "sha256": "4980864ce5d9d44761d526a38b367ef39e7b7b5d4cd4f46e748cea05faa24424"
+    },
+    {
+      "path": "docs/human-practices/education-transfer/source/education-transfer-knowledge.json",
+      "sha256": "539c31f991b80129ceb100d88692666010cbaa71031ce784bf639a0d0c22f9e9"
+    }
+  ],
+  "comparison_images": [
+    {
+      "path": "static/human-practices/education/workbook-current-body-p5.png",
+      "sha256": "e1804d02a1f290e062056e79348ba4a6fc19f855ba91f7676d79fba37b10abde"
+    },
+    {
+      "path": "static/human-practices/education/workbook-current-medicine-p10.png",
+      "sha256": "66581045dbca7d002101001ba4db5b1acf9404f6ecad41dbe2082754c77bbb98"
+    },
+    {
+      "path": "static/human-practices/education/workbook-v1-medicine-p20.png",
+      "sha256": "7490e289378892056e96a0593aabc55cc5785bc159258b7ce2f8563d9a902fc9"
+    },
+    {
+      "path": "static/human-practices/education/workbook-v1-body-p3.png",
+      "sha256": "ab8aaf74d8a9ac32972db7db33e383041c11e6a15ca460c5834cf0372ebcb302"
+    }
+  ]
+}

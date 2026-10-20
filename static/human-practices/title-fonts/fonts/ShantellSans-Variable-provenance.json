@@ -1,0 +1,16 @@
+{
+  "font": "ShantellSans-Variable",
+  "source": "https://github.com/google/fonts/tree/main/ofl/shantellsans",
+  "licence": "SIL Open Font License 1.1",
+  "processing": "Lossless WOFF2 compression; all glyphs retained. No system installation.",
+  "files": {
+    ".ttf": {
+      "bytes": 1284736,
+      "sha256": "d98a7913853f78d71aa0b86daf66b5eddb5a3266c07bfd51ef70632b88c41084"
+    },
+    ".woff2": {
+      "bytes": 442552,
+      "sha256": "b8a9433ea6e5a1cd697360889100451dca6fc6db958e8be25b6432e057ef947b"
+    }
+  }
+}

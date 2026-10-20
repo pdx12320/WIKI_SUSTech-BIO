@@ -1,0 +1,23 @@
+{
+  "checked_destinations": 2842,
+  "education_issues": [],
+  "existing_out_of_scope_issues": 693,
+  "sources": {
+    "contribution": 4,
+    "engineering": 3,
+    "human-practices": 2,
+    "safety-and-security": 7,
+    "static/assets/model/icon-flowcharts-preview-20261016/index.html": 1,
+    "static/human-practices/opening/color-study/cream.html": 75,
+    "static/human-practices/opening/color-study/mint.html": 75,
+    "static/human-practices/opening/color-study/white.html": 75,
+    "static/human-practices/opening/this-color-study/green-orange.html": 75,
+    "static/human-practices/opening/this-color-study/green-purple.html": 75,
+    "static/human-practices/opening/this-color-study/orange-green.html": 75,
+    "static/human-practices/opening/this-color-study/orange-purple.html": 75,
+    "static/human-practices/opening/this-color-study/purple-green.html": 75,
+    "static/human-practices/opening/this-color-study/purple-orange.html": 75,
+    "static/previews/software-materials-20261021.html": 1
+  },
+  "note": "Whole-site scan includes historical static preview HTML. No out-of-scope link was changed by this release."
+}

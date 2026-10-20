@@ -1,0 +1,30 @@
+{
+  "asset_mode": "igem",
+  "desktop": {
+    "width": 1440,
+    "height": 900,
+    "title_px": 120,
+    "alignment": "center",
+    "horizontal_overflow": false
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "hp_and_inclusivity_title_px": 52,
+    "horizontal_overflow": false
+  },
+  "narrow_mobile": {
+    "width": 320,
+    "height": 740,
+    "hp_and_inclusivity_title_px": 46,
+    "horizontal_overflow": false
+  },
+  "fonts_loaded": [
+    "Education Caveat",
+    "HP Patrick Hand",
+    "Inclusivity Shantell Sans"
+  ],
+  "body_and_directory_rules": "unchanged by title styles",
+  "docx_sources": "three original source files retained",
+  "viewport_override": "reset after verification"
+}

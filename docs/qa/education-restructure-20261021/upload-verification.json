@@ -1,0 +1,93 @@
+[
+  {
+    "local_path": "static/human-practices/education/fonts/Caveat-Variable.woff2",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/caveat-variable.woff2",
+    "source_sha256": "2cf9b14c5748deaff9665da9a0c342d887a114aed2a6559124c2482a8177ca5f",
+    "remote_sha256": "2cf9b14c5748deaff9665da9a0c342d887a114aed2a6559124c2482a8177ca5f",
+    "remote_bytes": 173692,
+    "verification": "byte-identical font"
+  },
+  {
+    "local_path": "static/human-practices/title-fonts/fonts/PatrickHand-Regular.woff2",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/patrickhand-regular.woff2",
+    "source_sha256": "bb8dd7b2c7b11d31de49a7ed30d46bd60d36fc54d12bf7a27ee358514be0fbb9",
+    "remote_sha256": "bb8dd7b2c7b11d31de49a7ed30d46bd60d36fc54d12bf7a27ee358514be0fbb9",
+    "remote_bytes": 62732,
+    "verification": "byte-identical font"
+  },
+  {
+    "local_path": "static/human-practices/title-fonts/fonts/ShantellSans-Variable.woff2",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/shantellsans-variable.woff2",
+    "source_sha256": "b8a9433ea6e5a1cd697360889100451dca6fc6db958e8be25b6432e057ef947b",
+    "remote_sha256": "b8a9433ea6e5a1cd697360889100451dca6fc6db958e8be25b6432e057ef947b",
+    "remote_bytes": 442552,
+    "verification": "byte-identical font"
+  },
+  {
+    "local_path": "static/human-practices/education/workbook-current-body-p5.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-body-p5.avif",
+    "source_sha256": "e1804d02a1f290e062056e79348ba4a6fc19f855ba91f7676d79fba37b10abde",
+    "remote_sha256": "f369eb6afaa2ac553d26ebe687fb12e7d0126b51d62bcde0689e1d30da3174ac",
+    "remote_bytes": 76817,
+    "verification": "official PNG to AVIF conversion; page dimensions unchanged",
+    "width": 778,
+    "height": 1100
+  },
+  {
+    "local_path": "static/human-practices/education/workbook-current-medicine-p10.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-medicine-p10.avif",
+    "source_sha256": "66581045dbca7d002101001ba4db5b1acf9404f6ecad41dbe2082754c77bbb98",
+    "remote_sha256": "50ac32086ec32dcf70bcc6bbaafadc68ebba6afe3b5a658785b7bebba2d71a57",
+    "remote_bytes": 63642,
+    "verification": "official PNG to AVIF conversion; page dimensions unchanged",
+    "width": 778,
+    "height": 1100
+  },
+  {
+    "local_path": "static/human-practices/education/workbook-v1-body-p3.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-body-p3.avif",
+    "source_sha256": "ab8aaf74d8a9ac32972db7db33e383041c11e6a15ca460c5834cf0372ebcb302",
+    "remote_sha256": "5be48bc69c1d936361b2380adfb0918e845de828e53dd4c58f6a5ee28c292e47",
+    "remote_bytes": 52298,
+    "verification": "official PNG to AVIF conversion; page dimensions unchanged",
+    "width": 778,
+    "height": 1100
+  },
+  {
+    "local_path": "static/human-practices/education/workbook-v1-medicine-p20.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-medicine-p20.avif",
+    "source_sha256": "7490e289378892056e96a0593aabc55cc5785bc159258b7ce2f8563d9a902fc9",
+    "remote_sha256": "5f434712c2b81326cca574811616258bbdf12fac71eaf6fafb86d8c0ce76a3d8",
+    "remote_bytes": 34272,
+    "verification": "official PNG to AVIF conversion; page dimensions unchanged",
+    "width": 778,
+    "height": 1100
+  },
+  {
+    "local_path": "assets/human-practices/education/workbook-current-student-en-compact.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-en-compact.pdf",
+    "source_sha256": "9043a43c8a155b6c055a067753d6d9ea94e46a389f0ab836c13529298e6b1eeb",
+    "remote_sha256": "9043a43c8a155b6c055a067753d6d9ea94e46a389f0ab836c13529298e6b1eeb",
+    "remote_bytes": 2233197,
+    "pages": 56,
+    "verification": "byte-identical compiled compact PDF"
+  },
+  {
+    "local_path": "assets/human-practices/education/workbook-current-student-zh-compact.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-zh-compact.pdf",
+    "source_sha256": "6863f68df84c39392fef351033fb95a00d36a59d282abeca99a2c146b0b98bd8",
+    "remote_sha256": "6863f68df84c39392fef351033fb95a00d36a59d282abeca99a2c146b0b98bd8",
+    "remote_bytes": 3020117,
+    "pages": 56,
+    "verification": "byte-identical compiled compact PDF"
+  },
+  {
+    "local_path": "assets/human-practices/education/workbook-current-teacher-zh-compact.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf",
+    "source_sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6",
+    "remote_sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6",
+    "remote_bytes": 2322043,
+    "pages": 54,
+    "verification": "byte-identical compiled compact PDF"
+  }
+]

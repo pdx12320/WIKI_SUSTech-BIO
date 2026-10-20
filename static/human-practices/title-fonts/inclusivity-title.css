@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Inclusivity Shantell Sans';
+  src: url('./fonts/ShantellSans-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+}
+.content-page:has([data-content-source="docs/human-practices/inclusivity.md"]) .content-overview {
+  padding-inline: 0;
+}
+.content-page:has([data-content-source="docs/human-practices/inclusivity.md"]) .content-overview h1 {
+  font-family: 'Inclusivity Shantell Sans', cursive;
+  font-weight: 500;
+  font-synthesis: none;
+  font-variation-settings: 'INFM' 65, 'BNCE' 15, 'SPAC' 0;
+  letter-spacing: -.025em;
+  font-size: clamp(52px, 8.5vw, 120px);
+  line-height: 1.08;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .content-page:has([data-content-source="docs/human-practices/inclusivity.md"]) .content-overview h1 {
+    font-size: 46px;
+  }
+}

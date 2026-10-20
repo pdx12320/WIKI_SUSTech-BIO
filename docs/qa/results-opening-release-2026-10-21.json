@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-21",
+  "base_commit": "383bde1",
+  "scope": [
+    "Results opening typography and mascot push",
+    "Summary card and original Results mascot",
+    "Shared header override preserving Description"
+  ],
+  "checks": {
+    "python_tests": 173,
+    "js_lifecycle": "passed: reduced motion, deep links, history restoration, hidden-page cleanup",
+    "desktop_and_mobile": "visually reviewed; keyboard replay and summary focus passed; no horizontal overflow",
+    "no_javascript": "opening title and overview remain readable",
+    "production_freeze": "completed",
+    "production_route_asset_audit": "24 routes passed; no missing dependencies",
+    "local_freeze": "completed; Results assets present",
+    "local_audit_exception": "Human Practices overview SVG is absent from local frozen output; related source and freezer files are unchanged from base",
+    "strict_cdn": "passed: 24 routes; zero local media and zero missing dependencies",
+    "cdn_browser": "loaded supplied AVIF at 1254x1254; keyboard/click replay verified; no console errors"
+  },
+  "asset": {
+    "local_path": "static/assets/mascots/orca-results-push.png",
+    "provenance": "static/assets/mascots/orca-results-push.provenance.json",
+    "igem_upload": "completed by user; verified HTTP 200 image/avif and browser load",
+    "public_deployment": "not performed",
+    "cdn_url": "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif",
+    "cdn_dimensions": [
+      1254,
+      1254
+    ],
+    "cdn_alpha_range": [
+      0,
+      255
+    ],
+    "cdn_bytes": 52304,
+    "cdn_sha256": "b94969b81ed493b8c82e165d3315a70ebaa77948ad223151d04407de5d8def9b"
+  },
+  "changed_files": [
+    "static/results-opening.css",
+    "static/results-opening.js",
+    "static/entry-loading/boot.js",
+    "wiki/components/results_opening.html",
+    "wiki/pages/results.html",
+    "wiki/pages/content_page.html",
+    "static/assets/mascots/orca-results-push.png",
+    "static/assets/mascots/orca-results-push.provenance.json",
+    "tests/test_results_opening.py",
+    "tests/results_opening.mjs",
+    "asset_uploads.json",
+    "asset_mapping.csv"
+  ]
+}

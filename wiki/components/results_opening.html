@@ -1,0 +1,33 @@
+<header class="results-opening" aria-labelledby="results-opening-title">
+  <div class="results-opening__stage">
+    <div class="results-opening__composition">
+      <div class="results-opening__lockup">
+        <span class="results-opening__echo results-opening__echo--upper" aria-hidden="true">RESULTS</span>
+        <span class="results-opening__echo results-opening__echo--lower" aria-hidden="true">RESULTS</span>
+        <h1 class="results-opening__title" id="results-opening-title">Results</h1>
+        <button class="results-opening__period" type="button" aria-label="Replay the Results opening" title="Replay the opening">
+          <span class="results-opening__square"></span>
+          <span class="results-opening__pusher" aria-hidden="true">
+            <img src="{{ url_for('static', filename='assets/mascots/orca-results-push.png') }}" alt="" width="1254" height="1254" decoding="async" draggable="false">
+          </span>
+        </button>
+        <div class="results-opening__guides" aria-hidden="true"><i></i><i></i></div>
+        <div class="results-opening__scan" aria-hidden="true"></div>
+      </div>
+      <div class="results-opening__rule" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="results-opening__caption">What we built. What we learned.</p>
+    </div>
+  </div>
+  <a class="results-opening__read" href="#results-summary">
+    <span>Scroll to explore</span>
+    <svg viewBox="0 0 20 32" width="20" height="32" fill="none" aria-hidden="true"><path d="M10 2v25m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</header>
+{% if content.metadata.get('header_introduction') %}
+<section class="results-summary" id="results-summary" aria-label="Results overview" tabindex="-1">
+  <div class="results-summary__card">
+    <img class="results-summary__mascot" src="{{ url_for('static', filename='assets/mascots/orca-results-header.png') }}" alt="" width="1280" height="1280" loading="lazy" decoding="async">
+    <p>{{ content.metadata.get('header_introduction') }}</p>
+  </div>
+</section>
+{% endif %}

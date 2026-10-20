@@ -2516,7 +2516,8 @@
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-16.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-17.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-18.avif",
-    "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2"
+    "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
+    "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif"
   ],
   "confirmed_mapping": [
     {
@@ -11869,6 +11870,12 @@
       "uploaded_bytes": 9738811,
       "page_count": 95,
       "evidence": "user_uploaded_compressed_pdf_exact_sha256_same_95_page_text_and_dimensions"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-results-push.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif",
+      "sha256": "dc68363fe1c9843a08b59c81e02567935c029f5c0a79cef48fc1511ff861976d",
+      "evidence": "user_confirmed_renamed_upload_2026_10_21_visual_dimensions_alpha_verified"
     }
   ],
   "content_hashes": [

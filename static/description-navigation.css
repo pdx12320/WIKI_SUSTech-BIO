@@ -70,7 +70,7 @@
 }
 
 .description-next__link:hover .description-next__arrow {
-  transform: translate(2px, -2px);
+  transform: translateY(3px);
 }
 
 .description-next__link:focus-visible {

@@ -16,13 +16,15 @@
   'existing-strategies-and-the-gap-we-saw': 'Existing Strategies',
   'our-approach-from-an-rna-editor-to-orca': 'Our Approach'
 } %}
-{% for item in content.toc if not (is_description and item.id in ['references', 'when-the-familiar-begins-to-fade']) %}
+{% for item in content.toc if not (is_description and item.id in ['references', 'when-the-familiar-begins-to-fade']) and not (personality == 'future' and item.id not in ['short-term-platform-optimization', 'long-term-therapeutic-translation']) %}
   {% if item.level == 2 or directory.current is none %}
     {% set heading = item %}
     {% if content.source_label == 'docs/wet-lab/measurement.md' and item.level == 2 %}
       {% set heading = {'id': item.id, 'name': item.name.split(' — ', 1)[0], 'level': item.level, 'custom_label': true} %}
     {% elif content.source_label == 'docs/project/contribution.md' and item.id in ['sonar', 'puffer'] %}
       {% set heading = {'id': item.id, 'name': item.id.upper(), 'level': item.level, 'custom_label': true} %}
+    {% elif personality == 'future' %}
+      {% set heading = {'id': item.id, 'name': item.name.split(' — ', 1)[0], 'level': item.level, 'custom_label': true} %}
     {% elif is_description and item.id in description_labels %}
       {% set heading = {'id': item.id, 'name': description_labels[item.id], 'level': item.level, 'custom_label': true} %}
     {% endif %}

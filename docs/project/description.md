@@ -237,9 +237,8 @@ Together, these stages connect the molecular rationale for ORCA with its enginee
 
 *Figure 10. ORCA project overview: Fundamental Research, Platform Development, and Functional Validation.*
 
-<nav class="description-next" aria-label="Explore ORCA development and results">
-  <a class="description-next__link" href="/engineering"><span>To Engineering</span><span class="description-next__arrow" aria-hidden="true">↗</span></a>
-  <a class="description-next__link" href="/results"><span>To Results</span><span class="description-next__arrow" aria-hidden="true">↗</span></a>
+<nav class="description-next" aria-label="Explore ORCA engineering">
+  <a class="description-next__link" href="/engineering"><span>To Engineering</span><span class="description-next__arrow" aria-hidden="true">↓</span></a>
 </nav>
 
 ## References

@@ -17,10 +17,21 @@ html[data-entry-loading="leaving"] .entry-loading { opacity: 0; pointer-events: 
   font: 500 10px/1.5 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   letter-spacing: .42em; text-indent: .42em; color: #7375B2;
 }
+.entry-loading__dots {
+  display: inline-block; white-space: pre; text-indent: 0;
+  clip-path: inset(0 66.6667% 0 0);
+  animation: entry-loading-dots 1.2s steps(1, end) infinite;
+}
+@keyframes entry-loading-dots {
+  0%, 100% { clip-path: inset(0 66.6667% 0 0); }
+  33.3333% { clip-path: inset(0 33.3333% 0 0); }
+  66.6667% { clip-path: inset(0 0 0 0); }
+}
 .entry-loading__brand {
   position: absolute; top: 30px; left: 34px; margin: 0;
-  font: 600 11px/1 Futura, 'Avenir Next', sans-serif; letter-spacing: .24em;
+  width: 101px; color: #112d54; line-height: 0;
 }
 @media (prefers-reduced-motion: reduce) {
   html[data-entry-loading] .entry-loading { transition: none; }
+  .entry-loading__dots { animation: none; clip-path: none; }
 }

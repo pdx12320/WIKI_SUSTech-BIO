@@ -68,7 +68,7 @@ class ProductionRoutesTest(unittest.TestCase):
         self.assertIn('wiki/10-18/engineering-mascot-thinking.avif', page)
         self.assertIn('wiki/10-18/engineering-deliver-figure-01.avif', page)
         self.assertNotIn('href="/assets/images/engineering/mascot-', page)
-        self.assertLess(page.index('asset-runtime.js'), page.index('whitehole'))
+        self.assertLess(page.index('asset-runtime.js'), page.index('entry-loading/boot.js'))
         self.assertIn('src="asset-runtime.js"', page)
 
     def test_css_cursor_and_dbtl_backgrounds_use_cdn(self):

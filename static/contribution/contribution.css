@@ -3,12 +3,7 @@
   --contribution-ink: #302875;
   --contribution-accent: #6254a7;
 }
-[data-content-source="docs/project/contribution.md"] .contribution-lead {
-  border-left: 4px solid #ee9aad;
-  padding: 8px 0 8px 24px;
-  margin-bottom: 38px;
-  font-size: 1.12rem;
-}
+
 [data-content-source="docs/project/contribution.md"] h2 {
   scroll-margin-top: 110px;
 }
@@ -295,3 +290,21 @@
 [data-content-source="docs/project/contribution.md"] .contribution-next__link:hover { background:#eaeaf8; border-color:#bfc1dd; color:#3d409b; }
 .contribution-next__link:focus-visible { outline:2px solid #5f62cd; outline-offset:4px; }
 @media(prefers-reduced-motion:reduce) { [data-content-source="docs/project/contribution.md"] .contribution-next__link { transition:none; } }
+
+/* Match the Results introduction, before the article and its directory. */
+.contribution-introduction { width:min(1120px,100%); margin:0 auto; padding:44px 0 60px; scroll-margin-top:28px; }
+.contribution-introduction__card { display:grid; grid-template-columns:minmax(0,1fr) clamp(150px,17vw,200px); align-items:center; gap:32px; padding:32px 36px; border:1px solid #dcddeb; border-radius:24px; background:#ffffffa6; }
+.contribution-introduction__card p { grid-column:1; grid-row:1; min-width:0; margin:0; color:#555970; font:400 clamp(18px,1.65vw,22px)/1.8 Georgia,serif; }
+.contribution-introduction__mascot { grid-column:2; grid-row:1; position:relative; width:100%; aspect-ratio: .8; overflow:hidden; }
+.contribution-introduction__mascot img { position:absolute; left:50%; top:50%; width:340%; max-width:none; height:auto; transform:translate(-50%,-40%); }
+[data-content-source="docs/project/contribution.md"] .markdown-content > h2:first-child { margin-top:0; padding-top:0; border-top:0; }
+@media(max-width:700px) {
+ .contribution-introduction { padding:30px 0 40px; }
+ .contribution-introduction__card { padding:24px; gap:18px; grid-template-columns:minmax(0,1fr) 100px; border-radius:20px; }
+}
+@media(max-width:480px) {
+ .contribution-introduction__card { display:flow-root; }
+ .contribution-introduction__mascot { float:right; width:100px; margin:12px 0 0 18px; }
+}
+
+.contribution-introduction__card strong { color:inherit; font-weight:700; }

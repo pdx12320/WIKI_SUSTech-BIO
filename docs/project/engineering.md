@@ -11,10 +11,6 @@ status_message: Supplied engineering manuscripts and existing model records; sci
 
 ## Fundamental Research {#fundamental-research .engineering-chapter-title}
 
-<span id="engineering-figure-conventions"></span>
-
-*Figure conventions throughout Engineering: a.u. means arbitrary units and RFU means relative fluorescence units; fluorescence values retain their assay-specific instrument scale. ECD-A is the integrated fluorescence pulse area of the detection channel used here for mCherry. Cq is the qPCR quantification cycle, and −d(RFU)/dT is the negative fluorescence derivative per degree Celsius in melting curves. Percentage-point differences (pp) are distinct from relative percentage changes.*
-
 ### Overview {#fundamental-research-overview}
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/fundamental-research.png" alt="Two foundational editor-design cycles: a PUF–APOBEC fusion followed by comparison of four PUF repeat architectures." width="1800" height="1080" decoding="async">
@@ -808,8 +804,6 @@ Integrated ORCA combined independently engineered recognition and catalytic modu
 5. <span id="integrated-orca-ref-5" style="scroll-margin-top:72px"></span>Wolfe AD, Li S, Goedderz C, et al. The structure of APOBEC1 and insights into its RNA and DNA substrate selectivity. *NAR Cancer*. 2020;2(4):zcaa027. <https://doi.org/10.1093/narcan/zcaa027>
 
 ## GFA {#gfa .engineering-chapter-title .control-module-title}
-
-Fluorescence, channel and qPCR notation follows the [Engineering figure conventions](#engineering-figure-conventions).
 
 <div class="control-milestones" data-control-module="gfa" role="group" aria-label="GFA: milestones achieved"><span class="control-milestone control-milestone--designed"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15v5Z"/></svg>Designed</span><span class="control-milestone control-milestone--built"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v8M7.5 5.5l9 5"/></svg>Built</span><span class="control-milestone control-milestone--validated"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg>Validated</span></div>
 
@@ -1614,8 +1608,6 @@ AAV9 engineering progressed from reporter-based packaging to **GFA–ORCA and CM
 [14] Prasad S, Dimmock DP, Greenberg B, et al. Immune Responses and Immunosuppressive Strategies for Adeno-Associated Virus-Based Gene Therapy for Treatment of Central Nervous System Disorders: Current Knowledge and Approaches. *Human Gene Therapy*. 2022;33(23-24):1228–1245. <https://doi.org/10.1089/hum.2022.138>
 
 ## SONAR {#measure .engineering-chapter-title}
-
-Fluorescence and channel notation follows the [Engineering figure conventions](#engineering-figure-conventions).
 
 System for Optical Normalization and Analysis of RNA Editing
 {.engineering-chapter-subtitle}
@@ -2997,8 +2989,6 @@ PUFFER connected **transcriptomic analysis, recognition and catalytic design, RN
 12. Hatters DM, Peters-Libeu CA, Weisgraber KH. Apolipoprotein E structure: insights into function. *Trends in Biochemical Sciences*. 2006;31(8):445–454. <https://doi.org/10.1016/j.tibs.2006.06.008>
 
 ## Functional Validation {#functional-validation .engineering-chapter-title}
-
-Fluorescence, channel and qPCR notation follows the [Engineering figure conventions](#engineering-figure-conventions).
 
 *From Molecular Editing to Disease-Relevant Cellular Function*
 

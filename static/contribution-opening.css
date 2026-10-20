@@ -1,0 +1,92 @@
+/* A single passing dot carries the chapter opening. No content is gated. */
+body:not(.ot) main:has(> .contribution-opening) { padding-top: 0; }
+.contribution-opening {
+  --relay-ink: #2e3065;
+  --relay-pink: #c4849c;
+  --relay-dot: clamp(9px, 1.15vw, 17px);
+  position: relative;
+  width: min(1280px, 100%);
+  min-height: max(470px, calc(100svh - var(--nav-h, 112px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  color: var(--relay-ink);
+  isolation: isolate;
+}
+.contribution-opening__stage {
+  position: relative; display: grid; place-content: center;
+  padding: 30px 0 55px; overflow: clip;
+}
+.contribution-opening h1 {
+  position: relative; display: flex; align-items: baseline;
+  width: max-content; max-width: 100%; margin: 0 auto;
+  padding: 0 .075em 0 0;
+  color: var(--relay-ink);
+  font: normal 850 clamp(44px, 10.8vw, 152px)/1.18 'ORCA Nunito', sans-serif;
+  letter-spacing: 0; user-select: none;
+}
+.contribution-opening h1::after { content: none; }
+.contribution-opening__caption {
+  margin: 24px 0 0;
+  text-align: center;
+  color: #65677e;
+  font: 400 17px/1.6 'Source Sans 3', sans-serif;
+  letter-spacing: .035em;
+}
+.contribution-opening__word { display: inline-flex; align-items: baseline; }
+.contribution-opening__letter {
+  display: inline-block; transform-origin: 50% 85%; will-change: transform;
+}
+.contribution-opening__period {
+  position: relative; align-self: flex-end; flex: 0 0 .24em;
+  width: .24em; height: .5em; margin: 0 0 .26em .025em; padding: 0;
+  border: 0; background: transparent; cursor: pointer;
+  font: inherit; -webkit-tap-highlight-color: transparent;
+}
+.contribution-opening__period::before { content: ""; position: absolute; inset: -12px; }
+.contribution-opening__period span {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: var(--relay-dot); height: var(--relay-dot);
+  background: var(--relay-pink); border-radius: 50%;
+}
+.contribution-opening__period:focus-visible {
+  outline: 1px solid var(--relay-pink); outline-offset: 8px; border-radius: 12px;
+}
+.contribution-opening.is-relaying .contribution-opening__period span { opacity: 0; }
+.contribution-opening__baton {
+  position: absolute; left: 0; top: 0; z-index: 3;
+  width: var(--relay-dot); height: var(--relay-dot); border-radius: 50%;
+  background: var(--relay-pink); pointer-events: none;
+  will-change: transform; transform-origin: center;
+}
+.contribution-opening__baton[hidden] { display: none; }
+.contribution-opening__ripple {
+  position: absolute; left: var(--relay-end-x, 90%); top: var(--relay-end-y, 55%);
+  width: 80px; height: 26px; border: 1px solid var(--relay-pink);
+  border-radius: 50%; opacity: 0; pointer-events: none;
+  transform: translate(-50%, -50%) scale(.2);
+}
+.contribution-opening.is-landed .contribution-opening__ripple { animation: contribution-ripple 1s ease-out both; }
+@keyframes contribution-ripple {
+  0% { opacity: .4; transform: translate(-50%, -50%) scale(.2); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.5); }
+}
+.contribution-opening__read {
+  justify-self: center; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  margin: 0 0 29px; padding: 14px 24px; color: #88869f; text-decoration: none;
+  font: 500 9px/1.5 var(--sans); letter-spacing: .19em;
+}
+.contribution-opening__read svg { color: #b88299; transition: transform .25s ease; }
+.contribution-opening__read:hover svg { transform: translateY(5px); }
+.contribution-opening__read:focus-visible { outline: 1px solid #b88299; outline-offset: 3px; border-radius: 4px; }
+@media (max-width: 760px) {
+  .contribution-opening { min-height: max(410px, calc(100svh - var(--nav-h, 190px))); --relay-dot: 9px; }
+  .contribution-opening h1 { font-size: clamp(36px, 11.6vw, 88px); }
+  .contribution-opening__caption { font-size: 14px; letter-spacing: .01em; }
+  .contribution-opening__read { margin-bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contribution-opening *, .contribution-opening.is-landed * { animation: none !important; transition: none !important; }
+  .contribution-opening__baton { display: none !important; }
+  .contribution-opening__period span { opacity: 1 !important; }
+}

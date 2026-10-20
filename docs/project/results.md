@@ -20,7 +20,7 @@ header_introduction: >-
     <div class="card-copy"><h3 id="edit-title">Keep the edit. Reduce the bystanders.</h3>
       <p class="card-description">IO-02 and IO-03 retained 61.31% and 69.78% C388 editing, respectively, while reducing C871 editing from 79.17% in the parental editor to 13.84% and 14.28%. Their broader bystander profiles offered complementary choices.</p>
       <p class="card-takeaway"><em>The complete editing profile guided candidate selection.</em></p>
-    </div><a class="card-link" href="/engineering#integrated-orca-conclusion-from-component-optimization-to-editor-level-selection">Back to Engineering</a>
+    </div>
   </article>
 
   <article class="achievement-card control" aria-labelledby="control-title">
@@ -28,7 +28,7 @@ header_introduction: >-
     <div class="card-copy"><h3 id="control-title">Turn editing down on demand.</h3>
       <p class="card-description">ASO treatment reduced C388 editing in tagged ORCA from 57.13% to 28.54% at the 48-hour readout. The gfaABC1D promoter also showed cell-context-dependent expression, providing a second route to regulate ORCA.</p>
       <p class="card-takeaway"><em>ASO-dependent suppression was demonstrated; recovery after withdrawal remains untested.</em></p>
-    </div><a class="card-link" href="/engineering#aso-conclusion-from-aso-target-selection-to-an-engineered-off-interface">Back to Engineering</a>
+    </div>
   </article>
 
   <article class="achievement-card deliver" aria-labelledby="deliver-title">
@@ -36,7 +36,7 @@ header_introduction: >-
     <div class="card-copy"><h3 id="deliver-title">From vector to delivery testing.</h3>
       <p class="card-description">We constructed and packaged GFA–ORCA and CMV–ORCA AAV9 vectors, then tested the GFA–ORCA preparation in CCF-STTG1 cells. The recipient-cell assay did not detect a clear ORCA transcript band.</p>
       <p class="card-takeaway"><em>Production and testing workflows are in place; functional delivery remains unconfirmed.</em></p>
-    </div><a class="card-link" href="/engineering#deliver-conclusion">Back to Engineering</a>
+    </div>
   </article>
 
   <article class="achievement-card measure" aria-labelledby="measure-title">
@@ -44,7 +44,7 @@ header_introduction: >-
     <div class="card-copy"><h3 id="measure-title">Read beyond the glow.</h3>
       <p class="card-description">SONAR connects a modular reporter with relative optical scores and the SAP analysis workflow. Real-editor tests showed that increasing the molecular editing signal did not produce a corresponding rise in normalized green fluorescence.</p>
       <p class="card-takeaway"><em>Reporter activity and RNA editing percentage require distinct evidence.</em></p>
-    </div><a class="card-link" href="/engineering#measure-conclusion">Back to Engineering</a>
+    </div>
   </article>
 
   <article class="achievement-card model" aria-labelledby="model-title">
@@ -52,7 +52,7 @@ header_introduction: >-
     <div class="card-copy"><h3 id="model-title">Narrow the search. Guide the next test.</h3>
       <p class="card-description">The PUF specificity ranker recovered 20 of the measured Top30 candidates in a grouped evaluation of 66 constructs. Together with RNA-seq analysis, LAMAR and delivery simulations, this work helped prioritize candidates and questions for experimental testing.</p>
       <p class="card-takeaway"><em>Predictions guide validation; their performance is bounded by the evaluated data.</em></p>
-    </div><a class="card-link" href="/engineering#model-conclusion">Back to Engineering</a>
+    </div>
   </article>
 
   <article class="achievement-card fv" aria-labelledby="fv-title">
@@ -60,7 +60,7 @@ header_introduction: >-
     <div class="card-copy"><h3 id="fv-title">Testing ORCA beyond the reporter.</h3>
       <p class="card-description">We established provisional electroporation conditions in CCF-STTG1 cells and explored lipid-associated imaging and extracellular Aβ42 measurement. Limited imaging replication and out-of-range ELISA samples defined the requirements for the next experiments.</p>
       <p class="card-takeaway"><em>These studies begin cellular evaluation; they do not yet establish causal functional rescue.</em></p>
-    </div><a class="card-link" href="/engineering#functional-validation-conclusion">Back to Engineering</a>
+    </div>
   </article>
 </section>
 

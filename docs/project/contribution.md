@@ -11,13 +11,27 @@ eyebrow: Project
 <p><strong>Wet-lab measurements train and test our models.</strong> <strong>Model outputs focus experimental comparisons.</strong> <strong>SONAR and PUFFER</strong> bring measurement and design into usable workflows, while our <strong>educational resources</strong> make the project accessible beyond the laboratory.</p>
 </div>
 
-## SONAR & PUFFER {#sonar-puffer}
-
-### SONAR · Measure with context {#sonar}
+## SONAR · Measure with context {#sonar data-toc-label="SONAR"}
 
 <img class="contribution-brand" src="/assets/images/sonar/sap-logo.svg" alt="SONAR — SAP logo" width="485" height="165">
 
-**SONAR connects a modular fluorescence reporter with a complete analysis workflow.** The System for Optical Normalization and Analysis of RNA Editing combines an edit-sensitive green output, a red expression reference and the SONAR Analysis Program (SAP). Reporter experiments supply the observations; SAP carries their controls and analysis context into comparisons that inform the next experimental question.
+SONAR connects a modular fluorescence reporter with a complete analysis workflow. The System for Optical Normalization and Analysis of RNA Editing combines an edit-sensitive green output, a red expression reference and the **SONAR Analysis Program (SAP).** Reporter experiments supply the observations; SAP carries their controls and analysis context into comparisons that inform the next experimental question.
+
+<div class="sap-start-options">
+<section class="sap-start-card sap-start-desktop" id="sap-download" aria-labelledby="sap-desktop-title">
+<h3 id="sap-desktop-title">Download SAP</h3>
+<p class="sap-start-description">Work with your own data.</p>
+<div class="sap-start-downloads"><a class="sap-start-button" href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-macos-arm64.dmg">Mac <span aria-hidden="true">↓</span></a><a class="sap-start-button" href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-windows-x64-portable.zip">Windows <span aria-hidden="true">↓</span></a></div>
+<small class="sap-start-meta">Mac: M series · macOS 14+ · 283 MB<br>Windows: x64 · 603 MB</small>
+<details class="sap-install-help"><summary>Installation notes · v1.4.0rc1 preview</summary><p>Mac: open the DMG and drag SAP to Applications.<br>Windows: extract the ZIP and open SAP/SAP.exe. Keep the whole folder together.</p><p>Windows is unsigned; macOS is not notarized. First launch may be blocked.</p><p><a href="https://github.com/Hansen614/SONAR-Analysis-Program/blob/v1.4.0rc1/packaging/INSTALL.md" target="_blank" rel="noopener">Installation guide ↗</a> · <a href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/tag/v1.4.0rc1" target="_blank" rel="noopener">Release details ↗</a></p></details>
+</section>
+<section class="sap-start-card sap-start-online" aria-labelledby="sap-online-title">
+<h3 id="sap-online-title">Use SAP online</h3>
+<p class="sap-start-description">Try the guided example.</p>
+<a class="sap-start-button" href="static/sap-demo/index.html#design" target="_blank" rel="noopener">Launch online <span aria-hidden="true">↗</span></a>
+<small class="sap-start-meta">Analysis uses example data.<br>Use the desktop app to upload your own files.</small>
+</section>
+</div>
 
 <div class="contribution-steps">
 <div><strong>Design</strong><p>Inspect a target window and the reporter layout in the SAP sequence workspace.</p><a href="#oligo-design">Explore the design example ↓</a></div>
@@ -25,7 +39,7 @@ eyebrow: Project
 <div><strong>Analyse</strong><p>Carry normalization, reference calibration and export into a single software workflow.</p><a href="#data-analysis">Use SAP ↓</a></div>
 </div>
 
-#### Design the signal {#oligo-design}
+### Design the signal {#oligo-design}
 
 **The SAP sequence workspace makes design decisions inspectable.** It connects the target coordinate, recognition region and reporter adaptation to generated oligo output. The three application screenshots follow sequence entry, review and export; the interactive views show how those choices map to the reporter architecture.
 
@@ -41,7 +55,7 @@ eyebrow: Project
 <p><a href="/project-contribution-sonar#step-1">Read the complete design and construction tutorial →</a></p>
 </details>
 
-#### Make every measurement traceable {#data-analysis}
+### Make every measurement traceable {#data-analysis}
 
 **SAP keeps each reported score connected to its measurement context.** Matched controls, population selection, background correction, reference calibration and export form one analysis sequence. Explore the real S7 teaching dataset below, then follow the five application screenshots from experiment setup to results.
 
@@ -60,27 +74,11 @@ eyebrow: Project
 <p><a href="static/sonar-contribution/resources/C04.pdf">Cell preparation · C04</a> · <a href="static/sonar-contribution/resources/RP06.pdf">Flow acquisition · RP06</a> · <a href="/measurement">Explore the complete measurement framework →</a></p>
 </details>
 
-#### Put the workflow in other teams’ hands {#sonar-reuse}
+### Put the workflow in other teams’ hands {#sonar-reuse}
 
 **SONAR is available for both guided learning and independent analysis.** Use the browser example to explore the workflow or the desktop application to analyse your own files. Protocols, the computational plasmid, teaching data, source code and the tutorial support adaptation; the guide below helps teams identify which components fit their project.
 
 <div id="sonar-fit-guide" class="sonar-instrument"><h4>Explore SONAR for your project</h4><p>Explore how the molecular sensor, measurement framework and available evidence shape a new application.</p></div>
-
-<div class="sap-start-options">
-<section class="sap-start-card sap-start-desktop" id="sap-download" aria-labelledby="sap-desktop-title">
-<h3 id="sap-desktop-title">Download SAP</h3>
-<p class="sap-start-description">Work with your own data.</p>
-<div class="sap-start-downloads"><a class="sap-start-button" href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-macos-arm64.dmg">Mac <span aria-hidden="true">↓</span></a><a class="sap-start-button" href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-windows-x64-portable.zip">Windows <span aria-hidden="true">↓</span></a></div>
-<small class="sap-start-meta">Mac: M series · macOS 14+ · 283 MB<br>Windows: x64 · 603 MB</small>
-<details class="sap-install-help"><summary>Installation notes · v1.4.0rc1 preview</summary><p>Mac: open the DMG and drag SAP to Applications.<br>Windows: extract the ZIP and open SAP/SAP.exe. Keep the whole folder together.</p><p>Windows is unsigned; macOS is not notarized. First launch may be blocked.</p><p><a href="https://github.com/Hansen614/SONAR-Analysis-Program/blob/v1.4.0rc1/packaging/INSTALL.md" target="_blank" rel="noopener">Installation guide ↗</a> · <a href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/tag/v1.4.0rc1" target="_blank" rel="noopener">Release details ↗</a></p></details>
-</section>
-<section class="sap-start-card sap-start-online" aria-labelledby="sap-online-title">
-<h3 id="sap-online-title">Use SAP online</h3>
-<p class="sap-start-description">Try the guided example.</p>
-<a class="sap-start-button" href="static/sap-demo/index.html#design" target="_blank" rel="noopener">Launch online <span aria-hidden="true">↗</span></a>
-<small class="sap-start-meta">Analysis uses example data.<br>Use the desktop app to upload your own files.</small>
-</section>
-</div>
 
 <div class="contribution-links">
 <a href="https://github.com/Hansen614/SONAR-Analysis-Program" target="_blank" rel="noopener">Source code ↗</a>
@@ -89,7 +87,7 @@ eyebrow: Project
 <a href="static/sonar-contribution/data/provenance.json">Explore source records ↗</a>
 </div>
 
-### PUFFER · Connect sequence to selection {#puffer}
+## PUFFER · Connect sequence to selection {#puffer data-toc-label="PUFFER"}
 
 <img class="contribution-brand" src="/assets/images/puffer/puffer-logo.png" alt="PUFFER logo" width="922" height="227">
 

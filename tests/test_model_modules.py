@@ -295,7 +295,7 @@ class FourModelModulesTest(unittest.TestCase):
                     else:
                         self.assertTrue((PROJECT_ROOT / unquote(parsed.path).lstrip("/")).is_file(), href)
         overview_links = [node for node in reading.walk() if node.tag == "a" and node.attrs.get("href") == "/software#rewire-purpose"]
-        self.assertEqual(len(overview_links), 1)
+        self.assertEqual(len(overview_links), 2)
         resource_links = [node for node in reading.walk() if node.tag == "a"
                           and not node.attrs.get("href", "").startswith("#") and node not in overview_links]
         self.assertEqual(resource_links, allowed_links)
@@ -348,6 +348,26 @@ class FourModelModulesTest(unittest.TestCase):
             description = next(node for node in item.walk() if node.tag == "p")
             self.assertGreaterEqual(len(description.text().split()), 30)
             self.assertLessEqual(len(description.text().split()), 50)
+
+    def test_overview_diagram_links_to_five_module_overviews(self):
+        figure = next(node for node in self.document.root.walk() if node.attrs.get("id") == "model-figure-1")
+        diagram = next(node for node in figure.walk() if node.tag == "svg")
+        links = [node for node in diagram.walk() if node.tag == "a"]
+        targets = [f"#module{number}-1" for number in range(1, 5)] + ["/software#rewire-purpose"]
+        self.assertEqual([link.attrs.get("href") for link in links], targets)
+        self.assertEqual(len([node for node in figure.walk() if node.tag == "img"]), 1)
+        for link in links:
+            self.assertEqual(link.attrs.get("tabindex"), "0")
+            self.assertIn("Overview", link.attrs.get("aria-label", ""))
+            self.assertTrue(any("model-map-region" in node.attrs.get("class", "").split() for node in link.walk()))
+        for number in range(1, 5):
+            overview = next(node for node in self.modules[f"module{number}"].walk() if node.attrs.get("id") == f"module{number}-1")
+            self.assertEqual(overview.tag, "h3")
+            self.assertIn("Overview", overview.text())
+        software = Document(self.client.get("/software").get_data(as_text=True))
+        overview = next(node for node in software.root.walk() if node.attrs.get("id") == "rewire-purpose")
+        self.assertEqual(overview.tag, "h3")
+        self.assertIn("Overview", overview.text())
 
     def test_model_page_has_no_dbtl_content_or_navigation(self):
         main = next(node for node in self.document.root.walk() if node.tag == "main")

@@ -161,3 +161,82 @@
   font: 400 .9em/1.45 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
   color: #56547b;
 }
+
+/* Responsive hit areas follow Figure 1 without changing the source artwork. */
+.model-page .model-overview-map {
+  position: relative;
+  isolation: isolate;
+}
+
+.model-page .model-prose .model-map-instruction {
+  margin: 0 0 12px;
+  color: #56547b;
+  font-size: 15px;
+}
+
+.model-page .model-map-areas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.model-page .model-map-link {
+  --model-map-color: #376f9c;
+  cursor: pointer;
+  outline: none;
+}
+
+.model-page #model-content .model-map-link:is(:focus, :focus-visible) {
+  outline: none;
+}
+
+.model-page .model-map-link--1 { --model-map-color: #1784c0; }
+.model-page .model-map-link--2 { --model-map-color: #139a9c; }
+.model-page .model-map-link--3 { --model-map-color: #c66830; }
+.model-page .model-map-link--4 { --model-map-color: #8a5bbd; }
+
+.model-page .model-map-region {
+  fill: #fff;
+  fill-opacity: 0;
+  stroke: var(--model-map-color);
+  stroke-opacity: 0;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  pointer-events: all;
+  transition: fill-opacity .18s ease, stroke-opacity .18s ease;
+}
+
+.model-page .model-map-areas:has(.model-map-link:focus-visible) .model-map-region {
+  fill-opacity: .6;
+}
+
+.model-page .model-map-areas .model-map-link:focus-visible .model-map-region {
+  fill-opacity: 0;
+  stroke-opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .model-page .model-map-areas:has(.model-map-link:hover) .model-map-region {
+    fill-opacity: .6;
+  }
+  .model-page .model-map-areas .model-map-link:hover .model-map-region {
+    fill-opacity: 0;
+    stroke-opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .model-page .model-map-region {
+    transition: none;
+  }
+}
+
+@media print {
+  .model-page :is(.model-map-areas, .model-map-instruction) {
+    display: none;
+  }
+}

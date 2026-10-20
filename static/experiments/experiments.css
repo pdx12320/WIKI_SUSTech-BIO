@@ -273,7 +273,9 @@ body:not(.ot) main.experiments-page {
 .exp-reader { width: min(1160px, 96vw); max-width: 96vw; height: 94dvh; max-height: 94dvh; padding: 0; overflow: hidden; }
 .exp-reader[open] { display: grid; grid-template-columns: 260px minmax(0, 1fr); }
 .exp-reader-sidebar { min-height: 0; overflow: auto; padding: 24px 22px; background: #f7f7fb; border-right: 1px solid #e0e3e8; }
-.exp-reader-sidebar .exp-reader-heading { flex-direction: column-reverse; align-items: flex-start; gap: 24px; padding: 0 0 22px; }
+.exp-reader-sidebar .exp-reader-heading { flex-direction: column-reverse; align-items: flex-start; gap: 24px; padding: 74px 0 22px; }
+.exp-reader-close { position: absolute; top: 12px; right: 12px; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: #3d409b; font-size: 30px !important; line-height: 1; cursor: pointer; }
+.exp-reader-close:hover { background: #eeedf9; }
 .exp-reader-sidebar .exp-reader-heading h2 { font-size: 28px; line-height: 1.25; overflow-wrap: anywhere; }
 .exp-reader-sidebar .exp-reader-actions { flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 24px; border-bottom: 1px solid #e0e3e8; }
 .exp-reader-sections { display: flex; flex-direction: column; gap: 3px; padding-top: 18px; }
@@ -285,7 +287,8 @@ body:not(.ot) main.experiments-page {
 @media (max-width: 600px) {
   .exp-reader[open] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
   .exp-reader-sidebar { max-height: 28dvh; padding: 14px 18px; border-right: 0; border-bottom: 1px solid #e0e3e8; }
-  .exp-reader-sidebar .exp-reader-heading { flex-direction: row; justify-content: space-between; gap: 12px; padding-bottom: 12px; }
+  .exp-reader-sidebar .exp-reader-heading { flex-direction: row; justify-content: space-between; gap: 12px; padding: 0 44px 12px 0; }
+  .exp-reader-close { top: 6px; right: 6px; }
   .exp-reader-sidebar .exp-reader-heading h2 { font-size: 22px; }
   .exp-reader-sidebar .exp-reader-actions { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; padding-bottom: 10px; font-size: 14px; }
   .exp-reader-sections { flex-direction: row; flex-wrap: wrap; gap: 0 16px; padding-top: 8px; }

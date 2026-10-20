@@ -8,6 +8,7 @@
 {% set directory = namespace(groups=[], current=none) %}
 {% set personality = {'docs/project/description.md': 'description', 'docs/project/results.md': 'results', 'docs/project/contribution.md': 'contribution', 'docs/project/future.md': 'future', 'docs/wet-lab/measurement.md': 'measurement', 'docs/wet-lab/safety-and-security.md': 'safety', 'docs/human-practices/human-practices.md': 'hp', 'docs/human-practices/education.md': 'education', 'docs/human-practices/inclusivity.md': 'inclusivity'}.get(content.source_label) %}
 {% set is_description = content.source_label == 'docs/project/description.md' %}
+{% set description_sections = rendered_markdown.split('<!-- DESCRIPTION_PROLOGUE_END -->', 1) if is_description else [] %}
 {% set is_contribution = content.source_label == 'docs/project/contribution.md' %}
 {% set description_labels = {
   'alzheimer-s-disease-the-problem': 'Alzheimer’s Disease',
@@ -15,7 +16,7 @@
   'existing-strategies-and-the-gap-we-saw': 'Existing Strategies',
   'our-approach-from-an-rna-editor-to-orca': 'Our Approach'
 } %}
-{% for item in content.toc if not (is_description and item.id == 'references') %}
+{% for item in content.toc if not (is_description and item.id in ['references', 'when-the-familiar-begins-to-fade']) %}
   {% if item.level == 2 or directory.current is none %}
     {% set heading = item %}
     {% if content.source_label == 'docs/wet-lab/measurement.md' and item.level == 2 %}
@@ -46,6 +47,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='description-stats.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='description-navigation.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='description-typography.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='description-prologue.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='description-title.css') }}">
 {% endif %}
 {% if content.source_label == 'docs/wet-lab/measurement.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='measurement-reading.css') }}">{% endif %}
@@ -85,6 +87,10 @@
   {% endif %}
   {% endblock %}
 
+  {% if description_sections|length == 2 %}
+  {{ description_sections[0] }}
+  {% endif %}
+
   {% if content.source_label == 'docs/wet-lab/measurement.md' and content.metadata.overview %}
   <section class="measurement-overview" aria-labelledby="measurement-overview-title">
     <h2 id="measurement-overview-title">Overview</h2>
@@ -110,7 +116,7 @@
     {% endif %}
     <div class="content-reading">
       <article class="markdown-content">
-        {{ rendered_markdown }}
+        {{ description_sections[1] if description_sections|length == 2 else rendered_markdown }}
       </article>
     </div>
   </div>

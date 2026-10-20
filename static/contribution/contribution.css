@@ -73,6 +73,22 @@
   line-height: 1.65;
   text-align: left;
 }
+.puffer-video iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 6px;
+  background: #191a59;
+}
+.puffer-video--demo iframe { aspect-ratio: 1280 / 832; }
+.puffer-video--tutorial iframe { aspect-ratio: 3024 / 2144; }
+.puffer-tutorial > summary { min-height: 44px; }
+.puffer-tutorial > summary:focus-visible {
+  outline: 3px solid var(--contribution-accent);
+  outline-offset: 4px;
+}
 .contribution-document {
   position: relative;
   margin: 24px 0 38px;

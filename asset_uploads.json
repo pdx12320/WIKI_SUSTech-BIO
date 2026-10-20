@@ -2441,7 +2441,8 @@
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-15.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-16.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-17.avif",
-    "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-18.avif"
+    "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-18.avif",
+    "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2"
   ],
   "confirmed_mapping": [
     {
@@ -11203,6 +11204,12 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/10-20/dry/transcriptomic-landscape-code-page-015.webp",
       "sha256": "347af66e7dc42d511bc3fda5ea1916424d26fe847219699da3720f9b89cd19e2",
       "evidence": "user_flat_contribution_preview_upload_http200_identical_sha256"
+    },
+    {
+      "local_path": "static/safety-security/fonts/sora-title-700.woff2",
+      "url": "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
+      "sha256": "b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4",
+      "evidence": "user_provided_official_url_http200_font_woff2_identical_sha256_20261021"
     }
   ],
   "content_hashes": [
@@ -12089,6 +12096,10 @@
         1440,
         960
       ]
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
+      "sha256": "b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4"
     }
   ]
 }

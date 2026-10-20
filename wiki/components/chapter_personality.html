@@ -1,4 +1,4 @@
-{% macro chapter_header(kind, title, base_class) %}
+{% macro chapter_header(kind, title, base_class, introduction=none) %}
 <header class="{{ base_class }} chapter-personality chapter-personality--{{ kind }}">
   <div class="chapter-personality__row">
     <div class="chapter-personality__type">
@@ -6,6 +6,7 @@
     </div>
     <img class="chapter-personality__mascot" src="{{ url_for('static', filename='assets/mascots/orca-description-guide.png' if kind == 'description' else 'assets/mascots/orca-' ~ kind ~ '-header.png') }}" alt="" width="1024" height="1024">
   </div>
+  {% if introduction %}<p class="chapter-personality__introduction">{{ introduction }}</p>{% endif %}
   <div class="chapter-personality__rule" aria-hidden="true"></div>
 </header>
 {% endmacro %}

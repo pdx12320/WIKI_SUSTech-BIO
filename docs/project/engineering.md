@@ -11,6 +11,10 @@ status_message: Supplied engineering manuscripts and existing model records; sci
 
 ## Fundamental Research {#fundamental-research .engineering-chapter-title}
 
+<span id="engineering-figure-conventions"></span>
+
+*Figure conventions throughout Engineering: a.u. means arbitrary units and RFU means relative fluorescence units; fluorescence values retain their assay-specific instrument scale. ECD-A is the integrated fluorescence pulse area of the detection channel used here for mCherry. Cq is the qPCR quantification cycle, and −d(RFU)/dT is the negative fluorescence derivative per degree Celsius in melting curves. Percentage-point differences (pp) are distinct from relative percentage changes.*
+
 ### Overview {#fundamental-research-overview}
 
 <img class="engineering-overview-illustration" src="/assets/images/engineering-overviews/fundamental-research.png" alt="Two foundational editor-design cycles: a PUF–APOBEC fusion followed by comparison of four PUF repeat architectures." width="1800" height="1080" decoding="async">
@@ -254,7 +258,7 @@ B2 contained **two recorded measurements for each of the 51 variants** and **fou
 
 ![Complete B2 heatmaps for the expanded TRM library](/assets/images/submission-20261017/engineering/pod/Figure_11.png){.engineering-figure style="--engineering-figure-width:680px;--engineering-detail-width:960px"}
 
-*Figure 11. B2 editing heatmaps for 51 variants, including per-record C388/C871 ratios that are not batch-normalized selectivity scores.*
+*Figure 11. B2 editing heatmaps for 51 variants, including per-record C388/C871 ratios that are not batch-normalized selectivity scores. ND denotes no reported detected event in the source record; N/A denotes a filtered or otherwise unavailable quantitative value or derived ratio. Both are excluded from the relevant calculations rather than assigned zero; ND does not establish a detection-limit upper bound.*
 
 The P9 candidates make these trade-offs particularly clear (Figure 12). B2 parental PUF12 averaged **67.08% C388**, **31.59% C295** and **57.06% C871** editing. **P9-GNS, P9-NPS and P9-NTQ** all preserved approximately **60–63% absolute C388 editing**, while lowering C871 to **26.37%, 20.39% and 18.46%**, respectively. Their C295 editing differed: **30.55%**, **25.52%** and **23.03%**. Thus, three motifs selected for the same target base yielded clearly different bystander outcomes within the same PUF12 repeat.
 
@@ -457,15 +461,17 @@ More strikingly, changing **only the RNA sequence** produced **D_M = 5.605**, co
 
 ![Structural-distance and contact-based comparisons among functional APOBEC controls](/assets/images/submission-20261017/engineering/cetus/Figure_05.png){.engineering-figure style="--engineering-figure-width:740px;--engineering-detail-width:960px"}
 
-*Figure 5. Predicted distance and contact descriptors compared across APOBEC variants with different functional states.*
+*Figure 5. Predicted geometry and contact descriptors across APOBEC variants. (A) The distance is the minimum between target-cytidine C4/N4 and E72 OE1/OE2 atoms in each structure, summarized by the median of available model minima (Å; 1 Å = 0.1 nm). The WT–GCG reference in this table is 2.599 Å. (B) CP means predicted contact probability. The three descriptors compare internal long-range contacts (sequence separation ≥5 residues), contacts within pocket residues 25–32, 57–60, 70–72, 99–105 and 129–133, and all protein-residue contacts to the target cytidine, respectively.*
+
+For Figure 5B, each seed's CP maps use the larger directional probability and are averaged across its predictions. The raw deviation is the mean root-mean-square CP difference from the WT seed maps; **z = (raw deviation − μ<sub>WT</sub>)/σ<sub>WT</sub>**, where μ<sub>WT</sub> and σ<sub>WT</sub> are the mean and sample SD of pairwise differences among WT seed maps in the matching substrate context. Values are dimensionless SD units; shading marks ±3 SD. These descriptors are separate from the PCA-based D<sub>M</sub> defined in [Catalytic Design](#model-apobec-cycle-03-build).
 
 ![Residue-level differential contact-probability heatmap](/assets/images/submission-20261017/engineering/cetus/Figure_06.png){.engineering-figure style="--engineering-figure-width:860px;--engineering-detail-width:980px"}
 
-*Figure 6. Residue-level ΔΔCP profiles reveal localized contact changes across predicted APOBEC structures.*
+*Figure 6. Residue-level ΔΔCP profiles reveal localized contact changes. ΔCP = CP(GCA) − CP(GCG), and ΔΔCP subtracts the corresponding parental ΔCP; positive values indicate a relative shift toward the A-associated context. CP and its differences are dimensionless; [Catalytic Design](#model-apobec-cycle-02-build) gives the full definition.*
 
 ![Predicted structural deviation with and without RNA](/assets/images/submission-20261017/engineering/cetus/Figure_07.png){.engineering-figure style="--engineering-figure-width:700px;--engineering-detail-width:960px"}
 
-*Figure 7. Modeling the same APOBEC variants with versus without RNA produces different structural-deviation estimates.*
+*Figure 7. Modeling the same APOBEC variants with versus without RNA produces different structural-deviation estimates. The retained percentages are 100 × D<sub>M, protein-only</sub>/D<sub>M, complex</sub>, describing the ratio of structural-deviation magnitudes. D<sub>M</sub> is a dimensionless parent-referenced distance; its [definition appears in Catalytic Design](#model-apobec-cycle-03-build).*
 
 #### Learn {#cetus-cycle-04-learn}
 
@@ -481,7 +487,7 @@ We therefore reevaluated **ProteinMPNN**, applied **AiCE** secondary-structure f
 
 ![Candidate design categories and priorities for the next APOBEC variants](/assets/images/submission-20261017/engineering/cetus/Figure_08.png){.engineering-figure style="--engineering-figure-width:760px;--engineering-detail-width:960px"}
 
-*Figure 8. Proposed APOBEC candidates organized by design purpose and priority.*
+*Figure 8. Proposed APOBEC candidates organized by design purpose and descending priority: P0 is the highest-priority tier, followed by P1 and then P2. Parenthetical labels identify top-pick, comparator or mechanistic-control roles within a tier. These are planning categories rather than quantitative performance scores.*
 
 #### Build {#cetus-cycle-05-build}
 
@@ -613,7 +619,7 @@ The differences were not explained by either module alone. With the same P9-GNS 
 
 Original ORCA achieved **85.54%** C388 editing in this experiment. The four POD-only editors retained **62.74%–83.83%** activity, while CETUS-only variants spanned **60.55%–90.32%** (Figure 4A). Nevertheless, **all 14 integrated editors edited C388 less efficiently than their matched CETUS-only controls**; only **IO-08 and IO-09** exceeded their matched POD-only reference (Figure 4B). Combining two individually active modules therefore often imposed an additional activity cost.
 
-To ask whether that cost came with improved selectivity, we quantified editing at a fixed set of **147 non-target cytidines** predicted to cause a coding change if edited individually: **32 potential stop-gain** and **115 potential missense** positions. We used the **sum of their site-specific C-to-T frequencies** as a cumulative *potentially nonsynonymous bystander burden*. This is a site-based score, **not the percentage of RNA molecules bearing a bystander edit**.
+To ask whether that cost came with improved selectivity, we quantified editing at a fixed set of **147 non-target cytidines** predicted to cause a coding change if edited individually: **32 potential stop-gain** and **115 potential missense** positions. We used the **sum of their site-specific C-to-T frequencies** as a cumulative *potentially nonsynonymous bystander burden*. Each site frequency enters the sum as a **0–1 fraction**, so the cumulative score is dimensionless and can exceed 1; for example, 1.423 is a summed score, not 1.423% of RNA molecules. This is a site-based score, **not the percentage of RNA molecules bearing a bystander edit**.
 
 The activity–burden comparison revealed meaningful differences among the pairings (Figure 5). **Thirteen of the 14 integrated editors** had lower cumulative potentially nonsynonymous burden than both matched single-module controls; **IO-09** was the exception. But a reduction in burden was not automatically useful: some combinations lost nearly all C388 activity. By contrast, **IO-02, IO-03, and IO-13** retained target editing of **61.31%, 69.78%, and 46.11%**, with cumulative burdens of **1.423, 1.689, and 0.817**, respectively.
 
@@ -748,7 +754,7 @@ All read-level metrics in this benchmark used the Q13 primary analysis. Rather t
 
 ![Figure 15. Multidimensional benchmark of all sequence-verified Integrated ORCA variants.](/assets/images/submission-20261017/engineering/integrated-orca/Figure_15.png){.engineering-figure style="--engineering-figure-width:840px;--engineering-detail-width:960px"}
 
-*Figure 15. Four metrics compare target activity and increasingly stringent bystander control across 14 integrated editors. Dark highlighting distinguishes the two retained candidates; asterisks flag constructs with fewer than 100 target-positive, jointly callable reads in each technical measurement.*
+*Figure 15. (A) C388 editing (%). (B) C388T with no detected edit at the 32 designated potential stop-gain sites. (C) Sum of 0–1 editing frequencies at 147 designated potentially nonsynonymous bystander sites (dimensionless). (D) C388T with no detected edit at any of those 147 sites. B and D use all reads jointly callable at the same 148 positions as their denominator under MAPQ ≥20 and Q13 filtering. Higher is preferred for A, B and D; lower for C. Dark highlighting distinguishes the two retained candidates; asterisks flag constructs with fewer than 100 target-positive, jointly callable reads in each technical measurement.*
 
 **IO-03 (P9-NTQ × 27T-30H-58M)** prioritized target activity and avoidance of the specified potential stop-gain edits. It edited C388 at **69.78%**, and **35.48%** of Q13 jointly callable reads retained C388T without a detected potential stop-gain bystander, compared with **30.59%** for IO-02.
 
@@ -771,6 +777,8 @@ Integrated ORCA combined independently engineered recognition and catalytic modu
 3. <span id="integrated-orca-ref-3" style="scroll-margin-top:72px"></span>Zhou W, Melamed D, Banyai G, et al. Expanding the binding specificity for RNA recognition by a PUF domain. Nature Communications. 2021;12:5107. [Source](https://doi.org/10.1038/s41467-021-25433-6).
 
 ## GFA {#gfa .engineering-chapter-title .control-module-title}
+
+Fluorescence, channel and qPCR notation follows the [Engineering figure conventions](#engineering-figure-conventions).
 
 <div class="control-milestones" data-control-module="gfa" role="group" aria-label="GFA: milestones achieved"><span class="control-milestone control-milestone--designed"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15v5Z"/></svg>Designed</span><span class="control-milestone control-milestone--built"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm-9 5 9 5 9-5M12 13v8M7.5 5.5l9 5"/></svg>Built</span><span class="control-milestone control-milestone--validated"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg>Validated</span></div>
 
@@ -836,7 +844,9 @@ Our earlier control experiments had combined gfaABC1D with a microRNA response e
 
 We generated gfaABC1D–ORCA by replacing CMV through homologous recombination, retaining the shared **PUF12-based ORCA** coding sequence and downstream expression elements. Each construct was transiently introduced into HEK293T or U251 together with the same APOE4 reporter, producing four cell line–promoter conditions. Each condition comprised **three independently transfected and RNA-extracted wells**.
 
-ORCA-associated expression was assessed by RT–qPCR, normalized to **GAPDH** and **ACTB** using CMV as the within-cell-line reference. The reporter's **APOE c.388** site was examined by Sanger sequencing, with forward and reverse peak estimates averaged within each sample.
+ORCA-associated expression was assessed by RT–qPCR, normalized to **GAPDH** and **ACTB** using CMV as the within-cell-line reference. Technical Cq duplicates were averaged first; **ΔCq = Cq<sub>editor</sub> − (Cq<sub>GAPDH</sub> + Cq<sub>ACTB</sub>)/2**, and the plotted log₂ relative signal is **−(sample ΔCq − mean CMV ΔCq)** within that cell line. The reported GFA/CMV fold comparison is 2 raised to the difference between the group-mean log₂ signals.
+
+The reporter's **APOE c.388** site was examined by Sanger sequencing. At the aligned target scan position, forward and reverse peak fractions were **T/(C+T)** and **A/(G+A)**, respectively. Their mean, multiplied by 100, gave one sample's target-site peak percentage; group summaries used the three sample values.
 
 #### Test {#gfa-cycle-02-test}
 
@@ -959,7 +969,7 @@ The functional readout showed a corresponding loss of measurable output. Without
 
 ![Figure 4. Editor transcript measurements and APOE C388 sequencing readouts in the miR-124 mimic experiment.](/assets/images/submission-20261017/engineering/mre/Figure_04.png){.engineering-figure style="--engineering-figure-width:680px;--engineering-detail-width:960px"}
 
-*Figure 4. MRE-containing constructs lacked a reliable transcript and editing-output baseline under both NC and miR-124 treatment; ND denotes no detectable signal in the primary Sanger reads.*
+*Figure 4. MRE-containing constructs lacked a reliable transcript and editing-output baseline under both NC and miR-124 treatment. Each Sanger sample percentage is 100 × [T/(C+T) in the forward read + A/(G+A) in the reverse read]/2 at APOE C388; these are uncalibrated peak-intensity ratios. ND denotes no detectable signal in the primary reads and is not plotted as numerical zero.*
 
 #### Learn {#mre-cycle-03-learn}
 
@@ -1031,6 +1041,8 @@ We developed a computational screen with three successive components:
 
    <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>P</mi><mrow><mn>240</mn><mi>/</mi><mn>160</mn></mrow></msub><mo>,</mo><mspace width="0.167em" /><msub><mi>P</mi><mrow><mn>360</mn><mi>/</mi><mn>240</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">&#65;&#61;&#92;&#109;&#105;&#110;&#40;&#80;&#95;&#123;&#50;&#52;&#48;&#47;&#49;&#54;&#48;&#125;&#44;&#92;&#44;&#80;&#95;&#123;&#51;&#54;&#48;&#47;&#50;&#52;&#48;&#125;&#41;&#46;</annotation></semantics></math></div>
 
+Here P denotes the joint unpaired probability of the complete recognition window; the subscripts give RNAplfold **window length W / maximum base-pair span L**, in nt. Thus A is a **0–1 probability**, using W/L = 240/160 and 360/240.
+
 For the remaining human near-matches, **H3** and **H4** counted distinct genes with closest qualifying matches at ED ≤ 3 and ED ≤ 4, respectively; H4 therefore includes H3. The combined near-match burden plotted in our design figures was **B = H3 + 0.25(H4 − H3)**. These metrics describe computational sequence similarity, not experimentally demonstrated ASO off-target activity.
 
 #### Test {#aso-cycle-01-test}
@@ -1098,6 +1110,8 @@ Each candidate was evaluated across **three linked contexts** (Figure 8):
 - **CNS:** expression-weighted near-match burdens in astrocytes and neurons, plus functional concern associated with dosage-sensitive, loss-of-function-intolerant, or neurologically relevant genes, including APOE.
 
 The CNS expression reference covered **32 astrocyte and neuronal populations** selected from the Human Protein Atlas representation of Siletti’s adult human brain data [11](#aso-ref-11), [12](#aso-ref-12), with additional sensitivity checks using Zhang’s human-cell dataset [13](#aso-ref-13). Functional annotations used ClinGen haploinsufficiency evidence, gnomAD v4.1.1 loss-of-function constraint metrics and Gene Ontology biological-process terms [14](#aso-ref-14), [15](#aso-ref-15), [16](#aso-ref-16). ED3 matches received full weight; ED4-only matches received a reduced weight, with alternative weights examined for robustness.
+
+In Figure 8, **E<sub>astro</sub>** and **E<sub>neuron</sub>** are sums of gene-expression percentile contributions for the respective cell class. Expression is ranked on a 0–1 scale within each source's gene background; the primary HPA analysis uses the maximum percentile across the selected populations of that class. **F** instead sums an independent 0/1 functional-concern flag: membership in the union of ClinGen HI3, the selected lowest LOEUF decile, project GO terms or the APOE watchlist. F is not multiplied by expression. Each burden gives full weight to minimum-ED3 genes and 0.25 weight to ED4-only genes. These are dimensionless weighted sums; incomplete annotations retain lower/upper bounds rather than becoming zeros.
 
 We treated the six resulting metrics—**H3, H4, astrocyte burden, neuronal burden, functional burden, and A**—as a multi-objective problem. A candidate belonged to the **Pareto frontier** if no other candidate was at least as favorable across every metric and strictly better in at least one. This avoided assigning an arbitrary single score to competing design goals.
 
@@ -1528,6 +1542,8 @@ AAV9 engineering progressed from reporter-based packaging to **GFA–ORCA and CM
 
 ## SONAR {#measure .engineering-chapter-title}
 
+Fluorescence and channel notation follows the [Engineering figure conventions](#engineering-figure-conventions).
+
 System for Optical Normalization and Analysis of RNA Editing
 {.engineering-chapter-subtitle}
 
@@ -1697,7 +1713,7 @@ RepOpen offered a rational route to altering local RNA structure, but the fluore
 
 The first five cycles established a fluorescence switch and improved how we observe its output. They also exposed a central problem: **green fluorescence is shaped by expression and protein processing, not just by the edited RNA fraction**. We therefore separated reporter engineering from the interpretation of its optical signals.
 
-The **SONAR Measurement Pipeline** follows four layers. **Layer 0** establishes background correction and defined cell populations. **Layer 1** calculates the *Reporter Activity Score (RAS)* from background-corrected, linear EGFP and mCherry signals within a specified population. **Layer 2** seeks an empirical *Relative Editing Score (RES)* using mixtures of the preset AC and INAC references. **Layer 3** explores an optional *Predicted Editing Rate (PER)* by relating optical measures to independent molecular measurements. Their formulas, calibration assumptions, and limits are detailed on the **SONAR Measurement** page.
+The **SONAR Measurement Pipeline** follows four layers. **Layer 0** establishes background correction and defined cell populations. **Layer 1** calculates the *Reporter Activity Score (RAS)* from background-corrected, linear EGFP and mCherry signals within a specified population. **Layer 2** seeks an empirical *Relative Editing Score (RES)* using mixtures of the preset AC and INAC references. **Layer 3** explores an optional *Predicted Editing Rate (PER)* by relating optical measures to independent molecular measurements. For a selected cell population, **RAS = Σ(EGFP − green background) / Σ(mCherry − red background)**, using paired linear intensities from the same cells; it is a dimensionless ratio of sums. RAS<sub>R</sub> uses the reporter-selected population and RAS<sub>RB</sub> its BFP-positive co-expression subset. In Figure 18, the **co-expression fraction (CEF) = N(RB)/N(R)** is that subset's fraction of reporter-selected cells (shown as %). Detailed population rules, RES calibration and the proposed PER relationship are given on [SONAR Measurement](/measurement#4-1-defining-what-is-measured).
 
 A crucial distinction guided the next experiments: **the AC fraction of mixed reporter DNA is not the fraction of edited RNA**. A reference series can characterize how the optical system responds to known input mixtures, but it cannot be presumed to measure an absolute editing percentage or to be invertible at every point.
 
@@ -1813,7 +1829,7 @@ We used the same six-dose OpenA-1 design, keeping **100 ng reporter** and **1 µ
 
 The fraction of reporter-positive cells with detectable BFP rose from approximately **6.82% at the lowest nonzero editor dose** to **40.21% at 1:8**. However, RAS did not increase monotonically, whether calculated for all reporter-positive cells or only the BFP-positive co-expression population. In the overall reporter population, mean RAS was approximately **0.635 without editor**, declined at intermediate doses, and did not show a sustained increase at higher inputs.
 
-Sequencing provided a different pattern. **47 of 48 Sanger reads** passed target-site quality checks. Compared with the no-editor control, higher-editor samples displayed a stronger substitution signal at C280, consistent with the intended RNA **C-to-U** event (C/T in forward cDNA reads; G/A in reverse reads). The **background-corrected relative substitution-signal index** increased overall with editor dose, reaching approximately **0.202 at 1:8**. This number is a *relative chromatogram-derived index*, **not a calibrated 20.2% RNA-editing rate**.
+Sequencing provided a different pattern. **47 of 48 Sanger reads** passed target-site quality checks. Compared with the no-editor control, higher-editor samples displayed a stronger substitution signal at C280, consistent with the intended RNA **C-to-U** event (C/T in forward cDNA reads; G/A in reverse reads). The **background-corrected relative substitution-signal index** increased overall with editor dose, reaching approximately **0.202 at 1:8**. For each accepted forward/reverse pair, the index is **[(T/(C+T) − b<sub>F</sub>) + (A/(G+A) − b<sub>R</sub>)]/2**, where b<sub>F</sub> and b<sub>R</sub> are direction-specific no-editor backgrounds. Paired technical labels are then averaged within each transfection well. This dimensionless value is a *relative chromatogram-derived index*, **not a calibrated 20.2% RNA-editing rate**; [Measurement §6.3](/measurement#6-3-from-bidirectional-sanger-peaks-to-a-molecular-index) documents the extraction and quality checks.
 
 The resulting divergence was informative: **BFP-positive co-expression and target-site sequence signals increased with editor input, while normalized green output did not**. Matching RAS to the chromatogram index across transfection wells did not yield a stable predictive relationship. Moreover, the previous AC/INAC references were collected using different reporter/editor conditions and could not simply be transferred to OpenA-1 to obtain a validated RES–editing-rate relationship.
 
@@ -1875,7 +1891,7 @@ Mapping candidate RNA editing sites
 
 #### Overview {#model-rna-seq-overview}
 
-Module 1 converts RNA sequencing (RNA-seq) into candidate editing sites, replicate-level rates and sequence contexts for editor comparison. The wet-lab dataset comprised six editor groups and three control groups, each with four biological replicates, giving 36 libraries.
+Module 1 converts RNA sequencing (RNA-seq) into candidate editing sites, replicate-level rates and sequence contexts for editor comparison. The wet-lab dataset comprised six editor groups and three control groups, each with four biological replicates, giving 36 libraries. The figure labels **132D, GVE and SNE** denote **APOBEC M132D**, **PUF P8-GVE (S288G/Y289V)** and **PUF P4+P7-SNE (Y145N/Y253N)**, respectively; PUF10, PUF12 and E72A retain their established construct identities.
 
 Building on REDItools (Picardi & Pesole, 2013) and REDItools2 (Flati et al., 2020), we refined allele counting, background screening and replicate consistency. Matched-site comparisons and callable-cytosine normalization then connected candidate-site profiles with target signals and chromosome-level patterns. The resulting tables provide a common evidence base for the PUF, APOBEC and LAMAR models.
 
@@ -1993,7 +2009,7 @@ Both editors retained a prominent −1 guanine preference, placing their differe
 
 ![Local sequence logos around retained cytosines.](/assets/images/engineering-dry-dbtl/module-1-image-03.png){.engineering-figure style="--engineering-figure-width:1000px;--engineering-detail-width:1480px"}
 
-*Figure 1.3 | PUF10 and PUF12 share a prominent −1 guanine preference despite their different candidate-site counts.*
+*Figure 1.3 | PUF10 and PUF12 share a prominent −1 guanine preference despite their different candidate-site counts. Position 0 is the selected cytidine. The y-axis gives information content in bits; each letter height represents that base’s contribution to the position’s information content. NA denotes an empty retained-site set.*
 
 ##### Learn {#model-rna-seq-cycle-04-learn}
 
@@ -2219,7 +2235,7 @@ Nine TRM nominations increased both model scores on the reference background. E2
 
 ![Reference-background single-substitution score changes, with nine positive in both models and E292Q negative in both.](/assets/images/engineering-dry-dbtl/module-2-image-04.png){.engineering-figure style="--engineering-figure-width:540px;--engineering-detail-width:960px"}
 
-*Figure 2.4 | Reference-background scoring distinguished nine jointly positive TRM nominations from the background-dependent E292Q proposal.*
+*Figure 2.4 | Reference-background scoring distinguished nine jointly positive TRM nominations from the background-dependent E292Q proposal. Δ mean log probability is the single-mutant minus WT score, averaged over the 36 TRM positions and eight shared decoding orders. It is dimensionless; positive values indicate greater model preference for the mutant on that reference background. This inverse-folding score is separate from the ESM-2 masked mutation score used above.*
 
 Inspection of structural annotations identified a separate screening defect: the intended loop-specific route was inactive, leaving the scaffold output equivalent to the global-only rule.
 
@@ -2379,7 +2395,7 @@ Relative to each input condition's parent reference, T31D had **<span class="eng
 
 ![Normalized parental distances for ten constructs in RNA-containing complexes and protein-only models.](/assets/images/engineering-dry-dbtl/module-3-image-02.svg){.engineering-figure style="--engineering-figure-width:700px;--engineering-detail-width:960px"}
 
-*Figure 3.2 | Parallel complex and protein-only predictions distinguished construct-specific responses to the model inputs.*
+*Figure 3.2 | Parallel complex and protein-only predictions distinguished construct-specific responses to the model inputs. The retained percentages equal 100 × D<sub>M, protein-only</sub>/D<sub>M, complex</sub>; they compare structural-deviation magnitudes, not editing activity. The 1.57 reference was derived from the complex WT-seed analysis.*
 
 The plotted G27D-M130G label refers to the sequence containing G27D+W130G. Each <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><msub><mi>D</mi><mi>M</mi></msub><annotation encoding="application/x-tex">&#68;&#95;&#77;</annotation></semantics></math></span> compressed many contact changes into one magnitude, discarding the identities and directions of the contacts separating constructs.
 
@@ -2700,7 +2716,7 @@ The editing layer tracks unedited RNA, 112-only editing, 158-only editing and do
 
 <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi>d</mi><msub><mi>S</mi><mn>3</mn></msub></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mn mathvariant="normal">112</mn></mrow></msub><mo>−</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">g</mi><mn mathvariant="normal">3</mn></mrow></msub><mo>−</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mn mathvariant="normal">158</mn><mo stretchy="false" form="prefix" mathvariant="normal">|</mo><mn mathvariant="normal">112</mn></mrow></msub><mo>+</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mn mathvariant="normal">158</mn><mo stretchy="false" form="prefix" mathvariant="normal">|</mo><mn mathvariant="normal">112</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">&#10;&#92;&#102;&#114;&#97;&#99;&#123;&#100;&#83;&#95;&#51;&#125;&#123;&#100;&#116;&#125;&#61;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#101;&#100;&#105;&#116;&#49;&#49;&#50;&#125;&#125;&#45;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#100;&#101;&#103;&#51;&#125;&#125;&#10;&#45;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#98;&#105;&#110;&#100;&#49;&#53;&#56;&#124;&#49;&#49;&#50;&#125;&#125;&#43;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#117;&#110;&#98;&#105;&#110;&#100;&#49;&#53;&#56;&#124;&#49;&#49;&#50;&#125;&#125;&#46;&#10;</annotation></semantics></math></div>
 
-The subsequent bound complex can undergo further editing to form the double-edited product. APOE3-like and combined APOE3/APOE2-like fractions are reported separately, normalized by the total free and bound APOE RNA pool. The compartmental ODE chain was integrated with SciPy’s LSODA solver (Petzold, 1983; Virtanen et al., 2020).
+The subsequent bound complex can undergo further editing to form the double-edited product. APOE3-like and combined APOE3/APOE2-like fractions are reported separately, normalized by the total free and bound APOE RNA pool. The compartmental ODE chain was integrated with SciPy’s LSODA solver (Petzold, 1983; Virtanen et al., 2020). **Dose is a relative input in normalized model-amount units**: a value of 1 initializes one reference amount in the route-specific input compartment, and other doses scale that amount. No conversion to vg, mass or a clinical dose has been calibrated.
 
 ##### Test {#model-whole-body-cycle-01-test}
 
@@ -2710,7 +2726,9 @@ The explicit states revealed a trade-off hidden by aggregate editing. At 168 h, 
 
 *Figure 5.1 | Intended-product retention plateaus and declines while combined editing and unwanted products continue to increase.*
 
-Each scanned dose failed at least one model feasibility criterion. Dose escalation alone did not resolve the competing objectives.
+For Figure 5.1, let T be the total free and bound APOE RNA pool plus ε, S₃ and S₂ the free APOE3-like and APOE2-like products, and O the accumulated local-bystander, PUF-mismatch and deaminase-background outputs. **Combined on-target editing = (S₃ + S₂)/T; off-target burden = O/T; specificity index (SI) = (S₃ + S₂)/(O + ε)**, with ε = 10⁻¹² as a numerical stabilizer. All are dimensionless. The **LDLR-binding risk proxy** in Figure 5.2 is S₂/T; LDLR means low-density lipoprotein receptor. It is the simulated APOE2-like fraction, not a measured receptor-binding defect.
+
+The dose-scan feasibility check required combined on-target editing ≥0.20, off-target burden ≤0.05, specificity ≥5, liver exposure area under the time curve (AUC) ≤5 normalized amount·h, and peak blood amount ≤1 normalized amount. Each scanned dose failed at least one criterion. These configured model gates support scenario comparison.
 
 ##### Learn {#model-whole-body-cycle-01-learn}
 
@@ -2784,7 +2802,7 @@ For sampled parameter vectors, the same reaction model produces a distribution o
 
 <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>y</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>θ</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em" /><msub><mover><mi>p</mi><mo accent="true">̂</mo></mover><mi>j</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>B</mi></mfrac><munderover><mo>∑</mo><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow><mi>B</mi></munderover><mn mathvariant="bold">𝟏</mn><mo stretchy="false" form="prefix">{</mo><msup><mi>y</mi><mrow><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow></msup><mrow><mspace width="0.333em" /><mtext mathvariant="normal"> meets criterion </mtext><mspace width="0.333em" /></mrow><mi>j</mi><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">&#10;&#121;&#94;&#123;&#40;&#98;&#41;&#125;&#61;&#102;&#40;&#92;&#116;&#104;&#101;&#116;&#97;&#94;&#123;&#40;&#98;&#41;&#125;&#41;&#44;&#10;&#92;&#113;&#113;&#117;&#97;&#100;&#10;&#92;&#119;&#105;&#100;&#101;&#104;&#97;&#116;&#32;&#112;&#95;&#106;&#61;&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#125;&#123;&#66;&#125;&#92;&#115;&#117;&#109;&#95;&#123;&#98;&#61;&#49;&#125;&#94;&#123;&#66;&#125;&#10;&#92;&#109;&#97;&#116;&#104;&#98;&#102;&#123;&#49;&#125;&#92;&#123;&#121;&#94;&#123;&#40;&#98;&#41;&#125;&#92;&#116;&#101;&#120;&#116;&#123;&#32;&#109;&#101;&#101;&#116;&#115;&#32;&#99;&#114;&#105;&#116;&#101;&#114;&#105;&#111;&#110;&#32;&#125;&#106;&#92;&#125;&#46;&#10;</annotation></semantics></math></div>
 
-We used B=200 parameter sets for a hypothetical 10R-proapobec scenario at dose 0.9 and 168 h. Activity and background multipliers of 1.25 and 0.5 were scenario assumptions. These frequencies summarize the sampled parameter space.
+We used B=200 parameter sets for a hypothetical 10R-proapobec scenario at dose 0.9 and 168 h. Activity and background multipliers of 1.25 and 0.5 were scenario assumptions. These frequencies summarize the sampled parameter space. The three ensemble criteria, also drawn as lines in Figure 5.2, are **APOE3-like fraction ≥0.30**, **specificity index ≥5**, and **APOE2-like/LDLR proxy ≤0.01**. The pass percentages count parameter sets meeting each criterion separately; these product-specific criteria differ from the combined-editing dose-scan gate above.
 
 ##### Test {#model-whole-body-cycle-04-test}
 
@@ -2822,7 +2840,24 @@ Maximum relative mass-balance error remained below 1×10⁻¹¹ in all three sce
 
 ![Spatial outputs by vessel distance and cell type, alongside sensitivity and design comparisons.](/assets/images/engineering-dry-dbtl/module-5-image-03.svg){.engineering-figure style="--engineering-figure-width:840px;--engineering-detail-width:960px"}
 
-*Figure 5.3 | Panels C–D reveal a spatial coverage gap that persists as mean editing rises.*
+*Figure 5.3 | (A) Local specificity sensitivity at the dose-1, 168-h reference, with one parameter increased by 20%: sensitivity = [(SI<sub>perturbed</sub> − SI<sub>reference</sub>)/SI<sub>reference</sub>]/0.20. It is dimensionless; negative values indicate reduced specificity. (B) The 72-h design comparison; color identifies the numbered design and marker area encodes off-target burden. (C–D) Spatial mean editing fractions at 72 h, grouped by vessel distance and cell type.*
+
+The parameter names in panel A refer to the following effective rates on the model's normalized state scale:
+
+| Parameter | Meaning | Rate scale |
+|---|---|---|
+| k<sub>tx</sub> | Editor transcription from nuclear vector | Normalized RNA per nuclear-vector amount per h |
+| k<sub>tl</sub> | Editor translation from its RNA | Normalized protein per editor-RNA amount per h |
+| k<sub>blood_to_brain</sub> | Blood-to-brain vascular transfer | h⁻¹ |
+| k<sub>cat_off</sub> | Off-target catalytic turnover | h⁻¹ |
+| k<sub>endo_to_ISF</sub> | Endosomal release into brain interstitial fluid (ISF) | h⁻¹ |
+| k<sub>cell_to_nuc</sub> | Cell-associated vector transfer to nucleus | h⁻¹ |
+| k<sub>ISF_to_cell</sub> | Uptake from ISF into cells | h⁻¹ |
+| k<sub>blood_to_liver</sub> | Blood-to-liver transfer | h⁻¹ |
+| k<sub>endo_loss</sub> | Loss from the endothelial endosomal compartment | h⁻¹ |
+| k<sub>lymph</sub> | Local-depot drainage to lymph | h⁻¹ |
+
+Panel B labels **1–4** identify **10R-proapobec, 10R-design-4, 10R-dual-site and 8R-design-2**, respectively. **L/M/H** are low/medium/high inputs of **0.5/1/2 model units**. The numbered labels identify simulated designs; the 10R-proapobec activity/background multipliers remain hypothetical scenario inputs. Full nominal settings are retained in the [downloadable model toolkit](/static/downloads/rewire-modeling-toolkit.zip).
 
 ##### Learn {#model-whole-body-cycle-05-learn}
 
@@ -2861,6 +2896,8 @@ PUFFER connected **transcriptomic analysis, recognition and catalytic design, RN
 11. Zhou, C., Sun, Y., Yan, R., Liu, Y., Zuo, E., Gu, C., Han, L., Wei, Y., Hu, X., Zeng, R., Li, Y., Zhou, H., Guo, F., & Yang, H. (2019). Off-target RNA mutation induced by DNA base editing and its elimination by mutagenesis. *Nature, 571*(7764), 275–278. [doi: 10.1038/s41586-019-1314-0](<https://doi.org/10.1038/s41586-019-1314-0>)
 
 ## Functional Validation {#functional-validation .engineering-chapter-title}
+
+Fluorescence, channel and qPCR notation follows the [Engineering figure conventions](#engineering-figure-conventions).
 
 *From Molecular Editing to Disease-Relevant Cellular Function*
 
@@ -3006,7 +3043,7 @@ Mean whole-field green intensities did **not** fall in parallel: **8.21 a.u. (EV
 
 ![Figure 6 — Quantitative Characterization of BODIPY-Positive Puncta](/assets/images/submission-20261017/results/figure-6-quantitative-analysis.png)
 
-*Figure 6. Exploratory analysis of BODIPY images. (A) DoG enhancement, candidate detection, watershed segmentation, and morphology-based filtering. (B) Operational candidate counts and detected areas in EV and IO fields. (C) EV-normalized threshold sensitivity. (D) Whole-field mean BODIPY signal. Measurements derive from one field per group; detected objects are image-analysis candidates, not validated individual lipid droplets.*
+*Figure 6. Exploratory analysis of BODIPY images. (A) DoG enhancement, candidate detection, watershed segmentation, and morphology-based filtering. (B) Operational candidate counts and detected areas in EV and IO fields. (C) The detection threshold is the DoG local-maximum amplitude in stored-intensity units, swept from 8 to 32 while other settings remain fixed; the dotted line marks the primary seed threshold of 20. At each threshold, the plotted percentage is 100 × IO candidate count / EV candidate count under matching settings. (D) Whole-field mean BODIPY signal. Measurements derive from one field per group; detected objects are image-analysis candidates, not validated individual lipid droplets.*
 
 #### Learn {#functional-validation-cycle-02-learn}
 

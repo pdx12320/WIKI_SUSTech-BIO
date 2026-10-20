@@ -1,0 +1,16 @@
+{
+  "family": "Sora",
+  "weight": 700,
+  "subset_text": "Safety & Security.",
+  "license": "SIL Open Font License 1.1",
+  "license_file": "Sora-OFL.txt",
+  "authors": "The Sora Project Authors",
+  "source_repository": "https://github.com/sora-xor/sora-font",
+  "official_metadata": "https://raw.githubusercontent.com/google/fonts/main/ofl/sora/METADATA.pb",
+  "subset_request": "https://fonts.googleapis.com/css2?family=Sora:wght@700&text=Safety%20%26%20Security.&display=swap",
+  "downloaded_font_url": "https://fonts.gstatic.com/l/font?kit=xMQOuFFYT72X5wkB_18qmnndmSe1mX-PIwNhB9C0HYBFEE5zMezR78zkV_q0&skey=f471733f169f3f71&v=v17",
+  "file": "sora-title-700.woff2",
+  "size_bytes": 1940,
+  "sha256": "b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4",
+  "usage": "Safety & Security hero h1 only; locally served with font-display swap; no runtime external font requests"
+}

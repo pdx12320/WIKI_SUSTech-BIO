@@ -151,27 +151,95 @@ Saved inputs, exported tables and the local run manifest help teams revisit how 
 <a class="contribution-pdf-link contribution-download" href="static/contribution/resources/puffer-code.pdf" download aria-label="Download PUFFER PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
 </div>
 
-## Parts & Collections {#parts-collections}
+## Wet Resources {#wet-resources}
+
+**Build with our parts. Explore the evidence behind them.** Our wet-lab resources bring Registry parts and collections together with the supporting records behind our engineering and measurement work.
+
+<div class="contribution-links wet-resource-jumps"><a href="#parts-collections">Parts &amp; Collections ↓</a><a href="#supporting-data">Supporting Data ↓</a></div>
+
+### Parts & Collections {#parts-collections}
 
 <div class="parts-catalog">
 <p class="parts-intro">Explore our functional parts, curated collections and foundational constructs. Each Registry entry connects the resource to its description and documentation.</p>
 </div>
 
-### Functional Parts & Constructs {#functional-parts .parts-group-title}
+#### Functional Parts & Constructs {#functional-parts .parts-group-title}
 
 <div class="parts-catalog">
  <div class="row"><article class="card"> <header class="card-header"><span class="tag">part</span><h4>gfaABC1D promoter</h4><a class="bba-link" href="https://registry.igem.org/parts/bba-267l370e">BBa_267L370E</a></header> <table class="constructs"><thead><tr><th>Associated construct</th><th>Registry</th></tr></thead><tbody><tr><td>gfaABC1D-ORCA expression cassette</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26p198ko">BBa_26P198KO</a></td></tr><tr><td>gfaABC1D-ORCA-4x6T expression cassette</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26n64og9">BBa_26N64OG9</a></td></tr></tbody></table></article><article class="card"> <header class="card-header"><span class="tag">part</span><h4>4x6T MRE cassette</h4><a class="bba-link" href="https://registry.igem.org/parts/bba-26szdgsq">BBa_26SZDGSQ</a></header> <table class="constructs"><thead><tr><th>Associated construct</th><th>Registry</th></tr></thead><tbody><tr><td>CMV-ORCA-4x6T expression cassette</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26tkple1">BBa_26TKPLE1</a></td></tr><tr><td>gfaABC1D-ORCA-4x6T expression cassette</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26n64og9">BBa_26N64OG9</a></td></tr></tbody></table></article></div> <div class="row single"><article class="card"> <header class="card-header"><span class="tag">part</span><h4>C805 synthetic ASO target tag</h4><a class="bba-link" href="https://registry.igem.org/parts/bba-268crle6">BBa_268CRLE6</a></header> <table class="constructs"><thead><tr><th>Associated construct</th><th>Registry</th></tr></thead><tbody><tr><td>CMV-mCherry C805-tag reporter</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26eh6ywa">BBa_26EH6YWA</a></td></tr><tr><td>CMV-ORCA-C805-tag expression cassette</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26j9t5it">BBa_26J9T5IT</a></td></tr><tr><td>CMV-mCherry no-tag reporter</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26mfjq59">BBa_26MFJQ59</a></td></tr></tbody></table></article></div></div>
 
-### Part Collections {#part-collections .parts-group-title}
+#### Part Collections {#part-collections .parts-group-title}
 
 <div class="parts-catalog">
  <div class="row"><article class="card"> <header class="card-header"><span class="tag">collection</span><h4><a class="name-link" href="https://registry.igem.org/collections/34238121-1a29-424d-9b1f-5bfa827a268c"><span class="collection-name">PUF RNA Recognition Family</span><span class="link-icon" aria-hidden="true">🔗</span></a></h4><p>RNA recognition variants</p></header> <div class="member-heading"><span>Part</span><span>Registry</span></div><ul class="members"><li><strong>PUF-12R-P9-NTQ</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26aj1k53">BBa_26AJ1K53</a></li><li><strong>PUF-12R-P8-GVE</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26pb01hl">BBa_26PB01HL</a></li></ul><footer class="card-footer"><a class="more-link" href="https://registry.igem.org/collections/34238121-1a29-424d-9b1f-5bfa827a268c">+ more 131 parts →</a></footer></article><article class="card"> <header class="card-header"><span class="tag">collection</span><h4><a class="name-link" href="https://registry.igem.org/collections/4f59a8e0-2e6f-4678-82fb-ae9e66d5b56c"><span class="collection-name">APOBEC Point Mutation Family</span><span class="link-icon" aria-hidden="true">🔗</span></a></h4><p>Deaminase variants</p></header> <div class="member-heading"><span>Part</span><span>Registry</span></div><ul class="members"><li><strong>APOBEC-G27T-K30H-Q58M</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-268nnyzi">BBa_268NNYZI</a></li><li><strong>APOBEC-M132E</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26utjpyq">BBa_26UTJPYQ</a></li></ul><footer class="card-footer"><a class="more-link" href="https://registry.igem.org/collections/4f59a8e0-2e6f-4678-82fb-ae9e66d5b56c">+ more 94 parts →</a></footer></article></div> <div class="row single"><article class="card"> <header class="card-header"><span class="tag">collection</span><h4><a class="name-link" href="https://registry.igem.org/collections/36b86323-6fea-4aa4-9d74-fe938fddb57c"><span class="collection-name">Intergrated ORCA (IO) Family</span><span class="link-icon" aria-hidden="true">🔗</span></a></h4><p>Integrated editor constructs</p></header> <div class="member-heading"><span>Part</span><span>Registry</span></div><ul class="members"><li><strong>IO-02</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26do1fnx">BBa_26DO1FNX</a></li><li><strong>IO-03</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26l0vr7p">BBa_26L0VR7P</a></li></ul><footer class="card-footer"><a class="more-link" href="https://registry.igem.org/collections/36b86323-6fea-4aa4-9d74-fe938fddb57c">+ more 12 parts →</a></footer></article></div> <div class="row"><article class="card"> <header class="card-header"><span class="tag">collection</span><h4><a class="name-link" href="https://registry.igem.org/collections/e4da013b-b13c-43f2-8c5a-d4bb884d7148"><span class="collection-name">AAV9 Delivery Toolkit</span><span class="link-icon" aria-hidden="true">🔗</span></a></h4></header> <div class="member-heading"><span>Part</span><span>Registry</span></div><ul class="members"><li><strong>pAAV2/9n</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26zcuhrt">BBa_26ZCUHRT</a></li><li><strong>pAdDeltaF6</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26ubhpr7">BBa_26UBHPR7</a></li><li><strong>pAAV-MCS</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26n2696y">BBa_26N2696Y</a></li><li><strong>pAAV-MCS-mCherry-T2A-Luc</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-261pijsz">BBa_261PIJSZ</a></li></ul><footer class="card-footer"><a class="btn" href="https://registry.igem.org/collections/e4da013b-b13c-43f2-8c5a-d4bb884d7148">View collection</a></footer></article><article class="card"> <header class="card-header"><span class="tag">collection</span><h4><a class="name-link" href="https://registry.igem.org/collections/bccf5c37-986c-4e02-a1bf-8307168d9f30"><span class="collection-name">SONAR RNA Editing Reporter Toolkit</span><span class="link-icon" aria-hidden="true">🔗</span></a></h4></header> <div class="member-heading"><span>Part</span><span>Registry</span></div><ul class="members"><li><strong>SONAR Universal Acceptor</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-265szm9x">BBa_265SZM9X</a></li><li><strong>WT18 reporter</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-269e3brw">BBa_269E3BRW</a></li><li><strong>AC18 reporter</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-2685lxr7">BBa_2685LXR7</a></li><li><strong>INAC18 reporter</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-26kq0tvj">BBa_26KQ0TVJ</a></li><li><strong>ORCA-TagBFP CDS</strong><a class="bba-link" href="https://registry.igem.org/parts/bba-262cggsz">BBa_262CGGSZ</a></li></ul><footer class="card-footer"><a class="btn" href="https://registry.igem.org/collections/bccf5c37-986c-4e02-a1bf-8307168d9f30">View collection</a></footer></article></div></div>
 
-### Foundational Constructs & Controls {#foundational-constructs-controls .parts-group-title}
+#### Foundational Constructs & Controls {#foundational-constructs-controls .parts-group-title}
 
 <div class="parts-catalog">
 <div class="foundation-table"><table><tr><th>Category</th><th>Construct</th><th>Registry</th></tr><tr><td>Foundational construct</td><td>Orca-PUF-10R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26l67mta">BBa_26L67MTA</a></td></tr><tr><td>Foundational construct</td><td>Orca-PUF-12R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26iqjkyo">BBa_26IQJKYO</a></td></tr><tr><td>Foundational construct</td><td>Orca-PUF-13R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26o89ngf">BBa_26O89NGF</a></td></tr><tr><td>Foundational construct</td><td>Orca-PUF-15R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26mj51fb">BBa_26MJ51FB</a></td></tr><tr><td>Control</td><td>Orca-PUF-only</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26ps5ig5">BBa_26PS5IG5</a></td></tr><tr><td>Control</td><td>Orca-APOBEC-only</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26bikgry">BBa_26BIKGRY</a></td></tr><tr><td>Control</td><td>Orca-E72A</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26aimomo">BBa_26AIMOMO</a></td></tr></table></div>
 </div>
+
+### Supporting Data {#supporting-data}
+
+**Follow the evidence from each chapter to its source records and analyses.** This directory brings together sequencing evidence, assay records, processed tables and figure materials so future teams can inspect how our results were obtained and identify resources relevant to their own work.
+
+<div class="wet-data-directory">
+<p class="wet-data-note">SONAR Engineering and Measurement share one archive, with separate guides to the two pages.</p>
+<svg class="wet-data-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="0" height="0" focusable="false"><defs><symbol id="wet-data-doi-symbol" viewBox="0 0 130 130"><circle style="fill:#fcb425" cx="65" cy="65" r="64"/><path style="fill:#231f20" d="m 49.819127,84.559148 -11.854304,0 0,-4.825665 c -1.203594,1.510894 -4.035515,3.051053 -5.264716,3.742483 -2.151101,1.203585 -5.072066,1.987225 -7.812161,1.987225 -4.430246,0 -8.373925,-1.399539 -11.831057,-4.446924 -4.1229464,-3.636389 -6.0602455,-9.19576 -6.0602455,-15.188113 0,-6.094791 2.1126913,-10.960381 6.3380645,-14.59676 3.354695,-2.893745 7.457089,-5.209795 11.810505,-5.209795 2.535231,0 5.661807,0.227363 7.889738,1.302913 1.280414,0.614601 3.572628,2.060721 4.929872,3.469179 l 0,-25.420177 11.854304,0 z m -12.1199,-18.692584 c 0,-2.253538 -0.618258,-4.951555 -2.205973,-6.513663 -1.587724,-1.587724 -4.474153,-2.996182 -6.727691,-2.996182 -2.509615,0 -4.834476,1.825511 -6.447807,3.720535 -1.306031,1.536501 -1.959041,3.905269 -1.959041,5.877114 0,1.971835 0.740815,4.165004 2.046836,5.701505 1.587714,1.895025 3.297985,3.193739 5.833216,3.193739 2.279145,0 4.989965,-0.956662 6.552083,-2.51877 1.587714,-1.562108 2.908377,-4.185134 2.908377,-6.464278 z"/><path style="fill:#fff" d="m 105.42764,25.617918 c -1.97184,0 -3.64919,0.69142 -5.03204,2.074271 -1.357247,1.357245 -2.035864,3.021779 -2.035864,4.993633 0,1.971835 0.678617,3.649193 2.035864,5.032034 1.38285,1.382861 3.0602,2.074281 5.03204,2.074281 1.99744,0 3.67479,-0.678627 5.03203,-2.035861 1.38285,-1.382861 2.07428,-3.073012 2.07428,-5.070454 0,-1.971854 -0.69143,-3.636388 -2.07428,-4.993633 -1.38285,-1.382851 -3.0602,-2.074271 -5.03203,-2.074271 z M 74.219383,45.507921 c -7.323992,0 -12.970625,2.283009 -16.939921,6.848949 -3.277876,3.782438 -4.916803,8.118252 -4.916803,13.008406 0,5.430481 1.626124,10.009834 4.878383,13.738236 3.943689,4.538918 9.475093,6.808622 16.59421,6.808622 7.093512,0 12.612122,-2.269704 16.555801,-6.808622 3.252259,-3.728402 4.878393,-8.1993 4.878393,-13.413648 0,-5.160323 -1.638938,-9.604602 -4.916803,-13.332994 -4.020509,-4.56594 -9.398263,-6.848949 -16.13326,-6.848949 z m 24.908603,1.386686 0,37.634676 12.599304,0 0,-37.634676 -12.599304,0 z M 73.835252,56.975981 c 2.304752,0 4.263793,0.852337 5.877124,2.554426 1.638928,1.675076 2.458402,3.727881 2.458402,6.159457 0,2.458578 -0.806671,4.538022 -2.419992,6.240111 -1.613331,1.675086 -3.585175,2.514099 -5.915534,2.514099 -2.612051,0 -4.737546,-1.027366 -6.376474,-3.080682 -1.331637,-1.648053 -1.997451,-3.539154 -1.997451,-5.673528 0,-2.107362 0.665814,-3.985138 1.997451,-5.633201 1.638928,-2.053316 3.764423,-3.080682 6.376474,-3.080682 z"/></symbol></defs></svg>
+<div class="wet-data-grid">
+<article class="wet-data-card" aria-labelledby="resource-fr">
+<h4 id="resource-fr">Fundamental Research</h4>
+<p class="wet-data-scope">Cycles 1–2 · Figures 1–2</p>
+<p class="wet-data-description">Sequencing evidence, replicate-level analyses, qualitative Western blots and editable figure sources.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23511762" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-io">
+<h4 id="resource-io">Integrated ORCA</h4>
+<p class="wet-data-scope">Design &amp; Build · Tests 1–4 · Figures 1–15</p>
+<p class="wet-data-description">Construct identities, sequencing alignments, target and bystander analyses, and the integrated-editor benchmark.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23510189" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-gfa">
+<h4 id="resource-gfa">GFA</h4>
+<p class="wet-data-scope">Cycles 1–2 · Figures 1–3</p>
+<p class="wet-data-description">Promoter and construct references, GFAP and ORCA qPCR records, and APOE c.388 Sanger evidence.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23501695" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-mre">
+<h4 id="resource-mre">MRE</h4>
+<p class="wet-data-scope">Cycles 1–3</p>
+<p class="wet-data-description">RT-qPCR tables, amplification and melt curves, Sanger traces, design sequences and sample-identity notes.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23502863" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-aso">
+<h4 id="resource-aso">ASO</h4>
+<p class="wet-data-scope">Cycles 1–6 · Figures 1–17</p>
+<p class="wet-data-description">Computational design records, mCherry reporter measurements, sequencing evidence and analysis projects.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23503139" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-sonar-engineering">
+<h4 id="resource-sonar-engineering">SONAR Engineering</h4>
+<p class="wet-data-scope">Cycles 1–10</p>
+<p class="wet-data-description">Reporter designs, flow cytometry, plate-reader and microscopy records, with cycle-by-cycle evidence maps.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23510572" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-measurement">
+<h4 id="resource-measurement">Measurement</h4>
+<p class="wet-data-scope">Figures 1–15 · Layers 0–3</p>
+<p class="wet-data-description">Event selection, RAS normalization, RES calibration and optical–molecular comparisons with source analyses.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23510572" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="wet-data-card" aria-labelledby="resource-fv">
+<h4 id="resource-fv">Functional Validation</h4>
+<p class="wet-data-scope">Experiments I–III · Figures 1–7</p>
+<p class="wet-data-description">Electroporation records, exploratory BODIPY imaging and Aβ42 ELISA data, with analysis and figure sources.</p>
+<div class="wet-data-access"><a class="wet-data-zenodo" href="https://doi.org/10.5281/zenodo.23511905" target="_blank" rel="noopener noreferrer"><svg class="wet-data-doi" width="26" height="26" viewBox="0 0 130 130" aria-hidden="true" focusable="false"><use href="#wet-data-doi-symbol"></use></svg><span>View on Zenodo</span><span aria-hidden="true">↗</span></a></div>
+</article>
+</div>
+<p class="wet-data-guide">Consult each archive’s guide for sample identities, processing methods and evidence limits.</p>
+</div>
+
+<div class="contribution-links"><a href="/experiments">Experimental methods →</a><a href="/notebook">Dated research records →</a></div>
 
 ## Dry Model {#dry-model}
 

@@ -1,0 +1,56 @@
+/* Approved Parts & Collections layout; scoped to the Contribution module. */
+.markdown-content .parts-catalog{font-family:Futura,"Avenir Next","Century Gothic",-apple-system,sans-serif;color:#19143d;font-size:17px;line-height:1.65;max-width:1020px;margin:0 auto 44px;--parts-line:#e5e2ef;--parts-wash:#f7f6fc}
+.markdown-content .parts-catalog *{box-sizing:border-box}
+.markdown-content .parts-catalog .parts-intro{font-size:17px;color:#716d85;margin:0 0 28px}
+.markdown-content .parts-catalog .parts-group-title{font:600 25px/1.4 Futura,"Avenir Next",sans-serif;margin:36px 0 22px;color:#19143d;letter-spacing:-.4px}
+.markdown-content .parts-catalog .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:0 0 22px;align-items:stretch}
+.markdown-content .parts-catalog .row.single{grid-template-columns:minmax(0,1fr)}
+.markdown-content .parts-catalog .row>.card{width:auto;max-width:none;min-width:0;margin:0;padding:24px;background:white;border:1px solid var(--parts-line);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 5px 20px #19143d04;overflow:hidden}
+.markdown-content .parts-catalog .card-header{min-width:0;background:none;border:0;padding:0;margin:0}
+.markdown-content .parts-catalog .row:not(.single) .card-header{min-height:178px}
+.markdown-content .parts-catalog .single .card-header{margin-bottom:20px}
+.markdown-content .parts-catalog h4{font:600 21px/1.4 Futura,"Avenir Next",sans-serif;color:#19143d;margin:0 0 14px;letter-spacing:-.3px}
+.markdown-content .parts-catalog .tag{display:table;font-size:12px;font-weight:700;line-height:1;letter-spacing:.6px;background:#eae8fb;color:#5d56a2;border-radius:7px;padding:7px 10px;margin:0 0 14px}
+.markdown-content .parts-catalog .card-header p{font-size:14px;color:#716d85;margin:10px 0 0}
+.markdown-content .parts-catalog .card-header>.bba-link{display:inline-block;margin-bottom:20px}
+.markdown-content .parts-catalog a{color:#5d5ad7;text-decoration:none;border-bottom:0;background-image:none}
+.markdown-content .parts-catalog a.bba-link{color:#27804f;font-size:14px;line-height:1.5;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.markdown-content .parts-catalog a.bba-link:hover{color:#17582f;background:#edf7ef;border-radius:4px}
+.markdown-content .parts-catalog a.name-link{display:grid;grid-template-columns:minmax(0,1fr) 28px;align-items:center;gap:14px;width:100%;max-width:434px;height:92px;padding:14px 16px;font-size:20px;line-height:1.35;color:#19143d;background:var(--parts-wash);border:1px solid var(--parts-line);border-radius:12px}
+.markdown-content .parts-catalog .collection-name{min-width:0}
+.markdown-content .parts-catalog .link-icon{font-size:19px;line-height:1;text-align:right}
+.markdown-content .parts-catalog a.more-link,.markdown-content .parts-catalog a.btn{display:inline-flex;align-items:center;justify-content:center;padding:9px 14px;border:1px solid #dcd8ef;border-radius:10px;background:var(--parts-wash);font-size:14px;line-height:1.5;font-weight:600}
+.markdown-content .parts-catalog a.name-link:hover,.markdown-content .parts-catalog a.more-link:hover,.markdown-content .parts-catalog a.btn:hover{background:#eeecfb;border-color:#bab4ed}
+.markdown-content .parts-catalog a:focus-visible{outline:2px solid #5d5ad7;outline-offset:4px}
+.markdown-content .parts-catalog table{display:table;border-collapse:collapse;width:100%;table-layout:fixed;margin:0;background:white}
+.markdown-content .parts-catalog td,.markdown-content .parts-catalog th{text-align:left;border:0;border-bottom:1px solid var(--parts-line);padding:15px 12px;vertical-align:middle;line-height:1.65}
+.markdown-content .parts-catalog th{font-size:12px;letter-spacing:.5px;color:#716d85;font-weight:600;background:var(--parts-wash)}
+.markdown-content .parts-catalog td{font-size:15px;overflow-wrap:anywhere}
+.markdown-content .parts-catalog tr:last-child td{border-bottom:0}
+.markdown-content .parts-catalog .constructs th:last-child,.markdown-content .parts-catalog .constructs td:last-child{width:145px;text-align:right}
+.markdown-content .parts-catalog .constructs td{height:78px}
+.markdown-content .parts-catalog .single .constructs td{height:64px}
+.markdown-content .parts-catalog .member-heading{display:grid;grid-template-columns:minmax(0,1fr) 132px;gap:14px;padding:11px 10px;color:#716d85;font-size:12px;letter-spacing:.5px;background:var(--parts-wash)}
+.markdown-content .parts-catalog .member-heading span:last-child{text-align:right}
+.markdown-content .parts-catalog ul.members{list-style:none;padding:0;margin:0}
+.markdown-content .parts-catalog ul.members li{display:grid;grid-template-columns:minmax(0,1fr) 132px;gap:14px;align-items:center;min-height:68px;padding:13px 10px;margin:0;border-bottom:1px solid var(--parts-line)}
+.markdown-content .parts-catalog ul.members li::before{content:none}
+.markdown-content .parts-catalog ul.members li:last-child{border-bottom:0}
+.markdown-content .parts-catalog li strong{font-size:15px;line-height:1.55;font-weight:500;overflow-wrap:anywhere}
+.markdown-content .parts-catalog li .bba-link{text-align:right}
+.markdown-content .parts-catalog .card-footer{margin-top:auto;padding:20px 0 0;background:none;border:0}
+.markdown-content .parts-catalog .foundation-table{border:1px solid var(--parts-line);border-radius:18px;overflow:hidden;background:white}
+.markdown-content .parts-catalog .foundation-table th:first-child{width:28%}
+.markdown-content .parts-catalog .foundation-table th:last-child{width:180px}
+.markdown-content .parts-catalog .foundation-table td:last-child,.markdown-content .parts-catalog .foundation-table th:last-child{text-align:right}
+.markdown-content .parts-catalog .foundation-table td,.markdown-content .parts-catalog .foundation-table th{padding:17px 22px}
+@media(max-width:900px){
+.markdown-content .parts-catalog .row{grid-template-columns:minmax(0,1fr);gap:20px}
+.markdown-content .parts-catalog .row>.card{padding:20px 18px}
+.markdown-content .parts-catalog .row:not(.single) .card-header{min-height:0;margin-bottom:20px}
+.markdown-content .parts-catalog a.name-link{max-width:none;height:92px;font-size:19px}
+.markdown-content .parts-catalog .parts-group-title{font-size:22px}
+.markdown-content .parts-catalog .constructs td{height:auto}
+.markdown-content .parts-catalog .foundation-table{overflow-x:auto}
+.markdown-content .parts-catalog .foundation-table table{min-width:570px}
+}

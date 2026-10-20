@@ -1,0 +1,16 @@
+[
+  {
+    "language": "zh",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/health-rumor-detectives-activity-plan-zh.pdf",
+    "sha256": "aacfc97fda1da933e0e04dcf990bad6939099b3763151f51317865403fe00a29",
+    "pages": 5,
+    "online_matches_local": true
+  },
+  {
+    "language": "en",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/health-rumor-detectives-activity-plan-en.pdf",
+    "sha256": "2157145c9b4af6c2ad6362ca3324f3542487c38aa16b6489b90ab18f4a4fed08",
+    "pages": 5,
+    "online_matches_local": true
+  }
+]

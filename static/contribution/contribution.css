@@ -1,0 +1,266 @@
+/* This stylesheet is loaded only for the Contribution hub. */
+[data-content-source="docs/project/contribution.md"] .markdown-content {
+  --contribution-ink: #302875;
+  --contribution-accent: #6254a7;
+}
+[data-content-source="docs/project/contribution.md"] .contribution-lead {
+  border-left: 4px solid #ee9aad;
+  padding: 8px 0 8px 24px;
+  margin-bottom: 38px;
+  font-size: 1.12rem;
+}
+[data-content-source="docs/project/contribution.md"] h2 {
+  scroll-margin-top: 110px;
+}
+.contribution-brand {
+  display: block;
+  width: min(290px, 85%);
+  height: auto;
+  object-fit: contain;
+  margin: 16px 0 22px;
+  border-radius: 0;
+}
+.contribution-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  margin: 22px 0;
+}
+.markdown-content .contribution-links a {
+  display: inline-block;
+  border-bottom: 2px solid #b9b0d9;
+  padding: 6px 0;
+  color: var(--contribution-ink);
+  font-weight: 650;
+  font-size: .9rem;
+  text-decoration: none;
+}
+.contribution-summary {
+  border-left: 3px solid #8071ba;
+  padding: 18px 22px;
+  background: #eeebf6;
+  border-radius: 0 12px 12px 0;
+  margin: 24px 0;
+}
+.contribution-summary strong {
+  color: var(--contribution-ink);
+}
+.markdown-content .contribution-summary-label { margin: 8px 0 12px; font-size: 1.06rem; }
+.markdown-content .contribution-summary ul { margin: 0 0 24px; padding-left: 22px; }
+.markdown-content .contribution-summary ul:last-child { margin-bottom: 0; }
+.markdown-content .contribution-summary li { margin: 0 0 14px; padding-left: 4px; }
+.markdown-content .contribution-figure {
+  margin: 28px 0;
+  padding: 16px;
+  border: 1px solid #ded9ed;
+  border-radius: 14px;
+  background: #fff;
+}
+.markdown-content .contribution-figure img {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.markdown-content .contribution-figure figcaption {
+  margin: 14px 4px 4px;
+  color: #595369;
+  font-size: .87rem;
+  line-height: 1.65;
+  text-align: left;
+}
+.contribution-document {
+  position: relative;
+  margin: 24px 0 38px;
+  border: 1px solid #dedbe9;
+  border-radius: 18px;
+  background: linear-gradient(115deg, #ffffff 0%, #f7f5fc 100%);
+  box-shadow: 0 3px 6px #30287504, 0 12px 28px #30287508, inset 0 1px 0 #fff;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.contribution-document:hover {
+  border-color: #b5acd2;
+  box-shadow: 0 5px 10px #30287506, 0 16px 32px #30287510;
+}
+.contribution-code {
+  margin: 0;
+}
+.contribution-code > summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 108px;
+  padding: 24px 174px 24px 24px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--contribution-ink);
+}
+.contribution-code > summary::-webkit-details-marker { display: none; }
+.contribution-document-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  height: 48px;
+  color: #7768ad;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #f0ecf9, #e6e0f4);
+  box-shadow: inset 0 1px 0 #fff9;
+}
+.contribution-document svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contribution-document-heading { min-width: 0; }
+.contribution-document-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #79728f;
+  font-size: .69rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.contribution-document-title {
+  display: block;
+  font-size: 1.04rem;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -.015em;
+}
+.contribution-document-toggle {
+  position: absolute;
+  right: 148px;
+  top: 46px;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid #81749f;
+  border-bottom: 1.5px solid #81749f;
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.contribution-code[open] .contribution-document-toggle { transform: rotate(225deg); top: 50px; }
+.markdown-content .contribution-download {
+  position: absolute;
+  top: 34px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #dcd6eb;
+  border-radius: 9px;
+  background: #ffffffcf;
+  box-shadow: 0 2px 3px #30287506;
+  color: #514080;
+  font-size: .75rem;
+  line-height: 1.3;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
+}
+.markdown-content .contribution-download:hover { color: #302875; background: #eeebf6; border-color: #ada0cf; }
+.contribution-download svg { width: 16px; height: 16px; }
+.contribution-download:focus-visible { outline: 3px solid #6254a7; outline-offset: 2px; }
+.contribution-pdf-status[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .contribution-document, .contribution-document-toggle, .contribution-download { transition: none; }
+}
+.contribution-pdf-viewport {
+  display: block;
+  width: 100%;
+  height: 420px;
+  min-height: 240px;
+  max-height: 900px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid #d7cfea;
+  background: #e4e7ef;
+  scrollbar-color: #9295c2 #e4e7ef;
+}
+.contribution-pdf-pages { width: 100%; padding: 12px; }
+.contribution-pdf-page { margin-bottom: 16px; background: #fff; box-shadow: 0 2px 8px #292d5020; }
+.contribution-pdf-page:last-child { margin-bottom: 0; }
+.markdown-content .contribution-pdf-viewport img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+.contribution-pdf-resize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  border-top: 1px solid #d7cfea;
+  cursor: ns-resize;
+  user-select: none;
+  touch-action: none;
+  background: #efeffa;
+}
+.contribution-pdf-resize::before { content: ''; width: 38px; height: 4px; border-radius: 4px; background: #9b9dbb; }
+.contribution-pdf-resize:hover::before { background: #6c6da1; }
+.markdown-content .contribution-code .contribution-pdf-status {
+  padding: 10px 20px;
+  font-size: .78rem;
+  color: #595369;
+}
+.contribution-pdf-resize:focus-visible,
+.contribution-pdf-viewport:focus-visible {
+  outline: 3px solid #6254a7;
+  outline-offset: -3px;
+}
+.contribution-code summary:focus-visible,
+.contribution-links a:focus-visible {
+  outline: 3px solid #6254a7;
+  outline-offset: -3px;
+}
+.contribution-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 26px 0;
+}
+.contribution-steps > div {
+  border-top: 2px solid #b9b0d9;
+  padding-top: 14px;
+}
+.contribution-steps strong {
+  display: block;
+  color: var(--contribution-ink);
+}
+.markdown-content .contribution-steps p {
+  font-size: .9rem;
+  line-height: 1.65;
+  margin: 8px 0;
+}
+@media (max-width: 700px) {
+  .contribution-steps { grid-template-columns: 1fr; }
+  .markdown-content .contribution-figure { padding: 9px; }
+  .contribution-code > summary { min-height: 132px; padding: 20px 116px 20px 16px; gap: 10px; }
+  .contribution-document-icon { display: none; }
+  .contribution-document-title { font-size: .93rem; }
+  .markdown-content .contribution-download { top: 45px; right: 12px; padding: 8px; gap: 5px; font-size: .7rem; }
+  .contribution-document-toggle { position: static; flex: 0 0 7px; width: 7px; height: 7px; margin-left: 2px; }
+  .contribution-document { border-radius: 14px; }
+  .contribution-pdf-viewport { height: 340px; }
+  .contribution-pdf-pages { padding: 6px; }
+  .contribution-summary { padding: 16px; }
+}
+@media print {
+  .contribution-pdf-viewport { display: none; }
+  .contribution-code > p { display: block; }
+}

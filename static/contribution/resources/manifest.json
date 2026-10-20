@@ -1,0 +1,37 @@
+[
+  {
+    "source_name": "PUFFER.pdf",
+    "file": "puffer-code.pdf",
+    "sha256": "a4278e053bf4e8f19e16a3660a1cec4da7372ad5fb17007dc75e0ac669672f77"
+  },
+  {
+    "source_name": "Module 1 - Transcriptomic Landscape.pdf",
+    "file": "transcriptomic-landscape-code.pdf",
+    "sha256": "07353d35975ae0dda9a3b231368e6e459c28cf5a0a097da8ee06a1047b180e25"
+  },
+  {
+    "source_name": "Module 2 - Recognition Code.pdf",
+    "file": "recognition-code.pdf",
+    "sha256": "7e12b93aa3f8c3e74ce0de34c9797db24c961a62666aebea5fc5d5df9244d107"
+  },
+  {
+    "source_name": "Module 3 - Catalytic Design.pdf",
+    "file": "catalytic-design-code.pdf",
+    "sha256": "2ba7ce28f597cac0dc0314b7781dc2dd2306d9cd3bc29cbc270740a40a423057"
+  },
+  {
+    "source_name": "Module 4 - LAMAR.pdf",
+    "file": "lamar-code.pdf",
+    "sha256": "ee69ea5190a1116de06bd9ff1319b2dc782c8e0e030ed2e5d0611493174bfd90"
+  },
+  {
+    "source_name": "Delivery Dynamics.pdf",
+    "file": "delivery-dynamics-code.pdf",
+    "sha256": "30767dba51722a8ba78415e45f218d717702aa67ac32fb345013c473f20a80bc"
+  },
+  {
+    "source_name": "ORCA - Model Figures.pdf",
+    "file": "model-figures.pdf",
+    "sha256": "9f8f0f255cf5ad88d514b4bf70e0747e42b8fa9725315304be844ab96a481b29"
+  }
+]

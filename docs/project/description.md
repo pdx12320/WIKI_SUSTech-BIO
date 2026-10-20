@@ -9,6 +9,35 @@ status_message: Scientific content, references and media attribution await team 
 
 # Description
 
+<section class="description-prologue" aria-labelledby="when-the-familiar-begins-to-fade" markdown="1">
+
+## When the Familiar Begins to Fade
+
+Imagine forgetting a conversation you had just <span>this morning.</span>
+{: .description-prologue__lead}
+
+<div class="description-prologue__story" markdown="1">
+
+At first, it seems like an ordinary lapse of memory. But gradually, familiar routines become difficult. You lose track of appointments, struggle to find your way home, and begin to need help with things you once did effortlessly.
+
+As the disease progresses, even recognizing the people you love may become a challenge. The faces that have accompanied you for a lifetime can begin to feel unfamiliar.
+
+Alzheimer's disease takes away more than memories. It can gradually erode independence, diminish quality of life, and reshape the relationships and routines of an entire family.
+
+</div>
+
+<div class="description-prologue__coda" markdown="1">
+
+And this is far from an isolated experience.
+
+**Across the world, millions of families are living through changes like these.**
+
+</div>
+
+</section>
+
+<!-- DESCRIPTION_PROLOGUE_END -->
+
 ## Alzheimer’s Disease: The Problem
 
 <div class="description-intro">
@@ -49,7 +78,7 @@ Could an upstream, genetically defined risk factor provide a more precise point 
 
 The APOE gene encodes apolipoprotein E (apoE), a major lipid carrier in the brain. Produced primarily by astrocytes, apoE redistributes cholesterol and other lipids between cells, supporting neuronal membranes, synapses, and repair.
 
-Humans carry three major APOE alleles — ε2, ε3, and ε4. Their protein products differ only at residues 112 and 158: apoE2 is Cys112/Cys158, apoE3 is Cys112/Arg158, and apoE4 is Arg112/Arg158. Thus, apoE3 and apoE4 differ by only one amino acid.
+Humans carry three major APOE alleles — ε2, ε3, and ε4. Their protein products differ only at residues 112 and 158: apoE2 is Cys112/Cys158, apoE3 is Cys112/Arg158, and apoE4 is Arg112/Arg158. Thus, apoE3 and apoE4 differ by only one amino acid. At the mRNA level, this difference comes down to a single nucleotide at codon 112: a C in APOE4 where APOE3 carries a U.
 
 ![APOE structure and amino acid differences at residues 112 and 158](/assets/images/description/apoe-isoforms.png)
 
@@ -91,9 +120,11 @@ Together, these approaches establish APOE as a therapeutically actionable target
 
 ## Why mRNA Editing?
 
-Our goal was not simply to reduce apoE4, but to correct the information encoded by endogenous APOE4 while preserving its expression. This correction can, in principle, be approached at three molecular levels: DNA, RNA, or protein.
+To pursue this goal, we considered three possible levels of molecular intervention: DNA, RNA, and protein.
 
-Genome editing offers durable sequence correction, and APOE4-to-APOE3 conversion has recently been demonstrated using the PE7 prime editor [10]. However, genomic edits are permanent, making unintended changes difficult to reverse and placing additional demands on long-term safety and CNS delivery. [PubMed](https://pubmed.ncbi.nlm.nih.gov/42467931/) At the protein level, small-molecule structure correctors such as PH002 can shift apoE4 toward an apoE3-like conformation and alleviate disease-related phenotypes in human iPSC-derived neurons, but the underlying APOE4 sequence remains unchanged [11]. [PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5948154/)
+Genome editing offers durable sequence correction, and APOE4-to-APOE3 conversion has recently been demonstrated using the PE7 prime editor [10]. However, genomic edits are permanent, making unintended changes difficult to reverse and placing additional demands on long-term safety and CNS delivery.
+
+At the protein level, small-molecule structure correctors such as PH002 can shift apoE4 toward an apoE3-like conformation and alleviate disease-related phenotypes in human iPSC-derived neurons, but the underlying APOE4 sequence remains unchanged [11].
 
 RNA editing offered the middle ground that best matched our design goals. It enables direct correction of endogenous APOE4 transcripts without altering genomic DNA, while the natural turnover of RNA makes the intervention inherently transient and potentially tunable. Its limitation is equally clear: new APOE4 transcripts are continuously produced, so effective correction depends on maintaining sufficient editing activity.
 
@@ -105,8 +136,6 @@ With the intervention layer defined, our next step was to build an RNA editor ca
 
 ## Building on REWIRE
 
-Having chosen RNA as our intervention layer, we needed a programmable editor capable of converting the APOE4-associated cytidine without altering genomic DNA.
-
 REWIRE (RNA Editing With Individual RNA-binding Enzyme) provided a natural starting point. It is a single-component, guide-RNA-free RNA editing platform that combines a programmable PUF RNA-binding domain with a deaminase. In its C-to-U branch, CU-REWIRE, PUF directs the editor to a defined RNA sequence, while APOBEC3A catalyzes cytidine-to-uridine editing — precisely the type of conversion required for APOE4 correction [12]. [OUP Academic](https://academic.oup.com/nar/article/50/16/9580/6677559)
 
 Importantly, REWIRE was designed to be engineerable. The original study expanded the natural 8-repeat PUF to a 10-repeat PUF, generating upgraded CU-REWIRE variants with improved target recognition and reduced transcriptome-wide off-target editing. Figure 4D illustrates this transition from the original PUF8R architecture to the optimized PUF10R-based CU-REWIRE system. [OUP Academic](https://academic.oup.com/nar/article/50/16/9580/6677559)
@@ -116,6 +145,8 @@ Importantly, REWIRE was designed to be engineerable. The original study expanded
 *Figure 9. Original and upgraded CU-REWIRE architectures, shown in [Figure 4D of the original REWIRE study](https://academic.oup.com/nar/article/50/16/9580/6677559).*
 
 For us, this combination of programmable recognition, C-to-U editing, and modular design made CU-REWIRE an ideal foundation.
+
+Together, these findings shaped the rationale for our project. Alzheimer's disease is complex, yet APOE4 provides a genetically defined point of intervention. Existing APOE-directed strategies demonstrate that apoE biology is therapeutically actionable, while RNA editing offers a distinct route to directly rewrite the endogenous APOE4 transcript without permanently altering genomic DNA. With programmable PUF-mediated recognition and C-to-U editing, CU-REWIRE provided the molecular framework for turning this idea into an engineered system.
 
 ## Our Approach: <span class="description-heading-line">From an RNA Editor to ORCA</span>
 

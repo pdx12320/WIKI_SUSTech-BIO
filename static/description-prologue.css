@@ -1,0 +1,98 @@
+/* An editorial pause between the chapter cover and the scientific reading surface. */
+.content-page .description-prologue {
+  position: relative;
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: clamp(54px, 5vw, 72px) 24px clamp(76px, 7vw, 100px);
+  color: #2e3065;
+  text-align: center;
+}
+
+.description-prologue h2 {
+  margin: 0 0 56px;
+  padding: 0;
+  border: 0;
+  color: #625c7b;
+  font: 600 clamp(18px, 1.65vw, 22px)/1.5 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  scroll-margin-top: 30px;
+}
+
+.description-prologue h2::after { content: none; }
+
+.description-prologue .description-prologue__lead {
+  max-width: 940px;
+  margin: 0 auto;
+  color: #2e3065;
+  font: 400 clamp(22px, 2vw, 26px)/1.65 Georgia, 'Times New Roman', serif;
+  letter-spacing: 0;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.description-prologue__lead span {
+  color: #a86380;
+  white-space: nowrap;
+}
+
+.description-prologue__story {
+  max-width: 940px;
+  margin: 20px auto 0;
+  color: #555472;
+  font: 400 20px/1.8 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  text-align: left;
+}
+
+.description-prologue__story p { margin: 0 0 28px; font: inherit; }
+.description-prologue__story p:last-child { margin-bottom: 0; }
+
+.description-prologue__coda {
+  max-width: 100%;
+  margin: 50px auto 0;
+}
+
+.description-prologue__coda::before {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 1px;
+  margin: 0 auto 30px;
+  background: #c4849c;
+}
+
+.description-prologue__coda p:first-child {
+  margin: 0 0 20px;
+  color: #46436f;
+  font: 600 24px/1.6 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+}
+
+.description-prologue__coda p:last-child {
+  margin: 0;
+  color: #2e3065;
+  font: 400 clamp(24px, 2.6vw, 32px)/1.4 Georgia, 'Times New Roman', serif;
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+
+.description-prologue__coda strong { color: inherit; font-weight: 400; }
+
+@media (min-width: 1100px) {
+  .description-prologue__coda p:last-child { white-space: nowrap; }
+}
+
+@media (max-width: 760px) {
+  .content-page .description-prologue { padding: 48px 14px 76px; }
+  .description-prologue h2 { margin-bottom: 40px; font-size: 16px; letter-spacing: .08em; }
+  .description-prologue .description-prologue__lead { font-size: 22px; }
+  .description-prologue__story { font-size: 18px; line-height: 1.8; }
+  .description-prologue__story p { margin-bottom: 24px; }
+  .description-prologue__coda { margin-top: 38px; }
+  .description-prologue__coda p:first-child { font-size: 20px; }
+}
+
+@media print {
+  .content-page .description-prologue { padding: 24px 0 40px; }
+  .description-prologue .description-prologue__lead { font-size: 24px; }
+  .description-prologue__story { font-size: 12pt; }
+}

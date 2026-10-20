@@ -114,6 +114,7 @@ header_introduction: >-
         <p class="question-category">Deliver</p>
         <h3 id="question-deliver">Can it reach the brain without becoming a burden?</h3>
         <p class="question-source"><a href="/human-practices#dr-zhifan-zhou-from-editing-in-the-laboratory-to-treatment-arrangements-patients-can-accept">Dr. Zhifan Zhou</a> · Neurology</p>
+        <img class="question-mascot" src="https://static.igem.wiki/teams/6085/wiki/description/cell-v1.avif" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
       </header>
       <div class="question-stage"><p class="question-label">We heard <span aria-hidden="true">↓</span></p><p>Brain delivery, repeated dosing and invasive procedures are critical considerations for future treatment.</p></div>
       <div class="question-stage"><p class="question-label">We explored <span aria-hidden="true">↓</span></p><p>Her feedback reinforced the priority of delivery research. We developed and tested AAV9-based ORCA vectors.</p></div>
@@ -124,6 +125,7 @@ header_introduction: >-
         <p class="question-category">Edit &amp; Validate</p>
         <h3 id="question-validate">When does successful editing become meaningful?</h3>
         <p class="question-source"><a href="/human-practices#professor-keqiang-ye-how-should-we-judge-whether-an-edit-warrants-further-development">Prof. Keqiang Ye</a> · Neurodegeneration</p>
+        <img class="question-mascot" src="https://static.igem.wiki/teams/6085/wiki/description/percent-left-v2.avif" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
       </header>
       <div class="question-stage"><p class="question-label">We heard <span aria-hidden="true">↓</span></p><p>Editing efficiency alone cannot establish specificity, biological benefit or therapeutic safety.</p></div>
       <div class="question-stage"><p class="question-label">We explored <span aria-hidden="true">↓</span></p><p>His advice informed our attention to bystander editing, cell context and disease-relevant functional evaluation.</p></div>
@@ -134,6 +136,7 @@ header_introduction: >-
         <p class="question-category">Control &amp; Choice</p>
         <h3 id="question-control">Can editing be controlled—and would patients choose it?</h3>
         <p class="question-source"><a href="/human-practices#dr-ziwei-dai-how-do-people-make-choices-after-learning-about-a-technology">Dr. Ziwei Dai</a> · Systems Biology</p>
+        <img class="question-mascot" src="https://static.igem.wiki/teams/6085/wiki/description/choice-paddle-fist-v4.avif" alt="" aria-hidden="true" width="1254" height="1254" loading="lazy" decoding="async">
       </header>
       <div class="question-stage"><p class="question-label">We heard <span aria-hidden="true">↓</span></p><p>Invasiveness, risks, costs and uncertainty influence whether a future intervention would be acceptable.</p></div>
       <div class="question-stage"><p class="question-label">We explored <span aria-hidden="true">↓</span></p><p>These concerns aligned with our controllability goals and strengthened our approach to communicating risks and patient choice.</p></div>

@@ -6,7 +6,9 @@
 .results-page .question-card { --question-accent:#365c7c; min-width:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:24px; padding:26px; border:1px solid #dce1dc; border-radius:14px; background:#edf0f4; }
 .results-page .question-card--validate { --question-accent:#436851; }
 .results-page .question-card--control { --question-accent:#57436f; }
-.results-page .question-header { grid-column:1 / -1; padding-bottom:24px; }
+.results-page .question-header { grid-column:1 / -1; display:grid; grid-template-columns:minmax(0,1fr) 128px; column-gap:24px; align-content:center; padding-bottom:24px; }
+.results-page .question-header > :not(.question-mascot) { grid-column:1; }
+.results-page .content-page .markdown-content .question-header .question-mascot { grid-column:2; grid-row:1 / 4; align-self:center; display:block; width:128px; height:128px; max-width:100%; margin:0; padding:0; border:0; border-radius:0; background:transparent; box-shadow:none; object-fit:contain; }
 .results-page .content-page .markdown-content .question-category { margin:0 0 10px; color:#536474; font:600 11px/1.5 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
 .results-page .content-page .markdown-content .question-header h3 { margin:0 0 10px; padding:0; border:0; color:var(--question-accent); font:normal 25px/1.25 Georgia,serif; letter-spacing:-.025em; }
 .results-page .content-page .markdown-content .question-source { margin:0; color:#536474; font:13px/1.6 var(--sans); }
@@ -23,6 +25,11 @@
 /* Keep the long cards stacked; let their three stages flow vertically on narrow screens. */
 @container (max-width:650px) {
   .results-page .question-card { grid-template-columns:1fr; padding:22px; }
+  .results-page .question-header { grid-template-columns:minmax(0,1fr) 76px; column-gap:12px; row-gap:8px; }
+  .results-page .content-page .markdown-content .question-header .question-mascot { grid-row:1; width:76px; height:76px; }
+  .results-page .content-page .markdown-content .question-header .question-category { align-self:center; margin:0; }
+  .results-page .content-page .markdown-content .question-header h3,
+  .results-page .content-page .markdown-content .question-header .question-source { grid-column:1 / -1; margin:0; }
   .results-page .question-stage { padding-bottom:20px; }
   .results-page .question-stage + .question-stage { padding-left:0; border-left:0; }
   .results-page .question-card .question-progress { padding:18px 0 0; border-top:1px solid #dce1dc; }

@@ -1,0 +1,16 @@
+{
+  "font": "PatrickHand-Regular",
+  "source": "https://github.com/google/fonts/tree/main/ofl/patrickhand",
+  "licence": "SIL Open Font License 1.1",
+  "processing": "Lossless WOFF2 compression; all glyphs retained. No system installation.",
+  "files": {
+    ".ttf": {
+      "bytes": 214772,
+      "sha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc"
+    },
+    ".woff2": {
+      "bytes": 62732,
+      "sha256": "bb8dd7b2c7b11d31de49a7ed30d46bd60d36fc54d12bf7a27ee358514be0fbb9"
+    }
+  }
+}

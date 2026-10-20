@@ -1,0 +1,62 @@
+/* Education-only additions: keep the existing readers, galleries and directory. */
+.education-project-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin: 1.8rem 0;
+}
+.education-project-nav a {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1rem 0;
+  border-block: 1px solid #D9D7E5;
+  text-decoration: none;
+  color: #2E267C;
+}
+.education-project-nav a span { font-size: .9em; line-height: 1.5; color: #6B6880; }
+.education-project-nav a:hover strong { text-decoration: underline; }
+.education-project-nav a:focus-visible,
+.education-record > summary:focus-visible { outline: 2px solid #5D5AD7; outline-offset: 5px; }
+.education-record { margin: 1.4rem 0 2rem; }
+.education-record > summary { cursor: pointer; color: #2E267C; font-weight: 600; padding: .7rem 0; }
+.education-manuscript .education-page-comparison { max-width: 100%; }
+.education-comparison-pair { margin: 1.5rem 0; }
+.education-comparison-pages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.education-comparison-pages a { display: block; min-width: 0; font-size: .85em; text-align: center; }
+.education-comparison-pages img { display: block; width: 100%; height: auto; border: 1px solid #D9D7E5; border-radius: 0; }
+.education-comparison-pages span { display: block; padding-top: .5rem; }
+.content-directory [data-content-group="classroom-synthetic-biology"] > .content-group__head a,
+.content-directory [data-content-group="older-learners-workbook"] > .content-group__head a,
+.content-directory [data-content-group="worldproof"] > .content-group__head a { font-weight: 700; }
+.education-manuscript [id] { scroll-margin-top: 7rem; }
+@media (max-width: 640px) {
+  .education-project-nav { grid-template-columns: 1fr; gap: .25rem; }
+  .education-project-nav a { padding: .8rem 0; border-bottom: 0; }
+  .education-project-nav a:last-child { border-bottom: 1px solid #D9D7E5; }
+  .education-comparison-pages { grid-template-columns: 1fr; }
+}
+.education-teacher-feedback { margin-block: 1.5rem; }
+.education-teacher-feedback p { background: none; border: 0; padding: 0; }
+.education-teacher-feedback p:last-child { color: #6B6880; font-size: .88em; }
+
+/* A relaxed handwritten title, scoped to Education only. */
+@font-face {
+  font-family: 'Education Caveat';
+  src: url('./fonts/Caveat-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+.content-page:has(.education-manuscript) .content-overview {
+  padding-inline: 0;
+}
+.content-page:has(.education-manuscript) .content-overview h1 {
+  font-family: 'Education Caveat', cursive;
+  font-weight: 600;
+  font-synthesis: none;
+  font-size: clamp(64px, 8.5vw, 120px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-align: center;
+}

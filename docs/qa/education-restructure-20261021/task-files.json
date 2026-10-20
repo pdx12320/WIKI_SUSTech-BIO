@@ -1,0 +1,152 @@
+[
+  {
+    "path": "assets/human-practices/education/workbook-current-student-en.docx",
+    "bytes": 34985160,
+    "sha256": "2c57d6f36417c416582633f6f8320b91e5a7e9b963e31af917d8fe6e56477a1a"
+  },
+  {
+    "path": "assets/human-practices/education/workbook-current-student-zh.docx",
+    "bytes": 42660022,
+    "sha256": "7be527c5afd61242cbc4d9e1113066f60d8d6645a511f5e996d0ed1e5b7ab57a"
+  },
+  {
+    "path": "assets/human-practices/education/workbook-current-teacher-zh.docx",
+    "bytes": 42663589,
+    "sha256": "e43092699e47f613a9d7a5e1b931291be0d4b5201300d2d52fb802708cd78d72"
+  },
+  {
+    "path": "docs/human-practices/education.md",
+    "bytes": 71948,
+    "sha256": "598f52ec0633a858877abd2819ace92867f921eb61de6af9864533ddd5b59c72"
+  },
+  {
+    "path": "static/human-practices/education/chapters.css",
+    "bytes": 2800,
+    "sha256": "153e5e501666d7c450b59003b60d940cad228efb96d6e52a8845d285537b3e24"
+  },
+  {
+    "path": "static/human-practices/education/chapters.js",
+    "bytes": 1766,
+    "sha256": "36c47dcdac0034a765b4de39a5eabd9526c39b0464d89c19050a28a05b3c0e83"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Caveat-OFL.txt",
+    "bytes": 4385,
+    "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Caveat-Variable-provenance.json",
+    "bytes": 506,
+    "sha256": "1e4487988c287a8c5582fbdb6912392c6efc5a45c5cf286121485c197ddca63f"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Caveat-Variable.ttf",
+    "bytes": 403648,
+    "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Caveat-Variable.woff2",
+    "bytes": 173692,
+    "sha256": "2cf9b14c5748deaff9665da9a0c342d887a114aed2a6559124c2482a8177ca5f"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Fraunces-OFL.txt",
+    "bytes": 4391,
+    "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Fraunces-Variable.ttf",
+    "bytes": 360440,
+    "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb"
+  },
+  {
+    "path": "static/human-practices/education/fonts/Fraunces-Variable.woff2",
+    "bytes": 194660,
+    "sha256": "d46903fa348fa5d63fb6d658e0d6b3cf44186d799f228f9f49be59d827a1043b"
+  },
+  {
+    "path": "static/human-practices/education/fonts/provenance.json",
+    "bytes": 874,
+    "sha256": "fe65a2c649b2cd672e2023971b894b8c4042e67d46a2b1dc4d36593de00317bd"
+  },
+  {
+    "path": "static/human-practices/education/workbook-current-body-p5.png",
+    "bytes": 275112,
+    "sha256": "e1804d02a1f290e062056e79348ba4a6fc19f855ba91f7676d79fba37b10abde"
+  },
+  {
+    "path": "static/human-practices/education/workbook-current-medicine-p10.png",
+    "bytes": 135293,
+    "sha256": "66581045dbca7d002101001ba4db5b1acf9404f6ecad41dbe2082754c77bbb98"
+  },
+  {
+    "path": "static/human-practices/education/workbook-v1-body-p3.png",
+    "bytes": 170851,
+    "sha256": "ab8aaf74d8a9ac32972db7db33e383041c11e6a15ca460c5834cf0372ebcb302"
+  },
+  {
+    "path": "static/human-practices/education/workbook-v1-medicine-p20.png",
+    "bytes": 90674,
+    "sha256": "7490e289378892056e96a0593aabc55cc5785bc159258b7ce2f8563d9a902fc9"
+  },
+  {
+    "path": "static/human-practices/title-fonts/.DS_Store",
+    "bytes": 6148,
+    "sha256": "cac2190b6dedc1ec4173d0bd3bc4dc81001a5c5dcda308e0bb3a1c345aae3982"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/PatrickHand-OFL.txt",
+    "bytes": 4376,
+    "sha256": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/PatrickHand-Regular-provenance.json",
+    "bytes": 514,
+    "sha256": "97e6222e61c61c911210f68a331f2bada696c4de623f3ca51bc4bafb41452d77"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/PatrickHand-Regular.ttf",
+    "bytes": 214772,
+    "sha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/PatrickHand-Regular.woff2",
+    "bytes": 62732,
+    "sha256": "bb8dd7b2c7b11d31de49a7ed30d46bd60d36fc54d12bf7a27ee358514be0fbb9"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/ShantellSans-OFL.txt",
+    "bytes": 4397,
+    "sha256": "ebfce7d104d597c385b71e9fbf8f0e2034e73320f857086105dc265b82c05caa"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/ShantellSans-Variable-provenance.json",
+    "bytes": 519,
+    "sha256": "470c7a4c893b04fa21fe0fd78777b529af3bd67dacde2dbfbf80755bb8fcd71c"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/ShantellSans-Variable.ttf",
+    "bytes": 1284736,
+    "sha256": "d98a7913853f78d71aa0b86daf66b5eddb5a3266c07bfd51ef70632b88c41084"
+  },
+  {
+    "path": "static/human-practices/title-fonts/fonts/ShantellSans-Variable.woff2",
+    "bytes": 442552,
+    "sha256": "b8a9433ea6e5a1cd697360889100451dca6fc6db958e8be25b6432e057ef947b"
+  },
+  {
+    "path": "static/human-practices/title-fonts/human-practices-title.css",
+    "bytes": 773,
+    "sha256": "b2bce84616c2939cf4a2de190c8968097e07180c4844668f34e322eb59707987"
+  },
+  {
+    "path": "static/human-practices/title-fonts/inclusivity-title.css",
+    "bytes": 846,
+    "sha256": "59307e168db49219048840713dab45ed524152c7779ea79c71facbf240afab32"
+  },
+  {
+    "path": "wiki/pages/education.html",
+    "bytes": 2469,
+    "sha256": "074cda1ab7e2283bfae591bec03017046aa9f933c9bffa9067745101236d30cb"
+  }
+]

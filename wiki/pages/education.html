@@ -13,6 +13,7 @@
 
 {% block page_styles %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='human-practices/education/chapters.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/human-practices.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/pdf-panels.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='human-practices/viewpoints.css') }}">
@@ -21,6 +22,7 @@
 
 {% block page_scripts %}
 {{ super() }}
+<script src="{{ url_for('static', filename='human-practices/education/chapters.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/interviews/orca-interviews.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/pdf-panels.js') }}" defer></script>
 <script src="{{ url_for('static', filename='human-practices/viewpoints.js') }}" defer></script>

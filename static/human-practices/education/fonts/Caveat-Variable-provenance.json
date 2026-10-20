@@ -1,0 +1,16 @@
+{
+  "font": "Caveat-Variable",
+  "source": "https://github.com/google/fonts/tree/main/ofl/caveat",
+  "licence": "SIL Open Font License 1.1",
+  "processing": "Lossless WOFF2 compression; all glyphs retained. No system installation.",
+  "files": {
+    ".ttf": {
+      "bytes": 403648,
+      "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988"
+    },
+    ".woff2": {
+      "bytes": 173692,
+      "sha256": "2cf9b14c5748deaff9665da9a0c342d887a114aed2a6559124c2482a8177ca5f"
+    }
+  }
+}

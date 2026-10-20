@@ -6,6 +6,8 @@ eyebrow: Engagement
 
 # Inclusivity
 
+<link rel="stylesheet" href="static/human-practices/title-fonts/inclusivity-title.css">
+
 ## Listening through products {#listening-through-products}
 
 A product can begin with an experience that other people have not noticed, or have found difficult to talk about. We used conversations with entrepreneurs and product builders to explore how inclusivity can take shape in everyday tools: whose experiences they begin with, what they try to support, and how they invite people to participate.

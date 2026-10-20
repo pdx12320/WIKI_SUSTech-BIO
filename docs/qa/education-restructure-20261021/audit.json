@@ -1,0 +1,108 @@
+{
+  "route_status": 200,
+  "primary_chapters": [
+    {
+      "level": 2,
+      "id": "learning-goals-and-audiences",
+      "name": "Learning goals and audiences"
+    },
+    {
+      "level": 2,
+      "id": "classroom-synthetic-biology",
+      "name": "Bringing synthetic biology into the classroom"
+    },
+    {
+      "level": 2,
+      "id": "older-learners-workbook",
+      "name": "A workbook shaped by older learners"
+    },
+    {
+      "level": 2,
+      "id": "touch-and-observation",
+      "name": "Learning through touch and observation"
+    },
+    {
+      "level": 2,
+      "id": "worldproof",
+      "name": "WORLDPROOF: learning through critique and revision"
+    },
+    {
+      "level": 2,
+      "id": "community-and-peer-exchange",
+      "name": "Community learning and peer exchange"
+    },
+    {
+      "level": 2,
+      "id": "evaluation-and-resources",
+      "name": "Evaluation and reusable resources"
+    }
+  ],
+  "legacy_ids_checked": 92,
+  "missing_legacy_ids": [],
+  "resource_urls_checked": 173,
+  "lost_urls": [],
+  "local_link_failures": [],
+  "figure_sequence": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "editable_sources": [
+    {
+      "source": "docs/design/older-adults-textbook-v3/teacher-student/老年大学健康生活教材_学生版_统一字体版.docx",
+      "download": "assets/human-practices/education/workbook-current-student-zh.docx",
+      "sha256": "7be527c5afd61242cbc4d9e1113066f60d8d6645a511f5e996d0ed1e5b7ab57a"
+    },
+    {
+      "source": "docs/design/older-adults-textbook-v3/teacher-student/english/Healthy_Living_for_Older_Adults_Student_Edition.docx",
+      "download": "assets/human-practices/education/workbook-current-student-en.docx",
+      "sha256": "2c57d6f36417c416582633f6f8320b91e5a7e9b963e31af917d8fe6e56477a1a"
+    },
+    {
+      "source": "docs/design/older-adults-textbook-v3/teacher-student/老年大学健康生活教材_教师讲义版_统一字体版.docx",
+      "download": "assets/human-practices/education/workbook-current-teacher-zh.docx",
+      "sha256": "e43092699e47f613a9d7a5e1b931291be0d4b5201300d2d52fb802708cd78d72"
+    }
+  ]
+}

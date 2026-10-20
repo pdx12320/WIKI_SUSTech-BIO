@@ -79,6 +79,7 @@ def pages(page):
         content = load_markdown_content(
             page_config.markdown_path,
             asset_url=lambda filename: url_for("assets", filename=filename),
+            page_url=lambda page: app.jinja_env.globals["url_for"]("pages", page=page),
         )
         return render_template(
             page_config.template,

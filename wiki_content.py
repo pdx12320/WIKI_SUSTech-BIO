@@ -168,6 +168,7 @@ def load_markdown_content(
     markdown_path: str,
     *,
     asset_url: Callable[[str], str] | None = None,
+    page_url: Callable[[str], str] | None = None,
 ) -> MarkdownContent:
     """Read front matter and render one docs-relative Markdown file."""
 
@@ -219,6 +220,16 @@ def load_markdown_content(
         rendered,
     )
     rendered = _rewrite_asset_urls(rendered, asset_url)
+    if page_url is not None:
+        # Resolve Markdown page links through Flask so frozen subdirectory
+        # deployments keep the team prefix and retain queries/fragments.
+        def resolve_page(match):
+            route = match.group(2)
+            if route not in CONTENT_PAGES:
+                return match.group(0)
+            return match.group(1) + page_url(route) + (match.group(3) or "") + match.group(4)
+        rendered = re.sub(r'(<a\b[^>]*\bhref=[\'"])/([a-z0-9-]+)([?#][^\'"]*)?([\'"])',
+                          resolve_page, rendered)
     toc = _flatten_toc(getattr(renderer, "toc_tokens", []))
 
     return MarkdownContent(source_path=source_path, metadata=metadata, html=rendered, toc=toc)

@@ -1842,7 +1842,7 @@ SONAR developed into a **modular, multichannel reporter platform** supported by 
 3. Kim JH, et al. High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. *PLoS ONE*. 2011;6(4):e18556. https://doi.org/10.1371/journal.pone.0018556
 4. Engler C, Kandzia R, Marillonnet S. A one pot, one step, precision cloning method with high throughput capability. *PLoS ONE*. 2008;3(11):e3647. https://doi.org/10.1371/journal.pone.0003647
 5. NCBI. *The Genetic Codes: Standard Code (transl_table=1).* https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
-6. SUSTech-BIO. *Rep-gib WT synonymous StemBreak design*. 1 September 2026. Internal project record: [original design note (Chinese, Markdown)](/static/evidence/sonar-stembreak/StemBreak_synonymous_design_2026-09-01.md), [RNAplfold accessibility table (CSV)](/static/evidence/sonar-stembreak/rnaplfold_accessibility.csv) and [source checksums](/static/evidence/sonar-stembreak/provenance.json). These are computational design records, distinct from the GSGS-insertion RepOpen_HR proposal.
+6. SUSTech-BIO. *Rep-gib WT synonymous StemBreak design*. 1 September 2026. Internal project record: [original design note (Chinese, Markdown)](static/evidence/sonar-stembreak/StemBreak_synonymous_design_2026-09-01.md), [RNAplfold accessibility table (CSV)](/static/evidence/sonar-stembreak/rnaplfold_accessibility.csv) and [source checksums](/static/evidence/sonar-stembreak/provenance.json). These are computational design records, distinct from the GSGS-insertion RepOpen_HR proposal.
 
 ## Model
 

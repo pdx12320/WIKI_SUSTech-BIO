@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% block document_base %}<base href="{{ '/sustech/' if config.get('WIKI_ASSET_MODE') == 'igem' else url_for('home') }}">{% endblock %}
 {% block title %}404 · Page not found{% endblock %}
 {% block body_class %}ot not-found-page{% endblock %}
 {% block navigation %}{% include 'menu.html' %}{% endblock %}

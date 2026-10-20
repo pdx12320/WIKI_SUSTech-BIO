@@ -136,7 +136,13 @@ def install(app):
 
     @app.get('/asset-runtime.js')
     def asset_runtime():
-        active = mapping if app.config['WIKI_ASSET_MODE'] == 'igem' else {}
+        active = {}
+        if app.config['WIKI_ASSET_MODE'] == 'igem':
+            # Dynamic readers need the same download destinations as HTML links.
+            active.update({'/' + name: item['url']
+                           for name, item in app.extensions.get('repository_files', {}).items()
+                           if 'url' in item and 'page' not in item})
+            active.update(mapping)
         return Response(runtime_script(active), mimetype='application/javascript')
 
     @app.after_request
@@ -175,7 +181,10 @@ def install(app):
                 runtime_path = runtime_path.removeprefix(request.script_root)
             relative = posixpath.relpath(runtime_path, posixpath.dirname(request.path) or '/')
             script = '<script src="' + relative + '"></script>'
-            text = re.sub(r'(<head\b[^>]*>)', lambda m: m[0] + script, text, count=1, flags=re.I)
+            # A custom error document may be served at any nested URL.
+            # Its base element must precede the runtime's relative script URL.
+            insertion = r'(<base\b[^>]*>)' if re.search(r'<base\b', text, re.I) else r'(<head\b[^>]*>)'
+            text = re.sub(insertion, lambda m: m[0] + script, text, count=1, flags=re.I)
         response.set_data(text)
         response.headers.pop('ETag', None)
         response.headers.pop('Last-Modified', None)

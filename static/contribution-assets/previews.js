@@ -105,6 +105,8 @@ async function reader(body, link, title) {
   }
 }
 
+export { reader as renderPdfReader };
+
 const article = document.querySelector('.markdown-content');
 if (article) {
   let enabled = false, title = '';

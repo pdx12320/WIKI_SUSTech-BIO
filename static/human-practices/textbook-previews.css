@@ -1,0 +1,10 @@
+.education-manuscript .hp-handbook-edition .contribution-pdf-resource {
+  margin: 14px 0 12px;
+}
+.education-manuscript .hp-handbook-edition .contribution-pdf-viewport {
+  height: 430px;
+  min-height: 280px;
+}
+.education-manuscript .hp-handbook-edition:last-child {
+  grid-column: 1 / -1;
+}

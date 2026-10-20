@@ -326,6 +326,35 @@ Together, these contributions connect a laboratory question to tools others can 
 
 ## Education {#education}
 
+The updated second edition separates student reading and practice from teacher preparation. The [Education page explains the reader feedback and revision process](/education#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes).
+
+### Healthy Living Workbook — Chinese Student Edition {#education-workbook-chinese}
+
+A 56-page book for older learners, with two-page chapters, simpler language and illustrations with consistently typeset labels. Reusable appendices include four weeks each of morning and evening blood pressure and blood sugar records, personal cards, an action plan and four Cornell note pages.
+
+**Language:** Chinese<br>
+**For:** Older learners, community classes and families
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — Chinese Student Edition, PDF, 56 pages">Download student PDF · Chinese <span aria-hidden="true">↓</span></a>
+
+### Healthy Living Workbook — English Student Edition {#education-workbook-english}
+
+The 56-page English student edition shares the same 14 chapters and recording tools. Illustrations depict older adults from different backgrounds; diagram labels use real fonts. Emergency-number prompts and explanations of China-specific services help educators adapt the book to their setting.
+
+**Language:** English<br>
+**For:** English-speaking older learners, community educators and future iGEM teams
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — English Student Edition, PDF, 56 pages">Download student PDF · English <span aria-hidden="true">↓</span></a>
+
+### Healthy Living Workbook — Chinese Teacher’s Guide {#education-workbook-teacher-chinese}
+
+A 54-page companion for preparing and delivering the lessons, with fuller explanations, classroom examples, materials, suggested timings and ways to assist participation. It follows the student books’ chapter names; personal record sheets and note pages remain in the student books.
+
+**Language:** Chinese<br>
+**For:** Senior-university teachers, elderly-service staff and workshop facilitators
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — Chinese Teacher’s Guide, PDF, 54 pages">Download teacher PDF · Chinese <span aria-hidden="true">↓</span></a>
+
 ### Health Rumor Detectives Activity Plan — Chinese Edition {#education-health-rumor-plan-chinese}
 
 This activity plan supports our health-information literacy lessons for older adults in community and elderly service center settings, dated July 2 and October 7, 2026. It provides a reusable 40-minute teaching schedule, four questions for checking health claims, discussion scenarios, staffing and materials, recruitment wording and feedback arrangements.

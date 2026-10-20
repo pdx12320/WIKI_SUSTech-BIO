@@ -1,0 +1,3 @@
+# Build dependencies plus packages used only by the regression tests.
+-r dependencies.txt
+lxml==6.1.1

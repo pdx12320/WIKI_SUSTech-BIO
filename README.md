@@ -37,6 +37,13 @@ For normal content work, edit only the matching Markdown file under `docs/` and 
 5. Save the changes through the team's normal commit and Pull Request workflow
 6. After merge, the automated pipeline builds, tests and deploys the Wiki
 
+## Running regression tests
+
+Install `test-dependencies.txt` in the project virtual environment, then run
+`WIKI_ASSET_MODE=local python -m unittest discover -s tests -v`.
+This includes the pinned `lxml` parser used by the Engineering image tests.
+Production builds that do not run tests can continue to use `dependencies.txt`.
+
 ## About this Template
 
 ### Files

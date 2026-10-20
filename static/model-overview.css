@@ -153,3 +153,11 @@
     background: #fff;
   }
 }
+
+/* Story titles retain the established technical terms underneath. */
+.model-page .model-story-term {
+  display: block;
+  margin: 6px 0 0;
+  font: 400 .9em/1.45 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  color: #56547b;
+}

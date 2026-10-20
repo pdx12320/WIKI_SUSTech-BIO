@@ -81,8 +81,7 @@
       "module1-3",
       "module1-4",
       "module1-5",
-      "module1-6",
-      "module1-7"
+      "module1-6"
     ]
   },
   "2": {
@@ -220,8 +219,7 @@
       "module2-iteration",
       "module2-2",
       "module2-3",
-      "module2-5",
-      "module2-6"
+      "module2-5"
     ]
   },
   "3": {
@@ -300,8 +298,7 @@
       "module3-2",
       "module3-3",
       "module3-4",
-      "module3-5",
-      "module3-6"
+      "module3-5"
     ]
   },
   "4": {
@@ -387,8 +384,7 @@
       "module4-strategy",
       "module4-3",
       "module4-4",
-      "module4-6",
-      "module4-7"
+      "module4-6"
     ]
   }
 }

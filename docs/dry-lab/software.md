@@ -416,4 +416,6 @@ workbench_references:
 
 # Software
 
-## Delivery Dynamics
+## Following the Delivery Journey
+
+<p class="model-story-term">Delivery Dynamics · Whole-body ODE and spatial simulation</p>

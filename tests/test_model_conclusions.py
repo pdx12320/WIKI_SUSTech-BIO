@@ -123,7 +123,9 @@ class ModelConclusionAdditionsTest(unittest.TestCase):
         self.assertNotIn("Toward RNA editing for Alzheimer's disease", introduction.text())
         article = next(node for node in introduction.children if isinstance(node, Element) and node.tag == "article")
         elements = [node for node in article.children if isinstance(node, Element)]
-        self.assertEqual(elements[-1].attrs.get("id"), "model-figure-1")
+        overview_figure = next(i for i, node in enumerate(elements) if node.attrs.get("id") == "model-figure-1")
+        self.assertEqual(elements[overview_figure + 1].tag, "ol")
+        self.assertIn("model-result-links", elements[overview_figure + 1].attrs.get("class", "").split())
         self.assertNotIn("The next translational questions", introduction.text())
 
 

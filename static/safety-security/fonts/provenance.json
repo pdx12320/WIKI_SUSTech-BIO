@@ -12,5 +12,8 @@
   "file": "sora-title-700.woff2",
   "size_bytes": 1940,
   "sha256": "b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4",
-  "usage": "Safety & Security hero h1 only; locally served with font-display swap; no runtime external font requests"
+  "usage": "Safety & Security hero h1 only; locally served with font-display swap; no runtime external font requests",
+  "igem_url": "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
+  "igem_verified_on": "2026-10-21",
+  "igem_verification": "HTTP 200; font/woff2; 1940 bytes; identical SHA-256"
 }

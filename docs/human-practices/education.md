@@ -22,7 +22,9 @@ Our shared framework covered six areas, from molecular biology and biotechnology
 
 **The documents showed strong foundations in biology and experimental reasoning, with less explicit coverage of engineering design and complete design–build–test–learn cycles.** This compares documents, not students' abilities.
 
-We used the findings to focus on familiar problems, design choices and revision. We also created a web simulation to explore how exam questions connect with different curricula; its design will be documented separately.
+We used the findings to focus on familiar problems, design choices and revision. Our **Education Transfer** website makes the four curriculum configurations available for interactive comparison. Drag one configuration onto another, or use the click and keyboard controls, to explore curriculum and assessment coverage across the six domains, choose a focus, and download a source-linked report.
+
+[Open Education Transfer →](https://education-transfer-2fbbbd.igem.wiki/education-transfer-map.html) · [Source code and reproduction instructions →](https://gitlab.igem.org/2026/software/sustech/education-transfer) · [User guide · PDF →](https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-user-guide.pdf)
 
 
 [Curriculum framework · PDF](/assets/human-practices/attachments/curriculum-comparison-reference-framework.pdf)

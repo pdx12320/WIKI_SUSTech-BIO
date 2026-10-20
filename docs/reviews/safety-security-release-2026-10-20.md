@@ -9,3 +9,7 @@ Validation on a separate checkout of current main: 31 content/route tests pass; 
 The browser's 320px document width reached 368px while the Safety figure stayed within the viewport. Global floating sweeper / footer decorations extend beyond the viewport; those shared components are outside this PR. Screenshots and structured results are in ../qa/safety-security-release-20261020/.
 
 The font is committed with its OFL license and source provenance. Its official iGEM upload/mapping remains a deployment prerequisite; this PR does not deploy or modify GitLab. Institutional authorization, participant permissions and scientific review remain the team follow-ups identified by the page.
+
+## Font CDN mapping completed — 21 October 2026
+
+The team supplied https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2. Download verification returned HTTP 200, font/woff2, 1,940 bytes, SHA-256 b20b86e03f48f1693a5b2b4b7832618e0192110184d09c63c855f184aebe45c4, identical to the checked-in font. Added this one file to upload evidence and the explicit mapping; official-resource mode now rewrites the font URL in Safety CSS to that CDN address. Provenance retains the original OFL license and source information. The earlier font-upload deployment prerequisite is complete; no deployment was performed.

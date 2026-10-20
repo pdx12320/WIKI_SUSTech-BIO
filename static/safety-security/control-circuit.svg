@@ -1,0 +1,215 @@
+<svg class="sm-circuit sb-board" viewBox="0 0 1240 1440" role="group" aria-labelledby="sm-title sm-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="sm-title">ORCA safety review board</title>
+<desc id="sm-desc">Eight risk inputs feed a shared review rail. Four processing modules ask what could go wrong, which safeguards are in place, what the evidence shows and whether the next step can proceed. Authorization and records, and Access, Privacy and Misuse review enter Decide. A decision selector offers Proceed to the next defined step, Redesign with a return to Constrain, More evidence with a return to Detect, or Stop. Six project areas are listed at the bottom. Focus a module to highlight its connected lines; activate it to read the corresponding section. Choose a decision to highlight its route. Escape clears the selection.</desc>
+<style>.sb-board, .sb-board * { animation: none!important; transition: none!important; }
+.sb-board text { font: 22px Futura, sans-serif; text-anchor: middle; fill: #171536; }
+.sb-board .sb-start { text-anchor: start; }
+.sb-board :is(path,circle,rect) { stroke: #2e267c; stroke-width: 2; fill: none; }
+.sb-board .sb-main { stroke-width: 4; marker-end: url(#sb-arrow); }
+.sb-board .sb-input { stroke: #6b6880; stroke-width: 1.6; }
+.sb-board .sb-return { stroke: #8d88b6; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#sb-arrow); }
+.sb-board .sb-terminal { fill: #fffefc; }
+.sb-board .sb-junction { fill: #6b6880; stroke: none; }
+.sb-board .sb-eyebrow { font-size: 18px; letter-spacing: 1.2px; fill: #6b6880; }
+.sb-board .sb-start-label { font-size: 18px; fill: #2e267c; }
+.sb-board .sb-number { font-size: 18px; fill: #6b6880; }
+.sb-board .sb-scale { font-size: 21px; }
+.sb-board .sb-module-frame { fill: #fffefc; stroke: #2e267c; stroke-width: 2.3; }
+.sb-board .sb-module-title { font-size: 34px; fill: #2e267c; }
+.sb-board .sb-question { font-size: 21px; }
+.sb-board .sb-keywords { font-size: 19px; fill: #6b6880; }
+.sb-board .sb-input-label { font-size: 20px; fill: #2e267c; }
+.sb-board .sb-security-detail { font-size: 16px; }
+.sb-board .sb-selector-label { font-size: 22px; fill: #2e267c; }
+.sb-board .sb-selector { fill: #fffefc; stroke-width: 2.5; }
+.sb-board .sb-selector-arm { visibility: hidden; stroke-width: 3; }
+.sb-board .sb-return-label { font-size: 18px; fill: #6b6880; }
+.sb-board .sb-contact { fill: #fffefc; }
+.sb-board .sb-hit { stroke: none; fill: transparent; }
+.sb-board .sb-outcome-label { font-size: 23px; fill: #2e267c; }
+.sb-board .sb-proceed-note { font-size: 17px; fill: #514d66; }
+.sb-board .sb-scope { font-size: 22px; fill: #514d66; }
+.sb-board .sb-scope-detail { font-size: 15px; fill: #6b6880; }
+.sb-board .sb-footer-rule { stroke: #d9d7e5; stroke-width: 1; }
+.sb-board a.sb-module { text-decoration: none; }
+.sb-board a.sb-module:hover .sb-module-title { text-decoration: underline; }
+.sb-board :is(.sb-module,.sb-outcome) { cursor: pointer; outline: none; }
+.sb-board[data-active="anticipate"] { --sb-active-color: #355da8; --sb-active-fill: #edf2fb; --sb-active-arrow: url(#sb-arrow-anticipate); }
+.sb-board [data-module="anticipate"] { --sb-module-color: #355da8; --sb-module-fill: #edf2fb; }
+.sb-board[data-active="constrain"] { --sb-active-color: #7450a2; --sb-active-fill: #f2edfa; --sb-active-arrow: url(#sb-arrow-constrain); }
+.sb-board [data-module="constrain"] { --sb-module-color: #7450a2; --sb-module-fill: #f2edfa; }
+.sb-board[data-active="detect"] { --sb-active-color: #23796c; --sb-active-fill: #eaf6f1; --sb-active-arrow: url(#sb-arrow-detect); }
+.sb-board [data-module="detect"] { --sb-module-color: #23796c; --sb-module-fill: #eaf6f1; }
+.sb-board[data-active="decide"] { --sb-active-color: #ad4d62; --sb-active-fill: #fcf0f2; --sb-active-arrow: url(#sb-arrow-decide); }
+.sb-board [data-module="decide"] { --sb-module-color: #ad4d62; --sb-module-fill: #fcf0f2; }
+.sb-board[data-active="anticipate"] [data-module="anticipate"] .sb-module-frame,
+.sb-board[data-active="constrain"] [data-module="constrain"] .sb-module-frame,
+.sb-board[data-active="detect"] [data-module="detect"] .sb-module-frame,
+.sb-board[data-active="decide"] [data-module="decide"] .sb-module-frame { stroke: var(--sb-active-color); fill: var(--sb-active-fill); stroke-width: 3.5; }
+.sb-board[data-active="anticipate"] [data-module="anticipate"] .sb-module-title,
+.sb-board[data-active="constrain"] [data-module="constrain"] .sb-module-title,
+.sb-board[data-active="detect"] [data-module="detect"] .sb-module-title,
+.sb-board[data-active="decide"] [data-module="decide"] .sb-module-title { fill: var(--sb-active-color); }
+.sb-board .sb-module:focus-visible .sb-module-frame { stroke: var(--sb-module-color); fill: var(--sb-module-fill); stroke-width: 3.5; }
+.sb-board .sb-module:focus-visible .sb-module-title { fill: var(--sb-module-color); }
+.sb-board .sb-outcome:focus-visible .sb-hit { stroke: #5d5ad7; stroke-width: 2.5; }
+.sb-board .sb-outcome:hover .sb-outcome-label { text-decoration: underline; }
+.sb-board[data-active="anticipate"] [data-for~="anticipate"],
+.sb-board[data-active="constrain"] [data-for~="constrain"],
+.sb-board[data-active="detect"] [data-for~="detect"],
+.sb-board[data-active="decide"] [data-for~="decide"] { stroke: var(--sb-active-color); stroke-width: 3; }
+.sb-board[data-selection="proceed"] [data-arm="proceed"],
+.sb-board[data-selection="redesign"] [data-arm="redesign"],
+.sb-board[data-selection="more"] [data-arm="more"],
+.sb-board[data-selection="stop"] [data-arm="stop"] { visibility: visible; }
+.sb-board[data-active="anticipate"] :is(.sb-main,.sb-return)[data-for~="anticipate"],
+.sb-board[data-active="constrain"] :is(.sb-main,.sb-return)[data-for~="constrain"],
+.sb-board[data-active="detect"] :is(.sb-main,.sb-return)[data-for~="detect"],
+.sb-board[data-active="decide"] :is(.sb-main,.sb-return)[data-for~="decide"] { marker-end: var(--sb-active-arrow); }
+.sb-board .sb-return { cursor: pointer; pointer-events: stroke; }
+.sb-board[data-selection="redesign"] [data-return="redesign"] { stroke: #7450a2; stroke-width: 3.5; marker-end: url(#sb-arrow-constrain); }
+.sb-board[data-selection="more"] [data-return="more"] { stroke: #23796c; stroke-width: 3.5; marker-end: url(#sb-arrow-detect); }
+.sb-board[data-active="constrain"] [data-return-label="redesign"],
+.sb-board[data-selection="redesign"] [data-return-label="redesign"] { fill: #7450a2; }
+.sb-board[data-active="detect"] [data-return-label="more"],
+.sb-board[data-selection="more"] [data-return-label="more"] { fill: #23796c; }
+.sb-board .sb-outcome[aria-pressed="true"] .sb-contact { fill: #e9e8ff; stroke: #5d5ad7; }
+.sb-board .sb-outcome[aria-pressed="true"] .sb-outcome-label { fill: #5d5ad7; }
+.sm-circuit{display:block;width:100%;height:auto;}</style><defs><marker id="sb-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 8 5 1 9" fill="none" stroke="#2e267c" stroke-width="1.5"/></marker><marker id="sb-arrow-anticipate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 8 5 1 9" fill="none" style="stroke:#355da8;stroke-width:1.5"/></marker><marker id="sb-arrow-constrain" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 8 5 1 9" fill="none" style="stroke:#7450a2;stroke-width:1.5"/></marker><marker id="sb-arrow-detect" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 8 5 1 9" fill="none" style="stroke:#23796c;stroke-width:1.5"/></marker><marker id="sb-arrow-decide" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 8 5 1 9" fill="none" style="stroke:#ad4d62;stroke-width:1.5"/></marker></defs>
+<text class="sb-eyebrow sb-start" x="65" y="62">RISK INPUTS</text>
+<text class="sb-start-label" x="635" y="67">START</text>
+<path class="sb-main sb-wire" data-for="anticipate" d="M635 84V116"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M360 140V875"/>
+<text class="sb-number" x="55" y="140" dominant-baseline="central">01</text>
+<text class="sb-scale sb-start" data-scale="01" x="87" y="140" dominant-baseline="central">Sequence</text>
+<circle class="sb-terminal" cx="300" cy="140" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 140H360"/>
+<circle class="sb-junction" cx="360" cy="140" r="3"/>
+<text class="sb-number" x="55" y="220" dominant-baseline="central">02</text>
+<text class="sb-scale sb-start" data-scale="02" x="87" y="220" dominant-baseline="central">System</text>
+<circle class="sb-terminal" cx="300" cy="220" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 220H360"/>
+<circle class="sb-junction" cx="360" cy="220" r="3"/>
+<text class="sb-number" x="55" y="300" dominant-baseline="central">03</text>
+<text class="sb-scale sb-start" data-scale="03" x="87" y="300" dominant-baseline="central">Editor</text>
+<circle class="sb-terminal" cx="300" cy="300" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 300H360"/>
+<circle class="sb-junction" cx="360" cy="300" r="3"/>
+<text class="sb-number" x="55" y="380" dominant-baseline="central">04</text>
+<text class="sb-scale sb-start" data-scale="04" x="87" y="380" dominant-baseline="central">Cellular</text>
+<circle class="sb-terminal" cx="300" cy="380" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 380H360"/>
+<circle class="sb-junction" cx="360" cy="380" r="3"/>
+<text class="sb-number" x="55" y="460" dominant-baseline="central">05</text>
+<text class="sb-scale sb-start" data-scale="05" x="87" y="460" dominant-baseline="central">Measurement</text>
+<circle class="sb-terminal" cx="300" cy="460" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 460H360"/>
+<circle class="sb-junction" cx="360" cy="460" r="3"/>
+<text class="sb-number" x="55" y="540" dominant-baseline="central">06</text>
+<text class="sb-scale sb-start" data-scale="06" x="87" y="540" dominant-baseline="central">Functional</text>
+<circle class="sb-terminal" cx="300" cy="540" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 540H360"/>
+<circle class="sb-junction" cx="360" cy="540" r="3"/>
+<text class="sb-number" x="55" y="620" dominant-baseline="central">07</text>
+<text class="sb-scale sb-start" data-scale="07" x="87" y="620" dominant-baseline="central">Treatment</text>
+<circle class="sb-terminal" cx="300" cy="620" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 620H360"/>
+<circle class="sb-junction" cx="360" cy="620" r="3"/>
+<text class="sb-number" x="55" y="700" dominant-baseline="central">08</text>
+<text class="sb-scale sb-start" data-scale="08" x="87" y="700" dominant-baseline="central">Human &amp; societal</text>
+<circle class="sb-terminal" cx="300" cy="700" r="6"/>
+<path class="sb-input sb-wire" data-for="anticipate constrain detect decide" d="M306 700H360"/>
+<circle class="sb-junction" cx="360" cy="700" r="3"/>
+<path class="sb-input sb-wire" data-for="anticipate" d="M360 195H431"/>
+<circle class="sb-junction" cx="360" cy="195" r="3"/>
+<a class="sb-module" data-module="anticipate" href="/safety-and-security#i-anticipate" role="link" aria-label="Read Anticipate: What could go wrong?">
+<rect class="sb-module-frame" x="435" y="120" width="400" height="150" rx="8"/>
+<text class="sb-module-title sb-start" x="466" y="164">Anticipate</text>
+<text class="sb-question sb-start" x="466" y="203">What could go wrong?</text>
+<text class="sb-keywords sb-start" x="466" y="241">Off-targets · Exposure</text>
+</a>
+<path class="sb-main sb-wire" data-for="anticipate constrain" d="M635 270V336"/>
+<path class="sb-input sb-wire" data-for="constrain" d="M360 415H431"/>
+<circle class="sb-junction" cx="360" cy="415" r="3"/>
+<a class="sb-module" data-module="constrain" href="/safety-and-security#ii-constrain" role="link" aria-label="Read Constrain: What safeguards are in place?">
+<rect class="sb-module-frame" x="435" y="340" width="400" height="150" rx="8"/>
+<text class="sb-module-title sb-start" x="466" y="384">Constrain</text>
+<text class="sb-question sb-start" x="466" y="423">What safeguards are in place?</text>
+<text class="sb-keywords sb-start" x="466" y="461">Containment · Consent</text>
+</a>
+<path class="sb-main sb-wire" data-for="constrain detect" d="M635 490V556"/>
+<path class="sb-input sb-wire" data-for="detect" d="M360 635H431"/>
+<circle class="sb-junction" cx="360" cy="635" r="3"/>
+<a class="sb-module" data-module="detect" href="/safety-and-security#iii-detect" role="link" aria-label="Read Detect: What does the evidence show?">
+<rect class="sb-module-frame" x="435" y="560" width="400" height="150" rx="8"/>
+<text class="sb-module-title sb-start" x="466" y="604">Detect</text>
+<text class="sb-question sb-start" x="466" y="643">What does the evidence show?</text>
+<text class="sb-keywords sb-start" x="466" y="681">Assays · Uncertainty</text>
+</a>
+<path class="sb-main sb-wire" data-for="detect decide" d="M635 710V796"/>
+<path class="sb-input sb-wire" data-for="decide" d="M360 875H431"/>
+<circle class="sb-junction" cx="360" cy="875" r="3"/>
+<a class="sb-module" data-module="decide" href="/safety-and-security#iv-decide" role="link" aria-label="Read Decide: Can we proceed to the next step?">
+<rect class="sb-module-frame" x="435" y="800" width="400" height="150" rx="8"/>
+<text class="sb-module-title sb-start" x="466" y="844">Decide</text>
+<text class="sb-question sb-start" x="466" y="883">Can we proceed to the next step?</text>
+<text class="sb-keywords sb-start" x="466" y="921">Evidence · Authorization</text>
+</a>
+<text class="sb-input-label sb-start" x="900" y="740">Authorization &amp; records</text>
+<circle class="sb-terminal" cx="1035" cy="770" r="6"/>
+<path class="sb-input sb-wire" data-for="decide" d="M1028 770H880V850H839"/>
+<text class="sb-input-label sb-start" x="900" y="875">Security review</text>
+<text class="sb-security-detail sb-start" x="900" y="905">Access · Privacy · Misuse review</text>
+<circle class="sb-terminal" cx="1035" cy="930" r="6"/>
+<path class="sb-input sb-wire" data-for="decide" d="M1028 930H865V925H839"/>
+<path class="sb-main sb-wire" data-for="decide" d="M635 950V1090H821"/>
+<text class="sb-selector-label" x="800" y="1000">Decision selector</text>
+<circle class="sb-selector" cx="840" cy="1090" r="17"/>
+<path class="sb-selector-arm" data-arm="proceed" d="M840 1090 900 1000"/>
+<path class="sb-selector-arm" data-arm="redesign" d="M840 1090 900 1070"/>
+<path class="sb-selector-arm" data-arm="more" d="M840 1090 900 1140"/>
+<path class="sb-selector-arm" data-arm="stop" d="M840 1090 900 1210"/>
+<path class="sb-return sb-wire" data-return="redesign" data-for="constrain" d="M900 1070H875V1050H1205V415H839"/>
+<text class="sb-return-label sb-start" data-return-label="redesign" x="905" y="391">Redesign → Constrain</text>
+<path class="sb-return sb-wire" data-return="more" data-for="detect" d="M900 1140H860V1100H1165V635H839"/>
+<text class="sb-return-label sb-start" data-return-label="more" x="905" y="611">More evidence → Detect</text>
+<g class="sb-outcome" data-outcome="proceed" role="button" tabindex="0" aria-pressed="false" aria-label="PROCEED: to the next defined step">
+<rect class="sb-hit" x="888" y="973" width="330" height="66" rx="5"/>
+<circle class="sb-contact" cx="900" cy="1000" r="6"/>
+<path class="sb-out-line" d="M907 1000H944"/>
+<text class="sb-outcome-label sb-start" x="963" y="1008">PROCEED</text>
+<text class="sb-proceed-note sb-start" x="963" y="1034">to the next defined step</text>
+</g>
+<g class="sb-outcome" data-outcome="redesign" role="button" tabindex="0" aria-pressed="false" aria-label="REDESIGN">
+<rect class="sb-hit" x="888" y="1043" width="330" height="54" rx="5"/>
+<circle class="sb-contact" cx="900" cy="1070" r="6"/>
+<path class="sb-out-line" d="M907 1070H944"/>
+<text class="sb-outcome-label sb-start" x="963" y="1078">REDESIGN</text>
+</g>
+<g class="sb-outcome" data-outcome="more" role="button" tabindex="0" aria-pressed="false" aria-label="MORE EVIDENCE">
+<rect class="sb-hit" x="888" y="1113" width="330" height="54" rx="5"/>
+<circle class="sb-contact" cx="900" cy="1140" r="6"/>
+<path class="sb-out-line" d="M907 1140H944"/>
+<text class="sb-outcome-label sb-start" x="963" y="1148">MORE EVIDENCE</text>
+</g>
+<g class="sb-outcome" data-outcome="stop" role="button" tabindex="0" aria-pressed="false" aria-label="STOP">
+<rect class="sb-hit" x="888" y="1183" width="330" height="54" rx="5"/>
+<circle class="sb-contact" cx="900" cy="1210" r="6"/>
+<path class="sb-out-line" d="M907 1210H944"/>
+<text class="sb-outcome-label sb-start" x="963" y="1218">STOP</text>
+</g>
+<path class="sb-footer-rule" d="M65 1280H1175"/>
+<text class="sb-eyebrow sb-start" x="65" y="1323">APPLIES ACROSS ORCA</text>
+<text class="sb-scope" x="150" y="1365">Wet lab</text>
+<text class="sb-scope-detail" x="150" y="1397">Risk / containment</text>
+<text class="sb-scope" x="330" y="1365">HP</text>
+<text class="sb-scope-detail" x="330" y="1397">Choice / privacy</text>
+<text class="sb-scope" x="510" y="1365">Education</text>
+<text class="sb-scope-detail" x="510" y="1397">Media consent review</text>
+<text class="sb-scope" x="690" y="1365">Inclusivity</text>
+<text class="sb-scope-detail" x="690" y="1397">Camera permissions review</text>
+<text class="sb-scope" x="870" y="1365">Model</text>
+<text class="sb-scope-detail" x="870" y="1397">QC / uncertainty</text>
+<text class="sb-scope" x="1050" y="1365">Software</text>
+<text class="sb-scope-detail" x="1050" y="1397">Access / misuse review</text>
+</svg>

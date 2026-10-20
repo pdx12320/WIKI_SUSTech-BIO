@@ -1,0 +1,105 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "engineeringStickyReference": true
+    },
+    {
+      "keyboard": "anticipate",
+      "current": true,
+      "sticky": {
+        "position": "sticky",
+        "top": 140,
+        "bottom": 972
+      }
+    },
+    {
+      "keyboard": "constrain",
+      "current": true,
+      "sticky": {
+        "position": "sticky",
+        "top": 140,
+        "bottom": 972
+      }
+    },
+    {
+      "keyboard": "detect",
+      "current": true,
+      "sticky": {
+        "position": "sticky",
+        "top": 140,
+        "bottom": 972
+      }
+    },
+    {
+      "keyboard": "decide",
+      "current": true,
+      "sticky": {
+        "position": "sticky",
+        "top": 140,
+        "bottom": 972
+      }
+    },
+    {
+      "mouseJump": true
+    },
+    {
+      "fullFigureJump": true
+    },
+    {
+      "layout": {
+        "width": 1024,
+        "scroll": 1024,
+        "figureRight": 884.921875,
+        "dockDisplay": "flex",
+        "mobileDisplay": "none"
+      }
+    },
+    {
+      "layout": {
+        "width": 768,
+        "scroll": 768,
+        "figureRight": 640.4453125,
+        "dockDisplay": "flex",
+        "mobileDisplay": "none"
+      }
+    },
+    {
+      "layout": {
+        "width": 760,
+        "scroll": 760,
+        "figureRight": 697,
+        "dockDisplay": "none",
+        "mobileDisplay": "block"
+      }
+    },
+    {
+      "layout": {
+        "width": 390,
+        "scroll": 390,
+        "figureRight": 327,
+        "dockDisplay": "none",
+        "mobileDisplay": "block"
+      }
+    },
+    {
+      "layout": {
+        "width": 320,
+        "scroll": 368,
+        "figureRight": 257,
+        "dockDisplay": "none",
+        "mobileDisplay": "block"
+      }
+    },
+    {
+      "reducedMotionStatic": true
+    },
+    {
+      "mainBoardInteractionPreserved": true
+    },
+    {
+      "originalDirectoryWithoutJS": true
+    }
+  ],
+  "errors": []
+}

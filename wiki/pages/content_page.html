@@ -60,7 +60,7 @@
 <main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% elif has_model_surface %} content-page--model-surface{% endif %}">
   {% if personality %}
   {% from 'components/chapter_personality.html' import chapter_header %}
-  {{ chapter_header(personality, content.title, 'content-overview') }}
+  {{ chapter_header(personality, content.title, 'content-overview', content.metadata.get('header_introduction')) }}
   {% else %}
   <header class="content-overview">
     <h1>{{ content.title }}</h1>

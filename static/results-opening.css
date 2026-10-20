@@ -1,0 +1,48 @@
+/* The page introduction belongs to the Results header, above the reading area. */
+.results-page header.chapter-personality--results {
+  padding-bottom: 28px;
+}
+
+.results-page .chapter-personality--results .chapter-personality__row {
+  height: 200px;
+}
+
+.results-page .chapter-personality--results .chapter-personality__introduction {
+  max-width: 1010px;
+  margin: 20px 0 0;
+  color: #454963;
+  font: 400 clamp(20px, 1.8vw, 24px)/1.6 Georgia, 'Times New Roman', serif;
+  letter-spacing: -.012em;
+  text-wrap: pretty;
+}
+
+.results-page .chapter-personality--results .chapter-personality__rule {
+  margin-top: 32px;
+}
+
+.results-page .markdown-content > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (max-width: 760px) {
+  .results-page header.chapter-personality--results {
+    padding-bottom: 20px;
+  }
+
+  .results-page .chapter-personality--results .chapter-personality__row {
+    height: 128px;
+  }
+
+  .results-page .chapter-personality--results .chapter-personality__introduction {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  .results-page .chapter-personality--results .chapter-personality__rule {
+    margin-top: 24px;
+  }
+}

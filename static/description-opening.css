@@ -1,0 +1,93 @@
+/* A typographic chapter opening. All prose remains immediately accessible. */
+body:not(.ot) main:has(> .description-opening) { padding-top: 0; }
+.description-opening {
+  position: relative;
+  width: min(1280px, 100%);
+  min-height: max(470px, calc(100svh - var(--nav-h, 112px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  color: #2e3065;
+  isolation: isolate;
+}
+.description-opening__stage { position: relative; display: grid; place-content: center; padding: 30px 0 55px; }
+.description-opening h1 {
+  position: relative; z-index: 2;
+  display: flex; align-items: baseline; justify-content: center;
+  width: max-content; max-width: 100%;
+  margin: 0 auto; padding: 0 .075em 0 0;
+  color: #2e3065;
+  font: italic 400 clamp(64px, 13.1vw, 188px)/1.18 Georgia, 'Times New Roman', serif;
+  letter-spacing: -.065em;
+  user-select: none;
+}
+.description-opening h1::after { content: none; }
+.description-opening__word { display: inline-flex; align-items: baseline; }
+.description-opening__letter {
+  display: inline-block;
+  transform-origin: 50% 78%;
+  will-change: transform;
+}
+.description-opening__dot {
+  display: inline-block;
+  position: relative;
+  margin: 0; padding: 0 0 0 .015em;
+  border: 0; border-radius: 0; background: transparent;
+  font: inherit; line-height: inherit; letter-spacing: inherit;
+  color: #c4849c; cursor: pointer;
+  transform-origin: 50% 80%;
+  -webkit-tap-highlight-color: transparent;
+}
+.description-opening__dot:focus-visible { outline: 1px solid #bf7e98; outline-offset: 12px; border-radius: 10px; }
+.description-opening__ripples { position: absolute; left: var(--ripple-x, 85%); top: var(--ripple-y, 60%); width: 0; height: 0; pointer-events: none; z-index: 0; }
+.description-opening__ripples i {
+  position: absolute; display: block;
+  width: clamp(260px, 50vw, 740px); aspect-ratio: 4.5;
+  border: 1px solid #c58ba1; border-radius: 50%; opacity: 0;
+  transform: translate(-50%, -50%) scale(.1);
+}
+.description-opening.is-rippling .description-opening__ripples i { animation: description-ripple 2.1s ease-out both; animation-delay: var(--wave-delay, 0ms); }
+.description-opening.is-rippling .description-opening__ripples i:nth-child(2) { animation-delay: calc(var(--wave-delay, 0ms) + .16s); }
+.description-opening.is-rippling .description-opening__ripples i:nth-child(3) { animation-delay: calc(var(--wave-delay, 0ms) + .32s); }
+.description-opening__read {
+  justify-self: center; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  margin: 0 0 29px; padding: 14px 24px;
+  color: #88869f; text-decoration: none;
+  font: 500 9px/1.5 var(--sans); letter-spacing: .19em;
+}
+.description-opening__read svg { transition: transform .25s ease; color: #b88299; }
+.description-opening__read:hover { color: #39375f; }
+.description-opening__read:hover svg { transform: translateY(5px); }
+.description-opening__read:focus-visible { outline: 1px solid #b88299; outline-offset: 3px; border-radius: 4px; }
+/* Keep the outgoing rings inside this chapter, including on small screens. */
+.description-opening__stage { overflow: clip; }
+.description-opening__swimmer {
+  position: absolute; left: 0; top: 0;
+  width: 126px;
+  pointer-events: none; opacity: 0;
+  will-change: transform, opacity;
+  transform-origin: 50% 50%;
+}
+.description-opening__swimmer[hidden] { display: none; }
+.description-opening__swimmer img {
+  display: block; width: 100%; height: auto;
+  /* The shared navigation artwork faces down-left; level it to face right. */
+  transform: rotate(-30deg) scaleX(-1);
+}
+.description-opening__swimmer--front { z-index: 3; }
+.description-opening__swimmer--back { z-index: 1; }
+@keyframes description-ripple {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.12); }
+  12% { opacity: .3; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.7); }
+}
+@media (max-width: 760px) {
+  .description-opening { min-height: max(410px, calc(100svh - var(--nav-h, 190px))); }
+  .description-opening h1 { font-size: clamp(49px, 13.2vw, 100px); }
+  .description-opening__stage { padding-bottom: 50px; }
+  .description-opening__read { margin-bottom: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .description-opening *, .description-opening.is-rippling * { animation: none !important; transition: none !important; }
+  .description-opening__swimmer { display: none !important; }
+}

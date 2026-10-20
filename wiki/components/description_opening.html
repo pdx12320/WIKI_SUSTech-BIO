@@ -1,0 +1,15 @@
+{% macro opening_orca(index, depth) %}
+    <div class="description-opening__swimmer description-opening__swimmer--{{ depth }}" data-description-swimmer="{{ index }}" aria-hidden="true" hidden>
+      <img src="{{ url_for('static', filename='assets/intro/fish-large-01.png') }}" alt="" width="174" height="128" draggable="false">
+    </div>
+{% endmacro %}
+<header class="description-opening" data-description-opening aria-labelledby="description-opening-title">
+  <div class="description-opening__stage">
+    {{ opening_orca(0, "front") }}
+    {{ opening_orca(1, "back") }}
+    {{ opening_orca(2, "front") }}
+    <div class="description-opening__ripples" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1 id="description-opening-title" aria-label="Description"><span class="description-opening__word" aria-hidden="true">{% for letter in 'Description' %}<span class="description-opening__letter">{{ letter }}</span>{% endfor %}</span><button class="description-opening__dot" type="button" data-description-replay aria-label="Invite the orcas to swim by" title="Invite the orcas">.</button></h1>
+  </div>
+  <a class="description-opening__read" href="#alzheimer-s-disease-the-problem"><span>SCROLL TO BEGIN</span><svg width="20" height="32" viewBox="0 0 20 32" fill="none" aria-hidden="true"><path d="M10 2v25m-5-5 5 5 5-5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+</header>

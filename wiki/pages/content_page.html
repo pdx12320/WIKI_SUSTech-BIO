@@ -47,6 +47,7 @@
 {% if content.source_label == 'docs/wet-lab/measurement.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='measurement-reading.css') }}">{% endif %}
 {% if content.source_label == 'docs/project/results.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='experiment-prose.css') }}">{% endif %}
 {% if personality %}<link rel="stylesheet" href="{{ url_for('static', filename='chapter-personalities.css') }}">{% endif %}
+{% if is_description %}<link rel="stylesheet" href="{{ url_for('static', filename='description-opening.css') }}">{% endif %}
 {% endblock %}
 {% block page_scripts %}
 {% if has_dbtl %}<script src="{{ url_for('static', filename='reading-orbit/dbtl-wheel.js') }}" defer></script>{% endif %}
@@ -54,11 +55,14 @@
 <script src="{{ url_for('static', filename='content-back-to-top.js') }}" defer></script>
 {% if content.source_label == 'docs/project/description.md' %}<script src="{{ url_for('static', filename='description-stats.js') }}" defer></script>{% endif %}
 {% if content.source_label == 'docs/project/results.md' %}<script src="{{ url_for('static', filename='experiment-prose.js') }}" defer></script>{% endif %}
+{% if is_description %}<script src="{{ url_for('static', filename='description-opening.js') }}" defer></script>{% endif %}
 {% endblock %}
 
 {% block main %}
 <main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% elif has_model_surface %} content-page--model-surface{% endif %}">
-  {% if personality %}
+  {% if is_description %}
+  {% include 'components/description_opening.html' %}
+  {% elif personality %}
   {% from 'components/chapter_personality.html' import chapter_header %}
   {{ chapter_header(personality, content.title, 'content-overview', content.metadata.get('header_introduction')) }}
   {% else %}

@@ -24,9 +24,9 @@
 .results-page .content-page .markdown-content .sonar-cycle-card p { margin:0; color:#56626a; font:14.5px/1.65 var(--sans); }
 .results-page .content-page .markdown-content .sonar-cycle-card .sonar-cycle-role { margin-bottom:14px; color:#495b62; font:italic 16px/1.4 Georgia,'Times New Roman',serif; }
 .results-page .content-page .markdown-content .sonar-cycle-card strong { color:#344a54; font-weight:600; }
-.results-page .content-page .markdown-content .sonar-chapter-link { position:absolute; left:18px; bottom:16px; display:inline-block; padding:7px 10px; border:1px solid #b9acce; border-radius:5px; color:#57436f; background:#e9e1f2; font:600 12px/1.2 var(--sans); text-decoration:none; }
-.results-page .content-page .markdown-content .sonar-chapter-link:hover { color:#443157; border-color:#9c88b6; background:#ddd1eb; }
-.results-page .content-page .markdown-content .sonar-chapter-link:focus-visible { outline:2px solid #80649d; outline-offset:3px; }
+.results-page .content-page .markdown-content .sonar-chapter-link { position:absolute; left:18px; bottom:16px; display:inline-block; padding:7px 10px; border:1px solid #d7c5ad; border-radius:5px; color:#6b5135; background:#fffdf9; font:600 12px/1.2 var(--sans); text-decoration:none; }
+.results-page .content-page .markdown-content .sonar-chapter-link:hover { color:#60462d; border-color:#c8ae8d; background:#f6efe4; }
+.results-page .content-page .markdown-content .sonar-chapter-link:focus-visible { outline:2px solid #ac8050; outline-offset:3px; }
 .results-page .content-page .markdown-content .sonar-explanation { margin-top:26px; }
 @media(max-width:1199px) {
   .results-page .content-page .markdown-content figure.sonar-system { padding:24px 20px; }

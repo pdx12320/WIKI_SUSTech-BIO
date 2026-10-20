@@ -1,0 +1,35 @@
+/* Real-world questions, using the Results serif/sans hierarchy and SONAR palette. */
+.results-page .results-questions { container-type:inline-size; margin-bottom:52px; }
+.results-page .content-page .markdown-content .questions-eyebrow { margin:0 0 14px; color:#57436f; font:600 12px/1.5 var(--sans); letter-spacing:.12em; text-transform:uppercase; }
+.results-page .content-page .markdown-content .questions-introduction { margin:0 0 28px; color:#536474; font:18px/1.75 var(--sans); }
+.results-page .questions-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+.results-page .question-card { --question-accent:#365c7c; min-width:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:24px; padding:26px; border:1px solid #dce1dc; border-radius:14px; background:#edf0f4; }
+.results-page .question-card--validate { --question-accent:#436851; }
+.results-page .question-card--control { --question-accent:#57436f; }
+.results-page .question-header { grid-column:1 / -1; padding-bottom:24px; }
+.results-page .content-page .markdown-content .question-category { margin:0 0 10px; color:#536474; font:600 11px/1.5 var(--sans); letter-spacing:.1em; text-transform:uppercase; }
+.results-page .content-page .markdown-content .question-header h3 { margin:0 0 10px; padding:0; border:0; color:var(--question-accent); font:normal 25px/1.25 Georgia,serif; letter-spacing:-.025em; }
+.results-page .content-page .markdown-content .question-source { margin:0; color:#536474; font:13px/1.6 var(--sans); }
+.results-page .content-page .markdown-content .question-source a { color:inherit; text-decoration:underline; text-decoration-color:#c8cdd1; text-underline-offset:3px; }
+.results-page .question-stage { min-width:0; }
+.results-page .question-stage + .question-stage { padding-left:24px; border-left:1px solid #dce1dc; }
+.results-page .content-page .markdown-content .question-stage p { margin:0; color:#354b57; font:15.5px/1.65 var(--sans); }
+.results-page .content-page .markdown-content .question-stage .question-label { display:flex; align-items:center; gap:9px; margin:0 0 8px; color:var(--question-accent); font:600 10.5px/1.5 var(--sans); letter-spacing:.08em; text-transform:uppercase; }
+.results-page .question-label span { display:inline-block; transform:rotate(-90deg); color:#75828e; font-size:14px; font-weight:400; }
+.results-page .content-page .markdown-content .questions-footer { margin:22px 0 0; text-align:right; font:500 14px/1.6 var(--sans); }
+.results-page .content-page .markdown-content .questions-footer a { color:#57436f; text-decoration:underline; text-underline-offset:4px; }
+.results-page .results-questions a:hover { text-decoration-thickness:2px; }
+.results-page .results-questions a:focus-visible { outline:2px solid #80649d; outline-offset:4px; border-radius:2px; }
+/* Keep the long cards stacked; let their three stages flow vertically on narrow screens. */
+@container (max-width:650px) {
+  .results-page .question-card { grid-template-columns:1fr; padding:22px; }
+  .results-page .question-stage { padding-bottom:20px; }
+  .results-page .question-stage + .question-stage { padding-left:0; border-left:0; }
+  .results-page .question-card .question-progress { padding:18px 0 0; border-top:1px solid #dce1dc; }
+  .results-page .question-label span { transform:none; }
+  .results-page .content-page .markdown-content .questions-footer { text-align:left; }
+}
+@media print {
+  .results-page .questions-grid { display:block; }
+  .results-page .question-card { margin-bottom:18px; break-inside:avoid; }
+}

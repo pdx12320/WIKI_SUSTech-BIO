@@ -1,11 +1,12 @@
 from os import environ, path
 import json
-from flask import Flask, abort, render_template, send_from_directory, url_for
+from flask import Flask, abort, render_template, request, send_from_directory, url_for
 from flask_frozen import Freezer
 from markupsafe import Markup
 
 from wiki_content import CONTENT_PAGES, NAVIGATION, load_markdown_content
 from igem_assets import install as install_igem_assets
+from reading_navigation import reading_navigation_mode
 
 
 template_folder = path.abspath("./wiki")
@@ -91,7 +92,11 @@ def pages(page):
 
 @app.context_processor
 def inject_navigation():
-    return {"navigation_groups": NAVIGATION}
+    page = (request.view_args or {}).get("page", "").lower()
+    return {
+        "navigation_groups": NAVIGATION,
+        "reader_mode": reading_navigation_mode(request.endpoint, CONTENT_PAGES.get(page)),
+    }
 
 
 @app.errorhandler(404)

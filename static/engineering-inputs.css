@@ -1,35 +1,5 @@
-/* Engineering-only contextual inputs; keep the article's reading order. */
-.engineering-workspace .engineering-input {
-  margin: 1.8rem 0 2.2rem;
-  padding: 1.1rem 0;
-  border-block: 1px solid rgba(61, 64, 155, .22);
-  background: #fff4b5;
-  padding-inline: 1rem;
-  color: inherit;
-  font-size: .94em;
-}
-.engineering-workspace .engineering-input .engineering-input__label {
-  margin: 0 0 .65rem;
-  color: #3d409b;
-  font-size: .8em;
-  font-weight: 700;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-.engineering-workspace .engineering-input p { margin: .6rem 0; }
+/* HP inputs reuse the existing Engineering Overview card and title system. */
 .engineering-workspace .engineering-input a { overflow-wrap: anywhere; }
-@media (max-width: 640px) {
-  .engineering-workspace .engineering-input { margin-block: 1.4rem; font-size: .96em; }
-}
-
-/* Temporary review highlighting for this HP integration. */
-.engineering-workspace .engineering-review {
-  background: #ffe478;
-  color: inherit;
-  padding: .1em .2em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
 .engineering-workspace .engineering-input .engineering-input__sources {
   font-size: .82em;
   line-height: 1.6;

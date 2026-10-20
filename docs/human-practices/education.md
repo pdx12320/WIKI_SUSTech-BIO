@@ -126,40 +126,55 @@ We revised the workbook around those needs: shorter reading sections, illustrati
 
 #### Revised edition {#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes}
 
-The second edition adds hand-drawn illustrations and an English version.
+The second edition now separates materials for **older learners** from materials for **teachers**. Student editions are available in **Chinese and English**, alongside a **Chinese teacher’s guide**. They cover the same 14 chapters, from everyday health to photography, gardening, crafts and music.
 
-<div class="hp-handbook-pair" role="group" aria-label="Version 2 in Chinese and English">
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<link rel="stylesheet" href="static/human-practices/textbook-previews.css">
+<script type="module" src="static/human-practices/textbook-previews.js"></script>
+
+<div class="hp-handbook-pair" role="group" aria-label="Second edition: Chinese and English student books and Chinese teacher’s guide">
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-zh">
-    <h5 id="hp-handbook-zh">Chinese edition</h5>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-zh.pdf" data-pdf-title="Version 2 · Chinese">Download PDF</a></p>
-    <p class="hp-handbook-editable"><a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx">Editable Word version</a></p>
+    <h5 id="hp-handbook-zh">Student edition · Chinese</h5>
+    <p>56 pages. Short lessons for older learners, with practice, health logs and space for notes.</p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf" data-pdf-title="Second edition · Student · Chinese">Download student PDF · Chinese</a></p>
   </section>
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-en">
-    <h5 id="hp-handbook-en">English edition</h5>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-en.pdf" data-pdf-title="Version 2 · English">Download PDF</a></p>
-    <p class="hp-handbook-editable"><a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx">Editable Word version</a></p>
+    <h5 id="hp-handbook-en">Student edition · English</h5>
+    <p>56 pages. The same lesson structure and recording tools, adapted for English-speaking older learners.</p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf" data-pdf-title="Second edition · Student · English">Download student PDF · English</a></p>
+  </section>
+  <section class="hp-handbook-edition" aria-labelledby="hp-handbook-teacher-zh">
+    <h5 id="hp-handbook-teacher-zh">Teacher’s guide · Chinese</h5>
+    <p>54 pages. Fuller explanations, classroom examples, materials, activity timings and ways to assist participation.</p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf" data-pdf-title="Second edition · Teacher’s guide · Chinese">Download teacher PDF · Chinese</a></p>
   </section>
 </div>
 
-It combines short health lessons with space to record bodily changes, medication questions and medical visits. Readers can also explore interests such as gardening, photography, crafts and music.
+**For older learners:** each chapter has two pages, with pictures, short steps, a shared practice activity and three things to remember. We simplified long sentences and teaching instructions so readers can find a useful action more easily. Practical safety reminders remain beside the relevant activity.
 
-As we revised the handbook, older adults' reading habits and questions became part of its design. We wanted readers to be able to find a useful page, write down a concern or begin with something they enjoyed. Their experience helped us decide what deserved space.
+**For use at home:** the student appendices include a medicine card, an emergency contact card, four weekly pages for morning and evening blood pressure records, and another four for blood sugar records. There are also a four-week action plan and four Cornell note pages, with separate areas for key words and questions, main notes and an after-class summary. Measuring schedules follow each reader’s healthcare professional’s advice.
+
+**For teachers:** the guide retains the fuller teaching material and adds a suggested lesson sequence, demonstrations and assisted ways to participate. Teachers and learners can follow the same chapter names. Personal record sheets and note pages are kept in the student books, so the teacher’s guide does not duplicate them.
+
+**Pictures and language:** we replaced unclear illustrations with simpler AI-assisted drawings and added all diagram labels separately using real fonts, with consistent lettering within each language edition. The English student edition also adapts the illustrated people for an international audience, uses local emergency-number prompts and identifies services that are specific to China.
 
 #### What changed {#hp-workbook-version-comparison}
 
 <div class="hp-workbook-comparison" markdown="1">
 
-| Change | Version 1 | Version 2 | Feedback behind it |
+| Change | Version 1 | Version 2, updated release | Feedback behind it |
 | --- | --- | --- | --- |
-| Page layout | Long explanations, chapter maps and quizzes. | Short sections, illustrations and step-by-step prompts. | Ms. Wu reported small print and dense text. She recommended more pictures and fewer words. |
-| Writing space | Chapter summaries and review questions. | Dedicated pages for symptoms, medicines and questions to ask at appointments. | Ms. Wu noted that some older adults like recording health knowledge and recommended space for notes. |
-| Finding a useful page | Health topics organized by chapter. | A topic map and pages readers can choose according to their needs. | Our response to reported reading difficulties and everyday health-information needs. |
+| Page layout and language | Long explanations, chapter maps and quizzes. | Two-page student chapters with short steps, practice and three takeaways. | Ms. Wu reported small print and dense text. She recommended more pictures and fewer words. |
+| Writing space | Chapter summaries and review questions. | Four weeks each of morning/evening blood pressure and blood sugar logs, four Cornell note pages, personal cards and an action plan. | Ms. Wu recommended space for notes. The specific forms and four-week format are our later editorial choices. |
+| Pictures and lettering | The original illustration set. | Simpler illustrations with labels typeset using real fonts. | Our editorial work to make the revised pictures clearer and the lettering consistent. |
+| Teachers and learners | One workbook. | Separate student books and a Chinese teacher’s guide, matched by chapter name. | A team addition to separate reading and practice from lesson preparation. |
+| Finding a useful page | Health topics organized by chapter. | A topic guide and chapters readers can choose according to their needs. | Our response to reported reading difficulties and everyday health-information needs. |
 | New topics | Health education. | Health lessons plus photography, gardening, crafts and music. | A team addition. No specific participant request for these topics is recorded. |
-| Language | Chinese. | Chinese and English. | A team addition to support sharing in other settings. |
+| Language | Chinese. | Chinese and English student editions; Chinese teacher’s guide. | A team addition to support sharing in other settings. |
 
 </div>
 
-Feedback is summarized from the Shahe field notes and workbook discussions. Ms. Wu is a pseudonym. The table distinguishes reported suggestions from changes we introduced ourselves.
+Feedback is summarized from the Shahe field notes and workbook discussions. Ms. Wu is a pseudonym. The table distinguishes reported suggestions from changes we introduced ourselves; the latest editorial changes have not yet been evaluated in a further classroom trial.
 
 ### A consent game · planned {#2-4-an-informed-consent-puzzle-game-practising-understanding-and-questioning-through-scenarios}
 

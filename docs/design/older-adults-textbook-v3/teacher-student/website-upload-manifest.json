@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "local_file": "output/pdf/老年大学健康生活教材/老年大学健康生活教材_学生版_中文版.pdf",
+      "upload_filename": "older-adults-health-workbook-v2-student-zh.pdf",
+      "pages": 56,
+      "bytes": 5816076,
+      "sha256": "60e1529eb2d76132a43bfe0f15c92c444fabbb826ddf852f4596346bfe468286",
+      "upload_status": "uploaded_and_verified",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf",
+      "remote_sha256": "60e1529eb2d76132a43bfe0f15c92c444fabbb826ddf852f4596346bfe468286"
+    },
+    {
+      "local_file": "output/pdf/老年大学健康生活教材/老年大学健康生活教材_教师讲义版_中文版.pdf",
+      "upload_filename": "older-adults-health-workbook-v2-teacher-zh.pdf",
+      "pages": 54,
+      "bytes": 5564007,
+      "sha256": "7dbf680217708db5568eaa37f1f9cd43c143393a714bbf7d3620bb81b06c0972",
+      "upload_status": "uploaded_and_verified",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf",
+      "remote_sha256": "7dbf680217708db5568eaa37f1f9cd43c143393a714bbf7d3620bb81b06c0972"
+    },
+    {
+      "local_file": "output/pdf/老年大学健康生活教材/Healthy_Living_for_Older_Adults_Student_Edition_EN.pdf",
+      "upload_filename": "older-adults-health-workbook-v2-student-en.pdf",
+      "pages": 56,
+      "bytes": 4888577,
+      "sha256": "710b11cd9328e83584d3ea72e8aff059476843108d03395be464345e9cbbd315",
+      "upload_status": "uploaded_and_verified",
+      "server_url": "https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf",
+      "remote_sha256": "710b11cd9328e83584d3ea72e8aff059476843108d03395be464345e9cbbd315"
+    }
+  ],
+  "website_sources": [
+    "docs/human-practices/education.md",
+    "docs/project/contribution.md"
+  ],
+  "verification": "26 existing wiki checks passed. Both routes render all three current PDF URLs with stable anchors. Contribution: all three PDF readers loaded, with 56/54/56 pages and rendered canvases; PageDown scrolling and zoom-in/zoom-out verified. All three remote PDFs match the local final PDFs byte for byte.",
+  "education_preview": {
+    "verified": true,
+    "student_zh_pages": 56,
+    "student_en_pages": 56,
+    "teacher_zh_pages": 54,
+    "rendered_canvases_confirmed": true,
+    "scroll_and_zoom_verified": true,
+    "implementation_files": [
+      "docs/human-practices/education.md",
+      "static/contribution-assets/previews.js",
+      "static/human-practices/textbook-previews.js",
+      "static/human-practices/textbook-previews.css"
+    ],
+    "screenshot": "docs/design/older-adults-textbook-v3/teacher-student/education-three-pdf-previews.jpg",
+    "checks": "26 wiki tests passed; JavaScript module syntax checks passed. Local integration only; not deployed."
+  }
+}

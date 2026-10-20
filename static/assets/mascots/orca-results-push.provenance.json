@@ -1,0 +1,10 @@
+{
+  "generation_tool": "built-in image_gen",
+  "reference": "assets/images/engineering/mascot-standing.png",
+  "asset": "static/assets/mascots/orca-results-push.png",
+  "prompt": "Create one new animation-ready pose of the EXACT ORCA mascot from the reference image. Reference is character identity and graphic style. Keep the original flat hand-drawn vector-like style, navy / muted periwinkle / white whale hood and coat, pink face and cheeks, distinctive dark eyes, white gloves, slim dark legs and chunky navy shoes. Full body in a three-quarter LEFT-facing profile. Both arms reach toward the LEFT, white gloved palms facing left against an INVISIBLE vertical surface at chest height; both palms share approximately the same leftmost contact plane. Body leans gently forward, one foot forward planted and the other a little behind, as if carefully pushing a small object left. Calm focused slight smile, modest exertion, no exaggerated facial expression. Clearly recognizable as the reference mascot, NOT an actual swimming whale. Keep the silhouette simple and readable at 70–90px height. Single character only, centered and filling most of a square canvas with small even safe margin. Completely transparent background with real alpha. NO object, NO block, NO text, NO motion lines, NO floor, NO cast shadow, NO sparkles. Do not include the reference's empty margins. Not 3D, not glossy, not photorealistic. This is a static sprite; the webpage will animate the entire sprite using CSS.",
+  "transparent_background": true,
+  "design": "Single left-facing pushing pose; CSS controls translation and a 3-degree lean; no animation library or frame sequence.",
+  "source_context": "Team-provided ORCA mascot; new pushing pose generated with built-in image_gen and approved in project review.",
+  "license_context": "Maintained with the repository artwork under its existing license."
+}

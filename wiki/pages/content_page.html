@@ -63,6 +63,7 @@
 
 {% block main %}
 <main id="main-content" class="content-page{% if has_model_reading %} content-page--model-reading{% elif has_model_surface %} content-page--model-surface{% endif %}">
+  {% block content_header %}
   {% if is_description %}
   {% include 'components/description_opening.html' %}
   {% elif personality %}
@@ -73,6 +74,7 @@
     <h1>{{ content.title }}</h1>
   </header>
   {% endif %}
+  {% endblock %}
 
   {% if content.source_label == 'docs/wet-lab/measurement.md' and content.metadata.overview %}
   <section class="measurement-overview" aria-labelledby="measurement-overview-title">

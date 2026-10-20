@@ -60,7 +60,6 @@
         {% else %}<p class="member-card__quote member-card__quote--pending" id="{{ key }}-quote"><span data-fit-quote>A few words,<br>in your own voice.</span><small>Personal one-liner to come</small></p>{% endif %}
         {{ heart('member-card__back-heart') }}
       </div>
-      <p class="member-card__footer">SCIENCE <span>×</span> PEOPLE <span>×</span> A BRIGHTER TOMORROW</p>
     </div>
   </div>
   <button class="member-card__toggle" type="button" aria-pressed="false" aria-label="Flip {{ name }} card" aria-describedby="{% if is_student_leader %}{{ key }}-leader {% endif %}{{ key }}-roles" data-card-toggle hidden><span class="team-sr-only">Flip {{ name }} card</span></button>

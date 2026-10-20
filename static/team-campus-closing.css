@@ -56,8 +56,7 @@
   font-size: clamp(15px, 1.45vw, 20px);
   font-weight: 700;
   line-height: 1.5;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 7px;
+  text-decoration: none;
   outline-offset: 8px;
 }
 .team-campus-closing a span { margin-left: 0; font-size: 1.3em; }

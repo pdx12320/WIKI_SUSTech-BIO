@@ -30,16 +30,16 @@ body.ot-crt-home [data-edit-auto-confirm] .ot-bio-handle > span {
 [data-edit-auto-confirm] .ot-drop-site.is-placed { opacity: 0; }
 [data-edit-auto-confirm] .ot-bio-handle.is-placed { border-color: transparent; background: transparent; color: #a4e5cf; }
 [data-edit-auto-confirm] .ot-placement-instruction {
-  top: max(112px, 14vh); bottom: auto; font-size: clamp(15px, 1.6vw, 20px);
+  top: auto; bottom: calc(max(24px, 5vh) + 48px); font-size: clamp(15px, 1.6vw, 20px);
 }
 .ot-placement-auto-note {
-  position: absolute; top: calc(max(112px, 14vh) + 36px); left: 20px; right: 20px;
+  position: absolute; bottom: max(24px, 5vh); left: 20px; right: 20px;
   margin: 0; text-align: center; color: #b8c4d9; font: 400 13px/1.5 var(--ot-sans);
 }
 @media (max-width: 760px) {
   .ot-edit-status { top: max(136px, 17vh); }
-  [data-edit-auto-confirm] .ot-placement-instruction { top: 112px; left: 24px; right: 24px; }
-  .ot-placement-auto-note { top: 162px; font-size: 12px; }
+  [data-edit-auto-confirm] .ot-placement-instruction { top: auto; bottom: 120px; left: 24px; right: 24px; }
+  .ot-placement-auto-note { bottom: 72px; font-size: 12px; }
   [data-edit-auto-confirm] .ot-drop-site { width: 84px; height: 68px; font-size: 12px; }
   [data-edit-auto-confirm][data-edit-replay="placement"] .ot-codon__protein { visibility: hidden; }
 }

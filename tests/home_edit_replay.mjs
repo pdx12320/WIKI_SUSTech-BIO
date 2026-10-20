@@ -110,10 +110,10 @@ assert.equal(controlled.update(.956, .05).cameraBlend, 1);
 assert.equal(controlled.update(.956, .05), null);
 console.log('Passed completed-edit hold, hidden animation control, scroll-only reversible return, and wheel/touch/keyboard continuity.');
 
-// The homepage shortens the question, rewind and edit and joins the live take
+// The homepage holds the question, slows the rewind and joins the live take
 // continuously, including when a fast scroll passes the trigger threshold.
-assert.equal(HOME_REPLAY_TIMING.question, REPLAY_TIMING.question / 2);
-assert.equal(HOME_REPLAY_TIMING.rewind, REPLAY_TIMING.rewind / 2);
+assert.equal(HOME_REPLAY_TIMING.question, 3.0);
+assert.equal(HOME_REPLAY_TIMING.rewind, REPLAY_TIMING.rewind);
 assert.equal(HOME_REPLAY_TIMING.edit, REPLAY_TIMING.edit / 2);
 for (const phase of ['target', 'return']) assert.equal(HOME_REPLAY_TIMING[phase], REPLAY_TIMING[phase]);
 for (const questionFrom of [.797, .81, .9]) {
@@ -127,14 +127,14 @@ const homeRoot = { ...root, dataset: {}, hasAttribute(name) { return name === 'd
 const homeReplay = createEditReplay({ root: homeRoot, story, toProgress: x => x, enabled: true });
 homeReplay.update(.79, 0);
 assert.equal(homeReplay.update(.798, 0).take, .798, 'automatic entry starts at the live camera position');
-for (let i = 0; i < 57; i++) homeReplay.update(.8, .05);
-assert.equal(homeRoot.dataset.editReplay, 'target', 'homepage reaches RNA after the shortened question and rewind');
+for (let i = 0; i < 125; i++) homeReplay.update(.8, .05);
+assert.equal(homeRoot.dataset.editReplay, 'target', 'homepage reaches RNA after the longer question and rewind');
 const homeEditStart = HOME_REPLAY_TIMING.question + HOME_REPLAY_TIMING.rewind + HOME_REPLAY_TIMING.target;
 const homeOptions = { timing: HOME_REPLAY_TIMING };
 assert.equal(replayFrame(homeEditStart + 4.2, homeOptions).phase, 'edit');
 assert.equal(replayFrame(homeEditStart + 4.3, homeOptions).phase, 'return');
 assert.equal(replayFrame(homeEditStart + 4.3, homeOptions).edit, 1);
-console.log('Passed homepage half-duration timing, continuous handoff, fast-scroll entry and completed edit before return.');
+console.log('Passed homepage reading hold and slower rewind, continuous handoff, fast-scroll entry and completed edit before return.');
 
 for (const from of ['question', 'placement', 'edit']) {
   const skipped = createEditReplay({ root, story, toProgress: x => x, enabled: true, scrollReturn: true });
@@ -169,3 +169,6 @@ assert.equal(editAnnotationFade(.55, { phase: 'edit' }), 1);
 assert.equal(editAnnotationFade(.89, null), 1);
 assert.equal(editAnnotationFade(.902, null), 0);
 assert.ok(editAnnotationFade(.895, null) > editAnnotationFade(.9, null), 'scrolling back restores labels smoothly');
+
+assert.equal(replayFrame(1.3,{timing:HOME_REPLAY_TIMING,questionFrom:.797}).take,.803);
+assert.equal(replayFrame(2.9,{timing:HOME_REPLAY_TIMING,questionFrom:.797}).phase,'question');

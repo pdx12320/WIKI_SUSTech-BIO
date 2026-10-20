@@ -673,11 +673,11 @@
     gesture = keyGesture;
     if (boundaryInput(direction, 40)) event.preventDefault();
   });
-  workspace.querySelector('[data-engineering-overview-back]')?.addEventListener('click', () => {
+  workspace.querySelectorAll('[data-engineering-overview-back]').forEach(button => button.addEventListener('click', () => {
     workspace.classList.remove('engineering-nav-open');
     workspace.querySelector('.engineering-nav-toggle')?.setAttribute('aria-expanded', 'false');
     showMap({ historyEntry: true, focus: true });
-  });
+  }));
   addEventListener('hashchange', syncHash);
   addEventListener('popstate', syncHash);
   addEventListener('resize', resize);

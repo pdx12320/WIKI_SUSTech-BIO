@@ -53,7 +53,9 @@ assert.equal(scrolls.length,before,'waiting does not advance beyond the result')
 let prevented=false;
 events.get('wheel')({deltaY:100,preventDefault(){prevented=true;}});
 assert.equal(prevented,false,'native scrolling resumes only after the complete automatic sequence');
+assert.equal(status.hidden,true,'first wheel gesture immediately dismisses the completion hint');
 assert.ok(replay.update(.92,.05).cameraBlend>0,'existing manual camera handoff preserved');
+assert.equal(status.hidden,true,'completion hint stays dismissed on later frames');
 replay.update(.956,.05);
 assert.equal(status.hidden,true,'status clears when the existing return completes');
 const disabled=createEditReplay({root,story:{getBoundingClientRect:()=>({height:10800})},toProgress:x=>x,enabled:false});
@@ -66,7 +68,7 @@ for(const useSkip of [false,true]){
  const quickRoot={...root,dataset:{},hasAttribute:a=>['data-edit-auto-confirm','data-edit-scroll-return','data-edit-quick-rewind'].includes(a)};
  const quick=createEditReplay({root:quickRoot,story:{getBoundingClientRect:()=>({top:0,height:10800})},toProgress:x=>x,enabled:true});
  quick.update(.8,.05);
- for(let i=0;i<100&&quickRoot.dataset.editReplay!=='placement';i++)quick.update(.8,.05);
+ for(let i=0;i<220&&quickRoot.dataset.editReplay!=='placement';i++)quick.update(.8,.05);
  assert.equal(quickRoot.dataset.editReplay,'placement');
  if(useSkip)skip.click();else quick.setReady(true);
  let frame=quick.update(.55,.05),elapsed=0;

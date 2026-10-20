@@ -29,7 +29,7 @@ We used the findings to focus on familiar problems, design choices and revision.
 
 <figure class="hp-figure" id="hp-figure-13">
   <img src="/assets/human-practices/images/curriculum-comparison-coverage-chart.png" alt="Comparison of content coverage across four curriculum configurations" loading="lazy" decoding="async">
-  <figcaption>Figure 13. Curriculum coverage · preliminary document analysis</figcaption>
+  <figcaption>Figure 1. Curriculum coverage · preliminary document analysis</figcaption>
 </figure>
 
 [Curriculum report · PDF](/assets/human-practices/attachments/curriculum-comparison-analysis.pdf)
@@ -40,7 +40,7 @@ We also asked two Yali High School biology teachers what would work within a rea
 
 <figure class="hp-figure" id="hp-figure-14">
   <img src="/assets/human-practices/images/li-jiaju-teacher-interview-high-resolution.webp" alt="Screenshot of the online interview with Jiaju Li" loading="lazy" decoding="async">
-  <figcaption>Figure 14. A conversation with Jiaju Li</figcaption>
+  <figcaption>Figure 2. A conversation with Jiaju Li</figcaption>
 </figure>
 
 **Jiaju Li**, Head of Biology Teaching and Research, described strong training in scientific reasoning but limited time for hands-on work. He suggested starting with genetic and protein engineering.
@@ -62,7 +62,7 @@ The first edition gathered the information into chapters, summaries and self-che
 
 <figure class="hp-figure" id="hp-figure-12">
   <img src="https://static.igem.wiki/teams/6085/wiki/hp/older-learners-feedback-mind-map.avif" alt="Feedback from older learners: easier to read, room to write, familiar formats, and affordable to produce" loading="lazy" decoding="async">
-  <figcaption>Figure 12. Feedback from older learners</figcaption>
+  <figcaption>Figure 4. Feedback from older learners</figcaption>
 </figure>
 
 #### First edition {#first-edition-establishing-a-health-knowledge-framework}
@@ -73,12 +73,12 @@ At **Shahe Subdistrict Elderly Service Center**, we trialled lessons and discuss
 
 <figure class="hp-figure" id="hp-figure-16">
   <img src="/assets/human-practices/images/shahe-health-class-audience.webp" alt="Older adults attending a health class in Shahe" loading="lazy" decoding="async">
-  <figcaption>Figure 16. A health lesson at Shahe</figcaption>
+  <figcaption>Figure 5. A health lesson at Shahe</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-17">
   <img src="/assets/human-practices/images/shahe-health-class-presentation.webp" alt="Fraud-prevention case discussion during the Shahe health class" loading="lazy" decoding="async">
-  <figcaption>Figure 17. Recognizing scams together</figcaption>
+  <figcaption>Figure 6. Recognizing scams together</figcaption>
 </figure>
 
 Older adults helped us see how the workbook would actually be used: read during a lesson, opened again at home, or written in while listening.
@@ -86,31 +86,31 @@ Older adults helped us see how the workbook would actually be used: read during 
 <div class="hp-workbook-collage" role="group" aria-label="Learning and reviewing the health workbook together at Shahe">
 
 <figure class="hp-figure" id="hp-figure-18">
-  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-introduction.webp" target="_blank" rel="noopener" aria-label="Open Figure 18 at full size">
+  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-introduction.webp" target="_blank" rel="noopener" aria-label="Open Figure 7 at full size">
     <img src="/assets/human-practices/images/shahe-health-workbook-introduction.webp" alt="Display of the first Practical Healthy Living Workbook for Older Adults" width="960" height="640" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 18. Our first health workbook</figcaption>
+  <figcaption>Figure 7. Our first health workbook</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-19">
-  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-classroom-discussion.webp" target="_blank" rel="noopener" aria-label="Open Figure 19 at full size">
+  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-classroom-discussion.webp" target="_blank" rel="noopener" aria-label="Open Figure 8 at full size">
     <img src="/assets/human-practices/images/shahe-health-workbook-classroom-discussion.webp" alt="Health workbook lesson at the Shahe service center" width="960" height="640" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 19. Discussing the workbook</figcaption>
+  <figcaption>Figure 8. Discussing the workbook</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-20">
-  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-classroom.webp" target="_blank" rel="noopener" aria-label="Open Figure 20 at full size">
+  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-classroom.webp" target="_blank" rel="noopener" aria-label="Open Figure 9 at full size">
     <img src="/assets/human-practices/images/shahe-health-workbook-classroom.webp" alt="Group photograph from the Shahe health workbook activity" width="960" height="640" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 20. With Shahe participants</figcaption>
+  <figcaption>Figure 9. With Shahe participants</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-21">
-  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-trial.webp" target="_blank" rel="noopener" aria-label="Open Figure 21 at full size">
+  <a class="hp-workbook-collage__image" href="/assets/human-practices/images/shahe-health-workbook-trial.webp" target="_blank" rel="noopener" aria-label="Open Figure 10 at full size">
     <img src="/assets/human-practices/images/shahe-health-workbook-trial.webp" alt="A team member and an older adult reviewing the workbook together" width="960" height="640" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 21. Reading and reviewing together</figcaption>
+  <figcaption>Figure 10. Reading and reviewing together</figcaption>
 </figure>
 
 </div>
@@ -121,7 +121,7 @@ We revised the workbook around those needs: shorter reading sections, illustrati
 
 <figure class="hp-figure" id="hp-figure-22">
   <img src="/assets/human-practices/images/shahe-needs-assessment-and-workbook-feedback.png" alt="Summary of the Shahe needs assessment and workbook feedback" loading="lazy" decoding="async">
-  <figcaption>Figure 22. What readers needed us to change</figcaption>
+  <figcaption>Figure 11. What readers needed us to change</figcaption>
 </figure>
 
 #### Revised edition {#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes}
@@ -180,17 +180,17 @@ With the **SUSTech 3D Printing Club**, we made brain and cell teaching models th
 
 <figure class="hp-figure" id="hp-figure-23">
   <img src="/assets/human-practices/images/biology-models-printing-collage.webp" alt="Collage showing the production of physical brain and cell teaching models" loading="lazy" decoding="async">
-  <figcaption>Figure 23. Making the brain and cell models</figcaption>
+  <figcaption>Figure 12. Making the brain and cell models</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-24">
   <img src="/assets/human-practices/images/biology-brain-model-render.webp" alt="Colored model of brain structure" loading="lazy" decoding="async">
-  <figcaption>Figure 24. Brain teaching model</figcaption>
+  <figcaption>Figure 13. Brain teaching model</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-25">
   <img src="/assets/human-practices/images/biology-cell-model-render.webp" alt="Colored model of animal cell structure" loading="lazy" decoding="async">
-  <figcaption>Figure 25. Animal cell teaching model</figcaption>
+  <figcaption>Figure 14. Animal cell teaching model</figcaption>
 </figure>
 
 Model files are available for teaching and printing:
@@ -212,10 +212,10 @@ The theme was **“Build it. Break it. Fix it.”** Teams made prototypes, chall
 </div>
 
 <figure class="hp-figure" id="hp-figure-26">
-  <a class="hp-paired-image" href="/assets/human-practices/images/worldproof-event-poster.webp" target="_blank" rel="noopener" aria-label="Open Figure 26 at full size">
+  <a class="hp-paired-image" href="/assets/human-practices/images/worldproof-event-poster.webp" target="_blank" rel="noopener" aria-label="Open Figure 15 at full size">
   <img src="/assets/human-practices/images/worldproof-event-poster.webp" alt="WORLDPROOF event poster" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 26. WORLDPROOF · event poster</figcaption>
+  <figcaption>Figure 15. WORLDPROOF · event poster</figcaption>
 </figure>
 
 </div>
@@ -258,31 +258,31 @@ The theme was **“Build it. Break it. Fix it.”** Teams made prototypes, chall
 
 <figure class="hp-figure" id="hp-figure-27">
   <img src="/assets/human-practices/images/worldproof-project-booth-01.webp" alt="ORCA exhibition booth at WORLDPROOF" loading="lazy" decoding="async">
-  <figcaption>Figure 27. The ORCA booth</figcaption>
+  <figcaption>Figure 16. The ORCA booth</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-28">
   <img src="/assets/human-practices/images/worldproof-project-presentation.webp" alt="Our team captain hosting the opening and introducing the project rules at WORLDPROOF" loading="lazy" decoding="async">
-  <figcaption>Figure 28. Our team captain hosts the opening and introduces the project rules</figcaption>
+  <figcaption>Figure 17. Our team captain hosts the opening and introduces the project rules</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-29">
   <img src="/assets/human-practices/images/worldproof-hackathon-group-photo.webp" alt="Group photograph of WORLDPROOF participants" loading="lazy" decoding="async">
-  <figcaption>Figure 29. WORLDPROOF participants</figcaption>
+  <figcaption>Figure 18. WORLDPROOF participants</figcaption>
 </figure>
 
 Online judging connected guests in different locations with the in-person event.
 
 <figure class="hp-figure" id="hp-figure-30">
   <img src="/assets/human-practices/images/worldproof-online-judging.webp" alt="WORLDPROOF online judging session" loading="lazy" decoding="async">
-  <figcaption>Figure 30. Meeting the judges online</figcaption>
+  <figcaption>Figure 19. Meeting the judges online</figcaption>
 </figure>
 
 Afterwards, **Zhang, a SUSTech bioinformatics undergraduate from the 2023 cohort**, told us this was his first hackathon. He valued the experience and hoped for more events like it. This account is paraphrased from recollections of our conversation.
 
 <figure class="hp-figure" id="hp-figure-31">
   <img src="/assets/human-practices/images/worldproof-participant-feedback-interview.webp" alt="Post-event feedback discussion with a WORLDPROOF participant" loading="lazy" decoding="async">
-  <figcaption>Figure 31. Listening after the event</figcaption>
+  <figcaption>Figure 20. Listening after the event</figcaption>
 </figure>
 
 The reusable challenge pack contains eight hypothetical scenarios, from pollution monitoring and biomanufacturing to diagnostics and community laboratories. Each includes stakeholders, a design conflict and questions about risk.
@@ -326,7 +326,7 @@ NAU-China provided the platform and framework; we contributed ORCA's content.
   </a>
   <figure class="hp-garden__poster" id="hp-icii-project-poster">
     <a href="/assets/human-practices/attachments/icii-orca-project-poster.pdf" target="_blank" rel="noopener" aria-label="Open our ICII poster at full size"><img src="/assets/human-practices/images/icii-orca-project-poster.webp" alt="SUSTech-BIO ORCA project poster shared through ICII" loading="lazy" decoding="async"></a>
-    <figcaption>ORCA · our ICII poster</figcaption>
+    <figcaption>Figure 21. ORCA · our ICII poster</figcaption>
   </figure>
 </div>
 
@@ -345,7 +345,7 @@ At the end of the lesson, children raised their hands to ask questions. We left 
     <a href="/assets/human-practices/images/qinglan-primary-online-biology-lesson-2026-01-21.jpg" target="_blank" rel="noopener" aria-label="Open the Qinglan biology lesson photograph at full size"><img src="/assets/human-practices/images/qinglan-primary-online-biology-lesson-2026-01-21.jpg" width="1280" height="960" alt="Qinglan Primary School children watching the team's live laboratory demonstration on a classroom screen" loading="lazy" decoding="async"></a>
     <a href="/assets/human-practices/images/qinglan-primary-online-biology-questions-2026-01-21.jpg" target="_blank" rel="noopener" aria-label="Open the Qinglan classroom question session photograph at full size"><img src="/assets/human-practices/images/qinglan-primary-online-biology-questions-2026-01-21.jpg" width="1280" height="960" alt="A child and an adult standing beside the classroom screen during the online biology lesson" loading="lazy" decoding="async"></a>
   </div>
-  <figcaption>Qinglan Primary School · learning and asking together · January 21, 2026</figcaption>
+  <figcaption>Figure 22. Qinglan Primary School · learning and asking together · January 21, 2026</figcaption>
 </figure>
 
 The lesson also leaves us with two questions to keep exploring:
@@ -365,7 +365,7 @@ With **SUSTech-MED**, we ran a campus charity-fair booth with activities includi
 
 <figure class="hp-figure" id="hp-figure-32">
   <img src="/assets/human-practices/images/campus-charity-fair-outreach-collage.webp" alt="Collage of science outreach activities at the campus charity fair" loading="lazy" decoding="async">
-  <figcaption>Figure 32. Campus outreach with SUSTech-MED</figcaption>
+  <figcaption>Figure 23. Campus outreach with SUSTech-MED</figcaption>
 </figure>
 
 #### Kindergarten: look and touch {#kindergarten-outreach-starting-with-things-children-can-see-and-touch}
@@ -392,10 +392,10 @@ At **SUSTech Kindergarten**, children explored our brain and cell models and obs
 </div>
 
 <figure class="hp-figure" id="hp-figure-35">
-  <a class="hp-paired-image" href="/assets/human-practices/images/kindergarten-science-experiment-01.webp" target="_blank" rel="noopener" aria-label="Open Figure 33 at full size">
+  <a class="hp-paired-image" href="/assets/human-practices/images/kindergarten-science-experiment-01.webp" target="_blank" rel="noopener" aria-label="Open Figure 24 at full size">
   <img src="/assets/human-practices/images/kindergarten-science-experiment-01.webp" alt="Simple science experiment at the kindergarten" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 33. Watching a yeast experiment</figcaption>
+  <figcaption>Figure 24. Watching a yeast experiment</figcaption>
 </figure>
 
 </div>
@@ -404,17 +404,17 @@ Their encouragement stayed with us as we planned further activities around thing
 
 <figure class="hp-figure" id="hp-figure-33">
   <img src="/assets/human-practices/images/kindergarten-science-outreach-group-photo.webp" alt="Group photograph from the kindergarten science outreach activity" loading="lazy" decoding="async">
-  <figcaption>Figure 34. With SUSTech Kindergarten</figcaption>
+  <figcaption>Figure 25. With SUSTech Kindergarten</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-34">
   <img src="/assets/human-practices/images/kindergarten-model-demonstration.webp" alt="Biology model demonstration at the kindergarten" loading="lazy" decoding="async">
-  <figcaption>Figure 35. Exploring models by touch</figcaption>
+  <figcaption>Figure 26. Exploring models by touch</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-36">
   <img src="/assets/human-practices/images/kindergarten-model-circle.webp" alt="Children and team members seated in a discussion circle at the kindergarten" loading="lazy" decoding="async">
-  <figcaption>Figure 36. Making room for questions</figcaption>
+  <figcaption>Figure 27. Making room for questions</figcaption>
 </figure>
 
 #### Meeting future biologists {#academic-majors-fair-introducing-biology-related-fields-and-research-practice}
@@ -423,7 +423,7 @@ At the academic majors fair, we introduced biology and ORCA to visiting students
 
 <figure class="hp-figure" id="hp-figure-37">
   <img src="/assets/human-practices/images/biology-majors-fair-conversation-collage.webp" alt="Collage of conversations about biology-related fields at the academic majors fair" loading="lazy" decoding="async">
-  <figcaption>Figure 37. Conversations at the majors fair</figcaption>
+  <figcaption>Figure 28. Conversations at the majors fair</figcaption>
 </figure>
 
 ---
@@ -469,7 +469,7 @@ We are grateful to the Tianjin team for the invitation and to our instructor, He
   <a href="/assets/human-practices/images/tianjin-igem-instructor-sharing-2025-12-18.png" target="_blank" rel="noopener" aria-label="Open the Tianjin iGEM sharing session screenshot at full size">
     <img src="/assets/human-practices/images/tianjin-igem-instructor-sharing-2025-12-18.png" alt="Online sharing session by our team instructor Hengwei Su (宿恒玮) for Tianjin University's incoming 2026 iGEM team" width="2048" height="1228" loading="lazy" decoding="async">
   </a>
-  <figcaption>With Tianjin's incoming team · December 18, 2025</figcaption>
+  <figcaption>Figure 29. With Tianjin's incoming team · December 18, 2025</figcaption>
 </figure>
 
 </div>
@@ -492,19 +492,19 @@ On **March 28, 2026**, we joined the Guangzhou meetup at **South China Agricultu
   <div class="hp-exchange-collage__photos">
     <header class="hp-exchange-collage__heading"><span>07 FEB 2026</span><h4>Visiting HKUST (Guangzhou)</h4></header>
     <figure id="hp-figure-38">
-      <a href="/assets/human-practices/images/hkust-guangzhou-visit-group-photo.webp" target="_blank" rel="noopener" aria-label="Open Figure 38 at full size"><img src="/assets/human-practices/images/hkust-guangzhou-visit-group-photo.webp" alt="Team members with the HKUST (Guangzhou) community outside the university" loading="lazy" decoding="async" width="960" height="719"></a>
-      <figcaption><span>38</span> With the HKUST (Guangzhou) community</figcaption>
+      <a href="/assets/human-practices/images/hkust-guangzhou-visit-group-photo.webp" target="_blank" rel="noopener" aria-label="Open Figure 30 at full size"><img src="/assets/human-practices/images/hkust-guangzhou-visit-group-photo.webp" alt="Team members with the HKUST (Guangzhou) community outside the university" loading="lazy" decoding="async" width="960" height="719"></a>
+      <figcaption><span>Figure 30.</span>  With the HKUST (Guangzhou) community</figcaption>
     </figure>
     <figure id="hp-figure-39">
-      <a href="/assets/human-practices/images/hkust-guangzhou-project-meeting.webp" target="_blank" rel="noopener" aria-label="Open Figure 39 at full size"><img src="/assets/human-practices/images/hkust-guangzhou-project-meeting.webp" alt="Project discussion around a table at HKUST (Guangzhou)" loading="lazy" decoding="async" width="960" height="720"></a>
-      <figcaption><span>39</span> Exchanging project ideas</figcaption>
+      <a href="/assets/human-practices/images/hkust-guangzhou-project-meeting.webp" target="_blank" rel="noopener" aria-label="Open Figure 31 at full size"><img src="/assets/human-practices/images/hkust-guangzhou-project-meeting.webp" alt="Project discussion around a table at HKUST (Guangzhou)" loading="lazy" decoding="async" width="960" height="720"></a>
+      <figcaption><span>Figure 31.</span>  Exchanging project ideas</figcaption>
     </figure>
   </div>
   <div class="hp-exchange-collage__poster">
     <header class="hp-exchange-collage__heading"><span>28 MAR 2026</span><h4>Guangzhou meetup</h4></header>
     <figure id="hp-figure-40">
-      <a href="/assets/human-practices/images/scau-guangzhou-meetup-event-poster.webp" target="_blank" rel="noopener" aria-label="Open Figure 40 at full size"><img src="/assets/human-practices/images/scau-guangzhou-meetup-event-poster.webp" alt="Guangzhou meetup invitation poster at South China Agricultural University" loading="lazy" decoding="async" width="1080" height="1521"></a>
-      <figcaption><span>40</span> Guangzhou meetup · event poster</figcaption>
+      <a href="/assets/human-practices/images/scau-guangzhou-meetup-event-poster.webp" target="_blank" rel="noopener" aria-label="Open Figure 32 at full size"><img src="/assets/human-practices/images/scau-guangzhou-meetup-event-poster.webp" alt="Guangzhou meetup invitation poster at South China Agricultural University" loading="lazy" decoding="async" width="1080" height="1521"></a>
+      <figcaption><span>Figure 32.</span>  Guangzhou meetup · event poster</figcaption>
     </figure>
   </div>
 </section>
@@ -521,17 +521,17 @@ Our separate Huntington's disease proposal explored a conditional RNA-cleavage s
 
 <figure class="hp-figure" id="hp-figure-41">
   <img src="/assets/human-practices/images/tsinghua-creative-contest-poster-hall.webp" alt="Poster exhibition at the Tsinghua University Synthetic Biology Creative Design Competition" loading="lazy" decoding="async">
-  <figcaption>Figure 41. Tsinghua · poster exhibition</figcaption>
+  <figcaption>Figure 33. Tsinghua · poster exhibition</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-42">
   <img src="/assets/human-practices/images/tsinghua-creative-contest-poster-display.webp" alt="Team proposal poster for the Tsinghua creative design competition" loading="lazy" decoding="async">
-  <figcaption>Figure 42. Our Huntington's disease proposal</figcaption>
+  <figcaption>Figure 34. Our Huntington's disease proposal</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-43">
   <img src="/assets/human-practices/images/tsinghua-creative-contest-award.webp" alt="Third-prize certificate and medal from the Tsinghua creative design competition" loading="lazy" decoding="async">
-  <figcaption>Figure 43. Tsinghua competition · third prize</figcaption>
+  <figcaption>Figure 35. Tsinghua competition · third prize</figcaption>
 </figure>
 
 [Tsinghua presentation · PPTX](/assets/human-practices/attachments/tsinghua-creative-contest-defense.pptx)
@@ -546,12 +546,12 @@ On **May 24, 2026**, we presented ORCA at the South China meetup at **Shenzhen U
 
 <figure class="hp-figure" id="hp-figure-44">
   <img src="/assets/human-practices/images/south-china-meetup-project-discussion.webp" alt="Project discussion at the South China meetup" loading="lazy" decoding="async">
-  <figcaption>Figure 44. Sharing ORCA at the South China meetup</figcaption>
+  <figcaption>Figure 36. Sharing ORCA at the South China meetup</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-45">
   <img src="/assets/human-practices/images/south-china-meetup-display-materials.webp" alt="Display materials at the South China meetup" loading="lazy" decoding="async">
-  <figcaption>Figure 45. Our meetup display</figcaption>
+  <figcaption>Figure 37. Our meetup display</figcaption>
 </figure>
 
 </div>
@@ -566,12 +566,12 @@ On **June 27, 2026**, teachers and students from the **High School Affiliated to
   <div class="hp-school-collage__intro"><span>27 JUN 2026</span></div>
   <div class="hp-school-collage__grid">
     <figure id="hp-figure-46">
-      <a href="/assets/human-practices/images/sustech-affiliated-high-school-project-presentation.webp" target="_blank" rel="noopener" aria-label="Open Figure 46 at full size"><img src="/assets/human-practices/images/sustech-affiliated-high-school-project-presentation.webp" alt="ORCA presentation to teachers and students from the High School Affiliated to SUSTech" width="661" height="440" loading="lazy" decoding="async"></a>
-      <figcaption><span>46</span><span>Sharing our research</span></figcaption>
+      <a href="/assets/human-practices/images/sustech-affiliated-high-school-project-presentation.webp" target="_blank" rel="noopener" aria-label="Open Figure 38 at full size"><img src="/assets/human-practices/images/sustech-affiliated-high-school-project-presentation.webp" alt="ORCA presentation to teachers and students from the High School Affiliated to SUSTech" width="661" height="440" loading="lazy" decoding="async"></a>
+      <figcaption><span>Figure 38.</span> <span>Sharing our research</span></figcaption>
     </figure>
     <figure id="hp-figure-47">
-      <a href="/assets/human-practices/images/sustech-affiliated-high-school-group-photo.webp" target="_blank" rel="noopener" aria-label="Open Figure 47 at full size"><img src="/assets/human-practices/images/sustech-affiliated-high-school-group-photo.webp" alt="Group photograph with teachers and students from the High School Affiliated to SUSTech" width="661" height="459" loading="lazy" decoding="async"></a>
-      <figcaption><span>47</span><span>With the High School Affiliated to SUSTech</span></figcaption>
+      <a href="/assets/human-practices/images/sustech-affiliated-high-school-group-photo.webp" target="_blank" rel="noopener" aria-label="Open Figure 39 at full size"><img src="/assets/human-practices/images/sustech-affiliated-high-school-group-photo.webp" alt="Group photograph with teachers and students from the High School Affiliated to SUSTech" width="661" height="459" loading="lazy" decoding="async"></a>
+      <figcaption><span>Figure 39.</span> <span>With the High School Affiliated to SUSTech</span></figcaption>
     </figure>
   </div>
 </section>
@@ -580,7 +580,7 @@ We also met **Cataverse-GreatBay** to exchange project ideas.
 
 <figure class="hp-figure" id="hp-figure-48">
   <img src="/assets/human-practices/images/cataverse-greatbay-visit-group-photo.webp" alt="Group photograph from the exchange with Cataverse-GreatBay" loading="lazy" decoding="async">
-  <figcaption>Figure 48. With Cataverse-GreatBay</figcaption>
+  <figcaption>Figure 40. With Cataverse-GreatBay</figcaption>
 </figure>
 
 These conversations gave us practice linking familiar biology to design choices and research questions.
@@ -595,7 +595,7 @@ On **July 24, 2026**, **our instructor Hengwei Su (宿恒玮)** and **our adviso
 
 <figure class="hp-figure hp-northwest-gallery" id="hp-northwest-meetup-collage">
   <a href="https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg" target="_blank" rel="noopener" aria-label="Open the Northwest meetup collage at full size"><img src="https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg" width="1812" height="1212" alt="Four photographs from the Northwest iGEM meetup: discussion, opening slide, our representatives' name cards and a project presentation" loading="lazy" decoding="async"></a>
-  <figcaption>Northwest iGEM meetup · July 24, 2026</figcaption>
+  <figcaption>Figure 41. Northwest iGEM meetup · July 24, 2026</figcaption>
 </figure>
 
 [Northwest meetup · event report →](https://mp.weixin.qq.com/s/1ziIzr7HhPs6oGcuZjDkbw)
@@ -610,7 +610,7 @@ On **July 24, 2026**, **our instructor Hengwei Su (宿恒玮)** and **our adviso
 
 <figure class="hp-figure" id="hp-figure-49">
   <img src="/assets/human-practices/images/grand-apic-conference-group-photo.webp" alt="Group photograph from the first Grand APiC" loading="lazy" decoding="async">
-  <figcaption>Figure 50. Grand APiC · together at SUSTech</figcaption>
+  <figcaption>Figure 42. Grand APiC · together at SUSTech</figcaption>
 </figure>
 
 <div class="hp-media-row" markdown="1">
@@ -622,10 +622,10 @@ On **August 16–19, 2026**, we co-hosted the first **Grand APiC** with **SUSTec
 </div>
 
 <figure class="hp-figure" id="hp-figure-50">
-  <a class="hp-paired-image" href="/assets/human-practices/images/grand-apic-booth-conversation.webp" target="_blank" rel="noopener" aria-label="Open Figure 49 at full size">
+  <a class="hp-paired-image" href="/assets/human-practices/images/grand-apic-booth-conversation.webp" target="_blank" rel="noopener" aria-label="Open Figure 43 at full size">
   <img src="/assets/human-practices/images/grand-apic-booth-conversation.webp" alt="Discussion at the ORCA booth during Grand APiC" loading="lazy" decoding="async">
   </a>
-  <figcaption>Figure 49. Conversations at our booth</figcaption>
+  <figcaption>Figure 43. Conversations at our booth</figcaption>
 </figure>
 
 </div>
@@ -637,12 +637,12 @@ We also presented ORCA in the Therapeutics session on August 17. Talks, booths, 
 
 <figure class="hp-figure hp-figure--compact" id="hp-figure-51">
   <img src="/assets/human-practices/images/grand-apic-booth-poster.webp" alt="ORCA project poster at Grand APiC" loading="lazy" decoding="async">
-  <figcaption>Figure 51. The ORCA poster</figcaption>
+  <figcaption>Figure 44. The ORCA poster</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-52">
   <img src="/assets/human-practices/images/grand-apic-hku-group-photo.webp" alt="Group photograph during the University of Hong Kong activities at Grand APiC" loading="lazy" decoding="async">
-  <figcaption>Figure 52. Grand APiC · together at HKU</figcaption>
+  <figcaption>Figure 45. Grand APiC · together at HKU</figcaption>
 </figure>
 
 [Grand APiC · event details →](https://mp.weixin.qq.com/s/pQ7HIYhEZUV0aFMY5zydrg)
@@ -659,12 +659,12 @@ Preparing for the judges helped us make our research question and approach clear
 
 <figure class="hp-figure" id="hp-figure-53">
   <img src="/assets/human-practices/images/synbio-challenges-project-presentation.webp" alt="Project presentation at the Synthetic Biology Innovation Competition" loading="lazy" decoding="async">
-  <figcaption>Figure 53. Presenting at SynBio Challenges</figcaption>
+  <figcaption>Figure 46. Presenting at SynBio Challenges</figcaption>
 </figure>
 
 <figure class="hp-figure" id="hp-figure-54">
   <img src="/assets/human-practices/images/synbio-challenges-silver-award-certificate.webp" alt="Silver-award certificate from the Synthetic Biology Innovation Competition" loading="lazy" decoding="async">
-  <figcaption>Figure 54. SynBio Challenges · silver award</figcaption>
+  <figcaption>Figure 47. SynBio Challenges · silver award</figcaption>
 </figure>
 
 </div>
@@ -681,7 +681,7 @@ Our reflection on the first stakeholder map is documented on the [Human Practice
 
 <figure class="hp-figure" id="hp-figure-55">
   <img src="/assets/human-practices/images/peking-rice-summit-participation-certificate.webp" alt="Certificate of participation in the Peking–Rice Human Practices Summit" loading="lazy" decoding="async">
-  <figcaption>Figure 55. Peking–Rice Summit · participation certificate</figcaption>
+  <figcaption>Figure 48. Peking–Rice Summit · participation certificate</figcaption>
 </figure>
 
 [Summit recording →](https://meeting.tencent.com/crm/2yd5G3OO81)
@@ -720,7 +720,7 @@ Some people appear here by name; others are part of a classroom, a care center, 
 
 <figure class="hp-figure" id="hp-figure-56">
   <img src="/assets/human-practices/images/team-discussion-acknowledgements.webp" alt="Group photograph of the team discussing its work" loading="lazy" decoding="async">
-  <figcaption>Figure 56. The team behind this work</figcaption>
+  <figcaption>Figure 49. The team behind this work</figcaption>
 </figure>
 
 ---

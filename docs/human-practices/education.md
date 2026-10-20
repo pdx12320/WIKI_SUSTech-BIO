@@ -119,10 +119,7 @@ When Ms. Wu reviewed the workbook, she pointed out that the small type and dense
 
 We revised the workbook around those needs: shorter reading sections, illustrations, writing space and topics readers could choose for themselves.
 
-<figure class="hp-figure" id="hp-figure-22">
-  <img src="/assets/human-practices/images/shahe-needs-assessment-and-workbook-feedback.png" alt="Summary of the Shahe needs assessment and workbook feedback" loading="lazy" decoding="async">
-  <figcaption>Figure 11. What readers needed us to change</figcaption>
-</figure>
+<span id="hp-figure-22"></span>
 
 #### Revised edition {#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes}
 

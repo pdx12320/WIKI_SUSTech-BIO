@@ -235,13 +235,38 @@ body .night-ocean-navigation .rna-nav .rna-menu {
 }
 body .night-ocean-navigation .rna-menu .rna-branch:is(:hover, :focus-visible, .active) .rna-branch__label { background: #92e4d71a; }
 body .site-nav.night-ocean-navigation .rna-menu.rna-menu .rna-branches .rna-branch__base[data-base] {
-  color: #e4fff8;
-  border-color: color-mix(in srgb, var(--rna-edge) 45%, #236175);
-  background: radial-gradient(circle at 28% 20%, #ffffff20, transparent 65%), color-mix(in srgb, var(--rna-fill) 15%, #103c4b);
-  box-shadow: inset 0 1px 1px #d6fff32b, 0 0 10px #67d9ca12;
+  color:#fff;
+  text-shadow:none;
+  --rna-fill:rgb(var(--node-fill));
+  --rna-edge:rgb(var(--node-edge));
+  --rna-glow:rgb(var(--node-glow));
+  --rna-sheen:rgb(var(--node-sheen));
+  border-color:var(--rna-edge);
+  background:
+    radial-gradient(circle at 24% 20%,rgba(255,250,239,.72),transparent 38%),
+    radial-gradient(circle at 78% 80%,color-mix(in srgb,var(--rna-sheen) 58%,transparent),transparent 65%),
+    linear-gradient(140deg,color-mix(in srgb,var(--rna-fill) calc(var(--node-surface) * 100%),transparent),color-mix(in srgb,var(--rna-glow) 24%,transparent));
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--rna-edge) 18%,transparent),
+    0 0 10px color-mix(in srgb,var(--rna-glow) calc(var(--node-near-glow) * 100%),transparent),
+    0 0 26px color-mix(in srgb,var(--rna-glow) calc(var(--node-far-glow) * 100%),transparent),
+    inset 1px 1px 5px color-mix(in srgb,var(--rna-edge) 45%,transparent),
+    inset -2px -2px 8px color-mix(in srgb,var(--rna-sheen) 30%,transparent);
+  transition:--rna-fill .38s ease,--rna-edge .38s ease,--rna-glow .38s ease,--rna-sheen .38s ease,border-color .38s ease,box-shadow .38s ease;
 }
-body .night-ocean-navigation .rna-menu__backbone .rna-chain-line { stroke: #6ec7c0; }
-body .night-ocean-navigation .rna-menu__backbone .rna-chain-halo { stroke: #70ead0; opacity: .12; }
+@media (prefers-reduced-motion:reduce) {
+  body .site-nav.night-ocean-navigation .rna-menu.rna-menu .rna-branches .rna-branch__base[data-base] { transition:none; }
+}
+/* Restore the original champagne strand alongside the blue/pink/gold/green glass bases. */
+body .night-ocean-navigation .rna-menu__backbone .rna-chain-line {
+  stroke:#f0dcb5; stroke-width:1.5; opacity:.78; filter:blur(.15px);
+}
+body .night-ocean-navigation .rna-menu__backbone .rna-chain-halo {
+  stroke:#f3dfb7; stroke-width:5; opacity:.26; filter:blur(1.5px);
+}
+body .night-ocean-navigation .rna-menu .rna-branch__bond {
+  background:linear-gradient(90deg,rgba(240,220,181,.72),rgba(243,223,183,.38));
+  box-shadow:0 0 6px rgba(243,223,183,.28);
+}
 body .night-ocean-navigation .wiki-search {
   --search-ink: #e4fff8; --search-muted: #a0c5ca; --search-line: #336774;
   --search-surface: #0d303efc; --search-field: #123e4b; --search-hover: #23525c; --search-accent: #88eed9;

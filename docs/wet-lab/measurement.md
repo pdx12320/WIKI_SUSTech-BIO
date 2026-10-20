@@ -355,6 +355,8 @@ Together, these layers turn fluorescence from an isolated observation into a **t
 
 ---
 
+<!-- SUPPORTING_DATA:measurement -->
+
 ## References
 
 1. Kim JH et al. *High Cleavage Efficiency of a 2A Peptide Derived from Porcine Teschovirus-1 in Human Cell Lines, Zebrafish and Mice.* PLOS ONE (2011). [doi:10.1371/journal.pone.0018556](https://doi.org/10.1371/journal.pone.0018556).

@@ -176,7 +176,7 @@
     while (card.nextSibling) {
       const node = card.nextSibling;
       if (node.nodeType === Node.ELEMENT_NODE &&
-          (/^H[1-6]$/.test(node.tagName) || node.matches('nav, hr'))) break;
+          (/^H[1-6]$/.test(node.tagName) || node.matches('nav, hr, .sd-bar'))) break;
       card.append(node);
     }
   }

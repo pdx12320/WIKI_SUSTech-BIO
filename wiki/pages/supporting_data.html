@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% from 'components/supporting-data/bar.html' import supporting_bar %}
+{% block title %}Supporting Data{% endblock %}
+{% block body_class %}inner-page sd-page{% endblock %}
+{% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='supporting-data.css') }}">{% endblock %}
+{% block main %}
+<main id="main-content" class="sd-shell">
+  <header class="sd-header">
+    <p class="sd-eyebrow sd-header__eyebrow">ORCA / {{ 'Design preview' if gallery else 'Research resources' }}</p>
+    <h1>Supporting Data<span>.</span></h1>
+    <p class="sd-header__intro">{{ 'Eight chapter entries, in the context of our Wiki.' if gallery else 'Explore the evidence behind our engineering and measurement work.' }}</p>
+    {% if gallery %}<p class="sd-preview-note">Chapter placement preview · Published Zenodo records.</p>{% endif %}
+    <nav class="sd-switch" aria-label="Preview views"><a href="{{ url_for('pages', page='supporting-data') }}" {% if not gallery %}aria-current="page"{% endif %}>Data index</a>{% if gallery %}<a href="/supporting-data-preview" aria-current="page">Chapter bars</a>{% endif %}<a href="{{ url_for('pages', page='engineering') }}#gfa">Engineering ↗</a><a href="{{ url_for('pages', page='measurement') }}#sd-measurement">Measurement ↗</a></nav>
+  </header>
+  {% if gallery %}
+  <section class="sd-paper sd-gallery" aria-label="Chapter supporting-data bars">
+    {% for item in datasets %}<section class="sd-example"><div class="sd-example__label"><span>{{ '%02d' % loop.index }} / {{ item.location }}</span><a href="{{ url_for('pages', page=item.context.split('#')[0].lstrip('/')) }}#{{ item.context.split('#')[1] }}">View in chapter ↗</a></div>{{ supporting_bar(item, true) }}</section>{% endfor %}
+  </section>
+  {% else %}
+  <section class="sd-paper" aria-label="Supporting-data index">
+    <div class="sd-index-intro"><p class="sd-eyebrow">Evidence directory</p><p>Choose a chapter to find its source records, analyses and figure materials. Each archive includes a reading guide and file index.</p><p class="sd-shared-note">SONAR Engineering and Measurement use one shared archive, with separate page maps.</p></div>
+    <nav class="sd-quick" aria-label="Jump to a dataset">{% for item in datasets %}<a href="#dataset-{{ item.id }}">{{ {'fr':'FR', 'io':'IO', 'fv':'FV', 'sonar-engineering':'SONAR'}.get(item.id, item.label) }}</a>{% endfor %}</nav>
+    <div class="sd-columns" aria-hidden="true"><span>Chapter / coverage</span><span>Inside the archive</span><span>Access</span></div>
+    {% for item in datasets %}<section class="sd-row" id="dataset-{{ item.id }}" style="--sd-accent:{{ item.accent }}" aria-labelledby="dataset-title-{{ item.id }}">
+      <div class="sd-row__title"><span class="sd-category">{{ item.group }}</span><h2 id="dataset-title-{{ item.id }}">{{ item.label }}</h2><p>{{ item.scope }}</p><a href="{{ url_for('pages', page=item.context.split('#')[0].lstrip('/')) }}#{{ item.context.split('#')[1] }}">Read chapter <span aria-hidden="true">↗</span></a></div>
+      <div class="sd-row__description"><p>{{ item.description }}</p>{% if item.archive == 'sonar-shared' %}<span class="sd-shared">Shared SONAR archive · {{ 'Engineering map' if item.id == 'sonar-engineering' else 'Measurement map' }}</span>{% endif %}</div>
+      <div class="sd-row__access">{% if item.doi %}<a class="sd-archive" href="https://doi.org/{{ item.doi }}" rel="noopener" target="_blank">{% include 'components/supporting-data/doi_icon.html' %}<span class="sd-archive__label">View on Zenodo</span> ↗</a><small>{{ item.doi }}</small>{% else %}<span class="sd-archive sd-archive--pending" aria-disabled="true">{% include 'components/supporting-data/doi_icon.html' %}<span class="sd-archive__label">View on Zenodo</span> ↗</span><small>10.5281/zenodo.XXXXXXX</small><span class="sd-pending">DOI pending</span>{% endif %}</div>
+    </section>{% endfor %}
+    <div class="sd-index-end"><span class="sd-dot" aria-hidden="true"></span><p>Read each archive’s guide for sample identities, processing methods and evidence limits.</p></div>
+  </section>
+  {% endif %}
+</main>
+{% endblock %}

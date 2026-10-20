@@ -51,6 +51,7 @@
 {% if content.source_label == 'docs/project/results.md' %}<link rel="stylesheet" href="{{ url_for('static', filename='experiment-prose.css') }}">{% endif %}
 {% if personality %}<link rel="stylesheet" href="{{ url_for('static', filename='chapter-personalities.css') }}">{% endif %}
 {% if is_description %}<link rel="stylesheet" href="{{ url_for('static', filename='description-opening.css') }}">{% endif %}
+{% if is_description %}<link rel="stylesheet" href="{{ url_for('static', filename='description-practice-brief.css') }}">{% endif %}
 {% endblock %}
 {% block page_scripts %}
 {% if has_dbtl %}<script src="{{ url_for('static', filename='reading-orbit/dbtl-wheel.js') }}" defer></script>{% endif %}

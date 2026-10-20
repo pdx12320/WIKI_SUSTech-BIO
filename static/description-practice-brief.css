@@ -1,0 +1,132 @@
+/* Local editorial brief for Description; no global theme overrides. */
+body .content-page .markdown-content .description-practice-brief {
+  --brief-ink: #343b3c;
+  --brief-accent: #617d74;
+  margin: 24px 0 44px;
+  padding: 4px 0 18px;
+  color: var(--brief-ink);
+  border-top: 2px solid var(--brief-ink);
+  border-bottom: 1px solid #bdc7c2;
+  background: #fff;
+}
+body .content-page .markdown-content .description-practice-brief > p {
+  margin: 16px 0;
+  color: var(--brief-ink);
+  font-size: 18px;
+  line-height: 1.6;
+}
+.description-practice-brief .description-practice-brief__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 32px;
+  padding: 24px 0;
+  border-top: 1px solid #d9dfdc;
+}
+.description-practice-brief .description-practice-brief__row--cell,
+.description-practice-brief .description-practice-brief__row--choice {
+  min-height: 246px;
+}
+.description-practice-brief .description-practice-brief__row--choice {
+  border-bottom: 1px solid #d9dfdc;
+}
+.description-practice-brief__row--rate .description-practice-brief__requirement {
+  padding-right: 80px;
+}
+body .content-page .markdown-content .description-practice-brief__mascot {
+  position: absolute;
+  z-index: 1;
+  bottom: -9px;
+  width: 150px;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+}
+body .content-page .markdown-content .description-practice-brief__mascot--cell,
+body .content-page .markdown-content .description-practice-brief__mascot--choice {
+  left: -14px;
+}
+body .content-page .markdown-content .description-practice-brief__mascot--rate {
+  right: -60px;
+  width: 122px;
+  bottom: -7px;
+}
+body .content-page .markdown-content .description-practice-brief h3 {
+  margin: 0 0 12px;
+  padding: 0;
+  color: var(--brief-ink);
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+.description-practice-brief small {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+body .content-page .markdown-content .description-practice-brief small a {
+  color: #4f6c62;
+  background: #fff0a8;
+  box-shadow: 0.14em 0 #fff0a8, -0.14em 0 #fff0a8;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.description-practice-brief__requirement {
+  position: relative;
+}
+.description-practice-brief__requirement::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: -23px;
+  width: 14px;
+  height: 1px;
+  background: var(--brief-accent);
+}
+body .content-page .markdown-content .description-practice-brief__requirement p {
+  margin: 0;
+  color: var(--brief-ink);
+  font-size: 18px;
+  line-height: 1.6;
+}
+body .content-page .markdown-content .description-practice-brief .description-practice-brief__outro {
+  margin-bottom: 0;
+  color: #55615d;
+  font-size: 16px;
+}
+@media (max-width: 1100px) {
+  .description-practice-brief .description-practice-brief__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+  }
+  .description-practice-brief__requirement::before { display: none; }
+  .description-practice-brief .description-practice-brief__row--cell,
+  .description-practice-brief .description-practice-brief__row--choice { min-height: 0; }
+  .description-practice-brief__row--rate .description-practice-brief__requirement {
+    padding-right: 0;
+  }
+  body .content-page .markdown-content .description-practice-brief__mascot {
+    position: relative;
+    grid-column: 1;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 110px;
+    margin: -4px 0 -31px;
+    justify-self: start;
+  }
+  body .content-page .markdown-content .description-practice-brief__mascot--rate {
+    justify-self: end;
+  }
+}

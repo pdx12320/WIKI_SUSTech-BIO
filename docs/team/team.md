@@ -115,6 +115,8 @@ members:
   roles:
   - label: Instructor
     icon: other
+  - label: Goalkeeper
+    icon: other
   category: instructor
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B5

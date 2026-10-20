@@ -17,6 +17,13 @@ app.config["FREEZER_RELATIVE_URLS"] = True
 app.config["FREEZER_IGNORE_MIMETYPE_WARNINGS"] = True
 freezer = Freezer(app)
 install_igem_assets(app)
+if app.config['WIKI_ASSET_MODE'] == 'igem':
+    # Unmounted visual studies contain historical navigation and downloads.
+    # Retain their source for local review, outside the published site.
+    app.config['FREEZER_STATIC_IGNORE'] = [
+        'human-practices/opening/color-study/',
+        'human-practices/opening/this-color-study/',
+    ]
 
 
 @freezer.register_generator
@@ -78,7 +85,7 @@ def pages(page):
     if page_config:
         content = load_markdown_content(
             page_config.markdown_path,
-            asset_url=lambda filename: url_for("assets", filename=filename),
+            asset_url=lambda filename: app.jinja_env.globals["url_for"]("assets", filename=filename),
             page_url=lambda page: app.jinja_env.globals["url_for"]("pages", page=page),
         )
         return render_template(

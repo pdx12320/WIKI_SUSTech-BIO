@@ -15,3 +15,9 @@ from the Download control beside each reader, including while collapsed.
 in a continuous, resizable scroll region. Page images load lazily. The reader
 therefore works without a native PDF browser plugin.
 The supplied code is displayed as documentation; this page does not execute it.
+
+Each reader stores its original PDF filename in `data-contribution-file`.
+This key remains stable when the download URL is replaced by a renamed iGEM
+upload. Preview images are resolved through the existing asset URL resolver.
+Production auditing follows the lazy preview manifest and requires all 493
+page images to have confirmed iGEM upload mappings before publication.

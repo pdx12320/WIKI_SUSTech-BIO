@@ -17,6 +17,7 @@ from igem_assets import MEDIA_EXTENSIONS, CSS_URL
 CODE_EXTENSIONS = {'.css', '.js', '.mjs', '.json', '.html', '.svg'}
 QUOTED = re.compile(r'''["'`]([^"'`\s<>]{1,500})["'`]''')
 DYNAMIC_DEPENDENCIES = {
+    'static/contribution/documents.js': ['static/contribution/previews/manifest.json'],
     'static/notebook/notebook.mjs': ['static/notebook/index.json'],
     'static/human-practices/pdf-panels.js': ['static/human-practices/pdf-previews/manifest.json'],
     'static/sonar-contribution/index.mjs': ['static/sonar-contribution/data/screenshots.json'],
@@ -68,6 +69,13 @@ def inspect_build(root, mapping):
     dynamic = defaultdict(set)
 
     def visit(value, source, base=None, runtime=False):
+        # Gallery data attributes can contain several remote URLs, not one URL
+        # whose pathname contains the complete pipe-separated list.
+        gallery_urls = value.split('|')
+        if len(gallery_urls) > 1 and all(url.startswith(('https://', 'http://')) for url in gallery_urls):
+            for url in gallery_urls:
+                visit(url, source, base, runtime)
+            return
         parsed = urlsplit(value)
         if parsed.scheme in {'data', 'blob', 'mailto', 'javascript'} or not parsed.path:
             return
@@ -116,7 +124,9 @@ def inspect_build(root, mapping):
                 continue
             base = filename.replace('/data/screenshots.json', '/index.mjs') if filename.endswith('/sonar-contribution/data/screenshots.json') else filename
             for value in json_strings(json.loads(text)):
-                visit(value, filename, base, runtime=filename == 'static/notebook/index.json')
+                visit(value, filename, base, runtime=filename in {
+                    'static/notebook/index.json', 'static/contribution/previews/manifest.json',
+                })
         else:
             # Complete literal URLs/imports; dynamic expressions are covered by
             # the explicit indexes above and by caller-side resolver tests.

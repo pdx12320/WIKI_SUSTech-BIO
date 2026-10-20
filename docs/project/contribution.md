@@ -100,7 +100,7 @@ The two analyses answer complementary questions: which protein candidates deserv
 <div class="contribution-links"><a href="/software#workbench">Explore PUFFER →</a><a href="/software">Software and downloads →</a></div>
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="PUFFER">
+<details class="contribution-code" data-contribution-document="PUFFER" data-contribution-file="puffer-code.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">PUFFER</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>
@@ -139,7 +139,7 @@ For future teams, this creates a practical starting point: a method library to c
 The figures show what the approach revealed; the code readers place the underlying work beside its explanation.
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="Model figures &amp; tables">
+<details class="contribution-code" data-contribution-document="Model figures &amp; tables" data-contribution-file="model-figures.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v17h17M8 15v-4m5 4V6m5 9V9"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Explore the figures</span><span class="contribution-document-title">Model figures &amp; tables</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>
@@ -165,7 +165,7 @@ Our transcriptomic workflow turns **36 RNA-seq libraries across nine groups** in
 </div>
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="Transcriptomic Landscape">
+<details class="contribution-code" data-contribution-document="Transcriptomic Landscape" data-contribution-file="transcriptomic-landscape-code.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Transcriptomic Landscape</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>
@@ -193,7 +193,7 @@ Our transcriptomic workflow turns **36 RNA-seq libraries across nine groups** in
 </div>
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="Recognition Code">
+<details class="contribution-code" data-contribution-document="Recognition Code" data-contribution-file="recognition-code.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Recognition Code</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>
@@ -221,7 +221,7 @@ Our transcriptomic workflow turns **36 RNA-seq libraries across nine groups** in
 </div>
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="Catalytic Design">
+<details class="contribution-code" data-contribution-document="Catalytic Design" data-contribution-file="catalytic-design-code.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Catalytic Design</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>
@@ -249,7 +249,7 @@ Our transcriptomic workflow turns **36 RNA-seq libraries across nine groups** in
 </div>
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="LAMAR">
+<details class="contribution-code" data-contribution-document="LAMAR" data-contribution-file="lamar-code.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">LAMAR</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>
@@ -276,7 +276,7 @@ Our transcriptomic workflow turns **36 RNA-seq libraries across nine groups** in
 </div>
 
 <div class="contribution-document">
-<details class="contribution-code" data-contribution-document="Delivery Dynamics">
+<details class="contribution-code" data-contribution-document="Delivery Dynamics" data-contribution-file="delivery-dynamics-code.pdf">
 <summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Delivery Dynamics</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
 <div class="contribution-pdf-viewport"></div>
 </details>

@@ -40,6 +40,36 @@ class PageLinksTest(unittest.TestCase):
                 response = app.test_client().get('/asset-runtime.js')
                 self.assertNotIn(entries['static/notebook/pdfs/example.pdf']['url'], response.text)
 
+    def test_frozen_downloads_remain_under_team_prefix(self):
+        from flask_frozen import patch_url_for
+        with patch_url_for(app), patch.dict(app.config, WIKI_ASSET_MODE='igem'):
+            for route in ['contribution', 'education', 'human-practices']:
+                with self.subTest(route=route):
+                    response = app.test_client().get('/' + route)
+                    self.assertEqual(response.status_code, 200)
+                    self.assertNotIn('href="/assets/', response.text)
+                    self.assertIn('href="assets/human-practices/', response.text)
+
+    def test_archived_preview_links_keep_team_prefix(self):
+        from urllib.parse import urljoin
+        from html.parser import HTMLParser
+        class References(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.urls = []
+            def handle_starttag(self, tag, attrs):
+                self.urls.extend(value for key, value in attrs if key in {'href', 'src'} and value)
+        route = '/static/human-practices/opening/color-study/cream.html'
+        with patch.dict(app.config, WIKI_ASSET_MODE='igem'):
+            response = app.test_client().get(route)
+        self.assertEqual(response.status_code, 200)
+        links = References()
+        links.feed(response.text)
+        base = 'https://2026.igem.wiki/sustech' + route
+        self.assertIn('https://2026.igem.wiki/sustech/model',
+                      [urljoin(base, value) for value in links.urls])
+        self.assertFalse(any(value.startswith('/') and not value.startswith('//') for value in links.urls))
+
     def test_custom_404_has_stable_base_in_both_modes(self):
         for mode, base in [('local', '/'), ('igem', '/sustech/')]:
             with self.subTest(mode=mode), patch.dict(app.config, WIKI_ASSET_MODE=mode):

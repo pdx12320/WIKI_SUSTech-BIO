@@ -174,6 +174,19 @@ def install(app):
         response.direct_passthrough = False
         text = response.get_data(as_text=True)
         text = rewrite_text(text, request.path, kind, mapping)
+        if kind == 'html' and request.path.startswith('/static/') and not re.search(r'<base\b', text, re.I):
+            # Archived HTML previews bypass Jinja/url_for. Keep their existing
+            # site-root links inside the team directory in a frozen deployment.
+            def relative_static_url(match):
+                parsed = urlsplit(match['url'])
+                if parsed.scheme or parsed.netloc or not parsed.path.startswith('/'):
+                    return match[0]
+                target = posixpath.relpath(parsed.path, posixpath.dirname(request.path))
+                if parsed.path.endswith('/'):
+                    target += '/'
+                value = urlunsplit(('', '', target, parsed.query, parsed.fragment))
+                return match['prefix'] + match['q'] + value + match['q']
+            text = HTML_URL.sub(relative_static_url, text)
         if kind == 'html' and re.search(r'<head\b[^>]*>', text, re.I):
             # Register with Frozen-Flask and load before any inline/module code.
             runtime_path = urlsplit(url_for('asset_runtime')).path

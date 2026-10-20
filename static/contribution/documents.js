@@ -26,7 +26,8 @@
       viewport.textContent = 'Loading document…';
       try {
         const data = await readManifest();
-        const name = decodeURIComponent(new URL(source.href).pathname.split('/').pop());
+        // Upload services may rename the downloadable PDF; the manifest key stays stable.
+        const name = panel.dataset.contributionFile;
         const pages = data[name]?.pages;
         if (!Array.isArray(pages) || !pages.length ||
             !pages.every(page => page.file && page.width > 0 && page.height > 0)) {

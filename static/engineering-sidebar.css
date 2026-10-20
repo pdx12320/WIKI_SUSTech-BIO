@@ -144,7 +144,8 @@ body.engineering-workspace-page{background:#f5f6fb}
 .engineering-chapter-jumps{grid-template-columns:85px minmax(0,1fr);align-items:center;width:240px;gap:8px}
 .engineering-chapter-jump-links{display:grid;gap:8px;min-width:0}
 .engineering-workspace .engineering-sidebar-right .engineering-chapter-jumps .engineering-map-back{width:85px;margin:0;align-self:center}
-@media(max-width:900px){.engineering-chapter-jumps{grid-template-columns:34px minmax(0,1fr);gap:3px}.engineering-workspace .engineering-sidebar-right .engineering-chapter-jumps .engineering-map-back{width:34px}.engineering-chapter-jumps a{padding:7px 4px;gap:3px;font-size:10px}}
+@media(max-width:900px){.engineering-chapter-jumps{grid-template-columns:44px minmax(0,1fr);gap:3px}.engineering-workspace .engineering-sidebar-right .engineering-chapter-jumps .engineering-map-back{width:44px}.engineering-chapter-jumps a{padding:7px 4px;gap:3px;font-size:10px}}
 @media(max-width:550px){.engineering-chapter-jumps{width:136px;flex-shrink:1}.engineering-chapter-jumps a{min-height:44px}}
 
-.engineering-chapter-mascot{pointer-events:none!important;cursor:default;user-select:none}
+.engineering-chapter-mascot{cursor:pointer;user-select:none}
+.engineering-chapter-mascot:focus-visible{outline:2px solid #5f62cd;outline-offset:3px}

@@ -16,27 +16,20 @@ page.setDefaultTimeout(10000);
 const orbit = () => page.evaluate(() => {
   const el = document.querySelector('[data-reading-orbit]');
   const form = el.querySelector('svg').getBoundingClientRect();
-  const path = el.querySelector('[data-orbit-progress]');
-  const shell = el.querySelector('.reading-orbit__shell');
-  const tip = el.querySelector('[data-orbit-tip]');
-  const style = getComputedStyle(path);
-  const spin = getComputedStyle(el.querySelector('.reading-orbit__spin'));
   const max = Math.max(0, document.documentElement.scrollHeight-innerHeight);
   const ratio = max ? Math.max(0, Math.min(1, scrollY/max)) : 0;
-  const point = shell.getPointAtLength(shell.getTotalLength()*ratio);
+  const traveler = el.querySelector('[data-orbit-traveler]');
   return {percent:Number(el.getAttribute('aria-valuenow')), y:parseFloat(el.style.getPropertyValue('--orbit-y')),
     angle:parseFloat(el.style.getPropertyValue('--orbit-turn')), display:getComputedStyle(el).display,
-    ratio, drawn:1-parseFloat(style.strokeDashoffset)/parseFloat(style.strokeDasharray),
-    sameTrace:path.getAttribute('d')===shell.getAttribute('d'),
-    tipError:Math.hypot(Number(tip.getAttribute('cx'))-point.x,Number(tip.getAttribute('cy'))-point.y),
-    fixed:spin.transform==='none' || new DOMMatrixReadOnly(spin.transform).isIdentity,
+    ratio, expectedY:ratio*Math.max(0,el.clientHeight-traveler.offsetHeight),
+    mascot:!!el.querySelector('.reading-orbit__mascot'),
     top:form.top,bottom:form.bottom,left:form.left,right:form.right,width:innerWidth,height:innerHeight};
 });
 function assertOrbitProgress(state) {
-  assert.ok(state.sameTrace,'Gold progress must follow the complete existing shell trace.');
-  assert.ok(Math.abs(state.drawn-state.ratio)<.0002,'The visible gold trace must match the actual document scroll fraction.');
-  assert.ok(state.tipError<.1,'The gold tip must stay at the revealed endpoint.');
-  assert.ok(state.fixed && state.angle===0,'The shell start must remain fixed as progress changes.');
+  assert.ok(state.mascot,'The reading mascot is rendered.');
+  assert.equal(state.percent,Math.round(state.ratio*100));
+  assert.ok(Math.abs(state.y-state.expectedY)<.02,'Mascot follows document position.');
+  assert.equal(state.angle,0,'The mascot remains upright.');
 }
 async function scrollFraction(ratio) {
   await page.evaluate(ratio => scrollTo({top:ratio*(document.documentElement.scrollHeight-innerHeight),behavior:'instant'}),ratio);
@@ -480,11 +473,11 @@ try {
     const end = await scrollFraction(1);
     assert.equal(start.percent,0); assert.equal(end.percent,100);
     assert.ok(middle.y>start.y && end.y>middle.y);
-    assert.ok(middle.drawn>start.drawn && end.drawn>middle.drawn);
-    assert.equal(start.drawn,0); assert.equal(end.drawn,1);
+    assert.ok(middle.ratio>start.ratio && end.ratio>middle.ratio);
+    assert.equal(start.ratio,0); assert.equal(end.ratio,1);
     for (const state of [start,middle,end]) assertOrbitProgress(state);
     for (const state of [start,middle,end]) assert.ok(state.display!=='none' && state.top>=0 && state.bottom<=state.height && state.left>=0 && state.right<=state.width,JSON.stringify(state));
-    console.log(`${route}: progress 0 → 43 → 100; gold trace growth, fixed orientation, translation and viewport bounds passed.`);
+    console.log(`${route}: progress 0 → 43 → 100; mascot position, fixed orientation, translation and viewport bounds passed.`);
   }
   await page.mouse.move(0,0);
   await page.goto(`${base}/engineering`,{waitUntil:'networkidle'});
@@ -594,7 +587,7 @@ try {
   await scrollFraction(1);
   const reducedEnd=await orbit();
   assertOrbitProgress(reducedEnd);
-  assert.equal(reducedEnd.drawn,1);
+  assert.equal(reducedEnd.ratio,1);
   assert.equal(reducedEnd.percent,100);
   assert.deepEqual(errors,[]);
   console.log(`Reduced motion, runtime errors and focus passed. Screenshots: ${output}`);

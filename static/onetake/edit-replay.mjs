@@ -1,7 +1,7 @@
 // Scroll remains the story clock. This one, interruptible replay returns to
 // the actual C position, holds the molecular edit, then enters the project.
 export const REPLAY_TIMING = Object.freeze({ question: 2.4, rewind: 3.2, target: 1.1, edit: 8.5, return: 3.0 });
-export const HOME_REPLAY_TIMING = Object.freeze({ ...REPLAY_TIMING, question: REPLAY_TIMING.question / 2, rewind: REPLAY_TIMING.rewind / 2, edit: REPLAY_TIMING.edit / 2 });
+export const HOME_REPLAY_TIMING = Object.freeze({ ...REPLAY_TIMING, question: 3.0, rewind: REPLAY_TIMING.rewind, edit: REPLAY_TIMING.edit / 2 });
 const clamp = x => Math.max(0, Math.min(1, x));
 const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
 export const CONFIRMED_EDIT_TIMING = Object.freeze({ confirm: .8, highlight: 1, convert: 2.7, hold: 2 });
@@ -22,7 +22,7 @@ export function confirmedEditFrame(seconds) {
 
 export function replayFrame(seconds, { timing = REPLAY_TIMING, questionFrom = .803 } = {}) {
   let t = Math.max(0, seconds);
-  if (t < timing.question) return { phase: 'question', take: questionFrom + (.803 - questionFrom) * ease(t / timing.question) };
+  if (t < timing.question) return { phase: 'question', take: questionFrom + (.803 - questionFrom) * ease(t / Math.min(timing.question, 1.2)) };
   t -= timing.question;
   if (t < timing.rewind) return { phase: 'rewind', take: .803 - .253 * ease(t / timing.rewind) };
   t -= timing.rewind;
@@ -54,7 +54,17 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
       return:'Edit complete. Scroll down to continue.'})[stage] || '';
   };
   let played = false, active = false, elapsed = 0, previous = -1, phase = '', ready = false, editingStarted = false;
-  let session = 0, returning = false;
+  let session = 0, returning = false, returnHintDismissed = false;
+  const dismissReturnHint = () => {
+    if (active && phase === 'return') { returnHintDismissed = true; showStatus(''); }
+  };
+  // Native scroll also covers scrollbar dragging and assistive input.
+  let lastScrollY = window.scrollY || 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY || 0;
+    if (Math.abs(y - lastScrollY) > .5) dismissReturnHint();
+    lastScrollY = y;
+  }, { passive: true });
   const quickRewind = root.hasAttribute?.('data-edit-quick-rewind') || false;
   const timing = quickRewind ? HOME_REPLAY_TIMING : REPLAY_TIMING;
   const editDuration = autoEdit ? CONFIRMED_EDIT_DURATION : timing.edit;
@@ -69,7 +79,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   const start = (at = 0) => {
     if (!enabled) return;
     active = played = true;
-    elapsed = at; ready = editingStarted = returning = false;
+    elapsed = at; ready = editingStarted = returning = returnHintDismissed = false;
     phase = at ? 'target' : 'question';
     showStatus('');
     root.dataset.editSession = String(++session);
@@ -87,7 +97,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   startButton?.addEventListener('click', () => start(timing.question + timing.rewind));
   window.addEventListener('wheel', event => {
     if (!active) return;
-    if (scrollReturn && phase === 'return') return;
+    if (scrollReturn && phase === 'return') { dismissReturnHint(); return; }
     if (phase === 'placement') {
       event.preventDefault();
       if (!autoEdit && ready && event.deltaY > 0) beginEdit();
@@ -98,7 +108,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   window.addEventListener('touchstart', event => { touchY = event.touches[0]?.clientY || 0; }, { passive: true });
   window.addEventListener('touchmove', event => {
     if (!active || event.target.closest?.('[data-bio-handle], [data-bio-hit]')) return;
-    if (scrollReturn && phase === 'return') return;
+    if (scrollReturn && phase === 'return') { dismissReturnHint(); return; }
     if (phase === 'placement' || phase === 'edit') {
       event.preventDefault();
       if (!autoEdit && phase === 'placement' && ready && touchY-(event.touches[0]?.clientY || touchY)>20) beginEdit();
@@ -110,7 +120,10 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   }, { passive: false });
   window.addEventListener('keydown', event => {
     if (!active) return;
-    if (scrollReturn && phase === 'return' && event.key !== 'Escape') return;
+    if (scrollReturn && phase === 'return' && event.key !== 'Escape') {
+      if (['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)) dismissReturnHint();
+      return;
+    }
     if (!autoEdit && phase === 'placement' && ready && ['ArrowDown','PageDown',' '].includes(event.key)) { event.preventDefault(); beginEdit(); }
     else if (autoEdit && phase === 'placement' && ['ArrowDown','PageDown',' '].includes(event.key)) event.preventDefault();
     else if (['edit','question','rewind','target','return'].includes(phase) && ['ArrowDown','PageDown',' '].includes(event.key)) event.preventDefault();
@@ -151,11 +164,12 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
         // Hold the completed edit. Rebase the document once without moving
         // the camera; from here the reader's scroll is the only clock.
         const entering = !returning;
-        if (entering) { returning = true; scrollToTake(.89); }
+        if (entering) { returning = true; returnHintDismissed = false; scrollToTake(.89); lastScrollY = window.scrollY || 0; }
         if (!entering && take < .888) { finish(); return null; }
         const amount = entering ? 0 : clamp((take - .89) / .065);
         phase = 'return';
-        showStatus('return');
+        if (amount > .0001) returnHintDismissed = true;
+        showStatus(returnHintDismissed ? '' : 'return');
         root.dataset.editReplay = phase;
         if (skip) skip.hidden = true;
         const frame = { phase, take: .89 + .065 * amount, cameraBlend: ease(amount), edit: 1,

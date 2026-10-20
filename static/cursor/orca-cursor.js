@@ -33,12 +33,10 @@
     clearActive();
     if (!enabled() || !(element instanceof Element)) return false;
     if (element.closest(':disabled, [aria-disabled="true"], [inert]')) return false;
-    // The reading handle opts into the same circular probe used by navigation links.
-    const orbitHandle = element.closest('[data-orbit-traveler]');
-    if (orbitHandle) {
-      active = orbitHandle;
-      active.setAttribute('data-orca-cursor', 'link');
-      return true;
+    // The mascot already reacts with its eyes; keep its grab cursor ring-free.
+    if (element.closest('[data-reading-orbit]')) {
+      layer.querySelectorAll('.orca-cursor-ripple').forEach(node => node.remove());
+      return false;
     }
     if (element.closest('[data-bio-handle], [data-bio-hit], [draggable="true"], [data-cursor="native"]')) return false;
     // Respect authored grab, grabbing, text, resize and other functional cursors.

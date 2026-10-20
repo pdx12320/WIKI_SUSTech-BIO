@@ -8,7 +8,7 @@ assert.equal(at(.1).cities, 1);
 assert.equal(at(.3).step, 1);
 assert.equal(at(.6).step, 2);
 assert.equal(at(.8).cities, 27);
-assert.equal(at(.97).step, 3);
+assert.equal(at(.97).step, 2);
 for (let i = 0; i <= 100; i++) {
   const p = i / 100;
   const expected = at(p);

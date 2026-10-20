@@ -37,30 +37,120 @@
   function stopMenuParticles(panel) {
     if (!menuEffect || (panel && menuEffect.panel !== panel)) return;
     cancelAnimationFrame(menuEffect.frame);
-    menuEffect.panel.classList.remove('is-particle-arrival');
-    menuEffect.panel.style.removeProperty('--menu-particle-radius');
+    menuEffect.canvas.remove();
+    menuEffect.panel.classList.remove('is-gathering');
+    menuEffect.panel.style.removeProperty('--rna-reveal');
     menuEffect = null;
   }
 
   function gatherMenu(panel) {
     stopMenuParticles();
     if (menuMotion.matches || document.hidden) return;
-    // Assemble the real surface, border, nodes and lettering together through
-    // one particle mask. No raster text substitute or end-of-effect swap.
-    panel.style.setProperty('--menu-particle-radius', '0px');
-    panel.classList.add('is-particle-arrival');
-    const effect = { panel, frame: 0 };
+    const box = panel.getBoundingClientRect();
+    const width = Math.round(box.width), height = Math.round(box.height);
+    if (!width || !height) return;
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    const mask = document.createElement('canvas');
+    const ink = mask.getContext('2d', { willReadFrequently: true });
+    if (!context || !ink) return;
+    const ratio = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    canvas.className = 'rna-menu__particles';
+    canvas.setAttribute('aria-hidden', 'true');
+    context.scale(ratio, ratio);
+    mask.width = width;
+    mask.height = height;
+    ink.fillStyle = '#fff';
+    ink.textBaseline = 'top';
+
+    // Sample the real glyph positions, including labels that wrap on mobile.
+    // Only sample the visible front face of editable bases; the U back face
+    // should not become a second overlapping glyph in the particle mask.
+    for (const label of panel.querySelectorAll('.rna-branch__label, [data-rna-glyph]')) {
+      const style = getComputedStyle(label);
+      ink.fillStyle = style.color;
+      ink.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      for (const node of label.childNodes) {
+        if (node.nodeType !== Node.TEXT_NODE) continue;
+        const range = document.createRange();
+        for (let i = 0; i < node.length; i++) {
+          if (!node.textContent[i].trim()) continue;
+          range.setStart(node, i);
+          range.setEnd(node, i + 1);
+          const letter = range.getBoundingClientRect();
+          ink.fillText(node.textContent[i], letter.left - box.left, letter.top - box.top);
+        }
+      }
+    }
+    const pixels = ink.getImageData(0, 0, width, height).data;
+    const targets = [];
+    for (let y = 1; y < height - 1; y += 2) {
+      for (let x = 1; x < width - 1; x += 2) {
+        if (pixels[(y * width + x) * 4 + 3] > 80) targets.push({ x, y, color: `rgb(${pixels[(y * width + x) * 4]}, ${pixels[(y * width + x) * 4 + 1]}, ${pixels[(y * width + x) * 4 + 2]})` });
+      }
+    }
+    const cutouts = [...panel.querySelectorAll('.rna-branch__base')].map(base => {
+      const r = base.getBoundingClientRect();
+      return { x:r.left + r.width / 2, y:r.top + r.height / 2, radius:r.width / 2 + 1.5 };
+    });
+    for (const path of panel.querySelectorAll('.rna-menu__lead path, .rna-menu__backbone path')) {
+      const matrix = path.getScreenCTM();
+      if (!matrix) continue;
+      const strandColor = getComputedStyle(path).stroke;
+      for (let d = 0, length = path.getTotalLength(); d <= length; d += 5) {
+        const point = path.getPointAtLength(d).matrixTransform(matrix);
+        if (cutouts.some(hole => Math.hypot(point.x - hole.x, point.y - hole.y) <= hole.radius)) continue;
+        targets.push({ x: point.x - box.left, y: point.y - box.top, color: strandColor });
+      }
+    }
+    for (const base of panel.querySelectorAll('.rna-branch__base')) {
+      const r = base.getBoundingClientRect();
+      for (let a = 0; a < Math.PI * 2; a += .28) {
+        targets.push({ x: r.left - box.left + r.width / 2 + Math.cos(a) * r.width / 2,
+          y: r.top - box.top + r.height / 2 + Math.sin(a) * r.height / 2, color: getComputedStyle(base).borderTopColor });
+      }
+    }
+    const borderColor = getComputedStyle(panel).borderTopColor;
+    for (let x = 4; x < width - 4; x += 9) {
+      targets.push({ x, y: 2, color: borderColor }, { x, y: height - 3, color: borderColor });
+    }
+    for (let y = 5; y < height - 5; y += 9) {
+      targets.push({ x: 2, y, color: borderColor }, { x: width - 3, y, color: borderColor });
+    }
+    const stride = Math.max(1, Math.ceil(targets.length / 1100));
+    const particles = targets.filter((point, index) => index % stride === 0 && point.y >= 0 && point.y <= height).map((point, index) => {
+      const side = index % 4;
+      return { ...point, sx: side === 0 ? -12 : side === 1 ? width + 12 : Math.random() * width,
+        sy: side === 2 ? -12 : side === 3 ? height + 12 : Math.random() * height,
+        delay: Math.random() * .13, bend: (Math.random() - .5) * 40 };
+    });
+    panel.append(canvas);
+    panel.style.setProperty('--rna-reveal', '0');
+    panel.classList.add('is-gathering');
+    const effect = { panel, canvas, frame: 0 };
     menuEffect = effect;
     const started = performance.now();
     function frame(now) {
       if (menuEffect !== effect) return;
       if (panel.hidden || document.hidden || menuMotion.matches) { stopMenuParticles(panel); return; }
-      const progress = Math.min(1, (now - started) / 440);
-      const ease = progress * progress * (3 - 2 * progress);
-      // Radius exceeds the half-diagonal of an 8 px tile, so the mask is
-      // already fully opaque before it is removed. Cleanup changes no pixels.
-      panel.style.setProperty('--menu-particle-radius', `${6.2 * ease}px`);
+      const progress = Math.min(1, (now - started) / 720);
       if (progress === 1) { stopMenuParticles(panel); return; }
+      context.clearRect(0, 0, width, height);
+      const reveal = Math.max(0, Math.min(1, (progress - .52) / .4));
+      panel.style.setProperty('--rna-reveal', String(reveal));
+      context.globalAlpha = Math.min(1, progress * 8) * (1 - reveal);
+      for (const dot of particles) {
+        const travel = Math.max(0, Math.min(1, (progress - dot.delay) / .6));
+        const ease = 1 - Math.pow(1 - travel, 3);
+        const curve = Math.sin(travel * Math.PI) * dot.bend;
+        context.fillStyle = dot.color;
+        context.beginPath();
+        context.arc(dot.sx + (dot.x - dot.sx) * ease + curve,
+          dot.sy + (dot.y - dot.sy) * ease, .85 + (1 - travel) * .65, 0, Math.PI * 2);
+        context.fill();
+      }
       effect.frame = requestAnimationFrame(frame);
     }
     effect.frame = requestAnimationFrame(frame);

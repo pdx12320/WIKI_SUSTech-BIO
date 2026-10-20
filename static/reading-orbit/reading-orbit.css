@@ -6,7 +6,7 @@ html.js:has([data-reading-orbit])::-webkit-scrollbar {
   display: none;
 }
 
-/* The shell follows reading position while its gold line fills the fixed path. */
+/* The sleepy mascot follows reading position along a quiet vertical guide. */
 .reading-orbit {
   --orbit-ink: #285858;
   --orbit-soft: #6f9998;
@@ -33,7 +33,7 @@ body.ot .reading-orbit, .reading-orbit.is-over-footer {
 .reading-orbit__soundings {
   position: absolute;
   inset: 35px 25px;
-  background: radial-gradient(circle, var(--orbit-soft) 1px, transparent 1.5px) center top / 2px 14px repeat-y;
+  background: linear-gradient(var(--orbit-soft), var(--orbit-soft)) center / 2px 100% no-repeat;
   opacity: .32;
 }
 .reading-orbit__start, .reading-orbit__end {
@@ -61,7 +61,7 @@ body.ot .reading-orbit, .reading-orbit.is-over-footer {
 }
 .reading-orbit.is-dragging .reading-orbit__traveler { cursor: grabbing; }
 body .reading-orbit:focus { outline: none; }
-.reading-orbit:focus-visible:not(.is-pointer-focused) .reading-orbit__form { outline: 2px solid var(--orbit-accent); outline-offset: 3px; border-radius: 50%; }
+.reading-orbit:focus-visible:not(.is-pointer-focused) .reading-orbit__value { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .reading-orbit[aria-disabled="true"] .reading-orbit__traveler { cursor: default; pointer-events: none; }
 .reading-orbit__form {
   display: block;
@@ -96,3 +96,15 @@ body .reading-orbit:focus { outline: none; }
   .reading-orbit { top: calc(var(--nav-h, 100px) + 12px); bottom: 48px; }
 }
 @media print { .reading-orbit { display: none; } }
+
+/* Keep the drawing still: only the eyelids change on interaction. */
+.reading-orbit__mascot { overflow: visible; stroke: none; filter: drop-shadow(0 1px 2px #33334c18); }
+.reading-orbit__mascot ellipse { opacity: 1; }
+.reading-orbit__eyes-open { opacity: 0; }
+.reading-orbit__eyes-closed { opacity: 1; }
+.reading-orbit__traveler:hover .reading-orbit__eyes-open,
+.reading-orbit.is-dragging .reading-orbit__eyes-open,
+.reading-orbit:focus-visible:not(.is-pointer-focused) .reading-orbit__eyes-open { opacity: 1; }
+.reading-orbit__traveler:hover .reading-orbit__eyes-closed,
+.reading-orbit.is-dragging .reading-orbit__eyes-closed,
+.reading-orbit:focus-visible:not(.is-pointer-focused) .reading-orbit__eyes-closed { opacity: 0; }

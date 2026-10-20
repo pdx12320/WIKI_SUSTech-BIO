@@ -249,18 +249,24 @@ body .night-ocean-navigation .wiki-search {
 }
 body .night-ocean-navigation .wiki-search summary { background: #98efda12; box-shadow: inset 0 1px 0 #c1ffeb30; }
 body .night-ocean-navigation :is(.site-brand, .nav-link, .rna-branch):focus-visible { outline-color: #91efd9; }
-/* The whole real menu grows from small particles; there is no second text
-   layer. Do not clip its shadow at the border while the mask is active. */
-body .sea-glass-navigation .rna-menu.is-particle-arrival {
-  -webkit-mask-image: radial-gradient(circle, #000 var(--menu-particle-radius), transparent calc(var(--menu-particle-radius) + .3px));
-  mask-image: radial-gradient(circle, #000 var(--menu-particle-radius), transparent calc(var(--menu-particle-radius) + .3px));
-  -webkit-mask-size: 8px 8px;
-  mask-size: 8px 8px;
-  -webkit-mask-repeat: repeat;
-  mask-repeat: repeat;
-  -webkit-mask-clip: no-clip;
-  mask-clip: no-clip;
+/* The legacy gathering rule must not replace the light glass for one frame. */
+body:not(.ot) .sea-glass-navigation .rna-nav .rna-menu.is-gathering {
+  background: linear-gradient(120deg, #eafff9f7, #e9f5f8fa 49%, #daf2f2f7);
+  border-color: #dbfffb;
+  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px #7acbd56b, 0 14px 30px #244d6726;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
+/* Original flying particles over a stable, already-painted glass surface. */
+body .sea-glass-navigation .rna-menu__particles {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; filter: none;
+}
+body .sea-glass-navigation .rna-menu.is-gathering > .rna-strand {
+  opacity: var(--rna-reveal, 0);
+}
+/* Decorative currents are part of the fixed surface, not the particle text. */
+body .sea-glass-navigation .rna-menu.is-gathering > .sea-current { opacity: 1; }
+body .night-ocean-navigation .rna-menu.is-gathering > .sea-current { opacity: .17; }
 .night-plankton { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: inherit; pointer-events: none; overflow: hidden; z-index: 0; }
 .night-plankton g { transform-origin: center; animation: night-plankton-drift 9s ease-in-out infinite alternate; }
 .night-plankton g:nth-child(2) { animation-delay: -4s; animation-duration: 12s; }

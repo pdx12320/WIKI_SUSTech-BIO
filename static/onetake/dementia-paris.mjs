@@ -7,10 +7,10 @@ export function parisState(take) {
   const progress = clamp((take - BURDEN_IN) / (BURDEN_OUT - BURDEN_IN));
   return {
     progress,
-    step: progress < .17 ? 0 : progress < .48 ? 1 : progress < .91 ? 2 : 3,
+    step: progress < .17 ? 0 : progress < .48 ? 1 : 2,
     cities: 1 + 26 * smooth((take - .760) / .011),
     scene: 1 - smooth((take - .782) / .016),
-    question: smooth((take - .795) / .014),
+    question: smooth((take - .795) / .008),
   };
 }
 function mount(el) {

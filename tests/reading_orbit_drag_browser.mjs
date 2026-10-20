@@ -60,30 +60,20 @@ async function state(page) {
 async function assertPathProgress(page) {
   const progress = await page.evaluate(() => {
     const orbit = document.querySelector('[data-reading-orbit]');
-    const shell = orbit.querySelector('.reading-orbit__shell');
-    const path = orbit.querySelector('[data-orbit-progress]');
-    const tip = orbit.querySelector('[data-orbit-tip]');
-    const style = getComputedStyle(path);
-    const spin = getComputedStyle(orbit.querySelector('.reading-orbit__spin'));
+    const traveler = orbit.querySelector('[data-orbit-traveler]');
     const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
     const ratio = max ? Math.max(0, Math.min(1, scrollY / max)) : 0;
-    const expected = shell.getPointAtLength(shell.getTotalLength() * ratio);
-    const dash = parseFloat(style.strokeDasharray);
-    const offset = parseFloat(style.strokeDashoffset);
     return { ratio, percent: Number(orbit.getAttribute('aria-valuenow')),
-      sameTrace: path.getAttribute('d') === shell.getAttribute('d'),
-      pathLength: path.pathLength.baseVal, dash, offset, drawn: 1 - offset / dash,
-      tipError: Math.hypot(Number(tip.getAttribute('cx')) - expected.x, Number(tip.getAttribute('cy')) - expected.y),
-      fixed: spin.transform === 'none' || new DOMMatrixReadOnly(spin.transform).isIdentity,
-      animation: spin.animationName };
+      y: parseFloat(orbit.style.getPropertyValue('--orbit-y')),
+      expectedY: ratio * Math.max(0, orbit.clientHeight - traveler.offsetHeight),
+      mascot: !!orbit.querySelector('.reading-orbit__mascot'),
+      eyes: [getComputedStyle(orbit.querySelector('.reading-orbit__eyes-open')).opacity,
+        getComputedStyle(orbit.querySelector('.reading-orbit__eyes-closed')).opacity] };
   });
-  assert.ok(progress.sameTrace, 'Gold progress must follow the complete existing shell trace.');
-  assert.equal(progress.pathLength, 100);
-  assert.equal(progress.dash, 100);
-  assert.ok(Math.abs(progress.drawn - progress.ratio) < .0002, `Visible SVG stroke must match document progress: ${JSON.stringify(progress)}`);
+  assert.ok(progress.mascot);
   assert.equal(progress.percent, Math.round(progress.ratio * 100));
-  assert.ok(progress.tipError < .1, 'The gold tip must stay at the actual end of the revealed trace.');
-  assert.ok(progress.fixed && progress.animation === 'none', 'The trace start must remain fixed, without artwork rotation.');
+  assert.ok(Math.abs(progress.y - progress.expectedY) < .02, 'Mascot follows document position.');
+  assert.equal(Number(progress.eyes[0]) + Number(progress.eyes[1]), 1, 'Exactly one eye state is visible.');
   return progress;
 }
 async function scrollFraction(page, ratio) {
@@ -100,16 +90,16 @@ async function mouseDrag(page, ratio, grabFraction = .3) {
   assert.ok(grabbed.dragging);
   assert.ok(Math.abs(grabbed.y - before.y) <= 1, 'grabbing must not jump the document');
   let cursor = await cursorState(page);
-  assert.ok(cursor.activeHandle && cursor.circular, 'reading handle uses the same circular custom cursor as navigation');
-  assert.equal(cursor.visible, !cursor.reduced);
-  assert.ok(cursor.pressed);
+  assert.equal(cursor.activeHandle, false, 'mascot uses its native grab cursor');
+  assert.equal(cursor.visible, false);
+  assert.equal(cursor.pressed, false);
   assert.equal(cursor.handleOutline, 'none', 'mouse drag must not draw a rectangular outline');
   assert.equal(cursor.artworkOutline, 'none', 'mouse drag must not lock a focus ring onto the artwork');
   // Move outside the handle horizontally: capture must keep the drag active.
   await page.mouse.move(before.x - 80, before.trackTop + ratio * before.travel + offset, { steps: 6 });
   if (ratio >= 0 && ratio <= 1) {
     cursor = await cursorState(page);
-    assert.equal(cursor.visible, !cursor.reduced, 'pointer capture retains the circular cursor while the page scrolls beneath it');
+    assert.equal(cursor.visible, false, 'dragging does not add a halo');
   }
   await page.mouse.up();
   cursor = await cursorState(page);
@@ -130,11 +120,11 @@ try {
     growth.push(await assertPathProgress(page));
     if ([.25, .5, 1].includes(ratio)) await page.locator('.reading-orbit__form').screenshot({ path: `${output}/orbit-trace-${ratio * 100}.png` });
   }
-  assert.equal(growth[0].drawn, 0, 'At the start, no gold trace length is revealed.');
-  assert.equal(growth[4].offset, 0, 'At 100%, the complete shell trace is gold.');
-  for (let index = 1; index < 5; index++) assert.ok(growth[index].drawn > growth[index - 1].drawn);
-  assert.ok(growth[5].drawn < growth[4].drawn, 'Scrolling backward must shorten the trace from its endpoint.');
-  record('Gold trace: 0 → 25 → 50 → 75 → 100 → 25%, complete shell coverage, a fixed start and a tip at the revealed endpoint passed.');
+  assert.equal(growth[0].ratio, 0, 'The mascot starts at zero percent.');
+  assert.equal(growth[4].percent, 100, 'The mascot reaches 100 percent.');
+  for (let index = 1; index < 5; index++) assert.ok(growth[index].ratio > growth[index - 1].ratio);
+  assert.ok(growth[5].ratio < growth[4].ratio, 'Scrolling backward moves the mascot up.');
+  record('Mascot position: 0 → 25 → 50 → 75 → 100 → 25%, upright drawing and percentage passed.');
   await scrollFraction(page, .25);
   await mouseDrag(page, .73, .8);
   await mouseDrag(page, .19);
@@ -143,7 +133,7 @@ try {
   assert.equal((await mouseDrag(page, -.2)).percent, 0);
   await page.mouse.move(300, 400);
   assert.equal((await state(page)).percent, 0, 'release must stop the drag');
-  record('Desktop: downward/upward drag, grab offset, pointer capture, both clamped endpoints and release passed; circular custom cursor follows capture and restores on release without a rectangular focus outline.');
+  record('Desktop: downward/upward drag, grab offset, pointer capture, both clamped endpoints and release passed; no decorative halo during pointer capture or release.');
 
   const slider = page.getByRole('slider', { name: 'Page reading position' });
   await slider.focus();
@@ -164,9 +154,9 @@ try {
   await assertPathProgress(page);
   assert.equal(await slider.getAttribute('aria-valuetext'), '0% of page');
   assert.equal(await page.locator('[data-orbit-traveler]').evaluate(el => getComputedStyle(el).outlineStyle), 'none');
-  assert.equal(await page.locator('.reading-orbit__form').evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
-  assert.equal(await page.locator('.reading-orbit__form').evaluate(el => getComputedStyle(el).borderRadius), '50%');
-  record('Keyboard: Arrow Up/Down, Page Up/Down, Home/End, accessible slider values and circular artwork focus ring passed.');
+  assert.equal(await page.locator('.reading-orbit__form').evaluate(el => getComputedStyle(el).outlineStyle), 'none');
+  assert.equal(await page.locator('.reading-orbit__value').evaluate(el => getComputedStyle(el).textDecorationLine), 'underline');
+  record('Keyboard: Arrow Up/Down, Page Up/Down, Home/End, accessible slider values and underlined percentage focus indicator passed.');
 
   await page.mouse.move(400, 500);
   await page.mouse.wheel(0, 600);
@@ -174,12 +164,12 @@ try {
   assert.ok((await state(page)).percent > 0);
   await scrollFraction(page, .43);
   let current = await state(page);
-  assert.equal(current.angle, 0, 'Artwork remains fixed while the gold trace grows.');
+  assert.equal(current.angle, 0, 'Artwork remains fixed while the mascot moves.');
   await assertPathProgress(page);
   await page.locator('#under-track').click();
   assert.equal(await page.evaluate(() => document.activeElement.id), 'under-track', 'empty track must remain click-through');
   await page.screenshot({ path: `${output}/orbit-desktop.png` });
-  record('Ordinary wheel/programmatic scroll, gold trace growth, footer theme and click-through track passed.');
+  record('Ordinary wheel/programmatic scroll, mascot position, footer theme and click-through track passed.');
 
   await page.mouse.move(current.x + current.width / 2, current.top + 20);
   await page.mouse.down();
@@ -209,7 +199,7 @@ try {
   assert.equal((await state(page)).percent, 100);
   assert.equal((await state(page)).angle, 0);
   await assertPathProgress(page);
-  record('Reduced motion: dragging and keyboard still update the full gold trace, with no artwork rotation.');
+  record('Reduced motion: dragging and keyboard still update the mascot position, with no artwork rotation.');
 
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
   const touchPage = await mobile.newPage();
@@ -272,8 +262,8 @@ try {
       assert.equal((await state(page)).percent, 0);
       assert.equal(await page.locator('[data-reading-orbit]').evaluate(el => getComputedStyle(el).outlineStyle), 'none', 'focus ring belongs on the handle, not the full track');
       assert.equal(await page.locator('[data-orbit-traveler]').evaluate(el => getComputedStyle(el).outlineStyle), 'none');
-      assert.equal(await page.locator('.reading-orbit__form').evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
-      assert.equal(await page.locator('.reading-orbit__form').evaluate(el => getComputedStyle(el).borderRadius), '50%');
+      assert.equal(await page.locator('.reading-orbit__form').evaluate(el => getComputedStyle(el).outlineStyle), 'none');
+      assert.equal(await page.locator('.reading-orbit__value').evaluate(el => getComputedStyle(el).textDecorationLine), 'underline');
       await scrollFraction(page, .43);
       await page.screenshot({ path: `${output}/${route}-desktop.png` });
       current = await state(page);
@@ -281,7 +271,7 @@ try {
       await cursorState(page);
       await page.mouse.down();
       await page.mouse.move(current.x - 50, current.trackTop + .48 * current.travel + 20, { steps: 6 });
-      assert.ok((await cursorState(page)).visible);
+      assert.ok(!(await cursorState(page)).visible);
       await page.screenshot({ path: `${output}/${route}-drag-cursor.png` });
       await page.mouse.up();
       assert.ok(!(await cursorState(page)).pressed);

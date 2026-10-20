@@ -10,7 +10,7 @@ const BURDEN_WEIGHT = 4.5;
 export function buildScrollTrack(keys, { burden = true, paris = false, quickEditExit = false, stagedConclusions = false } = {}) {
   let baselineLength = 0, length = 0;
   const track = [];
-  const cuts = burden ? [BURDEN_IN, ...(paris ? [.758, .771] : []), BURDEN_OUT] : [];
+  const cuts = burden ? [BURDEN_IN, ...(paris ? [BURDEN_IN + .17 * (BURDEN_OUT - BURDEN_IN), .758, .771, .797] : []), BURDEN_OUT] : [];
   // Shorten only the completed-edit exit, ending before the wet-lab copy.
   if (quickEditExit) cuts.push(.89, .935);
   if (stagedConclusions) cuts.push(.935);
@@ -28,7 +28,10 @@ export function buildScrollTrack(keys, { burden = true, paris = false, quickEdit
       const exitScale = quickEditExit && middle >= .89 && middle <= .935 ? .5 : 1;
       const readingScale = stagedConclusions && middle >= .935 ? 3 : 1;
       const parisRetreat = paris && middle >= .758 && middle <= .771;
-      length += (to - from) * (inBurden ? (parisRetreat ? 12 : BURDEN_WEIGHT) : weight) * exitScale * readingScale;
+      // Give the opening statistic and the RNA handoff more reading room.
+      const openingHold = paris && middle >= BURDEN_IN && middle < BURDEN_IN + .17 * (BURDEN_OUT - BURDEN_IN);
+      const handoff = paris && middle >= BURDEN_OUT && middle < .797;
+      length += (to - from) * (inBurden ? (parisRetreat ? 12 : BURDEN_WEIGHT) : weight) * exitScale * readingScale * (openingHold || handoff ? 3 : 1);
       track.push({ start, end: length, from, to });
     }
   });

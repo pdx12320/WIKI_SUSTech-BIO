@@ -1457,6 +1457,16 @@
     "https://static.igem.wiki/teams/6085/wiki/10-20-9-10/static-notebook-pdfs-fundamental-2026-07-31-hek293t-cell-thawing-que-xiaoyu-af5c200196.pdf",
     "https://static.igem.wiki/teams/6085/wiki/10-20-9-10/static-onetake-memory-handwritten-cards-a12e9a078f.avif",
     "https://static.igem.wiki/teams/6085/wiki/10-20-9-10/static-sap-demo-site-integrity-f0a60c6174.json",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-contribution-header-459b6252db.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-education-header-bf0b4e66b0.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-experiments-header-47bf7135a2.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-future-header-0f9c54f593.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-hp-header-44dc74852e.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-inclusivity-header-da5f35aa14.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-measurement-header-1f9fad9552.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-notebook-header-9ee801ad38.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-results-header-e3782ac677.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-safety-header-6635b795e0.avif",
     "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-01-pod-ed3effe3b888.avif",
     "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-02-cetus-b421b1c0212d.avif",
     "https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-03-integrated-orca-cb14f211df45.avif",
@@ -7681,6 +7691,66 @@
       "local_path": "static/sap-demo/site-integrity.json",
       "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-10/static-sap-demo-site-integrity-f0a60c6174.json",
       "sha256": "7935c6c554a39780d431482fdb65b2e319a2b36c504c796056e1b5d5c740bc75",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-contribution-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-contribution-header-459b6252db.avif",
+      "sha256": "b22fdb66be35ec02df21b677669ca0c19bdc85435692d675f1571962083a6a97",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-education-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-education-header-bf0b4e66b0.avif",
+      "sha256": "784114fbd57df9487cc01c8381b0deeaaa46dc3be0cc99c148a37bc276011595",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-experiments-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-experiments-header-47bf7135a2.avif",
+      "sha256": "91733af2993e603b7f1bf62c764db571670b8b38807bad77816652205dfb0eee",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-future-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-future-header-0f9c54f593.avif",
+      "sha256": "37aa334a5d3b7d82432c8eecca3da06c0d98db8e122a793d5e9069de3ef35958",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-hp-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-hp-header-44dc74852e.avif",
+      "sha256": "9371b08e47b4475cd77391b636475b38ed68cc3002d347793dbcff2fdbb3fc0c",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-inclusivity-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-inclusivity-header-da5f35aa14.avif",
+      "sha256": "4130c9e2191551b9c3688e05a34e9c2dd4793e7edebe6a127501b34c61ecf0fa",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-measurement-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-measurement-header-1f9fad9552.avif",
+      "sha256": "2e3f334beb8676fdd7d06556ce6700ceae2cd937fcbf0efd6ac408e1ff795d0b",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-notebook-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-notebook-header-9ee801ad38.avif",
+      "sha256": "a7e5f659348bb8a3a68b2e0a9bad24b75ae3066d1a57b6d1f01281d35bb05ccb",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-results-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-results-header-e3782ac677.avif",
+      "sha256": "bbadefbbc65feac22690e9da572c81ff09e7bac403c7f5886e264b58717e2e4a",
+      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+    },
+    {
+      "local_path": "static/assets/mascots/orca-safety-header.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-20-9-27/static-assets-mascots-orca-safety-header-6635b795e0.avif",
+      "sha256": "cd77f0c6e52240c40b275229b81bdae1296e4274771376a4b1171a23d24f2165",
       "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
     }
   ],

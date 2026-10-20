@@ -4,28 +4,31 @@ import vm from 'node:vm';
 const boot = fs.readFileSync(new URL('../static/entry-loading/boot.js', import.meta.url), 'utf8');
 const animation = fs.readFileSync(new URL('../static/entry-loading/entry-loading.js', import.meta.url), 'utf8');
 function run(options = {}) {
-  let now = 0, next = 0, ready = false, removed = false, draws = 0, observer;
+  let now = 0, next = 0, ready = false, removed = false, draws = 0, textDraws = 0, atlasDraws = 0, observer;
   const timers = new Map(), frames = new Map(), events = new Map(), layerEvents = new Map(), documentEvents = new Map();
-  const assigned = [];
+  const assigned = [], workers = [];
   const storage = options.storage || new Map(options.seen ? [['orca.entry-seen.v1', '1']] : []);
   const root = { dataset: {}, hasAttribute: name => name === 'data-wh-cover' ? !!options.cover : 'entryLoading' in root.dataset,
     removeAttribute() { delete root.dataset.entryLoading; } };
   const positions = [], eyes = [], mask = [];
   const ctx = { setTransform() {}, clearRect() { positions.length = 0; eyes.length = 0; mask.length = 0; }, save() {}, restore() {},
     beginPath() {}, moveTo(x, y) { mask.push([x, y]); }, lineTo(x, y) { mask.push([x, y]); }, closePath() {}, clip() {}, ellipse(...args) { eyes.push(args); }, fill() {},
-    fillText(text, x, y) { draws++; positions.push([x, y]); } };
-  const canvas = { getContext: () => options.noCanvas ? null : ctx };
+    fillText(text, x, y) { draws++; textDraws++; positions.push([x, y]); },
+    drawImage(atlas, sx, sy, sw, sh, x, y, width, height) { draws++; positions.push([x + width / 2, y + height / 2]); } };
+  const replacement = { getContext: () => ctx };
+  const canvas = { getContext: () => options.noCanvas ? null : ctx, cloneNode: () => replacement, replaceWith() {} };
+  if (options.worker) canvas.transferControlToOffscreen = () => ({ offscreen: true });
   const layer = { dataset: {}, querySelector: () => canvas, remove() { removed = true; }, addEventListener(name, fn) { layerEvents.set(name, fn); }, removeEventListener(name) { layerEvents.delete(name); }, append() {} };
   const motion = { matches: !!options.reduced, addEventListener() {}, removeEventListener() {} };
   const env = {
     document: { documentElement: root, readyState: options.content ? 'loading' : 'complete',
-      currentScript: { dataset: { home: options.home || '/' } },
+      currentScript: { src: options.worker ? 'https://wiki.test/static/entry-loading/entry-loading.js' : undefined, dataset: { home: options.home || '/' } },
       addEventListener: (name, fn) => documentEvents.set(name, fn), removeEventListener: name => documentEvents.delete(name),
       querySelector: selector => selector === '[data-entry-loader]' ? layer : selector === '[data-ot]' ? (options.content ? null : {}) : ready ? {} : null,
-      createElement: () => ({}) },
+      createElement: tag => tag === 'canvas' ? { getContext: () => options.noAtlas ? null : { fillText() { atlasDraws++; } } } : ({}) },
     location: { href: `https://wiki.test${options.path || '/'}`, origin: 'https://wiki.test',
       assign: url => assigned.push(url), search: options.preview ? '?loading=preview' : '' }, URL, URLSearchParams, Math,
-    performance: { now: () => now, getEntriesByType: () => [{ type: options.history ? 'back_forward' : 'navigate' }] },
+    performance: { now: () => now, getEntriesByType: () => [{ type: options.history ? 'back_forward' : options.reload ? 'reload' : 'navigate' }] },
     sessionStorage: { getItem(key) { if (options.blocked) throw Error('denied'); return storage.get(key); },
       setItem(key, value) { if (options.blocked) throw Error('denied'); storage.set(key, value); },
       removeItem(key) { if (options.blocked) throw Error('denied'); storage.delete(key); } },
@@ -36,6 +39,11 @@ function run(options = {}) {
     cancelAnimationFrame: id => frames.delete(id),
     addEventListener: (name, fn) => events.set(name, fn), removeEventListener: name => events.delete(name),
     MutationObserver: class { constructor(fn) { observer = fn; } observe() {} disconnect() {} },
+  };
+  if (options.worker) env.Worker = class {
+    constructor(url) { this.url = url; this.messages = []; workers.push(this); }
+    postMessage(message) { this.messages.push(message); }
+    terminate() { this.terminated = true; }
   };
   env.window = env;
   vm.createContext(env); vm.runInContext(boot, env); vm.runInContext(animation, env);
@@ -48,12 +56,30 @@ function run(options = {}) {
     }
     now = end;
   }
-  return { root, layer, storage, frames, events, layerEvents, documentEvents, assigned, advance, positions, eyes, mask, get removed() { return removed; }, get draws() { return draws; },
+  return { root, layer, storage, frames, events, layerEvents, documentEvents, assigned, workers, advance, positions, eyes, mask, get removed() { return removed; }, get draws() { return draws; }, get textDraws() { return textDraws; }, get atlasDraws() { return atlasDraws; },
     renderAt(ms) { now = ms; const pending = [...frames.values()]; frames.clear(); pending.forEach(fn => fn(now)); },
     ready() { ready = true; env.document.readyState = 'complete'; observer?.(); documentEvents.get('DOMContentLoaded')?.(); } };
 }
+const threaded = run({ preview: true, worker: true });
+assert.equal(threaded.layer.dataset.renderer, 'worker');
+assert.equal(threaded.workers[0].messages[0].type, 'init');
+assert.equal(threaded.frames.size, 0, 'Worker mode does not queue rendering on the busy page main thread');
+threaded.workers[0].onmessage({ data: { type: 'ready' } });
+threaded.layerEvents.get('pointermove')({ clientX: 400, clientY: 420, pointerType: 'mouse' });
+assert.equal(threaded.workers[0].messages.at(-1).type, 'pointer');
+threaded.events.get('pagehide')(); assert.ok(threaded.workers[0].terminated);
+const workerFailure = run({ preview: true, worker: true });
+workerFailure.workers[0].onerror();
+assert.equal(workerFailure.layer.dataset.renderer, 'main', 'Failed worker replaces the transferred canvas and falls back');
+assert.ok(workerFailure.draws > 500);
+const workerTimeout = run({ preview: true, worker: true }); workerTimeout.advance(1000);
+assert.equal(workerTimeout.layer.dataset.renderer, 'main', 'Unresponsive worker never traps an empty cover');
 const first = run();
 assert.ok(first.draws > 500, 'Letters already fill the logo on the first frame');
+assert.equal(first.atlasDraws, 28, 'Seven glyphs in four inks are rasterized only once');
+assert.equal(first.textDraws, 0, 'Normal animation copies cached sprites instead of laying out text');
+const fallbackAtlas = run({ noAtlas: true });
+assert.ok(fallbackAtlas.textDraws > 500, 'Missing atlas context still uses the working text renderer');
 const initialMask = first.mask.map(p => [...p]);
 const initialPositions = first.positions.map(p => [...p]);
 first.renderAt(400);
@@ -71,6 +97,8 @@ for (const [x, y] of nearCenter) {
 first.renderAt(8000);
 assert.deepEqual(first.mask, initialMask, 'There is no swimming, tail beat, scale change or pose reset');
 assert.equal(first.layer.dataset.stage, 'loading');
+assert.equal(first.atlasDraws, 28, 'Subsequent frames do not rebuild the letter atlas');
+assert.equal(first.textDraws, 0);
 assert.ok(first.positions.every(([x, y]) => Number.isFinite(x) && Number.isFinite(y)));
 // Compare identical timelines with and without a pointer: only nearby glyphs yield.
 const idle = run({ preview: true }), hover = run({ preview: true });
@@ -115,53 +143,57 @@ const click = (app, href, extras = {}) => {
     preventDefault() { this.defaultPrevented = true; }, ...extras };
   app.documentEvents.get('click')(event); return event;
 };
-assert.ok(click(homeClick, '/').defaultPrevented, 'Explicit Home intent is captured before the white-hole handler');
+assert.ok(click(homeClick, '/').defaultPrevented, 'Light-to-dark Home navigation records an arrival cover');
 assert.equal(homeClick.assigned[0], 'https://wiki.test/');
 const returnedHome = run({ storage: homeClick.storage });
 assert.equal(returnedHome.root.dataset.entryLoading, 'active', 'Clicking Home replays the entry loader after a previous visit');
-assert.equal(returnedHome.storage.has('orca.entry-home.v1'), false, 'Home intent is consumed once');
-const departureHome = run({ seen: true });
-assert.equal(click(departureHome, '/description').defaultPrevented, false, 'Home departures retain the white-hole tunnel');
-assert.equal(departureHome.assigned.length, 0, 'The entry loader must not navigate before the tunnel runs');
-const frozenHome = run({ seen: true, path: '/sustech/index.html', home: '/sustech/' });
-assert.equal(click(frozenHome, '/sustech/model').defaultPrevented, false, 'Frozen Home departures retain the tunnel');
-assert.ok(run({ seen: true, content: true, path: '/description', cover: true }).removed, 'Tunnel arrivals do not stack a whale cover');
-const genericClick = run({ seen: true, content: true, path: '/results' });
-assert.equal(click(genericClick, '/description').defaultPrevented, true, 'Content-to-content navigation uses the whale on arrival');
-for (const path of ['/description', '/model', '/education', '/inclusivity', '/notebook']) {
-  const arrival = run({ seen: true, content: true, path });
-  assert.equal(arrival.root.dataset.entryLoading, 'active', `${path} replays the whale after the first visit`);
-  arrival.ready(); arrival.advance(1260);
-  assert.ok(arrival.removed, `${path} releases its cover when ready`);
+assert.equal(returnedHome.storage.has('orca.entry-route.v1'), false, 'Route intent is consumed once');
+const genericClick = run({ seen: true });
+assert.ok(click(genericClick, '/description').defaultPrevented, 'Dark-to-light navigation uses the same whale cover');
+const arrivedContent = run({ storage: genericClick.storage, content: true, path: '/description' });
+assert.equal(arrivedContent.root.dataset.entryLoading, 'active');
+assert.equal(arrivedContent.storage.has('orca.entry-route.v1'), false);
+// Exercise every registered public content route, including the real Home/Team pair.
+const registeredPages = [...fs.readFileSync(new URL('../wiki_content.py', import.meta.url), 'utf8').matchAll(/"([a-z0-9-]+)": PageConfig\(/g)].map(match => '/' + match[1]);
+assert.ok(registeredPages.includes('/team'));
+for (const route of registeredPages) {
+  const departure = run({ seen: true });
+  assert.ok(click(departure, route).defaultPrevented, `Home → ${route} uses whale intent`);
+  assert.equal(departure.assigned[0], `https://wiki.test${route}`);
+  const arrival = run({ storage: departure.storage, content: true, path: route });
+  assert.equal(arrival.root.dataset.entryLoading, 'active', `${route} reveals the whale after Home`);
+  assert.ok(arrival.draws > 500);
+  const back = run({ seen: true, content: true, path: route });
+  assert.ok(click(back, '/').defaultPrevented, `${route} → Home uses whale intent`);
+  assert.equal(run({ storage: back.storage }).root.dataset.entryLoading, 'active');
+  for (const target of registeredPages) {
+    const light = run({ seen: true, content: true, path: route });
+    assert.equal(click(light, target).defaultPrevented, false, `${route} → ${target} stays native`);
+    assert.equal(light.storage.has('orca.entry-route.v1'), false);
+  }
 }
-for (const path of ['/team', '/design-communication', '/human-practices']) {
-  assert.equal(click(genericClick, path).defaultPrevented, false, `${path} keeps its original navigation`);
-  assert.ok(run({ content: true, path }).removed, `${path} keeps its own opening even on a first visit`);
-}
-for (const href of ['/next', '/next-journey', '/404.html', '/static/file.pdf', '/other/site']) {
-  assert.equal(click(genericClick, href).defaultPrevented, false, `${href} is outside ordinary page navigation`);
-}
-const sectionClick = run({ seen: true, content: true, path: '/description' });
-assert.equal(click(sectionClick, '/description#details').defaultPrevented, false, 'Same-page anchors stay native');
-assert.equal(click(sectionClick, '/model#details').defaultPrevented, true, 'Cross-page anchors use the destination cover');
-assert.equal(sectionClick.assigned.at(-1), 'https://wiki.test/model#details', 'Destination fragments are preserved');
-assert.ok(run({ seen: true, content: true, path: '/model', history: true }).removed);
-assert.ok(run({ seen: true, content: true, path: '/model', reduced: true }).removed);
-const blockedContent = run({ seen: true, blocked: true, content: true, path: '/model' });
-assert.equal(blockedContent.root.dataset.entryLoading, 'active', 'Content arrivals work without session storage');
-blockedContent.advance(3500); assert.ok(blockedContent.removed, 'Failed content readiness cannot trap the visitor');
+const lightClick = run({ seen: true, content: true, path: '/team' });
+assert.equal(click(lightClick, '/description').defaultPrevented, false, 'Light-to-light navigation stays native');
+assert.equal(lightClick.storage.has('orca.entry-route.v1'), false);
+assert.ok(run({ seen: true, content: true, path: '/description' }).removed, 'Repeat light pages do not replay');
+assert.equal(click(genericClick, '/next').defaultPrevented, false, 'Review routes stay isolated');
+assert.equal(click(genericClick, '/404.html').defaultPrevented, false);
+assert.equal(click(genericClick, '/static/example.html').defaultPrevented, false);
+assert.ok(click(homeClick, '/#chapter').defaultPrevented, 'Cross-page Home anchors retain their hash and use a cover');
+assert.equal(homeClick.assigned.at(-1), 'https://wiki.test/#chapter');
+const expired = new Map([['orca.entry-seen.v1', '1'], ['orca.entry-route.v1', JSON.stringify({ to: '/', at: Date.now() - 20000 })]]);
+assert.ok(run({ storage: expired }).removed, 'Expired intents do not replay');
+const reload = new Map([['orca.entry-seen.v1', '1'], ['orca.entry-route.v1', JSON.stringify({ to: '/', at: Date.now() })]]);
+assert.ok(run({ storage: reload, reload: true }).removed, 'Reload does not replay a pending route intent');
+assert.equal(click(run({ seen: true, reduced: true }), '/description').defaultPrevented, false);
 assert.equal(click(genericClick, '/#chapter').defaultPrevented, false, 'Home section anchors stay native');
 assert.equal(click(genericClick, '/', { ctrlKey: true }).defaultPrevented, false);
 assert.equal(click(genericClick, 'https://other.test/').defaultPrevented, false);
 const frozenClick = run({ seen: true, content: true, path: '/sustech/team', home: '/sustech/' });
 assert.ok(click(frozenClick, '/sustech/index.html').defaultPrevented);
 assert.equal(run({ storage: frozenClick.storage, path: '/sustech/', home: '/sustech/' }).root.dataset.entryLoading, 'active');
-assert.ok(click(frozenClick, '/sustech/model/index.html').defaultPrevented);
-assert.equal(run({ seen: true, content: true, path: '/sustech/model/index.html', home: '/sustech/index.html' }).root.dataset.entryLoading, 'active');
-assert.equal(click(frozenClick, '/sustech/team/index.html').defaultPrevented, false);
-assert.ok(run({ content: true, path: '/sustech/team/index.html', home: '/sustech/index.html' }).removed);
 assert.ok(run({ seen: true }).removed, 'Returning Home does not replay the loader');
-assert.ok(run({ cover: true }).removed, 'A white-hole return does not add a second loader');
+assert.ok(run({ cover: true }).draws > 500, 'Stale legacy white-hole state cannot suppress the new loader');
 assert.ok(run({ reduced: true }).removed); assert.ok(run({ history: true }).removed);
 assert.ok(run({ noCanvas: true }).removed, 'Missing Canvas never traps the visitor');
 const failed = run({ blocked: true }); failed.advance(3500);

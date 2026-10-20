@@ -904,6 +904,14 @@ function boot() {
   let p = progressOf(), time = Number.isNaN(pinned) ? 0 : 4, intro = 0, started = false;
 
   function frame() {
+    // Let one frame initialize shaders/readiness, then give the visible entry
+    // loader the frame budget while this scene is completely covered.
+    const entryCover = document.documentElement.dataset.entryLoading;
+    if (started && entryCover && entryCover !== 'leaving') {
+      clock.getDelta();
+      raf = requestAnimationFrame(frame);
+      return;
+    }
     const dt = Math.min(clock.getDelta(), 0.05);
     const target = progressOf();
     p = reduce ? target : p + (target - p) * (1 - Math.exp(-dt * 5.5));

@@ -1,14 +1,20 @@
 # Fixed-logo first-entry loading
 
 The shared layout includes `entry_loading_head.html` and `entry_loading.html`
-for public Home/content routes. A visitor's first page in a browsing session
-shows the letter whale, including direct entry through a content URL. Subsequent
-content visits skip it. Explicit same-window Home links replay it: a capture
-handler records a short-lived Home intent and uses native navigation before the
-white-hole click handler runs. Hash links, modifier clicks and external links
-remain native. Home-to-content keeps the existing white-hole transition.
-Review endpoints (`/next` etc.) and 404 pages stay isolated. No Home template
-content or authored opening is changed.
+for public Home/content routes. First entry in a browsing session shows the
+letter whale, including direct content URLs. Home is the dark page; public
+content routes are light. Cross-theme links record a short-lived destination
+intent and navigate immediately, so destination resources initialize beneath
+the incoming whale cover. Both directions use the same loader. Light-to-light
+links stay native and do not replay it after first entry. Same-page anchors,
+modifier clicks, downloads and external links remain native. Cross-page anchors
+retain their hash. Frozen hosting prefixes and index.html are supported.
+
+Public pages no longer load the white-hole controller, CSS, boot script or its
+idle WebGL preparation. Existing review endpoints retain their previous isolated
+setup; 404 remains outside the whale integration. Authored page openings remain
+unchanged. The upper-left brand reuses the navigation's current SVG wordmark,
+with unique gradient/clip IDs, and the caption reads `LOADING . . .`. The first dot stays visible; the second and third appear every 400ms, then return directly to one dot in a 1.2-second cycle. Their fixed width keeps the caption stationary; reduced motion shows all three dots.
 
 The stationary silhouette and pale markings are the original hand-traced ORCA
 mascot from `static/assets/wiki1-main-orca.png`. There is no swimming, tail beat,
@@ -29,12 +35,36 @@ covers the complete logo at every angle, with no repeating pose/time reset.
 Canvas 2D needs no model, font download or extra WebGL context. DPR is capped at
 1.5. The complete logo scales to phone portrait/landscape viewports.
 
+## Rendering budget
+
+Static markings are scanline-rasterized once into a small lookup table. The
+seven letters in four inks are rasterized 28 times into an in-memory canvas
+atlas on initialization/resize; frames use `drawImage`, not repeated `fillText`
+or polygon tests. No image files, AVIF upload or new media URL is involved.
+
+Where transferable OffscreenCanvas and Worker are available, the same script
+runs the renderer in a dedicated worker, so Home initialization cannot block
+its animation callbacks. Pointer/resize messages go to that worker. Unsupported,
+failed or unresponsive workers use the cached main-thread renderer; a transferred
+canvas is replaced before fallback. Disposal terminates the worker and frees
+the atlas.
+
+Home renders one real frame for shader/readiness initialization, then skips
+covered scene updates until the entry cover starts fading. Own page assets still
+initialize concurrently. Speculative other-page HTML warming waits until the
+cover is removed, then resumes at idle priority.
+
+`?loading=preview&loading-debug=1` displays renderer-loop timing. Worker FPS
+counts worker draw callbacks, not a measurement of compositor/display FPS.
+Deterministic `loading-frame` snapshots use the main renderer. Normal entry has
+no performance panel.
+
 Normal playback reveals the page once its scene/DOM is ready and one second has passed,
 then fades out over 240ms (260ms disposal). Home initialization failure falls
 back after 3.2 seconds; the head boot watchdog removes a failed cover after 4.5
 seconds. Home starts initializing concurrently.
 
-Session storage suppresses repeat content playback; explicit Home clicks replay it. White-hole arrivals, reduced motion
+Session storage suppresses repeat same-theme playback; cross-theme route intents replay it. Reduced motion
 and history restorations skip normal entry. Storage failures and missing Canvas
 remain recoverable. Disposal cancels animation, timers, observers and listeners.
 
@@ -42,8 +72,10 @@ Review on real Home using `?loading=preview`; it runs continuously. Click or
 Escape reveals Home. `loading-frame=1200` freezes the letter phase only in
 preview. Normal entry ignores this diagnostic parameter.
 
-Validation: `node tests/entry_loading.mjs` checks fixed silhouette, clockwise
-letter flow, mobile bounds, readiness, bypasses, failure recovery and disposal.
+Validation: `node tests/entry_loading.mjs`, `node tests/entry_loading_worker.mjs`,
+`node tests/entry_scene_budget.mjs` and `node tests/opening_warmup.mjs` check
+fixed silhouette, clockwise flow, hover recovery, mobile bounds, readiness,
+worker/fallback lifecycle, covered-scene budget, resource warming and disposal.
 
 ## Background opening preparation
 

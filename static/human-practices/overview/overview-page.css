@@ -1,0 +1,44 @@
+/* The concept sits between the title and the reading stage, with no card. */
+body.hp-overview-page #main-content > .hp-overview-hero {
+  box-sizing: border-box;
+  width: calc(100% + 2 * var(--reading-page-gutter, clamp(24px, 4.5vw, 88px)));
+  max-width: none;
+  margin: 0 calc(-1 * var(--reading-page-gutter, clamp(24px, 4.5vw, 88px))) 38px;
+  padding: 0 clamp(16px, 3vw, 64px) 18px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  scroll-margin-top: 24px;
+}
+body.hp-overview-page #main-content > .hp-overview-hero img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.hp-overview-page #main-content > .hp-overview-hero figcaption {
+  margin: 12px 0 0;
+  padding-inline: 3vw;
+  color: #6b6880;
+  font: italic 16px/1.5 'Source Sans 3', Arial, sans-serif;
+}
+body.hp-overview-page nav.site-nav.whale-navigation {
+  transition: transform .22s ease, opacity .22s ease;
+}
+body.hp-overview-page nav.site-nav.whale-navigation.hp-nav-is-hidden {
+  transform: translateY(calc(-100% - 32px));
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  body.hp-overview-page #main-content > .hp-overview-hero { padding-inline: 10px; margin-bottom: 24px; }
+  body.hp-overview-page #main-content > .hp-overview-hero figcaption { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.hp-overview-page nav.site-nav.whale-navigation { transition: none; }
+}

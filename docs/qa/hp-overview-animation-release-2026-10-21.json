@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-21",
+  "source": "assets/human-practices/overview/emit-echo-evolve-layered-v3.svg",
+  "cdn_url": "https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg",
+  "sha256": "2a6dd1d8df52b29ceb984705e1a44d4fd4c1ce850df9ae700ddcf399ecef1309",
+  "upload": "Official iGEM team 6085 Wiki uploads UI, hp folder",
+  "animation": {
+    "draw_seconds": 2.4,
+    "float_seconds": 6.4,
+    "float_amplitude": 12,
+    "rotation_after_completion": false,
+    "depth": "back orbit, whale, front orbit",
+    "whale_scale": 1.06,
+    "symbol_drift": "Question, paired exclamations and bulb drift \u00b12.5 SVG units horizontally and vertically over 7.2\u20138 seconds, with staggered phases; respects reduced motion."
+  },
+  "release_files": [
+    "assets/human-practices/overview/emit-echo-evolve-layered-v3.svg",
+    "assets/human-practices/overview/emit-echo-evolve-layered-static.svg",
+    "static/human-practices/overview/overview-page.mjs",
+    "static/human-practices/overview/overview-page.css",
+    "docs/human-practices/human-practices.md",
+    "asset_mapping.csv",
+    "asset_uploads.json"
+  ],
+  "verification": {
+    "cdn": "HTTP 200 image/svg+xml; byte-identical SHA-256",
+    "tests": "166 unittest tests passed using bundled Python plus existing pure-Python repository packages",
+    "build": "Frozen-Flask production build passed in task-specific temporary directory",
+    "audit": "24-route standard build audit passed; HP CDN figure and module/CSS output verified",
+    "strict_cdn_baseline_issue": "Unchanged upstream/main static/engineering-opening.css references local static/fonts/headers/LibreBaskerville-Italic.ttf. This is the only reported strict CDN issue.",
+    "svg": "Valid XML; synchronized front/back translation at \u00b112 units / 6.4s; no continued rotation",
+    "syntax": "Node syntax and git diff --check passed",
+    "follow_up_v3": "42 content/wiki/assets tests passed after 6% whale enlargement and symbol drifting. Production build and standard 24-route audit passed again. SVG structure and HTTP 200 / byte-identical CDN hash passed."
+  }
+}

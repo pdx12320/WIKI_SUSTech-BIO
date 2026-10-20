@@ -19,6 +19,8 @@
     {% set heading = item %}
     {% if content.source_label == 'docs/wet-lab/measurement.md' and item.level == 2 %}
       {% set heading = {'id': item.id, 'name': item.name.split(' — ', 1)[0], 'level': item.level, 'custom_label': true} %}
+    {% elif content.source_label == 'docs/project/contribution.md' and item.id in ['sonar', 'puffer'] %}
+      {% set heading = {'id': item.id, 'name': item.id.upper(), 'level': item.level, 'custom_label': true} %}
     {% elif is_description and item.id in description_labels %}
       {% set heading = {'id': item.id, 'name': description_labels[item.id], 'level': item.level, 'custom_label': true} %}
     {% endif %}

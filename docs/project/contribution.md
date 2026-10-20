@@ -1,189 +1,322 @@
 ---
 title: Contribution
-subtitle: Sharing experimental tools, Human Practices resources and educational materials for reuse.
+subtitle: Tools, evidence and ideas for the next generation of RNA engineering.
 eyebrow: Project
-status: pending
-status_label: Content pending team review
-status_message: This overview is prepared for team review. Individual resources retain their own evidence and release status.
 ---
 
 # Contribution
 
-## <span class="sap-logo-label">SONAR</span>![SONAR — SAP logo](/assets/images/sonar/sap-logo.svg){.sap-logo width="485" height="165"} {#sonar data-toc-label="SONAR"}
-
-<!-- SONAR_TUTORIAL: rendered from contribution-sonar.md, with headings nested under SONAR. -->
-
-## <span class="puffer-logo-label">PUFFER</span>![PUFFER logo: teal pufferfish with an RNA recognition motif and navy wordmark](/assets/images/puffer/puffer-logo.png){.puffer-logo width="922" height="227"} {#puffer data-toc-label="PUFFER"}
-
-<div class="sonar-intro" id="puffer-intro">
-<p class="sonar-kicker">From a target sequence to candidate designs</p>
-<p>PUFFER connects a browser-based PUF design workspace with local computational analysis. Start with a target RNA sequence, inspect recognition windows, assemble candidate PUF proteins and keep the designs alongside measured assay records. The companion application supports assay-informed protein ranking and LAMAR-based RNA-site prioritization, with these two outputs kept separate. Together, the tools help organize candidates for experimental follow-up while preserving the inputs and analysis context. Rankings guide prioritization; they do not establish RNA editing efficiency or replace experimental validation.</p>
+<div class="contribution-lead">
+<p><strong>Build on what we built.</strong> ORCA connects programmable RNA editing, quantitative measurement, computational design and public engagement. Our contribution is a collection of <strong>tools, experimental insights and reusable resources</strong> that carries this work beyond one team.</p>
+<p><strong>Wet-lab measurements train and test our models.</strong> <strong>Model outputs focus experimental comparisons.</strong> <strong>SONAR and PUFFER</strong> bring measurement and design into usable workflows, while our <strong>educational resources</strong> make the project accessible beyond the laboratory.</p>
 </div>
 
-[Explore PUFFER: overview, tutorial and workflow](/software#workbench).
+## SONAR & PUFFER {#sonar-puffer}
 
-<link rel="stylesheet" href="static/contribution-assets/previews.css">
-<script type="module" src="static/contribution-assets/previews.js"></script>
+### SONAR · Measure with context {#sonar}
 
-## Human Practices {#human-practices}
+<img class="contribution-brand" src="/assets/images/sonar/sap-logo.svg" alt="SONAR — SAP logo" width="485" height="165">
 
-### Public Understanding Questionnaire {#hp-public-understanding}
+**SONAR connects a modular fluorescence reporter with a complete analysis workflow.** The System for Optical Normalization and Analysis of RNA Editing combines an edit-sensitive green output, a red expression reference and the SONAR Analysis Program (SAP). Reporter experiments supply the observations; SAP carries their controls and analysis context into comparisons that inform the next experimental question.
 
-We used this questionnaire to explore what people want to know about RNA editing and Alzheimer’s disease treatments. Teams can adapt the questions for their own public engagement.
+<div class="contribution-steps">
+<div><strong>Design</strong><p>Inspect a target window and the reporter layout in the SAP sequence workspace.</p><a href="#oligo-design">Explore the design example ↓</a></div>
+<div><strong>Measure</strong><p>Connect fluorescence files with sample identities, controls and acquisition context.</p><a href="/measurement">Explore the measurement framework →</a></div>
+<div><strong>Analyse</strong><p>Carry normalization, reference calibration and export into a single software workflow.</p><a href="#data-analysis">Use SAP ↓</a></div>
+</div>
 
-**Language:** Chinese / English<br>
-**For:** Future iGEM teams and science communicators
+#### Design the signal {#oligo-design}
 
-<a class="button" href="/assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf" target="_blank" rel="noopener" aria-label="Download Public Understanding Questionnaire (Chinese / English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+**The SAP sequence workspace makes design decisions inspectable.** It connects the target coordinate, recognition region and reporter adaptation to generated oligo output. The three application screenshots follow sequence entry, review and export; the interactive views show how those choices map to the reporter architecture.
 
-### Public Understanding Survey Report {#hp-survey-report}
+<div id="sonar-sequence-playground" class="sonar-instrument"><h4>Sequence Playground</h4><p>Explore the recognition region, spacer and response codon in the annotated SAP teaching example.</p></div>
 
-This report presents the descriptive findings from our 103 valid survey responses and informed how we explain benefits, risks and evidence. Most respondents were young; the report is a reference for survey reporting, not a representative study of older adults or caregivers.
+<div class="sonar-screens" data-sap-gallery="design"><p>Actual SAP design walkthrough: enter the target, review the adaptation, then inspect the generated oligos.</p></div>
 
-**Language:** English<br>
-**For:** Human Practices teams and science communicators
+<div id="sonar-reporter-explorer" class="sonar-instrument"><h4>Reporter Explorer</h4><p>Explore the modular reporter architecture and follow the illustrated relationship between the coding switch and protein output.</p></div>
 
-<a class="button" href="/assets/human-practices/attachments/public-perception-survey-findings-en.pdf" target="_blank" rel="noopener" aria-label="Download Public Understanding Survey Report (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+<details class="sonar-drawer">
+<summary>Reporter design and construction resources</summary>
+<p><a href="static/sonar-contribution/resources/RP01.pdf">Oligo design · RP01</a> · <a href="static/sonar-contribution/resources/RP02.pdf">Reporter construction · RP02</a> · <a href="static/sonar-contribution/resources/Universal_Reporter_Plasmid.gb">Computational reporter design · GenBank</a></p>
+<p><a href="/project-contribution-sonar#step-1">Read the complete design and construction tutorial →</a></p>
+</details>
 
-### Peking–Rice HP Summit Presentation {#hp-summit-sharing}
+#### Make every measurement traceable {#data-analysis}
 
-We presented our engagement and inclusion work at the online Peking–Rice Global Summit on August 30, 2026. These slides share our project-specific approach to listening to stakeholders and reflecting on our activities.
+**SAP keeps each reported score connected to its measurement context.** Matched controls, population selection, background correction, reference calibration and export form one analysis sequence. Explore the real S7 teaching dataset below, then follow the five application screenshots from experiment setup to results.
 
-**Language:** English<br>
-**For:** Future iGEM teams
+<div id="sonar-flow-playground" class="sonar-instrument"><h4>Flow Cytometry Playground</h4><p>Explore the S7 teaching event subset alongside the separately computed full-source reference statistics.</p></div>
 
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/peking-rice-hp-summit-presentation-v2.pdf" target="_blank" rel="noopener" aria-label="Download Peking–Rice HP Summit Presentation (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+<div class="sonar-screens" data-sap-gallery="analysis"><p>Actual SAP Analysis walkthrough: initialize, load matched controls, review the calibration context, add samples and inspect the result.</p></div>
 
-## Education {#education}
+**Two explicit scores make optical comparisons interpretable.** Reporter Activity Score (RAS) quantifies the ratio of background-corrected signal sums; Relative Editing Score (RES) places that response on a matched-reference scale. The layer explorer connects these scores with quality context and paired RNA evidence for molecular calibration.
 
-### Shahe Healthy Living Workbook — First Edition {#education-shahe-workbook}
+<div id="sonar-layer-explorer" class="sonar-instrument"><h4>Explore SONAR Layers</h4><p>Follow the measurement framework from population and control context to RAS and reference-calibrated RES.</p></div>
 
-We brought this first workbook to health lessons at Shahe Subdistrict Elderly Service Center, including discussions of misleading health claims and scams. It provides the starting material for our later reader-informed revision.
+<details class="sonar-drawer">
+<summary>Inside the measurement</summary>
+<p class="sonar-equation">RAS = Σ(G − bg<sub>G</sub>) / Σ(R − bg<sub>R</sub>)</p>
+<p>The two channels are summed over the same selected cells. Keeping the population, controls and source files together makes the reported optical score traceable to its measurement context.</p>
+<p><a href="static/sonar-contribution/resources/C04.pdf">Cell preparation · C04</a> · <a href="static/sonar-contribution/resources/RP06.pdf">Flow acquisition · RP06</a> · <a href="/measurement">Explore the complete measurement framework →</a></p>
+</details>
 
-**Language:** Chinese<br>
-**For:** Older learners and community educators
+#### Put the workflow in other teams’ hands {#sonar-reuse}
 
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v1-zh.pdf" target="_blank" rel="noopener" aria-label="Download Shahe Healthy Living Workbook — First Edition (Chinese), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+**SONAR is available for both guided learning and independent analysis.** Use the browser example to explore the workflow or the desktop application to analyse your own files. Protocols, the computational plasmid, teaching data, source code and the tutorial support adaptation; the guide below helps teams identify which components fit their project.
 
-### Healthy Living Workbook — Chinese Edition {#education-workbook-chinese}
+<div id="sonar-fit-guide" class="sonar-instrument"><h4>Explore SONAR for your project</h4><p>Explore how the molecular sensor, measurement framework and available evidence shape a new application.</p></div>
 
-Following feedback from older learners at Shahe, we revised the workbook with less dense text, more writing space and everyday activities. This revised edition supports community lessons and personal notes; it does not replace individual medical advice.
+<div class="sap-start-options">
+<section class="sap-start-card sap-start-desktop" id="sap-download" aria-labelledby="sap-desktop-title">
+<h3 id="sap-desktop-title">Download SAP</h3>
+<p class="sap-start-description">Work with your own data.</p>
+<div class="sap-start-downloads"><a class="sap-start-button" href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-macos-arm64.dmg">Mac <span aria-hidden="true">↓</span></a><a class="sap-start-button" href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/download/v1.4.0rc1/SAP-1.4.0rc1-windows-x64-portable.zip">Windows <span aria-hidden="true">↓</span></a></div>
+<small class="sap-start-meta">Mac: M series · macOS 14+ · 283 MB<br>Windows: x64 · 603 MB</small>
+<details class="sap-install-help"><summary>Installation notes · v1.4.0rc1 preview</summary><p>Mac: open the DMG and drag SAP to Applications.<br>Windows: extract the ZIP and open SAP/SAP.exe. Keep the whole folder together.</p><p>Windows is unsigned; macOS is not notarized. First launch may be blocked.</p><p><a href="https://github.com/Hansen614/SONAR-Analysis-Program/blob/v1.4.0rc1/packaging/INSTALL.md" target="_blank" rel="noopener">Installation guide ↗</a> · <a href="https://github.com/Hansen614/SONAR-Analysis-Program/releases/tag/v1.4.0rc1" target="_blank" rel="noopener">Release details ↗</a></p></details>
+</section>
+<section class="sap-start-card sap-start-online" aria-labelledby="sap-online-title">
+<h3 id="sap-online-title">Use SAP online</h3>
+<p class="sap-start-description">Try the guided example.</p>
+<a class="sap-start-button" href="static/sap-demo/index.html#design" target="_blank" rel="noopener">Launch online <span aria-hidden="true">↗</span></a>
+<small class="sap-start-meta">Analysis uses example data.<br>Use the desktop app to upload your own files.</small>
+</section>
+</div>
 
-**Language:** Chinese<br>
-**For:** Older learners, elderly-service staff and families
+<div class="contribution-links">
+<a href="https://github.com/Hansen614/SONAR-Analysis-Program" target="_blank" rel="noopener">Source code ↗</a>
+<a href="/project-contribution-sonar">Read the tutorial →</a>
+<a href="/engineering#measure">Follow SONAR’s engineering →</a>
+<a href="static/sonar-contribution/data/provenance.json">Explore source records ↗</a>
+</div>
 
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-zh.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — Chinese Edition (Chinese), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+### PUFFER · Connect sequence to selection {#puffer}
 
-### Healthy Living Workbook — English Edition {#education-workbook-english}
+<img class="contribution-brand" src="/assets/images/puffer/puffer-logo.png" alt="PUFFER logo" width="922" height="227">
 
-The English edition makes our revised healthy living workbook available to a wider teaching audience. It combines everyday health topics, personal notes and interest workshops for classroom or independent use; it does not replace individual medical advice.
+**PUFFER turns our computational work into a connected design workspace.** Readers can inspect RNA recognition windows, assemble PUF candidates and organize sequence designs alongside assay records. Its local companion brings assay-informed protein ranking and LAMAR RNA-site prioritization into the same project workflow.
 
-**Language:** English<br>
-**For:** English-speaking educators, older learners and future iGEM teams
+The two analyses answer complementary questions: which protein candidates deserve attention, and which RNA sites deserve closer examination. Their distinct outputs connect molecular design with experimental planning, while saved inputs and exported results preserve the context needed to revisit a decision. The code document below shares the interface, project-data model, analysis integration and software tests.
 
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-en.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — English Edition (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+<div class="contribution-links"><a href="/software#workbench">Explore PUFFER →</a><a href="/software">Software and downloads →</a></div>
 
-### High School Synthetic Biology Reference Framework {#education-curriculum-resources}
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="PUFFER">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">PUFFER</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/puffer-code.pdf" download aria-label="Download PUFFER PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
 
-With CUHK-HongKong-SBS and HG-Tokyo, we used this provisional framework to organize a comparison across high-school biology curricula. The six domains, learning outcomes and scoring rubric can support a preliminary curriculum review; this is a working reference, not an official standard.
+## Wet Experiment {#wet-experiment}
 
-**Language:** English / Simplified Chinese / Japanese<br>
-**For:** Biology teachers and iGEM education teams
+### Precision built through iteration {#precision-through-iteration}
 
-<a class="button" href="/assets/human-practices/attachments/curriculum-comparison-reference-framework.pdf" target="_blank" rel="noopener" aria-label="Download High School Synthetic Biology Reference Framework (English / Simplified Chinese / Japanese), PDF">Download PDF <span aria-hidden="true">↓</span></a>
-
-### Cross-Curriculum Comparison Report {#education-curriculum-report}
-
-Our collaboration compared Pearson Edexcel iAL, Hong Kong HKDSE, mainland Chinese biology and the gaokao, and a study-specific Japanese high-school biology plus AP Biology configuration. This report shares the document analysis and can help educators choose teaching entry points; it does not compare students’ abilities.
-
-**Language:** English<br>
-**For:** Biology teachers and iGEM education teams
-
-<a class="button" href="/assets/human-practices/attachments/curriculum-comparison-analysis.pdf" target="_blank" rel="noopener" aria-label="Download Cross-Curriculum Comparison Report (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
-
-### WORLDPROOF Hackathon Challenges {#education-worldproof-challenges}
-
-We used these scenarios for WORLDPROOF, our synthetic biology hackathon themed “Build it. Break it. Fix it.” The booklet offers discussion starting points about design, users, maintenance and failure; it is a challenge set rather than a complete facilitator’s guide.
-
-**Language:** English<br>
-**For:** Student teams, teachers and workshop facilitators
-
-<a class="button" href="/assets/human-practices/attachments/worldproof-hackathon-challenges-en.pdf" target="_blank" rel="noopener" aria-label="Download WORLDPROOF Hackathon Challenges (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
-
-### ORCA Project Poster — ICII Shared Garden {#education-icii-poster}
-
-We contributed this one-page ORCA introduction to ICII’s shared educational garden. It offers a concise project explanation for teaching and discussion; the wider platform includes work by multiple teams.
-
-**Language:** English<br>
-**For:** Students, teachers and science communicators
-
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/icii-orca-project-poster.pdf" target="_blank" rel="noopener" aria-label="Download ORCA Project Poster — ICII Shared Garden (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
-
-## Inclusivity {#inclusivity}
-
-Our [Inclusivity page](/inclusivity) records initial conversations with product builders about memory, care and communication. These accounts provide context for our ongoing work. A downloadable inclusivity toolkit is not yet available.
-
-## Other {#other}
-
-### A shared experimental and computational workflow {#contribution-summary}
-
-ORCA brings wet-lab measurements and dry-lab analysis into one research workflow. Experiments provide the observations needed to assess an RNA editor; computational analysis helps organize those observations, compare candidate designs and identify questions that remain unresolved. Our contribution is the connection between these activities, together with the records and tools that make the reasoning inspectable.
-
-The resources collected here serve different purposes. The Experiment library documents methods, the Notebook preserves the research chronology, SONAR explains the measurement framework, and the Model and Software pages present computational work with its evidence and assumptions. These resources allow another team to follow how a question became an experiment, how an observation was interpreted and where further evidence is needed.
-
-### Wet-lab methods and research records {#wet-lab-resources}
-
-The Experiment library organizes the team's methods under stable identifiers and subject categories. Its browser reader and original PDFs provide complementary ways to consult the same source material. Keeping the identifiers and source documents together makes it easier to connect a method to the record of its use.
-
-The Notebook adds the chronological context. Its tracks bring together foundational work, editor comparisons, regulatory modules, measurement and functional validation. Dated entries retain their experiment titles, contributors and original pages. This structure lets readers inspect the sequence of work, including repeated attempts and follow-up measurements, rather than seeing only a final summary.
-
-Methods and records have distinct roles. A protocol describes an approach; a notebook entry documents an occasion on which work was recorded. Neither alone establishes the reproducibility of a biological result. Their value is that the underlying evidence remains available for comparison with the project's conclusions.
-
-### Dry-lab analysis across molecular and system scales {#dry-lab-resources}
-
-Our dry-lab contribution connects transcriptome-wide measurements with editor design, RNA-site prioritization and delivery modeling. The five complementary approaches share experimental inputs and return results that inform the next design decision.
-
-#### Transcriptomic Landscape
-
-The RNA-seq workflow converts sequencing libraries into consistently screened candidate sites, replicate-level rates and transcript-oriented sequence contexts. Matched-site comparisons and callable-cytosine normalization support comparisons across editors and chromosomes. Applied to 36 libraries, the workflow distinguished narrower detected editing profiles from a general loss of activity. The site tables and sequence contexts also provide shared inputs for downstream modeling.
-
-#### Recognition Code and Catalytic Design
-
-PUF modeling combines protein foundation-model representations, assay-informed ranking and structure-conditioned sequence generation. The PUF-ESM Specificity Ranker recovered 20 of the measured Top30 constructs in grouped evaluation, concentrating higher-specificity variants into a smaller candidate panel. Generated recognition and scaffold variants extend the design library for further experimental work.
-
-APOBEC modeling connects paired protein–RNA structures, parent-corrected contact profiles and structural clustering with matched experimental comparisons. Combination screening identified a lead that balanced substrate preference with retained target activity. Together, the PUF and APOBEC workflows link computational proposals to measured editing profiles and preserve the comparisons behind candidate selection.
-
-#### RNA-site prioritization with LAMAR
-
-LAMAR combines human-transcript adaptation, regional assessment and local cytidine ranking to prioritize RNA sites. Its top 10 and top 20 lists contained a supported site in 77.9% and 92.1% of 140 positive test windows, respectively. The resulting shortlists let teams choose a screening budget and examine the sequence contexts associated with their editor.
-
-#### Delivery Dynamics
-
-The delivery framework links vector distribution, blood–brain barrier transport, cellular expression and multisite RNA reactions. Compartmental equations track product composition over time, while spatial simulations reveal differences in exposure and editing across tissue. Dose scans identified an intermediate peak in the intended RNA product, and spatial analysis showed persistent differences in coverage.
-
-The [Model](/model) and [Software](/software#rewire) pages share these workflows, figures and archived outputs alongside their inputs and evaluation settings. Teams can use them to compare editor candidates, prioritize RNA sites and explore delivery scenarios within a connected analysis workflow.
-
-### Bringing wet and dry work together {#how-to-reproduce}
-
-The shared workflow begins with a defined question and a traceable observation. Experimental records establish what was measured. Computational work then examines patterns, comparisons and uncertainty. The resulting interpretation identifies which conclusions are supported and which questions should return to experimental review.
-
-Another team can reuse this organization without assuming that ORCA's results transfer unchanged. Source records, resource versions and the stated scope of each analysis provide the starting point for a new comparison. Keeping these elements connected also makes disagreements useful: an unexpected measurement can be traced to its context, and a model can be revised when its assumptions no longer fit the evidence.
-
-### Interpretation and limitations {#troubleshooting}
-
-The project makes several kinds of evidence available, and each supports a different claim. A working interface demonstrates software functionality. A model ranking supports prioritization. A notebook page records an experiment. A biological conclusion requires the relevant measurements and controls to be assessed together.
-
-This separation is part of the contribution. It prevents a convenient score, an illustrative simulation or a successful software test from becoming a stronger biological claim than the evidence allows. Resource-specific limitations and review status remain applicable when the material is reused.
-
-### Reusable resources {#reusable-materials}
-
-| Resource | What it contributes |
-|---|---|
-| [Experiment](/experiments) | A searchable method library with stable identifiers, browser readers and original PDFs. |
-| [Notebook](/notebook) | Dated research records organized by experimental track. |
-| [Model](/model) | RNA-seq analysis, editor comparisons and site-prioritization evidence. |
-| [Software](/software) | Whole-body modeling, figures and archived computational resources. |
-
-### Access and attribution {#license-access}
-
-The Wiki provides the context for these contributions and preserves links to their source material. Reuse should retain resource names, versions, authorship and the relevant evidence limitations. The Wiki's content license is shown in the footer; separately distributed code, data and third-party resources must be used under their own stated terms.
+**ORCA established an experimental route from recognition and catalytic design to integrated RNA editors.** PUF recognition comparisons and APOBEC catalytic screens supplied complementary building blocks. Their integration produced editors that retained strong target editing while reducing a monitored bystander signal.
+
+In the reported integrated-editor comparison, IO-02 and IO-03 retained **61.31% and 69.78% C388 editing**, respectively. C871 editing fell from **79.17% in the parental editor to 13.84% and 14.28%**. These results give future teams concrete examples of how recognition and catalytic changes combine at the editor level.
+
+<figure class="contribution-figure">
+<a href="/assets/images/results-achievements/edit.png" target="_blank" rel="noopener"><img src="/assets/images/results-achievements/edit.png" alt="Recognition and catalytic design contributions combined in integrated ORCA editors" width="3600" height="2000" loading="lazy"></a>
+<figcaption><strong>From component design to integrated performance.</strong> PUF and APOBEC comparisons converge in IO-02 and IO-03. The reported target and bystander measurements connect component-level reasoning to the behavior of complete editors.</figcaption>
+</figure>
+
+The same experimental programme established an ASO-responsive regulatory interface: tagged ORCA's C388 editing decreased from **57.13% to 28.54% at the 48-hour readout**. Together, these studies contribute measured examples of specificity engineering and controllable editing.
+
+<div class="contribution-links"><a href="/engineering#integrated-orca-conclusion-from-component-optimization-to-editor-level-selection">Integrated editor evidence →</a><a href="/results">Explore the results →</a></div>
+
+### An experimental foundation others can reuse {#experimental-foundation}
+
+Our contribution extends from individual results to the infrastructure behind them. The **Experiment library** brings methods together under stable identifiers, with browser readers and original PDFs. The **Notebook** connects those methods to dated research records and the sequence of design decisions.
+
+For future teams, this creates a practical starting point: a method library to consult, an experimental chronology to follow, and measured comparisons to inform new questions. These records also support the dry-lab work below. Assay outcomes provide the labels for protein ranking, RNA-seq defines the observed editing landscape, and matched-parent comparisons test structural proposals.
+
+<div class="contribution-links"><a href="/experiments">Browse experimental methods →</a><a href="/notebook">Explore the notebook →</a><a href="/engineering">Follow the engineering cycles →</a></div>
+
+## Dry Model {#dry-model}
+
+**Our modeling innovation connects experimental evidence with decisions across sequence, structure and system scales.** RNA-seq defines the editing landscape; wet-lab measurements train and test protein-ranking models; structural comparisons guide hypotheses that return to experimental evaluation. This exchange produced concrete results: **PUF-ESM recovered 20 of the measured Top30 constructs**, compared with 14 using position-only features, while **LAMAR’s Top20 shortlists captured a supported site in 92.1% of 140 positive test windows**. Together with catalytic-design analysis and delivery simulations, these approaches form a reusable framework for connecting molecular choices to measured and modeled outcomes.
+
+The figures show what the approach revealed; the code readers place the underlying work beside its explanation.
+
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="Model figures &amp; tables">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v17h17M8 15v-4m5 4V6m5 9V9"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Explore the figures</span><span class="contribution-document-title">Model figures &amp; tables</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/model-figures.pdf" download aria-label="Download Model figures &amp; tables PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
+
+### Charting the editing landscape {#editing-landscape}
+
+Our transcriptomic workflow turns **36 RNA-seq libraries across nine groups** into a common evidence base for editor comparison. Candidate screening, replicate-level quantification, matched-site comparisons and transcript-oriented sequence contexts connect the experimental library to protein design and RNA-site modeling.
+
+<div class="contribution-summary">
+<p class="contribution-summary-label"><strong>Main findings</strong></p>
+<ul>
+<li><strong>Editing breadth and retained target signal reveal different aspects of specificity.</strong> GVE and SNE showed narrower detected candidate-site profiles than PUF12 while retaining target-associated signals.</li>
+<li><strong>PUF12 expanded both site recruitment and activity at shared sites.</strong> It showed higher rates at 73.1% of the 2,221 sites retained by both PUF10 and PUF12.</li>
+<li><strong>Local sequence patterns connect recognition and catalysis.</strong> Conserved motifs across PUF variants support a shared catalytic sequence preference, while recognition changes reshape the recruited site set.</li>
+</ul>
+<p class="contribution-summary-label"><strong>What we contribute to the community</strong></p>
+<ul>
+<li><strong>A common analysis foundation.</strong> The workflow organizes 36 libraries across nine groups into screened candidate sites, replicate-level measurements and transcript-oriented sequence contexts. Site tables and sequence contexts supply experimental evidence for recognition analysis, catalytic comparisons and RNA-site prioritization. The shared code includes counting, exports, configuration and environment definitions.</li>
+<li><strong>A reusable comparison strategy.</strong> Matched-site analysis and callable-cytosine normalization let teams compare activity, site breadth and chromosome distribution within a consistent framework.</li>
+</ul>
+</div>
+
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="Transcriptomic Landscape">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Transcriptomic Landscape</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/transcriptomic-landscape-code.pdf" download aria-label="Download Transcriptomic Landscape PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
+
+<div class="contribution-links"><a href="/model#module1-1">Explore this model’s overview →</a></div>
+
+### Learning the language of recognition {#recognition-intelligence}
+
+**PUF-ESM connects protein language-model representations with experimental specificity measurements.** It combines ESM-2 sequence information and mutation identity with assay-informed regression. The resulting ranking brings target activity and monitored bystander editing into one selection criterion. Structure-conditioned generation adds a complementary route for expanding the candidate library.
+
+<div class="contribution-summary">
+<p class="contribution-summary-label"><strong>Main findings</strong></p>
+<ul>
+<li><strong>Sequence-aware prediction enriched the experimental shortlist.</strong> In grouped evaluation of 66 constructs, PUF-ESM recovered 20 of the measured Top30, above the random expectation of 13.64 and the 14 recovered using position-only features. The comparison identifies amino-acid information as a useful contribution to candidate selection.</li>
+<li><strong>Ranking and generation serve complementary design goals.</strong> Assay-informed prediction prioritizes candidates, while structure-conditioned generation expands the recognition and scaffold-sequence library.</li>
+</ul>
+<p class="contribution-summary-label"><strong>What we contribute to the community</strong></p>
+<ul>
+<li><strong>An assay-informed protein-ranking approach.</strong> Future teams can connect protein language-model features with their experimental readouts and assess the target–bystander balance in one workflow.</li>
+<li><strong>Evaluation tied to experimental effort.</strong> Grouped predictions, Top-K recovery and feature ablations show how many measured high-performing constructs enter a fixed-size screening panel.</li>
+<li><strong>Implementation material beside the evidence.</strong> Prediction code, example input and expected output, and ablation scripts make the ranking workflow available for inspection and adaptation.</li>
+</ul>
+</div>
+
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="Recognition Code">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Recognition Code</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/recognition-code.pdf" download aria-label="Download Recognition Code PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
+
+<div class="contribution-links"><a href="/model#module2-1">Explore this model’s overview →</a></div>
+
+### Resolving the activity–selectivity frontier {#catalytic-frontier}
+
+**Our catalytic-design framework connects protein–RNA structural comparisons with experimental selection.** Contact decomposition and parent-corrected contact profiles organize structural hypotheses. Wet-lab readouts then evaluate substrate preference and retained target activity together, feeding measured outcomes back into combination design.
+
+<div class="contribution-summary">
+<p class="contribution-summary-label"><strong>Main findings</strong></p>
+<ul>
+<li><strong>Joint selection identified a balanced lead.</strong> The combination screen produced a candidate with a 2.156 preference ratio and 0.773 activity retention, meeting both criteria in the same assay batch.</li>
+<li><strong>Experimental feedback resolved the activity–preference trade-off.</strong> Single-variant measurements informed combination design, and the measured Pareto frontier exposed the strongest balances between the two objectives.</li>
+<li><strong>Measured outcomes add information beyond structural similarity.</strong> Matched-parent assays distinguished the activities of structurally similar variants and determined which candidates advanced.</li>
+</ul>
+<p class="contribution-summary-label"><strong>What we contribute to the community</strong></p>
+<ul>
+<li><strong>A framework that connects structure with experiment.</strong> Contact decomposition and parent-corrected profiles organize molecular hypotheses; experimental readouts determine their measured value. The shared implementation covers structural contacts, matched experimental comparisons and scientific audits, preserving the connection between calculations and wet-lab evidence.</li>
+<li><strong>A transparent way to compare candidates.</strong> Same-batch parental references, separate activity and preference readouts, and Pareto-frontier plots make candidate selection inspectable.</li>
+</ul>
+</div>
+
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="Catalytic Design">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Catalytic Design</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/catalytic-design-code.pdf" download aria-label="Download Catalytic Design PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
+
+<div class="contribution-links"><a href="/model#module3-1">Explore this model’s overview →</a></div>
+
+### Focusing the RNA search space {#rna-prioritization}
+
+**Our LAMAR workflow connects transcriptome-scale evidence with local RNA-site ranking.** We adapted an RNA foundation-model workflow around human transcripts, regional assessment and cytidine-centered prioritization. RNA-seq-derived labels carry experimental evidence into the sequence representation and its evaluation.
+
+<div class="contribution-summary">
+<p class="contribution-summary-label"><strong>Main findings</strong></p>
+<ul>
+<li><strong>Shortlists captured supported RNA sites.</strong> Across 140 positive test windows, Top10 and Top20 lists contained at least one supported site in 77.9% and 92.1% of windows, respectively.</li>
+<li><strong>Pretrained representations supported regional screening.</strong> The original frozen LAMAR encoder achieved the strongest validation performance among the compared regional-model configurations.</li>
+</ul>
+<p class="contribution-summary-label"><strong>What we contribute to the community</strong></p>
+<ul>
+<li><strong>A two-stage RNA analysis strategy.</strong> Regional assessment and local cytidine ranking connect broad transcript screening with focused experimental shortlists.</li>
+<li><strong>A path from RNA-seq evidence to sequence modeling.</strong> Experimental site labels, transcript-oriented contexts and human-transcript adaptation connect measured editing patterns with RNA representations.</li>
+<li><strong>Evaluation that makes screening effort explicit.</strong> Hit@K and Recall@K connect the number of cytidines examined with window-level success and supported-site recovery. Training and evaluation scripts, configuration, tokenizer resources and repository validation accompany the reported results.</li>
+</ul>
+</div>
+
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="LAMAR">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">LAMAR</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/lamar-code.pdf" download aria-label="Download LAMAR PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
+
+<div class="contribution-links"><a href="/model#module4-1">Explore this model’s overview →</a></div>
+
+### Connecting delivery to RNA outcomes {#delivery-dynamics}
+
+**Delivery Dynamics extends the project from molecular comparisons to system behavior.** The framework links distribution, barrier transport, cellular expression and multisite RNA reactions. Compartmental modeling and spatial simulations connect editor exposure with the composition and distribution of RNA products.
+
+<div class="contribution-summary">
+<p class="contribution-summary-label"><strong>Main findings</strong></p>
+<ul>
+<li><strong>Product composition revealed an intermediate peak.</strong> The simulations showed the intended RNA product reaching a maximum at an intermediate modeled input, with the product mixture changing across scenarios. The connected model traced how exposure and expression influence simulated RNA product composition.</li>
+<li><strong>Spatial coverage added a distinct system-level result.</strong> Tissue simulations showed persistent differences in coverage, complementing the compartment-level time courses.</li>
+</ul>
+<p class="contribution-summary-label"><strong>What we contribute to the community</strong></p>
+<ul>
+<li><strong>A connected multiscale framework.</strong> Distribution, barrier transport, expression and RNA reactions are represented within one computational structure.</li>
+<li><strong>Outputs that connect scales.</strong> Time courses, product mixtures and spatial coverage provide complementary ways to inspect the consequences of the model assumptions. Model components, configuration, analysis scripts and tests are shared together, giving future teams an inspectable foundation for comparative modeling.</li>
+</ul>
+</div>
+
+<div class="contribution-document">
+<details class="contribution-code" data-contribution-document="Delivery Dynamics">
+<summary><span class="contribution-document-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></svg></span><span class="contribution-document-heading"><span class="contribution-document-label">Read the code</span><span class="contribution-document-title">Delivery Dynamics</span></span><span class="contribution-document-toggle" aria-hidden="true"></span></summary>
+<div class="contribution-pdf-viewport"></div>
+</details>
+<a class="contribution-pdf-link contribution-download" href="static/contribution/resources/delivery-dynamics-code.pdf" download aria-label="Download Delivery Dynamics PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg><span>Download</span></a>
+</div>
+
+<div class="contribution-links"><a href="/software#rewire-purpose">Explore this model’s overview →</a></div>
+
+## HP {#hp}
+
+### Turn listening into design {#listening-into-design}
+
+**Our Human Practices work connects research decisions with the people affected by them.** Conversations across clinical care, research and older-adult services brought treatment burden, evidence, choice and daily care into ORCA's design process. The stakeholder map and interview records make those connections visible.
+
+This contributes a way of working that other teams can adopt: identify whose experience matters, record what they said, and show how it changes the project. For ORCA, that process connected molecular engineering with questions about practical use and shaped how we explain the science.
+
+<div class="contribution-links"><a href="/human-practices">Explore the stakeholder-to-design journey →</a></div>
+
+### Knowledge that travels {#knowledge-that-travels}
+
+**We developed educational resources that other teams can adapt and share.** The revised *Practical Healthy Living Workbook for Older Adults* combines short lessons, illustrations and space for personal notes. Feedback from older learners informed the move toward clearer pages and everyday use; Chinese and English editions extend its reach.
+
+Our team also designed brain and animal-cell teaching models, printed in collaboration with the SUSTech 3D Printing Club. Their shapes and textures supported hands-on conversations about biology. The shared STL files let educators bring the same tangible approach into new classrooms and community activities.
+
+<figure class="contribution-figure">
+<a href="/assets/human-practices/images/biology-models-printing-collage.webp" target="_blank" rel="noopener"><img src="/assets/human-practices/images/biology-models-printing-collage.webp" alt="Brain and cell teaching models produced with the SUSTech 3D Printing Club" loading="lazy"></a>
+<figcaption><strong>Reusable resources for learning together.</strong> Team-designed brain and cell models turn invisible structures into objects that learners can hold, examine and discuss.</figcaption>
+</figure>
+
+<div class="contribution-links">
+<a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx">Chinese handbook · editable</a>
+<a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx">English handbook · editable</a>
+<a href="/assets/human-practices/models/biology-brain-model.stl.zip">Brain model · STL</a>
+<a href="/assets/human-practices/models/biology-animal-cell-model.stl.zip">Cell model · STL</a>
+</div>
+
+### Carry the work forward {#carry-the-work-forward}
+
+Team exchanges, shared educational activities and community events made ORCA part of a wider conversation. Our education records preserve the formats, materials and lessons from that work, giving future teams concrete starting points for their own engagement.
+
+Together, these contributions connect a laboratory question to tools others can use: measurement software, experimental records, computational workflows and educational materials. We share the reasoning alongside the resources so that the next team can build its own questions on a clear foundation.
+
+<div class="contribution-links"><a href="/education">Explore education and team exchanges →</a><a href="/inclusivity">Explore inclusive design →</a></div>

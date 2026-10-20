@@ -1,3 +1,15 @@
 {% extends "pages/content_page.html" %}
-{% block page_styles %}{{ super() }}<link rel="stylesheet" href="{{ url_for('static', filename='sonar-contribution/sonar.css') }}">{% endblock %}
-{% block page_scripts %}{{ super() }}<script type="module" src="{{ url_for('static', filename='sonar-contribution/index.mjs') }}"></script>{% endblock %}
+{% block page_styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='sonar-contribution/sonar.css') }}">
+{% if content.source_label == 'docs/project/contribution.md' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='contribution/contribution.css') }}">
+{% endif %}
+{% endblock %}
+{% block page_scripts %}
+{{ super() }}
+<script type="module" src="{{ url_for('static', filename='sonar-contribution/index.mjs') }}"></script>
+{% if content.source_label == 'docs/project/contribution.md' %}
+<script src="{{ url_for('static', filename='contribution/documents.js') }}" defer></script>
+{% endif %}
+{% endblock %}

@@ -7,7 +7,7 @@
   const intentKey = 'orca.entry-home.v1';
   const prefix = canonical(home).replace(/\/$/, '') + '/';
   // These templates own their arrival (data-team/design/wh-own-opening).
-  const ownOpenings = new Set(['team', 'design-communication', 'human-practices']);
+  const ownOpenings = new Set(['team', 'design-communication', 'human-practices', 'engineering']);
   const pageName = value => {
     const path = canonical(value);
     return path.startsWith(prefix) ? path.slice(prefix.length) : '';

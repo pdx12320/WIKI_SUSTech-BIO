@@ -1,16 +1,16 @@
 ---
 title: Results
-subtitle: From Molecular Engineering to Therapeutic Exploration
+subtitle: Progress, shared tools and the ORCA journey
 eyebrow: Project
+header_introduction: >-
+  Our work on RNA editing for Alzheimer’s disease brought experiments, models
+  and Human Practices into one shared effort. We improved editor candidates,
+  investigated control and delivery, and built tools for measurement and reuse.
+  Here, we bring together the progress we made, the limits our evidence revealed,
+  and the experiences that shaped our next questions.
 ---
 
 # Results
-
-*From Molecular Engineering to Therapeutic Exploration*
-
-ORCA began with a therapeutic question: could programmable C-to-U RNA editing redirect APOE4 transcripts toward an APOE3-equivalent coding outcome without altering the genome? Achieving the intended edit, however, is only one part of a useful RNA-editing system. The editor must also balance activity with specificity, be regulated and delivered to relevant cells, and produce results that can be measured and interpreted.
-
-We addressed these challenges through five interconnected routes—**EDIT, CONTROL, DELIVER, MEASURE, and MODEL**—before taking our first steps toward disease-relevant cellular evaluation. Here, we bring together their principal outcomes and examine how far the resulting platform has progressed beyond molecular editing.
 
 ## Platform Achievements
 

@@ -534,3 +534,7 @@ Future teams can reuse the map interaction, evidence data structure and reportin
 <a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-methods-reuse.pdf" target="_blank" rel="noopener">Methods &amp; reuse · PDF · 5 pages</a>
 <a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-example-report.pdf" target="_blank" rel="noopener">Example report · PDF · 8 pages</a>
 <a class="button" href="https://gitlab.igem.org/2026/software/sustech/education-transfer/-/archive/9a2054211637e5882f85d2eb2f484cad870a98ad/education-transfer-9a2054211637e5882f85d2eb2f484cad870a98ad.zip">Source package · ZIP</a>
+
+<nav class="contribution-next" id="contribution-next" aria-label="Continue to Future">
+  <a class="contribution-next__link" href="/future"><span aria-hidden="true">↓</span><span>To Future</span></a>
+</nav>

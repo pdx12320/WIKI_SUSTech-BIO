@@ -280,3 +280,18 @@
   .contribution-pdf-viewport { display: none; }
   .contribution-code > p { display: block; }
 }
+
+[data-content-source="docs/project/contribution.md"] .contribution-next {
+  display:flex; justify-content:center; margin:52px 0 12px;
+}
+[data-content-source="docs/project/contribution.md"] .contribution-next__link {
+  display:inline-flex; align-items:center; justify-content:center; gap:14px;
+  min-height:48px; max-width:100%; box-sizing:border-box; padding:10px 26px;
+  border:1px solid #dedfed; border-radius:999px; background:#f1f1f9;
+  color:#464786; font:600 17px/1.4 'Source Sans 3',sans-serif; text-decoration:none;
+  transition:background .2s,border-color .2s;
+}
+.contribution-next__link > span:first-child { font-size:24px; line-height:1; }
+[data-content-source="docs/project/contribution.md"] .contribution-next__link:hover { background:#eaeaf8; border-color:#bfc1dd; color:#3d409b; }
+.contribution-next__link:focus-visible { outline:2px solid #5f62cd; outline-offset:4px; }
+@media(prefers-reduced-motion:reduce) { [data-content-source="docs/project/contribution.md"] .contribution-next__link { transition:none; } }

@@ -256,4 +256,6 @@ But we are proud of what we have built, of what we have learned, and, above all,
 <div class="results-thank-you" id="thank-you" role="group" aria-label="A thank-you from the ORCA team">
   <img src="/assets/images/results-ending/orca-thank-you.png" alt="The ORCA mascot smiling and bowing in thanks." width="1093" height="1439" loading="lazy" decoding="async">
   <p>Thank you for exploring ORCA with us.</p>
+  <div class="results-thank-you__divider" aria-hidden="true"><span></span></div>
+  <a class="results-contribution-link" href="/contribution"><span aria-hidden="true">↓</span><span>Contribution</span></a>
 </div>

@@ -120,8 +120,14 @@ assert.equal(homeClick.assigned[0], 'https://wiki.test/');
 const returnedHome = run({ storage: homeClick.storage });
 assert.equal(returnedHome.root.dataset.entryLoading, 'active', 'Clicking Home replays the entry loader after a previous visit');
 assert.equal(returnedHome.storage.has('orca.entry-home.v1'), false, 'Home intent is consumed once');
-const genericClick = run({ seen: true });
-assert.equal(click(genericClick, '/description').defaultPrevented, true, 'Ordinary pages bypass the old tunnel and use the whale on arrival');
+const departureHome = run({ seen: true });
+assert.equal(click(departureHome, '/description').defaultPrevented, false, 'Home departures retain the white-hole tunnel');
+assert.equal(departureHome.assigned.length, 0, 'The entry loader must not navigate before the tunnel runs');
+const frozenHome = run({ seen: true, path: '/sustech/index.html', home: '/sustech/' });
+assert.equal(click(frozenHome, '/sustech/model').defaultPrevented, false, 'Frozen Home departures retain the tunnel');
+assert.ok(run({ seen: true, content: true, path: '/description', cover: true }).removed, 'Tunnel arrivals do not stack a whale cover');
+const genericClick = run({ seen: true, content: true, path: '/results' });
+assert.equal(click(genericClick, '/description').defaultPrevented, true, 'Content-to-content navigation uses the whale on arrival');
 for (const path of ['/description', '/model', '/education', '/inclusivity', '/notebook']) {
   const arrival = run({ seen: true, content: true, path });
   assert.equal(arrival.root.dataset.entryLoading, 'active', `${path} replays the whale after the first visit`);

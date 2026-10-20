@@ -16,14 +16,15 @@
     const name = pageName(value);
     return /^[a-z0-9-]+$/i.test(name) && !/^(next|404)(-|$)/.test(name) && !ownOpenings.has(name);
   };
-  // Capture ordinary page clicks before the white-hole bubbling handler so
-  // visitors see one arrival cover rather than a tunnel followed by a whale.
+  // Home departures retain their authored tunnel. Only navigation between
+  // content pages uses the whale; the incoming tunnel shield avoids doubling up.
   document.addEventListener('click', event => {
     const link = event.target?.closest?.('a[href]');
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
         link.hasAttribute('download') || link.closest?.('[data-wh-exclude]') ||
         (link.target && link.target !== '_self') || link.rel?.split(/\s+/).includes('external')) return;
     let url; try { url = new URL(link.getAttribute('href'), location.href); } catch { return; }
+    if (canonical(location.href) === canonical(home) && canonical(url) !== canonical(home)) return;
     if (url.origin !== location.origin || !['http:', 'https:'].includes(url.protocol) || url.username || url.password ||
         (canonical(url) !== canonical(home) && !ordinaryPage(url)) ||
         (url.hash && (canonical(url) === canonical(location.href) || canonical(url) === canonical(home)))) return;

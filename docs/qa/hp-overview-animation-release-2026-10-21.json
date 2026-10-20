@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-21",
+  "source": "assets/human-practices/overview/emit-echo-evolve-layered-v2.svg",
+  "cdn_url": "https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v2.svg",
+  "sha256": "95d1b7ba20084a030935556576decada9dd241fd9c81de890db47c34cea0bc21",
+  "upload": "Official iGEM team 6085 Wiki uploads UI, hp folder",
+  "animation": {
+    "draw_seconds": 2.4,
+    "float_seconds": 6.4,
+    "float_amplitude": 12,
+    "rotation_after_completion": false,
+    "depth": "back orbit, whale, front orbit"
+  },
+  "release_files": [
+    "assets/human-practices/overview/emit-echo-evolve-layered-v2.svg",
+    "assets/human-practices/overview/emit-echo-evolve-layered-static.svg",
+    "static/human-practices/overview/overview-page.mjs",
+    "static/human-practices/overview/overview-page.css",
+    "docs/human-practices/human-practices.md",
+    "asset_mapping.csv",
+    "asset_uploads.json"
+  ],
+  "verification": {
+    "cdn": "HTTP 200 image/svg+xml; byte-identical SHA-256",
+    "tests": "166 unittest tests passed using bundled Python plus existing pure-Python repository packages",
+    "build": "Frozen-Flask production build passed in task-specific temporary directory",
+    "audit": "24-route standard build audit passed; HP CDN figure and module/CSS output verified",
+    "strict_cdn_baseline_issue": "Unchanged upstream/main static/engineering-opening.css references local static/fonts/headers/LibreBaskerville-Italic.ttf. This is the only reported strict CDN issue.",
+    "svg": "Valid XML; synchronized front/back translation at \u00b112 units / 6.4s; no continued rotation",
+    "syntax": "Node syntax and git diff --check passed"
+  }
+}

@@ -1,6 +1,6 @@
 ---
 title: Human Practices
-subtitle: Ask. Listen. Change.
+subtitle: Emit, Echo, Evolve.
 eyebrow: Engagement
 status: pending
 status_label: Content pending team review
@@ -14,9 +14,14 @@ status_message: Supplied manuscript and interview summaries are presented for te
 > <strong class="hp-opening-line">SUSTech-BIO</strong><br>
 > <strong class="hp-opening-line">Emit, Echo, Evolve</strong>
 >
-> Ask. Listen. Change.
->
 > People’s questions shape what we do next.
+
+<figure class="hp-figure" id="hp-figure-1">
+  <img src="https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v2.svg" alt="Emit, Echo, Evolve. Three waves spread outward in sequence; a rounded arrow completes one circle around the final whale, joins its tail, then floats gently up and down." width="1540" height="485" decoding="async">
+  <figcaption>Figure 1. Emit, Echo, Evolve.</figcaption>
+</figure>
+
+<script type="module" src="static/human-practices/overview/overview-page.mjs"></script>
 
 ---
 
@@ -32,12 +37,8 @@ ORCA studies RNA editing for Alzheimer's disease (AD). Building on a published P
 
 Clinicians helped us rethink delivery and treatment burdens. Older adults and care staff helped us revise a workbook and try a home-safety tool. Our courses, learning materials and outreach are documented on the [Education page](/education).
 
-Our approach is **Emit, Echo, Evolve: ask, listen, change.** People join us with different needs and ways of learning. Their experience helps shape what we do next.
+Our approach is **Emit, Echo, Evolve.** People join us with different needs and ways of learning. Their experience helps shape what we do next.
 
-<figure class="hp-figure" id="hp-figure-1">
-  <img src="/assets/human-practices/images/emit-echo-evolve-framework.webp" alt="Emit–Echo–Evolve practice framework" loading="lazy" decoding="async">
-  <figcaption>Figure 1. Emit, Echo, Evolve</figcaption>
-</figure>
 
 ---
 

@@ -56,6 +56,7 @@
 {% if is_description %}<link rel="stylesheet" href="{{ url_for('static', filename='description-opening.css') }}">{% endif %}
 {% if is_contribution %}<link rel="stylesheet" href="{{ url_for('static', filename='contribution-opening.css') }}">{% endif %}
 {% if personality == 'future' %}<link rel="stylesheet" href="{{ url_for('static', filename='future-opening.css') }}">{% endif %}
+{% if personality == 'measurement' %}<link rel="stylesheet" href="{{ url_for('static', filename='measurement-particles.css') }}">{% endif %}
 {% endblock %}
 {% block page_scripts %}
 {% if has_dbtl %}<script src="{{ url_for('static', filename='reading-orbit/dbtl-wheel.js') }}" defer></script>{% endif %}
@@ -66,6 +67,7 @@
 {% if is_description %}<script src="{{ url_for('static', filename='description-opening.js') }}" defer></script>{% endif %}
 {% if is_contribution %}<script src="{{ url_for('static', filename='contribution-opening.js') }}" defer></script>{% endif %}
 {% if personality == 'future' %}<script src="{{ url_for('static', filename='future-opening.js') }}" defer></script>{% endif %}
+{% if personality == 'measurement' %}<script src="{{ url_for('static', filename='measurement-particles.js') }}" defer></script>{% endif %}
 {% endblock %}
 
 {% block main %}
@@ -77,6 +79,8 @@
   {% include 'components/contribution_opening.html' %}
   {% elif personality == 'future' %}
   {% include 'components/future_opening.html' %}
+  {% elif personality == 'measurement' %}
+  {% include 'components/measurement_particles.html' %}
   {% elif personality %}
   {% from 'components/chapter_personality.html' import chapter_header %}
   {{ chapter_header(personality, content.title, 'content-overview', content.metadata.get('header_introduction')) }}

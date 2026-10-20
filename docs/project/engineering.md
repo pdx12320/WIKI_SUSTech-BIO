@@ -124,6 +124,13 @@ Programmable On-target Docking
 
 POD (Programmable On-target Docking) engineers the RNA-recognition motifs of PUF12 to improve editing specificity. We explored recognition variants designed to retain APOE4 C388 editing while limiting unwanted editing at other APOE sites.
 
+<aside class="engineering-input" id="engineering-public-input" aria-label="Public input · interpreting our readouts">
+<p class="engineering-input__label">Public input · interpreting our readouts</p>
+<p>Our 103 valid survey responses mainly reflect younger people: 96 respondents were aged 18–30, and only five reported direct cognitive-disorder experience, including caregiving.</p>
+<p>Our public survey asked what readers need to judge emerging treatments: actual improvement versus existing treatment, serious adverse effects and their probabilities, and who may benefit or be unsuitable. We use these questions to explain our engineering readouts: editing at C388, changes elsewhere in RNA, and cellular observations answer different questions. Future-use discussions will also need duration, delivery burden and patient suitability. Here, the survey informs how we present evidence; it supplies neither an experimental performance target nor evidence of benefit.</p>
+<p class="engineering-input__sources"><a href="/human-practices#2-2-public-understanding-survey-addressing-what-people-want-to-know-first">HP survey account</a> · <a href="/assets/human-practices/attachments/public-perception-survey-findings-en.pdf">Findings, Q1–Q3, Q6 and Q8</a> · <a href="/assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf">Original question wording</a></p>
+</aside>
+
 ### **Engineering Rationale** {#pod-engineering-rationale .engineering-section-title}
 
 #### Why recognition needed further engineering {#pod-why-recognition-needed-further-engineering}
@@ -772,6 +779,12 @@ All read-level metrics in this benchmark used the Q13 primary analysis. Rather t
 
 Both share the **P9-NTQ recognition domain**, while their different CETUS partners shape complementary outcomes. We therefore retained **IO-02 and IO-03** as the two Integrated ORCA candidates for downstream evaluation, rather than declaring the highest-activity editor or the lowest-burden editor universally best.
 
+<aside class="engineering-input" id="engineering-specificity-input" aria-label="Research input · beyond the target site">
+<p class="engineering-input__label">Research input · beyond the target site</p>
+<p>Prof. Keqiang Ye asked us to consider nearby edits, changes elsewhere and differences between cell types alongside target editing. His advice helps frame the activity–selectivity comparisons above: we examine bystander sites and read-level APOE editing patterns as well as C388. The separate RNA-seq workflow broadens the search to candidate transcriptome-wide changes. Further work will need matched cell-type comparisons to establish how these profiles depend on cellular context.</p>
+<p class="engineering-input__sources"><a href="/human-practices#professor-keqiang-ye-how-should-we-judge-whether-an-edit-warrants-further-development">Prof. Ye’s interview</a> · <a href="#model-rna-seq-cycle-04-learn">RNA-seq evaluation</a></p>
+</aside>
+
 ### **Conclusion** {#integrated-orca-conclusion-from-component-optimization-to-editor-level-selection .engineering-conclusion-title}
 
 ![Integrated Orca — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/integrated-orca.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
@@ -1271,6 +1284,12 @@ The synthetic interface now supported **externally induced suppression of ORCA's
 
 ---
 
+<aside class="engineering-input" id="engineering-control-input" aria-label="Research input · dose, context and control">
+<p class="engineering-input__label">Research input · dose, context and control</p>
+<p>Dr. Ziwei Dai raised the links between dose, cell state and unintended editing, alongside APOE’s roles outside the brain. These questions help us revisit what regulation must achieve: useful editing in the intended setting, with a way to limit continued activity. The C805 experiment above shows suppression under the tested cellular conditions. Future work will measure RNA and protein alongside editing, test withdrawal and recovery, and examine whether the response changes across cellular environments.</p>
+<p class="engineering-input__sources"><a href="/human-practices#dr-ziwei-dai-how-do-people-make-choices-after-learning-about-a-technology">Dr. Dai’s interview</a> · <a href="/notebook?track=aso">ASO laboratory records</a></p>
+</aside>
+
 ### **Conclusion** {#aso-conclusion-from-aso-target-selection-to-an-engineered-off-interface .engineering-conclusion-title}
 
 ![Aso — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/aso.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
@@ -1428,6 +1447,12 @@ AAV also entails trade-offs, notably packaging limits, immune responses, and dif
 
 *Figure 1. Delivery-platform trade-offs evaluated against ORCA's requirements for CNS access, expression duration, and experimental feasibility.*
 
+<aside class="engineering-input" id="engineering-delivery-input" aria-label="Clinical input · delivery over time">
+<p class="engineering-input__label">Clinical input · delivery over time</p>
+<p>Dr. Zhifan Zhou asked how an editor could reach the brain and what repeated doses, invasive procedures and effect duration would demand of patients and families. We gave delivery research greater priority and included treatment burden in planning. This makes duration and repeat administration part of the carrier comparison above. The AAV9 experiments below test production and recipient-cell expression; later delivery studies will need to assess route, brain access and sustained activity together with the burden of administering treatment.</p>
+<p class="engineering-input__sources"><a href="/human-practices#dr-zhifan-zhou-from-editing-in-the-laboratory-to-treatment-arrangements-patients-can-accept">Dr. Zhou’s interview</a> · <a href="/human-practices#dr-ziwei-dai-how-do-people-make-choices-after-learning-about-a-technology">Dr. Dai’s perspective</a></p>
+</aside>
+
 #### AAV and ORCA: a two-way engineering fit {#deliver-aav-and-orca-a-two-way-engineering-fit}
 
 The rationale for combining AAV with ORCA is reciprocal: **AAV offers ORCA time, while ORCA gives AAV space** (Figure 2).
@@ -1514,6 +1539,12 @@ The second cycle moved our system from a reporter-based production exercise to *
 
 To ask whether an ORCA-containing AAV9 preparation could produce a detectable transcript in recipient cells, we treated the human astrocytic cell line **CCF-STTG1** with the GFA–ORCA preparation from Cycle 2. We selected reverse transcription followed by ORCA-directed endpoint PCR as an initial molecular readout.
 
+<aside class="engineering-input" id="engineering-model-guidance" aria-label="Advisor input · choosing a workable cell model">
+<p class="engineering-input__label">Advisor input · choosing a workable cell model</p>
+<p>Prof. Zefeng Wang and Ms. Min Zhang helped us plan a physiologically relevant model: iPSC-derived APOE4/4 astrocytes. Wang guided the scientific rationale and phenotype selection; Zhang assessed culture feasibility. When imported cells were delayed at customs, Wang helped investigate alternatives and Zhang checked their practical suitability. The team switched to CCF-STTG1, used in this delivery assay. This preserved a workable experimental route while leaving validation in the originally intended astrocyte model for future work.</p>
+<p class="engineering-input__sources"><a href="/human-practices#advisor-model-selection">HP model-selection guidance</a> · <a href="/human-practices#advisor-customs-bottleneck">Procurement and model change</a> · <a href="/notebook?track=fv&amp;date=2026-09-18">18 September culture record</a> · <a href="/attributions">Attributions</a></p>
+</aside>
+
 #### Build {#deliver-cycle-03-build}
 
 Following AAV9 treatment, we collected cellular RNA, synthesized cDNA, amplified with ORCA-directed primers, and examined the products by agarose gel electrophoresis. A separate PCR reaction using an **ORCA plasmid DNA template** provided a reference for amplification from DNA; importantly, it did not test the RNA-isolation or reverse-transcription steps (Figure 7).
@@ -1529,6 +1560,12 @@ No clear band corresponding to the expected ORCA amplicon was visible in the AAV
 #### Learn {#deliver-cycle-03-learn}
 
 This experiment extended delivery assessment from vector preparations to recipient cells, but did not close the gap between the two. Further development requires separate evidence for **cell-associated vector DNA**, **ORCA RNA and protein expression**, and ultimately **C-to-U editing activity**. Establishing these successive readouts will be more informative than using vector-genome titer as a surrogate for functional delivery.
+
+<aside class="engineering-input" id="engineering-functional-input" aria-label="Learn · connecting molecular and cellular evidence">
+<p class="engineering-input__label">Learn · connecting molecular and cellular evidence</p>
+<p>Prof. Ye also asked whether editing preserves normal apoE roles and improves disease-related changes. Our functional-validation records provide a next layer of observation: BODIPY-stained CCF-STTG1 preparations were imaged on 10 October by Hansen Zhang, Xueyin Lu and Min Zhang; culture-supernatant Aβ ELISA readouts followed on 13 October. These observations complement the molecular delivery questions above. Further analysis will need to connect verified editing and apoE function with controlled cellular readouts before interpreting a change as functional improvement.</p>
+<p class="engineering-input__sources"><a href="/human-practices#professor-keqiang-ye-how-should-we-judge-whether-an-edit-warrants-further-development">Prof. Ye’s functional-evidence question</a> · <a href="/notebook?track=fv&amp;date=2026-10-10&amp;record=MAINT-2026-10-10-CCF_BODIPY_Confocal">10 October imaging record</a> · <a href="/notebook?track=fv&amp;date=2026-10-13&amp;record=MAINT-2026-10-13-CCF_Abeta_ELISA">13 October ELISA record</a></p>
+</aside>
 
 ### **Conclusion** {#deliver-conclusion .engineering-conclusion-title}
 
@@ -2565,7 +2602,7 @@ Our initial machine-learning and task-specific deep-learning approaches sought t
 
 ##### Build {#model-lamar-cycle-01-build}
 
-Following advice from PI Zefeng Wang, we adopted the RNA language model LAMAR as a pretrained encoder. A task-specific prediction head connected its contextual representations to editing labels (Transformer background: Vaswani et al., 2017):
+Following advice from <mark class="engineering-review"><a href="/human-practices#advisor-guidance">PI Zefeng Wang</a></mark>, we adopted the RNA language model LAMAR as a pretrained encoder. A task-specific prediction head connected its contextual representations to editing labels (Transformer background: Vaswani et al., 2017):
 
 <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>h</mi><mo>=</mo><msub><mi>E</mi><mi>θ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em" /><mover><mi>y</mi><mo accent="true">̂</mo></mover><mo>=</mo><msub><mi>g</mi><mi>ϕ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">&#10;&#104;&#32;&#61;&#32;&#69;&#95;&#123;&#92;&#116;&#104;&#101;&#116;&#97;&#125;&#40;&#120;&#41;&#44;&#32;&#92;&#113;&#113;&#117;&#97;&#100;&#32;&#92;&#104;&#97;&#116;&#123;&#121;&#125;&#32;&#61;&#32;&#103;&#95;&#123;&#92;&#112;&#104;&#105;&#125;&#40;&#104;&#41;&#46;&#10;</annotation></semantics></math></div>
 
@@ -2674,7 +2711,7 @@ We adopted full fine-tuning for the human-adapted regional model and retained or
 
 ##### Design {#model-lamar-cycle-05-design}
 
-The local model's modest efficiency regression performance prompted a change in objective. Following further advice from PI Zefeng Wang, we focused on placing useful candidates near the top of a shortlist. This matched the experimental team's need to choose a limited number of sites for follow-up.
+The local model's modest efficiency regression performance prompted a change in objective. Following further advice from <mark class="engineering-review"><a href="/human-practices#advisor-guidance">PI Zefeng Wang</a></mark>, we focused on placing useful candidates near the top of a shortlist. This matched the experimental team's need to choose a limited number of sites for follow-up.
 
 ##### Build {#model-lamar-cycle-05-build}
 

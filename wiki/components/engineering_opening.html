@@ -1,0 +1,15 @@
+{# A chapter cover that waits for the reader to tap before revealing the map. #}
+<section class="engineering-opening" data-engineering-opening data-wh-own-opening aria-label="Engineering introduction">
+  <div class="engineering-opening__composition">
+    <div class="engineering-opening__copy">
+      <p class="engineering-opening__eyebrow">“An Odyssey to ORCA”</p>
+      <h1 class="engineering-opening__title">Engineering<span class="engineering-opening__period">.</span></h1>
+      <div class="engineering-opening__rule"></div>
+    </div>
+    <div class="engineering-opening__blueprint" aria-hidden="true">
+      {% with dbtl_opening = true %}{% include 'components/dbtl_wheel.html' %}{% endwith %}
+    </div>
+  </div>
+  <button class="engineering-opening__enter" data-opening-enter type="button"><span>Tap anywhere to explore</span><span aria-hidden="true">↗</span></button>
+</section>
+<button class="engineering-opening-control" data-engineering-opening-control type="button" hidden><span aria-hidden="true">↺</span> <span data-opening-control-label>Replay opening</span></button>

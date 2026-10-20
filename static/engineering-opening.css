@@ -1,0 +1,88 @@
+/* Engineering cover: stays visible until the reader taps to enter. */
+@font-face { font-family:'ORCA Odyssey'; src:url('fonts/headers/LibreBaskerville-Italic.ttf') format('truetype'); font-weight:400; font-style:italic; font-display:swap; }
+.engineering-opening { display:none; }
+.engineering-opening-control[hidden] { display:none !important; }
+.engineering-opening-control {
+  position:absolute; left:24px; bottom:7px; z-index:12;
+  display:inline-flex; align-items:center; gap:7px; min-height:36px;
+  padding:6px 11px; border:0; border-radius:20px; background:#fffdf9e6;
+  color:#72758b; font:400 13px/1.3 'Source Sans 3',sans-serif; cursor:pointer;
+}
+.engineering-opening-control:hover { color:#2e3065; background:#f0eef6; }
+.engineering-opening-control:focus-visible { outline:2px solid #8c80ad; outline-offset:3px; }
+.engineering-workspace:not([data-engineering-view='map']) .engineering-opening-control,
+.engineering-workspace:has([data-overview-section='mindmap']) .engineering-opening-control { display:none; }
+html[data-engineering-arrival] [data-engineering-map] { visibility:hidden; }
+html[data-engineering-arrival] .engineering-opening,
+.engineering-workspace[data-opening] .engineering-opening {
+  position:absolute; inset:0; z-index:10; display:flex; flex-direction:column;
+  padding:26px clamp(28px,5.6vw,90px) 52px; overflow:hidden; pointer-events:auto; cursor:pointer;
+  color:#2e3065; background:#fafafd;
+}
+html[data-engineering-arrival] .engineering-opening > * { opacity:0; }
+[data-opening='leaving'] .engineering-opening { animation:engineering-opening-away .7s both; pointer-events:none; }
+.engineering-opening::before {
+  content:''; position:absolute; inset:0; z-index:-1; opacity:.48;
+  background:radial-gradient(ellipse at 79% 45%,#e6e2f77a,transparent 45%),
+    linear-gradient(#939ac00c 1px,transparent 1px),linear-gradient(90deg,#939ac00c 1px,transparent 1px);
+  background-size:auto,44px 44px,44px 44px;
+  mask-image:linear-gradient(90deg,transparent,#000 65%);
+}
+.engineering-opening__composition { flex:1; min-height:0; display:grid; grid-template-columns:1.3fr 1fr; align-items:center; gap:24px; }
+.engineering-opening__copy { position:relative; z-index:2; }
+.engineering-opening__eyebrow { width:fit-content; max-width:100%; margin:0 0 18px; color:#7375b2; font:italic 400 clamp(21px,2.05vw,25px)/1.4 'ORCA Odyssey',Georgia,serif; letter-spacing:0; }
+.engineering-opening__title { margin:0; white-space:nowrap; font:600 clamp(62px,9.2vw,150px)/1 'ORCA Engineering','Arial Narrow',sans-serif; letter-spacing:-.035em; }
+.engineering-opening__period { color:#c47b8b; }
+.engineering-opening__rule { width:64px; height:3px; margin:29px 0 24px; background:#c47b8b; transform-origin:left; }
+.engineering-opening__blueprint { position:relative; width:min(100%,440px); aspect-ratio:1; justify-self:center; }
+.engineering-opening__blueprint .dbtl-wheel { --dbtl-size:100%; width:100%; height:100%; }
+.engineering-opening__blueprint .dbtl-wheel__dial { margin:0; }
+.engineering-opening__enter {
+  position:absolute; left:50%; bottom:12px; transform:translateX(-50%);
+  display:flex; align-items:center; gap:14px; min-height:42px; padding:8px 18px;
+  border:1px solid #d8d7e7; border-radius:999px; background:#ffffffa8;
+  color:#6c658a; font:500 13px/1.2 'Source Sans 3',sans-serif; cursor:pointer;
+  white-space:nowrap; transition:background .2s,border-color .2s;
+}
+.engineering-opening__enter:hover { background:#eeebf7; border-color:#b6adc9; }
+.engineering-opening__enter:focus-visible { outline:3px solid #8c80ad; outline-offset:3px; }
+[data-opening] .engineering-opening__copy > * { animation:engineering-opening-rise .7s both; }
+[data-opening] .engineering-opening__eyebrow {
+  mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 60%,transparent 100%);
+  mask-size:250% 100%; mask-repeat:no-repeat; mask-position:0% 0;
+  animation:engineering-opening-silk 1.65s .12s cubic-bezier(.22,.8,.24,1) both;
+}
+[data-opening] .engineering-opening__title { animation-delay:.15s; }
+[data-opening] .engineering-opening__rule { animation:engineering-opening-line .7s .3s both; }
+[data-opening] .engineering-opening__blueprint { animation:engineering-opening-rise .8s .25s both; }
+[data-opening='playing'] [data-engineering-map] { opacity:0; }
+[data-opening='leaving'] .engineering-project-overview-figure { animation:engineering-opening-map .75s both; }
+[data-opening='leaving'] .engineering-overview-identity { animation:engineering-opening-rail .7s .05s both; }
+[data-opening='leaving'] .engineering-overview-actions { animation:engineering-opening-rail .7s .12s both; }
+@keyframes engineering-opening-rise { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes engineering-opening-line { from { opacity:0; transform:scaleX(0); } to { opacity:1; transform:scaleX(1); } }
+@keyframes engineering-opening-away { to { opacity:0; transform:translateY(-12px); visibility:hidden; } }
+@keyframes engineering-opening-map { from { opacity:0; transform:translateY(18px) scale(.975); } to { opacity:1; transform:none; } }
+@keyframes engineering-opening-rail { from { opacity:0; } to { opacity:1; } }
+@keyframes engineering-opening-silk {
+  from { mask-position:100% 0; opacity:0; transform:translateY(5px); filter:blur(2px); }
+  40% { opacity:1; }
+  to { mask-position:0% 0; opacity:1; transform:translateY(0); filter:blur(0); }
+}
+@media(max-width:700px) {
+  .engineering-workspace[data-opening] .engineering-opening { padding:18px 26px 68px; }
+  .engineering-opening__composition { grid-template-columns:1fr; grid-template-rows:auto minmax(0,1fr); gap:6px; padding-top:clamp(16px,4vh,32px); }
+  .engineering-opening__eyebrow { margin-bottom:12px; font-size:22px; }
+  .engineering-opening__title { font-size:clamp(48px,13.8vw,92px); }
+  .engineering-opening__rule { margin:15px 0; width:45px; height:2px; }
+  .engineering-opening__blueprint { width:auto; height:min(100%,310px); max-width:100%; }
+  .engineering-opening-control { left:10px; font-size:12px; }
+}
+@media(max-height:600px) and (min-width:701px) {
+  .engineering-opening__blueprint { max-width:320px; }
+  .engineering-opening__title { font-size:clamp(55px,8vw,110px); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .engineering-opening, .engineering-opening *,
+  [data-opening] :is(.engineering-project-overview-figure,.engineering-overview-identity,.engineering-overview-actions) { animation:none !important; transition:none !important; }
+}

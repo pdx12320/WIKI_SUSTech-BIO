@@ -18,9 +18,12 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-sidebar.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-title.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='engineering-conclusions.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='engineering-opening.css') }}">
+<script src="{{ url_for('static', filename='engineering-opening-boot.js') }}"></script>
 {% endblock %}
 {% block main %}
 <main id="main-content" class="engineering-workspace" data-engineering-workspace data-engineering-view="map" data-content-source="{{ content.source_label }}">
+  {% include 'components/engineering_opening.html' %}
   {% include 'components/engineering_map.html' %}
   <button class="engineering-nav-toggle" type="button" aria-expanded="false" aria-controls="engineering-sidebar">Project map</button>
   <aside id="engineering-sidebar" class="engineering-controls engineering-sidebar-left" aria-label="Engineering navigation" hidden>
@@ -69,4 +72,5 @@
 <script src="{{ url_for('static', filename='engineering-sidebar.js') }}" defer></script>
 <script src="{{ url_for('static', filename='engineering-overview-switch.js') }}" defer></script>
 <script src="{{ url_for('static', filename='engineering-overview-cartoons.js') }}" defer></script>
+<script src="{{ url_for('static', filename='engineering-opening.js') }}" defer></script>
 {% endblock %}

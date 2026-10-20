@@ -28,7 +28,7 @@ At Taoyuan Subdistrict Elderly Service Center, we helped older adults extract DN
 
 We kept returning to her question as we planned later activities. Before deciding what to teach or build, we needed to understand what people wanted to know and where they needed support.
 
-ORCA studies RNA editing for Alzheimer's disease (AD). We aim to edit APOE4 mRNA towards an APOE3-like protein product.[2] The project is still at the research stage. Carrying APOE ε4 increases risk; it does not mean someone has AD.[1]
+ORCA studies RNA editing for Alzheimer's disease (AD). Building on a published PUF–APOBEC RNA-editing platform [2], we aim to edit APOE4 mRNA towards an APOE3-like protein product. The project is still at the research stage. Carrying APOE ε4 increases risk; it does not mean someone has AD.[1]
 
 Clinicians helped us rethink delivery and treatment burdens. Older adults and care staff helped us revise a workbook and try a home-safety tool. Our courses, learning materials and outreach are documented on the [Education page](/education).
 
@@ -300,13 +300,13 @@ Some people appear here by name; others are part of a classroom, a care center, 
 
 ### Sources {#external-scientific-and-ethical-sources}
 
-[1] U.S. National Library of Medicine. *APOE gene*. MedlinePlus Genetics. https://medlineplus.gov/genetics/gene/apoe/ (accessed 2026-10-17).
+[1] U.S. National Library of Medicine. *APOE gene*. MedlinePlus Genetics. <https://medlineplus.gov/genetics/gene/apoe/> (accessed 2026-10-17).
 
-[2] Han, W., Yuan, B., Fan, X., et al. (2025). Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. *Nature Communications, 16*, 9727. https://doi.org/10.1038/s41467-025-64748-6 .
+[2] Han, W., Yuan, B., Fan, X., et al. (2025). Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. *Nature Communications, 16*, 9727. <https://doi.org/10.1038/s41467-025-64748-6> .
 
-[3] World Medical Association. (2024). *WMA Declaration of Helsinki: Ethical principles for medical research involving human participants*. https://www.wma.net/policies-post/wma-declaration-of-helsinki/ .
+[3] World Medical Association. (2024). *WMA Declaration of Helsinki: Ethical principles for medical research involving human participants*. <https://www.wma.net/policies-post/wma-declaration-of-helsinki/> .
 
-[4] Jack, C. R., Jr., et al. (2024). *Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup*. *Alzheimer's & Dementia, 20*(8), 5143–5169. https://doi.org/10.1002/alz.13859 .
+[4] Jack, C. R., Jr., et al. (2024). *Revised criteria for diagnosis and staging of Alzheimer's disease: Alzheimer's Association Workgroup*. *Alzheimer's & Dementia, 20*(8), 5143–5169. <https://doi.org/10.1002/alz.13859> .
 
 ### Team records {#project-and-event-materials}
 

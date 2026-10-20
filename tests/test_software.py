@@ -125,7 +125,7 @@ class SoftwareDeliveryTest(unittest.TestCase):
             headings = re.findall(r'<h3 id="([^"]+)"', section)
             self.assertTrue(headings[-1].endswith('-reuse'))
             self.assertIn('class="software-references"', section)
-            self.assertIn('doi:', section)
+            self.assertIn('href="https://doi.org/', section)
             parser = SoftwareParser()
             parser.feed(section)
             result_links = [link for link in parser.links if link.get('href', '').startswith('#rewire-result-')]
@@ -134,7 +134,12 @@ class SoftwareDeliveryTest(unittest.TestCase):
                 'https://video.igem.org/w/i2fLRahC8pGYzLGTc7X1SS',
                 'https://video.igem.org/w/i5ucCjeFKN3JoWaDeSiLiU',
             }
-            self.assertTrue(all('download' in link or link in result_links or link.get('href') in public_links for link in parser.links))
+            self.assertTrue(all('download' in link or link in result_links or link.get('href') in public_links
+                                or link.get('href', '').startswith('https://doi.org/')
+                                for link in parser.links))
+            # Parentheses inside a DOI are part of the identifier, not URL delimiters.
+            self.assertIn('https://doi.org/10.1016/S0092-8674(02)00873-5',
+                          [link.get('href') for link in parser.links])
             for link in result_links:
                 self.assertIn('id="' + link['href'][1:] + '"', section)
             if 'id="rewire-purpose"' in section:

@@ -111,7 +111,7 @@
           </details>{% endfor %}
 
           <h3 id="rewire-references" data-model-chapter><span class="chapter-number">1.5</span>References</h3>
-          <ol class="software-references">{% for reference in content.metadata.rewire_references %}<li>{{ reference }}</li>{% endfor %}</ol>
+          <ol class="software-references">{% for reference in content.metadata.rewire_references %}<li>{{ reference|urlize }}</li>{% endfor %}</ol>
 
           <h3 id="rewire-reuse" data-model-chapter><span class="chapter-number">1.6</span>Reproducible Code</h3>
           <p><strong>The reproducible software makes these modeling decisions inspectable and reusable.</strong> We share the ODE source, configuration and parameter records, frozen plotting inputs and viewers for saved outputs. These resources let other teams reproduce the supplied ODE workflows and regenerate figures from saved data. Readers can trace figures to their inputs, compare assumptions and inspect the processes behind aggregate results when developing their own models.</p>
@@ -162,7 +162,7 @@
           <p>Additional exports include protein FASTA, matching-site TSV and a local HTML report. The run manifest records input and model hashes, software versions and completion status.</p>
 
           <h3 id="workbench-references" data-model-chapter><span class="chapter-number">2.5</span>References</h3>
-          <ol class="software-references">{% for reference in content.metadata.workbench_references %}<li>{{ reference }}</li>{% endfor %}</ol>
+          <ol class="software-references">{% for reference in content.metadata.workbench_references %}<li>{{ reference|urlize }}</li>{% endfor %}</ol>
 
           <h3 id="workbench-reuse" data-model-chapter><span class="chapter-number">2.6</span>Reproducible Code</h3>
           <p>The source repository is <code>pdx12320/igem_software</code>, released under the MIT license. Use Node.js 22.13 or newer:</p>

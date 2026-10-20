@@ -1,0 +1,23 @@
+/* A telescope aperture reveals the chapter; typography stays in the ORCA family. */
+body:not(.ot) main:has(> .future-opening) { padding-top: 0; }
+body.future-opening-in-view .reading-orbit { visibility: hidden; opacity: 0; }
+.future-opening { position: relative; min-height: calc(100svh - var(--nav-h, 112px)); width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#2e3065; }
+.future-opening__eyebrow { margin: -24px 0 24px; font:500 9px/1.5 var(--sans); letter-spacing:.32em; color:#85869e; }
+.future-opening__title-group { display:flex; align-items:center; justify-content:center; gap:clamp(12px,2vw,30px); }
+.future-opening h1 { margin:0; font:400 clamp(100px,17vw,228px)/1.1 'ORCA Quicksand',sans-serif; letter-spacing:.015em; color:#2e3065; white-space:nowrap; }
+.future-opening h1::after { content:none; }
+.future-opening h1 span { color:#c47b8b; }
+.future-opening__caption { text-align:center; margin:28px 0 80px; font:400 14px/1.6 var(--sans); letter-spacing:.08em; color:#8a8b9d; }
+.future-opening__scroll { position:absolute; bottom:34px; color:#89869d; text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:18px; font:500 8px/1.5 var(--sans); letter-spacing:.23em; }
+.future-opening__scroll span { font-size:24px; font-weight:300; color:#b18b9e; }
+.future-opening__replay { position:absolute; right:12px; bottom:42px; border:0; background:transparent; color:#89869d; cursor:pointer; font-size:21px; padding:12px; }
+.future-opening__replay span { font:500 8px var(--sans); letter-spacing:.15em; margin-left:6px; vertical-align:middle; }
+.future-opening__mask { position:fixed; inset:0; z-index:2147483000; pointer-events:none; visibility:hidden; background:radial-gradient(circle at var(--lens-x,50%) var(--lens-y,50%),transparent 0,transparent calc(var(--lens-r,70px) - 14px),#2e306518 var(--lens-r,70px),#2e3065b8 calc(var(--lens-r,70px) + 20px),#2e3065 calc(var(--lens-r,70px) + 38px)); }
+.future-opening__lens { display:none; }
+.future-opening__observer { display:block; flex:0 0 auto; width:clamp(85px,12vw,165px); height:auto; pointer-events:none; opacity:1; transform:translateY(8%); }
+.future-opening.is-looking .future-opening__observer { opacity:var(--mascot-opacity,0); transform:translateY(8%) translateX(var(--mascot-offset,18px)); }
+.future-opening.is-looking .future-opening__mask,.future-opening.is-looking .future-opening__lens,.future-opening.is-looking .future-opening__observer { visibility:visible; }
+.future-opening.is-looking .future-opening__replay { visibility:hidden; }
+.future-opening :focus-visible { outline:2px solid #c47b8b; outline-offset:6px; }
+@media(max-width:600px) { .future-opening h1 { font-size:20vw; } .future-opening__eyebrow { font-size:8px; } .future-opening__caption { font-size:12px; } .future-opening__replay span { display:none; } }
+@media(prefers-reduced-motion:reduce) { .future-opening__mask,.future-opening__lens,.future-opening__replay { display:none!important; } }

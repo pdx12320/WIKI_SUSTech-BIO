@@ -319,6 +319,24 @@ Together, these contributions connect a laboratory question to tools others can 
 <link rel="stylesheet" href="static/contribution-assets/previews.css">
 <script type="module" src="static/contribution-assets/previews.js"></script>
 
+### Shokz Cooperation Proposal — Chinese Edition {#hp-shokz-proposal-chinese}
+
+This proposal records our planning for university–industry engagement with Shokz, including an iGBA forum experience area, student co-design and a local interactive-headphone MVP. It offers reusable examples of scenario planning, partner responsibilities, resource confirmation and evaluation targets. The proposed collaboration did not proceed; its targets and requested support are not achieved outcomes or secured resources.
+
+**Language:** Chinese<br>
+**For:** Human Practices teams, university partnership organizers and student project teams
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/shokz-industry-university-cooperation-proposal-zh.pdf" target="_blank" rel="noopener" aria-label="Download Shokz Cooperation Proposal — Chinese Edition, PDF">Download PDF · Chinese <span aria-hidden="true">↓</span></a>
+
+### Shokz Cooperation Proposal — English Edition {#hp-shokz-proposal-english}
+
+The English translation shares the same proposed activities, technical milestones, cooperation boundaries and feedback plan. Future teams can adapt its structure when discussing expectations, responsibilities and support with an industry partner. Read the [Human Practices account](/human-practices#1-4-adjusting-the-implementation-path-from-a-bone-conduction-hardware-concept-to-a-software-tool) for why this proposed partnership did not proceed.
+
+**Language:** English<br>
+**For:** International iGEM teams, university partnership organizers and student project teams
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/shokz-industry-university-cooperation-proposal-en.pdf" target="_blank" rel="noopener" aria-label="Download Shokz Cooperation Proposal — English Edition, PDF">Download PDF · English <span aria-hidden="true">↓</span></a>
+
 ## Education {#education}
 
 The updated second edition separates student reading and practice from teacher preparation. The [Education page explains the reader feedback and revision process](/education#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes).

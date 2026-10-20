@@ -111,7 +111,7 @@ const article = document.querySelector('.markdown-content');
 if (article) {
   let enabled = false, title = '';
   for (const node of [...article.children]) {
-    if (node.tagName === 'H2') enabled = ['human-practices', 'education'].includes(node.id);
+    if (node.tagName === 'H2') enabled = ['human-practices', 'hp', 'education'].includes(node.id);
     if (!enabled) continue;
     if (node.tagName === 'H3') title = node.textContent.trim();
     const links = node.matches('a[href]') ? [node] : [...node.querySelectorAll('a[href]')];
@@ -133,4 +133,17 @@ if (article) {
       if (host !== link) host.remove();
     }
   }
+}
+
+// These two HP proposal readers use the same original-PDF renderer.
+for (const resource of document.querySelectorAll('[data-shokz-proposal]')) {
+  const details = resource.querySelector('details');
+  const body = resource.querySelector('.contribution-pdf-reader');
+  const link = resource.querySelector('a[href]');
+  if (!details || !body || !link) continue;
+  details.addEventListener('toggle', () => {
+    if (details.open && !body.childElementCount) {
+      reader(body, link, link.dataset.pdfTitle || 'Shokz Cooperation Proposal');
+    }
+  });
 }

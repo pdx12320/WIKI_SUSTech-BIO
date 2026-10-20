@@ -1,0 +1,122 @@
+/* Original neutral glass and typography inside the current floating frame.
+   Nucleotide paint, editing states and RNA strands remain owned by their modules. */
+body .site-nav.whale-navigation {
+  --sea-ink:#53617a;
+  --nav-label-drop:24px;
+  --nav-whale-rise:39px;
+  background:transparent;
+  border:0;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+body .site-nav.whale-navigation .nav-shell {
+  background:rgba(248,250,253,.72);
+  border:1px solid rgba(145,177,214,.24);
+  box-shadow:inset 0 1px 0 #ffffff80,0 9px 24px #25314c0d;
+}
+body .site-nav.whale-navigation .nav-shell::before {
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+body .site-nav.whale-navigation :is(.sea-current,.night-plankton) { display:none; }
+body .site-nav.whale-navigation .nav-list .nav-link {
+  font:700 var(--nav-label-size,14px)/1 var(--sans);
+  letter-spacing:.1em;
+  color:#53617a;
+}
+body .site-nav.whale-navigation .nav-list .nav-link:is(:hover,:focus,.active) { color:#25314c; }
+body .site-nav.whale-navigation .site-brand strong {
+  font:700 20px/1 var(--serif);
+  letter-spacing:.12em;
+  color:#25314c;
+}
+/* ORCA Mono has its own approved ink, independent of muted menu labels. */
+body .site-nav.whale-navigation .site-brand .orca-wordmark { color:#171534; opacity:1; }
+body.ot .site-nav.whale-navigation .site-brand .orca-wordmark { color:#fff; }
+body .site-nav.whale-navigation .nav-whale { width:70px; height:48px; }
+body .site-nav.whale-navigation .nav-whale img { width:66px; height:48px; object-fit:contain; }
+body .site-nav.whale-navigation .nav-whale::after { content:""; }
+/* Keep the arrival state on the same glass; legacy sea-glass used a green gradient here. */
+body .site-nav.whale-navigation .rna-nav .rna-menu,
+body:not(.ot) .site-nav.whale-navigation .rna-nav .rna-menu.is-gathering {
+  background:rgba(240,246,253,.82);
+  border-color:rgba(145,177,214,.32);
+  box-shadow:inset 0 1px 0 #ffffff80,0 16px 36px #25314c1a;
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  color:#25314c;
+}
+body .site-nav.whale-navigation .rna-menu .rna-branch { color:#25314c; }
+body .site-nav.whale-navigation .rna-menu .rna-branch__label {
+  font-size:var(--submenu-label-size,12px);
+  font-family:var(--sans);
+  border-radius:3px;
+}
+body .site-nav.whale-navigation .rna-menu .rna-branch:is(:hover,:focus-visible,.active) .rna-branch__label {
+  background:rgba(145,199,255,.12);
+  color:inherit;
+}
+body .site-nav.whale-navigation .wiki-search {
+  --search-ink:#25314c; --search-muted:#53617a; --search-line:#d2dcec;
+  --search-surface:#f0f6fdf2; --search-field:#f8fafdf2;
+  --search-hover:#e2eaf8; --search-accent:#485b99;
+}
+body .site-nav.whale-navigation .wiki-search summary { color:#53617a; background:transparent; box-shadow:none; }
+body .site-nav.whale-navigation :is(.site-brand,.nav-link,.rna-branch):focus-visible { outline-color:#485b99; }
+
+body.ot .site-nav.whale-navigation { --sea-ink:#e9eef7; }
+/* One dark glass material for the floating bar and every dropdown state. */
+body.ot .site-nav.whale-navigation .nav-shell,
+body.ot .site-nav.whale-navigation .rna-nav .rna-menu,
+body.ot .site-nav.whale-navigation .rna-nav .rna-menu.is-gathering {
+  background:rgba(3,5,11,.28);
+  border-color:rgba(200,220,255,.12);
+  box-shadow:inset 0 1px 0 #d6e9ff0d,0 9px 24px #03050b26;
+  border-radius:24px;
+}
+body.ot .site-nav.whale-navigation .nav-list .nav-link { color:rgba(233,238,247,.78); }
+body.ot .site-nav.whale-navigation .nav-list .nav-link:is(:hover,:focus,.active),
+body.ot .site-nav.whale-navigation .site-brand strong { color:#e9eef7; }
+body.ot .site-nav.whale-navigation .rna-nav .rna-menu,
+body.ot .site-nav.whale-navigation .rna-nav .rna-menu.is-gathering {
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  color:#e9eef7;
+}
+body.ot .site-nav.whale-navigation .rna-menu .rna-branch { color:#e9eef7; }
+body.ot .site-nav.whale-navigation .wiki-search {
+  --search-ink:#e9eef7; --search-muted:#a1b6ce; --search-line:#adcff533;
+  --search-surface:#081425f2; --search-field:#142037;
+  --search-hover:#91c7ff1f; --search-accent:#91c7ff;
+}
+body.ot .site-nav.whale-navigation .wiki-search summary { color:#e9eef7; }
+
+/* The shared checkout predates the floating frame; match its remote geometry. */
+body .site-nav.whale-navigation:not(.sea-glass-navigation) { padding:12px 24px; }
+body .site-nav.whale-navigation:not(.sea-glass-navigation) .nav-shell {
+  position:relative; isolation:isolate; max-width:none; width:100%;
+  min-height:88px; padding-inline:22px; border-radius:24px;
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+}
+@media (max-width:1199px) {
+  body .site-nav.whale-navigation { --nav-label-drop:20px; --nav-whale-rise:36px; }
+  body .site-nav.whale-navigation .nav-whale { width:56px; height:43px; }
+  body .site-nav.whale-navigation .nav-whale img { width:56px; height:41px; }
+}
+@media (max-width:599px) {
+  body .site-nav.whale-navigation { --nav-label-drop:0px; }
+  body .site-nav.whale-navigation .nav-whale { display:none; }
+  body .site-nav.whale-navigation:not(.sea-glass-navigation) { padding:8px; }
+  body .site-nav.whale-navigation:not(.sea-glass-navigation) .nav-shell { padding-inline:10px; border-radius:20px; }
+}
+@media (prefers-reduced-transparency:reduce) {
+  body .site-nav.whale-navigation .nav-shell,
+  body .site-nav.whale-navigation .rna-nav .rna-menu,
+  body:not(.ot) .site-nav.whale-navigation .rna-nav .rna-menu.is-gathering { background:#f0f6fd; }
+  body.ot .site-nav.whale-navigation .nav-shell,
+  body.ot .site-nav.whale-navigation .rna-nav .rna-menu,
+  body.ot .site-nav.whale-navigation .rna-nav .rna-menu.is-gathering { background:#081425; }
+  body .site-nav.whale-navigation .nav-shell::before,
+  body .site-nav.whale-navigation .rna-nav .rna-menu,
+  body.ot .site-nav.whale-navigation .rna-nav .rna-menu.is-gathering { backdrop-filter:none; -webkit-backdrop-filter:none; }
+}

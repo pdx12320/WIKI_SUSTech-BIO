@@ -1,5 +1,5 @@
 {% macro whale(label=none) -%}
-  <span class="nav-whale" aria-hidden="true">{% include 'components/navigation/swimming_orca.html' %}</span>{% if label is not none %}<span class="nav-label">{{ label }}</span>{% endif %}
+  <span class="nav-whale" aria-hidden="true"><img src="{{ url_for('static', filename='assets/intro/fish-large-01.png') }}" alt="" width="174" height="128"><i></i><i></i><i></i></span>{% if label is not none %}<span class="nav-label">{{ label }}</span>{% endif %}
 {%- endmacro %}
 
 {% macro editable_label(label) -%}

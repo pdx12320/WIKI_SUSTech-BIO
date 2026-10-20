@@ -253,6 +253,29 @@ We approached university laboratories in the hope of finding that technical supp
 
 **The proposed collaboration did not proceed.** There was no jointly developed wearable or validated hardware outcome. This was disappointing, especially after imagining the everyday situations in which it might help. It also showed us something our early enthusiasm had missed: an idea needs people who can take responsibility for developing it, resources they can actually commit, and a reason for each partner to continue.
 
+#### Cooperation proposal {#shokz-cooperation-proposal}
+
+The Chinese proposal and its English translation document the proposed forum activities, student participation, local headphone prototype, responsibilities and evaluation targets. They preserve the planning stage of this exploration; the proposed partnership, resources and MVP targets were not completed outcomes. Other teams can adapt the structure to clarify partner expectations and conditions before committing to a collaboration.
+
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<script type="module" src="static/contribution-assets/previews.js"></script>
+
+<div class="contribution-pdf-resource" data-shokz-proposal>
+<details class="contribution-pdf" id="shokz-proposal-chinese">
+<summary>Read the cooperation proposal · Chinese</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download"><a href="https://static.igem.wiki/teams/6085/wiki/hp/shokz-industry-university-cooperation-proposal-zh.pdf" data-pdf-title="Shokz Cooperation Proposal — Chinese" target="_blank" rel="noopener">Download Chinese PDF</a></div>
+</div>
+
+<div class="contribution-pdf-resource" data-shokz-proposal>
+<details class="contribution-pdf" id="shokz-proposal-english">
+<summary>Read the cooperation proposal · English</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download"><a href="https://static.igem.wiki/teams/6085/wiki/hp/shokz-industry-university-cooperation-proposal-en.pdf" data-pdf-title="Shokz Cooperation Proposal — English" target="_blank" rel="noopener">Download English PDF</a></div>
+</div>
+
 <figure class="hp-figure" id="hp-figure-11">
   <img src="/assets/human-practices/images/shokz-project-team-discussion.webp" alt="Team discussion of the proposed bone-conduction collaboration" loading="lazy" decoding="async">
   <figcaption>Figure 11. Rethinking the hardware concept</figcaption>

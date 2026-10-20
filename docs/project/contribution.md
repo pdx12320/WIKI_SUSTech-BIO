@@ -1,6 +1,6 @@
 ---
 title: Contribution
-subtitle: Connecting experimental records, measurement and computational analysis for reuse.
+subtitle: Sharing experimental tools, Human Practices resources and educational materials for reuse.
 eyebrow: Project
 status: pending
 status_label: Content pending team review
@@ -21,6 +21,107 @@ status_message: This overview is prepared for team review. Individual resources 
 </div>
 
 [Explore PUFFER: overview, tutorial and workflow](/software#workbench).
+
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<script type="module" src="static/contribution-assets/previews.js"></script>
+
+## Human Practices {#human-practices}
+
+### Public Understanding Questionnaire {#hp-public-understanding}
+
+We used this questionnaire to explore what people want to know about RNA editing and Alzheimer’s disease treatments. Teams can adapt the questions for their own public engagement.
+
+**Language:** Chinese / English<br>
+**For:** Future iGEM teams and science communicators
+
+<a class="button" href="/assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf" target="_blank" rel="noopener" aria-label="Download Public Understanding Questionnaire (Chinese / English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### Public Understanding Survey Report {#hp-survey-report}
+
+This report presents the descriptive findings from our 103 valid survey responses and informed how we explain benefits, risks and evidence. Most respondents were young; the report is a reference for survey reporting, not a representative study of older adults or caregivers.
+
+**Language:** English<br>
+**For:** Human Practices teams and science communicators
+
+<a class="button" href="/assets/human-practices/attachments/public-perception-survey-findings-en.pdf" target="_blank" rel="noopener" aria-label="Download Public Understanding Survey Report (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### Peking–Rice HP Summit Presentation {#hp-summit-sharing}
+
+We presented our engagement and inclusion work at the online Peking–Rice Global Summit on August 30, 2026. These slides share our project-specific approach to listening to stakeholders and reflecting on our activities.
+
+**Language:** English<br>
+**For:** Future iGEM teams
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/peking-rice-hp-summit-presentation-v2.pdf" target="_blank" rel="noopener" aria-label="Download Peking–Rice HP Summit Presentation (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+## Education {#education}
+
+### Shahe Healthy Living Workbook — First Edition {#education-shahe-workbook}
+
+We brought this first workbook to health lessons at Shahe Subdistrict Elderly Service Center, including discussions of misleading health claims and scams. It provides the starting material for our later reader-informed revision.
+
+**Language:** Chinese<br>
+**For:** Older learners and community educators
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v1-zh.pdf" target="_blank" rel="noopener" aria-label="Download Shahe Healthy Living Workbook — First Edition (Chinese), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### Healthy Living Workbook — Chinese Edition {#education-workbook-chinese}
+
+Following feedback from older learners at Shahe, we revised the workbook with less dense text, more writing space and everyday activities. This revised edition supports community lessons and personal notes; it does not replace individual medical advice.
+
+**Language:** Chinese<br>
+**For:** Older learners, elderly-service staff and families
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-zh.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — Chinese Edition (Chinese), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### Healthy Living Workbook — English Edition {#education-workbook-english}
+
+The English edition makes our revised healthy living workbook available to a wider teaching audience. It combines everyday health topics, personal notes and interest workshops for classroom or independent use; it does not replace individual medical advice.
+
+**Language:** English<br>
+**For:** English-speaking educators, older learners and future iGEM teams
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-en.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — English Edition (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### High School Synthetic Biology Reference Framework {#education-curriculum-resources}
+
+With CUHK-HongKong-SBS and HG-Tokyo, we used this provisional framework to organize a comparison across high-school biology curricula. The six domains, learning outcomes and scoring rubric can support a preliminary curriculum review; this is a working reference, not an official standard.
+
+**Language:** English / Simplified Chinese / Japanese<br>
+**For:** Biology teachers and iGEM education teams
+
+<a class="button" href="/assets/human-practices/attachments/curriculum-comparison-reference-framework.pdf" target="_blank" rel="noopener" aria-label="Download High School Synthetic Biology Reference Framework (English / Simplified Chinese / Japanese), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### Cross-Curriculum Comparison Report {#education-curriculum-report}
+
+Our collaboration compared Pearson Edexcel iAL, Hong Kong HKDSE, mainland Chinese biology and the gaokao, and a study-specific Japanese high-school biology plus AP Biology configuration. This report shares the document analysis and can help educators choose teaching entry points; it does not compare students’ abilities.
+
+**Language:** English<br>
+**For:** Biology teachers and iGEM education teams
+
+<a class="button" href="/assets/human-practices/attachments/curriculum-comparison-analysis.pdf" target="_blank" rel="noopener" aria-label="Download Cross-Curriculum Comparison Report (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### WORLDPROOF Hackathon Challenges {#education-worldproof-challenges}
+
+We used these scenarios for WORLDPROOF, our synthetic biology hackathon themed “Build it. Break it. Fix it.” The booklet offers discussion starting points about design, users, maintenance and failure; it is a challenge set rather than a complete facilitator’s guide.
+
+**Language:** English<br>
+**For:** Student teams, teachers and workshop facilitators
+
+<a class="button" href="/assets/human-practices/attachments/worldproof-hackathon-challenges-en.pdf" target="_blank" rel="noopener" aria-label="Download WORLDPROOF Hackathon Challenges (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+### ORCA Project Poster — ICII Shared Garden {#education-icii-poster}
+
+We contributed this one-page ORCA introduction to ICII’s shared educational garden. It offers a concise project explanation for teaching and discussion; the wider platform includes work by multiple teams.
+
+**Language:** English<br>
+**For:** Students, teachers and science communicators
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/icii-orca-project-poster.pdf" target="_blank" rel="noopener" aria-label="Download ORCA Project Poster — ICII Shared Garden (English), PDF">Download PDF <span aria-hidden="true">↓</span></a>
+
+## Inclusivity {#inclusivity}
+
+Our [Inclusivity page](/inclusivity) records initial conversations with product builders about memory, care and communication. These accounts provide context for our ongoing work. A downloadable inclusivity toolkit is not yet available.
 
 ## Other {#other}
 

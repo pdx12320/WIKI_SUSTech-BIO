@@ -129,31 +129,6 @@ The two analyses answer complementary questions: which protein candidates deserv
 <div class="foundation-table"><table><tr><th>Category</th><th>Construct</th><th>Registry</th></tr><tr><td>Foundational construct</td><td>Orca-PUF-10R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26l67mta">BBa_26L67MTA</a></td></tr><tr><td>Foundational construct</td><td>Orca-PUF-12R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26iqjkyo">BBa_26IQJKYO</a></td></tr><tr><td>Foundational construct</td><td>Orca-PUF-13R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26o89ngf">BBa_26O89NGF</a></td></tr><tr><td>Foundational construct</td><td>Orca-PUF-15R</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26mj51fb">BBa_26MJ51FB</a></td></tr><tr><td>Control</td><td>Orca-PUF-only</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26ps5ig5">BBa_26PS5IG5</a></td></tr><tr><td>Control</td><td>Orca-APOBEC-only</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26bikgry">BBa_26BIKGRY</a></td></tr><tr><td>Control</td><td>Orca-E72A</td><td><a class="bba-link" href="https://registry.igem.org/parts/bba-26aimomo">BBa_26AIMOMO</a></td></tr></table></div>
 </div>
 
-## Wet Experiment {#wet-experiment}
-
-### Precision built through iteration {#precision-through-iteration}
-
-**ORCA established an experimental route from recognition and catalytic design to integrated RNA editors.** PUF recognition comparisons and APOBEC catalytic screens supplied complementary building blocks. Their integration produced editors that retained strong target editing while reducing a monitored bystander signal.
-
-In the reported integrated-editor comparison, IO-02 and IO-03 retained **61.31% and 69.78% C388 editing**, respectively. C871 editing fell from **79.17% in the parental editor to 13.84% and 14.28%**. These results give future teams concrete examples of how recognition and catalytic changes combine at the editor level.
-
-<figure class="contribution-figure">
-<a href="/assets/images/results-achievements/edit.png" target="_blank" rel="noopener"><img src="/assets/images/results-achievements/edit.png" alt="Recognition and catalytic design contributions combined in integrated ORCA editors" width="3600" height="2000" loading="lazy"></a>
-<figcaption><strong>From component design to integrated performance.</strong> PUF and APOBEC comparisons converge in IO-02 and IO-03. The reported target and bystander measurements connect component-level reasoning to the behavior of complete editors.</figcaption>
-</figure>
-
-The same experimental programme established an ASO-responsive regulatory interface: tagged ORCA's C388 editing decreased from **57.13% to 28.54% at the 48-hour readout**. Together, these studies contribute measured examples of specificity engineering and controllable editing.
-
-<div class="contribution-links"><a href="/engineering#integrated-orca-conclusion-from-component-optimization-to-editor-level-selection">Integrated editor evidence →</a><a href="/results">Explore the results →</a></div>
-
-### An experimental foundation others can reuse {#experimental-foundation}
-
-Our contribution extends from individual results to the infrastructure behind them. The **Experiment library** brings methods together under stable identifiers, with browser readers and original PDFs. The **Notebook** connects those methods to dated research records and the sequence of design decisions.
-
-For future teams, this creates a practical starting point: a method library to consult, an experimental chronology to follow, and measured comparisons to inform new questions. These records also support the dry-lab work below. Assay outcomes provide the labels for protein ranking, RNA-seq defines the observed editing landscape, and matched-parent comparisons test structural proposals.
-
-<div class="contribution-links"><a href="/experiments">Browse experimental methods →</a><a href="/notebook">Explore the notebook →</a><a href="/engineering">Follow the engineering cycles →</a></div>
-
 ## Dry Model {#dry-model}
 
 **Our modeling innovation connects experimental evidence with decisions across sequence, structure and system scales.** RNA-seq defines the editing landscape; wet-lab measurements train and test protein-ranking models; structural comparisons guide hypotheses that return to experimental evaluation. This exchange produced concrete results: **PUF-ESM recovered 20 of the measured Top30 constructs**, compared with 14 using position-only features, while **LAMAR’s Top20 shortlists captured a supported site in 92.1% of 140 positive test windows**. Together with catalytic-design analysis and delivery simulations, these approaches form a reusable framework for connecting molecular choices to measured and modeled outcomes.

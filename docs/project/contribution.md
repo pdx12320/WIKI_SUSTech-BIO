@@ -20,6 +20,8 @@ status_message: This overview is prepared for team review. Individual resources 
 <p>PUFFER connects a browser-based PUF design workspace with local computational analysis. Start with a target RNA sequence, inspect recognition windows, assemble candidate PUF proteins and keep the designs alongside measured assay records. The companion application supports assay-informed protein ranking and LAMAR-based RNA-site prioritization, with these two outputs kept separate. Together, the tools help organize candidates for experimental follow-up while preserving the inputs and analysis context. Rankings guide prioritization; they do not establish RNA editing efficiency or replace experimental validation.</p>
 </div>
 
+[Open PUFFER](https://puffer-43e67d.igem.wiki/)
+
 [Explore PUFFER: overview, tutorial and workflow](/software#workbench).
 
 ## Other {#other}

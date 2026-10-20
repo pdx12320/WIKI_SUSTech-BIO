@@ -103,6 +103,46 @@ header_introduction: >-
 
 <p class="sonar-explanation"><strong>SONAR is the overall system; SAP is the software within it.</strong> The reporter supplies experimental signals, Measurement defines how to analyze them, and SAP helps users apply the workflow—from reporter sequence adaptation to flow-data analysis and export.</p>
 
+## Guided by Real-World Questions {#guided-by-real-world-questions}
+
+<section class="results-questions" aria-labelledby="guided-by-real-world-questions">
+  <p class="questions-eyebrow">Human Practices × Project</p>
+  <p class="questions-introduction">Building ORCA was never only about changing a nucleotide. Conversations with clinicians and researchers helped us reconsider what a useful RNA-editing system would need to achieve—and what our current results could actually demonstrate.</p>
+  <div class="questions-grid">
+    <article class="question-card question-card--deliver" aria-labelledby="question-deliver">
+      <header class="question-header">
+        <p class="question-category">Deliver</p>
+        <h3 id="question-deliver">Can it reach the brain without becoming a burden?</h3>
+        <p class="question-source"><a href="/human-practices#dr-zhifan-zhou-from-editing-in-the-laboratory-to-treatment-arrangements-patients-can-accept">Dr. Zhifan Zhou</a> · Neurology</p>
+      </header>
+      <div class="question-stage"><p class="question-label">We heard <span aria-hidden="true">↓</span></p><p>Brain delivery, repeated dosing and invasive procedures are critical considerations for future treatment.</p></div>
+      <div class="question-stage"><p class="question-label">We explored <span aria-hidden="true">↓</span></p><p>Her feedback reinforced the priority of delivery research. We developed and tested AAV9-based ORCA vectors.</p></div>
+      <div class="question-stage question-progress"><p class="question-label">Where we stand</p><p>AAV9 packaging was achieved, while functional delivery to target cells remains unconfirmed.</p></div>
+    </article>
+    <article class="question-card question-card--validate" aria-labelledby="question-validate">
+      <header class="question-header">
+        <p class="question-category">Edit &amp; Validate</p>
+        <h3 id="question-validate">When does successful editing become meaningful?</h3>
+        <p class="question-source"><a href="/human-practices#professor-keqiang-ye-how-should-we-judge-whether-an-edit-warrants-further-development">Prof. Keqiang Ye</a> · Neurodegeneration</p>
+      </header>
+      <div class="question-stage"><p class="question-label">We heard <span aria-hidden="true">↓</span></p><p>Editing efficiency alone cannot establish specificity, biological benefit or therapeutic safety.</p></div>
+      <div class="question-stage"><p class="question-label">We explored <span aria-hidden="true">↓</span></p><p>His advice informed our attention to bystander editing, cell context and disease-relevant functional evaluation.</p></div>
+      <div class="question-stage question-progress"><p class="question-label">Where we stand</p><p>Improved editing profiles were obtained, but functional rescue has not yet been demonstrated.</p></div>
+    </article>
+    <article class="question-card question-card--control" aria-labelledby="question-control">
+      <header class="question-header">
+        <p class="question-category">Control &amp; Choice</p>
+        <h3 id="question-control">Can editing be controlled—and would patients choose it?</h3>
+        <p class="question-source"><a href="/human-practices#dr-ziwei-dai-how-do-people-make-choices-after-learning-about-a-technology">Dr. Ziwei Dai</a> · Systems Biology</p>
+      </header>
+      <div class="question-stage"><p class="question-label">We heard <span aria-hidden="true">↓</span></p><p>Invasiveness, risks, costs and uncertainty influence whether a future intervention would be acceptable.</p></div>
+      <div class="question-stage"><p class="question-label">We explored <span aria-hidden="true">↓</span></p><p>These concerns aligned with our controllability goals and strengthened our approach to communicating risks and patient choice.</p></div>
+      <div class="question-stage question-progress"><p class="question-label">Where we stand</p><p>ASO-mediated suppression was demonstrated; reversible control and clinical acceptability remain unvalidated.</p></div>
+    </article>
+  </div>
+  <p class="questions-footer"><a href="/human-practices">Explore Our Human Practices <span aria-hidden="true">↗</span></a></p>
+</section>
+
 <section class="orca-journey" aria-labelledby="integrated-conclusion" markdown="1">
 
 ## Beyond One Base {#integrated-conclusion}

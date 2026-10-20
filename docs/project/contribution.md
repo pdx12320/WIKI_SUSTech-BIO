@@ -91,11 +91,57 @@ SONAR connects a modular fluorescence reporter with a complete analysis workflow
 
 <img class="contribution-brand" src="/assets/images/puffer/puffer-logo.png" alt="PUFFER logo" width="922" height="227">
 
-**PUFFER turns our computational work into a connected design workspace.** Readers can inspect RNA recognition windows, assemble PUF candidates and organize sequence designs alongside assay records. Its local companion brings assay-informed protein ranking and LAMAR RNA-site prioritization into the same project workflow.
+**PUFFER turns our computational work into a reusable workspace for other teams.** The browser brings target sequences, PUF candidate proteins and measured assay records into one saved project. Its companion local application connects those records with protein ranking and LAMAR RNA-site prioritization.
 
-The two analyses answer complementary questions: which protein candidates deserve attention, and which RNA sites deserve closer examination. Their distinct outputs connect molecular design with experimental planning, while saved inputs and exported results preserve the context needed to revisit a decision. The code document below shares the interface, project-data model, analysis integration and software tests.
+Teams can inspect a design, retain its inputs and carry the same records into later comparisons. The contribution combines a working interface, reusable project files, video guidance and an implementation document.
 
-<div class="contribution-links"><a href="/software#workbench">Explore PUFFER →</a><a href="/software">Software and downloads →</a></div>
+<div class="contribution-links"><a href="https://puffer-43e67d.igem.wiki/" target="_blank" rel="noopener noreferrer">Open PUFFER ↗</a></div>
+
+### Keep design records connected {#puffer-workspace}
+
+**A saved project preserves the relationship between a target, its candidates and the available measurements.** Readers can review recognition windows and candidate records together, then return to the same design context when comparing results.
+
+<div class="contribution-steps">
+<div><strong>Inspect</strong><p>Review target sequences and recognition windows in the browser, keeping the selected context visible alongside candidate records.</p></div>
+<div><strong>Organize</strong><p>Keep candidate proteins and measured assay records together, then save the project as JSON for later review.</p></div>
+<div><strong>Share</strong><p>Export candidate CSV, protein FASTA, matching-site TSV or a local HTML report to carry records into subsequent work.</p></div>
+</div>
+
+### Read the two analysis outputs separately {#puffer-analysis}
+
+**Protein ranking and RNA-site prioritization address different questions within the same workflow.** The local application connects assay-informed PUF ranking with LAMAR-based RNA-context analysis, while preserving their separate outputs.
+
+- **Protein candidates:** the supplied assay-informed model supports comparisons within its compatible scaffold and assay context. The browser itself exports unscored design candidates.
+- **RNA sites:** LAMAR-based scores prioritize RNA contexts independently of the selected PUF. These scores are not editing probabilities.
+
+Saved inputs, exported tables and the local run manifest help teams revisit how a result was produced. The manifest records input and model hashes, software versions and completion status. These records support traceability; candidate rankings still require experimental follow-up.
+
+### Watch PUFFER in action {#puffer-videos}
+
+**Start with the short demonstration, then follow the full tutorial at your own pace.** Both recordings show the existing interface, connecting the written guide with the software readers can explore.
+
+<details class="sonar-drawer puffer-tutorial">
+<summary>One-minute demonstration · 0:59</summary>
+<figure class="contribution-figure puffer-video puffer-video--demo">
+<iframe src="https://video.igem.org/videos/embed/i2fLRahC8pGYzLGTc7X1SS" title="PUFFER one-minute demonstration" width="1280" height="832" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+<figcaption><strong>PUFFER in one minute · 0:59.</strong> Follow the interface from RNA input and PUF design to export and methods.</figcaption>
+</figure>
+</details>
+
+<details class="sonar-drawer puffer-tutorial">
+<summary>Full tutorial with English subtitles · 4:42</summary>
+<p>Use the longer walkthrough alongside PUFFER to review the interface and revisit each stage of the demonstrated workflow.</p>
+<figure class="contribution-figure puffer-video puffer-video--tutorial">
+<iframe src="https://video.igem.org/videos/embed/i5ucCjeFKN3JoWaDeSiLiU" title="PUFFER tutorial with English subtitles" width="3024" height="2144" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+<figcaption><strong>Full PUFFER tutorial · 4:42.</strong> English subtitles are included in the recording.</figcaption>
+</figure>
+</details>
+
+### Reuse the workflow and inspect the implementation {#puffer-reuse}
+
+**Other teams can reuse both the workspace and its documented implementation.** Start with the browser interface, retain a project file and consult the Software page for local analysis and setup. The code document below shares the interface, project-data model, analysis integration and software tests.
+
+<div class="contribution-links"><a href="/software#workbench-reuse">Setup and reproducibility →</a></div>
 
 <div class="contribution-document">
 <details class="contribution-code" data-contribution-document="PUFFER">

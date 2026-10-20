@@ -1,8 +1,8 @@
 """Import official upload links using the flat package's Git content fingerprint.
 
 Only exact, unique package stems are accepted. Image conversion and corrected
-font extensions are allowed; unrelated documents/scripts remain upload evidence,
-not media mappings. Existing confirmed mappings are preserved.
+font extensions are allowed. Documents and runtime data use the same content
+fingerprint; maintained scripts are not replaced. Existing records are preserved.
 """
 import argparse
 import hashlib
@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from igem_assets import MEDIA_EXTENSIONS
+from igem_assets import UPLOAD_EXTENSIONS
 
 IMAGE_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.webp', '.avif', '.gif', '.svg', '.ico'}
 FONT_EXTENSIONS = {'.ttf', '.otf', '.woff', '.woff2'}
@@ -53,7 +53,7 @@ def import_uploads(root, text):
     paths = subprocess.check_output(['git', 'ls-files', '-z'], cwd=root).decode().split('\0')
     added = []
     for path in sorted(paths):
-        if not path.startswith(('assets/', 'static/')) or Path(path).suffix.lower() not in MEDIA_EXTENSIONS:
+        if not path.startswith(('assets/', 'static/')) or Path(path).suffix.lower() not in UPLOAD_EXTENSIONS:
             continue
         data = (root / path).read_bytes()
         sha = hashlib.sha256(data).hexdigest()
@@ -70,9 +70,11 @@ def import_uploads(root, text):
             added.append(path)
     evidence['urls'] = sorted(set(evidence['urls']) | urls)
     evidence['confirmed_mapping'] = list(records.values())
-    evidence['source'] = ('User-provided official upload lists; flat-package additions matched by '
-                          'normalized filename and source Git blob fingerprint. '
-                          'This import does not claim remote byte identity after image conversion.')
+    note = ('User-provided flat-package additions matched by normalized filename and source Git '
+            'blob fingerprint, including documents and runtime data. '
+            'This import does not claim remote byte identity after image conversion.')
+    if note not in evidence.get('source', ''):
+        evidence['source'] = (evidence.get('source', '') + ' ' + note).strip()
     evidence_path.write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + '\n')
     return added
 

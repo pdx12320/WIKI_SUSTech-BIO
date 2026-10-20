@@ -6,7 +6,7 @@
     const key = decodeURIComponent(location.hash.slice(1));
     if (routes[key]) location.replace(new URL(routes[key].replace(/^\//, ''), location.href));
   }
-  fetch(table).then(response => response.json()).then(routes => {
+  fetch(globalThis.wikiAssetURL?.(table.href) ?? table.href).then(response => response.json()).then(routes => {
     resolve(routes);
     addEventListener('hashchange', () => resolve(routes));
   }).catch(() => {});

@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 {% block title %}{{ content.title }}{% endblock %}
- {% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='model.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-typing.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-reading.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-navigation.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-entry.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-synthesis.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-overview.css') }}">{% endblock %}
-{% set modules = [('01','Transcriptomic Landscape'),('02','Recognition Code'),('03','Catalytic Design'),('04','LAMAR')] %}
+ {% block page_styles %}<link rel="stylesheet" href="{{ url_for('static', filename='model.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-typing.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-reading.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-navigation.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-entry.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-synthesis.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-overview.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='model-formulations.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='dry-lab-titles.css') }}">{% endblock %}
+{% set modules = [('01', 'Mapping the Editing Landscape'),('02', 'Decoding RNA Recognition'),('03', 'Balancing Activity and Preference'),('04', 'Reading RNA Context')] %}
+{% set module_terms = ['Transcriptomic Landscape', 'Recognition Code', 'Catalytic Design', 'LAMAR'] %}
 {% set chapters = [
- [(1,'1.1','Overview'),(2,'1.2','Experimental design'),(3,'1.3','Workflow'),(4,'1.4','Results'),(5,'1.5','Engineering implications'),(6,'1.6','Reproducibility'),(7,'1.7','References')],
- [(1,'2.1','Overview'),('iteration','2.2','Experimental iteration'),(2,'2.3','Specificity ranking'),(3,'2.4','Structure-guided design'),(5,'2.5','Reproducibility'),(6,'2.6','References')],
- [(1,'3.1','Overview'),(2,'3.2','Modeling approach'),(3,'3.3','Results'),(4,'3.4','Conclusion'),(5,'3.5','Reproducibility'),(6,'3.6','References')],
- [(1,'4.1','Overview'),(2,'4.2','Model & training data'),('strategy','4.3','Two-stage prediction'),(3,'4.4','Results'),(4,'4.5','Interpretation & next steps'),(6,'4.6','Reproducibility'),(7,'4.7','References')]
+ [(1,'1.1','Overview'),(2,'1.2','A Shared Basis for Comparison'),(3,'1.3','From Reads to Editing Profiles'),(4,'1.4','Signals Across the Transcriptome'),(5,'1.5','From Editing Profiles to Interpretation'),(6,'1.6','Reproducibility & References')],
+ [(1,'2.1','Overview'),('iteration','2.2','Predictions Meet Experiments'),(2,'2.3','Learning to Rank Specificity'),(3,'2.4','Exploring the Structural Design Space'),(5,'2.5','Reproducibility & References')],
+ [(1,'3.1','Overview'),(2,'3.2','From Structural Hypotheses to Measured Effects'),(3,'3.3','The Activity–Preference Trade-off'),(4,'3.4','The Explanatory Limits of Structure'),(5,'3.5','Reproducibility & References')],
+ [(1,'4.1','Overview'),(2,'4.2','Learning the Language of RNA'),('strategy','4.3','From Regions to Sites'),(3,'4.4','Testing the Shortlist'),(4,'4.5','Interpreting the Rankings'),(6,'4.6','Reproducibility & References')]
 ] %}
 {% block main %}
 <main id="main-content" class="model-page">
@@ -44,16 +45,12 @@
          <header class="module-heading"><span class="module-number">00</span><div><h2>{{ content.metadata.get('heading', content.title) }}</h2></div></header>
          <article class="model-prose markdown-content markdown-content--custom">
            {{ rendered_markdown }}
-           <figure class="model-overview-figure" id="model-figure-1">
-             <img src="{{ url_for('assets', filename='images/orca-model-overview-combined.svg') }}" width="1600" height="1949" alt="ORCA model overview. The larger upper four-module cycle connects through a broad arrow to Modeling data at the center of the smaller lower whole-body delivery model. Modeling data connects only to the lower-right RNA product composition panel; the other panels show systemic distribution, barrier and expression, and tissue coverage.">
-             <figcaption><strong>Figure 1.</strong> ORCA model overview. RNA-seq maps the editing landscape; protein foundation and structural models guide recognition and catalytic design; generative models propose PUF sequences; LAMAR ranks RNA sites; and delivery simulations connect editor exposure to RNA products. Experimental measurements connect the sequence-level models to observed editing outcomes.</figcaption>
-           </figure>
          </article>
        </section>
        {% endif %}
        {% for number, title in modules %}
       <section class="model-module" id="module{{ loop.index }}" data-model-module>
-        <header class="module-heading"><div><h2>Module {{ loop.index }}: {{ title }}</h2>
+        <header class="module-heading"><div><h2>Module {{ loop.index }}: {{ title }}</h2><p class="model-story-term">{{ module_terms[loop.index0] }}</p>
             </div></header>
         {% if loop.index == 1 %}
           <article class="model-prose">{% include 'components/model/module1.html' %}</article>

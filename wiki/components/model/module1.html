@@ -7,7 +7,7 @@
 <li><a href="#module1-4"><span class="result-number">③</span> <strong>PUF12 broadened the detected editing landscape relative to PUF10.</strong></a> Shared-site comparisons also showed higher PUF12 editing rates at most jointly retained sites.</li>
 <li><a href="#module1-context"><span class="result-number">④</span> <strong>Conserved motifs support APOBEC-driven local sequence preference.</strong></a> The shared local motif across PUF variants points to APOBEC as a major source of short-range sequence bias, while PUF variation reshapes site recruitment.</li>
 </ol>
-<h3 id="module1-2" data-model-chapter><span class="chapter-number">1.2</span>Experimental design</h3>
+<h3 id="module1-2" data-model-chapter><span class="chapter-number">1.2</span>A Shared Basis for Comparison</h3>
 <p>We analysed 36 paired-end RNA-seq libraries generated from human HEK293T cells in our wet-lab experiments. The study comprised nine groups, each with four biological replicates.</p>
 <p>GVE and SNE carry PUF mutations, whereas 132D and E72A carry APOBEC mutations. We therefore interpret changes in these two components separately.</p>
 <div class="model-table" tabindex="0" role="region" aria-label="Scrollable data table"><table>
@@ -38,7 +38,7 @@
 <td>Positions with REF + target ALT depth ≥20 in all 36 libraries</td>
 </tr>
 </tbody></table></div>
-<h3 id="module1-3" data-model-chapter><span class="chapter-number">1.3</span>Workflow</h3>
+<h3 id="module1-3" data-model-chapter><span class="chapter-number">1.3</span>From Reads to Editing Profiles</h3>
 <p>Alignment and allele recounting establish read support, while SNP and strand filters define the eligible sites. Control comparisons establish background signal, and <strong>agreement across four treated replicates tests repeatability</strong>. Sites passing these checks form the retained candidate set.</p>
 <figure id="model-figure-2"><img loading="lazy" decoding="async" src="/static/assets/model/rna-seq-module-links-20261016/figure-02-rna-seq.svg" alt="Module 1 workflow showing adapter trimming, alignment, candidate detection, filtering, quantification and editor comparison, with branches to Module 2 PUF specificity design, Module 3 APOBEC engineering and Module 4 LAMAR prioritization." width="1200" height="840"><figcaption><strong>Figure 2.</strong> RNA-seq candidate-detection workflow for 36 libraries across nine groups, with four biological replicates per group. Read from sequencing to the retained-site set: alignment establishes read support, variant and strand filters remove alternative explanations, and agreement across replicates identifies reproducible candidates. The final branches connect this common evidence base to PUF recognition, APOBEC design and RNA-context modeling.</figcaption></figure>
 <h4>Read preprocessing and alignment</h4>
@@ -56,6 +56,7 @@
 <p>Retained sites required formal detection in all four treated replicates, with target ALT ≥20, depth ≥100 and allele rate ≥0.005 in each. The median absolute deviation of treated rates had to be ≤0.05.</p>
 <p>Replicate rates were calculated as <code>target ALT / (REF + target ALT)</code>. Each site was reported as the median of four replicate rates, without background subtraction.
 Target positions C295, C388 and C871 are quantified separately, requiring depth ≥100 in all four treated replicates without the ALT20 gate. This preserves low target measurements. C388 is excluded from candidate-site counts, whereas C295 and C871 are not systematically excluded.</p>
+{% endraw %}{% from 'components/model/formulations.html' import transcriptomics %}{{ transcriptomics() }}{% raw %}
 <h4>Representative tool calls</h4>
 <p>These commands cover preprocessing, alignment and candidate calling. Shell variables represent sample files, references and new output paths; <code>THREADS</code> specifies allocated CPU threads.</p>
 <p><strong>Adapter trimming with fastp.</strong> The two adapter sequences match the paired-end library configuration. Quality selection is deferred to candidate calling and recounting.</p>
@@ -80,7 +81,7 @@ Target positions C295, C388 and C871 are quantified separately, requiring depth 
   -S -q 31 -bq 31 -me 5 -men 1
 </code></pre>
 <p>Here, <code>-S</code> retains positions with mismatches, while <code>-q</code> and <code>-bq</code> set mapping and base quality thresholds. <code>-me 5</code> requires total non-reference support; <code>-men 1</code> avoids rejecting a position solely because another mismatch type has fewer than five observations. Target-ALT support and transcript strand are evaluated separately.</p>
-<h3 id="module1-4" data-model-chapter><span class="chapter-number">1.4</span>Results and interpretation</h3>
+<h3 id="module1-4" data-model-chapter><span class="chapter-number">1.4</span>Signals Across the Transcriptome</h3>
 <h4>PUF12 combined broader editing with a distinct target profile</h4>
 <p>PUF12 produced the largest retained-site set, with 12,908 sites, whereas PUF10 produced 2,774. Their median rates across retained sites were 13.99% and 12.75%, respectively. PUF12 therefore combined a broader detected profile with a modestly higher median across its retained set.</p>
 <p>Candidate counts describe editing breadth, while each median summarizes rates within an editor-specific retained set. Target measurements provide the complementary endpoint: how much signal remains at the monitored positions.</p>
@@ -162,15 +163,15 @@ Target positions C295, C388 and C871 are quantified separately, requiring depth 
 <p>PUF10, PUF12 and SNE showed broadly distributed profiles, with normalized shares ranging from approximately 3.1% to 5.7%. Candidate densities extended across callable regions of the autosomes, including chromosome 19, and X.</p>
 <p>The smaller 132D and GVE sets were more uneven, reaching their highest shares on X (7.8%) and chromosome 22 (7.6%), respectively. These peaks represented 17 and 14 candidate sites, making their descriptive profiles sensitive to sampling variation.</p>
 <figure id="model-figure-7"><img loading="lazy" decoding="async" src="/static/assets/model/igem_module1/assets/06_chromosome_distribution.png" alt="Chromosome distribution heatmap for the six editors." width="1920" height="2112"><figcaption><strong>Figure 7.</strong> Chromosome-wise candidate densities within a shared callable-C reference, scaled to 100% per editor. n denotes reference-matched candidates; E72A and chromosome Y are NA. Each editor column describes relative chromosome distribution, rather than total editing burden. A higher cell value means greater representation after callable-C normalization. The broadly distributed signal shows that the retained landscape extends across chromosomes; overall site numbers are compared separately in Figure 3.</figcaption></figure>
-<h3 id="module1-5" data-model-chapter><span class="chapter-number">1.5</span>Engineering implications</h3>
+<h3 id="module1-5" data-model-chapter><span class="chapter-number">1.5</span>From Editing Profiles to Interpretation</h3>
 <p>The six-editor comparison defines a joint selection objective: retain the intended target signal while narrowing the broader candidate profile. Shared-site comparisons clarify how candidate-set changes relate to editing rates.</p>
 {% endraw %}{% include 'components/model/conclusions/module1.html' %}{% raw %}
-<h3 id="module1-6" data-model-chapter><span class="chapter-number">1.6</span>Reproducibility and availability</h3>
-<p>The Module 1 repository contains the RNA-seq workflow specification, recorded analysis settings, component environment files and postprocessing utilities, together with tests, supporting summary tables, Wiki figures and editable workflow artwork. These materials allow readers to inspect the analysis requirements, check the published summaries and reuse the documented utilities with compatible inputs. Raw sequencing reads, BAM files and machine-specific orchestration are excluded, so a complete end-to-end rerun requires additional data and deployment resources.</p>
+<h3 id="module1-6" data-model-chapter><span class="chapter-number">1.6</span>Reproducibility &amp; References</h3>
+<p>The Module 1 repository contains the RNA-seq workflow specification, recorded analysis settings, component environments and postprocessing utilities. Tests, summary tables, figures and editable workflow artwork support inspection of the reported analysis.</p>
 <ul class="model-resource-links" data-model-resource-links>
   <li><a href="https://github.com/pdx12320/igem_module1">Module 1 GitHub repository</a></li>
 </ul>
-<h3 id="module1-7" data-model-chapter><span class="chapter-number">1.7</span>References</h3>
+<span id="module1-7" class="model-legacy-reference-anchor" aria-hidden="true"></span>
 <ol class="model-references">
 <li id="module1-ref-grunewald">Grünewald, J., Zhou, R., Garcia, S. P., Iyer, S., Lareau, C. A., Aryee, M. J., &amp; Joung, J. K. (2019). Transcriptome-wide off-target RNA editing induced by CRISPR-guided DNA base editors. <em>Nature, 569</em>, 433–437. <a href="https://doi.org/10.1038/s41586-019-1161-z">doi:10.1038/s41586-019-1161-z</a></li>
 <li id="module1-ref-zhou">Zhou, C., et al. (2019). Off-target RNA mutation induced by DNA base editing and its elimination by mutagenesis. <em>Nature, 571</em>, 275–278. <a href="https://doi.org/10.1038/s41586-019-1314-0">doi:10.1038/s41586-019-1314-0</a></li>

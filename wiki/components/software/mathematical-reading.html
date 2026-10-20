@@ -1,0 +1,38 @@
+<section class="software-mathematical-reading" aria-labelledby="rewire-mathematical-reading">
+  <h4 id="rewire-mathematical-reading">From Rates to Trajectories</h4>
+  <p>The balance above can be read at three mathematical levels: coupled states, accumulated change and a total across compartments. These general identities explain the notation behind a dynamical model.</p>
+
+  <h5>A shared state vector</h5>
+  <p>Collect the time-dependent states into a vector, with one component for each quantity being tracked. The vector function <i>f</i> collects their rates of change.</p>
+  <div class="software-equation" tabindex="0" role="region" aria-label="State vector and initial-value problem">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable rowspacing="0.6em">
+        <mtr><mtd><mrow><mi mathvariant="bold">x</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msup><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>)</mo></mrow><mi mathvariant="normal">T</mi></msup></mrow></mtd></mtr>
+        <mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">d</mi><mi mathvariant="bold">x</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi mathvariant="bold">f</mi><mo>(</mo><mi>t</mi><mo>,</mo><mi mathvariant="bold">x</mi><mo>;</mo><mi mathvariant="bold">θ</mi><mo>)</mo><mo>,</mo><mspace width="1em"/><mi mathvariant="bold">x</mi><mo>(</mo><msub><mi>t</mi><mn>0</mn></msub><mo>)</mo><mo>=</mo><msub><mi mathvariant="bold">x</mi><mn>0</mn></msub></mrow></mtd></mtr>
+      </mtable>
+    </math>
+  </div>
+  <p>Here, <i>n</i> is the number of states, <i>t</i> denotes time, and <b>θ</b> denotes the parameter vector. The initial condition <b>x</b><sub>0</sub> specifies the states at the starting time <i>t</i><sub>0</sub>.</p>
+
+  <h5>A trajectory accumulates change</h5>
+  <p>Integrating the rate equation gives the corresponding trajectory from its initial condition. This relation connects the instantaneous balance to the time courses shown in the figures.</p>
+  <div class="software-equation" tabindex="0" role="region" aria-label="Integral form of a state trajectory">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mrow><mi mathvariant="bold">x</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mi mathvariant="bold">x</mi><mn>0</mn></msub><mo>+</mo><msubsup><mo>∫</mo><msub><mi>t</mi><mn>0</mn></msub><mi>t</mi></msubsup><mi mathvariant="bold">f</mi><mo>(</mo><mi>τ</mi><mo>,</mo><mi mathvariant="bold">x</mi><mo>(</mo><mi>τ</mi><mo>)</mo><mo>;</mo><mi mathvariant="bold">θ</mi><mo>)</mo><mspace width="0.2em"/><mi mathvariant="normal">d</mi><mi>τ</mi></mrow>
+    </math>
+  </div>
+  <p>The integration variable <i>τ</i> runs from the starting time to the time being evaluated. Each rate component has units of its corresponding state per unit time.</p>
+
+  <h5>Internal transfers cancel in a total balance</h5>
+  <p>For compartments tracking the same conserved quantity in compatible units, internal transfers appear once as an inflow and once as an outflow. Summing these balances therefore cancels those internal terms.</p>
+  <div class="software-equation" tabindex="0" role="region" aria-label="Total balance for a conserved quantity across compartments">
+    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+      <mtable rowspacing="0.6em">
+        <mtr><mtd><mrow><mi>Q</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><msub><mi>q</mi><mi>i</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd></mtr>
+        <mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">d</mi><mi>Q</mi></mrow><mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mi>J</mi><mtext>external,in</mtext></msub><mo>−</mo><msub><mi>J</mi><mtext>external,out</mtext></msub><mo>+</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mo>(</mo><msub><mi>P</mi><mi>i</mi></msub><mo>−</mo><msub><mi>L</mi><mi>i</mi></msub><mo>)</mo></mrow></mtd></mtr>
+      </mtable>
+    </math>
+  </div>
+  <p>Here, <i>q</i><sub>i</sub> is an amount in compartment <i>i</i>, and <i>Q</i> is its total across <i>m</i> compartments. External fluxes, production <i>P</i><sub>i</sub> and loss <i>L</i><sub>i</sub> account for changes in that total.</p>
+  <p>This sum applies to compatible amounts, rather than every entry of a mixed state vector. Concentrations require compartment-volume weighting before they can be combined into a total amount.</p>
+</section>

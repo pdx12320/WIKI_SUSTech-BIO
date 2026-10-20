@@ -8,7 +8,7 @@
 <li><a href="#module4-regional-comparison"><span class="result-number">③</span> <strong>The original frozen LAMAR encoder gave the strongest regional validation performance.</strong></a> Preserving its pretrained representation supported regional screening in the compared runs.</li>
 <li><a href="#module4-context-composition"><span class="result-number">④</span> <strong>Flanking RNA context distinguishes editor-specific site sets.</strong></a> A shared central GCA preference supports a common catalytic bias, while longer sequence windows capture differences associated with site recruitment.</li>
 </ol>
-<h3 id="module4-2" data-model-chapter><span class="chapter-number">4.2</span>Model and training data</h3>
+<h3 id="module4-2" data-model-chapter><span class="chapter-number">4.2</span>Learning the Language of RNA</h3>
 <h4>LAMAR foundation model</h4>
 <p>LAMAR is a Transformer-based RNA foundation model designed to learn regulatory information directly from RNA sequences. It uses a bidirectional Transformer encoder architecture related to ESM-style language models. The model contains 12 Transformer layers, 12 self-attention heads, a hidden dimension of 768 and rotary positional embeddings.</p>
 <p>Self-attention lets the representation of a nucleotide depend on other positions in the input, following the Transformer framework (Vaswani et al., 2017). Rotary position embeddings encode positional relationships within that attention calculation (Su et al., 2021). Together, these components let LAMAR represent a cytidine in its surrounding sequence context rather than as an isolated base.</p>
@@ -19,6 +19,7 @@
 <p>The foundation model and its pretraining procedure were developed by Zhou et al. (2025). Our contribution here is its <strong>adaptation to human transcripts and the construction and evaluation of an editing-site prioritization workflow</strong>.</p>
 <figure id="model-figure-33"><img loading="lazy" decoding="async" src="/static/assets/model/revisions/20261011/module4-figures/figure-1.png" alt="LAMAR pretraining corpus, masked nucleotide modeling and downstream RNA regulatory tasks." width="1429" height="1133"><figcaption><strong>Figure 33.</strong> LAMAR pretraining and masked nucleotide prediction. Adapted from Zhou et al. (2025). Masked prediction hides selected nucleotides and trains the model to recover them from surrounding sequence. This published framework learns RNA sequence representations from context. Our downstream adaptation uses those representations first to identify editing-associated regions and then to rank cytidines within them, connecting transcriptome observations to a shorter list of RNA sites.</figcaption></figure>
 
+{% endraw %}{% from 'components/model/formulations.html' import rna_representation %}{{ rna_representation() }}{% raw %}
 <h4 id="module4-labels">RNA-seq-derived training labels</h4>
 <p>We constructed high-confidence positive labels from RNA-seq candidate sites generated for the PUF-LIKER-APOBEC editing system.</p>
 <p>The positive-label definition used two read-support criteria:</p>
@@ -88,6 +89,7 @@ Input:      AUGCUA[MASK]GGUA
 Prediction: AUGCUAACGGUA
 
 </code></pre>
+{% endraw %}{% from 'components/model/formulations.html' import rna_adaptation %}{{ rna_adaptation() }}{% raw %}
 <h5>Continued pretraining result</h5>
 <p>Masked nucleotide prediction accuracies on human transcripts were:</p>
 <div class="model-table" tabindex="0" role="region" aria-label="Scrollable data table"><table>
@@ -112,7 +114,7 @@ Prediction: AUGCUAACGGUA
 <p>Masked nucleotide prediction measures sequence reconstruction. Supervised editing-site training then uses RNA-seq labels to learn the region and cytidine scores evaluated below.</p>
 <figure id="model-figure-34"><img loading="lazy" decoding="async" src="/static/assets/model/revisions/20261011/module4-figures/figure-2.png" alt="Continued-pretraining loss and validation masked nucleotide accuracy across training steps." width="1560" height="1440"><figcaption><strong>Figure 34.</strong> Training loss and masked nucleotide accuracy during continued LAMAR pretraining on human transcripts. The upper trace measures training error; the lower trace measures recovery of hidden nucleotides in validation sequences. After the initial adjustment, loss falls while validation accuracy rises. This shows improved sequence reconstruction during adaptation; Figures 35–36 evaluate the downstream editing tasks separately.</figcaption></figure>
 
-<h3 id="module4-strategy" data-model-chapter><span class="chapter-number">4.3</span>Two-stage prediction</h3>
+<h3 id="module4-strategy" data-model-chapter><span class="chapter-number">4.3</span>From Regions to Sites</h3>
 <h4>Initial strategy: direct cytidine-level classification</h4>
 <p>Our first design treated experimentally observed editing sites as positive examples and other transcriptomic cytidines as negative examples.</p>
 <p>The intended task was:</p>
@@ -175,6 +177,7 @@ Input:  1,024-nt transcript sequence window
 Output: Probability that the window contains at least one RNA-seq-supported editing site
 
 </code></pre>
+{% endraw %}{% from 'components/model/formulations.html' import rna_regions %}{{ rna_regions() }}{% raw %}
 <h4>Stage II: 101-nt cytidine-centered ranking</h4>
 <p>Stage II assigns a scalar editing-associated score to the central cytidine in a 101-nt sequence context.</p>
 <pre><code class="language-text">
@@ -234,6 +237,7 @@ Output: Editing-associated score
 </tbody>
 </table></div>
 <h5>Stage I optimization</h5>
+{% endraw %}{% from 'components/model/formulations.html' import rna_finetuning %}{{ rna_finetuning() }}{% raw %}
 <p>The Stage I design specified up to 15 epochs, early stopping with patience 10 and selection by validation PR-AUC.</p>
 <div class="model-table" tabindex="0" role="region" aria-label="Scrollable data table"><table>
 <thead>
@@ -278,6 +282,7 @@ Output: Editing-associated score
 </tbody>
 </table></div>
 <h5>Stage II optimization</h5>
+{% endraw %}{% from 'components/model/formulations.html' import rna_ranking %}{{ rna_ranking() }}{% raw %}
 <p>The ranking implementation uses fixed settings and validation Hit@10 for model selection.</p>
 <div class="model-table" tabindex="0" role="region" aria-label="Scrollable data table"><table>
 <thead>
@@ -313,7 +318,7 @@ Output: Editing-associated score
 </tr>
 </tbody>
 </table></div>
-<h3 id="module4-3" data-model-chapter><span class="chapter-number">4.4</span>Results</h3>
+<h3 id="module4-3" data-model-chapter><span class="chapter-number">4.4</span>Testing the Shortlist</h3>
 <h4 id="module4-regional-comparison">Stage I results: candidate-region enrichment</h4>
 <p>Stage I reached a best search validation score of 0.813, a final validation score of 0.810 and a test score of 0.722. PR-AUC here denotes average precision (AP).</p>
 <p>The test set comprised 212 transcript windows, including 140 positive windows (66.0%).</p>
@@ -477,7 +482,7 @@ Output: Editing-associated score
 <p>Hit@10 directly translates the ranking into a ten-site screening budget.</p>
 <figure id="model-figure-36"><img loading="lazy" decoding="async" src="/static/assets/model/revisions/20261011/module4-figures/figure-4.png" alt="Test-window Hit@K and Recall@K for ranked cytidines, n = 140." width="2984" height="1514"><figcaption><strong>Figure 36.</strong> Reported Hit@K and Recall@K for 140 positive test windows. Hit@K indicates any supported site within the top K; Recall@K is the fraction of supported sites recovered within the top K. K is the number of highest-ranked cytidines examined per window. Hit@10 = 0.779 means the top ten include at least one supported site in 77.9% of positive windows. Increasing K improves recovery while requiring more sites to be examined, making the screening-budget trade-off explicit.</figcaption></figure>
 
-<h3 id="module4-4" data-model-chapter><span class="chapter-number">4.5</span>Interpretation and next steps</h3>
+<h3 id="module4-4" data-model-chapter><span class="chapter-number">4.5</span>Interpreting the Rankings</h3>
 <p>Stage I evaluates candidate transcript regions, reaching test AP of 0.722 in the regional cohort.</p>
 <p>The top 10 and top 20 lists included a supported site in 77.9% and 92.1% of positive test windows. These results define two practical screening budgets.</p>
 
@@ -496,12 +501,12 @@ Output: Editing-associated score
 </li>
 </ul>
 {% endraw %}{% include 'components/model/conclusions/module4.html' %}{% raw %}
-<h3 id="module4-6" data-model-chapter><span class="chapter-number">4.6</span>Reproducibility and availability</h3>
-<p>The Module 4 repository contains archived datasets, training histories, model-selection records, Stage I predictions, checkpoint metadata and plotting code. Readers can inspect these records, run lightweight repository checks and regenerate figures from saved outputs. Provenance records distinguish recalculated summaries from draft-reported rankings. Full model reruns require external weights, reference corpora and reconstruction of the recorded runtime environment. Site-level Stage II ranking outputs are not included, so those ranking summaries cannot be recomputed from the repository alone.</p>
+<h3 id="module4-6" data-model-chapter><span class="chapter-number">4.6</span>Reproducibility &amp; References</h3>
+<p>The Module 4 repository contains archived datasets, training histories, model-selection records, Stage I predictions, checkpoint metadata and plotting code. These records support repository checks and figure regeneration from saved outputs, with provenance distinguishing recalculated summaries from reported rankings.</p>
 <ul class="model-resource-links" data-model-resource-links>
   <li><a href="https://github.com/pdx12320/igem_module4">Module 4 GitHub repository</a></li>
 </ul>
-<h3 id="module4-7" data-model-chapter><span class="chapter-number">4.7</span>References</h3>
+<span id="module4-7" class="model-legacy-reference-anchor" aria-hidden="true"></span>
 <ol class="model-references">
 <li id="module4-ref-lamar">Zhou, H. et al. (2025). A foundation language model to decipher diverse regulation of RNAs. <em>Genome Biology</em>, 26, 301. <a href="https://doi.org/10.1186/s13059-025-03752-x">doi:10.1186/s13059-025-03752-x</a>.</li>
 <li id="module4-ref-gencode">GENCODE. (2026). GENCODE human release 50, GRCh38.p14. <a href="https://www.gencodegenes.org/human/release_50.html">Release 50 annotation and files</a>. Released June 2026; annotation freeze May 2025, as recorded in the <a href="https://www.gencodegenes.org/human/releases.html">release history</a>.</li>

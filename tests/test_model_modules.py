@@ -15,10 +15,10 @@ from scripts.import_model_modules import Importer
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 MODEL_ASSETS = PROJECT_ROOT / "static/assets/model"
 CHAPTER_IDS = {
-    1: (1, 2, 3, 4, 5, 6, 7),
-    2: (1, 'iteration', 2, 3, 5, 6),
-    3: (1, 2, 3, 4, 5, 6),
-    4: (1, 2, 'strategy', 3, 4, 6, 7),
+    1: (1, 2, 3, 4, 5, 6),
+    2: (1, 'iteration', 2, 3, 5),
+    3: (1, 2, 3, 4, 5),
+    4: (1, 2, 'strategy', 3, 4, 6),
 }
 # Only explicit presentation and evidence-attribution edits are allowed; source files stay intact.
 MODEL_PAGE_HEADING_EDITS = {
@@ -262,7 +262,7 @@ class FourModelModulesTest(unittest.TestCase):
                 if "data-model-chapter" in node.attrs:
                     chapter = node.attrs["id"]
                     if chapter == expected_chapter:
-                        self.assertIn("Reproducibility and availability", node.text())
+                        self.assertIn("Reproducibility & References", node.text())
                 links = [child for child in node.walk() if child.tag == "a"]
                 if links and "model-result-links" in node.attrs.get("class", "").split():
                     self.assertEqual(chapter, f"module{number}-1")
@@ -273,21 +273,27 @@ class FourModelModulesTest(unittest.TestCase):
                         self.assertIn(link.attrs["href"][1:], ids)
                     continue
                 if links:
-                    if node.tag == "ol" and chapter == f"module{number}-{7 if number in (1, 4) else 6}":
-                        self.assertEqual(chapter, f"module{number}-{7 if number in (1, 4) else 6}")
+                    if node.tag == "ol" and "model-references" in node.attrs.get("class", "").split():
+                        self.assertEqual(chapter, expected_chapter)
                         self.assertTrue(all(link.attrs.get("href", "").startswith("https://") for link in links))
-                        allowed_links.extend(resources)
                         allowed_links.extend(links)
                         continue
                     self.assertEqual(chapter, expected_chapter)
                     self.assertIn("data-model-resource-links", node.attrs)
                     resources.extend(links)
+                    allowed_links.extend(links)
             self.assertTrue(resources, f"Module {number} must expose its resources")
             for link in resources:
                 href = link.attrs["href"]
                 parsed = urlparse(href)
                 if not parsed.netloc:
-                    self.assertTrue((PROJECT_ROOT / unquote(parsed.path).lstrip("/")).is_file(), href)
+                    if parsed.path == "/engineering":
+                        response = self.client.get(parsed.path)
+                        self.assertEqual(response.status_code, 200)
+                        engineering = Document(response.get_data(as_text=True))
+                        self.assertIn(parsed.fragment, {node.attrs.get("id") for node in engineering.root.walk()})
+                    else:
+                        self.assertTrue((PROJECT_ROOT / unquote(parsed.path).lstrip("/")).is_file(), href)
         overview_links = [node for node in reading.walk() if node.tag == "a" and node.attrs.get("href") == "/software#rewire-purpose"]
         self.assertEqual(len(overview_links), 1)
         resource_links = [node for node in reading.walk() if node.tag == "a"
@@ -334,7 +340,10 @@ class FourModelModulesTest(unittest.TestCase):
         article = next(node for node in introduction.walk() if node.tag == "article")
         elements = [node for node in article.children if isinstance(node, Element)]
         self.assertIn("model-opening-quote", elements[0].attrs.get("class", ""))
-        self.assertLess(elements.index(roles), next(i for i, node in enumerate(elements) if node.tag == "figure"))
+        figure_index = next(i for i, node in enumerate(elements) if node.attrs.get("id") == "model-figure-1")
+        self.assertEqual(elements[figure_index - 1].tag, "p")
+        self.assertIn("ORCA connects", elements[figure_index - 1].text())
+        self.assertEqual(figure_index + 1, elements.index(roles))
         for item in items:
             description = next(node for node in item.walk() if node.tag == "p")
             self.assertGreaterEqual(len(description.text().split()), 30)
@@ -551,16 +560,9 @@ class FourModelModulesTest(unittest.TestCase):
     def test_each_module_keeps_a_clickable_bibliography(self):
         for name, module in self.modules.items():
             with self.subTest(module=name):
-                article = next(node for node in module.walk() if node.tag == "article")
-                bibliography = []
-                in_references = False
-                for node in article.children:
-                    if not isinstance(node, Element):
-                        continue
-                    if node.tag == "h3" and normalized(node.text()).endswith("References"):
-                        in_references = True
-                    elif in_references:
-                        bibliography.extend(item for item in node.walk() if item.tag in ("p", "li"))
+                ordered = [node for node in module.walk() if node.tag == "ol" and "model-references" in node.attrs.get("class", "").split()]
+                self.assertEqual(len(ordered), 1)
+                bibliography = [node for node in ordered[0].children if isinstance(node, Element)]
                 texts = [normalized(node.text()) for node in bibliography]
                 self.assertGreaterEqual(len(texts), 11)
                 self.assertEqual(len(texts), len(set(texts)))

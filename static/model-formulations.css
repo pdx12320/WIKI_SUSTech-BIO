@@ -1,0 +1,58 @@
+.model-page .model-formulation {
+  min-width: 0;
+  margin: 24px 0;
+  padding: clamp(16px, 2.5vw, 28px);
+  border-left: 3px solid #b7afd0;
+  background: #f8f7fc;
+}
+
+.model-page .model-formulation > h5 {
+  margin-top: 0;
+}
+
+.model-page .model-formulation-step + .model-formulation-step {
+  margin-top: 28px;
+}
+
+.model-page .model-formulation h6 {
+  margin: 16px 0 10px;
+  color: #56547b;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.model-page .model-formulation-equation {
+  max-width: 100%;
+  margin: 18px 0;
+  padding: 16px 12px;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e1dfee;
+  border-radius: 8px;
+  font-size: clamp(16px, 1.25vw, 20px);
+}
+
+.model-page .model-formulation-equation math {
+  width: max-content;
+  min-width: 100%;
+}
+
+.model-page .model-formulation-equation:focus-visible {
+  outline: 2px solid #5f62cd;
+  outline-offset: 3px;
+}
+
+.model-page .model-legacy-reference-anchor {
+  display: block;
+  scroll-margin-top: 100px;
+}
+
+@media print {
+  .model-page .model-formulation {
+    background: #fff;
+    padding: 12px;
+  }
+  .model-page .model-formulation-equation {
+    break-inside: avoid;
+  }
+}

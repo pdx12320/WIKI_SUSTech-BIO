@@ -47,11 +47,12 @@ class SoftwareDeliveryTest(unittest.TestCase):
             self.assertNotIn(old, self.html)
         self.assertIn('https://github.com/pdx12320/igem_software', self.html)
         self.assertIn('unscored design candidates', self.html)
-        self.assertRegex(self.html, r'<h2[^>]*>Delivery Dynamics</h2>')
+        self.assertRegex(self.html, r'<h2[^>]*>Following the Delivery Journey</h2>')
+        self.assertIn('Delivery Dynamics', self.html)
         self.assertIn('<h2>PUFFER</h2>', self.html)
         self.assertNotRegex(self.html, r'[\u4e00-\u9fff]')
         chapter_numbers = re.findall(r'<h3 id="[^"]+" data-model-chapter><span class="chapter-number">([\d.]+)</span>', self.html)
-        expected_numbers = [f'1.{chapter}' for chapter in range(1, 7)] + [f'2.{chapter}' for chapter in range(1, 7)]
+        expected_numbers = [f'1.{chapter}' for chapter in range(1, 6)] + [f'2.{chapter}' for chapter in range(1, 6)]
         self.assertEqual(chapter_numbers, expected_numbers)
         sidebar_numbers = re.findall(r'<span class="module-chapter-number">([\d.]+)</span>', self.html)
         self.assertEqual(sidebar_numbers, expected_numbers)
@@ -124,6 +125,10 @@ class SoftwareDeliveryTest(unittest.TestCase):
         for section in sections:
             headings = re.findall(r'<h3 id="([^"]+)"', section)
             self.assertTrue(headings[-1].endswith('-reuse'))
+            self.assertEqual(section.count('Reproducibility &amp; References'), 1)
+            legacy_reference = headings[-1].replace('-reuse', '-references')
+            self.assertIn(f'<span id="{legacy_reference}"', section)
+            self.assertNotIn(legacy_reference, headings)
             self.assertIn('class="software-references"', section)
             self.assertIn('href="https://doi.org/', section)
             parser = SoftwareParser()

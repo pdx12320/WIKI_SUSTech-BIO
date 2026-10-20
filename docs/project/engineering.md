@@ -2857,7 +2857,7 @@ The parameter names in panel A refer to the following effective rates on the mod
 | k<sub>endo_loss</sub> | Loss from the endothelial endosomal compartment | h⁻¹ |
 | k<sub>lymph</sub> | Local-depot drainage to lymph | h⁻¹ |
 
-Panel B labels **1–4** identify **10R-proapobec, 10R-design-4, 10R-dual-site and 8R-design-2**, respectively. **L/M/H** are low/medium/high inputs of **0.5/1/2 model units**. The numbered labels identify simulated designs; the 10R-proapobec activity/background multipliers remain hypothetical scenario inputs. Full nominal settings are retained in the [downloadable model toolkit](/static/downloads/rewire-modeling-toolkit.zip).
+Panel B labels **1–4** identify **10R-proapobec, 10R-design-4, 10R-dual-site and 8R-design-2**, respectively. **L/M/H** are low/medium/high inputs of **0.5/1/2 model units**. The numbered labels identify simulated designs; the 10R-proapobec activity/background multipliers remain hypothetical scenario inputs. Full nominal settings are retained in the [downloadable model toolkit](static/downloads/rewire-modeling-toolkit.zip).
 
 ##### Learn {#model-whole-body-cycle-05-learn}
 

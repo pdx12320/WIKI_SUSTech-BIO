@@ -320,3 +320,26 @@ Team exchanges, shared educational activities and community events made ORCA par
 Together, these contributions connect a laboratory question to tools others can use: measurement software, experimental records, computational workflows and educational materials. We share the reasoning alongside the resources so that the next team can build its own questions on a clear foundation.
 
 <div class="contribution-links"><a href="/education">Explore education and team exchanges →</a><a href="/inclusivity">Explore inclusive design →</a></div>
+
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<script type="module" src="static/contribution-assets/previews.js"></script>
+
+## Education {#education}
+
+### Health Rumor Detectives Activity Plan — Chinese Edition {#education-health-rumor-plan-chinese}
+
+This activity plan supports our health-information literacy lessons for older adults in community and elderly service center settings, dated July 2 and October 7, 2026. It provides a reusable 40-minute teaching schedule, four questions for checking health claims, discussion scenarios, staffing and materials, recruitment wording and feedback arrangements.
+
+**Language:** Chinese<br>
+**For:** Community educators, elderly-service staff and iGEM teams organizing lessons for older adults
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/health-rumor-detectives-activity-plan-zh.pdf" target="_blank" rel="noopener" aria-label="Download Health Rumor Detectives Activity Plan — Chinese Edition, PDF">Download PDF · Chinese <span aria-hidden="true">↓</span></a>
+
+### Health Rumor Detectives Activity Plan — English Edition {#education-health-rumor-plan-english}
+
+The English translation shares the same community lesson plan and activity dates, July 2 and October 7, 2026. Educators can adapt the teaching sequence, health-claim checking activities and organizational checklist for older learners in their own setting. The document is an activity plan; its proposed group size and evaluation indicators are planning targets.
+
+**Language:** English<br>
+**For:** English-speaking community educators, elderly-service staff and future iGEM teams
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/health-rumor-detectives-activity-plan-en.pdf" target="_blank" rel="noopener" aria-label="Download Health Rumor Detectives Activity Plan — English Edition, PDF">Download PDF · English <span aria-hidden="true">↓</span></a>

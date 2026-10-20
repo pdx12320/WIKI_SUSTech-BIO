@@ -31,14 +31,14 @@
   .markdown-content .contribution-pdf > summary { padding: 14px; }
 }
 @media print { .contribution-pdf-reader { display: none; } }
-.contribution-pdf-toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 10px; border-top: 1px solid #D9D7E5; background: #E9E8FF; }
-.contribution-pdf-toolbar span { margin-right: auto; font-size: 14px; color: #171536; }
-.contribution-pdf-toolbar button { min-width: 36px; min-height: 36px; border: 1px solid #9D9CF4; background: #FFFFFF; border-radius: 4px; font: inherit; cursor: pointer; }
-.contribution-pdf-toolbar button:disabled { opacity: .4; cursor: default; }
-.contribution-pdf-toolbar button:focus-visible { outline: 3px solid #5D5AD7; }
-.contribution-pdf-viewport { height: min(70vh, 700px); min-height: 350px; overflow: auto; overscroll-behavior: contain; background: #E9E8FF; padding: 12px; }
-.contribution-pdf-viewport canvas { display: block; max-width: none; margin: 0 auto; background: #FFFFFF; }
-.contribution-pdf-viewport:focus-visible { outline: 3px solid #5D5AD7; outline-offset: -4px; }
+.contribution-pdf-resource .contribution-pdf-toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 10px; border-top: 1px solid #D9D7E5; background: #E9E8FF; }
+.contribution-pdf-resource .contribution-pdf-toolbar span { margin-right: auto; font-size: 14px; color: #171536; }
+.contribution-pdf-resource .contribution-pdf-toolbar button { min-width: 36px; min-height: 36px; border: 1px solid #9D9CF4; background: #FFFFFF; border-radius: 4px; font: inherit; cursor: pointer; }
+.contribution-pdf-resource .contribution-pdf-toolbar button:disabled { opacity: .4; cursor: default; }
+.contribution-pdf-resource .contribution-pdf-toolbar button:focus-visible { outline: 3px solid #5D5AD7; }
+.contribution-pdf-resource .contribution-pdf-viewport { height: min(70vh, 700px); min-height: 350px; overflow: auto; overscroll-behavior: contain; background: #E9E8FF; padding: 12px; }
+.contribution-pdf-resource .contribution-pdf-viewport canvas { display: block; max-width: none; margin: 0 auto; background: #FFFFFF; }
+.contribution-pdf-resource .contribution-pdf-viewport:focus-visible { outline: 3px solid #5D5AD7; outline-offset: -4px; }
 
-.contribution-pdf-page { position: relative; flex: none; margin: 0 auto 14px; background: #FFFFFF; box-shadow: 0 2px 8px #17153615; }
-.contribution-pdf-page:last-child { margin-bottom: 0; }
+.contribution-pdf-resource .contribution-pdf-page { position: relative; flex: none; margin: 0 auto 14px; background: #FFFFFF; box-shadow: 0 2px 8px #17153615; }
+.contribution-pdf-resource .contribution-pdf-page:last-child { margin-bottom: 0; }

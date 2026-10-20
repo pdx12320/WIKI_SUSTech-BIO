@@ -1,0 +1,30 @@
+[
+  {
+    "filename": "education-transfer-example-report.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-example-report.pdf",
+    "pages": 8,
+    "sha256": "126afa21d7e5e290503582f202edff9626e3f14a02e03495fea6b49d79701afe",
+    "online_matches_local": true
+  },
+  {
+    "filename": "education-transfer-methods-reuse.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-methods-reuse.pdf",
+    "pages": 5,
+    "sha256": "92678a378c105c536265132428150ae313c7f58cc2a3e93c5979f44ae30d35ba",
+    "online_matches_local": true
+  },
+  {
+    "filename": "education-transfer-source-code.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-source-code.pdf",
+    "pages": 96,
+    "sha256": "90b42dcad7a4647638395a3d23af8e6167e88ebea94bfc220998a150266b5073",
+    "online_matches_local": true
+  },
+  {
+    "filename": "education-transfer-user-guide.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-user-guide.pdf",
+    "pages": 7,
+    "sha256": "6c3e0c5d71139f396ca523915e2675c80f098bc60d374feb078ec2ab7fb5a29e",
+    "online_matches_local": true
+  }
+]

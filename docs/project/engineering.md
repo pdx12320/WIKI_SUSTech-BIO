@@ -1292,6 +1292,8 @@ A proposed genetic off-switch
 
 We proposed a Cre–loxP off-switch to stop further ORCA production by excising its coding sequence from the expression template. This DNA-level control complements ASO-mediated RNA suppression and remains experimentally unvalidated in ORCA.
 
+**This chapter explores a possible control strategy and its theoretical design; we did not experimentally validate it in this project.**
+
 ### **Engineering Rationale** {#cre-loxp-engineering-rationale .engineering-section-title}
 
 #### Why an RNA Editor Needs a DNA-Level Off-Switch {#cre-loxp-why-an-rna-editor-needs-a-dna-level-off-switch}
@@ -2868,7 +2870,7 @@ PUFFER connected **transcriptomic analysis, recognition and catalytic design, RN
 
 Can ORCA treatment affect disease-relevant cellular functions? We moved beyond artificial reporters to a human astrocyte-related cell model expressing endogenous APOE. Three experiments examined **plasmid delivery, lipid-droplet-associated structures, and extracellular Aβ42 handling**—an initial step toward connecting molecular editing with cellular function.
 
-### Engineering Rationale {#functional-validation-engineering-rationale}
+### **Engineering Rationale** {#functional-validation-engineering-rationale .engineering-section-title}
 
 #### 1. Beyond Molecular Editing {#functional-validation-1-beyond-molecular-editing}
 

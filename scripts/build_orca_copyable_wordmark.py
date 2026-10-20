@@ -45,7 +45,7 @@ for name in ['hero','lavender','navy']:
  else:prefix=f'<div class="design-orca-wordmark__sample design-orca-wordmark__sample--{name}">'
  start=s.index(prefix)+len(prefix);m=re.match(pattern,s[start:],flags=re.S);assert m,name
  s=s[:start]+mark(name)+s[start+m.end():]
-link='<div class="design-orca-wordmark__downloads"><a href="/static/brand/orca-wordmark-study.svg" download>Download SVG</a><a href="/static/brand/orca-mono.ttf" download>Download font</a></div>'
+link='<div class="design-orca-wordmark__downloads"><a href="https://static.igem.wiki/teams/6085/wiki/design/identity/orca-wordmark-study.svg" download>Download SVG</a><a href="https://static.igem.wiki/teams/6085/wiki/design/identity/orca-mono.ttf" download>Download font</a></div>'
 anchor='  <dl class="design-orca-wordmark__notes">';assert s.count(anchor)==1
 if 'design-orca-wordmark__downloads' not in s:
  pos=s.index('</dl>',s.index(anchor))+len('</dl>');s=s[:pos]+'\n'+link+s[pos:]

@@ -187,7 +187,7 @@ The mascot extends the identity into a more personal form. It gives the team a c
     <div><dt>C · Precise editing</dt><dd>A coral point at the opening evokes precise RNA editing.</dd></div>
     <div><dt>A · Dorsal fin</dt><dd>A swept dorsal-fin silhouette gives the letter its distinctive profile.</dd></div>
   </dl>
-<div class="design-orca-wordmark__downloads"><a href="/static/brand/orca-wordmark-study.svg" download>Download SVG</a><a href="/static/brand/orca-mono.ttf" download>Download font</a></div>
+<div class="design-orca-wordmark__downloads"><a href="https://static.igem.wiki/teams/6085/wiki/design/identity/orca-wordmark-study.svg" download>Download SVG</a><a href="https://static.igem.wiki/teams/6085/wiki/design/identity/orca-mono.ttf" download>Download font</a></div>
 </figure>
 
 ### Wiki home style explorations

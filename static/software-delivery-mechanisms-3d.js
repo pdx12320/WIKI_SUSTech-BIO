@@ -1,9 +1,12 @@
 /* Original illustrative mechanisms. Local geometry only; no model values or simulation. */
 import * as THREE from './vendor/three/three.module.js';
+import { cellContour, organicCellGeometry, addCellDetail, addBarrierDetail } from './software-anatomy-detail.js';
+
+import { biologicalMaterial } from './software-biological-materials.js';
 
 const V = p => new THREE.Vector3(...p);
 const clamp = (x,a,b) => Math.max(a,Math.min(b,x));
-const MAT = (color,extra={}) => new THREE.MeshStandardMaterial({color,roughness:.43,metalness:.02,...extra});
+const MAT = biologicalMaterial;
 const interval = (p,a,b) => clamp((p-a)/(b-a),0,1);
 const ease = t => t*t*(3-2*t);
 function cargo(parent,scale=1){
@@ -40,12 +43,12 @@ function letter(text,color){
 function createView(host,type,root){
   const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setClearColor(0xffffff,0);
-  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.02;
+  renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.96;
   const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.01,30),pivot=new THREE.Group();scene.add(pivot);
-  const ambient=new THREE.HemisphereLight(0xfffaf3,0x6f6885,.95);scene.add(ambient);
-  const key=new THREE.DirectionalLight(0xffeedc,2.7);key.position.set(-3,4,5);scene.add(key);
-  const fill=new THREE.DirectionalLight(0xdedbff,.95);fill.position.set(3,1,2);scene.add(fill);
-  const rim=new THREE.DirectionalLight(0xd9e8ef,1.7);rim.position.set(2,2,-3);scene.add(rim);
+  const ambient=new THREE.HemisphereLight(0xfffaf3,0x8b8795,1.65);scene.add(ambient);
+  const key=new THREE.DirectionalLight(0xfff1e6,1.6);key.position.set(-3,4,5);scene.add(key);
+  const fill=new THREE.DirectionalLight(0xe5e9ff,.65);fill.position.set(3,1,2);scene.add(fill);
+  const rim=new THREE.DirectionalLight(0xd9e8ef,.45);rim.position.set(2,2,-3);scene.add(rim);
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute('role','img');canvas.setAttribute('data-mechanism-canvas',type);
   canvas.setAttribute('aria-label',`${type==='barrier'?'Blood–brain barrier transport':'Intracellular expression and RNA editing'} in three dimensions. Drag or use arrow keys to rotate; Home resets.`);
   const initial={yaw:type==='barrier'?-.22:-.20,pitch:type==='barrier'?.13:.18};
@@ -77,7 +80,14 @@ function buildBarrier(view){
   const g=view.group;
   const shellMat=MAT(0x469b9c,{transparent:true,opacity:.18,depthWrite:false,side:THREE.DoubleSide});
   const membraneMat=MAT(0x4f9997,{roughness:.56}),tailMat=MAT(0x8db9ad,{transparent:true,opacity:.5,depthWrite:false});
-  const shell=new THREE.Mesh(roundedBox(1.04,1.34,.72,.18),shellMat);g.add(shell);
+  const endothelialGeometry=roundedBox(1.04,1.34,.72,.18),ep=endothelialGeometry.attributes.position;
+  for(let i=0;i<ep.count;i++){
+    const x=ep.getX(i),y=ep.getY(i),z=ep.getZ(i);
+    ep.setXYZ(i,x*(.93+.05*Math.cos(y*4+z*2)),y*(1+.025*Math.sin(z*7)),z+.025*Math.cos(y*4)*Math.cos(x*3));
+  }
+  endothelialGeometry.computeVertexNormals();
+  const shell=new THREE.Mesh(endothelialGeometry,shellMat);g.add(shell);
+  addBarrierDetail(g,sphere,tube,MAT);
   // A cutaway endothelial cell with two membrane leaflets on each transport face.
   const headGeo=new THREE.SphereGeometry(.024,10,8),tailGeo=new THREE.CylinderGeometry(.006,.006,.065,5);tailGeo.rotateZ(Math.PI/2);
   [-1,1].forEach(side=>{
@@ -91,9 +101,7 @@ function buildBarrier(view){
   });
   sphere(g,[-.04,-.30,-.14],[.23,.16,.16],MAT(0x987bb3,{transparent:true,opacity:.45,depthWrite:false}));
   for(let i=0;i<3;i++)tube(g,[[-.36,-.29-i*.065,-.08],[-.20,-.18-i*.07,-.10],[.09,-.22-i*.07,-.11],[.28,-.31-i*.045,-.08]],.009,MAT(0x8aafaa,{transparent:true,opacity:.42,depthWrite:false}),26);
-  // Blood and interstitial boundaries stay behind the transport cutaway.
-  const boundaryMat=MAT(0x99b7c3,{transparent:true,opacity:.10,depthWrite:false,side:THREE.DoubleSide});
-  sphere(g,[1.17,0,-.16],[.31,.56,.30],boundaryMat);
+  // Brain ISF is the space outside the barrier, not an additional oval organ.
   const bloodMat=MAT(0xb85775,{roughness:.6});
   const redCells=[];
   [-.42,.07,.47].forEach((y,i)=>{
@@ -140,11 +148,12 @@ function buildCell(view,wrapper){
   const g=view.group;
   const shellMat=MAT(0x6fa79c,{transparent:true,opacity:.19,depthWrite:false,side:THREE.DoubleSide});
   // An open front exposes the nucleus and cytoplasmic RNA; it is a schematic cutaway.
-  const shell=new THREE.Mesh(new THREE.SphereGeometry(1,60,36,Math.PI,Math.PI),shellMat);shell.scale.set(1.28,.79,.69);g.add(shell);
+  const shell=new THREE.Mesh(organicCellGeometry(),shellMat);g.add(shell);
+  addCellDetail(g,sphere,tube,MAT);
   const rim=[],innerRim=[];
-  for(let i=0;i<=80;i++){const t=i/80*Math.PI*2;rim.push([Math.cos(t)*1.28,Math.sin(t)*.79,0]);innerRim.push([Math.cos(t)*1.245,Math.sin(t)*.755,.012]);}
+  for(let i=0;i<=80;i++){const t=i/80*Math.PI*2;rim.push(cellContour(t));const inner=cellContour(t,.975);inner[2]=.012;innerRim.push(inner);}
   tube(g,rim,.021,MAT(0x3c8d82),90);tube(g,innerRim,.009,MAT(0x88b9a9),90);
-  for(let i=0;i<70;i++){const t=i/70*Math.PI*2;sphere(g,[Math.cos(t)*1.28,Math.sin(t)*.79,0],[.013,.013,.013],MAT(0x84b3a3),8);}
+  for(let i=0;i<100;i++){const t=i/100*Math.PI*2;for(const scale of [1,.975])sphere(g,cellContour(t,scale),[.011,.011,.011],MAT(0x84b3a3),8);}
   const nucleusMat=MAT(0x9570b7,{transparent:true,opacity:.28,depthWrite:false,side:THREE.DoubleSide});
   sphere(g,[-.48,.14,-.10],[.40,.37,.33],nucleusMat,44);
   sphere(g,[-.48,.14,-.10],[.365,.337,.30],MAT(0xbd9acf,{transparent:true,opacity:.10,depthWrite:false,side:THREE.DoubleSide}),36);

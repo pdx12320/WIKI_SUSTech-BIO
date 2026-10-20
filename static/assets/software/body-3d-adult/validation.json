@@ -1,0 +1,14 @@
+{
+  "vertices": 46192,
+  "triangles": 92586,
+  "payloadBytes": 2219640,
+  "finite": true,
+  "minimumJacobian": 0.3187955724442555,
+  "invertedSamples": 0,
+  "sha256": {
+    "body-surface.json": "fb366961f37ccaa716feeb075e30371aad51e69387ea8004cc25eaefc30807c8",
+    "body-surface.bin": "2cd0a9e6364a50a7a0e0953a5c4dab8debf5a01fdb10b3b270e6108e294e76dd",
+    "body-parameters.json": "0b0a01ce0e0949ec2233f135ea97e5ada8b7fdb3ac5929736ced2b263e0b0ea4",
+    "generate_body.py": "dc4f476fe0ab2d13952fc8f36bf0f02b3feb67c0d54e75a3726e4c32396437cd"
+  }
+}

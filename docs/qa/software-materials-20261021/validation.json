@@ -1,0 +1,31 @@
+{
+  "scenes": [
+    {
+      "name": "Barrier",
+      "objects": 312,
+      "meshes": 350,
+      "animationSnapshots": 36,
+      "geometryAndRelationshipsIdentical": true
+    },
+    {
+      "name": "Cell",
+      "objects": 304,
+      "meshes": 354,
+      "animationSnapshots": 36,
+      "geometryAndRelationshipsIdentical": true
+    }
+  ],
+  "materialRoles": {
+    "cytoplasm": 2,
+    "matrix": 9,
+    "membrane": 487,
+    "organelle": 37,
+    "nucleus": 4,
+    "blood": 3,
+    "guide": 7,
+    "protein": 109,
+    "chromatin": 19,
+    "rna": 27
+  },
+  "textureChecks": true
+}

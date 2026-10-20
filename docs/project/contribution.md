@@ -383,6 +383,22 @@ The English translation shares the same proposed activities, technical milestone
 
 <a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/shokz-industry-university-cooperation-proposal-en.pdf" target="_blank" rel="noopener" aria-label="Download Shokz Cooperation Proposal — English Edition, PDF">Download PDF · English <span aria-hidden="true">↓</span></a>
 
+### Home Protection: Home-Safety Interaction Toolkit {#hp-home-protection}
+
+Home Protection is a home-safety interface prototype for older adults and family caregivers. Its **native WeChat Mini Program source** is shared alongside an **independent browser demonstration**. Future teams can adapt the role-based navigation, large controls, annotated sample report and explicit demonstration states for their own home-safety education and interface studies.
+
+The browser demonstration uses a drawn room and two fixed hazard examples. Photos are previewed locally; it does not call AI, upload photos, dial, send notifications or synchronize across devices. The native source includes an optional Qwen vision-model integration requiring the maintainer's own cloud setup. In the inspected native source, family SOS/report state remains local; medication records and caregiver logs are unfinished. These resources demonstrate a prototype workflow and do not establish detection accuracy, care effectiveness or emergency-service reliability.
+
+**Language:** Chinese interface; English user guide and reuse guide<br>
+**For:** Human Practices teams, interface designers and future iGEM teams<br>
+**Code license:** Apache-2.0 in the official software repository; retain applicable notices.
+
+[Open the browser demonstration →](https://home-protection-cf808a.igem.wiki/) · [Official source and setup instructions →](https://gitlab.igem.org/2026/software/sustech/home-protection) · [Native Mini Program source ZIP →](https://home-protection-cf808a.igem.wiki/anjia-mini-source.zip)
+
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/home-protection-user-guide.pdf" target="_blank" rel="noopener">User guide · PDF · 5 pages</a>
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/home-protection-methods-reuse.pdf" target="_blank" rel="noopener">Methods &amp; reuse · PDF · 5 pages</a>
+<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/home-protection-human-practice-code.pdf" target="_blank" rel="noopener">Source code · PDF · 64 pages</a>
+
 ## Education {#education}
 
 The updated second edition separates student reading and practice from teacher preparation. The [Education page explains the reader feedback and revision process](/education#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes).

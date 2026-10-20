@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "home-protection-user-guide.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/home-protection-user-guide.pdf",
+    "pages": 5,
+    "sha256": "c52ecba938a9cdc0f481e209f1b8ccd684666492f30a66ae322c3e23f0b19f81",
+    "online_matches_local": true,
+    "http_status": 200
+  },
+  {
+    "filename": "home-protection-methods-reuse.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/home-protection-methods-reuse.pdf",
+    "pages": 5,
+    "sha256": "86dced0bec3dadc1d9c39ab1212f4d1084af62a9f01f21293e240cad070a46ff",
+    "online_matches_local": true,
+    "http_status": 200
+  },
+  {
+    "filename": "home-protection-human-practice-code.pdf",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp/home-protection-human-practice-code.pdf",
+    "pages": 64,
+    "sha256": "bca749ada7156d532cd80924acbb16f875f882a7a856a8cfbb21df56f0119f89",
+    "online_matches_local": true,
+    "http_status": 200
+  }
+]

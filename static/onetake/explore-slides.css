@@ -197,6 +197,9 @@
 .explore-slides--clean .explore-slide__label { justify-content: center; min-height: 72px; }
 .explore-slides--clean { padding-bottom: clamp(36px, 5vw, 64px); }
 body.ot .ot-home-footer {
+  /* Keep the page ending above the fixed particle stage, like the directory. */
+  position: relative;
+  z-index: 12;
   padding: 22px max(20px, calc((100vw - 1120px) / 2)) 32px;
   border-top: 1px solid #a3bdd326;
   background: #05080e;

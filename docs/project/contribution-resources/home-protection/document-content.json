@@ -1,0 +1,222 @@
+{
+  "home-protection-user-guide.pdf": {
+    "title": "User Guide",
+    "pages": [
+      {
+        "heading": "What you can try",
+        "sections": [
+          [
+            "A home-safety interaction prototype",
+            "Home Protection explores large-text interfaces for older adults and a companion family view. This guide covers the published browser demonstration and the supplied native WeChat Mini Program source. It does not document a verified, publicly released WeChat service."
+          ],
+          [
+            "Two distinct versions",
+            "<b>Browser demonstration:</b> a drawn room, two fixed hazard examples, local photo preview, demonstration binding and an SOS interaction. No AI calls, photo uploads, phone calls, notifications or cross-device synchronization."
+          ],
+          [
+            "WeChat source prototype",
+            "Native pages include role selection, binding, photo selection, annotated reports and a phone-call flow. Cloud functions provide account-code binding and an optional Qwen vision-model request. They require your own configuration and testing."
+          ],
+          [
+            "Start here",
+            "<link href=\"https://home-protection-cf808a.igem.wiki/\">Open the browser demonstration</link><br/><link href=\"https://gitlab.igem.org/2026/software/sustech/home-protection\">Open the official iGEM GitLab source</link><br/>Guide 1.0.0 | Source and live-page inspection: 21 October 2026. Interface labels are Chinese; this guide supplies English explanations."
+          ]
+        ]
+      },
+      {
+        "heading": "Browser walkthrough",
+        "sections": [
+          [
+            "1. Choose the older-adult view",
+            "Select “我是长辈” (older-adult mode). The page displays the fixed demonstration code <b>ELD-DEMO1</b>. Open “房间检查” (room check), then “查看示例标注与报告” (show sample annotations and report)."
+          ],
+          [
+            "2. Read the two examples",
+            "The illustrated room contains a cable across a passage and water on the floor. The two report items are predetermined examples. They do not evaluate a real room. “下载示例报告” downloads a <b>plain-text .txt file</b>, not a PDF or AI-generated assessment."
+          ],
+          [
+            "3. Preview a photograph",
+            "On the room-check screen, select “选择照片（仅预览）”. Supported files are JPG, PNG and WebP, up to 10 MB. The photo appears locally with no analysis or upload. It is not given the fixed sample annotations."
+          ],
+          [
+            "4. Read the scope",
+            "The project-information page explains which parts belong to the website and which require the WeChat source. It also links the Mini Program source download. No published Mini Program QR code is provided."
+          ]
+        ]
+      },
+      {
+        "heading": "Family view and SOS demo",
+        "sections": [
+          [
+            "Try the family view",
+            "Switch identity and choose “我是家属”. Enter <b>ELD-DEMO1</b> and confirm demonstration binding. After creating a sample report in older-adult mode, return to family mode to view the same report in this tab."
+          ],
+          [
+            "Try the SOS interaction",
+            "In older-adult mode, open “SOS · 求助流程演示”. Read the dialog. Cancel closes it; confirm creates a demonstration record only. Return to the bound family view and mark the record viewed. No call or notification is sent."
+          ],
+          [
+            "Reset and storage",
+            "“重置演示” clears the report, binding and SOS flags. They use sessionStorage in the current tab. A reload may retain these flags; closing the tab normally ends the session. Another browser, tab or device is not a connected family account."
+          ],
+          [
+            "Practical limits",
+            "Use non-identifying sample photos. Do not use this prototype as an emergency channel or a guarantee that a home is safe. Automated room-risk detection and reliable caregiver delivery have not been established by this browser demo."
+          ]
+        ]
+      },
+      {
+        "heading": "Open the WeChat prototype",
+        "sections": [
+          [
+            "Import the correct folder",
+            "Download the source from the official repository. Import <b>anjia-mini</b> into WeChat Developer Tools. project.config.json sets miniprogramRoot to miniprogram/ and cloudfunctionRoot to cloudfunctions/. The supplied AppID is touristappid; use your own AppID for cloud configuration."
+          ],
+          [
+            "Explore with demonstration data",
+            "Role selection and scan flows contain local fallbacks when cloud calls fail. The scan page marks fallback results as demonstration data. Binding fallback accepts a correctly formatted code without proving the identity of a real older adult."
+          ],
+          [
+            "Read a scan report",
+            "Choose the camera or album, then review the annotations and report. Real recognition requires a configured cloud environment and model key. A failed request can produce built-in demonstration hazards; always check the demonstration indicator."
+          ],
+          [
+            "Phone-call behavior differs",
+            "The native SOS screen stores a local event and invokes wx.makePhoneCall after confirmation. Unlike the browser demo, this can initiate a real phone action on a supported device. Simulator behavior is not proof of a working real-device call."
+          ]
+        ]
+      },
+      {
+        "heading": "Know what remains local",
+        "sections": [
+          [
+            "Family records are not synchronized",
+            "In the inspected Mini Program source, SOS events use wx.setStorageSync and the family page polls that same local storage. The latest scan is held in app.globalData.lastScan. Cloud account binding does not implement cross-device report or SOS synchronization."
+          ],
+          [
+            "Planned functions",
+            "Medication records and caregiver logs appear as unfinished entries in the Mini Program. Do not describe them as implemented reminders or a working remote-care dashboard. The separate legacy HTML package has a broader interface and is not the deployed browser demonstration."
+          ],
+          [
+            "Troubleshooting",
+            "No family report: first create a report in the same runtime. Missing cloud configuration: review the reuse guide. Photo preview rejected: select a supported file below 10 MB. Browser state missing: use the same tab and complete the sample workflow again."
+          ],
+          [
+            "Verification scope",
+            "The guide was checked against the supplied source, the existing code PDF and the served HTML/JavaScript. No authenticated WeChat cloud deployment, real model request, real-device SOS test or clinical/user-effectiveness evaluation was performed for this document."
+          ]
+        ]
+      }
+    ]
+  },
+  "home-protection-methods-reuse.pdf": {
+    "title": "Methods & Reuse",
+    "pages": [
+      {
+        "heading": "What future teams can reuse",
+        "sections": [
+          [
+            "Reusable contribution",
+            "Reuse the role-based navigation, large controls, sample-room annotations, report layout, explicit demo states, and source organization as a starting point for home-safety education or participatory interface studies."
+          ],
+          [
+            "Keep the three artifacts separate",
+            "The official repository contains anjia-mini/ (native source) and public/ (the independently built browser demonstration). The supplied legacy HTML archive is a third artifact with optional browser AI settings. Its instructions are not evidence of the published demo behavior."
+          ],
+          [
+            "Code, documents and attribution",
+            "The official repository uses Apache-2.0. Preserve LICENSE and applicable notices, credit SUSTech-BIO, and check third-party assets separately. This guide does not assign new rights to third-party models, services, images or participants' information."
+          ],
+          [
+            "Documentation set",
+            "Use the existing 64-page source-code PDF alongside the user guide and this reuse guide. The PDF lists both native and browser source. Runnable files and repository history remain the authoritative software artifact.<br/><link href=\"https://gitlab.igem.org/2026/software/sustech/home-protection\">Official repository</link> | <link href=\"https://home-protection-cf808a.igem.wiki/\">Browser demo</link>"
+          ]
+        ]
+      },
+      {
+        "heading": "Reproduce the browser demo",
+        "sections": [
+          [
+            "Run from the official repository",
+            "Install Node.js for source checks and Python 3 for a static local preview. From the repository root, run:<br/><font name=\"Mono\" size=\"9\">node tools/check.mjs</font><br/><font name=\"Mono\" size=\"9\">python3 -m http.server 8800 --bind 127.0.0.1 --directory public</font><br/>Open http://127.0.0.1:8800/."
+          ],
+          [
+            "Reproduce the visible output",
+            "Choose older-adult mode, open the room check and show the report. Expected output: two fixed items, cable and water, with illustration annotations. Download the example .txt report. Bind ELD-DEMO1 in family mode and view the same sample report."
+          ],
+          [
+            "Check the demonstration boundary",
+            "Previewing a user photo must not label it with sample hazards. Confirming demo SOS must not dial or send a notification. Reset must clear the demo flags. These are acceptance steps for a maintainer; they are not all claimed as browser-tested in this documentation release."
+          ],
+          [
+            "Record your release",
+            "Save the exact repository revision, runtime versions and source archive hash used for your adaptation. Keep checks and expected outputs with the source. This guide identifies inspected inputs by hash in the accompanying provenance.json."
+          ]
+        ]
+      },
+      {
+        "heading": "Configure the native source",
+        "sections": [
+          [
+            "Environment and functions",
+            "Use your own WeChat AppID and cloud environment. Replace the envId placeholder in miniprogram/app.js. Review and deploy authService and scanService with cloud-installed dependencies. The supplied dependency is wx-server-sdk ~2.6.3; the archives have no lockfile."
+          ],
+          [
+            "Use the code, not the old setup claims",
+            "authService reads and writes the <b>elders</b> and <b>binds</b> collections. The original README lists different collections and suggests remote logs not implemented in the inspected frontend. Plan access rules from actual reads and writes; do not copy broad database permissions from the old instructions."
+          ],
+          [
+            "Optional vision-model path",
+            "scanService reads DASHSCOPE_API_KEY from its server environment and calls qwen2.5-vl-plus through the DashScope OpenAI-compatible endpoint. Selected images pass through WeChat cloud storage and the model provider. Do not place model keys in frontend source or published documentation."
+          ],
+          [
+            "Runtime and reproducibility",
+            "The cloud code uses fetch. Select a deployment runtime that provides it or deliberately adapt the request layer. Generate and commit dependency lockfiles after validating the chosen runtime. Cloud access and model billing depend on the maintainer's own account."
+          ]
+        ]
+      },
+      {
+        "heading": "AI behavior and validation",
+        "sections": [
+          [
+            "Declare the model accurately",
+            "The Mini Program source contains a configured integration for qwen2.5-vl-plus, with a Chinese prompt, temperature 0.1 and structured hazard fields. The browser demo makes no model calls. No team training or fine-tuning pipeline or training dataset is supplied."
+          ],
+          [
+            "Understand the output",
+            "A hazard includes a name, level (high, mid, low or weak), normalized bounding box, explanation and advice. These are model outputs, not validated risk probabilities. Weak indicates uncertainty in the prompt; it is not a calibrated confidence estimate."
+          ],
+          [
+            "Two implementation limits to address",
+            "parseHazards can return an empty array for malformed output while scanService returns ok: true. An empty result therefore does not establish room safety. The coordinate conversion also permits some values above 1; validate and clamp coordinates before relying on them."
+          ],
+          [
+            "Evaluate before extending the claims",
+            "Create a consented, de-identified test set with human-reviewed annotations. Record model/version, prompt, failure cases, false negatives, false positives and box quality. Evaluate usability separately from detection accuracy. No accuracy score, care benefit or emergency-delivery reliability is established by the supplied materials."
+          ]
+        ]
+      },
+      {
+        "heading": "From prototype to a reusable service",
+        "sections": [
+          [
+            "Data and access controls",
+            "Account binding currently uses a short elder code; review consent, ownership checks, brute-force resistance, unbinding and recovery. Authorize image access server-side, define retention/deletion for uploads, and isolate each family's records before adding shared storage."
+          ],
+          [
+            "Implement synchronization explicitly",
+            "Replace local-only SOS and report state with authorized server-side records if cross-device use is required. Define delivery status and failure handling. Foreground polling is not background push delivery, and a stored event is not proof that a caregiver received it."
+          ],
+          [
+            "Keep demo and real modes visible",
+            "Show persistent labels for sample reports and local binding. Report API failures distinctly from a genuine empty result. Do not silently turn a failed real-world inspection into a plausible sample assessment."
+          ],
+          [
+            "Release checklist for maintainers",
+            "Document the exact feature set; test both roles and failure paths on real devices; review model and cloud data handling; pin dependencies; retain the license; and publish setup steps, a worked sample and known limitations. The current contribution is a prototype and demonstration toolkit, not a validated care or emergency service."
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -105,7 +105,7 @@ class WikiRoutesTest(unittest.TestCase):
                 self.assertIn(f'href="{route}"', menu.group(1))
                 self.assertIn(f'href="{route}"', index.group(1))
         self.assertRegex(page, r'<footer\b[^>]*\bsite-footer\b')
-        self.assertNotIn('data-school-footer', page)
+        self.assertIn('data-school-footer', page)
         self.assertNotIn('data-edit-start', page)
         for marker in ['explore-slide__serial', 'explore-slide__count', 'explore-slides__eyebrow']:
             self.assertNotIn(marker, index.group(1))

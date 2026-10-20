@@ -25,7 +25,7 @@
     <link href="{{ url_for('static', filename='navigation-transparent.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='school-footer.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='footer-orca.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='reading-orbit/reading-orbit.css') }}" rel="stylesheet">
+    {% if reader_mode == 'cell' %}<link href="{{ url_for('static', filename='cell-reader/cell-reader.css') }}" rel="stylesheet">{% elif reader_mode == 'internal' %}<link href="{{ url_for('static', filename='reading-orbit/reading-orbit.css') }}" rel="stylesheet">{% endif %}
     <link href="{{ url_for('static', filename='cursor/orca-cursor.css') }}" rel="stylesheet">
     {% if content is defined and content.source_label in ['docs/project/engineering.md', 'docs/wet-lab/measurement.md', 'docs/project/contribution.md', 'docs/project/contribution-sonar.md'] %}
     <link rel="stylesheet" href="{{ url_for('static', filename='sonar-connections.css') }}">
@@ -35,7 +35,7 @@
   <body class="{% block body_class %}inner-page{% endblock %}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     {% block navigation %}{% include 'menu.html' %}{% endblock %}
-    {% block reading_navigation %}{% if request.endpoint != 'home' %}{% include 'components/reading_orbit.html' %}{% endif %}{% endblock %}
+    {% block reading_navigation %}{% if reader_mode == 'cell' %}{% include 'components/cell_reader.html' %}{% endif %}{% endblock %}
 
     {% block main %}
     <main id="main-content">
@@ -62,7 +62,7 @@
     <script src="{{ url_for('static', filename='wiki.js') }}" defer></script>
     <script src="{{ url_for('static', filename='navigation-search.js') }}" defer></script>
     <script src="{{ url_for('static', filename='navigation-scroll.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='reading-orbit/reading-orbit.js') }}" defer></script>
+    {% if reader_mode == 'cell' %}<script src="{{ url_for('static', filename='cell-reader/cell-reader.js') }}" defer></script>{% elif reader_mode == 'internal' %}<script src="{{ url_for('static', filename='reading-orbit/reading-orbit.js') }}" defer></script>{% endif %}
     <script src="{{ url_for('static', filename='cursor/orca-cursor.js') }}" defer></script>
     {% block page_scripts %}{% endblock %}
     {% if request.endpoint in ['home', 'pages'] %}{% include 'components/entry_loading.html' %}{% endif %}

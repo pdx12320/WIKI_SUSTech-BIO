@@ -1,19 +1,29 @@
-# Education chapters and engagement titles
+# Education chapters, title typography and compact workbooks
 
-This release follows the seven-chapter local restructure and the subsequent user review of the English and display titles. Education now concentrates its body on teaching choices, participation, feedback and outputs. Evaluation is six connected paragraphs describing what the existing feedback suggests and how the next trials can build on it; the evidence boundary is stated briefly. No new outcome data or classroom implementation claims were added.
+Education now follows seven chapters, with the curriculum collaboration, older-learners’ workbook and WORLDPROOF as its three main projects. The body focuses on teaching choices, participation, recorded feedback and outputs. Evaluation explains what existing feedback suggests and how the next trials can build on it, with a brief evidence boundary. No new outcome data or classroom implementation claims were added. The original handoff in review.md contains the old/new directory comparison, migration list and outstanding source-material gaps.
 
-Education uses Caveat, Human Practices uses Patrick Hand, and Inclusivity uses Shantell Sans. Only the overview H1 changes size and alignment; body text and directory typography retain their existing rules. Original font sources, lossless WOFF2 files, provenance and OFL notices are included. The earlier unused Fraunces trial is retained as a source asset.
+Education uses Caveat, Human Practices uses Patrick Hand, and Inclusivity uses Shantell Sans. Only the overview H1 changes size and alignment; body and directory typography retain existing rules. Font sources, WOFF2 files, provenance and OFL notices are preserved. The unused Fraunces trial remains a source asset. HP and Inclusivity each receive only a stylesheet link.
 
-The PR starts at upstream main f53d821. HP and Inclusivity each receive only a stylesheet link. The local teacher-screenshot deduplication is a required dependency: its merged Figure 2 caption and two legacy anchor aliases accompany the restructured Education page. No original screenshot file is removed.
+The teacher-screenshot dependency retains the merged Figure 2 caption and two legacy anchor aliases. No original screenshot file is removed. Other windows’ uncommitted source changes were not copied into this release. Upstream main was merged into the isolated release branch before final verification; the shared live checkout was neither switched nor reset.
 
-The initial handoff and screenshots remain in this directory. Later screenshots show the final handwritten and centered titles. Migration audit uses the recorded Git baseline and checksum manifest, so it can run in a clean checkout without local backup folders.
+## Official resource uploads
 
-## Publication resource status
+All ten approved files have confirmed official iGEM URLs: four workbook comparison images, three active WOFF2 fonts and three compact PDFs. The image service converted PNG to AVIF, with dimensions verified. Remote font and PDF bytes match the local files. See upload-verification.json and official-upload-ten.png. Education uses the compact PDFs in its existing readers and preserves original PDF links and editable DOCX downloads. No production deployment command was run.
 
-The four workbook comparison images and three active WOFF2 fonts still require official iGEM CDN uploads. Three editable DOCX files are included as versioned downloads; their blank worksheets contain no participant responses. Automatic approval review blocked selecting these files for the iGEM upload page because the PR/merge request did not explicitly authorize transfer to that service. No file upload was executed. A dedicated empty upload folder was created. No production deployment was run.
+| Current edition | PDF size | Pages |
+| --- | ---: | ---: |
+| English student | 2,233,197 bytes | 56 |
+| Chinese student | 3,020,117 bytes | 56 |
+| Chinese teacher guide | 2,322,043 bytes | 54 |
 
-The PR remains a draft until the required media have verified official URLs. Existing resource links and all source assets remain available in local mode.
+The original DOCX sources are unchanged. To compile compact copies, only embedded opaque images were resized/compressed in temporary inputs; document text, styles, drawing extents and fonts were retained. PDF optimization further compresses images and removes duplicate objects. All 166 pages retain selectable text, page boxes and link annotations. All pages were rendered and reviewed in contact sheets, with representative pages and the pages showing the largest compression differences inspected at full size. Pixel comparisons, checksums and compression settings are recorded in compact-pdfs.json and pdf-render-comparison.json. Temporary compilation inputs are outside the repository.
 
-## Release checks
+## Verification
 
-46 tests passed across content, wiki routes, iGEM asset rewriting and dual-mode uploads. Both affected JavaScript files passed syntax checks. The full static freeze stopped when the local disk ran out of space; only this task’s redundant temporary snapshot and incomplete build were removed. No shared public output or another task’s files were touched. A fresh full build remains required after official media upload.
+- The final full frozen build and CDN asset audit passed for 24 routes in a task-specific temporary destination. Shared public output was not rebuilt.
+- The migration audit passed with 92 legacy IDs and 177 resource URLs retained, excluding the intentionally deduplicated standalone teacher screenshot. No local resource failures.
+- Both affected JavaScript files passed syntax checks. Scoped whitespace checks exclude unchanged upstream font-license whitespace.
+- Desktop and mobile title rendering, directory/anchor behavior and workbook readers were checked. Final PDF readers report 56, 56 and 54 pages. Representative screenshots and browser-final.json are included.
+- The whole-site internal-link scan checked 2,842 destinations and reports zero Education issues. It also reports 693 existing out-of-scope links, mostly historical static preview HTML and 16 links on other main routes; those were not modified. Details are in internal-links-final.json.
+
+The final full unittest suite passed: 173 tests in 116.258 seconds. Temporary test-only lxml dependencies were isolated outside the repository; no dependency manifest or shared environment was changed.

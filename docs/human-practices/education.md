@@ -168,17 +168,17 @@ The current second-edition release (with later illustration and appendix revisio
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-zh">
     <h5 id="hp-handbook-zh">Student edition · Chinese</h5>
     <p>56 pages. Short lessons for older learners, with practice, health logs and space for notes.</p>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf" data-pdf-title="Second edition · Student · Chinese">Download student PDF · Chinese</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-zh-compact.pdf" data-pdf-title="Second edition · Student · Chinese">Download student PDF · Chinese</a></p>
   </section>
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-en">
     <h5 id="hp-handbook-en">Student edition · English</h5>
     <p>56 pages. The same lesson structure and recording tools, adapted for English-speaking older learners.</p>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf" data-pdf-title="Second edition · Student · English">Download student PDF · English</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-en-compact.pdf" data-pdf-title="Second edition · Student · English">Download student PDF · English</a></p>
   </section>
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-teacher-zh">
     <h5 id="hp-handbook-teacher-zh">Teacher’s guide · Chinese</h5>
     <p>54 pages. Fuller explanations, classroom examples, materials, activity timings and ways to assist participation.</p>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf" data-pdf-title="Second edition · Teacher’s guide · Chinese">Download teacher PDF · Chinese</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf" data-pdf-title="Second edition · Teacher’s guide · Chinese">Download teacher PDF · Chinese</a></p>
   </section>
 </div>
 
@@ -228,7 +228,14 @@ The comparison draws on the Shahe discussions and field notes. It separates part
 
 Ms. Wu also drew our attention to printing costs. Short student chapters and a separate teacher’s guide let facilitators select material for a lesson, while the student books keep personal records and notes together for use afterwards.
 
+The readers above use compact PDF exports: **Chinese student · 3.0 MB; English student · 2.2 MB; Chinese teacher guide · 2.3 MB.** The text and page layout are retained. [Original PDF exports](#original-workbook-pdf-exports) are also available.
+
 **Editable files matching the current editions:** [Chinese student DOCX](/assets/human-practices/education/workbook-current-student-zh.docx), [English student DOCX](/assets/human-practices/education/workbook-current-student-en.docx), and [Chinese teacher-guide DOCX](/assets/human-practices/education/workbook-current-teacher-zh.docx). These are the sources for the three current PDFs above. Earlier 42-page Chinese and 37-page English drafts belong to the workbook’s revision history.
+
+<span id="original-workbook-pdf-exports"></span>
+
+Original PDF exports of these editions: [Chinese student](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf), [English student](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf), [Chinese teacher guide](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf).
+
 
 See [Inclusivity](/inclusivity) for participation barriers and sensory access, and [Human Practices](/human-practices#ms-wu-understanding-daily-life-and-care-needs-through-an-elderly-service-center) for how older learners’ and care staff’s needs affected our priorities.
 

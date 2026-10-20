@@ -1,13 +1,28 @@
 [
   {
+    "path": "assets/human-practices/education/workbook-current-student-en-compact.pdf",
+    "bytes": 2233197,
+    "sha256": "9043a43c8a155b6c055a067753d6d9ea94e46a389f0ab836c13529298e6b1eeb"
+  },
+  {
     "path": "assets/human-practices/education/workbook-current-student-en.docx",
     "bytes": 34985160,
     "sha256": "2c57d6f36417c416582633f6f8320b91e5a7e9b963e31af917d8fe6e56477a1a"
   },
   {
+    "path": "assets/human-practices/education/workbook-current-student-zh-compact.pdf",
+    "bytes": 3020117,
+    "sha256": "6863f68df84c39392fef351033fb95a00d36a59d282abeca99a2c146b0b98bd8"
+  },
+  {
     "path": "assets/human-practices/education/workbook-current-student-zh.docx",
     "bytes": 42660022,
     "sha256": "7be527c5afd61242cbc4d9e1113066f60d8d6645a511f5e996d0ed1e5b7ab57a"
+  },
+  {
+    "path": "assets/human-practices/education/workbook-current-teacher-zh-compact.pdf",
+    "bytes": 2322043,
+    "sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6"
   },
   {
     "path": "assets/human-practices/education/workbook-current-teacher-zh.docx",
@@ -16,8 +31,8 @@
   },
   {
     "path": "docs/human-practices/education.md",
-    "bytes": 71948,
-    "sha256": "598f52ec0633a858877abd2819ace92867f921eb61de6af9864533ddd5b59c72"
+    "bytes": 72682,
+    "sha256": "eebef73de1db5382fee4ab8f232e3a0f92ac29c799c00cb96ee3592539a0742c"
   },
   {
     "path": "static/human-practices/education/chapters.css",
@@ -90,11 +105,6 @@
     "sha256": "7490e289378892056e96a0593aabc55cc5785bc159258b7ce2f8563d9a902fc9"
   },
   {
-    "path": "static/human-practices/title-fonts/.DS_Store",
-    "bytes": 6148,
-    "sha256": "cac2190b6dedc1ec4173d0bd3bc4dc81001a5c5dcda308e0bb3a1c345aae3982"
-  },
-  {
     "path": "static/human-practices/title-fonts/fonts/PatrickHand-OFL.txt",
     "bytes": 4376,
     "sha256": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1"
@@ -146,7 +156,7 @@
   },
   {
     "path": "wiki/pages/education.html",
-    "bytes": 2469,
-    "sha256": "074cda1ab7e2283bfae591bec03017046aa9f933c9bffa9067745101236d30cb"
+    "bytes": 2759,
+    "sha256": "0d0263acf75af8e4b4d8e8f9e57955c81bf297fcbb74e51d5f5f8b43ee5a2546"
   }
 ]

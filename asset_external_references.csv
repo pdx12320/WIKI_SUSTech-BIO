@@ -14,6 +14,7 @@ https://external.example/art.svg,tests/test_audit.py:70,review_external_referenc
 https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg,docs/previews/exploration-atlas-2026-10-13/compact-preview.html:2366; docs/previews/exploration-atlas-2026-10-13/preview.html:2360; docs/previews/exploration-atlas-2026-10-13/sound-library-vertical-preview.html:2362,review_external_reference
 https://lhs.suat-sz.edu.cn/images/logo.svg,static/human-practices/organizations/manifest-part1.json:34,review_external_reference
 https://qualifications.pearson.com/content/dam/demo/stuntcontent/images/about/About%20our%20qualifications/Think-Again/PLogo_Horizontal_Edexcel_200x188.png,static/human-practices/organizations/manifest-reference.json:9,review_external_reference
+https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf,static/human-practices/education/fonts/provenance.json:4,review_external_reference
 https://raw.githubusercontent.com/google/fonts/main/ofl/librebaskerville/LibreBaskerville-Italic%5Bwght%5D.ttf,static/fonts/headers/librebaskerville-provenance.json:3,review_external_reference
 https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/Manrope%5Bwght%5D.ttf,static/sap-demo/fonts/Manrope-source.json:3,review_external_reference
 https://raw.githubusercontent.com/google/fonts/main/ofl/sono/Sono%5BMONO%2Cwght%5D.ttf,docs/human-practices/education-transfer/source/fonts/sono/SOURCE.json:4,review_external_reference
@@ -160,6 +161,9 @@ https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon
 https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-08-aav9-3346a48c8d5b.avif,assets/images/engineering-cartoons/manifest.json:145; wiki/components/engineering_cartoon_assets.html:10,official
 https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-09-sonar-c615567701ad.avif,assets/images/engineering-cartoons/manifest.json:165; wiki/components/engineering_cartoon_assets.html:11,official
 https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-10-puffer-8625152c4d11.avif,assets/images/engineering-cartoons/manifest.json:185; wiki/components/engineering_cartoon_assets.html:12,official
+https://static.igem.wiki/teams/6085/wiki/description/cell-v1.avif,docs/project/results.md:117,official
+https://static.igem.wiki/teams/6085/wiki/description/choice-paddle-fist-v4.avif,docs/project/results.md:139,official
+https://static.igem.wiki/teams/6085/wiki/description/percent-left-v2.avif,docs/project/results.md:128,official
 https://static.igem.wiki/teams/6085/wiki/design/applications/figure-06-team-hoodie-v1.avif,docs/design/design-communication-sources/figure-asset-map.json:158; docs/design/design-communication-sources/igem-upload-links.json:208; docs/team/design-communication.md:234,official
 https://static.igem.wiki/teams/6085/wiki/design/applications/figure-07-team-tshirt-v2.avif,docs/design/design-communication-sources/figure-asset-map.json:167; docs/design/design-communication-sources/igem-upload-links.json:221; docs/team/design-communication.md:239,official
 https://static.igem.wiki/teams/6085/wiki/design/applications/figure-08-a-apparel-project-name.avif,docs/design/design-communication-sources/figure-asset-map.json:176; docs/design/design-communication-sources/igem-upload-links.json:234; docs/team/design-communication.md:246; docs/team/design-communication.md:247,official
@@ -202,7 +206,14 @@ https://static.igem.wiki/teams/6085/wiki/design/stories/mascot-opening-bottom-le
 https://static.igem.wiki/teams/6085/wiki/design/stories/mascot-opening-bottom-left.webp,docs/design/design-communication-sources/igem-upload-links.json:502; wiki/components/design-communication/opening.html:5,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/mascot-opening-top-right.webp,docs/design/design-communication-sources/igem-upload-links.json:519; wiki/components/design-communication/opening.html:8,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/pinyon-script-regular.ttf,docs/design/design-communication-sources/igem-upload-links.json:536; static/design-communication.css:20; tests/test_design_communication.py:90,official
-https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-00-project-overview-21327319225c.avif,docs/project/description.md:205,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/caveat-variable.woff2,docs/qa/education-restructure-20261021/upload-verification.json:4,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/patrickhand-regular.woff2,docs/qa/education-restructure-20261021/upload-verification.json:12,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/shantellsans-variable.woff2,docs/qa/education-restructure-20261021/upload-verification.json:20,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-body-p5.avif,docs/qa/education-restructure-20261021/upload-verification.json:28,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-medicine-p10.avif,docs/qa/education-restructure-20261021/upload-verification.json:38,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-body-p3.avif,docs/qa/education-restructure-20261021/upload-verification.json:48,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-medicine-p20.avif,docs/qa/education-restructure-20261021/upload-verification.json:58,official
+https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-00-project-overview-21327319225c.avif,docs/project/description.md:236,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-01-deliver-aav9-4cfe8c8a10c0.avif,assets/images/engineering-overviews/manifest.json:7,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-03-edit-pod-ab6d3cf75d44.avif,assets/images/engineering-overviews/manifest.json:32,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-04-edit-cetus-93b89f8f928c.avif,assets/images/engineering-overviews/manifest.json:44,official
@@ -300,14 +311,14 @@ https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-pag
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-041.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:94; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:542; static/human-practices/pdf-previews/workbook-v2-manifest.json:205,official
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-042.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:95; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:549; static/human-practices/pdf-previews/workbook-v2-manifest.json:210,official
 https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif,docs/design/hp-opening/README.md:16; docs/qa/hp-opening-release-2026-10-19.md:37; docs/releases/engagement-2026-10-20/server-assets-ui.json:3; tests/test_hp_opening.py:12,official
-https://static.igem.wiki/teams/6085/wiki/hp/caregivers-perspective-mind-map.avif,docs/human-practices/human-practices.md:189; docs/releases/engagement-2026-10-20/server-assets-ui.json:4,official
-https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg,docs/human-practices/human-practices.md:20; docs/qa/hp-overview-animation-release-2026-10-21.json:4,official
-https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg,docs/human-practices/education.md:611; docs/releases/engagement-2026-10-20/cdn-verification.json:3; docs/releases/engagement-2026-10-20/server-assets-ui.json:5,official
+https://static.igem.wiki/teams/6085/wiki/hp/caregivers-perspective-mind-map.avif,docs/human-practices/human-practices.md:191; docs/releases/engagement-2026-10-20/server-assets-ui.json:4,official
+https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg,docs/human-practices/human-practices.md:22; docs/qa/hp-overview-animation-release-2026-10-21.json:4,official
+https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg,docs/human-practices/education.md:727; docs/releases/engagement-2026-10-20/cdn-verification.json:3; docs/releases/engagement-2026-10-20/server-assets-ui.json:5,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-discussion-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:10; docs/releases/engagement-2026-10-20/server-assets-ui.json:6,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-name-cards-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:17; docs/releases/engagement-2026-10-20/server-assets-ui.json:7,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-opening-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:24; docs/releases/engagement-2026-10-20/server-assets-ui.json:8,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-project-presentation-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:31; docs/releases/engagement-2026-10-20/server-assets-ui.json:9,official
-https://static.igem.wiki/teams/6085/wiki/hp/older-learners-feedback-mind-map.avif,docs/human-practices/education.md:66; docs/releases/engagement-2026-10-20/server-assets-ui.json:13,official
+https://static.igem.wiki/teams/6085/wiki/hp/older-learners-feedback-mind-map.avif,docs/human-practices/education.md:95; docs/releases/engagement-2026-10-20/server-assets-ui.json:13,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-background.avif,tests/test_dual_environment.py:56; wiki/pages/404.html:15,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-bubbles.avif,wiki/pages/404.html:16,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-island-sign.avif,wiki/pages/404.html:18,official
@@ -340,6 +351,7 @@ https://static.igem.wiki/teams/6085/wiki/team/yanfei-pu.avif,docs/team/team.md:2
 https://static.igem.wiki/teams/6085/wiki/team/zefeng-wang.avif,docs/team/team.md:317,official
 https://static.igem.wiki/teams/6085/wiki/test.avif,tests/test_dual_environment.py:66,official
 https://static.igem.wiki/teams/6085/wiki/unknown.png,tests/test_dual_environment.py:69,official
+https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif,docs/qa/results-opening-release-2026-10-21.json:26,official
 https://static.igem.wiki/teams/6193/wiki/home/team-logo.avif,static/human-practices/organizations/manifest-teams.json:23,official
 https://static.igem.wiki/teams/6309/wiki/home/team-logo.avif,static/human-practices/organizations/manifest-teams.json:39,official
 https://static.igem.wiki/teams/6366/wiki/fonts/source-sans-3-variable-italic.woff2,static/fonts/source-sans-3-provenance.json:17,official

@@ -1,0 +1,41 @@
+[
+  {
+    "edition": "student-en",
+    "source_docx": "assets/human-practices/education/workbook-current-student-en.docx",
+    "source_docx_sha256": "2c57d6f36417c416582633f6f8320b91e5a7e9b963e31af917d8fe6e56477a1a",
+    "pdf": "assets/human-practices/education/workbook-current-student-en-compact.pdf",
+    "initial_pdf_bytes": 2950211,
+    "compact_pdf_bytes": 2233197,
+    "sha256": "9043a43c8a155b6c055a067753d6d9ea94e46a389f0ab836c13529298e6b1eeb",
+    "pages": 56,
+    "opaque_images_optimized": 22,
+    "verification": "All page text, page boxes and link annotations equal the compiled version. Text remains searchable; font resources retained.",
+    "compression": "JPEG quality 75, 4:4:4, max 1000 pixels; duplicate/unreferenced objects removed, content streams deflated."
+  },
+  {
+    "edition": "student-zh",
+    "source_docx": "assets/human-practices/education/workbook-current-student-zh.docx",
+    "source_docx_sha256": "7be527c5afd61242cbc4d9e1113066f60d8d6645a511f5e996d0ed1e5b7ab57a",
+    "pdf": "assets/human-practices/education/workbook-current-student-zh-compact.pdf",
+    "initial_pdf_bytes": 3688497,
+    "compact_pdf_bytes": 3020117,
+    "sha256": "6863f68df84c39392fef351033fb95a00d36a59d282abeca99a2c146b0b98bd8",
+    "pages": 56,
+    "opaque_images_optimized": 21,
+    "verification": "All page text, page boxes and link annotations equal the compiled version. Text remains searchable; font resources retained.",
+    "compression": "JPEG quality 75, 4:4:4, max 1000 pixels; duplicate/unreferenced objects removed, content streams deflated."
+  },
+  {
+    "edition": "teacher-zh",
+    "source_docx": "assets/human-practices/education/workbook-current-teacher-zh.docx",
+    "source_docx_sha256": "e43092699e47f613a9d7a5e1b931291be0d4b5201300d2d52fb802708cd78d72",
+    "pdf": "assets/human-practices/education/workbook-current-teacher-zh-compact.pdf",
+    "initial_pdf_bytes": 3041173,
+    "compact_pdf_bytes": 2322043,
+    "sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6",
+    "pages": 54,
+    "opaque_images_optimized": 22,
+    "verification": "All page text, page boxes and link annotations equal the compiled version. Text remains searchable; font resources retained.",
+    "compression": "JPEG quality 75, 4:4:4, max 1000 pixels; duplicate/unreferenced objects removed, content streams deflated."
+  }
+]

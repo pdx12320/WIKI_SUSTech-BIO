@@ -102,6 +102,8 @@ We therefore selected **PUF12 as ORCA's working recognition backbone**: it retai
 
 Our foundational experiments established **PUF12 as ORCA’s working RNA-recognition backbone**. Across three experimental contexts, PUF12 increased the fraction of reads carrying the intended C388 edit without C871 editing relative to PUF10, while retaining substantial target activity. Longer recognition domains did not consistently improve this balance. This selection provided a practical starting point for subsequent recognition-domain and catalytic-domain engineering, rather than a universally optimal or bystander-free editor.
 
+<!-- SUPPORTING_DATA:fr -->
+
 ### References {#fundamental-research-references}
 
 1. Han W, Huang W, Wei T, et al. Programmable RNA base editing with a single gRNA-free enzyme. *Nucleic Acids Research*. 2022;50(16):9580–9595. <https://doi.org/10.1093/nar/gkac713>
@@ -791,6 +793,8 @@ Both share the **P9-NTQ recognition domain**, while their different CETUS partne
 
 Integrated ORCA combined independently engineered recognition and catalytic modules, yielding **14 sequence-verified editors from 16 designed combinations**. Evaluating target activity, bystander consequences, and read-level co-editing revealed pairing-dependent performance and complementary strengths in **IO-02 and IO-03**. We retained both for downstream evaluation, establishing a complete-editor selection strategy that balances multiple outcomes rather than relying on a single activity or selectivity score.
 
+<!-- SUPPORTING_DATA:io -->
+
 ### References {#integrated-orca-references}
 
 1. <span id="integrated-orca-ref-1" style="scroll-margin-top:72px"></span>Han W, Huang W, Wei T, et al. Programmable RNA base editing with a single gRNA-free enzyme. Nucleic Acids Research. 2022;50(16):9580–9595. [Source](https://doi.org/10.1093/nar/gkac713).
@@ -896,6 +900,8 @@ This changed the way we approached promoter selection. Rather than treating CMV 
 ![Gfa — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/gfa.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
 GFA introduced a **compact transcriptional control layer** into ORCA. Replacing CMV with gfaABC1D changed expression and reporter-editing signals in opposite directions in HEK293T and U251, supporting its retention in the control architecture while highlighting the importance of cellular context. These results establish a **context-dependent promoter choice**; the two-cell-line comparison does not by itself demonstrate astrocyte-specific expression.
+
+<!-- SUPPORTING_DATA:gfa -->
 
 ### References {#gfa-references}
 
@@ -1017,6 +1023,8 @@ These studies did not identify the mechanism behind our ORCA-MRE results. They i
 ![Mre — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/mre.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
 The tested **4×6T MRE configuration was not incorporated into the selected ORCA system**. Although it repeatedly produced weaker transcript signals, our experiments did not establish a selective regulatory benefit or a reliable editing baseline under controlled miR-124 exposure. This outcome defines a requirement for future designs: **restricting unwanted expression must preserve useful editor activity**. It does not rule out miRNA-based regulation with other configurations.
+
+<!-- SUPPORTING_DATA:mre -->
 
 ### References {#mre-references}
 
@@ -1295,6 +1303,8 @@ The synthetic interface now supported **externally induced suppression of ORCA's
 ![Aso — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/aso.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
 The **Synthetic ASO Tag** established an externally addressable suppression interface for ORCA. The C805 interface supported a **78.6% reduction in tagged mCherry fluorescence** and a **50.04% relative reduction in ORCA-mediated APOE4 editing** at 48 hours, with editing suppression still evident at 96 hours. These results demonstrate functional suppression, while complete shutdown, molecular confirmation of the mechanism, and recovery after ASO withdrawal remain to be established.
+
+<!-- SUPPORTING_DATA:aso -->
 
 ### References and Figure Credits {#aso-references-and-figure-credits}
 
@@ -1913,6 +1923,8 @@ SONAR successfully connected fluorescence measurements with independent evidence
 ![Measure — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/measure.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
 SONAR developed into a **modular, multichannel reporter platform** supported by fluorescence-mechanism tests and complementary optical readouts. Real-editor experiments revealed that editor-associated expression, target-site substitution signals, and green fluorescence did not change in parallel. SONAR therefore supports investigation of editing-responsive output, while **conversion to an absolute editing percentage remains unvalidated**. These findings motivate the normalization, reference design, and independent molecular calibration addressed in SONAR Measurement.
+
+<!-- SUPPORTING_DATA:sonar-engineering -->
 
 <nav class="sonar-connections" aria-label="Explore connected SONAR chapters">
 <a class="sonar-connection-card" href="/contribution#sonar"><span class="sonar-connection-label"><i class="sonar-connection-symbol" aria-hidden="true"></i>SONAR / Contribution</span><strong>Use SONAR in your next experiment</strong><span class="sonar-connection-description">Follow the design and analysis tutorial, try interactive examples, and inspect the resources for adapting SONAR.</span><span class="sonar-connection-action">Explore Contribution<span aria-hidden="true"> →</span></span></a>
@@ -3175,6 +3187,8 @@ The experiment established a usable within-range calibration response, but not a
 ![Functional Validation — engineering outcomes and evidence summary](/assets/images/engineering-conclusions/functional-validation.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
 Functional Validation brought ORCA into a **human cell model expressing endogenous APOE**, establishing preliminary electroporation conditions and exploring lipid-associated imaging and extracellular Aβ42 measurement. The observations define the next validation requirements: independently replicated lipid imaging, sample measurements within the ELISA calibration range, and reliable endogenous APOE editing measurements. Together, these studies provide a starting point for disease-relevant evaluation, **without yet demonstrating functional rescue caused by APOE4-to-APOE3 RNA correction**.
+
+<!-- SUPPORTING_DATA:fv -->
 
 ### References {#functional-validation-references}
 

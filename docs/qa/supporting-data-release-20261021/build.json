@@ -1,0 +1,16 @@
+{
+  "base": "67fe5fc",
+  "local_freeze": "/var/folders/t7/gpryl_zd4ydc8r47mdf4fskc0000gn/T/orca-supporting-release-local-cc10vdng",
+  "affected_route_issues": {
+    "engineering": [],
+    "measurement": [],
+    "contribution": [],
+    "supporting-data": []
+  },
+  "full_site_issues": [
+    "education: broken internal link: /assets/human-practices/education/workbook-current-student-zh-compact.pdf",
+    "education: broken internal link: /assets/human-practices/education/workbook-current-student-en-compact.pdf",
+    "education: broken internal link: /assets/human-practices/education/workbook-current-teacher-zh-compact.pdf",
+    "human-practices: missing local asset: /assets/human-practices/overview/emit-echo-evolve-layered-v3.svg"
+  ]
+}

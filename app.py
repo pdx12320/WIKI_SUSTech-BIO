@@ -7,6 +7,7 @@ from markupsafe import Markup
 from wiki_content import CONTENT_PAGES, NAVIGATION, load_markdown_content
 from igem_assets import install as install_igem_assets
 from reading_navigation import reading_navigation_mode
+from supporting_data import install as install_supporting_data
 
 
 template_folder = path.abspath("./wiki")
@@ -18,6 +19,7 @@ app.config["FREEZER_RELATIVE_URLS"] = True
 app.config["FREEZER_IGNORE_MIMETYPE_WARNINGS"] = True
 freezer = Freezer(app)
 install_igem_assets(app)
+install_supporting_data(app)
 
 
 @freezer.register_generator

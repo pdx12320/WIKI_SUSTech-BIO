@@ -1,0 +1,58 @@
+[
+  {
+    "module": "gfa",
+    "status": "ok",
+    "title": "ORCA Control Module — GFA: gfaABC1D Promoter Characterization and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23501695",
+    "published": true,
+    "files": 3
+  },
+  {
+    "module": "mre",
+    "status": "ok",
+    "title": "ORCA Control Module — MRE: 4×6T MicroRNA Response Element Evaluation and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23502863",
+    "published": true,
+    "files": 3
+  },
+  {
+    "module": "aso",
+    "status": "ok",
+    "title": "ORCA Control Module — ASO: Synthetic ASO Tag Design, Functional Evaluation and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23503139",
+    "published": true,
+    "files": 4
+  },
+  {
+    "module": "io",
+    "status": "ok",
+    "title": "ORCA Integrated System — IO: POD–CETUS Combination Evaluation and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23510189",
+    "published": true,
+    "files": 3
+  },
+  {
+    "module": "sonar",
+    "status": "ok",
+    "title": "ORCA Measurement Module — SONAR: RNA Editing Reporter Characterization and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23510572",
+    "published": true,
+    "files": 3
+  },
+  {
+    "module": "fr",
+    "status": "ok",
+    "title": "ORCA Fundamental Research — FR: System Characterization and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23511762",
+    "published": true,
+    "files": 3
+  },
+  {
+    "module": "fv",
+    "status": "ok",
+    "title": "ORCA Functional Validation — FV: Functional Evaluation and Supporting Data (SUSTech-BIO 2026)",
+    "doi": "10.5281/zenodo.23511905",
+    "published": true,
+    "files": 3
+  }
+]

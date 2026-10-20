@@ -1,0 +1,13 @@
+{% macro supporting_bar(item, gallery=false) -%}
+<aside class="sd-bar" id="sd-{{ item.id }}" style="--sd-accent:{{ item.accent }}" aria-label="Supporting Data for {{ item.label }}">
+  <div class="sd-bar__copy">
+    <p class="sd-eyebrow"><span class="sd-dot" aria-hidden="true"></span>Supporting Data <span class="sd-bar__module">/ {{ item.label }}</span></p>
+    <p class="sd-bar__description">{{ item.description }}</p>
+    <p class="sd-bar__scope">{{ item.scope }}{% if item.archive == 'sonar-shared' %} · Shared SONAR archive{% endif %}</p>
+  </div>
+  <div class="sd-bar__actions">
+    {% if item.doi %}<a class="sd-archive" href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener">{% include 'components/supporting-data/doi_icon.html' %}<span class="sd-archive__label">View on Zenodo</span> <span aria-hidden="true">↗</span></a>{% else %}<span class="sd-archive sd-archive--pending" aria-disabled="true">{% include 'components/supporting-data/doi_icon.html' %}<span class="sd-archive__label">View on Zenodo</span> <span aria-hidden="true">↗</span></span><span class="sd-pending">DOI pending</span>{% endif %}
+    <a class="sd-index-link" href="{{ url_for('pages', page='contribution') }}#supporting-data">All Supporting Data <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
+{%- endmacro %}

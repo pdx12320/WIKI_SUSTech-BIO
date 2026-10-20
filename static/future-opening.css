@@ -21,3 +21,66 @@ body.future-opening-in-view .reading-orbit { visibility: hidden; opacity: 0; }
 .future-opening :focus-visible { outline:2px solid #c47b8b; outline-offset:6px; }
 @media(max-width:600px) { .future-opening h1 { font-size:20vw; } .future-opening__eyebrow { font-size:8px; } .future-opening__caption { font-size:12px; } .future-opening__replay span { display:none; } }
 @media(prefers-reduced-motion:reduce) { .future-opening__mask,.future-opening__lens,.future-opening__replay { display:none!important; } }
+
+/* Two connected milestones, using the shared directory width and typography. */
+@media(min-width:761px) {
+  .content-page .markdown-page[data-content-source='docs/project/future.md'] > .content-directory {
+    padding-top:12px;
+    padding-bottom:28px;
+  }
+  .content-page .markdown-page[data-content-source='docs/project/future.md'] > .content-directory > ol {
+    gap:24px;
+    counter-reset:future-step;
+    padding-left:2px;
+  }
+  .markdown-page[data-content-source='docs/project/future.md'] > .content-directory > ol > li {
+    position:relative;
+    counter-increment:future-step;
+  }
+  .markdown-page[data-content-source='docs/project/future.md'] > .content-directory > ol > li:first-child::after {
+    content:'';
+    position:absolute;
+    left:27px;
+    top:100%;
+    width:1px;
+    height:24px;
+    background:#c8c5dc;
+  }
+  .content-page .markdown-page[data-content-source='docs/project/future.md'] > .content-directory .content-group__head > a {
+    display:grid;
+    grid-template-columns:30px minmax(0,1fr);
+    align-items:center;
+    gap:12px;
+    min-height:84px;
+    padding:16px 12px;
+    border:1px solid #dcddea;
+    background:#f7f7fb;
+  }
+  .markdown-page[data-content-source='docs/project/future.md'] > .content-directory .content-group__head > a::before {
+    content:counter(future-step,decimal-leading-zero);
+    display:grid;
+    place-items:center;
+    width:28px;
+    height:28px;
+    border:1px solid #cdcae0;
+    border-radius:50%;
+    color:#8b86a7;
+    background:#f7f7fb;
+    font:600 11px/1 'Source Sans 3',sans-serif;
+    letter-spacing:.04em;
+  }
+  .content-page .markdown-page[data-content-source='docs/project/future.md'] > .content-directory .content-group__head > a:hover {
+    background:#f0eff8;
+    border-color:#c7c3df;
+  }
+  .content-page .markdown-page[data-content-source='docs/project/future.md'] > .content-directory .content-group__head > a[aria-current] {
+    background:#eaeaf8;
+    border-color:#d2cee8;
+    box-shadow:inset 3px 0 #8a83b5;
+  }
+  .markdown-page[data-content-source='docs/project/future.md'] > .content-directory .content-group__head > a[aria-current]::before {
+    color:#fff;
+    background:#7771a4;
+    border-color:#7771a4;
+  }
+}

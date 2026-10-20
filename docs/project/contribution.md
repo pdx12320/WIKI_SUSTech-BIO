@@ -2,14 +2,12 @@
 title: Contribution
 subtitle: Tools, evidence and ideas for the next generation of RNA engineering.
 eyebrow: Project
+header_introduction: "**Our contribution turns ORCA’s work into resources that other teams can inspect, adapt and build on.** SONAR and SAP support reporter design and measurement, while PUFFER connects sequence review with computational workflows. Registry parts and collections, model code and supporting documentation make our engineering reusable. Beyond the laboratory, Human Practices toolkits, multilingual teaching materials and shared activity guides carry our experience into new research, classrooms and communities."
 ---
 
 # Contribution
 
-<div class="contribution-lead">
-<p><strong>Build on what we built.</strong> ORCA connects programmable RNA editing, quantitative measurement, computational design and public engagement. Our contribution is a collection of <strong>tools, experimental insights and reusable resources</strong> that carries this work beyond one team.</p>
-<p><strong>Wet-lab measurements train and test our models.</strong> <strong>Model outputs focus experimental comparisons.</strong> <strong>SONAR and PUFFER</strong> bring measurement and design into usable workflows, while our <strong>educational resources</strong> make the project accessible beyond the laboratory.</p>
-</div>
+
 
 ## SONAR · Measure with context {#sonar data-toc-label="SONAR"}
 

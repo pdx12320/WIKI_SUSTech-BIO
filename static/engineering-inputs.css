@@ -1,4 +1,7 @@
-/* HP inputs reuse the existing Engineering Overview card and title system. */
+/* HP inputs retain their original pale-yellow color within the Overview card layout. */
+.engineering-workspace .engineering-input {
+  background: #fff4b5;
+}
 .engineering-workspace .engineering-input a { overflow-wrap: anywhere; }
 .engineering-workspace .engineering-input .engineering-input__sources {
   font-size: .82em;

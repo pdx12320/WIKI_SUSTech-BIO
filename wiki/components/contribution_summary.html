@@ -1,0 +1,6 @@
+<section class="contribution-introduction" id="contribution-summary" aria-label="Contribution overview" tabindex="-1">
+  <div class="contribution-introduction__card">
+    <div class="contribution-introduction__mascot" aria-hidden="true"><img src="{{ url_for('assets', filename='images/design-communication/identity/figure-04-c-orca-mascot-standing.png') }}" alt="" width="1280" height="900" loading="lazy" decoding="async"></div>
+    <p>{% for phrase in content.metadata.get('header_introduction', '').split('**') %}{% if loop.index0 % 2 %}<strong>{{ phrase }}</strong>{% else %}{{ phrase }}{% endif %}{% endfor %}</p>
+  </div>
+</section>

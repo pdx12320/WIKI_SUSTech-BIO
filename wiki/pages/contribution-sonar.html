@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='contribution/wet-resources.css') }}">
 {% endif %}
 {% endblock %}
+{% block content_header %}
+{{ super() }}
+{% if content.source_label == 'docs/project/contribution.md' %}
+{% include 'components/contribution_summary.html' %}
+{% endif %}
+{% endblock %}
 {% block page_scripts %}
 {{ super() }}
 <script type="module" src="{{ url_for('static', filename='sonar-contribution/index.mjs') }}"></script>

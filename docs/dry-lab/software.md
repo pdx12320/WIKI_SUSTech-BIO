@@ -388,30 +388,30 @@ figure_groups:
   description: The original notebook uses a simplified editing scheme and is kept separate from the multisite model.
 rewire_references:
 - Han, W. et al. Programmable RNA base editing with a single gRNA-free enzyme. Nucleic Acids Research 50, 9580–9595
-  (2022). doi:10.1093/nar/gkac713.
+  (2022). https://doi.org/10.1093/nar/gkac713.
 - Liu, S. et al. Whole-Body Disposition and Physiologically Based Pharmacokinetic Modeling of Adeno-Associated Viruses
-  and the Transgene Product. Journal of Pharmaceutical Sciences 113, 141–157 (2024). doi:10.1016/j.xphs.2023.10.005.
+  and the Transgene Product. Journal of Pharmaceutical Sciences 113, 141–157 (2024). https://doi.org/10.1016/j.xphs.2023.10.005.
 - Wang, X., McLachlan, J., Zamore, P. D. & Hall, T. M. T. Modular recognition of RNA by a human Pumilio-homology
-  domain. Cell 110, 501–512 (2002). doi:10.1016/S0092-8674(02)00873-5.
+  domain. Cell 110, 501–512 (2002). https://doi.org/10.1016/S0092-8674(02)00873-5.
 - Weisgraber, K. H., Rall, S. C., Jr. & Mahley, R. W. Human E apoprotein heterogeneity. Cysteine-arginine interchanges
-  in the amino acid sequence of the apo-E isoforms. Journal of Biological Chemistry 256, 9077–9083 (1981). doi:10.1016/S0021-9258(19)52510-8.
+  in the amino acid sequence of the apo-E isoforms. Journal of Biological Chemistry 256, 9077–9083 (1981). https://doi.org/10.1016/S0021-9258(19)52510-8.
 - Grünewald, J. et al. Transcriptome-wide off-target RNA editing induced by CRISPR-guided DNA base editors. Nature
-  569, 433–437 (2019). doi:10.1038/s41586-019-1161-z.
+  569, 433–437 (2019). https://doi.org/10.1038/s41586-019-1161-z.
 - 'Virtanen, P. et al. SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods 17,
-  261–272 (2020). doi:10.1038/s41592-019-0686-2.'
-- 'Ghaffarizadeh, A. et al. PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems. PLOS Computational Biology 14, e1005991 (2018). doi:10.1371/journal.pcbi.1005991.'
-- 'Ghaffarizadeh, A., Friedman, S. H. & Macklin, P. BioFVM: an efficient, parallelized diffusive transport solver for 3-D biological simulations. Bioinformatics 32, 1256–1258 (2016). doi:10.1093/bioinformatics/btv730.'
+  261–272 (2020). https://doi.org/10.1038/s41592-019-0686-2.'
+- 'Ghaffarizadeh, A. et al. PhysiCell: An open source physics-based cell simulator for 3-D multicellular systems. PLOS Computational Biology 14, e1005991 (2018). https://doi.org/10.1371/journal.pcbi.1005991.'
+- 'Ghaffarizadeh, A., Friedman, S. H. & Macklin, P. BioFVM: an efficient, parallelized diffusive transport solver for 3-D biological simulations. Bioinformatics 32, 1256–1258 (2016). https://doi.org/10.1093/bioinformatics/btv730.'
 workbench_references:
 - Wang, X., McLachlan, J., Zamore, P. D. & Hall, T. M. T. Modular recognition of RNA by a human Pumilio-homology
-  domain. Cell 110, 501–512 (2002). doi:10.1016/S0092-8674(02)00873-5.
+  domain. Cell 110, 501–512 (2002). https://doi.org/10.1016/S0092-8674(02)00873-5.
 - Zhou, W. et al. Expanding the binding specificity for RNA recognition by a PUF domain. Nature Communications 12,
-  5107 (2021). doi:10.1038/s41467-021-25433-6.
+  5107 (2021). https://doi.org/10.1038/s41467-021-25433-6.
 - Lin, Z. et al. Evolutionary-scale prediction of atomic-level protein structure with a language model. Science
-  379, 1123–1130 (2023). doi:10.1126/science.ade2574.
+  379, 1123–1130 (2023). https://doi.org/10.1126/science.ade2574.
 - 'Hoerl, A. E. & Kennard, R. W. Ridge Regression: Biased Estimation for Nonorthogonal Problems. Technometrics 12,
-  55–67 (1970). doi:10.1080/00401706.1970.10488634.'
+  55–67 (1970). https://doi.org/10.1080/00401706.1970.10488634.'
 - Zhou, H. et al. A foundation language model to decipher diverse regulation of RNAs. Genome Biology 26, 301 (2025).
-  doi:10.1186/s13059-025-03752-x.
+  https://doi.org/10.1186/s13059-025-03752-x.
 ---
 
 # Software

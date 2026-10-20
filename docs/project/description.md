@@ -213,29 +213,29 @@ Together, these stages connect the molecular rationale for ORCA with its enginee
 
 ## References
 
-1. Liu, C.-C., Kanekiyo, T., Xu, H. & Bu, G. [Apolipoprotein E and Alzheimer disease: risk, mechanisms, and therapy](https://pmc.ncbi.nlm.nih.gov/articles/PMC3726719/). *Nature Reviews Neurology* **9**, 106–118 (2013). DOI: 10.1038/nrneurol.2012.263.
+1. Liu, C.-C., Kanekiyo, T., Xu, H. & Bu, G. [Apolipoprotein E and Alzheimer disease: risk, mechanisms, and therapy](https://pmc.ncbi.nlm.nih.gov/articles/PMC3726719/). *Nature Reviews Neurology* **9**, 106–118 (2013). [DOI: 10.1038/nrneurol.2012.263](https://doi.org/10.1038/nrneurol.2012.263).
 
-2. Yamazaki, Y., Zhao, N., Caulfield, T. R., Liu, C.-C. & Bu, G. [Apolipoprotein E and Alzheimer disease: pathobiology and targeting strategies](https://pmc.ncbi.nlm.nih.gov/articles/PMC7055192/). *Nature Reviews Neurology* **15**, 501–518 (2019). DOI: 10.1038/s41582-019-0228-7.
+2. Yamazaki, Y., Zhao, N., Caulfield, T. R., Liu, C.-C. & Bu, G. [Apolipoprotein E and Alzheimer disease: pathobiology and targeting strategies](https://pmc.ncbi.nlm.nih.gov/articles/PMC7055192/). *Nature Reviews Neurology* **15**, 501–518 (2019). [DOI: 10.1038/s41582-019-0228-7](https://doi.org/10.1038/s41582-019-0228-7).
 
-3. Shajahan, S. R., Kumar, S. & Ramli, M. D. C. [Unravelling the connection between COVID-19 and Alzheimer’s disease: a comprehensive review](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1274452/full). *Frontiers in Aging Neuroscience* **15**, 1274452 (2024). DOI: 10.3389/fnagi.2023.1274452.
+3. Shajahan, S. R., Kumar, S. & Ramli, M. D. C. [Unravelling the connection between COVID-19 and Alzheimer’s disease: a comprehensive review](https://www.frontiersin.org/journals/aging-neuroscience/articles/10.3389/fnagi.2023.1274452/full). *Frontiers in Aging Neuroscience* **15**, 1274452 (2024). [DOI: 10.3389/fnagi.2023.1274452](https://doi.org/10.3389/fnagi.2023.1274452).
 
 4. World Health Organization. [Dementia](https://www.who.int/news-room/fact-sheets/detail/dementia). Fact sheet, updated 3 July 2026. Accessed 18 October 2026.
 
-5. van Dyck, C. H., Swanson, C. J., Aisen, P. et al. [Lecanemab in early Alzheimer’s disease](https://doi.org/10.1056/NEJMoa2212948). *New England Journal of Medicine* **388**, 9–21 (2023). DOI: 10.1056/NEJMoa2212948.
+5. van Dyck, C. H., Swanson, C. J., Aisen, P. et al. [Lecanemab in early Alzheimer’s disease](https://doi.org/10.1056/NEJMoa2212948). *New England Journal of Medicine* **388**, 9–21 (2023). [DOI: 10.1056/NEJMoa2212948](https://doi.org/10.1056/NEJMoa2212948).
 
-6. Sims, J. R., Zimmer, J. A., Evans, C. D. et al. [Donanemab in early symptomatic Alzheimer disease: the TRAILBLAZER-ALZ 2 randomized clinical trial](https://doi.org/10.1001/jama.2023.13239). *JAMA* **330**, 512–527 (2023). DOI: 10.1001/jama.2023.13239.
+6. Sims, J. R., Zimmer, J. A., Evans, C. D. et al. [Donanemab in early symptomatic Alzheimer disease: the TRAILBLAZER-ALZ 2 randomized clinical trial](https://doi.org/10.1001/jama.2023.13239). *JAMA* **330**, 512–527 (2023). [DOI: 10.1001/jama.2023.13239](https://doi.org/10.1001/jama.2023.13239).
 
-7. Litvinchuk, A., Huynh, T.-P. V., Shi, Y. et al. [Apolipoprotein E4 reduction with antisense oligonucleotides decreases neurodegeneration in a tauopathy model](https://doi.org/10.1002/ana.26043). *Annals of Neurology* **89**, 952–966 (2021). DOI: 10.1002/ana.26043.
+7. Litvinchuk, A., Huynh, T.-P. V., Shi, Y. et al. [Apolipoprotein E4 reduction with antisense oligonucleotides decreases neurodegeneration in a tauopathy model](https://doi.org/10.1002/ana.26043). *Annals of Neurology* **89**, 952–966 (2021). [DOI: 10.1002/ana.26043](https://doi.org/10.1002/ana.26043).
 
-8. Johnson, K. G., Kaplitt, M., Kaminsky, S. et al. [Topline results from Phase 1/2 AAV gene therapy (LX1001) in APOE4/4 homozygotes with Alzheimer’s disease](https://doi.org/10.1002/alz70859_101538). *Alzheimer’s & Dementia* **21** (Suppl. 5), e101538 (2025). Conference abstract. DOI: 10.1002/alz70859_101538.
+8. Johnson, K. G., Kaplitt, M., Kaminsky, S. et al. [Topline results from Phase 1/2 AAV gene therapy (LX1001) in APOE4/4 homozygotes with Alzheimer’s disease](https://doi.org/10.1002/alz70859_101538). *Alzheimer’s & Dementia* **21** (Suppl. 5), e101538 (2025). Conference abstract. [DOI: 10.1002/alz70859_101538](https://doi.org/10.1002/alz70859_101538).
 
-9. Chen, G., Wang, M., Zhang, Z. et al. [ApoE3 R136S binds to Tau and blocks its propagation, suppressing neurodegeneration in mice with Alzheimer’s disease](https://doi.org/10.1016/j.neuron.2024.12.015). *Neuron* **113**, 719–736.e5 (2025). DOI: 10.1016/j.neuron.2024.12.015.
+9. Chen, G., Wang, M., Zhang, Z. et al. [ApoE3 R136S binds to Tau and blocks its propagation, suppressing neurodegeneration in mice with Alzheimer’s disease](https://doi.org/10.1016/j.neuron.2024.12.015). *Neuron* **113**, 719–736.e5 (2025). [DOI: 10.1016/j.neuron.2024.12.015](https://doi.org/10.1016/j.neuron.2024.12.015).
 
-10. Kim, Y., Lee, G., An, S. et al. [Therapeutic gene editing of APOE4 in sporadic Alzheimer’s disease via Prime Editor 7](https://doi.org/10.1002/advs.76658). *Advanced Science* **13**, e76658 (2026). DOI: 10.1002/advs.76658.
+10. Kim, Y., Lee, G., An, S. et al. [Therapeutic gene editing of APOE4 in sporadic Alzheimer’s disease via Prime Editor 7](https://doi.org/10.1002/advs.76658). *Advanced Science* **13**, e76658 (2026). [DOI: 10.1002/advs.76658](https://doi.org/10.1002/advs.76658).
 
-11. Wang, C., Najm, R., Xu, Q. et al. [Gain of toxic apolipoprotein E4 effects in human iPSC-derived neurons is ameliorated by a small-molecule structure corrector](https://doi.org/10.1038/s41591-018-0004-z). *Nature Medicine* **24**, 647–657 (2018). DOI: 10.1038/s41591-018-0004-z.
+11. Wang, C., Najm, R., Xu, Q. et al. [Gain of toxic apolipoprotein E4 effects in human iPSC-derived neurons is ameliorated by a small-molecule structure corrector](https://doi.org/10.1038/s41591-018-0004-z). *Nature Medicine* **24**, 647–657 (2018). [DOI: 10.1038/s41591-018-0004-z](https://doi.org/10.1038/s41591-018-0004-z).
 
-12. Han, W., Huang, W., Wei, T. et al. [Programmable RNA base editing with a single gRNA-free enzyme](https://doi.org/10.1093/nar/gkac713). *Nucleic Acids Research* **50**, 9580–9595 (2022). DOI: 10.1093/nar/gkac713.
+12. Han, W., Huang, W., Wei, T. et al. [Programmable RNA base editing with a single gRNA-free enzyme](https://doi.org/10.1093/nar/gkac713). *Nucleic Acids Research* **50**, 9580–9595 (2022). [DOI: 10.1093/nar/gkac713](https://doi.org/10.1093/nar/gkac713).
 
 13. U.S. Food and Drug Administration. [FDA converts novel Alzheimer’s disease treatment to traditional approval](https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval). 6 July 2023. Accessed 18 October 2026.
 

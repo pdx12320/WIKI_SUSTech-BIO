@@ -25,7 +25,7 @@ Before engineering ORCA as a complete system, we first needed a functional edito
 
 #### Design {#fundamental-research-cycle-01-design}
 
-REWIRE combines a programmable PUF RNA-binding domain with a deaminase in a single protein. Each PUF repeat recognizes one RNA nucleotide [3,4], allowing an attached APOBEC domain to be positioned near a chosen cytidine for C-to-U editing [1]. Previous studies suggested that extending PUF recognition from eight to ten nucleotides could improve target discrimination, while PUF-binding affinity does not necessarily increase beyond approximately 9–10 repeats [1,2]. We therefore began with a **10-repeat PUF domain**.
+REWIRE combines a programmable PUF RNA-binding domain with a deaminase in a single protein. Each PUF repeat contributes to recognition of an RNA nucleotide [3,4], allowing an attached APOBEC domain to be positioned near a chosen cytidine for C-to-U editing [1]. Previous studies suggested that extending PUF recognition from eight to ten nucleotides could improve target discrimination, while PUF-binding affinity does not necessarily increase beyond approximately 9–10 repeats [1,2]. We therefore began with a **10-repeat PUF domain**. Published repeat-specific binding maps also show that recognition preferences depend on the repeat context [5]; the modular recognition rule alone does not establish selectivity for a new target.
 
 Our 10R construct recognizes APOE4 nucleotides 376–385 (`5′-AUGGAGGACG-3′`). A two-nucleotide UG spacer separates this site from **C388**, and an XTEN linker connects PUF10R to APOBEC. The intended C-to-U edit converts `CGC` to `UGC`, producing the R130C substitution (Figure 1A).
 
@@ -109,6 +109,8 @@ Our foundational experiments established **PUF12 as ORCA’s working RNA-recogni
 3. Wang X, McLachlan J, Zamore PD, Hall TMT. Modular recognition of RNA by a human Pumilio-homology domain. *Cell*. 2002;110(4):501–512. <https://doi.org/10.1016/S0092-8674(02)00873-5>
 4. Cheong CG, Hall TMT. Engineering RNA sequence specificity of Pumilio repeats. *Proceedings of the National Academy of Sciences USA*. 2006;103(37):13635–13639. <https://doi.org/10.1073/pnas.0606294103>
 
+5. Zhou W, Melamed D, Banyai G, et al. Expanding the binding specificity for RNA recognition by a PUF domain. *Nature Communications*. 2021;12(1):5107. <https://doi.org/10.1038/s41467-021-25433-6>
+
 ## POD {#pod .engineering-chapter-title}
 
 Programmable On-target Docking
@@ -136,9 +138,9 @@ We named this effort *Programmable On-target Docking* because its focus is **whe
 
 #### The molecular handle: tripartite recognition motifs {#pod-the-molecular-handle-tripartite-recognition-motifs}
 
-PUF (Pumilio and FBF homology) RNA-binding domains are built from tandem repeats arranged along a curved RNA-binding surface. In native human PUM1, eight repeats typically recognize eight consecutive RNA bases; the engineered PUF12 extends this modular arrangement to twelve. Protein and RNA run antiparallel, with each repeat contributing to recognition of a corresponding nucleotide (Figure 2A).
+PUF (Pumilio and FBF homology) RNA-binding domains are built from tandem repeats arranged along a curved RNA-binding surface. In native human PUM1, eight repeats typically recognize eight consecutive RNA bases; the engineered PUF12 extends this modular arrangement to twelve. Protein and RNA run antiparallel, with each repeat contributing to recognition of a corresponding nucleotide (Figure 2A; [3]).
 
-Much of this recognition is mediated by three residues within each repeat—positions **12, 13 and 16**, collectively the **TRM**. Positions 12 and 16 participate in base-specific contacts, while position 13 primarily supports base stacking. The native PUM1 structural example in Figure 2B illustrates how these interactions occur within a larger repeat environment [1,2]. **Changing a TRM provides a targeted way to alter recognition preferences without replacing the entire PUF scaffold.**
+Much of this recognition is mediated by three residues within each repeat—positions **12, 13 and 16**, collectively the **TRM**. Positions 12 and 16 participate in base-specific contacts, while position 13 primarily supports base stacking. The native PUM1 structural example in Figure 2B illustrates how these interactions occur within a larger repeat environment [1,2]. **Changing a TRM provides a targeted way to alter recognition preferences without replacing the entire PUF scaffold** [4].
 
 ![Native PUM1 architecture and TRM-mediated nucleotide recognition](/assets/images/submission-20261017/engineering/pod/Figure_02.png){.engineering-figure style="--engineering-figure-width:720px;--engineering-detail-width:960px"}
 
@@ -312,8 +314,12 @@ POD evaluated **81 variant entries across two screening batches**, revealing dis
 
 #### References {#pod-references}
 
-1. Zhou, W., Melamed, D., Banyai, G., et al. (2021). Expanding the binding specificity for RNA recognition by a PUF domain. *Nature Communications*, **12**, 5107. https://doi.org/10.1038/s41467-021-25433-6
-2. Ban, T., Zhu, J.-K., Melcher, K., & Xu, H. E. (2015). Structural mechanisms of RNA recognition: sequence-specific and non-specific RNA-binding proteins and the Cas9-RNA-DNA complex. *Cellular and Molecular Life Sciences*, **72**, 1045–1058. https://doi.org/10.1007/s00018-014-1779-9
+1. Zhou, W., Melamed, D., Banyai, G., et al. (2021). Expanding the binding specificity for RNA recognition by a PUF domain. *Nature Communications*, **12**, 5107. <https://doi.org/10.1038/s41467-021-25433-6>
+2. Ban, T., Zhu, J.-K., Melcher, K., & Xu, H. E. (2015). Structural mechanisms of RNA recognition: sequence-specific and non-specific RNA-binding proteins and the Cas9-RNA-DNA complex. *Cellular and Molecular Life Sciences*, **72**, 1045–1058. <https://doi.org/10.1007/s00018-014-1779-9>
+
+3. Wang X, McLachlan J, Zamore PD, et al. Modular Recognition of RNA by a Human Pumilio-Homology Domain. *Cell*. 2002;110(4):501–512. <https://doi.org/10.1016/S0092-8674(02)00873-5>
+
+4. Cheong CG, Hall TMT. Engineering RNA sequence specificity of Pumilio repeats. *Proceedings of the National Academy of Sciences*. 2006;103(37):13635–13639. <https://doi.org/10.1073/pnas.0606294103>
 
 *Measurement note: Editing frequencies and normalized comparisons are descriptive summaries of recorded sequencing measurements; the available records do not independently establish biological-replicate status. B1 and B2 use their respective parental PUF12 reference measurements. In B2, the parental normalization denominator for each bystander is the average of the ratios calculated within the two labeled parental sets, not the ratio of the four-record pooled site means.*
 
@@ -334,7 +340,7 @@ CETUS engineers ORCA’s APOBEC catalytic domain to improve cytidine selectivity
 
 **CETUS (Cytidine Editing, Tethered for Uridine Switching)** complements **POD (Programmable On-target Docking)**. The REWIRE framework established the programmable PUF–deaminase architecture [1], while subsequent ProAPOBEC engineering provided our **Pro.hA1** catalytic scaffold [2]. POD engineers PUF-mediated recognition of selected RNA sites; CETUS instead tunes which local sequence contexts APOBEC can efficiently edit. Our goal was not simply to reduce catalytic activity, but to improve **sequence preference while retaining productive editing at APOE4 c.388**.
 
-APOBEC catalyzes Zn²⁺-dependent hydrolytic deamination of cytidine to uridine. In Pro.hA1, **H70, C102, and C105** coordinate zinc, while **E72** participates in catalysis. Surrounding substrate-binding regions, including **loop1, loop3, and loop7**, offered more plausible opportunities to adjust RNA recognition without directly targeting the conserved catalytic core [2–5].
+APOBEC catalyzes Zn²⁺-dependent hydrolytic deamination of cytidine to uridine. In Pro.hA1, **H70, C102, and C105** coordinate zinc, while **E72** participates in catalysis. Surrounding substrate-binding regions, including **loop1, loop3, and loop7**, offered more plausible opportunities to adjust RNA recognition without directly targeting the conserved catalytic core [2,3]. Studies of evolved DNA base editors provide a broader precedent for changing deaminase sequence-context preferences [4,5]. Separate studies found transcriptome-wide RNA off-target effects in DNA base editors [7,8], reinforcing the need to assess unintended RNA changes. Those systems provide background evidence, not a measured off-target profile for ORCA.
 
 The two principal sites share an upstream G but differ immediately after the edited cytidine: **c.388 is GCG (+1 G)**, whereas **c.871 is GCA (+1 A)**. A shift toward +1 G could therefore favor the intended edit. This direction also has a broader rationale: first-position C-to-U conversion turns **CAA** or **CAG** into stop codons, and both have +1 A. It cannot solve every stop-gained bystander, however; **CGA → UGA** also creates a stop codon despite having +1 G. Accordingly, our design targeted a *particular substrate preference*, not universal elimination of damaging edits (Figure 1).
 
@@ -545,12 +551,16 @@ CETUS identified **G27T–K30H–Q58M and M132E** as complementary catalytic-dom
 
 ### References {#cetus-references}
 
-1. Han W, Huang W, Wei T, et al. Programmable RNA base editing with a single gRNA-free enzyme. *Nucleic Acids Research*. 2022;50:9580–9595. https://doi.org/10.1093/nar/gkac713
-2. Han W, Yuan B, Fan X, et al. Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. *Nature Communications*. 2025;16:9727. https://doi.org/10.1038/s41467-025-64748-6
-3. Wolfe AD, Li S, Goedderz C, Chen XS. The structure of APOBEC1 and insights into its RNA and DNA substrate selectivity. *NAR Cancer*. 2020;2:zcaa027. https://doi.org/10.1093/narcan/zcaa027
-4. Thuronyi BW, et al. Continuous evolution of base editors with expanded target compatibility and improved activity. *Nature Biotechnology*. 2019;37:1070–1079. https://doi.org/10.1038/s41587-019-0193-0
-5. Wu Y, Xiao Y-L, Tang W. High-precision cytosine base editors by evolving nucleic-acid-recognition hotspots in deaminase. *Nature Biotechnology*. 2026;44:587–601. https://doi.org/10.1038/s41587-025-02678-w
-6. Abramson J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature*. 2024;630:493–500. https://doi.org/10.1038/s41586-024-07487-w
+1. Han W, Huang W, Wei T, et al. Programmable RNA base editing with a single gRNA-free enzyme. *Nucleic Acids Research*. 2022;50:9580–9595. <https://doi.org/10.1093/nar/gkac713>
+2. Han W, Yuan B, Fan X, et al. Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. *Nature Communications*. 2025;16:9727. <https://doi.org/10.1038/s41467-025-64748-6>
+3. Wolfe AD, Li S, Goedderz C, Chen XS. The structure of APOBEC1 and insights into its RNA and DNA substrate selectivity. *NAR Cancer*. 2020;2:zcaa027. <https://doi.org/10.1093/narcan/zcaa027>
+4. Thuronyi BW, et al. Continuous evolution of base editors with expanded target compatibility and improved activity. *Nature Biotechnology*. 2019;37:1070–1079. <https://doi.org/10.1038/s41587-019-0193-0>
+5. Wu Y, Xiao Y-L, Tang W. High-precision cytosine base editors by evolving nucleic-acid-recognition hotspots in deaminase. *Nature Biotechnology*. 2026;44:587–601. <https://doi.org/10.1038/s41587-025-02678-w>
+6. Abramson J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature*. 2024;630:493–500. <https://doi.org/10.1038/s41586-024-07487-w>
+
+7. Grünewald J, Zhou R, Garcia SP, et al. Transcriptome-wide off-target RNA editing induced by CRISPR-guided DNA base editors. *Nature*. 2019;569(7756):433–437. <https://doi.org/10.1038/s41586-019-1161-z>
+
+8. Zhou C, Sun Y, Yan R, et al. Off-target RNA mutation induced by DNA base editing and its elimination by mutagenesis. *Nature*. 2019;571(7764):275–278. <https://doi.org/10.1038/s41586-019-1314-0>
 
 ## Integrated ORCA {#integrated-orca .engineering-chapter-title}
 
@@ -569,7 +579,7 @@ Integrated ORCA brings POD recognition variants and CETUS catalytic variants int
 
 ORCA combines programmable RNA recognition with cytidine deamination. Its recognition module, **POD (Programmable On-target Docking)**, uses engineered PUF repeats to position the editor near the intended RNA site [1](#integrated-orca-ref-1), [3](#integrated-orca-ref-3). Its catalytic module, **CETUS (Cytidine Editing, Tethered for Uridine Switching)**, modifies APOBEC to reshape catalytic activity and sequence preference, building on the ProAPOBEC–PUF architecture [2](#integrated-orca-ref-2). In their respective engineering efforts, we explored ways to reduce unwanted editing without losing the C388 activity needed for APOE4-to-APOE3 conversion.
 
-These improvements address different molecular functions, but the functions are coupled. Altering PUF recognition may change how a cytidine is presented to APOBEC; altering APOBEC may change which accessible cytidines are favored. Consequently, a POD variant with an advantageous editing profile and a CETUS variant with an advantageous editing profile might not preserve those properties when fused into the same editor. Their combined behavior must be measured rather than inferred.
+Structural studies establish distinct roles for Pumilio RNA recognition [4](#integrated-orca-ref-4) and APOBEC1 substrate interactions [5](#integrated-orca-ref-5). These improvements address different molecular functions, but the functions are coupled. Altering PUF recognition may change how a cytidine is presented to APOBEC; altering APOBEC may change which accessible cytidines are favored. Consequently, a POD variant with an advantageous editing profile and a CETUS variant with an advantageous editing profile might not preserve those properties when fused into the same editor. Their combined behavior must be measured rather than inferred.
 
 The relevant engineering question was therefore **which POD–CETUS pairings preserve meaningful target activity while improving bystander control**. A comparison among integrated editors alone could not answer it. We needed matched references representing the original editor, each modification individually, and both modifications together. This would reveal whether an apparent improvement was actually attributable to integration rather than to one component by itself.
 
@@ -776,6 +786,10 @@ Integrated ORCA combined independently engineered recognition and catalytic modu
 
 3. <span id="integrated-orca-ref-3" style="scroll-margin-top:72px"></span>Zhou W, Melamed D, Banyai G, et al. Expanding the binding specificity for RNA recognition by a PUF domain. Nature Communications. 2021;12:5107. [Source](https://doi.org/10.1038/s41467-021-25433-6).
 
+4. <span id="integrated-orca-ref-4" style="scroll-margin-top:72px"></span>Wang X, McLachlan J, Zamore PD, et al. Modular Recognition of RNA by a Human Pumilio-Homology Domain. *Cell*. 2002;110(4):501–512. <https://doi.org/10.1016/S0092-8674(02)00873-5>
+
+5. <span id="integrated-orca-ref-5" style="scroll-margin-top:72px"></span>Wolfe AD, Li S, Goedderz C, et al. The structure of APOBEC1 and insights into its RNA and DNA substrate selectivity. *NAR Cancer*. 2020;2(4):zcaa027. <https://doi.org/10.1093/narcan/zcaa027>
+
 ## GFA {#gfa .engineering-chapter-title .control-module-title}
 
 Fluorescence, channel and qPCR notation follows the [Engineering figure conventions](#engineering-figure-conventions).
@@ -806,7 +820,7 @@ Glial fibrillary acidic protein (**GFAP**) is a well-established astrocyte-assoc
 
 Promoter size was as important as its expression profile. The conventional human GFAP promoter, **gfa2**, is approximately 2.2 kb; together with ORCA's 2,157-nt coding sequence, these components alone would occupy roughly 4.36 kb, before additional expression elements are included. That is a poor fit for the limited packaging space of our planned AAV delivery system [3].
 
-Simply shortening gfa2 was not an adequate solution, since earlier truncation studies showed that promoter architecture affects cell-type expression patterns [1, 2]. **gfaABC1D** instead combines selected A, B, C1, and D regulatory regions in a sequence of approximately **0.68 kb**, with astrocyte-associated expression characteristics reported in transgenic models [2]. It offered a practical compromise between regulatory specificity and cassette size. We therefore replaced CMV with gfaABC1D in an otherwise matched ORCA expression construct for direct testing (Figure 1).
+Simply shortening gfa2 was not an adequate solution, since earlier truncation studies showed that promoter architecture affects cell-type expression patterns [1, 2]. **gfaABC1D** instead combines selected A, B, C1, and D regulatory regions in a sequence of approximately **0.68 kb**, with astrocyte-associated expression characteristics reported in transgenic models [2]. It offered a practical compromise between regulatory specificity and cassette size. However, AAV studies have reported neuronal expression with this promoter and improved specificity after adding post-transcriptional regulation [5,6]. Promoter identity alone therefore does not demonstrate astrocyte specificity in our experimental context. We therefore replaced CMV with gfaABC1D in an otherwise matched ORCA expression construct for direct testing (Figure 1).
 
 ![Figure 1 — GFAP promoter architecture and ORCA expression constructs](/assets/images/submission-20261017/engineering/gfa/Figure_1.png){.engineering-figure style="--engineering-figure-width:640px;--engineering-detail-width:960px"}
 
@@ -872,10 +886,14 @@ GFA introduced a **compact transcriptional control layer** into ORCA. Replacing 
 
 ### References {#gfa-references}
 
-1. Lee Y, Messing A, Su M, Brenner M. GFAP promoter elements required for region-specific and astrocyte-specific expression. *Glia*. 2008;56(5):481–493. https://doi.org/10.1002/glia.20622
-2. Yeo S, Bandyopadhyay S, Messing A, Brenner M. Transgenic analysis of GFAP promoter elements. *Glia*. 2013;61(9):1488–1499. https://doi.org/10.1002/glia.22536
-3. Dong JY, Fan PD, Frizzell RA. Quantitative analysis of the packaging capacity of recombinant adeno-associated virus. *Human Gene Therapy*. 1996;7(17):2101–2112. https://doi.org/10.1089/hum.1996.7.17-2101
-4. Grube S, Freitag D, Kalff R, Ewald C, Walter J. Characterization of adherent primary cell lines from fresh human glioblastoma tissue, defining glial fibrillary acidic protein as a reliable marker in establishment of glioblastoma cell culture. *Cancer Reports*. 2021;4(2):e1324. https://doi.org/10.1002/cnr2.1324
+1. Lee Y, Messing A, Su M, Brenner M. GFAP promoter elements required for region-specific and astrocyte-specific expression. *Glia*. 2008;56(5):481–493. <https://doi.org/10.1002/glia.20622>
+2. Yeo S, Bandyopadhyay S, Messing A, Brenner M. Transgenic analysis of GFAP promoter elements. *Glia*. 2013;61(9):1488–1499. <https://doi.org/10.1002/glia.22536>
+3. Dong JY, Fan PD, Frizzell RA. Quantitative analysis of the packaging capacity of recombinant adeno-associated virus. *Human Gene Therapy*. 1996;7(17):2101–2112. <https://doi.org/10.1089/hum.1996.7.17-2101>
+4. Grube S, Freitag D, Kalff R, Ewald C, Walter J. Characterization of adherent primary cell lines from fresh human glioblastoma tissue, defining glial fibrillary acidic protein as a reliable marker in establishment of glioblastoma cell culture. *Cancer Reports*. 2021;4(2):e1324. <https://doi.org/10.1002/cnr2.1324>
+
+5. Taschenberger G, Tereshchenko J, Kügler S. A MicroRNA124 Target Sequence Restores Astrocyte Specificity of gfaABC1D-Driven Transgene Expression in AAV-Mediated Gene Transfer. *Molecular Therapy - Nucleic Acids*. 2017;8:13–25. <https://doi.org/10.1016/j.omtn.2017.03.009>
+
+6. Gleichman AJ, Kawaguchi R, Sofroniew MV, et al. A toolbox of astrocyte-specific, serotype-independent adeno-associated viral vectors using microRNA targeting sequences. *Nature Communications*. 2023;14(1):7426. <https://doi.org/10.1038/s41467-023-42746-w>
 
 ## MRE {#mre .engineering-chapter-title .control-module-title}
 
@@ -899,7 +917,7 @@ Our GFA strategy used the **gfaABC1D** promoter to favor expression in a glial c
 
 We synthesized a **548-bp, 24-site 4×6T cassette** and placed it in the **3′ untranslated region (3′ UTR)** of the ORCA editor transcript, between the coding-sequence stop codon and the SV40 polyadenylation signal. We constructed versions driven by either **CMV** or **gfaABC1D** (Figure 1). This architecture was intended to act on the *editor transcript*, rather than directly on the APOE RNA substrate.
 
-The engineering criterion was straightforward: an additional regulatory layer would be useful only if it produced a meaningful difference between cellular environments **while maintaining adequate editor expression and activity** in the desired setting. The published specificity gain motivated our design, but its compatibility with ORCA still had to be tested.
+The engineering criterion was straightforward: an additional regulatory layer would be useful only if it produced a meaningful difference between cellular environments **while maintaining adequate editor expression and activity** in the desired setting. The published specificity gain motivated our design, but its compatibility with ORCA still had to be tested. Earlier work demonstrated endogenous miRNA-dependent restriction of transgene expression in hematopoietic lineages [4]; this supports the general regulatory principle, not the performance of our ORCA cassette in brain-related cells.
 
 ![Figure 1. Literature-inspired 4×6T design and its placement in the ORCA editor transcript.](/assets/images/submission-20261017/engineering/mre/Figure_01.png){.engineering-figure style="--engineering-figure-width:780px;--engineering-detail-width:1140px"}
 
@@ -989,9 +1007,11 @@ The tested **4×6T MRE configuration was not incorporated into the selected ORCA
 
 ### References {#mre-references}
 
-1. Gleichman, A. J., Kawaguchi, R., Sofroniew, M. V., & Carmichael, S. T. (2023). *A toolbox of astrocyte-specific, serotype-independent adeno-associated viral vectors using microRNA targeting sequences.* Nature Communications, **14**, 7426. https://doi.org/10.1038/s41467-023-42746-w
-2. Chen, C., et al. (2005). *Real-time quantification of microRNAs by stem–loop RT–PCR.* Nucleic Acids Research, **33**(20), e179. https://doi.org/10.1093/nar/gni178
-3. Taschenberger, G., Tereshchenko, J., & Kügler, S. (2017). *A MicroRNA124 Target Sequence Restores Astrocyte Specificity of gfaABC1D-Driven Transgene Expression in AAV-Mediated Gene Transfer.* Molecular Therapy – Nucleic Acids, **8**, 13–25. https://doi.org/10.1016/j.omtn.2017.03.009
+1. Gleichman, A. J., Kawaguchi, R., Sofroniew, M. V., & Carmichael, S. T. (2023). *A toolbox of astrocyte-specific, serotype-independent adeno-associated viral vectors using microRNA targeting sequences.* Nature Communications, **14**, 7426. <https://doi.org/10.1038/s41467-023-42746-w>
+2. Chen, C., et al. (2005). *Real-time quantification of microRNAs by stem–loop RT–PCR.* Nucleic Acids Research, **33**(20), e179. <https://doi.org/10.1093/nar/gni178>
+3. Taschenberger, G., Tereshchenko, J., & Kügler, S. (2017). *A MicroRNA124 Target Sequence Restores Astrocyte Specificity of gfaABC1D-Driven Transgene Expression in AAV-Mediated Gene Transfer.* Molecular Therapy – Nucleic Acids, **8**, 13–25. <https://doi.org/10.1016/j.omtn.2017.03.009>
+
+4. Brown BD, Venneri MA, Zingale A, et al. Endogenous microRNA regulation suppresses transgene expression in hematopoietic lineages and enables stable gene transfer. *Nature Medicine*. 2006;12(5):585–591. <https://doi.org/10.1038/nm1398>
 
 ## ASO {#aso .engineering-chapter-title .control-module-title}
 
@@ -1036,7 +1056,7 @@ We first evaluated whether a suitable ASO-binding site already existed within a 
 We developed a computational screen with three successive components:
 
 1. **Sequence quality:** GC content of 30–70%, no homopolymer longer than three nucleotides, and exclusion of short periodic repeats.
-2. **Human near-match screening:** comparisons against GENCODE v50 mature RNAs and genome-annotation-derived pre-mRNA regions [9](#aso-ref-9), including indels and terminally trimmed near-full windows. Including pre-mRNA accounts for the nuclear activity of RNase H1-dependent ASOs [5](#aso-ref-5). Candidates with any qualifying match at **edit distance (ED) ≤ 2** were rejected.
+2. **Human near-match screening:** comparisons against GENCODE v50 mature RNAs and genome-annotation-derived pre-mRNA regions [9](#aso-ref-9) (annotation framework: [17](#aso-ref-17)), including indels and terminally trimmed near-full windows. Including pre-mRNA accounts for the nuclear activity of RNase H1-dependent ASOs [5](#aso-ref-5). Candidates with any qualifying match at **edit distance (ED) ≤ 2** were rejected.
 3. **RNA accessibility:** RNAplfold estimates for the probability that the complete recognition window was unpaired [10](#aso-ref-10). We used the more conservative result from two parameter settings:
 
    <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mi mathvariant="normal">min</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>P</mi><mrow><mn>240</mn><mi>/</mi><mn>160</mn></mrow></msub><mo>,</mo><mspace width="0.167em" /><msub><mi>P</mi><mrow><mn>360</mn><mi>/</mi><mn>240</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">&#65;&#61;&#92;&#109;&#105;&#110;&#40;&#80;&#95;&#123;&#50;&#52;&#48;&#47;&#49;&#54;&#48;&#125;&#44;&#92;&#44;&#80;&#95;&#123;&#51;&#54;&#48;&#47;&#50;&#52;&#48;&#125;&#41;&#46;</annotation></semantics></math></div>
@@ -1290,6 +1310,8 @@ The **Synthetic ASO Tag** established an externally addressable suppression inte
 
 16. <span id="aso-ref-16" style="scroll-margin-top:72px"></span>Gene Ontology Consortium. Gene Ontology overview: functional annotations and biological-process terms. Accessed 20 October 2026. [Source](https://geneontology.org/docs/ontology-documentation/).
 
+17. <span id="aso-ref-17" style="scroll-margin-top:72px"></span>Mudge JM, Carbonell-Sala S, Diekhans M, et al. GENCODE 2025: reference gene annotation for human and mouse. *Nucleic Acids Research*. 2025;53(D1):D966–D975. <https://doi.org/10.1093/nar/gkae1078>
+
 <!-- Historical Figure 5 includes a 4×6T element in the computational reference; it does not establish that element in the final experimental cassette. -->
 
 ## Cre–loxP {#cre-loxp .engineering-chapter-title .control-module-title}
@@ -1314,7 +1336,7 @@ We proposed a Cre–loxP off-switch to stop further ORCA production by excising 
 
 ORCA edits RNA without permanently altering the APOE genome, but transient RNA edits do not imply transient editor activity. Recombinant AAV genomes can persist predominantly as episomal DNA and sustain transgene expression, particularly in non-dividing cells [1]. An AAV-delivered ORCA cassette could therefore continue producing editor long after its initial administration.
 
-Our ASO module addresses expression at the transcript level. For a more durable intervention, we also considered **removing the ORCA coding sequence itself**, so that successfully recombined templates could no longer generate new editor molecules.
+Our ASO module addresses expression at the transcript level, consistent with RNase H1-dependent cleavage of target RNA [9]. For a more durable intervention, we also considered **removing the ORCA coding sequence itself**, so that successfully recombined templates could no longer generate new editor molecules.
 
 #### Selecting the Recombination Architecture {#cre-loxp-selecting-the-recombination-architecture}
 
@@ -1370,14 +1392,16 @@ We selected **Cre–loxP as a proposed DNA-level shutdown mechanism** for ORCA, 
 
 ### References {#cre-loxp-references}
 
-1. Schultz BR, Chamberlain JS. Recombinant adeno-associated virus transduction and integration. *Molecular Therapy*. 2008;16(7):1189–1199. https://doi.org/10.1038/mt.2008.103
-2. Kosicki M, Tomberg K, Bradley A. Repair of double-strand breaks induced by CRISPR–Cas9 leads to large deletions and complex rearrangements. *Nature Biotechnology*. 2018;36:765–771. https://doi.org/10.1038/nbt.4192
-3. Ghosh P, Kim AI, Hatfull GF. The orientation of mycobacteriophage Bxb1 integration is solely dependent on the central dinucleotide of attP and attB. *Molecular Cell*. 2003;12(5):1101–1111. https://doi.org/10.1016/S1097-2765(03)00444-1
-4. Rutherford K, Van Duyne GD. The ins and outs of serine integrase site-specific recombination. *Current Opinion in Structural Biology*. 2014;24:125–131. https://doi.org/10.1016/j.sbi.2014.01.003
-5. Saunders A, Johnson CA, Sabatini BL. Novel recombinant adeno-associated viruses for Cre activated and inactivated transgene expression in neurons. *Frontiers in Neural Circuits*. 2012;6:47. https://doi.org/10.3389/fncir.2012.00047
-6. Kaspar BK, et al. Adeno-associated virus effectively mediates conditional gene modification in the brain. *Proceedings of the National Academy of Sciences*. 2002;99(4):2320–2325. https://doi.org/10.1073/pnas.042678699
-7. Wu Z, et al. Gene therapy conversion of striatal astrocytes into GABAergic neurons in mouse models of Huntington's disease. *Nature Communications*. 2020;11:1105. https://doi.org/10.1038/s41467-020-14855-3
-8. Prasad S, et al. Immune responses and immunosuppressive strategies for adeno-associated virus-based gene therapy for treatment of central nervous system disorders: Current knowledge and approaches. *Human Gene Therapy*. 2022;33(23–24):1228–1245. https://doi.org/10.1089/hum.2022.138
+1. Schultz BR, Chamberlain JS. Recombinant adeno-associated virus transduction and integration. *Molecular Therapy*. 2008;16(7):1189–1199. <https://doi.org/10.1038/mt.2008.103>
+2. Kosicki M, Tomberg K, Bradley A. Repair of double-strand breaks induced by CRISPR–Cas9 leads to large deletions and complex rearrangements. *Nature Biotechnology*. 2018;36:765–771. <https://doi.org/10.1038/nbt.4192>
+3. Ghosh P, Kim AI, Hatfull GF. The orientation of mycobacteriophage Bxb1 integration is solely dependent on the central dinucleotide of attP and attB. *Molecular Cell*. 2003;12(5):1101–1111. <https://doi.org/10.1016/S1097-2765(03)00444-1>
+4. Rutherford K, Van Duyne GD. The ins and outs of serine integrase site-specific recombination. *Current Opinion in Structural Biology*. 2014;24:125–131. <https://doi.org/10.1016/j.sbi.2014.01.003>
+5. Saunders A, Johnson CA, Sabatini BL. Novel recombinant adeno-associated viruses for Cre activated and inactivated transgene expression in neurons. *Frontiers in Neural Circuits*. 2012;6:47. <https://doi.org/10.3389/fncir.2012.00047>
+6. Kaspar BK, et al. Adeno-associated virus effectively mediates conditional gene modification in the brain. *Proceedings of the National Academy of Sciences*. 2002;99(4):2320–2325. <https://doi.org/10.1073/pnas.042678699>
+7. Wu Z, et al. Gene therapy conversion of striatal astrocytes into GABAergic neurons in mouse models of Huntington's disease. *Nature Communications*. 2020;11:1105. <https://doi.org/10.1038/s41467-020-14855-3>
+8. Prasad S, et al. Immune responses and immunosuppressive strategies for adeno-associated virus-based gene therapy for treatment of central nervous system disorders: Current knowledge and approaches. *Human Gene Therapy*. 2022;33(23–24):1228–1245. <https://doi.org/10.1089/hum.2022.138>
+
+9. Liang XH, Sun H, Nichols JG, et al. RNase H1-Dependent Antisense Oligonucleotides Are Robustly Active in Directing RNA Cleavage in Both the Cytoplasm and the Nucleus. *Molecular Therapy*. 2017;25(9):2075–2092. <https://doi.org/10.1016/j.ymthe.2017.06.002>
 
 ## AAV9 {#deliver .engineering-chapter-title}
 
@@ -1398,7 +1422,7 @@ Unlike permanent DNA modification, RNA editing must act on a continuously renewe
 
 We considered three delivery approaches (Figure 1). Lipid nanoparticles (LNPs) offer a flexible, nonviral way to deliver editor-encoding mRNA, but their typically transient expression and the challenges of CNS targeting would require further optimization for our application.[2,3] Extracellular vesicles (EVs) have demonstrated potential for brain-directed nucleic acid delivery, yet cargo loading, product heterogeneity, and reproducible manufacturing remain substantial engineering tasks.[4,5] AAV, by contrast, offers extensive CNS-delivery precedent, the potential for prolonged expression in relatively nondividing cells, and established vector-production workflows.[6,7]
 
-AAV also entails trade-offs, notably packaging limits, immune responses, and difficulties with repeat administration. We selected it because its strengths align with ORCA's current engineering needs—not because it is universally superior to nonviral carriers.
+AAV also entails trade-offs, notably packaging limits, immune responses, and difficulties with repeat administration; CNS-directed AAV studies document these immune and repeat-dosing challenges [14]. We selected it because its strengths align with ORCA's current engineering needs—not because it is universally superior to nonviral carriers.
 
 ![Comparison of LNP, EV and AAV delivery strategies](/assets/images/submission-20261017/engineering/deliver/Figure_01.png){.engineering-figure style="--engineering-figure-width:760px;--engineering-detail-width:960px"}
 
@@ -1410,7 +1434,7 @@ The rationale for combining AAV with ORCA is reciprocal: **AAV offers ORCA time,
 
 **Time — sustained editor availability.** Editing APOE4 mRNA does not change the underlying APOE4 gene. As new transcripts are synthesized, continued production of the editor could maintain opportunities for C-to-U conversion. AAV-mediated expression offers a potential solution to this recurring need. The same persistence also increases the importance of regulating where and for how long the editor acts, connecting delivery to our separate CONTROL engineering routes.
 
-**Space — a compact, regulatable payload.** A conventional AAV genome accommodates approximately 4.7 kb, including the sequences required for vector function.[10] Some RNA-editing platforms built around large RNA-binding proteins face considerable constraints within that limit: the original Cas13-based REPAIR editor, for example, has a 4,473-bp editor coding sequence before promoter and additional elements are considered.[8] ORCA instead combines programmable PUF recognition and APOBEC catalysis in a guide-RNA-free editor of **2,157 bp**, including its linker, FLAG tag, and stop codon.[9]
+**Space — a compact, regulatable payload.** A conventional AAV genome accommodates approximately 4.7 kb, including the sequences required for vector function.[10] Some RNA-editing platforms built around large RNA-binding proteins face considerable constraints within that limit: the original Cas13-based REPAIR editor, for example, has a 4,473-bp editor coding sequence before promoter and additional elements are considered.[8] ORCA instead combines programmable PUF recognition and APOBEC catalysis in a guide-RNA-free architecture [9]. Our editor coding sequence is **2,157 bp**, including its linker, FLAG tag, and stop codon.
 
 We also assessed whether this compact architecture could accommodate candidate regulatory modules. A theoretical budget containing ORCA (2,157 bp), the gfaABC1D promoter (683 bp), a 4×6T MRE cassette (548 bp), an ASO tag (36 bp), and two loxP sites (68 bp) totals **3,492 bp**; adding two estimated AAV ITRs yields approximately **3,782 bp**. This was a design-space calculation, not a completed expression cassette: it omits other required sequences, and the MRE module was ultimately not retained. Separately, the ITR-flanked region reported for our constructed AAV–ORCA design was **3,748 bp**. These are different sequence configurations and should not be treated as the same length measurement.
 
@@ -1514,31 +1538,33 @@ AAV9 engineering progressed from reporter-based packaging to **GFA–ORCA and CM
 
 ### References {#deliver-references}
 
-[1] Mahley RW. Central nervous system lipoproteins: ApoE and regulation of cholesterol metabolism. *Arterioscler Thromb Vasc Biol.* 2016. https://doi.org/10.1161/ATVBAHA.116.307023
+[1] Mahley RW. Central nervous system lipoproteins: ApoE and regulation of cholesterol metabolism. *Arterioscler Thromb Vasc Biol.* 2016. <https://doi.org/10.1161/ATVBAHA.116.307023>
 
-[2] Pardi N, et al. Expression kinetics of nucleoside-modified mRNA delivered in lipid nanoparticles to mice by various routes. *J Control Release.* 2015. https://doi.org/10.1016/j.jconrel.2015.08.007
+[2] Pardi N, et al. Expression kinetics of nucleoside-modified mRNA delivered in lipid nanoparticles to mice by various routes. *J Control Release.* 2015. <https://doi.org/10.1016/j.jconrel.2015.08.007>
 
-[3] Cao D, et al. Lipid nanoparticles for mRNA delivery in brain via systemic administration. *Sci Adv.* 2025. https://doi.org/10.1126/sciadv.adw0730
+[3] Cao D, et al. Lipid nanoparticles for mRNA delivery in brain via systemic administration. *Sci Adv.* 2025. <https://doi.org/10.1126/sciadv.adw0730>
 
-[4] Alvarez-Erviti L, et al. Delivery of siRNA to the mouse brain by systemic injection of targeted exosomes. *Nat Biotechnol.* 2011. https://doi.org/10.1038/nbt.1807
+[4] Alvarez-Erviti L, et al. Delivery of siRNA to the mouse brain by systemic injection of targeted exosomes. *Nat Biotechnol.* 2011. <https://doi.org/10.1038/nbt.1807>
 
-[5] Welsh JA, et al. Minimal information for studies of extracellular vesicles (MISEV2023). *J Extracell Vesicles.* 2024. https://doi.org/10.1002/jev2.12404
+[5] Welsh JA, et al. Minimal information for studies of extracellular vesicles (MISEV2023): From basic to advanced approaches. *J Extracell Vesicles.* 2024. <https://doi.org/10.1002/jev2.12404>
 
-[6] Davidsson M, et al. A comparison of AAV-vector production methods for gene therapy and preclinical assessment. *Sci Rep.* 2020. https://doi.org/10.1038/s41598-020-78521-w
+[6] Davidsson M, et al. A comparison of AAV-vector production methods for gene therapy and preclinical assessment. *Sci Rep.* 2020. <https://doi.org/10.1038/s41598-020-78521-w>
 
-[7] Chu Y, et al. Long-term post-mortem studies following neurturin gene therapy in patients with advanced Parkinson's disease. *Brain.* 2020. https://doi.org/10.1093/brain/awaa020
+[7] Chu Y, et al. Long-term post-mortem studies following neurturin gene therapy in patients with advanced Parkinson's disease. *Brain.* 2020. <https://doi.org/10.1093/brain/awaa020>
 
-[8] Cox DBT, et al. RNA editing with CRISPR-Cas13. *Science.* 2017. https://doi.org/10.1126/science.aaq0180
+[8] Cox DBT, et al. RNA editing with CRISPR-Cas13. *Science.* 2017. <https://doi.org/10.1126/science.aaq0180>
 
-[9] Han W, et al. Programmable RNA base editing with a single gRNA-free enzyme. *Nucleic Acids Res.* 2022. https://doi.org/10.1093/nar/gkac713
+[9] Han W, et al. Programmable RNA base editing with a single gRNA-free enzyme. *Nucleic Acids Res.* 2022. <https://doi.org/10.1093/nar/gkac713>
 
-[10] Maurer AC, Weitzman MD. Adeno-associated virus genome interactions important for vector production and transduction. *Hum Gene Ther.* 2020. https://doi.org/10.1089/hum.2020.069
+[10] Maurer AC, Weitzman MD. Adeno-associated virus genome interactions important for vector production and transduction. *Hum Gene Ther.* 2020. <https://doi.org/10.1089/hum.2020.069>
 
-[11] Han W, et al. Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. *Nat Commun.* 2025. https://doi.org/10.1038/s41467-025-64748-6
+[11] Han W, et al. Effective in vivo RNA base editing via engineered cytidine deaminase APOBECs fused with PUF proteins. *Nat Commun.* 2025. <https://doi.org/10.1038/s41467-025-64748-6>
 
-[12] Foust KD, et al. Intravascular AAV9 preferentially targets neonatal neurons and adult astrocytes. *Nat Biotechnol.* 2009. https://doi.org/10.1038/nbt.1515
+[12] Foust KD, et al. Intravascular AAV9 preferentially targets neonatal neurons and adult astrocytes. *Nat Biotechnol.* 2009. <https://doi.org/10.1038/nbt.1515>
 
-[13] Gray SJ, et al. Preclinical differences of intravascular AAV9 delivery to neurons and glia. *Mol Ther.* 2011. https://doi.org/10.1038/mt.2011.72
+[13] Gray SJ, et al. Preclinical differences of intravascular AAV9 delivery to neurons and glia: A comparative study of adult mice and nonhuman primates. *Mol Ther.* 2011. <https://doi.org/10.1038/mt.2011.72>
+
+[14] Prasad S, Dimmock DP, Greenberg B, et al. Immune Responses and Immunosuppressive Strategies for Adeno-Associated Virus-Based Gene Therapy for Treatment of Central Nervous System Disorders: Current Knowledge and Approaches. *Human Gene Therapy*. 2022;33(23-24):1228–1245. <https://doi.org/10.1089/hum.2022.138>
 
 ## SONAR {#measure .engineering-chapter-title}
 
@@ -1567,13 +1593,13 @@ EGFP offered a familiar optical output across these platforms (Figure 1). An edi
 
 ![Figure 1 — EGFP optical output](/assets/images/submission-20261017/engineering/measure/figure-01.png){.engineering-figure style="--engineering-figure-width:760px;--engineering-detail-width:960px"}
 
-We positioned the programmable PUF recognition sequence and an editable **CGA** codon between EGFP and an *E. coli* dihydrofolate reductase-derived destabilizing domain (**ecDHFR-DD**). Without editing, translation continues through the CGA codon into DD, yielding a less stable EGFP–DD product. Editing changes **CGA to UGA**, terminating translation before DD so that EGFP can accumulate without the destabilizing tag (Figures 2 and 6). Because trimethoprim (TMP) stabilizes ecDHFR-DD, it also provides an independent way to probe the proposed mechanism [1].
+We positioned the programmable PUF recognition sequence and an editable **CGA** codon between EGFP and an *E. coli* dihydrofolate reductase-derived destabilizing domain (**ecDHFR-DD**). Without editing, translation continues through the CGA codon into DD, yielding a less stable EGFP–DD product. Editing changes **CGA to UGA**, a stop codon in the standard genetic code [5], terminating translation before DD so that EGFP can accumulate without the destabilizing tag (Figures 2 and 6). Because trimethoprim (TMP) stabilizes ecDHFR-DD, it also provides an independent way to probe the proposed mechanism [1].
 
 ![Figure 2 — Editing switch and destabilizing domain](/assets/images/submission-20261017/engineering/measure/figure-02.png){.engineering-figure style="--engineering-figure-width:760px;--engineering-detail-width:960px"}
 
 #### Separating reporter expression from its green output {#measure-separating-reporter-expression-from-its-green-output}
 
-We added **mCherry–P2A** upstream of EGFP to provide an internal expression reference. P2A supports production of separate upstream and downstream protein products from the same transcript [3]. Red fluorescence can therefore identify reporter-expressing cells and contextualize their green output, although it cannot eliminate every effect of protein stability or cellular variation (Figure 3).
+We added **mCherry–P2A** upstream of EGFP to provide an internal expression reference. P2A supports production of separate upstream and downstream protein products from the same transcript [3]. Systematic comparisons of 2A constructs show that gene position and construct context can affect the relative protein outputs [7]. Red fluorescence can therefore identify reporter-expressing cells and contextualize their green output, although it cannot eliminate every effect of protein stability or cellular variation (Figure 3).
 
 ![Figure 3 — mCherry expression reference](/assets/images/submission-20261017/engineering/measure/figure-03.png){.engineering-figure style="--engineering-figure-width:760px;--engineering-detail-width:960px"}
 
@@ -1711,9 +1737,9 @@ RepOpen offered a rational route to altering local RNA structure, but the fluore
 
 ### From Fluorescence to Measurement {#measure-from-fluorescence-to-measurement}
 
-The first five cycles established a fluorescence switch and improved how we observe its output. They also exposed a central problem: **green fluorescence is shaped by expression and protein processing, not just by the edited RNA fraction**. We therefore separated reporter engineering from the interpretation of its optical signals.
+The first five cycles established a fluorescence switch and improved how we observe its output. They also exposed a central problem: **green fluorescence is shaped by expression and protein processing, not just by the edited RNA fraction**. We therefore separated reporter engineering from the interpretation of its optical signals. Fluorescent-protein maturation is another source of signal dependence: Balleza et al. characterized this effect in *E. coli* [8]. That work supports the general caveat; it does not provide maturation constants for our mammalian-cell experiments.
 
-The **SONAR Measurement Pipeline** follows four layers. **Layer 0** establishes background correction and defined cell populations. **Layer 1** calculates the *Reporter Activity Score (RAS)* from background-corrected, linear EGFP and mCherry signals within a specified population. **Layer 2** seeks an empirical *Relative Editing Score (RES)* using mixtures of the preset AC and INAC references. **Layer 3** explores an optional *Predicted Editing Rate (PER)* by relating optical measures to independent molecular measurements. For a selected cell population, **RAS = Σ(EGFP − green background) / Σ(mCherry − red background)**, using paired linear intensities from the same cells; it is a dimensionless ratio of sums. RAS<sub>R</sub> uses the reporter-selected population and RAS<sub>RB</sub> its BFP-positive co-expression subset. In Figure 18, the **co-expression fraction (CEF) = N(RB)/N(R)** is that subset's fraction of reporter-selected cells (shown as %). Detailed population rules, RES calibration and the proposed PER relationship are given on [SONAR Measurement](/measurement#4-1-defining-what-is-measured).
+The **SONAR Measurement Pipeline** follows four layers. **Layer 0** establishes background correction and defined cell populations. **Layer 1** calculates the *Reporter Activity Score (RAS)* from background-corrected, linear EGFP and mCherry signals within a specified population. **Layer 2** seeks an empirical *Relative Editing Score (RES)* using mixtures of the preset AC and INAC references. **Layer 3** explores an optional *Predicted Editing Rate (PER)* by relating optical measures to independent molecular measurements. For a selected cell population, **RAS = Σ(EGFP − green background) / Σ(mCherry − red background)**, using paired linear intensities from the same cells; it is a dimensionless ratio of sums. RAS<sub>R</sub> uses the reporter-selected population and RAS<sub>RB</sub> its BFP-positive co-expression subset. In Figure 18, the **co-expression fraction (CEF) = N(RB)/N(R)** is that subset's fraction of reporter-selected cells (shown as %). Detailed population rules, RES calibration and the proposed PER relationship are given on [SONAR Measurement](/measurement#4-1-defining-what-is-measured). General flow-cytometry guidance supports documenting controls and population selection [9]; RAS, RES and PER are our project-specific definitions.
 
 A crucial distinction guided the next experiments: **the AC fraction of mixed reporter DNA is not the fraction of edited RNA**. A reference series can characterize how the optical system responds to known input mixtures, but it cannot be presumed to measure an absolute editing percentage or to be invertible at every point.
 
@@ -1829,13 +1855,15 @@ We used the same six-dose OpenA-1 design, keeping **100 ng reporter** and **1 µ
 
 The fraction of reporter-positive cells with detectable BFP rose from approximately **6.82% at the lowest nonzero editor dose** to **40.21% at 1:8**. However, RAS did not increase monotonically, whether calculated for all reporter-positive cells or only the BFP-positive co-expression population. In the overall reporter population, mean RAS was approximately **0.635 without editor**, declined at intermediate doses, and did not show a sustained increase at higher inputs.
 
+For methodological context, EditR demonstrates quantification of base-editing signals from Sanger chromatograms [10]; our analysis used the project-specific peak ratios below and did not run EditR. Phred describes base-call error probabilities [11], which assess sequence-call confidence rather than the fraction of edited RNA.
+
 Sequencing provided a different pattern. **47 of 48 Sanger reads** passed target-site quality checks. Compared with the no-editor control, higher-editor samples displayed a stronger substitution signal at C280, consistent with the intended RNA **C-to-U** event (C/T in forward cDNA reads; G/A in reverse reads). The **background-corrected relative substitution-signal index** increased overall with editor dose, reaching approximately **0.202 at 1:8**. For each accepted forward/reverse pair, the index is **[(T/(C+T) − b<sub>F</sub>) + (A/(G+A) − b<sub>R</sub>)]/2**, where b<sub>F</sub> and b<sub>R</sub> are direction-specific no-editor backgrounds. Paired technical labels are then averaged within each transfection well. This dimensionless value is a *relative chromatogram-derived index*, **not a calibrated 20.2% RNA-editing rate**; [Measurement §6.3](/measurement#6-3-from-bidirectional-sanger-peaks-to-a-molecular-index) documents the extraction and quality checks.
 
 The resulting divergence was informative: **BFP-positive co-expression and target-site sequence signals increased with editor input, while normalized green output did not**. Matching RAS to the chromatogram index across transfection wells did not yield a stable predictive relationship. Moreover, the previous AC/INAC references were collected using different reporter/editor conditions and could not simply be transferred to OpenA-1 to obtain a validated RES–editing-rate relationship.
 
 ##### Learn {#measure-cycle-10-learn}
 
-SONAR successfully connected fluorescence measurements with independent evidence of sequence changes at a defined reporter target, but **PER remained exploratory**. Predicting an absolute RNA-editing fraction will require calibrated molecular measurements and optical references matched to the relevant reporter and editor context. These constraints, along with the mathematical treatment of RAS, RES, and PER, form the basis of the accompanying Measurement page.
+SONAR successfully connected fluorescence measurements with independent evidence of sequence changes at a defined reporter target, but **PER remained exploratory**. Predicting an absolute RNA-editing fraction will require calibrated molecular measurements and optical references matched to the relevant reporter and editor context. These constraints, along with the mathematical treatment of RAS, RES, and PER, form the basis of the accompanying Measurement page. Its proposed held-out evaluation also needs to respect dependence among measurements, a general concern in cross-validation of structured data [12]; this methodological reference does not validate the current PER model.
 
 ![Figure 18 — Flow and sequencing evidence](/assets/images/submission-20261017/engineering/measure/figure-18.png){.engineering-figure style="--engineering-figure-width:820px;--engineering-detail-width:960px"}
 
@@ -1855,12 +1883,24 @@ SONAR developed into a **modular, multichannel reporter platform** supported by 
 
 ### References {#measure-references}
 
-1. Iwamoto M, Björklund T, Lundberg C, Kirik D, Wandless TJ. A general chemical method to regulate protein stability in the mammalian central nervous system. *Chemistry & Biology*. 2010;17(9):981–988. https://doi.org/10.1016/j.chembiol.2010.07.009
-2. ViennaRNA Package. *RNAplfold* and *RNAfold* manuals. https://www.tbi.univie.ac.at/RNA/RNAplfold and https://www.tbi.univie.ac.at/RNA/RNAfold
-3. Kim JH, et al. High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. *PLoS ONE*. 2011;6(4):e18556. https://doi.org/10.1371/journal.pone.0018556
-4. Engler C, Kandzia R, Marillonnet S. A one pot, one step, precision cloning method with high throughput capability. *PLoS ONE*. 2008;3(11):e3647. https://doi.org/10.1371/journal.pone.0003647
-5. NCBI. *The Genetic Codes: Standard Code (transl_table=1).* https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
+1. Iwamoto M, Björklund T, Lundberg C, Kirik D, Wandless TJ. A general chemical method to regulate protein stability in the mammalian central nervous system. *Chemistry & Biology*. 2010;17(9):981–988. <https://doi.org/10.1016/j.chembiol.2010.07.009>
+2. ViennaRNA Package. *RNAplfold* and *RNAfold* manuals. <https://www.tbi.univie.ac.at/RNA/RNAplfold> and <https://www.tbi.univie.ac.at/RNA/RNAfold>
+3. Kim JH, et al. High cleavage efficiency of a 2A peptide derived from porcine teschovirus-1 in human cell lines, zebrafish and mice. *PLoS ONE*. 2011;6(4):e18556. <https://doi.org/10.1371/journal.pone.0018556>
+4. Engler C, Kandzia R, Marillonnet S. A one pot, one step, precision cloning method with high throughput capability. *PLoS ONE*. 2008;3(11):e3647. <https://doi.org/10.1371/journal.pone.0003647>
+5. NCBI. *The Genetic Codes: Standard Code (transl_table=1).* <https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi>
 6. SUSTech-BIO. *Rep-gib WT synonymous StemBreak design*. 1 September 2026. Internal project record: [original design note (Chinese, Markdown)](static/evidence/sonar-stembreak/StemBreak_synonymous_design_2026-09-01.md), [RNAplfold accessibility table (CSV)](/static/evidence/sonar-stembreak/rnaplfold_accessibility.csv) and [source checksums](/static/evidence/sonar-stembreak/provenance.json). These are computational design records, distinct from the GSGS-insertion RepOpen_HR proposal.
+
+7. Liu Z, Chen O, Wall JBJ, et al. Systematic comparison of 2A peptides for cloning multi-genes in a polycistronic vector. *Scientific Reports*. 2017;7(1):2193. <https://doi.org/10.1038/s41598-017-02460-2>
+
+8. Balleza E, Kim JM, Cluzel P. Systematic characterization of maturation time of fluorescent proteins in living cells. *Nature Methods*. 2018;15(1):47–51. <https://doi.org/10.1038/nmeth.4509>
+
+9. Cossarizza A, Chang HD, Radbruch A, et al. Guidelines for the use of flow cytometry and cell sorting in immunological studies (third edition). *European Journal of Immunology*. 2021;51(12):2708–3145. <https://doi.org/10.1002/eji.202170126>
+
+10. Kluesner MG, Nedveck DA, Lahr WS, et al. EditR: A Method to Quantify Base Editing from Sanger Sequencing. *The CRISPR Journal*. 2018;1(3):239–250. <https://doi.org/10.1089/crispr.2018.0014>
+
+11. Ewing B, Green P. Base-Calling of Automated Sequencer Traces Using Phred. II. Error Probabilities. *Genome Research*. 1998;8(3):186–194. <https://doi.org/10.1101/gr.8.3.186>
+
+12. Roberts DR, Bahn V, Ciuti S, et al. Cross‐validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. *Ecography*. 2017;40(8):913–929. <https://doi.org/10.1111/ecog.02881>
 
 ## Model
 
@@ -1907,7 +1947,7 @@ The initial workflow used Q20 filtering, without false discovery rate (FDR) cont
 
 ##### Build {#model-rna-seq-cycle-01-build}
 
-Adapter trimming used fastp (Chen et al., 2018), followed by splice-aware alignment with STAR (Dobin et al., 2013). GATK prepared duplicate-marked, splice-processed alignments for site analysis (McKenna et al., 2010).
+Adapter trimming used fastp (Chen et al., 2018), followed by splice-aware alignment with STAR (Dobin et al., 2013). GATK prepared duplicate-marked, splice-processed alignments for site analysis (McKenna et al., 2010; SplitNCigarReads documentation: GATK Team, 2022).
 
 Base and mapping quality thresholds were raised above Q30, implemented as BQ≥31 and MAPQ≥31. Phred quality relates to predicted error probability through the following relationship (Illumina, 2014):
 
@@ -2069,6 +2109,8 @@ Callable-site density replaced counts as the basis for chromosome comparisons. W
 
 11. Zhao, Y.-Y., Mao, M.-W., Zhang, W.-J., Wang, J., Li, H.-T., Yang, Y., Wang, Z., & Wu, J.-W. (2018). Expanding RNA binding specificity and affinity of engineered PUF domains. *Nucleic Acids Research, 46*(9), 4771–4782. [doi: 10.1093/nar/gky134](<https://doi.org/10.1093/nar/gky134>)
 
+12. GATK Team. *SplitNCigarReads*. Broad Institute tool documentation. 2022. [Source](https://gatk.broadinstitute.org/hc/en-us/articles/5257865725467-SplitNCigarReads).
+
 
 ---
 
@@ -2081,7 +2123,7 @@ Specificity ranking and structure-conditioned design
 
 Module 2 combines assay-informed specificity ranking with structure-conditioned generation of PUF variants. Two experimental batches supplied 81 constructs, including 66 with complete measurements at target C388 and bystanders C295 and C871. Available endpoint measurements from the remaining constructs also contributed to training.
 
-The workflow progressed from AlphaFold 3 contact probabilities to the PUF-ESM Specificity Ranker, integrating substitution identity, an evolutionary prior and three-endpoint regression. Experimental feedback guided representation and evaluation choices. Structure-conditioned generation broadened the design library to additional recognition and scaffold positions.
+The workflow progressed from AlphaFold 3 contact probabilities to the PUF-ESM Specificity Ranker, integrating substitution identity, an evolutionary prior and three-endpoint regression. Experimental feedback guided representation and evaluation choices. Published repeat-specific binding maps provide biological context for treating PUF recognition as context dependent (Zhou et al., 2021). Structure-conditioned generation broadened the design library to additional recognition and scaffold positions.
 
 **Main results.** In grouped evaluation of 66 constructs, the ranker achieved Spearman ρ = 0.405 and recovered 20 of the measured Top30, versus 13.64 expected randomly. Model-guided testing also identified an SNE construct with increased C388 editing and reduced C295 and C871 signals relative to its matched control. These results linked candidate prioritization to an improved target–bystander balance.
 
@@ -2195,7 +2237,7 @@ We read layers 1–12, masked each mutated position in the reference sequence, a
 
 <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>s</mi><mi>ℓ</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mi>M</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">[</mo><mi mathvariant="normal">log</mi><msub><mi>p</mi><mi>ℓ</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>∣</mo><msub><mi>a</mi><mrow><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi></mrow><mo>,</mo><mi>i</mi><mo>←</mo><mo stretchy="false" form="prefix">[</mo><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">A</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">K</mi></mrow><mo stretchy="false" form="postfix">]</mo></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi mathvariant="normal">log</mi><msub><mi>p</mi><mi>ℓ</mi></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>a</mi><mrow><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi></mrow><mo>,</mo><mi>i</mi></mrow></msub><mo>∣</mo><msub><mi>a</mi><mrow><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">f</mi></mrow><mo>,</mo><mi>i</mi><mo>←</mo><mo stretchy="false" form="prefix">[</mo><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">A</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">K</mi></mrow><mo stretchy="false" form="postfix">]</mo></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><mspace width="2.0em" /><mi>ℓ</mi><mo>∈</mo><mo stretchy="false" form="prefix">{</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mn>12</mn><mo stretchy="false" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">&#10;&#115;&#95;&#123;&#92;&#101;&#108;&#108;&#125;&#40;&#97;&#41;&#61;&#92;&#115;&#117;&#109;&#95;&#123;&#105;&#92;&#105;&#110;&#32;&#77;&#125;&#92;&#108;&#101;&#102;&#116;&#91;&#10;&#92;&#108;&#111;&#103;&#32;&#112;&#95;&#123;&#92;&#101;&#108;&#108;&#125;&#40;&#97;&#95;&#105;&#92;&#109;&#105;&#100;&#32;&#97;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#114;&#101;&#102;&#125;&#44;&#105;&#92;&#108;&#101;&#102;&#116;&#97;&#114;&#114;&#111;&#119;&#91;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#77;&#65;&#83;&#75;&#125;&#93;&#125;&#41;&#10;&#45;&#92;&#108;&#111;&#103;&#32;&#112;&#95;&#123;&#92;&#101;&#108;&#108;&#125;&#40;&#97;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#114;&#101;&#102;&#125;&#44;&#105;&#125;&#92;&#109;&#105;&#100;&#32;&#97;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#114;&#101;&#102;&#125;&#44;&#105;&#92;&#108;&#101;&#102;&#116;&#97;&#114;&#114;&#111;&#119;&#91;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#77;&#65;&#83;&#75;&#125;&#93;&#125;&#41;&#10;&#92;&#114;&#105;&#103;&#104;&#116;&#93;&#44;&#92;&#113;&#113;&#117;&#97;&#100;&#32;&#92;&#101;&#108;&#108;&#92;&#105;&#110;&#92;&#123;&#49;&#44;&#92;&#108;&#100;&#111;&#116;&#115;&#44;&#49;&#50;&#92;&#125;&#46;&#10;</annotation></semantics></math></div>
 
-Layers 1–11 passed through the frozen final encoder normalization and vocabulary head; layer 12 used its native normalized output. Each layer's score was paired with identical one-hot features, samples, groups and ridge parameter searches. A nested evaluation selected the layer and regression parameters together within inner validation, testing the complete selection procedure. This separation of model selection from outer evaluation addresses selection bias in cross-validation (Varma & Simon, 2006).
+Layers 1–11 passed through the frozen final encoder normalization and vocabulary head; layer 12 used its native normalized output. Each layer's score was paired with identical one-hot features, samples, groups and ridge parameter searches. A nested evaluation selected the layer and regression parameters together within inner validation, testing the complete selection procedure. This separation of model selection from outer evaluation addresses selection bias in cross-validation (Varma & Simon, 2006) and the broader concern of information leakage in model evaluation (Kapoor & Narayanan, 2023).
 
 ##### Test {#model-puf-cycle-04-test}
 
@@ -2297,6 +2339,10 @@ The final workflow combined a supervised ranker with structure-conditioned explo
 
 12. Zhao, Y.-Y., Mao, M.-W., Zhang, W.-J., Wang, J., Li, H.-T., Yang, Y., Wang, Z., & Wu, J.-W. (2018). Expanding RNA binding specificity and affinity of engineered PUF domains. *Nucleic Acids Research, 46*(9), 4771–4782. [doi: 10.1093/nar/gky134](<https://doi.org/10.1093/nar/gky134>)
 
+13. Zhou W, Melamed D, Banyai G, et al. Expanding the binding specificity for RNA recognition by a PUF domain. *Nature Communications*. 2021;12(1):5107. <https://doi.org/10.1038/s41467-021-25433-6>
+
+14. Kapoor S, Narayanan A. Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*. 2023;4(9):100804. <https://doi.org/10.1016/j.patter.2023.100804>
+
 
 ---
 
@@ -2309,7 +2355,7 @@ Refining catalytic-module structural models
 
 Module 3 links APOBEC structural modeling with experimental comparisons of substrate preference and activity. Published PUF–APOBEC designs provided the platform context (Wang et al., 2002; Han et al., 2022, 2025). Parent and variant sequences, functional measurements and matched controls defined the comparisons examined by the model.
 
-We combined contact decomposition, parent-corrected substrate differences, parallel protein–RNA and protein-only predictions, and contact-network clustering. Successive revisions separated contact types, accounted for parental substrate effects and stabilized structural groups. The resulting maps and clusters informed candidate combinations and mechanistic comparisons.
+We combined contact decomposition, parent-corrected substrate differences, parallel protein–RNA and protein-only predictions, and contact-network clustering. Successive revisions separated contact types, accounted for parental substrate effects and stabilized structural groups. The resulting maps and clusters informed candidate combinations and mechanistic comparisons. Transcriptome-wide RNA editing reported for DNA base editors illustrates why local structural or substrate-preference metrics cannot establish a complete off-target profile (Grünewald et al., 2019). That evidence concerns a different editor system and serves here as an assessment limitation.
 
 **Main results.** Combination screening identified G27T–K30H–Q58M with a GCG/GCA editing ratio of 2.156 and retention of 77.3% of parental target activity. Matched same-site and sequence-background comparisons further showed how residue choices shaped substrate preference and activity. These experimental outcomes connected structural hypotheses with a lead that balanced both objectives.
 
@@ -2491,6 +2537,8 @@ We selected **spectral clustering on the 77 highest-variance contact pairs** as 
 
 11. Wolfe, A. D., Li, S., Goedderz, C., & Chen, X. S. (2020). The structure of APOBEC1 and insights into its RNA and DNA substrate selectivity. *NAR Cancer, 2*(4), Article zcaa027. [doi: 10.1093/narcan/zcaa027](<https://doi.org/10.1093/narcan/zcaa027>)
 
+12. Grünewald J, Zhou R, Garcia SP, et al. Transcriptome-wide off-target RNA editing induced by CRISPR-guided DNA base editors. *Nature*. 2019;569(7756):433–437. <https://doi.org/10.1038/s41586-019-1161-z>
+
 
 ---
 
@@ -2573,7 +2621,7 @@ Stage I used a classification head to predict whether an input region contained 
 
 <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mi>W</mi><annotation encoding="application/x-tex">&#87;</annotation></semantics></math></span> denotes the input region, <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><msub><mi>y</mi><mi>W</mi></msub><annotation encoding="application/x-tex">&#121;&#95;&#87;</annotation></semantics></math></span> its label, and <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><msub><mi>p</mi><mi>W</mi></msub><annotation encoding="application/x-tex">&#112;&#95;&#87;</annotation></semantics></math></span> the positive-class output. Stage II used 101-nt cytidine-centred contexts for local prediction. The two tasks were trained separately from the human-adapted encoder; Stage II initialized directly from the human-pretraining checkpoint.
 
-The regional partitions contained 3,835 training regions, 213 validation regions and 212 test regions. This decomposition gave each model a distinct prediction target and input scale.
+The regional partitions contained 3,835 training regions, 213 validation regions and 212 test regions. This decomposition gave each model a distinct prediction target and input scale. Sequence relatedness across partitions must still be considered when interpreting generalization, consistent with the broader literature on evaluation leakage (Kapoor & Narayanan, 2023); the partition-overlap limitations are documented on [Model §4.3](/model#module4-strategy).
 
 ##### Test {#model-lamar-cycle-03-test}
 
@@ -2682,6 +2730,8 @@ The model now returned ordered cytidine candidates for the experimental team to 
 
 11. Zhou, H., Hu, Y., Zheng, Y., Li, J., Peng, J., Hu, J., Yang, Y., Chen, W., Zhang, G., & Wang, Z. (2025). A foundation language model to decipher diverse regulation of RNAs. *Genome Biology, 26*, Article 301. [doi: 10.1186/s13059-025-03752-x](<https://doi.org/10.1186/s13059-025-03752-x>)
 
+12. Kapoor S, Narayanan A. Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*. 2023;4(9):100804. <https://doi.org/10.1016/j.patter.2023.100804>
+
 
 ---
 
@@ -2712,7 +2762,7 @@ Whole-body AAV modelling informed the compartmental framework (S. Liu et al., 20
 
 <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi>d</mi><msub><mi>x</mi><mi>i</mi></msub></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mo>∑</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mrow></msub><mo>−</mo><mo>∑</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mrow></msub><mo>+</mo><msub><mi>P</mi><mi>i</mi></msub><mo>−</mo><msub><mi>L</mi><mi>i</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">&#10;&#92;&#102;&#114;&#97;&#99;&#123;&#100;&#120;&#95;&#105;&#125;&#123;&#100;&#116;&#125;&#61;&#92;&#115;&#117;&#109;&#32;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#105;&#110;&#125;&#125;&#45;&#92;&#115;&#117;&#109;&#32;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#111;&#117;&#116;&#125;&#125;&#43;&#80;&#95;&#105;&#45;&#76;&#95;&#105;&#46;&#10;</annotation></semantics></math></div>
 
-The editing layer tracks unedited RNA, 112-only editing, 158-only editing and double editing, together with binding, dissociation, catalysis and degradation. The product labels follow the amino-acid differences among APOE isoforms (Weisgraber et al., 1981). For free APOE3-like RNA, S₃:
+The editing layer tracks unedited RNA, 112-only editing, 158-only editing and double editing, together with binding, dissociation, catalysis and degradation. The product labels follow the amino-acid differences among APOE isoforms (Weisgraber et al., 1981), whose structural and functional distinctions are reviewed by Hatters et al. (2006). For free APOE3-like RNA, S₃:
 
 <div class="engineering-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mi>d</mi><msub><mi>S</mi><mn>3</mn></msub></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">t</mi><mn mathvariant="normal">112</mn></mrow></msub><mo>−</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">g</mi><mn mathvariant="normal">3</mn></mrow></msub><mo>−</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mn mathvariant="normal">158</mn><mo stretchy="false" form="prefix" mathvariant="normal">|</mo><mn mathvariant="normal">112</mn></mrow></msub><mo>+</mo><msub><mi>J</mi><mrow><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">b</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi><mn mathvariant="normal">158</mn><mo stretchy="false" form="prefix" mathvariant="normal">|</mo><mn mathvariant="normal">112</mn></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">&#10;&#92;&#102;&#114;&#97;&#99;&#123;&#100;&#83;&#95;&#51;&#125;&#123;&#100;&#116;&#125;&#61;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#101;&#100;&#105;&#116;&#49;&#49;&#50;&#125;&#125;&#45;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#100;&#101;&#103;&#51;&#125;&#125;&#10;&#45;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#98;&#105;&#110;&#100;&#49;&#53;&#56;&#124;&#49;&#49;&#50;&#125;&#125;&#43;&#74;&#95;&#123;&#92;&#109;&#97;&#116;&#104;&#114;&#109;&#123;&#117;&#110;&#98;&#105;&#110;&#100;&#49;&#53;&#56;&#124;&#49;&#49;&#50;&#125;&#125;&#46;&#10;</annotation></semantics></math></div>
 
@@ -2895,6 +2945,8 @@ PUFFER connected **transcriptomic analysis, recognition and catalytic design, RN
 
 11. Zhou, C., Sun, Y., Yan, R., Liu, Y., Zuo, E., Gu, C., Han, L., Wei, Y., Hu, X., Zeng, R., Li, Y., Zhou, H., Guo, F., & Yang, H. (2019). Off-target RNA mutation induced by DNA base editing and its elimination by mutagenesis. *Nature, 571*(7764), 275–278. [doi: 10.1038/s41586-019-1314-0](<https://doi.org/10.1038/s41586-019-1314-0>)
 
+12. Hatters DM, Peters-Libeu CA, Weisgraber KH. Apolipoprotein E structure: insights into function. *Trends in Biochemical Sciences*. 2006;31(8):445–454. <https://doi.org/10.1016/j.tibs.2006.06.008>
+
 ## Functional Validation {#functional-validation .engineering-chapter-title}
 
 Fluorescence, channel and qPCR notation follows the [Engineering figure conventions](#engineering-figure-conventions).
@@ -2911,7 +2963,7 @@ Can ORCA treatment affect disease-relevant cellular functions? We moved beyond a
 
 #### 1. Beyond Molecular Editing {#functional-validation-1-beyond-molecular-editing}
 
-The significance of the APOE4-to-APOE3 conversion lies not simply in changing a nucleotide, but in the different biological properties of the resulting apoE isoforms. APOE4 is strongly associated with Alzheimer's disease (AD) risk, and its effects extend to lipid metabolism and amyloid-related processes in the central nervous system. An APOE4-targeting RNA editor is therefore meaningful only if its molecular activity can eventually be connected to those cellular functions.
+The significance of the APOE4-to-APOE3 conversion lies not simply in changing a nucleotide, but in the different biological properties of the resulting apoE isoforms. APOE4 is strongly associated with Alzheimer's disease (AD) risk, and its effects extend to lipid metabolism and amyloid-related processes in the central nervous system [12]. An APOE4-targeting RNA editor is therefore meaningful only if its molecular activity can eventually be connected to those cellular functions.
 
 Our artificial APOE reporters and editor benchmarks allow target activity and bystander editing to be evaluated under controlled conditions. Endogenous APOE, however, is expressed within a different RNA and cellular environment. Even a verified target-site edit would leave further questions: does the edited transcript yield functional apoE, is the amount of APOE3-equivalent product sufficient to alter the cellular phenotype, and are any changes attributable to the intended correction rather than another effect of treatment?
 
@@ -2955,7 +3007,7 @@ These considerations defined our use of the model. **CCF-STTG1 could support del
 
 #### 3. Lipid Homeostasis: From APOE Function to a Cellular Phenotype {#functional-validation-3-lipid-homeostasis-from-apoe-function-to-a-cellular-phenotype}
 
-Our first functional direction concerned lipid homeostasis, one of the cellular processes most closely connected to apoE biology. ApoE participates in lipid transport, while APOE isoforms differ in their effects on lipid-associated pathways. We therefore asked whether the intended APOE4-to-APOE3-equivalent correction might eventually be reflected in a visible change in cellular lipid storage.
+Our first functional direction concerned lipid homeostasis, one of the cellular processes most closely connected to apoE biology. ApoE participates in lipid transport, while APOE isoforms differ in their effects on lipid-associated pathways [13]. We therefore asked whether the intended APOE4-to-APOE3-equivalent correction might eventually be reflected in a visible change in cellular lipid storage.
 
 Lipid droplets are dynamic organelles that store neutral lipids, including triacylglycerols and cholesteryl esters. Their abundance and morphology depend on lipid synthesis, storage, utilization, and cellular state. Farmer et al. observed altered fatty-acid metabolism and the formation of more, generally smaller lipid droplets in astrocytes expressing human APOE4 than in APOE3 counterparts [8]. In an independent human iPSC-derived glial model, Sienski et al. found increased triglyceride accumulation and more lipid droplets in APOE4/4 astrocytes; aspects of the lipid phenotype were responsive to metabolic intervention [3].
 
@@ -3089,14 +3141,18 @@ Functional Validation brought ORCA into a **human cell model expressing endogeno
 
 ### References {#functional-validation-references}
 
-1. Lin, Y. T., et al. (2018). *APOE4 Causes Widespread Molecular and Cellular Alterations Associated with Alzheimer's Disease Phenotypes in Human iPSC-Derived Brain Cell Types.* **Neuron**, 98(6), 1141–1154.e7. https://doi.org/10.1016/j.neuron.2018.05.008
-2. BrainXell. *Human iPSC-Derived Cortical Astrocytes* (product information). https://brainxell.com/product-category/astrocytes/cortical-astrocytes/
-3. Sienski, G., et al. (2021). *APOE4 disrupts intracellular lipid homeostasis in human iPSC-derived glia.* **Science Translational Medicine**, 13(583), eaaz4564. https://doi.org/10.1126/scitranslmed.aaz4564
-4. Guangzhou Customs / General Administration of Customs of China (2025). *Biosafety Risk Classification Schedule for Entry-Exit Special Items*, Category C1 and Appendix 2 (Chinese-language regulatory schedule). https://www.tid.gov.hk/en/tradecircular/files/2025/ci6102025a.pdf
-5. General Administration of Customs of China (2026). *Regulations on Health Quarantine Administration of Special Goods and Articles Entering and Leaving China*, Order No. 281. https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=104767
-6. ATCC. *CCF-STTG1 (CRL-1718)*, cell-line information. https://www.atcc.org/products/crl-1718
-7. Fan, J., et al. (2016). *Identification of a Chrysanthemic Ester as an Apolipoprotein E Inducer in Astrocytes.* **PLOS ONE**, 11(9), e0162384. https://doi.org/10.1371/journal.pone.0162384
-8. Farmer, B. C., Kluemper, J., & Johnson, L. A. (2019). *Apolipoprotein E4 Alters Astrocyte Fatty Acid Metabolism and Lipid Droplet Formation.* **Cells**, 8(2), 182. https://doi.org/10.3390/cells8020182
-9. Qiu, B., & Simon, M. C. (2016). *BODIPY 493/503 Staining of Neutral Lipid Droplets for Microscopy and Quantification by Flow Cytometry.* **Bio-protocol**, 6(17), e1912. https://doi.org/10.21769/BioProtoc.1912
-10. Prasad, H., & Rao, R. (2018). *Amyloid clearance defect in ApoE4 astrocytes is reversed by epigenetic correction of endosomal pH.* **PNAS**, 115(28), E6640–E6649. https://doi.org/10.1073/pnas.1801612115
-11. Zhao, W., et al. (2020). *Axl receptor tyrosine kinase is a regulator of apolipoprotein E.* **Molecular Brain**, 13, 66. https://doi.org/10.1186/s13041-020-00609-1
+1. Lin, Y. T., et al. (2018). *APOE4 Causes Widespread Molecular and Cellular Alterations Associated with Alzheimer's Disease Phenotypes in Human iPSC-Derived Brain Cell Types.* **Neuron**, 98(6), 1141–1154.e7. <https://doi.org/10.1016/j.neuron.2018.05.008>
+2. BrainXell. *Human iPSC-Derived Cortical Astrocytes* (product information). <https://brainxell.com/product-category/astrocytes/cortical-astrocytes/>
+3. Sienski, G., et al. (2021). *APOE4 disrupts intracellular lipid homeostasis in human iPSC-derived glia.* **Science Translational Medicine**, 13(583), eaaz4564. <https://doi.org/10.1126/scitranslmed.aaz4564>
+4. Guangzhou Customs / General Administration of Customs of China (2025). *Biosafety Risk Classification Schedule for Entry-Exit Special Items*, Category C1 and Appendix 2 (Chinese-language regulatory schedule). <https://www.tid.gov.hk/en/tradecircular/files/2025/ci6102025a.pdf>
+5. General Administration of Customs of China (2026). *Regulations on Health Quarantine Administration of Special Goods and Articles Entering and Leaving China*, Order No. 281. <https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=104767>
+6. ATCC. *CCF-STTG1 (CRL-1718)*, cell-line information. <https://www.atcc.org/products/crl-1718>
+7. Fan, J., et al. (2016). *Identification of a Chrysanthemic Ester as an Apolipoprotein E Inducer in Astrocytes.* **PLOS ONE**, 11(9), e0162384. <https://doi.org/10.1371/journal.pone.0162384>
+8. Farmer, B. C., Kluemper, J., & Johnson, L. A. (2019). *Apolipoprotein E4 Alters Astrocyte Fatty Acid Metabolism and Lipid Droplet Formation.* **Cells**, 8(2), 182. <https://doi.org/10.3390/cells8020182>
+9. Qiu, B., & Simon, M. C. (2016). *BODIPY 493/503 Staining of Neutral Lipid Droplets for Microscopy and Quantification by Flow Cytometry.* **Bio-protocol**, 6(17), e1912. <https://doi.org/10.21769/BioProtoc.1912>
+10. Prasad, H., & Rao, R. (2018). *Amyloid clearance defect in ApoE4 astrocytes is reversed by epigenetic correction of endosomal pH.* **PNAS**, 115(28), E6640–E6649. <https://doi.org/10.1073/pnas.1801612115>
+11. Zhao, W., et al. (2020). *Axl receptor tyrosine kinase is a regulator of apolipoprotein E.* **Molecular Brain**, 13, 66. <https://doi.org/10.1186/s13041-020-00609-1>
+
+12. Yamazaki Y, Zhao N, Caulfield TR, et al. Apolipoprotein E and Alzheimer disease: pathobiology and targeting strategies. *Nature Reviews Neurology*. 2019;15(9):501–518. <https://doi.org/10.1038/s41582-019-0228-7>
+
+13. Mahley RW. Central nervous system lipoproteins: ApoE and regulation of cholesterol metabolism. *Arteriosclerosis, Thrombosis, and Vascular Biology*. 2016;36(7):1305–1315. <https://doi.org/10.1161/ATVBAHA.116.307023>

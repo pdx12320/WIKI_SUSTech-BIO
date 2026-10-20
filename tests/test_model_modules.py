@@ -247,7 +247,7 @@ class FourModelModulesTest(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "historical model importer is retired"):
             Importer(PROJECT_ROOT / "work/import-fixture", PROJECT_ROOT).run()
 
-    def test_module_resource_links_are_confined_to_reproducibility(self):
+    def test_module_links_are_scoped_to_results_resources_and_references(self):
         reading = next(node for node in self.document.root.walk() if "model-reading" in node.attrs.get("class", "").split())
         expected_chapters = {1: "module1-6", 2: "module2-5", 3: "module3-5", 4: "module4-6"}
         allowed_links = []
@@ -273,6 +273,12 @@ class FourModelModulesTest(unittest.TestCase):
                         self.assertIn(link.attrs["href"][1:], ids)
                     continue
                 if links:
+                    if node.tag == "ol" and chapter == f"module{number}-{7 if number in (1, 4) else 6}":
+                        self.assertEqual(chapter, f"module{number}-{7 if number in (1, 4) else 6}")
+                        self.assertTrue(all(link.attrs.get("href", "").startswith("https://") for link in links))
+                        allowed_links.extend(resources)
+                        allowed_links.extend(links)
+                        continue
                     self.assertEqual(chapter, expected_chapter)
                     self.assertIn("data-model-resource-links", node.attrs)
                     resources.extend(links)
@@ -282,7 +288,6 @@ class FourModelModulesTest(unittest.TestCase):
                 parsed = urlparse(href)
                 if not parsed.netloc:
                     self.assertTrue((PROJECT_ROOT / unquote(parsed.path).lstrip("/")).is_file(), href)
-            allowed_links.extend(resources)
         overview_links = [node for node in reading.walk() if node.tag == "a" and node.attrs.get("href") == "/software#rewire-purpose"]
         self.assertEqual(len(overview_links), 1)
         resource_links = [node for node in reading.walk() if node.tag == "a"
@@ -525,7 +530,7 @@ class FourModelModulesTest(unittest.TestCase):
         self.assertIn("one full region sequence was shared", m4)
         self.assertIn("average precision", m4)
 
-    def test_module4_primary_references_remain_as_plain_citations(self):
+    def test_module4_primary_references_link_to_the_cited_sources(self):
         module = self.modules["module4"]
         references = {node.attrs["id"]: node for node in module.walk() if node.tag == "li" and node.attrs.get("id", "").startswith("module4-ref-")}
         expected_dois = {
@@ -537,10 +542,13 @@ class FourModelModulesTest(unittest.TestCase):
         self.assertGreaterEqual(len(references), 11)
         for key, doi in expected_dois.items():
             self.assertIn(doi, references[key].text())
+            self.assertIn("https://doi.org/" + doi,
+                          [node.attrs.get("href") for node in references[key].walk() if node.tag == "a"])
         self.assertIn("GENCODE. (2026).", references["module4-ref-gencode"].text())
-        self.assertFalse(any(node.tag == "a" for reference in references.values() for node in reference.walk()))
+        self.assertIn("https://www.gencodegenes.org/human/release_50.html",
+                      [node.attrs.get("href") for node in references["module4-ref-gencode"].walk() if node.tag == "a"])
 
-    def test_each_module_keeps_a_plain_bibliography(self):
+    def test_each_module_keeps_a_clickable_bibliography(self):
         for name, module in self.modules.items():
             with self.subTest(module=name):
                 article = next(node for node in module.walk() if node.tag == "article")
@@ -558,7 +566,12 @@ class FourModelModulesTest(unittest.TestCase):
                 self.assertEqual(len(texts), len(set(texts)))
                 for text in texts:
                     self.assertRegex(text, r"(?:19|20)\d{2}")
-                self.assertFalse(any(node.tag == "a" for reference in bibliography for node in reference.walk()))
+                for reference in bibliography:
+                    hrefs = [node.attrs.get("href", "") for node in reference.walk() if node.tag == "a"]
+                    self.assertTrue(hrefs, reference.text())
+                    self.assertTrue(all(href.startswith("https://") for href in hrefs))
+                    for doi in re.findall(r"10\.\d{4,9}/[^\s;]+", reference.text()):
+                        self.assertIn("https://doi.org/" + doi.rstrip("."), hrefs)
                 if name in {"module1", "module2"}:
                     ordered = [node for node in module.walk() if node.tag == "ol" and "model-references" in node.attrs.get("class", "").split()]
                     self.assertEqual(len(ordered), 1)

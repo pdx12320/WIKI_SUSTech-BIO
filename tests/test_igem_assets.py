@@ -102,6 +102,16 @@ class ProductionRoutesTest(unittest.TestCase):
 
 
 class ProductionAuditTest(unittest.TestCase):
+    def test_minified_library_data_does_not_hide_real_asset_dependencies(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'index.html').write_text('<script src="vendor.js"></script>')
+            (root / 'vendor.js').write_text('const table = "' + 'x' * 400 + '"; const image = "figure.webp";')
+            (root / 'figure.webp').write_bytes(b'image fixture')
+            report = inspect_build(root, {})
+            self.assertEqual(report['local_media'], {'figure.webp': ['vendor.js']})
+            self.assertEqual(report['missing_files'], {})
+
     def test_audit_detects_css_fonts_and_nested_reader_images(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

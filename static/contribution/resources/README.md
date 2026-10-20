@@ -23,3 +23,12 @@ manifest's relative paths: `WIKI_ASSET_MODE=local` serves the original images,
 while `WIKI_ASSET_MODE=igem` rewrites its page URLs to the verified CDN uploads.
 The reader's existing `wikiAssetURL` resolver also supports the deployed team
 path. No changes to the PDFs, page order or image dimensions are needed.
+
+The 2026-10-21 upload batch adds CDN destinations for the six code PDFs and a
+9,738,811-byte compressed copy of `model-figures.pdf`. Production downloads use
+the confirmed uploads through `asset_mapping.csv`; local mode still serves the
+unchanged original PDFs. The compressed copy retains all 95 pages, extracted
+text and page dimensions, while raster image resolution is reduced. The original
+and uploaded PDF hashes are recorded separately in `asset_uploads.json` and
+`docs/releases/asset-uploads-20261021/verification.json`. The original PDF manifest
+and all 493 existing reader previews remain unchanged.

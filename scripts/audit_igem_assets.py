@@ -124,6 +124,10 @@ def inspect_build(root, mapping):
                 value = match[1]
                 if '${' in value or value.startswith('#'):
                     continue
+                # Minified libraries contain long quoted data that is not a URL.
+                # Reject non-asset tokens before asking the filesystem about them.
+                if Path(urlsplit(value).path).suffix.lower() not in MEDIA_EXTENSIONS | CODE_EXTENSIONS:
+                    continue
                 target = root / unquote(urlsplit(urljoin('/' + filename, value)).path).lstrip('/')
                 if target.is_file() or urlsplit(value).netloc:
                     visit(value, filename, runtime=True)

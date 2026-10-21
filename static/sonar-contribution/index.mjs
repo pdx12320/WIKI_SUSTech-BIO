@@ -4,7 +4,7 @@ import {mount as flow} from './modules/flow.mjs';
 import {mount as layers} from './modules/layers.mjs';
 import {mount as fit} from './modules/fit.mjs';
 const mounted=[];
-async function load(name){const response=await fetch(new URL(`./data/${name}`,import.meta.url));if(!response.ok)throw Error('Resource unavailable');return response.json();}
+async function load(name){const local=new URL(`./data/${name}`,import.meta.url).href;const response=await fetch(globalThis.wikiAssetURL?.(local) ?? local);if(!response.ok)throw Error('Resource unavailable');return response.json();}
 function mount(id,fn,config){const root=document.getElementById(id);if(!root)return;try{mounted.push(fn(root,config));}catch{const p=document.createElement('p');p.className='sonar-error';p.textContent='The interactive view is unavailable. Use the tutorial text and source resources below.';root.append(p);}}
 mount('sonar-reporter-explorer',reporter);mount('sonar-fit-guide',fit);
 load('sequence.v1.json').then(example=>mount('sonar-sequence-playground',sequence,{example})).catch(()=>{});

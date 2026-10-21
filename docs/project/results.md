@@ -17,39 +17,46 @@ header_introduction: >-
 <section class="results-achievements" aria-label="Six platform achievements">
   <article class="achievement-card edit" aria-labelledby="edit-title">
     <a class="card-figure" href="/assets/images/results-achievements/edit.png" data-enlarge aria-label="Enlarge Edit summary figure"><img src="/assets/images/results-achievements/edit.png" alt="POD recognition candidates and CETUS catalytic candidates combine into Integrated ORCA editors IO-02 and IO-03." width="3600" height="2000"></a>
-    <div class="card-copy"><h3 id="edit-title">Keep the edit. Reduce the bystanders.</h3>
-      <p class="card-description">IO-02 and IO-03 retained 61.31% and 69.78% C388 editing, respectively, while reducing C871 editing from 79.17% in the parental editor to 13.84% and 14.28%. Their broader bystander profiles offered complementary choices.</p>
-      <p class="card-takeaway"><em>The complete editing profile guided candidate selection.</em></p>
+    <div class="card-copy"><h3 id="edit-title">Better editing, by design.</h3>
+      <p class="card-description">Through <strong>POD</strong> and <strong>CETUS</strong>, we evaluated <strong>81 PUF variants</strong>, <strong>102 single APOBEC mutants</strong>, and a further panel of 48 APOBEC constructs. We then combined four candidates from each engineering route into <strong>16 Integrated ORCA designs</strong>, 14 of which were sequence-verified and functionally evaluated.</p>
+      <p class="card-description">Systematic benchmarking identified <strong>IO-02 and IO-03</strong>, achieving <strong>61.31% and 69.78%</strong> editing at the target APOE4 C388 site, respectively. Compared with the parental editor, they reduced C871 bystander editing by <strong>82.52% and 81.96%</strong>, while lowering the cumulative editing burden across 290 non-target cytidines in the sequenced APOE region by <strong>87.67% and 84.21%</strong>.</p>
+      <p class="card-takeaway"><strong>High target-editing activity was retained while unwanted editing was substantially reduced.</strong></p>
     </div>
   </article>
 
   <article class="achievement-card control" aria-labelledby="control-title">
     <a class="card-figure" href="/assets/images/results-achievements/control.png" data-enlarge aria-label="Enlarge Control summary figure"><img src="/assets/images/results-achievements/control.png" alt="G.M.A.C. regulatory approaches: GFA and ASO tested, MRE constructed without confirmed specific regulation, Cre–loxP designed." width="3600" height="2800"></a>
-    <div class="card-copy"><h3 id="control-title">Turn editing down on demand.</h3>
-      <p class="card-description">ASO treatment reduced C388 editing in tagged ORCA from 57.13% to 28.54% at the 48-hour readout. The gfaABC1D promoter also showed cell-context-dependent expression, providing a second route to regulate ORCA.</p>
-      <p class="card-takeaway"><em>ASO-dependent suppression was demonstrated; recovery after withdrawal remains untested.</em></p>
+    <div class="card-copy"><h3 id="control-title">The right place.<br>The right time.</h3>
+      <p class="card-description">We developed <strong>G.M.A.C.</strong>, a four-layer regulatory framework integrating transcriptional control, post-transcriptional regulation, externally induced suppression, and permanent shutdown.</p>
+      <p class="card-description">The <strong>gfaABC1D promoter</strong> demonstrated strong cell-context-dependent regulation: compared with CMV, the C388 editing-associated signal decreased by <strong>88.4% in HEK293T</strong> but increased <strong>7.61-fold in U251</strong>. Our engineered <strong>synthetic ASO tag</strong> enabled externally induced suppression, reducing tagged-reporter fluorescence by <strong>78.6%</strong> and ORCA's C388 editing output by <strong>50.04%</strong> at 48 hours.</p>
+      <p class="card-description">The <strong>MRE module</strong> was excluded from the final design after failing to establish satisfactory miRNA-specific regulation, while <strong>Cre–loxP</strong> was developed as a prospective permanent shutdown mechanism that remains experimentally unvalidated.</p>
+      <p class="card-takeaway"><strong>G.M.A.C. established experimentally supported routes for cell-context-dependent regulation and external attenuation of ORCA activity.</strong></p>
     </div>
   </article>
 
   <article class="achievement-card deliver" aria-labelledby="deliver-title">
     <a class="card-figure" href="/assets/images/engineering-conclusions/deliver.png" data-enlarge aria-label="Enlarge Deliver summary figure"><img src="/assets/images/engineering-conclusions/deliver.png" alt="AAV9 workflow progresses through reporter production, ORCA packaging and recipient-cell testing; ORCA expression remains unconfirmed." width="3600" height="2041"></a>
-    <div class="card-copy"><h3 id="deliver-title">From vector to delivery testing.</h3>
-      <p class="card-description">We constructed and packaged GFA–ORCA and CMV–ORCA AAV9 vectors, then tested the GFA–ORCA preparation in CCF-STTG1 cells. The recipient-cell assay did not detect a clear ORCA transcript band.</p>
-      <p class="card-takeaway"><em>Production and testing workflows are in place; functional delivery remains unconfirmed.</em></p>
+    <div class="card-copy"><h3 id="deliver-title">Give ORCA a way in.</h3>
+      <p class="card-description">We selected <strong>AAV9</strong> as ORCA's prospective delivery vehicle, combining its potential for sustained transgene expression with the compact architecture of our RNA editor.</p>
+      <p class="card-description">Starting with AAV–mCherry, we established an in-house <strong>HEK293T three-plasmid packaging, recovery, purification, and quantification workflow</strong>. We subsequently constructed GFA–ORCA and CMV–ORCA transfer vectors and obtained purified AAV9 preparations carrying the corresponding ORCA expression cassettes. Preliminary qPCR measurements yielded estimated vector-genome titers of <strong>4.69 × 10¹² vg/mL</strong> and <strong>3.40 × 10¹¹ vg/mL</strong>, respectively, subject to further quality-control verification.</p>
+      <p class="card-description">Although ORCA expression was not confirmed in the initial CCF-STTG1 recipient-cell assay, these experiments established the foundation for independently producing and testing AAV9-based ORCA vectors.</p>
+      <p class="card-takeaway"><strong>In-house AAV9 preparation was achieved; functional ORCA delivery remains to be verified.</strong></p>
     </div>
   </article>
 
   <article class="achievement-card measure" aria-labelledby="measure-title">
     <a class="card-figure" href="/assets/images/engineering-conclusions/measure.png" data-enlarge aria-label="Enlarge Measure summary figure"><img src="/assets/images/engineering-conclusions/measure.png" alt="SONAR connects modular reporter engineering, relative calibration, SAP and real-editor tests; PER is not yet validated." width="3600" height="2000"></a>
     <div class="card-copy"><h3 id="measure-title">Read beyond the glow.</h3>
-      <p class="card-description">SONAR connects a modular reporter with relative optical scores and the SAP analysis workflow. Real-editor tests showed that increasing the molecular editing signal did not produce a corresponding rise in normalized green fluorescence.</p>
-      <p class="card-takeaway"><em>Reporter activity and RNA editing percentage require distinct evidence.</em></p>
+      <p class="card-description">We designed and constructed <strong>SONAR (System for Optical Normalization and Analysis of RNA Editing)</strong>, a modular fluorescence reporter system integrating mCherry, EGFP, and BFP to distinguish reporter expression, editing-associated fluorescence, and editor-associated coexpression.</p>
+      <p class="card-description">Across <strong>10 DBTL cycles</strong>, we developed and refined an editing-responsive reporter, established AC/INAC reference systems, and evaluated its performance using flow cytometry, fluorescence imaging, and molecular sequencing. These experiments demonstrated measurable reporter responses while revealing that normalized fluorescence does not necessarily track RNA-editing efficiency.</p>
+      <p class="card-description">Building on these findings, we developed the <strong>SONAR Measurement Pipeline</strong>, a four-layer framework integrating population and background calibration (<strong>Layer 0</strong>), normalized reporter activity (<strong>RAS, Layer 1</strong>), empirical reference calibration (<strong>RES, Layer 2</strong>), and exploratory molecular prediction toward <strong>PER (Layer 3)</strong>. We also built the <strong>SONAR Analysis Program (SAP)</strong> to support standardized data processing, analysis, and visualization. Absolute editing-rate prediction remains uncalibrated.</p>
+      <p class="card-takeaway"><strong>SONAR connects reporter engineering, quantitative measurement, and reusable software into an integrated RNA-editing analysis platform.</strong></p>
     </div>
   </article>
 
   <article class="achievement-card model" aria-labelledby="model-title">
     <a class="card-figure" href="/assets/images/engineering-conclusions/model.png" data-enlarge aria-label="Enlarge Model summary figure"><img src="/assets/images/engineering-conclusions/model.png" alt="PUFFER connects RNA-seq analysis, PUF specificity ranking, catalytic design, LAMAR site prioritization and delivery simulations." width="3600" height="2840"></a>
-    <div class="card-copy"><h3 id="model-title">Narrow the search. Guide the next test.</h3>
+    <div class="card-copy"><h3 id="model-title">Let data<br>guide the next edit.</h3>
       <p class="card-description">The PUF specificity ranker recovered 20 of the measured Top30 candidates in a grouped evaluation of 66 constructs. Together with RNA-seq analysis, LAMAR and delivery simulations, this work helped prioritize candidates and questions for experimental testing.</p>
       <p class="card-takeaway"><em>Predictions guide validation; their performance is bounded by the evaluated data.</em></p>
     </div>
@@ -57,9 +64,11 @@ header_introduction: >-
 
   <article class="achievement-card fv" aria-labelledby="fv-title">
     <a class="card-figure" href="/assets/images/engineering-conclusions/functional-validation.png" data-enlarge aria-label="Enlarge Functional Validation summary figure"><img src="/assets/images/engineering-conclusions/functional-validation.png" alt="CCF-STTG1 studies establish provisional electroporation conditions and explore BODIPY imaging and Aβ42 ELISA, with limited phenotypic evidence." width="2880" height="1920"></a>
-    <div class="card-copy"><h3 id="fv-title">Testing ORCA beyond the reporter.</h3>
-      <p class="card-description">We established provisional electroporation conditions in CCF-STTG1 cells and explored lipid-associated imaging and extracellular Aβ42 measurement. Limited imaging replication and out-of-range ELISA samples defined the requirements for the next experiments.</p>
-      <p class="card-takeaway"><em>These studies begin cellular evaluation; they do not yet establish causal functional rescue.</em></p>
+    <div class="card-copy"><h3 id="fv-title">A first glimpse of function.</h3>
+      <p class="card-description">To explore ORCA's biological effects, we selected human <strong>CCF-STTG1</strong> cells as an endogenous-APOE model and established a plasmid electroporation protocol (<strong>1350 V, 20 ms, two pulses</strong>) for subsequent functional investigations.</p>
+      <p class="card-description">Using <strong>BODIPY 493/503 neutral-lipid staining</strong>, confocal microscopy, and quantitative image analysis, we observed <strong>83.3% fewer prominent BODIPY-positive punctate candidates</strong> in both IO-02- and IO-03-treated fields compared with the empty-vector control. Although based on preliminary single-field comparisons, these observations suggest a lipid-associated phenotypic change worthy of further investigation.</p>
+      <p class="card-description">We also investigated extracellular <strong>Aβ42 handling</strong>, but the ELISA samples exceeded the assay's quantifiable range, preventing reliable comparisons. Further replication and confirmation of endogenous APOE editing are required to establish functional rescue.</p>
+      <p class="card-takeaway"><strong>Initial cellular feasibility and a promising lipid-associated phenotype were observed, providing a starting point for future functional validation.</strong></p>
     </div>
   </article>
 </section>

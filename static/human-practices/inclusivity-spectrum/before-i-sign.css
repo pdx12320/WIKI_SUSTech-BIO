@@ -1,0 +1,8 @@
+/* Before I Sign figure sequence, scoped to the Inclusivity manuscript. */
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-figure { margin:2rem 0 2.5rem; scroll-margin-top:170px; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-figure > a { display:block; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-figure img { display:block; width:100%; height:auto; aspect-ratio:16/9; margin:0; border-radius:0; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-figure figcaption { margin-top:.9rem; color:#6b6880; font-size:1rem; line-height:1.7; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-figure figcaption strong { color:#2e267c; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-credit { color:#6b6880; font-size:.9rem; line-height:1.7; }
+@media(max-width:650px) { body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-consent-figure { margin:1.3rem 0 1.7rem; } }

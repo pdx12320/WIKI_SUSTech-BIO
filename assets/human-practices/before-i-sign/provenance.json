@@ -1,0 +1,47 @@
+{
+  "created": "2026-10-21",
+  "page": "/inclusivity#before-i-sign",
+  "creator": "SUSTech ORCA; AI-assisted background artwork; English typesetting and layout prepared in this task",
+  "source": "static/before-i-sign/illustrations.html",
+  "background_sources": [
+    "static/before-i-sign/assets/home.png",
+    "static/before-i-sign/assets/drawer.png"
+  ],
+  "background_provenance": "static/before-i-sign/assets/provenance.json",
+  "upload_status": "Official URLs supplied by user; all three decoded in browser at 1280 × 720",
+  "images": [
+    {
+      "local_path": "assets/human-practices/before-i-sign/before-i-sign-01-opening-en.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-01-opening-en.avif",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "source_sha256": "ed944296e80edb784dfa0ad8606587830acea392770dba6ae800434b0a8103f9",
+      "file_signature": "ffd8ffe000104a46",
+      "type": "English explanatory interface illustration; not an English game release or participant record"
+    },
+    {
+      "local_path": "assets/human-practices/before-i-sign/before-i-sign-02-information-en.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-02-information-en.avif",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "source_sha256": "ede38db756e43172855035f6a808df219aa8d28ee572860c8f70ea76df0ff449",
+      "file_signature": "ffd8ffe000104a46",
+      "type": "English explanatory interface illustration; not an English game release or participant record"
+    },
+    {
+      "local_path": "assets/human-practices/before-i-sign/before-i-sign-03-choice-en.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-03-choice-en.avif",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "source_sha256": "4ff55be24b867b82830e13b5a957f6274cadb4bf98327489cdd19a31ebeb801e",
+      "file_signature": "ffd8ffe000104a46",
+      "type": "English explanatory interface illustration; not an English game release or participant record"
+    }
+  ]
+}

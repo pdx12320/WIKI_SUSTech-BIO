@@ -1,0 +1,23 @@
+{
+  "method": "Browser decoded-image verification on /inclusivity; not an HTTP status assertion",
+  "images": [
+    {
+      "height": 720,
+      "loaded": true,
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-01-opening-en.avif",
+      "width": 1280
+    },
+    {
+      "height": 720,
+      "loaded": true,
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-02-information-en.avif",
+      "width": 1280
+    },
+    {
+      "height": 720,
+      "loaded": true,
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-03-choice-en.avif",
+      "width": 1280
+    }
+  ]
+}

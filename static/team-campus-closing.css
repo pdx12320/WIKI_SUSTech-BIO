@@ -1,6 +1,5 @@
 /* A full-width clipping stage keeps the left corner outside the viewport. */
 .team-closing.team-campus-closing {
-  --campus-progress: 1;
   --campus-radius: clamp(32px, 5vw, 80px);
   --campus-inset: clamp(24px, 6vw, 96px);
   position: relative;
@@ -20,7 +19,6 @@
   overflow: hidden;
   isolation: isolate;
   background: #5D4BC4;
-  transform: translateX(calc((var(--campus-progress) - 1) * 102%));
   transition: none;
 }
 .team-campus-closing.is-scroll-ready .team-campus-closing__panel { will-change: transform; }
@@ -71,5 +69,5 @@
   .team-campus-closing a { gap: 12px; font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .team-campus-closing .team-campus-closing__panel { transform: none; will-change: auto; }
+  .team-campus-closing .team-campus-closing__panel { transform: none !important; will-change: auto; }
 }

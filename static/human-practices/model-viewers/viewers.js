@@ -1,5 +1,6 @@
-/* Lazy, local-only viewers for the team's supplied STL geometry. */
+/* Lazy viewers for the team's supplied STL geometry, with official CDN payloads. */
 import { DISPLAY_PALETTES, displayColorKey } from './display-colors.js';
+import { loadModelBuffer } from '../../model-buffer.mjs';
 
 const MODELS = [
   { id: 'brain', image: 'biology-brain-model-render.webp', name: 'Brain structure', camera: [1.9, 0.35, 1.0] },
@@ -52,9 +53,7 @@ async function createScene(view, config) {
   ]);
   if (!manifestResponse.ok) throw new Error('Model metadata could not be loaded.');
   const manifest = await manifestResponse.json();
-  const response = await fetch(new URL(manifest.mesh, DATA_URL));
-  if (!response.ok) throw new Error('Model geometry could not be loaded.');
-  const bytes = await response.arrayBuffer();
+  const bytes = await loadModelBuffer(new URL(manifest.mesh, DATA_URL), new URL(`${config.id}.glb`, DATA_URL));
   if (bytes.byteLength !== manifest.byteLength || manifest.indexByteOffset !== manifest.vertices * 12) {
     throw new Error('Model geometry is incomplete.');
   }

@@ -31,6 +31,16 @@ install_supporting_data(app)
 
 
 @freezer.register_generator
+def localized_asset_files():
+    # CDN URLs localized after template rendering are invisible to url_for's
+    # discovery. Include their originals in offline/local static exports too.
+    if app.config['WIKI_ASSET_MODE'] == 'local':
+        for local in app.extensions['igem_assets']:
+            if local.startswith('/assets/'):
+                yield 'assets', {'filename': local[len('/assets/'):]}
+
+
+@freezer.register_generator
 def engineering_cartoon_files():
     # Inert template image URLs are localized after rendering, so url_for's
     # discovery cannot see them. Preserve these dependencies in local exports.

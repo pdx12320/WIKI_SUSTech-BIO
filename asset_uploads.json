@@ -3047,7 +3047,21 @@
     "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genewiz.avif",
     "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-invitrogen.avif",
     "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-procell.avif",
-    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif"
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-default-avatar.avif",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-inter.ttf",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-04.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-06.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-07.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-08.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-10.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-16.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-21.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-23.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-24.webp",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/brain-viewer.glb",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/cell-viewer.glb",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/adult-body-surface.glb"
   ],
   "confirmed_mapping": [
     {
@@ -15597,6 +15611,90 @@
       "sha256": "130cf821fe5b2bf8609c3b6b72c3f0cc580ec846483672a6ffebe62302facc67",
       "uploaded_sha256": "0995a90e5a69b836df1c133ab9e97e0640af60e3d1a9fd82d8c2c6c6ac6dc76d",
       "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/default-avatar.avif",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-default-avatar.avif",
+      "sha256": "971444a5ff4e5df5d06e21686fdec418c173a937985277a1248eb9821243c17b",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/inter.ttf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-inter.ttf",
+      "sha256": "0be2399ea925f1f83ff974764761da9860ec50742ed29a5d4c1ffd0c5c7ac3a8",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-04.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-04.webp",
+      "sha256": "3ae2cc7078737b3993c1149f2237f3bc22c873a92b436029c900abd9cbc284eb",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-06.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-06.webp",
+      "sha256": "3f9669ee8b94961f091f92b0c3260a4ad8f6d4f2515fa987e9eeac73a706dfd2",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-07.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-07.webp",
+      "sha256": "365197d8242ac3eced0922246d7efeedcc1220c3f5adddcf3ccdb8df715fb743",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-08.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-08.webp",
+      "sha256": "84d3aeabb54454967e8f69d75155bac8347a6953c4afe8bc6de354439a925411",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-10.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-10.webp",
+      "sha256": "d21b786b1f0384410e990289f13990afa038379d7ab356350c5b7aa1e7f46129",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-16.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-16.webp",
+      "sha256": "7020f85f7765b7e72ae63dee2990b7fbee1a35a01d9a02cd60619a5a48d04c8a",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-21.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-21.webp",
+      "sha256": "e373f7a421d40453713f040844c74f6379d6dfb3d7bd344b6dd992644e3a7220",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-23.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-23.webp",
+      "sha256": "60799223a60f2c8eb3c83735f282b06c6a2399b92fb3cdadbd13728ceb0835fb",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/attributions-portraits/member-24.webp",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-24.webp",
+      "sha256": "a5672aae758b0e03a1a5252ad71bfe778c6b04a7c7d8dba8d9015aaa6bd42731",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/human-practices/model-viewers/data/meshes/brain.glb",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/brain-viewer.glb",
+      "sha256": "41eb3fe7b277f9fadaa054befba8fd15e99443beb3f4cc28f95e05eba9c7ca28",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/human-practices/model-viewers/data/meshes/cell.glb",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/cell-viewer.glb",
+      "sha256": "b59a503fff9077162dced212256e6c95ee3e11ff0bcab825c7de142bd7e43ed7",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/assets/software/body-3d-adult/body-surface.glb",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/adult-body-surface.glb",
+      "sha256": "70031e17cacceab3064d1ee18460398b010c6f2e07f974a0d0f7cd50e47f5f8c",
+      "evidence": "user_upload_http200_byte_identical_sha256_20261021"
     }
   ],
   "content_hashes": [
@@ -18863,6 +18961,62 @@
     {
       "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif",
       "sha256": "0995a90e5a69b836df1c133ab9e97e0640af60e3d1a9fd82d8c2c6c6ac6dc76d"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-default-avatar.avif",
+      "sha256": "971444a5ff4e5df5d06e21686fdec418c173a937985277a1248eb9821243c17b"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-inter.ttf",
+      "sha256": "0be2399ea925f1f83ff974764761da9860ec50742ed29a5d4c1ffd0c5c7ac3a8"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-04.webp",
+      "sha256": "3ae2cc7078737b3993c1149f2237f3bc22c873a92b436029c900abd9cbc284eb"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-06.webp",
+      "sha256": "3f9669ee8b94961f091f92b0c3260a4ad8f6d4f2515fa987e9eeac73a706dfd2"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-07.webp",
+      "sha256": "365197d8242ac3eced0922246d7efeedcc1220c3f5adddcf3ccdb8df715fb743"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-08.webp",
+      "sha256": "84d3aeabb54454967e8f69d75155bac8347a6953c4afe8bc6de354439a925411"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-10.webp",
+      "sha256": "d21b786b1f0384410e990289f13990afa038379d7ab356350c5b7aa1e7f46129"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-16.webp",
+      "sha256": "7020f85f7765b7e72ae63dee2990b7fbee1a35a01d9a02cd60619a5a48d04c8a"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-21.webp",
+      "sha256": "e373f7a421d40453713f040844c74f6379d6dfb3d7bd344b6dd992644e3a7220"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-23.webp",
+      "sha256": "60799223a60f2c8eb3c83735f282b06c6a2399b92fb3cdadbd13728ceb0835fb"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-24.webp",
+      "sha256": "a5672aae758b0e03a1a5252ad71bfe778c6b04a7c7d8dba8d9015aaa6bd42731"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/brain-viewer.glb",
+      "sha256": "41eb3fe7b277f9fadaa054befba8fd15e99443beb3f4cc28f95e05eba9c7ca28"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/cell-viewer.glb",
+      "sha256": "b59a503fff9077162dced212256e6c95ee3e11ff0bcab825c7de142bd7e43ed7"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/adult-body-surface.glb",
+      "sha256": "70031e17cacceab3064d1ee18460398b010c6f2e07f974a0d0f7cd50e47f5f8c"
     }
   ]
 }

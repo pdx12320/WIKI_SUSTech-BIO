@@ -107,3 +107,14 @@ class SAPDemoTest(unittest.TestCase):
                 text = file.read_text()
                 self.assertNotIn('/Users/', text, file.name)
                 self.assertNotIn('/private/', text, file.name)
+
+
+class SAPCdnReleaseTest(unittest.TestCase):
+    def test_production_adapter_matches_all_confirmed_uploads(self):
+        from scripts.build_sap_cdn_adapter import render
+        repository = Path(__file__).resolve().parents[1]
+        self.assertEqual(
+            (repository / 'static/sap-demo-cdn.js').read_text(),
+            render(repository / 'asset_mapping.csv'),
+            'SAP CDN adapter is stale: run python scripts/build_sap_cdn_adapter.py',
+        )

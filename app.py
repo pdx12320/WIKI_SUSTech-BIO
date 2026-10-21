@@ -17,6 +17,14 @@ app.config["FREEZER_DESTINATION"] = environ.get("FREEZER_DESTINATION", "public")
 app.config["FREEZER_REMOVE_EXTRA_FILES"] = False
 app.config["FREEZER_RELATIVE_URLS"] = True
 app.config["FREEZER_IGNORE_MIMETYPE_WARNINGS"] = True
+if environ.get('WIKI_ASSET_MODE') == 'igem':
+    # Historical design studies stay in source; they are not publication routes.
+    app.config['FREEZER_STATIC_IGNORE'] = [
+        'human-practices/opening/color-study/*',
+        'human-practices/opening/this-color-study/*',
+        'assets/model/icon-flowcharts-preview-20261016/*',
+        'previews/*',
+    ]
 freezer = Freezer(app)
 install_igem_assets(app)
 install_supporting_data(app)

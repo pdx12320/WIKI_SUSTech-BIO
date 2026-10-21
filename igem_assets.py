@@ -24,7 +24,7 @@ UPLOAD_EXTENSIONS = MEDIA_EXTENSIONS | frozenset({
 })
 CSS_URL = re.compile(r'''url\(\s*(["']?)([^\s)'"<>]+)\1\s*\)''', re.I)
 HTML_URL = re.compile(
-    r'''(?P<prefix>\b(?:src|href|xlink:href|poster|data-src|data-image|data-texture)\s*=\s*)(?P<q>["'])(?P<url>[^"']*)(?P=q)''', re.I)
+    r'''(?P<prefix>\b(?:src|href|xlink:href|poster|data-src|data-source|data-reader-url|data-image|data-texture)\s*=\s*)(?P<q>["'])(?P<url>[^"']*)(?P=q)''', re.I)
 SRCSET = re.compile(r'''(\bsrcset\s*=\s*)(["'])(.*?)\2''', re.I)
 
 
@@ -61,8 +61,27 @@ def resolve_url(value, base, mapping):
     return urlunsplit((target.scheme, target.netloc, target.path, query, parsed.fragment))
 
 
-def rewrite_text(text, base, kind, mapping):
-    resolve = lambda value: resolve_url(value, base, mapping)
+def rewrite_text(text, base, kind, mapping, script_root=''):
+    has_document_base = kind == 'html' and re.search(r'<base\b', text, re.I)
+    def resolve(value):
+        resolved = resolve_url(value, base, mapping)
+        # Historical HTML and unregistered downloads can still use absolute
+        # local paths. Keep them under the mounted Wiki instead of the host root.
+        parsed = urlsplit(resolved)
+        if (script_root and kind in {'html', 'svg'} and
+                not parsed.scheme and not parsed.netloc and
+                parsed.path.startswith('/')):
+            local = parsed.path
+            if local == script_root or local.startswith(script_root + '/'):
+                return resolved
+            if has_document_base:
+                target = script_root + local
+            else:
+                target = posixpath.relpath(local, posixpath.dirname(base) or '/')
+                if local.endswith('/') and not target.endswith('/'):
+                    target += '/'
+            return urlunsplit(('', '', target, parsed.query, parsed.fragment))
+        return resolved
     if kind == 'json':
         # This gallery resolves file values against the consuming module.
         if base.endswith('/sonar-contribution/data/screenshots.json'):
@@ -173,7 +192,16 @@ def install(app):
             return response
         response.direct_passthrough = False
         text = response.get_data(as_text=True)
-        text = rewrite_text(text, request.path, kind, mapping)
+        response_mapping = mapping
+        if request.script_root:
+            # url_for includes the mount prefix, while relative source links
+            # and the browser runtime use paths relative to the Wiki root.
+            response_mapping = {**mapping, **{
+                request.script_root + local: remote for local, remote in mapping.items()
+            }}
+        # CI freezes at the host root; the published Wiki lives at /sustech/.
+        text = rewrite_text(text, request.path, kind, response_mapping,
+                            request.script_root or '/sustech')
         if kind == 'html' and re.search(r'<head\b[^>]*>', text, re.I):
             # Register with Frozen-Flask and load before any inline/module code.
             runtime_path = urlsplit(url_for('asset_runtime')).path

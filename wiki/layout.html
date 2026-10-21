@@ -62,6 +62,7 @@
     <script src="{{ url_for('static', filename='wiki.js') }}" defer></script>
     <script src="{{ url_for('static', filename='navigation-search.js') }}" defer></script>
     <script src="{{ url_for('static', filename='navigation-scroll.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='reading-anchor-navigation.js') }}" defer></script>
     {% if reader_mode == 'cell' %}<script src="{{ url_for('static', filename='cell-reader/cell-reader.js') }}" defer></script>{% elif reader_mode == 'internal' %}<script src="{{ url_for('static', filename='reading-orbit/reading-orbit.js') }}" defer></script>{% endif %}
     <script src="{{ url_for('static', filename='cursor/orca-cursor.js') }}" defer></script>
     {% block page_scripts %}{% endblock %}

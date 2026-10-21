@@ -11,8 +11,10 @@
     frame = null;
     if (!active || location.hash !== '#supporting-data') return;
     // Ignore smooth scrolling for the initial landing, including late font and
-    // module reflows. Native scroll margins keep the heading below navigation.
-    target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    // module reflows. Use the same visible-menu offset as directory clicks.
+    globalThis.ORCAReadingAnchors.prepare(target);
+    scrollTo({top: globalThis.ORCAReadingAnchors.destination(target), behavior: 'instant'});
+    globalThis.ORCAReadingAnchors.settle(target);
   }
   function schedule() {
     if (active && !frame) frame = requestAnimationFrame(align);

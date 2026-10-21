@@ -7,9 +7,11 @@ const classes = new Set();
 const events = new Map();
 const navEvents = new Map();
 let interacting = false;
+let directoryJump = false;
 let nextFrame;
 const navigation = {
   offsetHeight: 100,
+  hasAttribute: name => name === 'data-reading-jump' && directoryJump,
   setAttribute() {},
   classList: { add: name => classes.add(name), remove: name => classes.delete(name) },
   querySelector: () => interacting ? {} : null,
@@ -51,6 +53,15 @@ assert.equal(hidden(), false, 'Open menus, search and keyboard use keep navigati
 interacting = false;
 scroll(500);
 assert.equal(hidden(), true);
+directoryJump = true;
+scroll(300);
+assert.equal(hidden(), true, 'A directory jump must not reveal the menu and shift its own landing');
+events.get('pageshow')({type: 'pageshow'});
+assert.equal(hidden(), true, 'Late page loading must preserve a completed directory landing');
+events.get('resize')({type: 'resize'});
+assert.equal(hidden(), true, 'Layout changes must preserve directory reading mode until reader input');
+directoryJump = false;
+scroll(500);
 scroll(3200);
 scroll(3280);
 scroll(3200);

@@ -1,4 +1,5 @@
 @import url('reading-back-to-top.css');
+@import url('reading-directory-layout.css');
 
 /* Supplied manuscript equations retain native MathML and their source TeX. */
 .markdown-content .submission-equation {
@@ -9,14 +10,16 @@
 }
 .markdown-content .submission-equation math { min-width: max-content; }
 
+/* Preserve the reading width while moving its desktop surface slightly right. */
+
 /* Team, Project, Wet Lab and Human Practices share Model's reading geometry
    and the requested return-to-top mascot. Keep their existing page headers. */
 .content-reading-page .markdown-page {
   width: min(1260px, calc(100% - clamp(48px, 9vw, 176px)));
-  grid-template-columns: 224px minmax(0, 1fr);
+  grid-template-columns: 148px minmax(0, 1fr);
   align-items: start;
-  gap: 56px;
-  padding: 42px 64px 90px 0;
+  gap: 12px;
+  padding: 42px 112px 90px 0;
 }
 
 .content-reading-page .markdown-page--without-toc {
@@ -107,8 +110,9 @@
 
 @media (min-width: 761px) and (max-width: 1100px) {
   .content-reading-page .markdown-page {
-    grid-template-columns: 180px minmax(0, 1fr);
-    gap: 28px;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 12px;
+    padding-right: 100px;
   }
 
   .content-reading-page .markdown-page--without-toc {
@@ -350,14 +354,15 @@ body.unified-reading-page:not(.ot) .markdown-content figure {
 .content-page .markdown-page {
   width: 100%;
   max-width: 1260px;
-  grid-template-columns: 224px minmax(0, 1fr);
-  gap: 56px;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 12px;
   align-items: start;
-  padding: 0 64px 0 0;
+  padding: 0 112px 0 0;
 }
 .content-page .markdown-page--without-toc {
   grid-template-columns: minmax(0, 820px);
   justify-content: center;
+  padding-right: 0;
 }
 .content-reading {
   min-width: 0;
@@ -523,7 +528,7 @@ body.unified-reading-page:not(.ot) .markdown-content figure {
 .content-mobile-directory { display: none; }
 
 @media (min-width: 761px) and (max-width: 1100px) {
-  .content-page .markdown-page { grid-template-columns: 180px minmax(0, 1fr); gap: 28px; }
+  .content-page .markdown-page { grid-template-columns: 120px minmax(0, 1fr); gap: 12px; padding-right: 100px; }
   .content-reading { padding-inline: 28px; }
   .content-group__head > a { font-size: 16px; }
   .content-subnav a { font-size: 12px; }

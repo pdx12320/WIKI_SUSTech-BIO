@@ -63,6 +63,7 @@ context = {
   IntersectionObserver: class { observe() {} },
   ResizeObserver: class { observe() {} },
 };
+runInNewContext(readFileSync(new URL('../static/reading-anchor-navigation.js', import.meta.url), 'utf8'), context);
 runInNewContext(source, context);
 
 function checkAt(scroll, expected, message) {

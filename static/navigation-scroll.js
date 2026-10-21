@@ -63,6 +63,12 @@
     const current = position();
     const delta = current - previous;
     previous = current;
+    // Directory jumps own one menu state until their final position settles.
+    if (navigation.hasAttribute?.('data-reading-jump')) {
+      travel = 0;
+      direction = 0;
+      return;
+    }
     // Keep open menus, touch disclosures and keyboard interaction reachable.
     const interacting = navigation.querySelector(
       ':focus-visible, .rna-toggle[aria-expanded="true"], [data-wiki-search][open]');
@@ -87,10 +93,11 @@
   const schedule = () => {
     if (!frame) frame = requestAnimationFrame(update);
   };
-  const reset = () => {
+  const reset = event => {
     previous = position();
     travel = 0;
     direction = 0;
+    if (event?.type !== 'focusin' && navigation.hasAttribute?.('data-reading-jump')) return;
     show();
   };
   window.addEventListener('scroll', schedule, { passive: true });

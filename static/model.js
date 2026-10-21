@@ -99,14 +99,10 @@
     try { return hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; }
     catch { return null; }
   }
-  function destination(target) {
-    if (!target) return 0;
-    const padding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
-    const margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
-    const maximum = Math.max(0, document.documentElement.scrollHeight - innerHeight);
-    return Math.max(0, Math.min(maximum, scrollY + target.getBoundingClientRect().top - padding - margin));
-  }
+  const anchors = globalThis.ORCAReadingAnchors;
+  const destination = target => anchors.destination(target);
   function cancelNavigation() {
+    anchors.release();
     if (!navigation) return;
     cancelAnimationFrame(navigation.frame);
     navigation = null;
@@ -122,6 +118,7 @@
   }
   function navigate(target, {record = false, animate = true, focus = false} = {}) {
     cancelNavigation();
+    anchors.prepare(target);
     const module = target?.closest('[data-model-module]');
     const chapter = target?.matches('[data-model-chapter], [data-model-subchapter]') ? target : null;
     if (record) {
@@ -138,6 +135,7 @@
     const finish = () => {
       if (navigation !== trip) return;
       scrollTo({top: destination(target), behavior: 'instant'});
+      anchors.settle(target);
       navigation = null;
       page?.classList.remove('is-model-navigating');
       if (focus) focusTarget(target);
@@ -258,7 +256,7 @@
     if (page && page.style.getPropertyValue('--model-directory-height') !== sidebarHeightValue) {
       page.style.setProperty('--model-directory-height', sidebarHeightValue);
     }
-    const offset = navHeight + sidebarHeight + 56;
+    const offset = anchors.offset() + 2;
     if (sidebar && reading) {
       const bounds = reading.getBoundingClientRect();
       const visible = bounds.top <= offset + 40 && bounds.bottom > navHeight;
@@ -271,7 +269,7 @@
       }
     }
     let current = navigation?.module || null;
-    if (!navigation) for (const section of modules) if (section.getBoundingClientRect().top <= offset) current = section.id;
+    if (!navigation) for (const section of modules) if (anchors.top(section) <= offset) current = section.id;
     const activeModule = links.find(link => link.dataset.module === current) || null;
     const moduleChanged = expandedModule !== activeModule;
     expand(activeModule);
@@ -283,7 +281,7 @@
     if (!navigation) for (const position of chapterPositions) {
       // Hidden viewer headings have top=0 and must not select a later chapter.
       if (!position.heading.getClientRects().length) continue;
-      if (position.module === current && position.heading.getBoundingClientRect().top <= offset) chapter = position.chapter;
+      if (position.module === current && anchors.top(position.heading) <= offset) chapter = position.chapter;
     }
     const activeChapterLink = chapterLinks.find(link => link.hash === `#${chapter}`) || null;
     const parentChapter = activeChapterLink?.dataset.parentChapter || null;

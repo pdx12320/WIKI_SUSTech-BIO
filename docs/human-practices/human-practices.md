@@ -31,6 +31,10 @@ status_message: Team interview accounts, survey results and implementation recor
       <dt>Evolve — make a considered response</dt>
       <dd>We connect feedback to an action and a record: revise the workbook, give delivery burden greater attention, or stop a partnership when resources and responsibilities do not align. The chapters below distinguish changes we made from questions that still need follow-up.</dd>
     </dl>
+    <div class="hp-three-e-animation" id="hp-three-e-animation">
+      <img src="https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg" alt="Animated Emit, Echo, Evolve cycle: waves spread outward and a feedback arrow circles the orca, connecting a question, a response and a considered change." width="1540" height="485" loading="lazy" decoding="async">
+      <p class="hp-three-e-animation-caption">The 3E cycle: Emit, Echo, Evolve.</p>
+    </div>
   </div>
 </figure>
 
@@ -336,7 +340,7 @@ The two questions plotted below asked what information respondents would priorit
 <p><strong>Q8:</strong> If you or a family member were considering an unfamiliar new treatment for Alzheimer&#x27;s disease, which information would you prioritize before making a decision? Multiple choice; select up to 4.</p>
 <p><strong>Q10:</strong> When learning about an unfamiliar biomedical technology, which issues most hinder your understanding or judgment? Multiple choice; select up to 3.</p>
 <p>Age and experience counts each sum to 103. The report supplies the overall valid-record total and uses 103 for percentages, but provides no respondent-level export or separate completion counts for the multiple-choice items. We make no adjustment for unknown skipped answers. These are public communication responses, mainly from people aged 18–30.</p>
-<p><a href="assets/human-practices/attachments/public-perception-survey-findings-en.pdf">Findings report · sample on page 1; Q8 and Q10 on page 4</a> · <a href="assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf">Full bilingual question wording</a> · <a href="assets/human-practices/evidence-analysis/survey-data.json">Chart data and all reported options</a></p></details>
+<p><a href="assets/human-practices/attachments/public-perception-survey-findings-en.pdf">Findings report · sample on page 1; Q8 and Q10 on page 4</a> · <a href="assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf">Full bilingual question wording</a> · <a href="/assets/human-practices/evidence-analysis/survey-data.json">Chart data and all reported options</a></p></details>
 <figcaption id="hp-survey-figure-caption">Figure 13. Sample composition and selected Q8/Q10 findings, redrawn from the team’s aggregate report [H1]. Counts and denominators are retained; percentages are rounded to one decimal. The figure describes this respondent group, rather than estimating patient or caregiver needs.</figcaption>
 <div class="hp-evidence-downloads"><a href="assets/human-practices/evidence-analysis/public-questionnaire.svg" aria-label="Download editable SVG: Public questionnaire sample and findings">Editable SVG</a><a href="assets/human-practices/evidence-analysis/public-questionnaire.png" aria-label="Download high-resolution image: Public questionnaire sample and findings">High-resolution image</a></div>
 </figure>

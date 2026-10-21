@@ -74,3 +74,12 @@ body.hp-overview-page .hp-three-e dd { margin: 0; }
   body.hp-overview-page .hp-overview-hero .hp-three-e { font-size: 17px; padding-inline: 14px; }
   body.hp-overview-page .hp-three-e-intro { font-size: 25px; }
 }
+
+/* The existing animated cycle follows the hand-drawn overview and model explanation. */
+body.hp-overview-page .hp-three-e-animation { margin: 32px 0 12px; scroll-margin-top: 24px; }
+body.hp-overview-page .hp-three-e .hp-three-e-animation-caption {
+  margin: 10px 0 0;
+  color: #6b6880;
+  font-size: 15px;
+  text-align: center;
+}

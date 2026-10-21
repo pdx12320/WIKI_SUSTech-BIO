@@ -1,0 +1,41 @@
+/* Progressive enhancement of the supplied HP overview only. */
+body.hp-overview-page #hp-figure-1 .hp-hand-draw-frame {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+body.hp-overview-page #hp-figure-1 .hp-hand-draw-source { opacity: 0; }
+.hp-hand-draw-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.hp-hand-draw-pencil { pointer-events: none; transition: opacity .45s ease; }
+#hp-figure-1[data-hand-draw="complete"] .hp-hand-draw-pencil { opacity: 0; }
+body.hp-overview-page .hp-hand-draw-controls {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 34px;
+  margin: 10px clamp(12px, 3vw, 36px) 0;
+}
+body.hp-overview-page .hp-hand-draw-controls button {
+  appearance: none;
+  padding: 6px 13px;
+  border: 1px solid #d9d7e5;
+  border-radius: 18px;
+  background: #fff;
+  color: #2e267c;
+  font: 14px/1.4 Futura, var(--sans), sans-serif;
+  cursor: pointer;
+}
+body.hp-overview-page .hp-hand-draw-controls button:hover { background: #e9e8ff; }
+body.hp-overview-page .hp-hand-draw-controls button:focus-visible { outline: 2px solid #5d5ad7; outline-offset: 3px; }
+body.hp-overview-page .hp-hand-draw-controls [hidden],
+body.hp-overview-page .hp-hand-draw-controls[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  body.hp-overview-page #hp-figure-1 .hp-hand-draw-source { opacity: 1; }
+  .hp-hand-draw-canvas, body.hp-overview-page .hp-hand-draw-controls { display: none; }
+}
+@media print {
+  body.hp-overview-page #hp-figure-1 .hp-hand-draw-source { opacity: 1; }
+  .hp-hand-draw-canvas, body.hp-overview-page .hp-hand-draw-controls { display: none; }
+}

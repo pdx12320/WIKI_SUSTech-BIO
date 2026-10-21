@@ -1,8 +1,8 @@
 /* SONAR follows its available reading-column width, including browser zoom. */
 .results-page .content-page .markdown-content .sonar-introduction { margin-bottom:28px; font-size:19px; line-height:1.75; }
 .results-page .content-page .markdown-content .sonar-introduction strong { color:#243e47; font-weight:650; }
-.results-page .content-page .markdown-content figure.sonar-system { display:block; width:100%; max-width:760px; margin:28px auto; padding:28px 24px 20px; border:1px solid #e8daca; border-radius:14px; background:#fff8ef; box-shadow:none; container:sonar / inline-size; }
-.results-page .sonar-ring { position:relative; display:flex; flex-direction:column; align-items:center; width:100%; max-width:680px; margin-inline:auto; }
+.results-page .content-page .markdown-content figure.sonar-system { display:block; width:100%; box-sizing:border-box; max-width:860px; margin:28px auto; padding:28px 24px 24px; border:1px solid #e8daca; border-radius:14px; background:#fff8ef; box-shadow:none; container:sonar / inline-size; }
+.results-page .sonar-ring { position:relative; display:flex; flex-direction:column; align-items:center; width:100%; max-width:780px; margin-inline:auto; }
 .results-page .content-page .markdown-content .sonar-ring-title { position:static; order:0; margin:0 0 24px; color:#a44c0c; font:normal 34px/1 Georgia,serif; letter-spacing:-.025em; }
 .results-page .sonar-ring-arrows { display:none; }
 .results-page .sonar-ring .sonar-cycle-card { position:relative; display:flex; flex-direction:column; width:min(100%,300px); min-height:0; }
@@ -10,7 +10,7 @@
 .results-page .sonar-ring-measurement { --sonar-card-tint:#edf4ef; --sonar-card-heading:#436851; order:3; }
 .results-page .sonar-ring-contribution { --sonar-card-tint:#fbf0df; --sonar-card-heading:#95632d; order:5; }
 .results-page .sonar-ring-label { position:static; width:min(100%,220px); padding:18px 0; color:#8a6741; text-align:center; font:15px/1.55 var(--sans); }
-.results-page .sonar-label-text { display:block; align-content:center; box-sizing:border-box; width:100%; min-height:88px; padding:4px 8px; border:1px solid #c9aa86; border-radius:50%; background:#fffdf9; line-height:1.4; }
+.results-page .sonar-label-text { display:block; align-content:center; box-sizing:border-box; width:100%; min-height:88px; padding:12px 10px; border:1px solid #c9aa86; border-radius:50%; background:#fffdf9; line-height:1.4; }
 .results-page .sonar-ring-data { order:2; }
 .results-page .sonar-ring-framework { order:4; }
 .results-page .sonar-ring-reuse { order:6; }
@@ -29,25 +29,25 @@
 .results-page .content-page .markdown-content .sonar-explanation { margin-top:26px; }
 /* Intrinsic grid rows let longer text grow without crossing another card or link. */
 @container sonar (min-width:600px) {
-  .results-page .sonar-ring { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; align-items:stretch; }
+  .results-page .sonar-ring { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); column-gap:24px; row-gap:24px; grid-template-rows:1fr 80px 1fr 128px; align-items:stretch; }
   .results-page .sonar-ring > :not(.sonar-ring-arrows) { position:relative; z-index:1; }
-  .results-page .sonar-ring-arrows { display:block; position:absolute; inset:0; width:100%; height:calc(100% - 130px); overflow:visible; pointer-events:none; }
+  .results-page .sonar-ring-arrows { display:block; position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
   .results-page .sonar-ring-path { fill:none; stroke:#ac8050; stroke-width:2.5; stroke-linecap:round; vector-effect:non-scaling-stroke; }
   .results-page #sonar-cycle-arrow path { fill:#ac8050; stroke:none; }
   .results-page .sonar-stack-arrow { display:none; }
-  .results-page .sonar-ring .sonar-cycle-card { width:100%; max-width:300px; justify-self:center; }
+  .results-page .sonar-ring .sonar-cycle-card { width:100%; max-width:320px; justify-self:center; }
   .results-page .sonar-ring-engineering { grid-column:2 / 4; grid-row:1; }
   .results-page .sonar-ring-measurement { grid-column:3 / 5; grid-row:3; }
   .results-page .sonar-ring-contribution { grid-column:1 / 3; grid-row:3; }
   .results-page .content-page .markdown-content .sonar-ring-title { grid-column:2 / 4; grid-row:2; justify-self:center; align-self:center; margin:0; }
-  .results-page .sonar-ring .sonar-ring-label { width:auto; padding:0; align-self:center; }
+  .results-page .sonar-ring .sonar-ring-label { width:100%; max-width:180px; font-size:14px; padding:0; align-self:center; justify-self:center; margin-top:0; }
   .results-page .sonar-ring-data { grid-column:4; grid-row:1; }
-  .results-page .sonar-ring-framework { grid-column:2 / 4; grid-row:4; justify-self:center; }
+  .results-page .sonar-ring .sonar-ring-framework { grid-column:2 / 4; grid-row:4; align-self:start; justify-self:center; margin-top:4px; width:220px; max-width:220px; }
   .results-page .sonar-ring-reuse { grid-column:1; grid-row:1; }
   .results-page .sonar-ring-data .sonar-stack-arrow { transform:rotate(-35deg); }
   .results-page .sonar-ring-reuse .sonar-stack-arrow { transform:rotate(35deg); }
-  .results-page .content-page .markdown-content .sonar-chapter-link { margin-top:auto; }
-  .results-page .sonar-cycle-card > p:last-of-type { margin-bottom:18px; }
+  .results-page .content-page .markdown-content .sonar-chapter-link { margin-top:auto; min-height:34px; display:flex; align-items:center; }
+  .results-page .content-page .markdown-content .sonar-cycle-card > p:last-of-type { margin-bottom:18px; }
 }
 @media(max-width:650px) {
   .results-page .content-page .markdown-content figure.sonar-system { padding:22px 16px; }
@@ -61,3 +61,8 @@
   .results-page .content-page .markdown-content .sonar-chapter-link { padding:6px 8px; font-size:11px; }
 }
 @media print { .results-page .sonar-system { break-inside:avoid; } }
+
+/* Final SONAR copy uses the existing introduction and compact closing styles. */
+.results-page .content-page .markdown-content .sonar-subtitle { margin:0 0 14px; color:#495b62; font:normal 24px/1.4 Georgia,serif; }
+.results-page .content-page .markdown-content .sonar-summary { text-align:center; font:600 17px/1.5 var(--sans); letter-spacing:.06em; }
+.results-page .content-page .markdown-content .sonar-summary strong { color:#a44c0c; }

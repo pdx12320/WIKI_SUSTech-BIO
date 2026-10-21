@@ -21,5 +21,6 @@
 {% endblock %}
 {% block page_scripts %}
 {{ super() }}
+<script src="{{ url_for('static', filename='results-sonar.js') }}" defer></script>
 <script src="{{ url_for('static', filename='results-achievements.js') }}" defer></script>
 {% endblock %}

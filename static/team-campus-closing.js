@@ -1,4 +1,4 @@
-/* Scrub the panel directly with scroll position; no-script stays complete. */
+/* Smooth scroll scrubbing; no-script and reduced motion stay complete. */
 (() => {
   'use strict';
   const section = document.querySelector('[data-team-campus-closing]');
@@ -8,13 +8,24 @@
   section.dataset.campusReady = 'true';
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   let frame = 0;
-  const update = () => {
-    frame = 0;
+  let dirty = true;
+  let current = null;
+  let target = 1;
+  let previousTime = null;
+  let immediate = false;
+  let nearby = false;
+  let lastTransform = '';
+  const measure = () => {
+    dirty = false;
     const height = document.documentElement.clientHeight || window.innerHeight;
-    let progress = 1;
-    if (height && !motion.matches && !section.contains(document.activeElement)) {
+    target = 1;
+    immediate = motion.matches || section.contains(document.activeElement);
+    nearby = false;
+    if (height && !immediate) {
       const bounds = panel.getBoundingClientRect();
       const top = bounds.top;
+      // Prepare the compositor before the panel enters the viewport.
+      nearby = top < height + 160 && bounds.bottom > -160;
       const start = height * .98;
       // Complete when the visible panel's vertical center reaches the screen center.
       let end = (height - bounds.height) / 2;
@@ -31,19 +42,43 @@
           end = start;
         }
       }
-      progress = end === start ? 1 : Math.min(1, Math.max(0, (start - top) / (start - end)));
+      target = end === start ? 1 : Math.min(1, Math.max(0, (start - top) / (start - end)));
     }
-    section.style.setProperty('--campus-progress', progress.toFixed(4));
-    section.classList.toggle('is-scroll-ready', !motion.matches && progress > 0 && progress < 1);
+  };
+  const update = (time) => {
+    frame = 0;
+    if (dirty) measure();
+    if (current === null || immediate || !nearby) current = target;
+    else {
+      // Time-based damping keeps wheel steps smooth at both 60 and 120 Hz.
+      const elapsed = previousTime === null ? 1000 / 60 : Math.min(64, time - previousTime);
+      current += (target - current) * (1 - Math.exp(-elapsed / 70));
+      if (Math.abs(target - current) < .0001) current = target;
+    }
+    const moving = current !== target;
+    const transform = `translate3d(${((current - 1) * 102).toFixed(4)}%, 0, 0)`;
+    if (transform !== lastTransform) {
+      // A local transform avoids invalidating inherited styles on every child.
+      panel.style.transform = transform;
+      lastTransform = transform;
+    }
+    section.classList.toggle('is-scroll-ready', !immediate && nearby && (moving || target < 1));
+    previousTime = moving ? time : null;
+    if (moving) frame = requestAnimationFrame(update);
   };
   const schedule = () => {
+    dirty = true;
     if (!frame) frame = requestAnimationFrame(update);
   };
-  update();
+  update(0);
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule, { passive: true });
   window.addEventListener('pageshow', schedule);
-  window.addEventListener('pagehide', () => { cancelAnimationFrame(frame); frame = 0; });
+  window.addEventListener('pagehide', () => {
+    cancelAnimationFrame(frame);
+    frame = 0;
+    previousTime = null;
+  });
   motion.addEventListener?.('change', schedule);
   section.addEventListener('focusin', schedule);
   section.addEventListener('focusout', schedule);

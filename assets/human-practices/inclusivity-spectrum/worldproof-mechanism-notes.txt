@@ -1,0 +1,43 @@
+WORLDPROOF — documented mechanism for the Inclusivity page
+Local review, 21 October 2026
+
+WORLDPROOF: solving real problems in the real world.
+Existing slogan: Build it. Break it. Fix it.
+This page companion is not the original event rulebook or final scoring sheet.
+
+BUILD
+Use a biology-related problem to make a demonstrable proposal. The available
+English challenge PDF contains eight hypothetical scenarios: Riverlight,
+FieldShift, FermentOS, ClinicNow, ProBio Home, Mossback, ClearCoast and OpenBench.
+They contain conflicts, stakeholders, possible demos and reality-check examples.
+The planning document describes project and scenario entrances. Its proposed
+support measures must be distinguished from confirmed delivery.
+
+BREAK
+Captain-confirmed requirement: each team must act as a red team to challenge
+at least three other teams. The planning prompts ask who is affected, what fails,
+what follows and what warning can be observed. Target assumptions and systems,
+not people. An observer's idea and a documented challenge are distinct evidence.
+
+FIX
+Captain-confirmed requirement: each team must respond to at least three
+suggestions from other teams and explain improvements in its change log.
+The captain reports judges paid particular attention to this. The final scoring
+rubric is not yet supplied; no numeric weighting is asserted here. The local
+concept draft's suggested percentages must not be used as confirmed final rules.
+
+FOLLOW A PROJECT
+The all-group change log exists (captain confirmation), awaiting Feishu transfer.
+Match one initial demo, incoming challenges, log entries and final demo. Retain
+reasons for non-adoption, unfinished changes or unhelpful feedback if recorded.
+Captain's recollection: the first-prize team was mainly mathematics/statistics,
+with little biology background; judging included biology expertise. Formal team,
+award and judge records have not yet been matched. Do not infer creativity or
+access outcomes from academic background or the count of required revisions.
+
+PERMISSIONS AND USE
+Check sharing permissions and remove unnecessary identities before posting logs,
+video frames or quotations. Recorded material is not automatically approved for
+publication. No external reuse or measured participation outcome is asserted.
+These newly written notes follow the Wiki's existing CC BY 4.0 licence and do
+not alter the rights in original scenario materials or participant work.

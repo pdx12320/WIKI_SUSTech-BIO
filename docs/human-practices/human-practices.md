@@ -31,6 +31,10 @@ status_message: Team interview accounts, survey results and implementation recor
       <dt>Evolve — make a considered response</dt>
       <dd>We connect feedback to an action and a record: revise the workbook, give delivery burden greater attention, or stop a partnership when resources and responsibilities do not align. The chapters below distinguish changes we made from questions that still need follow-up.</dd>
     </dl>
+    <div class="hp-three-e-animation" id="hp-three-e-animation">
+      <img src="https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg" alt="Animated Emit, Echo, Evolve cycle: waves spread outward and a feedback arrow circles the orca, connecting a question, a response and a considered change." width="1540" height="485" loading="lazy" decoding="async">
+      <p class="hp-three-e-animation-caption">The 3E cycle: Emit, Echo, Evolve.</p>
+    </div>
   </div>
 </figure>
 

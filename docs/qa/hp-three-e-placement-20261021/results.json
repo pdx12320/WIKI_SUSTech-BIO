@@ -1,0 +1,23 @@
+{
+  "desktop": {
+    "afterExplanation": true,
+    "animation": {
+      "complete": true,
+      "height": 273,
+      "naturalHeight": 94,
+      "naturalWidth": 300,
+      "top": 357.3515625,
+      "width": 868
+    },
+    "chapters": 7,
+    "handDrawn": 1685,
+    "overflow": 1440,
+    "width": 1440
+  },
+  "mobile": {
+    "afterExplanation": true,
+    "overflow": 390,
+    "top": 24.0390625,
+    "width": 390
+  }
+}

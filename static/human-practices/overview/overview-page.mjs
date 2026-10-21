@@ -4,6 +4,10 @@ if (source) {
   const css = document.createElement('link');
   css.rel = 'stylesheet';
   css.href = new URL('./overview-page.css', import.meta.url).href;
+  const cssReady = new Promise(resolve => {
+    css.addEventListener('load', resolve, {once: true});
+    css.addEventListener('error', resolve, {once: true});
+  });
   document.head.append(css);
   document.body.classList.add('hp-overview-page');
   const hero = source.querySelector('#hp-figure-1');
@@ -11,8 +15,11 @@ if (source) {
   if (hero && header) {
     hero.classList.add('hp-overview-hero');
     header.after(hero);
-    if (location.hash === "#hp-figure-1") {
-      requestAnimationFrame(() => hero.scrollIntoView({block: "start"}));
+    const overviewTarget = document.getElementById(location.hash.slice(1));
+    if (overviewTarget && hero.contains(overviewTarget)) {
+      cssReady.then(() => document.fonts.ready).then(() => {
+        requestAnimationFrame(() => overviewTarget.scrollIntoView({block: "start"}));
+      });
     }
   }
 

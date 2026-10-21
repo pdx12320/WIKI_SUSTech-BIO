@@ -46,7 +46,7 @@ class MarkdownContent:
 CONTENT_PAGES: dict[str, PageConfig] = {
     "team": PageConfig("team/team.md", "pages/team.html"),
     "design-communication": PageConfig("team/design-communication.md", "pages/design-communication.html"),
-    "attributions": PageConfig("team/attributions.md"),
+    "attributions": PageConfig("team/attributions.md", "pages/attributions.html"),
     "description": PageConfig("project/description.md"),
     "supporting-data": PageConfig("project/supporting-data.md", "pages/supporting_data.html"),
     "engineering": PageConfig("project/engineering.md", "pages/engineering.html"),

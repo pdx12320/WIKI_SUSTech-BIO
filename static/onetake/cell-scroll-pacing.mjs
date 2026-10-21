@@ -2,6 +2,8 @@
 // camera key, scene order, or the scroll mapping used by other routes.
 const bands=[
  [.50,.525,.737,.747,1.1],
+ // Ease into the separate A-beta flight with one third more scroll distance.
+ [.605,.62,.665,.68,.7],
  // Let the A-beta cloud settle, form one tower, then breathe before pullback.
  [.725,.737,.752,.758,1.2],
  // Two text-rich brain chapters get more room before the maze begins.

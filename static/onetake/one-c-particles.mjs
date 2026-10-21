@@ -90,6 +90,8 @@ void main(){
  if(aRole>4.5)vColor=mix(vec3(.56,.73,.85),vec3(.72,.6,.9),aSeed);
  if(aRole>5.5||abs(aRole-3.)<.1)vColor=mix(vec3(1.,.58,.69),vec3(.55,1.,.79),uEdit);
  vColor=mix(vColor,aRole>4.5?vec3(.75,.72,.95):vec3(.78,.86,1.),uLegacy*.65);
+ // Lavender distinguishes the RNA body from the pale astrocyte particles.
+ if(aRole<2.5||(aRole>3.5&&aRole<5.5))vColor=mix(vec3(.58,.27,1.),vec3(.72,.42,1.),aSeed);
  float light=mix(.4,.65,uLegacy)+mix(.6,.35,uLegacy)*max(0.,dot(normalize(normalMatrix*aNormal),normalize(vec3(-.4,.65,1.))));
  vColor*=light;
  float flow=.8+.2*sin(position.x*1.4-uTime*1.2);

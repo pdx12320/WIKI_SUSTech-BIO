@@ -11,7 +11,7 @@ export function rnaCellState(take){
  const t=Number.isFinite(take)?take:-1;
  return {question:ease((t-.783)/.014)*(1-ease((t-.815)/.012)),opacity:ease((t-.325)/.05)*(1-ease((t-.737)/.015)),zoom:ease((t-.32)/.13),
   protein:ease((t-.435)/.028),transport:ease((t-.525)/.095),
-  stage:t<.435?'inside':t<.525?'translation':t<.635?'transport':t<.655?'questions':'flight',
+  stage:t<.435?'inside':t<.525?'translation':t<.655?'transport':'flight',
   backdrop:ease((t-.737)/.015)};
 }
 export function rnaInCell(take,aspect=1.6){

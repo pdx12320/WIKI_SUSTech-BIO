@@ -945,6 +945,7 @@ async function boot() {
   let p = progressOf(), time = Number.isNaN(pinned) ? 0 : 4, intro = 0, started = false, wasReplaying = false;
   root.addEventListener('ot:skip-story', () => {
     replay.skipToProject();
+    memoryEnding.skipToProject?.();
     p = progressOf();
   });
 
@@ -1064,7 +1065,8 @@ async function boot() {
     oneCParticles.update(contextView.take,time,dt,oneCContext.edited?.()??false,contextView.replay,motion,contextView.opacity,moleculeView,{x:mouse.x,y:mouse.y,on:mouseOn*motion});
     oneCContext.update(contextView.take,contextView.replay,oneCParticles.labels(camera,innerWidth,innerHeight),contextView.opacity);
     rnaCell.update(contextView.take,time,camera,contextView.replay,motion,innerWidth,innerHeight,{x:mouse.x,y:mouse.y,on:mouseOn*motion},dt);
-    memoryEnding.update(P,time,camera,motion,innerWidth,innerHeight,replayState,p);
+    const endingScreens=Math.max(0,(p-1)*(story.offsetHeight-innerHeight)/innerHeight);
+    memoryEnding.update(P,time,camera,motion,innerWidth,innerHeight,replayState,p,endingScreens);
     composer.render();
     if (!started) {
       started = true; root.classList.add('is-ready');

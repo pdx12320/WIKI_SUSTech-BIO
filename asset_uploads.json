@@ -3035,6 +3035,7 @@
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-17.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-18.avif",
     "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
+    "https://static.igem.wiki/teams/6085/wiki/wiki-new/download-5.avif",
     "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif",
     "https://static.igem.wiki/teams/6085/wiki/final/static-onetake-one-c-lettering.woff2"
   ],
@@ -15503,6 +15504,13 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-figure-1-hand-drawn-overview-v2-20261021.pdf",
       "sha256": "199ca53a14ce2a87e04ab32f06b56d6c68f77f3082b42c79fc9d6a4d4673e910",
       "evidence": "official_upload_ui_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/assets/brand/sustech-horizontal-en.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/wiki-new/download-5.avif",
+      "sha256": "518adeb797cd4b06065f18a3e916bc5f8e0f0a45ad0c99b19dd0cd3e54fc1d80",
+      "evidence": "user_provided_footer_school_avif_http200_rgba_same_dimensions_20261021",
+      "uploaded_sha256": "2e3d9ebc501ed93202a002ce7a09452499e654d74d96bf506eb0a4200e15d0a2"
     },
     {
       "local_path": "static/onetake/one-c-lettering.woff2",

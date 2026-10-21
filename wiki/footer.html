@@ -1,88 +1,112 @@
-{# Footer layout and original media: https://2025.igem.wiki/sustech-bio/ (CC BY 4.0).
-   Source inventory and local adaptations: static/assets/brand/footer-2025-provenance.json. #}
-<footer class="site-footer site-footer--school" data-school-footer>
-  {% include 'components/footer_glints.html' %}
-  <div class="footer-content">
-    <section class="footer-intro" aria-label="About SUSTech-BIO">
-      <div id="footer-about-title" class="footer-intro-brand">
-        <span class="footer-eyebrow">SUSTech · iGEM 2026 · ORCA</span>
-        <button class="footer-image-button footer-intro-logo" type="button" data-footer-image aria-label="Enlarge SUSTech-BIO team logo">
-          <img src="{{ url_for('static', filename='assets/brand/sustech-bio-logo.png') }}" alt="SUSTech-BIO team logo" width="128" height="90" loading="lazy">
-        </button>
+{# Approved ORCA footer; community media attribution: static/assets/brand/footer-2025-provenance.json. #}
+<footer class="site-footer orca-footer" data-school-footer id="orca-footer" aria-label="ORCA project footer">
+  <div class="ofd-shell">
+    <div class="ofd-identity">
+      <div class="ofd-project">
+        <a class="ofd-project-logo" href="{{ url_for('home') }}" aria-label="ORCA project home">
+          <svg class="orca-wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 100" width="372" height="100" style="display:block;max-width:100%;height:auto" fill="currentColor" aria-hidden="true" focusable="false">
+  <g data-letter="O" data-advance="92"><defs><linearGradient id="orca-footer-back" gradientUnits="userSpaceOnUse" x1="28" y1="48" x2="64" y2="73"><stop stop-color="#9D9CF4"/><stop offset="1" stop-color="#5D5AD7"/></linearGradient><linearGradient id="orca-footer-front" gradientUnits="userSpaceOnUse" x1="29" y1="57" x2="61" y2="73"><stop stop-color="#5D5AD7"/><stop offset="1" stop-color="#2E267C"/></linearGradient><clipPath id="orca-footer-water-clip"><path transform="translate(48 50) scale(1.03) translate(-48 -50)" d="M48 27C63 27 68 35 68 50S63 73 48 73 28 65 28 50 33 27 48 27Z"/></clipPath></defs>
+    <g clip-path="url(#orca-footer-water-clip)">
+      <path class="orca-wordmark__wave-back" fill="url(#orca-footer-back)" d="M20 54C36 38 48 58 59 60C67 63 73 55 76 54V82H20Z"/>
+      <path class="orca-wordmark__wave-front" fill="url(#orca-footer-front)" d="M20 65C34 46 47 66 58 66C66 67 72 60 76 58V82H20Z"/>
+      <path class="orca-wordmark__sea-light" fill="#FFFFFF" d="M26 59C38 53 47 65 58 65C64 65 68 62 71 60C67 66 62 68 57 68C45 68 39 55 26 59Z"/>
+    </g>
+    <path fill-rule="evenodd" d="M48 10C22 10 10 23 10 50S22 90 48 90 86 77 86 50 74 10 48 10ZM48 27C63 27 68 35 68 50S63 73 48 73 28 65 28 50 33 27 48 27Z"/>
+    <path d="M53 32C60 30 65 34 64 40C59 44 53 45 48 43C47 38 49 34 53 32Z"/>
+  </g>
+  <g data-letter="R" data-advance="92" transform="translate(92)">
+    <path fill-rule="evenodd" d="M12 90V10H48C73 10 84 19 84 36C84 49 77 57 65 60C73 66 77 78 87 90H65C54 77 56 64 38 62H30V90ZM30 27V46H48C60 46 66 43 66 36S60 27 48 27Z"/>
+  </g>
+  <g data-letter="C" data-advance="92" transform="translate(184)">
+    <path d="M84 23L71 36C66 30 59 27 49 27C34 27 28 35 28 50S34 73 49 73C59 73 66 70 71 64L84 77C76 86 65 90 48 90C22 90 10 76 10 50S22 10 48 10C65 10 76 14 84 23Z"/>
+    <path class="orca-wordmark__edit" fill="#F58F9C" d="M73 41H85V53H73Z"/>
+  </g>
+  <g data-letter="A" data-advance="92" transform="translate(276)">
+    <path fill-rule="evenodd" d="M8 90C18 60 27 27 58 10C59 32 75 59 88 90H68L61 70H33L27 90ZM39 55H55C51 47 48 42 47 36C43 43 41 49 39 55Z"/>
+  </g>
+</svg>
+
+        </a>
+        <p class="ofd-project-name">On-target RNA Correction of APOE4 for Alzheimer’s Disease</p>
       </div>
-      <div class="footer-about">
-        {# Summarized from docs/team/team.md and the project / Human Practices pages. #}
-        <p>We are SUSTech-BIO, an interdisciplinary student team at Southern University of Science and Technology in Shenzhen. Through ORCA, we explore programmable RNA editing for Alzheimer’s disease, bringing together wet-lab engineering, computational modeling, and conversations with the people our work hopes to serve. We connect research with education, inclusive design, and public dialogue to build synthetic biology with care.</p>
-        <a href="{{ url_for('pages', page='team') }}">Meet the people behind ORCA</a>
-      </div>
-    </section>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      {% for group in navigation_groups %}
-      <div class="footer-nav-column">
-        <h3>{{ group.label }}</h3>
-        {% for page, title in group['items'] %}
-        {% if group.label != 'Human Practices' or page in ['human-practices', 'inclusivity'] %}
-        <a href="{{ url_for('pages', page=page) }}">{{ title }}</a>
-        {% endif %}
-        {% endfor %}
-      </div>
-      {% endfor %}
-    </nav>
-    <div class="footer-logos">
-      <div class="logo-container">
-        <button class="footer-image-button" type="button" data-footer-image aria-label="Enlarge SUSTech university seal">
-          <img src="https://static.igem.wiki/teams/5873/images/footer/sustech.webp" alt="SUSTech university seal" class="logo-image sustech-logo" width="90" height="90" loading="lazy">
-        </button>
-        <div class="logo-text"><span>Southern University</span><span>of Science and Technology</span></div>
+      <div class="ofd-affiliations">
+        <a class="ofd-team" href="{{ url_for('pages', page='team') }}" aria-label="Meet SUSTech-BIO">
+          <img src="{{ url_for('static', filename='assets/brand/sustech-bio-logo.png') }}" alt="SUSTech-BIO team logo" width="1498" height="1050">
+        </a>
+        <div class="ofd-school">
+          <span class="ofd-school-art"><img src="{{ url_for('static', filename='assets/brand/sustech-horizontal-en.png') }}" alt="SUSTech university logo with the English name Southern University of Science and Technology" width="433" height="86"></span>
+        </div>
       </div>
     </div>
-    <section class="footer-contact" aria-labelledby="footer-contact-title">
-      <h4 id="footer-contact-title">CONNECT WITH US</h4>
-      <div class="qr-codes">
-        <div class="qr-code-item">
-          <button class="footer-image-button" type="button" data-footer-image aria-label="Enlarge Instagram QR code">
-            <img src="https://static.igem.wiki/teams/5873/images/footer/contactus/ins.webp" alt="Instagram QR code" class="qr-code" width="80" height="80" loading="lazy">
-          </button>
-          <span class="qr-code-label">Instagram</span>
-        </div>
-        <div class="qr-code-item">
-          <button class="footer-image-button" type="button" data-footer-image aria-label="Enlarge RedNote QR code">
-            <img src="https://static.igem.wiki/teams/5873/images/footer/contactus/rednote.webp" alt="RedNote QR code" class="qr-code" width="80" height="80" loading="lazy">
-          </button>
-          <span class="qr-code-label">RedNote</span>
-        </div>
-        <div class="qr-code-item">
-          <button class="footer-image-button" type="button" data-footer-image aria-label="Enlarge Wechat QR code">
-            <img src="{{ url_for('static', filename='assets/brand/wechat-team.svg') }}" alt="WeChat QR code with the SUSTech-BIO team emblem" class="qr-code" width="80" height="80" loading="lazy">
-          </button>
-          <span class="qr-code-label">Wechat</span>
-        </div>
+
+    <div class="ofd-main">
+      <div class="ofd-navigation">
+      <nav class="ofd-links" aria-label="Explore ORCA">
+        <h2>Explore ORCA<span aria-hidden="true">.</span></h2>
+        <a href="{{ url_for('pages', page='team') }}">Team</a>
+        <a href="{{ url_for('pages', page='description') }}">Description</a>
+        <a href="{{ url_for('pages', page='engineering') }}">Engineering</a>
+        <a href="{{ url_for('pages', page='results') }}">Results</a>
+      </nav>
+      <nav class="ofd-links" aria-label="ORCA resources">
+        <h2>Build on our work<span aria-hidden="true">.</span></h2>
+        <a href="{{ url_for('pages', page='contribution') }}">Contribution</a>
+        <a href="{{ url_for('pages', page='experiments') }}">Protocols</a>
+        <a href="{{ url_for('pages', page='notebook') }}">Notebook</a>
+        <a href="{{ url_for('pages', page='design-communication') }}">Design</a>
+      </nav>
+      <nav class="ofd-links" aria-label="ORCA people and impact">
+        <h2>People &amp; impact<span aria-hidden="true">.</span></h2>
+        <a href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+        <a href="{{ url_for('pages', page='education') }}">Education</a>
+        <a href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a>
+        <a href="{{ url_for('pages', page='attributions') }}">Attributions</a>
+      </nav>
       </div>
-    </section>
-    <section class="footer-sponsors" aria-labelledby="footer-sponsors-title">
-      <div class="footer-community-heading">
-        <h4 id="footer-sponsors-title">OUR COMMUNITY</h4>
-        <a href="{{ url_for('pages', page='human-practices') }}">Explore our connections</a>
+      <section class="ofd-connect" aria-labelledby="ofd-contact-title">
+        <h2 id="ofd-contact-title">Stay connected<span aria-hidden="true">.</span></h2>
+        <div class="ofd-socials">
+          {% set socials = [
+            ('Instagram', 'https://static.igem.wiki/teams/5873/images/footer/contactus/ins.webp'),
+            ('RedNote', 'https://static.igem.wiki/teams/5873/images/footer/contactus/rednote.webp'),
+            ('WeChat', url_for('static', filename='assets/brand/wechat-team.svg'))
+          ] %}
+          {% for label, source in socials %}
+          <div class="ofd-social">
+            <button type="button" data-ofd-qr data-ofd-platform="{{ label }}" aria-label="Enlarge {{ label }} QR code" aria-haspopup="dialog">
+              <img src="{{ source }}" alt="{{ label }} QR code" width="100" height="100" loading="lazy">
+            </button>
+            <span>{{ label }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+
+    <section class="ofd-community" aria-labelledby="ofd-community-title">
+      <div class="ofd-community-heading">
+        <h2 id="ofd-community-title">Our community<span aria-hidden="true">.</span></h2>
       </div>
-      <div class="sponsor-logos-scroll" data-footer-sponsor-scroll tabindex="0" aria-label="Community organizations and resources. Scroll horizontally to explore names and logos.">
-        <div class="sponsor-logos-track" data-footer-sponsor-track>
-          <div class="sponsor-logos-group" data-footer-sponsor-group>
+      <div class="ofd-community-window" tabindex="0" role="region" aria-label="Community organizations and resources. Scroll horizontally for all organizations.">
+        <div class="ofd-community-track">
+          <div class="ofd-community-group" data-ofd-community-group>
             {% with footer_show_organization_names = true %}
-            {% include 'components/community_organizations.html' %}
+              {% include 'components/community_organizations.html' %}
             {% endwith %}
           </div>
         </div>
       </div>
     </section>
+
+    <div class="ofd-legal">
+      <p>© 2026 SUSTech. Content is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.<br>
+        The source repository for this wiki is available at <a href="https://gitlab.igem.org/2026/sustech">gitlab.igem.org/2026/sustech</a>. See the <a href="{{ url_for('pages', page='attributions') }}">Attributions</a> page for credit information.</p>
+    </div>
   </div>
-  <div class="footer-copyright">
-    <p>© 2026 SUSTech. Content is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.<br>
-      The source repository for this wiki is available at <a href="https://gitlab.igem.org/2026/sustech">gitlab.igem.org/2026/sustech</a>. See the <a href="{{ url_for('pages', page='attributions') }}">Attributions</a> page for credit information.</p>
-  </div>
-  <dialog class="footer-lightbox" data-footer-lightbox aria-label="Enlarged footer image">
-    <button class="footer-lightbox-close" type="button" data-footer-lightbox-close aria-label="Close enlarged image">×</button>
-    <img alt="" data-footer-lightbox-image>
+  <dialog class="ofd-dialog" aria-labelledby="ofd-dialog-title">
+    <button type="button" class="ofd-dialog-close" aria-label="Close image preview">×</button>
+    <h2 id="ofd-dialog-title">Connect with us</h2>
+    <img alt="" width="300" height="300">
   </dialog>
 </footer>
-<script src="{{ url_for('static', filename='school-footer.js') }}" defer></script>
-<script src="{{ url_for('static', filename='footer-atmosphere.js') }}" defer></script>
+<script src="{{ url_for('static', filename='orca-footer.js') }}" defer></script>

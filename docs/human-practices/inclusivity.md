@@ -8,6 +8,15 @@ eyebrow: Engagement
 
 <link rel="stylesheet" href="static/human-practices/title-fonts/inclusivity-title.css">
 <link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/inclusivity.css">
+<link rel="stylesheet" href="static/human-practices/inclusivity-overview/overview.css">
+
+<figure class="inc-overview-hero" id="inclusivity-figure-1">
+  <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/1-2-1.pdf" target="_blank" rel="noopener" aria-label="Open Inclusivity Figure 1 as a PDF">
+    <img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/65bfe70516c26afb5be8314843472ed3.avif" width="1280" height="666" decoding="async" alt="Hand-drawn Inclusivity overview with overlapping colored bands: a child learning, clear vision and needing vision support, a doctor and family caregiver, and a person living with AD sharing lived experience. The handwritten message reads: Our needs change throughout life. Our right to be heard, to choose, and to participate does not.">
+  </a>
+  <figcaption>Inclusivity Figure 1. Changing needs across life, with an equal right to be heard, to choose and to participate. <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/1-2-1.pdf" target="_blank" rel="noopener">Original PDF</a></figcaption>
+</figure>
+<script type="module" src="static/human-practices/inclusivity-overview/overview.mjs"></script>
 
 ## Our Perspective: A Changing Spectrum {#our-perspective}
 

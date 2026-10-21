@@ -57,7 +57,12 @@ export function drawingPlan() {
   return strokes;
 }
 
-export async function initHandDraw(figure) {
+// Optional artwork settings let other engagement pages reuse HP's playback controls.
+export async function initHandDraw(figure, options = {}) {
+  const width = options.width ?? W;
+  const height = options.height ?? H;
+  const duration = options.duration ?? DURATION;
+  const prefix = options.id ?? 'hp-hand-draw';
   const link = figure?.querySelector(':scope > a');
   const original = link?.querySelector('img');
   if (!original || figure.dataset.handDraw) return;
@@ -68,7 +73,7 @@ export async function initHandDraw(figure) {
 
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = new URL('./hand-draw.css', import.meta.url).href;
+  stylesheet.href = options.stylesheet ?? new URL('./hand-draw.css', import.meta.url).href;
   const ready = new Promise(resolve => {
     stylesheet.addEventListener('load', resolve, {once: true});
     stylesheet.addEventListener('error', () => resolve(false), {once: true});
@@ -76,30 +81,73 @@ export async function initHandDraw(figure) {
   document.head.append(stylesheet);
   if (await ready === false) return;
 
-  const canvas = svgNode('svg', {viewBox: `0 0 ${W} ${H}`, 'aria-hidden': 'true', class: 'hp-hand-draw-canvas'});
+  const canvas = svgNode('svg', {viewBox: `0 0 ${width} ${height}`, 'aria-hidden': 'true', class: 'hp-hand-draw-canvas'});
   const defs = svgNode('defs');
-  const mask = svgNode('mask', {id: 'hp-hand-draw-mask', maskUnits: 'userSpaceOnUse', x: 0, y: 0, width: W, height: H, 'mask-type': 'luminance'});
-  mask.append(svgNode('rect', {width: W, height: H, fill: 'black'}));
-  const strokes = drawingPlan().map((item, index) => {
+  const mask = svgNode('mask', {id: `${prefix}-mask`, maskUnits: 'userSpaceOnUse', x: 0, y: 0, width, height, 'mask-type': 'luminance'});
+  mask.append(svgNode('rect', {width, height, fill: 'black'}));
+  const backdrops = [];
+  const strokes = (options.plan ? options.plan() : drawingPlan()).map((item, index) => {
     const path = svgNode('path', {d: item.d, fill: 'none', stroke: 'white', 'stroke-width': item.width, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'});
     const finished = item.region
       ? svgNode('rect', {...item.region, fill: 'white', opacity: 0})
       : svgNode('path', {d: item.d, fill: 'none', stroke: 'white', 'stroke-width': Math.max(36, item.width + 12), 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0});
     finished.setAttribute('data-part', item.name);
     if (item.region) {
-      const clip = svgNode('clipPath', {id: `hp-draw-region-${index}`});
-      clip.append(svgNode('rect', item.region));
-      defs.append(clip);
-      path.setAttribute('clip-path', `url(#hp-draw-region-${index})`);
+      const id = `${prefix}-region-${index}`;
+      if (item.exclude?.length || item.excludePaths?.length) {
+        // Excluded boxes may overlap; black rectangles form a union, never an XOR.
+        const regionMask = svgNode('mask', {id, maskUnits: 'userSpaceOnUse', x: 0, y: 0, width, height, 'mask-type': 'luminance'});
+        regionMask.append(svgNode('rect', {...item.region, fill: 'white'}));
+        for (const region of item.exclude ?? []) regionMask.append(svgNode('rect', {...region, fill: 'black'}));
+        for (const d of item.excludePaths ?? []) regionMask.append(svgNode('path', {d, fill: 'black'}));
+        defs.append(regionMask);
+        path.setAttribute('mask', `url(#${id})`);
+        finished.setAttribute('mask', `url(#${id})`);
+      } else {
+        const clip = svgNode('clipPath', {id});
+        clip.append(svgNode('rect', item.region));
+        defs.append(clip);
+        path.setAttribute('clip-path', `url(#${id})`);
+        finished.setAttribute('clip-path', `url(#${id})`);
+      }
+    }
+    let backdropPath, backdropFinished;
+    if (item.letterBackdrop && item.excludePaths?.length) {
+      // Restore the nearby paper/ribbon color behind withheld lettering in SVG.
+      // The original pixels cover this temporary background as each word is drawn.
+      const inkId = `${prefix}-lettering-${index}`;
+      const passId = `${prefix}-backdrop-pass-${index}`;
+      const filterId = `${prefix}-paper-${index}`;
+      const ink = svgNode('mask', {id: inkId, maskUnits: 'userSpaceOnUse', x: 0, y: 0, width, height, 'mask-type': 'luminance'});
+      for (const d of item.excludePaths) ink.append(svgNode('path', {d, fill: 'white'}));
+      const pass = svgNode('mask', {id: passId, maskUnits: 'userSpaceOnUse', x: 0, y: 0, width, height, 'mask-type': 'luminance'});
+      backdropPath = svgNode('path', {d: item.d, fill: 'none', stroke: 'white', 'stroke-width': item.width, 'stroke-linecap': 'round', 'stroke-linejoin': 'round'});
+      backdropFinished = svgNode('rect', {...item.region, fill: 'white', opacity: 0});
+      pass.append(backdropPath, backdropFinished);
+      const filter = svgNode('filter', {id: filterId, x: 0, y: 0, width: '100%', height: '100%', 'color-interpolation-filters': 'sRGB'});
+      const paperMask = svgNode('feComponentTransfer', {in: 'luminance', result: 'paper-mask'});
+      paperMask.append(svgNode('feFuncA', {type: 'discrete', tableValues: '0 0 1 1'}));
+      filter.append(
+        svgNode('feColorMatrix', {in: 'SourceGraphic', type: 'luminanceToAlpha', result: 'luminance'}),
+        paperMask,
+        svgNode('feComposite', {in: 'SourceGraphic', in2: 'paper-mask', operator: 'in', result: 'paper'}),
+        svgNode('feGaussianBlur', {in: 'paper', stdDeviation: 5, result: 'soft-paper'}),
+        svgNode('feFlood', {'flood-color': 'white', result: 'white-paper'}),
+        svgNode('feComposite', {in: 'soft-paper', in2: 'white-paper', operator: 'over'})
+      );
+      defs.append(ink, pass, filter);
+      const group = svgNode('g', {mask: `url(#${passId})`});
+      group.append(svgNode('image', {href: original.currentSrc || original.src, width, height, filter: `url(#${filterId})`, mask: `url(#${inkId})`}));
+      backdrops.push(group);
     }
     mask.append(path, finished);
-    return {path, finished, name: item.name};
+    return {path, finished, name: item.name, backdropPath, backdropFinished};
   });
-  const completeMask = svgNode('rect', {width: W, height: H, fill: 'white', opacity: 0});
+  const completeMask = svgNode('rect', {width, height, fill: 'white', opacity: 0});
   mask.append(completeMask);
   defs.append(mask);
-  canvas.append(defs, svgNode('rect', {width: W, height: H, fill: 'white'}));
-  canvas.append(svgNode('image', {href: original.currentSrc || original.src, width: W, height: H, mask: 'url(#hp-hand-draw-mask)'}));
+  canvas.append(defs, svgNode('rect', {width, height, fill: 'white'}), ...backdrops);
+  canvas.append(svgNode('image', {href: original.currentSrc || original.src, width, height, mask: `url(#${prefix}-mask)`}));
   const pencil = svgNode('g', {class: 'hp-hand-draw-pencil'});
   const shaft = svgNode('g', {transform: 'rotate(33)'});
   shaft.append(
@@ -122,11 +170,15 @@ export async function initHandDraw(figure) {
     item.length = item.path.getTotalLength();
     item.path.style.strokeDasharray = `${item.length} ${item.length}`;
     item.path.style.strokeDashoffset = item.length;
+    if (item.backdropPath) {
+      item.backdropPath.style.strokeDasharray = `${item.length} ${item.length}`;
+      item.backdropPath.style.strokeDashoffset = item.length;
+    }
     item.weight = item.length + 260;
     cursor += item.weight;
   }
   let start = 0;
-  const drawingTime = DURATION - 750;
+  const drawingTime = duration - 750;
   const movingTime = drawingTime - strokes.length * SETTLE;
   for (const item of strokes) {
     item.start = start;
@@ -137,7 +189,7 @@ export async function initHandDraw(figure) {
   const controls = document.createElement('div');
   controls.className = 'hp-hand-draw-controls';
   controls.setAttribute('role', 'group');
-  controls.setAttribute('aria-label', 'Overview drawing playback');
+  controls.setAttribute('aria-label', options.controlsLabel ?? 'Overview drawing playback');
   const button = label => {
     const element = document.createElement('button');
     element.type = 'button';
@@ -157,12 +209,16 @@ export async function initHandDraw(figure) {
   let started = false;
   let userPaused = false;
   function render() {
-    const done = elapsed >= DURATION;
+    const done = elapsed >= duration;
     let active = strokes[0];
     for (const item of strokes) {
       const part = Math.max(0, Math.min(1, (elapsed - item.start) / item.drawDuration));
       item.path.style.strokeDashoffset = item.length * (1 - part);
       item.finished.setAttribute('opacity', part >= 1 ? 1 : 0);
+      if (item.backdropPath) {
+        item.backdropPath.style.strokeDashoffset = item.length * (1 - part);
+        item.backdropFinished.setAttribute('opacity', part >= 1 ? 1 : 0);
+      }
       if (elapsed >= item.start) active = item;
     }
     const part = Math.max(0, Math.min(1, (elapsed - active.start) / active.drawDuration));
@@ -170,7 +226,7 @@ export async function initHandDraw(figure) {
     pencil.setAttribute('transform', `translate(${point.x} ${point.y})`);
     completeMask.setAttribute('opacity', Math.max(0, Math.min(1, (elapsed - drawingTime) / 750)));
     figure.dataset.handDraw = done ? 'complete' : userPaused ? 'paused' : started ? 'drawing' : 'idle';
-    figure.dataset.drawProgress = (elapsed / DURATION).toFixed(3);
+    figure.dataset.drawProgress = (elapsed / duration).toFixed(3);
     figure.dataset.drawPart = active.name;
     pause.hidden = skip.hidden = done;
     replay.hidden = !done;
@@ -185,16 +241,16 @@ export async function initHandDraw(figure) {
   function tick(now) {
     frame = 0;
     if (!visible || userPaused || document.hidden) { last = 0; return; }
-    elapsed = Math.min(DURATION, elapsed + (last ? Math.min(80, now - last) : 0));
+    elapsed = Math.min(duration, elapsed + (last ? Math.min(80, now - last) : 0));
     last = now;
     render();
-    if (elapsed < DURATION) frame = requestAnimationFrame(tick);
+    if (elapsed < duration) frame = requestAnimationFrame(tick);
   }
   function run() {
     // Refresh visibility after a resize or an explicit replay/resume.
     const bounds = link.getBoundingClientRect();
     visible = bounds.bottom > 0 && bounds.top < innerHeight && bounds.right > 0 && bounds.left < innerWidth;
-    if (!frame && visible && !userPaused && elapsed < DURATION && !document.hidden) {
+    if (!frame && visible && !userPaused && elapsed < duration && !document.hidden) {
       started = true;
       last = 0;
       frame = requestAnimationFrame(tick);
@@ -208,7 +264,7 @@ export async function initHandDraw(figure) {
   });
   skip.addEventListener('click', () => {
     stop();
-    elapsed = DURATION;
+    elapsed = duration;
     render();
     replay.focus({preventScroll: true});
   });
@@ -231,7 +287,7 @@ export async function initHandDraw(figure) {
   motion.addEventListener('change', () => {
     if (motion.matches) {
       stop();
-      elapsed = DURATION;
+      elapsed = duration;
       render();
       controls.hidden = true;
     }

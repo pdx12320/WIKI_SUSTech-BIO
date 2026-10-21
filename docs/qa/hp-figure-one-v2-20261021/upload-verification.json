@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-figure-1-hand-drawn-overview-v2-20261021.webp",
+    "local_path": "assets/human-practices/overview/hp-figure-1-hand-drawn-overview-v2-20261021.webp",
+    "sha256": "1f2c437247e84c472d1c5e7e4475d116cd6faa85a97d4eb7243ef5a05666e368",
+    "http_status": 200,
+    "content_type": "image/webp",
+    "bytes": 291288,
+    "byte_identical": true
+  },
+  {
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-figure-1-hand-drawn-overview-v2-20261021.pdf",
+    "local_path": "assets/human-practices/overview/hp-figure-1-hand-drawn-overview-v2-20261021.pdf",
+    "sha256": "199ca53a14ce2a87e04ab32f06b56d6c68f77f3082b42c79fc9d6a4d4673e910",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 3924681,
+    "byte_identical": true
+  }
+]

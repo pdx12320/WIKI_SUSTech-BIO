@@ -1,7 +1,7 @@
 // Reveal the supplied finished artwork; the moving pencil follows the same mask path.
 const NS = 'http://www.w3.org/2000/svg';
 const W = 1685;
-const H = 1000;
+const H = 1082;
 const DURATION = 26000;
 const SETTLE = 180;
 
@@ -34,26 +34,26 @@ export function drawingPlan() {
     }
     strokes.push({name, d, width, region: {x, y, width: w, height: h}});
   };
-  shade('ORCA', 76, 94, 365, 113, 35);
-  shade('Human Practices Overview', 80, 187, 396, 132, 31);
-  line('Title underline', 'M116 345 Q225 310 335 300', 18);
-  shade('Whale', 60, 397, 454, 270, 28);
-  line('Lived experience wave, upper left', 'M574 298 Q480 357 461 471', 14);
-  line('Lived experience wave, lower left', 'M481 605 Q508 706 630 753', 14);
-  line('Lived experience wave, right', 'M772 293 Q977 514 773 753', 18);
-  shade('Lived experience', 584, 198, 198, 89, 26);
-  shade('Older adults and carers, illustration and caption', 540, 375, 291, 300, 25);
-  shade('Specialist input', 832, 90, 220, 79, 26);
-  shade('Clinicians and researchers, illustration and caption', 862, 180, 293, 217, 25);
-  shade('Ethics dialogue, illustration and caption', 930, 414, 187, 226, 25);
-  shade('Repair workers, illustration and caption', 855, 657, 255, 243, 25);
-  line('Specialist input wave', 'M1048 165 Q1370 377 1124 836', 44);
-  shade('Shared learning', 1160, 38, 205, 93, 28);
-  shade('Teachers and students, illustration and caption', 1210, 125, 275, 220, 25);
-  shade('Children, illustration and caption', 1280, 349, 255, 177, 25);
-  shade('Public participants, illustration and caption', 1264, 528, 260, 212, 25);
-  shade('iGEM and wider community, illustration and caption', 1195, 740, 323, 216, 25);
-  line('Shared learning wave', 'M1383 102 Q1680 263 1486 794', 16);
+  shade('ORCA', 85, 130, 365, 120, 35);
+  shade('Human Practices Overview', 85, 226, 403, 139, 31);
+  line('Title underline', 'M135 392 Q244 352 354 349', 20);
+  shade('Whale', 70, 444, 450, 265, 28);
+  line('Lived experience wave, upper left', 'M599 340 Q506 394 486 514', 16);
+  line('Lived experience wave, lower left', 'M488 646 Q514 751 633 788', 16);
+  line('Lived experience wave, right', 'M776 330 Q1004 557 768 795', 18);
+  shade('Lived experience', 590, 246, 192, 86, 26);
+  shade('Older adults and carers, illustration and caption', 556, 416, 284, 298, 25);
+  shade('Specialist input', 838, 130, 195, 77, 26);
+  shade('Clinicians and researchers, illustration and caption', 858, 224, 324, 218, 25);
+  shade('Ethics dialogue, illustration and caption', 930, 468, 198, 217, 25);
+  shade('Repair workers, illustration and caption', 850, 698, 252, 248, 25);
+  line('Specialist input wave', 'M1054 202 Q1385 440 1096 871', 44);
+  shade('Shared learning', 1182, 70, 187, 103, 28);
+  shade('Teachers and students, illustration and caption', 1216, 168, 276, 227, 25);
+  shade('Children, illustration and caption', 1277, 395, 245, 174, 25);
+  shade('Public participants, illustration and caption', 1270, 574, 254, 205, 25);
+  shade('iGEM and wider community, illustration and caption', 1180, 788, 344, 225, 25);
+  line('Shared learning wave', 'M1393 136 Q1755 365 1521 854', 22);
   return strokes;
 }
 

@@ -1,0 +1,50 @@
+{
+  "content_tests": {
+    "passed": 5
+  },
+  "wiki_tests": {
+    "total": 26,
+    "passed": 25,
+    "failure": "test_markdown_pages_expose_their_docs_source, route=/attributions; current upstream custom template lacks the generic markdown-content class"
+  },
+  "production_freeze": "passed",
+  "route_asset_audit": "passed, 24 routes",
+  "hp_media_all_official": true,
+  "frozen_page_uses_new_image_and_pdf": true,
+  "strict_global_cdn_audit_unrelated_local_media": {
+    "static/attributions-portraits/default-avatar.avif": [
+      "attributions"
+    ],
+    "static/attributions-portraits/inter.ttf": [
+      "static/attributions.css"
+    ],
+    "static/attributions-portraits/member-04.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-06.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-07.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-08.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-10.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-16.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-21.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-23.webp": [
+      "attributions"
+    ],
+    "static/attributions-portraits/member-24.webp": [
+      "attributions"
+    ]
+  },
+  "browser_observation": "Existing shared cell-reader.js null addEventListener error observed; HP drawing playback and controls work. Shared script not changed."
+}

@@ -16,10 +16,10 @@ status_message: Team interview accounts, survey results and implementation recor
 <div id="human-practices"></div>
 
 <figure class="hp-figure" id="hp-figure-1">
-  <a href="assets/human-practices/overview/hp-hand-drawn-overview-20261021.jpg" target="_blank" rel="noopener" aria-label="Open HP Figure 1 at full size">
-    <img src="/assets/human-practices/overview/hp-hand-drawn-overview-20261021.jpg" alt="Hand-drawn ORCA Human Practices overview: an orca sends waves toward lived experience, specialist input and shared learning. The groups shown include older adults and carers, clinicians and researchers, ethics dialogue, repair workers, teachers and students, children, public participants and the wider iGEM community." width="1685" height="1000" decoding="async">
+  <a href="https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-figure-1-hand-drawn-overview-v2-20261021.webp" target="_blank" rel="noopener" aria-label="Open HP Figure 1 at full size">
+    <img src="https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-figure-1-hand-drawn-overview-v2-20261021.webp" alt="Hand-drawn ORCA Human Practices overview: an orca sends waves toward lived experience, specialist input and shared learning. The groups shown include older adults and carers, clinicians and researchers, ethics dialogue, repair workers, teachers and students, children, public participants and the wider iGEM community." width="3000" height="1926" decoding="async">
   </a>
-  <figcaption>HP Figure 1. Our Human Practices overview: lived experience, specialist input and shared learning.</figcaption>
+  <figcaption>HP Figure 1. Our Human Practices overview: lived experience, specialist input and shared learning. <a href="https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-figure-1-hand-drawn-overview-v2-20261021.pdf" target="_blank" rel="noopener">Original PDF</a></figcaption>
   <div class="hp-three-e" id="hp-three-e-model" role="group" aria-label="The Emit, Echo, Evolve model">
     <p class="hp-three-e-intro"><strong>Our 3E model: Emit, Echo, Evolve</strong></p>
     <p>The waves in Figure 1 bring different perspectives into the same conversation. Our 3E model describes how we work with those perspectives: make a question understandable, listen to the response, then use it to reconsider what we do. We return to the conversation when a change raises a new question.</p>

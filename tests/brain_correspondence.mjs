@@ -7,10 +7,10 @@ import { matchBrainToMaze } from '../static/onetake/brain-correspondence.mjs';
 const source = readFileSync(new URL('../static/onetake/onetake.js', import.meta.url), 'utf8');
 const helpers = source.slice(source.indexOf('const clamp ='), source.indexOf('function astrocyteShape'));
 const sorting = source.slice(source.indexOf('function sortShape'), source.indexOf('/* Shaders'));
-const { maze, brain, baseline } = runInNewContext(`const small = true;
+const { maze, brain, baseline } = await runInNewContext(`(async () => { const small = true;
   ${helpers}\n${sorting}
-  const maze = sortShape(mazeShape(2048), 2048), brain = brainShape(2048);
-  ({ maze, brain, baseline: sortShape(brain, 2048) });`);
+  const maze = sortShape(mazeShape(2048), 2048), brain = await brainShape(2048);
+  return { maze, brain, baseline: sortShape(brain, 2048) }; })()`);
 const matched = matchBrainToMaze(maze, brain);
 const identities = shape => Array.from(shape.meta, (meta, i) =>
   [...shape.pos.subarray(i * 3, i * 3 + 3), meta].join(',')).sort();

@@ -143,7 +143,7 @@ function mazeShape(n) {
 
 /* An anatomical brain: lobes as blended ellipsoids per hemisphere, sampled
    on the surface, then folded into gyri with a warped ridge pattern. */
-function brainShape(n) {
+async function brainShape(n, checkpoint = async () => {}) {
   const ell = (p, c, r) => (Math.hypot((p[0] - c[0]) / r[0], (p[1] - c[1]) / r[1], (p[2] - c[2]) / r[2]) - 1) * Math.min(...r);
   const smin = (a, b, k) => { const h = clamp(0.5 + 0.5 * (b - a) / k); return lerp(b, a, h) - k * h * (1 - h); };
   // Local hemisphere frame: +x frontal, +y up, z = distance from the midline.
@@ -182,8 +182,9 @@ function brainShape(n) {
     return { point: [c[0] + d[0] * k, c[1] + d[1] * k, Math.max(0.09, c[2] + d[2] * k)],
       shade: groove * (0.16 + 0.84 * fiss) * (0.18 + 0.82 * cs) * lit(d), groove, field: 2 * nv - 1 };
   };
-  let i = 0;
+  let i = 0, attempts = 0;
   while (i < n) {
+    if (++attempts % 128 === 0) await checkpoint();
     const r = rnd();
     const h = rnd() < 0.5 ? -1 : 1;
     let x, y, z, s;
@@ -220,6 +221,7 @@ function brainShape(n) {
   for (const h of [-1, 1]) {
     const offset = surfacePos.length / 3;
     for (let j = 0; j <= rows; j++) for (let i = 0; i <= cols; i++) {
+      if (i === 0) await checkpoint();
       const theta = Math.PI * j / rows, phi = 2 * Math.PI * i / cols;
       const d = [Math.sin(theta) * Math.cos(phi), Math.cos(theta), Math.sin(theta) * Math.sin(phi)];
       const c = [-0.2, 0.3, 1.5], t = surface(c, d, q => cortex(q).d);
@@ -240,6 +242,7 @@ function brainShape(n) {
   // mesh. A single fine contour follows each fold beside the neural points.
   const foldLines = [];
   for (let i = 0; i < surfaceIndex.length; i += 3) {
+    if (i % 768 === 0) await checkpoint();
     const triangle = surfaceIndex.slice(i, i + 3);
     for (const level of [0.16]) {
       const crossing = [];
@@ -679,8 +682,9 @@ function showStatic() {
   }
 }
 
-function boot() {
+async function boot() {
   if (!root || !canvas || !story) return;
+  if (root.dataset.homeStartup === 'fallback') return;
   setupMenu();
   const updateDom = setupDom();
 
@@ -697,16 +701,32 @@ function boot() {
     return;
   }
   root.classList.remove('ot--static');
+  // Let the existing opening cover paint while preparing procedural geometry.
+  let sliceStarted = performance.now();
+  const checkpoint = async (force = false) => {
+    if (force || performance.now() - sliceStarted >= 8) {
+      await new Promise(resolve => setTimeout(resolve, 0));
+      sliceStarted = performance.now();
+    }
+    if (root.dataset.homeStartup === 'fallback') throw new Error('Home startup cancelled');
+  };
+  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  await checkpoint(true);
   const crt = createCrtOpening(root);
+  await checkpoint(true);
 
   const N = small ? 26000 : 64000;
   const DUST = Math.floor(N * 0.07);
   const M = N - DUST;
 
   const maze = sortShape(mazeShape(M), M);
-  const brain = matchBrainToMaze(maze, brainShape(M));
+  await checkpoint(true);
+  const brain = matchBrainToMaze(maze, await brainShape(M, checkpoint));
+  await checkpoint(true);
   const cell = sortShape(astrocyteShape(M), M);
+  await checkpoint(true);
   const strand = sortShape(strandShape(M), M);
+  await checkpoint(true);
 
   // Amyloid is rendered by the independent biology layer, never from RNA.
   const clumpPos = new Float32Array(N * 3);
@@ -777,6 +797,7 @@ function boot() {
       !(root.hasAttribute('data-structure-preview') && location.hash === '#apoe112') });
   const biology = createBiologyScene(THREE, scene, { root, cell, strand, small,
     onReady: ready => replay.setReady(ready) });
+  await checkpoint(true);
   const foldGeometry = new THREE.BufferGeometry();
   foldGeometry.setAttribute('position', new THREE.Float32BufferAttribute(brain.foldLines, 3));
   const foldMaterial = new THREE.LineBasicMaterial({ color: 0xb1caff, transparent: true,
@@ -989,7 +1010,10 @@ function boot() {
     root.dispatchEvent(new CustomEvent('ot:frame', { detail: { p, take: P, reduced: reduce } }));
     parisParticles.update(P, time);
     composer.render();
-    if (!started) { started = true; root.classList.add('is-ready'); }
+    if (!started) {
+      started = true; root.classList.add('is-ready');
+      root.dispatchEvent(new CustomEvent('ot:startup-ready'));
+    }
     raf = requestAnimationFrame(frame);
   }
   let raf = requestAnimationFrame(frame);
@@ -1005,9 +1029,9 @@ function boot() {
   });
 }
 
-try {
-  boot();
-} catch (error) {
+boot().catch(error => {
   showStatic();
-  console.warn('Particle scene unavailable; showing the readable home page.', error);
-}
+  if (root?.dataset.homeStartup !== 'fallback') {
+    console.warn('Particle scene unavailable; showing the readable home page.', error);
+  }
+});

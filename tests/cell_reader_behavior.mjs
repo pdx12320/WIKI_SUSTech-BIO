@@ -8,7 +8,10 @@ function fixture(start = 0, reduced = false, readingOrigin = null) {
   const motion = {matches:reduced, addEventListener(name, fn) {this[name] = fn;}};
   function element(key) {
     if (!nodes.has(key)) nodes.set(key, {
-      hidden:false, clientHeight:400, listeners:{}, values:new Set(), styles:{},
+      hidden:false, clientHeight:400, listeners:{}, values:new Set(), styles:{}, attributes:{},
+      getBoundingClientRect:() => ({top:200}),
+      setAttribute(name,value) {this.attributes[name]=value;},
+      focus() {}, setPointerCapture(id) {this.pointerId=id;}, hasPointerCapture(id) {return this.pointerId===id;}, releasePointerCapture() {this.pointerId=null;},
       style:{setProperty(name, value) {element(key).styles[name] = value;}},
       classList:{toggle(name, on) {on ? element(key).values.add(name) : element(key).values.delete(name);}},
       getAttribute:() => readingOrigin === null ? null : '#reading-start',
@@ -26,7 +29,7 @@ function fixture(start = 0, reduced = false, readingOrigin = null) {
     clearTimeout(id) {timers.delete(id);},
     addEventListener(name, fn) {events[name] = fn;},
     requestAnimationFrame(fn) {fn();},
-    scrollTo(options) {context.lastScroll = options;},
+    scrollTo(options) {context.lastScroll = options; context.scrollY=options.top;},
   };
   vm.createContext(context); vm.runInContext(code, context);
   return {root, element, context, timers, motion,
@@ -35,50 +38,54 @@ function fixture(start = 0, reduced = false, readingOrigin = null) {
     resize() {events.resize();},
   };
 }
+const pointer = (y, extra={}) => ({isPrimary:true,button:0,pointerId:7,clientY:y,preventDefault(){},...extra});
 {
-  const f = fixture();
-  f.scroll(1001); assert.match(f.element('[data-cell-reader-message]').textContent,/One third/);
-  assert(f.root.values.has('cell-reader__resting'));
-  f.run(400); assert(!f.root.values.has('cell-reader__resting'));
-  assert.equal(f.element('.cell-reader__tip').hidden,false);
-  f.run(6500); assert.equal(f.element('.cell-reader__tip').hidden,true);
-  f.scroll(0); f.scroll(1001); assert.equal(f.element('.cell-reader__tip').hidden,true);
-  f.scroll(2001); assert.match(f.element('[data-cell-reader-message]').textContent,/Two thirds/);
-  f.element('[data-cell-reader-dismiss]').listeners.click();
-  assert.equal(f.timers.size > 0,true); // Idle timer is independent of reminder timers.
-  assert.equal([...f.timers.values()].some(t => [400,6500].includes(t.ms)),false);
+  const f=fixture(), handle=f.element('[data-cell-reader-drag]');
+  handle.listeners.pointerdown(pointer(200));
+  handle.listeners.pointermove(pointer(400));
+  assert.equal(f.context.scrollY,1500);assert.equal(f.element('[data-cell-reader-value]').value,'50%');
+  assert.equal(handle.attributes['aria-valuenow'],'50');
+  handle.listeners.pointermove(pointer(900));assert.equal(f.context.scrollY,3000);
+  handle.listeners.pointermove(pointer(-200));assert.equal(f.context.scrollY,0);
+  handle.listeners.pointerup(pointer(200));assert.equal(handle.pointerId,null);
+  assert(!f.root.values.has('cell-reader__dragging'));
+  assert.equal(handle.listeners.click,undefined,'Click must never jump to the top');
+  handle.listeners.keydown({key:'End',preventDefault(){}});assert.equal(f.context.scrollY,3000);
+  handle.listeners.keydown({key:'ArrowUp',preventDefault(){}});assert.equal(f.context.scrollY,2960);
+  handle.listeners.keydown({key:'Home',preventDefault(){}});assert.equal(f.context.scrollY,0);
+  handle.listeners.pointerdown(pointer(200));handle.listeners.pointercancel(pointer(200));
+  assert(!f.root.values.has('cell-reader__dragging'));
+  assert.equal([...f.timers.values()].some(t=>[400,6500].includes(t.ms)),false,'No eye-rest reminders');
 }
 {
-  const f = fixture(2100); // A restored position must not immediately trigger a reminder.
-  assert.equal(f.element('[data-cell-reader-message]').textContent,undefined);
-  assert.equal(f.element('[data-cell-reader-value]').value,'70%');
-  f.scroll(0); f.scroll(2500); assert.match(f.element('[data-cell-reader-message]').textContent,/Two thirds/);
+  const f=fixture(2100);assert.equal(f.element('[data-cell-reader-value]').value,'70%');
+  f.scroll(1001);f.scroll(2001);
+  assert.equal([...f.timers.values()].some(t=>[400,6500].includes(t.ms)),false);
 }
 {
-  const f = fixture(); f.scroll(500); assert(f.root.values.has('cell-reader__swimming'));
-  f.run(100); assert(f.root.values.has('cell-reader__swimming'));
-  const body = f.element('.cell-reader__swim-body');
-  body.listeners.animationiteration({target:body}); assert(!f.root.values.has('cell-reader__swimming'));
-  f.scroll(600); f.motion.matches = true; f.motion.change(); assert(!f.root.values.has('cell-reader__swimming'));
-  f.element('[data-cell-reader-top]').listeners.click(); assert.equal(f.context.lastScroll.behavior,'instant');
+  const f=fixture();f.scroll(500);assert(f.root.values.has('cell-reader__swimming'));
+  f.run(100);assert(f.root.values.has('cell-reader__swimming'));
+  const body=f.element('.cell-reader__swim-body');
+  body.listeners.animationiteration({target:body});assert(!f.root.values.has('cell-reader__swimming'));
+  f.scroll(600);f.motion.matches=true;f.motion.change();assert(!f.root.values.has('cell-reader__swimming'));
 }
 {
-  const f = fixture(0,true); f.scroll(1200); assert(!f.root.values.has('cell-reader__swimming'));
-  f.context.document.documentElement.scrollHeight = 1000; f.resize(); assert(f.root.hidden);
-  f.context.document.documentElement.scrollHeight = 4000; f.resize(); assert(!f.root.hidden);
+  const f=fixture(0,true);f.scroll(1200);assert(!f.root.values.has('cell-reader__swimming'));
+  f.context.document.documentElement.scrollHeight=1000;f.resize();assert(f.root.hidden);
+  f.context.document.documentElement.scrollHeight=4000;f.resize();assert(!f.root.hidden);
 }
-console.log('PASS: cell progress, once-only reminders, 400ms eye reset, dismissal, restored scroll, landing, reduced motion, short-page recovery.');
-
 {
-  const f = fixture(0, true, 600);
-  assert(f.root.hidden, 'opening photo hides the cell');
-  f.scroll(599); assert(f.root.hidden);
-  f.scroll(600); assert(!f.root.hidden); assert.equal(f.element('[data-cell-reader-value]').value, '0%');
-  f.scroll(1401); assert.match(f.element('[data-cell-reader-message]').textContent, /One third/);
-  f.run(6500);
-  f.scroll(2201); assert.match(f.element('[data-cell-reader-message]').textContent, /Two thirds/);
-  f.element('[data-cell-reader-top]').listeners.click(); assert.equal(f.context.lastScroll.top,600);
-  f.scroll(3000); assert.equal(f.element('[data-cell-reader-value]').value, '100%');
-  f.scroll(200); assert(f.root.hidden); assert.equal(f.element('.cell-reader__tip').hidden,true);
-  console.log('PASS: photo excluded; title starts at 0%; both reminders use new range; back-to-top returns to title.');
+  const f=fixture(0,true,600),handle=f.element('[data-cell-reader-drag]');
+  assert(f.root.hidden);f.scroll(599);assert(f.root.hidden);
+  f.scroll(600);assert(!f.root.hidden);assert.equal(f.element('[data-cell-reader-value]').value,'0%');
+  handle.listeners.pointerdown(pointer(200));handle.listeners.pointermove(pointer(400));
+  assert.equal(f.context.scrollY,1800);assert.equal(f.element('[data-cell-reader-value]').value,'50%');
+  // Resizing the rail must rebase the grab point instead of jumping the page.
+  f.element('.cell-reader__rail').clientHeight=300;f.resize();
+  handle.listeners.pointermove(pointer(400));assert.equal(f.context.scrollY,1800);
+  handle.listeners.pointerup(pointer(400));
+  handle.listeners.keydown({key:'Home',preventDefault(){}});assert.equal(f.context.scrollY,600);
+  f.scroll(3000);assert.equal(f.element('[data-cell-reader-value]').value,'100%');
+  f.scroll(200);assert(f.root.hidden);
 }
+console.log('Passed drag scrolling, bounds, cancellation, keyboard, resizing, custom reading start, progress and reduced motion; no return-to-top or reminder handlers.');

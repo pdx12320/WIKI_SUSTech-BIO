@@ -58,6 +58,16 @@ body.inner-page .hp-manuscript .hp-voice--zhou .hp-voice__avatar > img {
 body.inner-page .hp-manuscript :is(.hp-voice--ye, .hp-voice--dai) .hp-voice__avatar > img {
   width: 503.14465%; left: -33.33333%; top: -69.18239%;
 }
+body.inner-page .hp-manuscript .hp-voice .hp-voice__avatar > img.hp-voice__photo {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+body.inner-page .hp-manuscript .hp-voice--ye .hp-voice__avatar > img.hp-voice__photo {
+  object-position: center top;
+}
 .hp-voice__identity { display: grid; gap: 2px; min-width: 0; }
 .hp-voice__identity > strong { font-size: 17px; font-weight: 600; line-height: 1.4; }
 .hp-voice__hint { font-size: 14px; color: #686681; line-height: 1.4; }

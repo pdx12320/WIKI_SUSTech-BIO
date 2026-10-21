@@ -1,0 +1,164 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "headings": [
+        "A question that stayed",
+        "Whose perspectives shaped our questions?",
+        "How conversations shaped ORCA",
+        "What the public wanted to understand",
+        "From promising ideas to workable support",
+        "What changed, and what comes next",
+        "Sources and records"
+      ],
+      "avatars": [
+        {
+          "who": "ye",
+          "w": 58,
+          "h": 58,
+          "fit": "cover",
+          "nw": 267,
+          "nh": 400,
+          "keyboard": true
+        },
+        {
+          "who": "dai",
+          "w": 58,
+          "h": 58,
+          "fit": "cover",
+          "nw": 400,
+          "nh": 298,
+          "keyboard": true
+        }
+      ],
+      "figures": [
+        {
+          "id": "hp-evidence-to-action",
+          "width": 802,
+          "scroll": 802,
+          "height": 1139
+        },
+        {
+          "id": "hp-survey-figure",
+          "width": 802,
+          "scroll": 802,
+          "height": 1254
+        }
+      ],
+      "tableDisplay": "table-cell",
+      "missingRefs": [],
+      "overflow": {
+        "body": 1440,
+        "viewport": 1440
+      },
+      "directory": 7
+    },
+    {
+      "width": 390,
+      "headings": [
+        "A question that stayed",
+        "Whose perspectives shaped our questions?",
+        "How conversations shaped ORCA",
+        "What the public wanted to understand",
+        "From promising ideas to workable support",
+        "What changed, and what comes next",
+        "Sources and records"
+      ],
+      "avatars": [
+        {
+          "who": "ye",
+          "w": 58,
+          "h": 58,
+          "fit": "cover",
+          "nw": 267,
+          "nh": 400,
+          "keyboard": true
+        },
+        {
+          "who": "dai",
+          "w": 58,
+          "h": 58,
+          "fit": "cover",
+          "nw": 400,
+          "nh": 298,
+          "keyboard": true
+        }
+      ],
+      "figures": [
+        {
+          "id": "hp-evidence-to-action",
+          "width": 316,
+          "scroll": 316,
+          "height": 2808
+        },
+        {
+          "id": "hp-survey-figure",
+          "width": 316,
+          "scroll": 316,
+          "height": 2087
+        }
+      ],
+      "tableDisplay": "block",
+      "missingRefs": [],
+      "overflow": {
+        "body": 390,
+        "viewport": 390
+      },
+      "directory": 7
+    },
+    {
+      "width": 320,
+      "headings": [
+        "A question that stayed",
+        "Whose perspectives shaped our questions?",
+        "How conversations shaped ORCA",
+        "What the public wanted to understand",
+        "From promising ideas to workable support",
+        "What changed, and what comes next",
+        "Sources and records"
+      ],
+      "avatars": [
+        {
+          "who": "ye",
+          "w": 58,
+          "h": 58,
+          "fit": "cover",
+          "nw": 267,
+          "nh": 400,
+          "keyboard": true
+        },
+        {
+          "who": "dai",
+          "w": 58,
+          "h": 58,
+          "fit": "cover",
+          "nw": 400,
+          "nh": 298,
+          "keyboard": true
+        }
+      ],
+      "figures": [
+        {
+          "id": "hp-evidence-to-action",
+          "width": 252,
+          "scroll": 252,
+          "height": 3220
+        },
+        {
+          "id": "hp-survey-figure",
+          "width": 252,
+          "scroll": 252,
+          "height": 2395
+        }
+      ],
+      "tableDisplay": "block",
+      "missingRefs": [],
+      "overflow": {
+        "body": 320,
+        "viewport": 320
+      },
+      "directory": 7
+    }
+  ],
+  "errors": []
+}

@@ -1,3 +1,7 @@
+/* HP hides its main navigation while reading. Heading scroll margins still
+   reserve the mobile directory; do not also reserve the hidden global header. */
+html:has(body.hp-overview-page) { scroll-padding-top: 0; }
+
 /* The concept sits between the title and the reading stage, with no card. */
 body.hp-overview-page #main-content > .hp-overview-hero {
   box-sizing: border-box;
@@ -36,9 +40,37 @@ body.hp-overview-page nav.site-nav.whale-navigation.hp-nav-is-hidden {
   pointer-events: none;
 }
 @media (max-width: 760px) {
+  body.hp-overview-page:has(nav.hp-nav-is-hidden) .content-mobile-directory { top: 0; }
   body.hp-overview-page #main-content > .hp-overview-hero { padding-inline: 10px; margin-bottom: 24px; }
   body.hp-overview-page #main-content > .hp-overview-hero figcaption { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
   body.hp-overview-page nav.site-nav.whale-navigation { transition: none; }
+}
+
+body.hp-overview-page .hp-manuscript .hp-subtitle:empty { display: none; }
+
+/* The first chapter starts the reading surface, without a section divider. */
+body.hp-overview-page .hp-manuscript > h2[id="0-introduction-life-has-more-than-one-bandwidth"] {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Keep the model explanation with the overview when it moves above the reading stage. */
+body.hp-overview-page .hp-overview-hero .hp-three-e {
+  max-width: 940px;
+  margin: 32px auto 0;
+  padding: 0 clamp(14px, 3vw, 36px);
+  color: #171536;
+  font: 18px/1.7 Futura, var(--sans), sans-serif;
+}
+body.hp-overview-page .hp-three-e p { margin: 0 0 20px; }
+body.hp-overview-page .hp-three-e-intro { font: bold 28px/1.3 Georgia, serif; color: #2e267c; }
+body.hp-overview-page .hp-three-e dl { margin: 26px 0 0; }
+body.hp-overview-page .hp-three-e dt { margin: 22px 0 6px; font-weight: 600; color: #2e267c; }
+body.hp-overview-page .hp-three-e dd { margin: 0; }
+@media (max-width: 760px) {
+  body.hp-overview-page .hp-overview-hero .hp-three-e { font-size: 17px; padding-inline: 14px; }
+  body.hp-overview-page .hp-three-e-intro { font-size: 25px; }
 }

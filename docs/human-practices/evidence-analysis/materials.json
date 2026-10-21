@@ -1,0 +1,114 @@
+{
+  "review_date": "2026-10-21",
+  "records": [
+    {
+      "path": "docs/human-practices/human-practices.md",
+      "sha256": "54df4227a0b60b65baec539866192ac98c7b6f64c2a5a2a83944615ec3d22f5d",
+      "bytes": 38364,
+      "type": "Current maintained team narrative",
+      "time": "Interviews largely undated; dated lab records linked separately",
+      "method": "Team paraphrases and activity accounts",
+      "response": "Existing priorities and implementation decisions; new literature is retrospective",
+      "hash_scope": "Pre-analysis snapshot, preserved in .local-backups/hp-evidence-20261021/human-practices.before.md"
+    },
+    {
+      "path": "docs/team/team.md",
+      "sha256": "346d33debe67b69442d7bca97b63733e988dfd8c506b8f608fa3565e312060fe",
+      "bytes": 10310,
+      "type": "Team identity record",
+      "finding": "Wang Primary PI; Zeng and Zhang Secondary PIs",
+      "gap": "No concrete Zeng advice/response record found"
+    },
+    {
+      "path": "docs/project/engineering.md",
+      "sha256": "7c45777ca2e46a83260de0d931618970e18cda0604a5613e773913017a9f8783",
+      "bytes": 389105,
+      "type": "Engineering records",
+      "finding": "Existing evaluation, delivery, model-selection and LAMAR work",
+      "limit": "Advice dates do not establish initiation of every cycle; delivery assay did not demonstrate target transcript"
+    },
+    {
+      "path": "docs/human-practices/education.md",
+      "sha256": "a5d6a12163b09ac86757dba3e1928acd6a33405af3b35bad2aac749b3f5a18d5",
+      "bytes": 71961,
+      "type": "Activity and workbook revision record",
+      "finding": "Reading density, type size, pictures and note space informed revision",
+      "scope": "Read only; not edited"
+    },
+    {
+      "path": "docs/human-practices/inclusivity.md",
+      "sha256": "c400ff1a75f7f3b06603f297742454fd02e3443c7b7756657c993b20ccef1f13",
+      "bytes": 24025,
+      "type": "Builder and inclusion accounts",
+      "scope": "Read only; not edited or repurposed as ORCA patient interviews"
+    },
+    {
+      "path": "../wiki相关文档/HP_1011版本/1011版本.md",
+      "sha256": "7cc0cbd44587fc64d081a285dea06737503b9da4f3322edfbc5ef20274973272",
+      "bytes": 26714,
+      "type": "Historical manuscript",
+      "limit": "Not a dated transcript; unresolved claims not imported"
+    },
+    {
+      "path": "assets/human-practices/attachments/public-perception-survey-findings-en.pdf",
+      "sha256": "4991aef80cb8b8b0dc5747029723dd3574f76723dc3501e0d0f2811a90457877",
+      "bytes": 74630,
+      "type": "Aggregate 11-question report",
+      "time": "Collection dates and recruitment not supplied",
+      "method": "103 valid records; percentages use 103; multi-select counts can overlap",
+      "finding": "Sample, Q8/Q10 counts extracted to chart data",
+      "gap": "No respondent-level records; no item-specific completion counts"
+    },
+    {
+      "path": "assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf",
+      "sha256": "a1cc22b9c4c4afea6df57f4a8fb9f0fcd9059fdcfa9b6dea33f52652a421550f",
+      "bytes": 521106,
+      "type": "Bilingual questionnaire",
+      "finding": "Q8 up to four; Q10 up to three; no reconstruction from summaries"
+    },
+    {
+      "path": "static/notebook/index.json",
+      "sha256": "44d31c44e34b90f4ac584c67dcb3914d5cfe12f0f923aa65661b739234b120e4",
+      "bytes": 158591,
+      "type": "Index of finalized notebook records"
+    },
+    {
+      "path": "static/notebook/pdfs/FV/2026-09-18_CCF_Receipt_Culture_Zhang_Hansen.pdf",
+      "sha256": "a6f0dd1af8b8d4e5dee3d155a42460c4f66872b1517fbbf471466feb02c5fbe8",
+      "bytes": 38280,
+      "type": "Notebook PDF",
+      "time": "2026-09-18",
+      "method": "CCF-STTG1 receipt and culture",
+      "finding": "Cells entered culture",
+      "response": "Documents available cell route"
+    },
+    {
+      "path": "static/notebook/pdfs/FV/2026-10-10_CCF_BODIPY_Confocal_Hansen_Zhang_Xueyin_Lu_and_Min_Zhang.pdf",
+      "sha256": "bd56eaeef85f021a58059bf83455b7d207b6666dc0e3ef07b792ceb5cee4324b",
+      "bytes": 36796,
+      "type": "Notebook PDF",
+      "time": "2026-10-10",
+      "method": "BODIPY/DAPI confocal imaging",
+      "finding": "Images acquired and retained",
+      "identity": "Hansen Zhang, Xueyin Lu and Min Zhang"
+    },
+    {
+      "path": "static/notebook/pdfs/FV/2026-10-13_CCF_Abeta_ELISA_Hansen_Zhang.pdf",
+      "sha256": "3cb16c5dea53c333ee0ada390e31249a8f634c386c019c84a71a6af3dfa508a3",
+      "bytes": 36772,
+      "type": "Notebook PDF",
+      "time": "2026-10-13",
+      "method": "Aβ ELISA; 450 nm plate read",
+      "finding": "Absorbance acquired; no rescue analysis supplied"
+    },
+    {
+      "path": "assets/human-practices/attachments/shokz-industry-university-cooperation-proposal-en.pdf",
+      "sha256": "d8cc977ddcebcca1a21d865e7dd8b550289c8b981ce5d8ca6e90229ced7b6390",
+      "bytes": 133568,
+      "type": "Cooperation proposal",
+      "method": "Planning document, not outcome report",
+      "finding": "Targets and responsibility framework",
+      "response": "No completed hardware partnership claimed"
+    }
+  ]
+}

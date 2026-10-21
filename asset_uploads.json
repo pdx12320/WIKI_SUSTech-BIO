@@ -1,6 +1,6 @@
 {
   "verified_on": "2026-10-21",
-  "source": "User-provided official upload lists; flat-package additions matched by normalized filename and source Git blob fingerprint. This import does not claim remote byte identity after image conversion. M132E update on 2026-10-19: eight user-uploaded IO figures verified via HTTP 200 and AVIF decode; local hashes identify approved PNG originals, not converted AVIF bytes. Final Engineering chapter illustrations verified 2026-10-19: twelve approved PNG originals matched to uploaded AVIFs by filename SHA-256 suffix, HTTP 200, AVIF decode, exact dimensions and pixel comparison. Includes restored titles on Fundamental Research and Functional Validation; PNG and AVIF hashes identify different encodings. User-provided flat-package additions matched by normalized filename and source Git blob fingerprint, including documents and runtime data. This import does not claim remote byte identity after image conversion. October 20 upload batch: all 60 supplied URLs returned HTTP 200; 16 PDFs, seven TTF fonts and six JSON/CSV files were downloaded and matched the local SHA-256 (29 files). The 31 image URLs were checked with HEAD; converted image byte equality is not claimed. Contribution PDF preview uploads verified 2026-10-20: all 493 user-provided flat category-page WebP URLs returned HTTP 200 and matched the current local originals byte for byte (SHA-256). Local preview manifest paths are preserved; the existing asset resolver substitutes these URLs only in igem mode. October 21 user upload batch: all 73 supplied URLs returned HTTP 200; 29 uploaded originals matched byte for byte, 43 converted images retained the source Git filename fingerprint and passed decode/aspect-ratio/thumbnail checks, including platform downscaling. The 9,738,811-byte model-figures PDF matched the compressed deliverable SHA-256 and retained all 95 pages, extracted text and page dimensions. Its original local PDF remains unchanged; source and uploaded SHA-256 values are recorded separately. Detailed evidence: docs/releases/asset-uploads-20261021/verification.json. Education release: four comparison images, three fonts and three compiled compact PDFs were explicitly approved and uploaded through the official team upload page on 2026-10-21; images converted to AVIF, fonts and PDFs verified byte-identical.",
+  "source": "User-provided official upload lists; flat-package additions matched by normalized filename and source Git blob fingerprint. This import does not claim remote byte identity after image conversion. M132E update on 2026-10-19: eight user-uploaded IO figures verified via HTTP 200 and AVIF decode; local hashes identify approved PNG originals, not converted AVIF bytes. Final Engineering chapter illustrations verified 2026-10-19: twelve approved PNG originals matched to uploaded AVIFs by filename SHA-256 suffix, HTTP 200, AVIF decode, exact dimensions and pixel comparison. Includes restored titles on Fundamental Research and Functional Validation; PNG and AVIF hashes identify different encodings. User-provided flat-package additions matched by normalized filename and source Git blob fingerprint, including documents and runtime data. This import does not claim remote byte identity after image conversion. October 20 upload batch: all 60 supplied URLs returned HTTP 200; 16 PDFs, seven TTF fonts and six JSON/CSV files were downloaded and matched the local SHA-256 (29 files). The 31 image URLs were checked with HEAD; converted image byte equality is not claimed. Contribution PDF preview uploads verified 2026-10-20: all 493 user-provided flat category-page WebP URLs returned HTTP 200 and matched the current local originals byte for byte (SHA-256). Local preview manifest paths are preserved; the existing asset resolver substitutes these URLs only in igem mode. October 21 user upload batch: all 73 supplied URLs returned HTTP 200; 29 uploaded originals matched byte for byte, 43 converted images retained the source Git filename fingerprint and passed decode/aspect-ratio/thumbnail checks, including platform downscaling. The 9,738,811-byte model-figures PDF matched the compressed deliverable SHA-256 and retained all 95 pages, extracted text and page dimensions. Its original local PDF remains unchanged; source and uploaded SHA-256 values are recorded separately. Detailed evidence: docs/releases/asset-uploads-20261021/verification.json. Education release: four comparison images, three fonts and three compiled compact PDFs were explicitly approved and uploaded through the official team upload page on 2026-10-21; images converted to AVIF, fonts and PDFs verified byte-identical. HP evidence release on 2026-10-21: user-approved hand-drawn overview and two original analysis figures uploaded via official team UI. SVGs byte-identical; converted AVIFs HTTP/decode/aspect-ratio and pixel checks recorded in docs/qa/hp-evidence-release-20261021/upload-verification.json.",
   "urls": [
     "https://static.igem.wiki/teams/6085/wiki/10-18-10-44/assets-figures-apoe112-1b68-domain-525ae93f89.webp",
     "https://static.igem.wiki/teams/6085/wiki/10-18-10-44/assets-figures-apoe112-1b68-plate-3901fa4861.avif",
@@ -2527,7 +2527,12 @@
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-17.avif",
     "https://static.igem.wiki/teams/6085/wiki/project/sonar-reporter/sonar-figure-18.avif",
     "https://static.igem.wiki/teams/6085/wiki/safety/sora-title-700.woff2",
-    "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif"
+    "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif",
+    "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-hand-drawn-overview-20261021.avif",
+    "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action.svg",
+    "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action-raster.avif",
+    "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire.svg",
+    "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire-raster.avif"
   ],
   "confirmed_mapping": [
     {
@@ -11946,6 +11951,36 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf",
       "sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6",
       "evidence": "explicit_user_approved_20261021_official_upload_UI_and_byte_identity"
+    },
+    {
+      "local_path": "assets/human-practices/overview/hp-hand-drawn-overview-20261021.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-hand-drawn-overview-20261021.avif",
+      "sha256": "4f0a43e0e78ab71331c0bcca2ca3c69cbbd61744a96f17377528a984348f58ab",
+      "evidence": "official_upload_ui_http_decode_dimensions_and_source_hash"
+    },
+    {
+      "local_path": "assets/human-practices/evidence-analysis/evidence-to-action.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action.svg",
+      "sha256": "708cf56b34af735e2fbabdcc22003a0b40ee7e5b295bbbcf599208cff70d4d95",
+      "evidence": "official_upload_ui_http_decode_dimensions_and_source_hash"
+    },
+    {
+      "local_path": "assets/human-practices/evidence-analysis/evidence-to-action.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action-raster.avif",
+      "sha256": "a86d756bfc35525ba005c197964af4d55ac2acef480fde058260a2d3ef18b1ff",
+      "evidence": "official_upload_ui_http_decode_dimensions_and_source_hash"
+    },
+    {
+      "local_path": "assets/human-practices/evidence-analysis/public-questionnaire.svg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire.svg",
+      "sha256": "8ae50c9aa182b3705deb5a592958ae038154a73afb569816dc2ac2e30e901a8f",
+      "evidence": "official_upload_ui_http_decode_dimensions_and_source_hash"
+    },
+    {
+      "local_path": "assets/human-practices/evidence-analysis/public-questionnaire.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire-raster.avif",
+      "sha256": "ed0064e3888233be59bb2c8f613d881adef74f03abf23375e88e4a705ac5861c",
+      "evidence": "official_upload_ui_http_decode_dimensions_and_source_hash"
     }
   ],
   "content_hashes": [

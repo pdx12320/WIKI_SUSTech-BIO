@@ -1,0 +1,14 @@
+.rna-cell-context{position:fixed;inset:0;z-index:7;color:#d9e1ef;pointer-events:none;font:400 14px/1.5 var(--ot-sans);letter-spacing:0;}
+.rna-cell-context[hidden],.rna-cell-context [hidden]{display:none;}
+.rna-cell-context__label{position:absolute;transform:translate(-50%,-50%);margin:0;white-space:nowrap;text-shadow:0 2px 12px #03050b;}
+.rna-cell-context__label[data-rna-cell-label^="amyloid"]{color:#ff6a55;font-weight:700;font-size:clamp(18px,1.65vw,24px);line-height:1;letter-spacing:-.025em;-webkit-text-stroke:.15px currentColor;text-shadow:0 0 5px #ff6a5540;mix-blend-mode:screen;}
+.rna-cell-context__target{position:absolute;transform:translate(-50%,-50%);margin:0;white-space:nowrap;}
+.rna-cell-context:not([data-stage="translation"]) .rna-cell-context__target{display:none;}
+.rna-cell-context__questions{position:absolute;left:12px;right:12px;bottom:14vh;text-align:center;}
+.rna-cell-context__questions p{margin:8px 0;font:inherit;}
+.has-rna-cell:not(.ot--static) [data-rna-cell-replaced]{display:none;}
+.ot--static .rna-cell-context{display:none;}
+@media(max-width:600px){.rna-cell-context{font-size:14px;}.rna-cell-context__questions{bottom:12vh;}}
+
+/* The original A-beta marker shares the same coral as all cluster labels. */
+.ot-bio-label--amyloid{color:#ff6a55}

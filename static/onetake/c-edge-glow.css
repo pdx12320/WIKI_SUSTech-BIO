@@ -1,0 +1,11 @@
+.one-c-edge-glow{pointer-events:none;}
+.one-c-edge-glow__particle{opacity:0;animation:one-c-light-drift var(--c-light-life) linear var(--c-light-delay) infinite;}
+.one-c-edge-glow__core{fill:#fff;opacity:.85;}
+.one-c-edge-glow__bloom{fill:#f8fbff;opacity:.14;filter:blur(.3px);}
+@keyframes one-c-light-drift{
+  0%{opacity:0;transform:translate(0,0);}
+  18%{opacity:.68;}
+  68%{opacity:.3;}
+  100%{opacity:0;transform:translate(var(--c-light-x),var(--c-light-y));}
+}
+@media(prefers-reduced-motion:reduce){.one-c-edge-glow__particle{animation:none;opacity:.3;}}

@@ -118,3 +118,6 @@
   background: #130d2399; color: #eee6ff; font: 500 10px/1.4 Futura, sans-serif;
   letter-spacing: .22em; opacity: calc(1 - var(--crt-title)); pointer-events: none;
 }
+
+/* Four initial letters quietly spell ORCA within the opening subtitle. */
+.ot .ot-tagline-initial{color:#fff;font-weight:inherit}

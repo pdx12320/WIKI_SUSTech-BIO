@@ -1,0 +1,27 @@
+@import url("./c-edge-glow.css");
+@font-face{font-family:"ORCA RNA";src:url("./one-c-lettering.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap;}
+.one-c-context{position:fixed;inset:0;z-index:7;color:#e9eef7;pointer-events:none;opacity:0;}
+.one-c-context[hidden]{display:none;}
+.one-c-context__letters{position:absolute;inset:0;}
+.one-c-context__letter{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font:400 300px/1 "ORCA RNA",sans-serif;font-synthesis:none;color:#f7f5ff;text-shadow:0 0 24px #c5d2ff20;white-space:nowrap;}
+.one-c-context__letter--target{color:#f58f9c;transition:color .5s;}
+.one-c-context__caption{font:400 14px/1.5 var(--ot-sans);font-synthesis:none;letter-spacing:0;}
+.one-c-context__caption{position:absolute;bottom:17vh;left:16px;right:16px;margin:0;text-align:center;white-space:nowrap;color:#d2d7e6;}
+.one-c-context__accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.has-one-c-context:not(.ot--static) [data-one-c-replaced]{display:none;}
+.one-c-notes{max-width:760px;margin:0 auto;padding:28px 24px;color:#bbc8dc;font:14px/1.7 var(--ot-sans);}
+.one-c-notes summary{cursor:pointer;}.one-c-notes p{margin:14px 0 0;}
+
+/* Reuse the cover C at its measured ink bounds before the RNA pullback. */
+.one-c-cover-overlay{position:fixed;inset:0;overflow:hidden;z-index:7;pointer-events:none;}
+.one-c-cover-overlay[hidden],.ot--static .one-c-cover-overlay{display:none;}
+.one-c-cover-overlay > svg{position:absolute;max-width:none;overflow:visible;}
+.is-cover-c-extracted .memory-room :is(.orca-opening-wordmark--coral,.orca-opening-wordmark--violet) [data-letter="C"]{visibility:hidden;}
+/* The later editing close-up uses the same glyphs and keeps its existing colors. */
+.ot-crt-home .ot-codon__sequence{font-family:"ORCA RNA",sans-serif;font-weight:400;font-synthesis:none;}
+
+/* Also suppress the retired control if a cached template still contains it. */
+.one-c-context [data-c-tools],.one-c-context [data-c-compare]{display:none!important;}
+
+/* The A-beta label has no vertical leader on the home page. */
+.ot-crt-home .ot-bio-label--amyloid::after{content:none;display:none;}

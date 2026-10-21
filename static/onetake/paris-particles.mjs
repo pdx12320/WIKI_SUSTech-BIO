@@ -56,7 +56,7 @@ export function createParisParticles(THREE, scene, root, anchorPosition, anchorL
     fragmentShader:`
       uniform float uOpacity; varying float vAlpha;
       void main(){float r=length(gl_PointCoord-.5)*2.;if(r>1.)discard;
-        gl_FragColor=vec4(vec3(.96,.24,.04)*1.2,exp(-r*r*4.5)*vAlpha*uOpacity);}
+        gl_FragColor=vec4(vec3(1.,.4156863,.3333333)*1.2,exp(-r*r*4.5)*vAlpha*uOpacity);}
     `});
   const points=new THREE.Points(geometry,material);points.name='paris-population-world-particles';points.frustumCulled=false;
   const group=new THREE.Group();group.add(points);scene.add(group);

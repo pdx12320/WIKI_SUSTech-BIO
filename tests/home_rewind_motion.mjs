@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {breathingRewind} from '../static/onetake/rewind-motion.mjs';
+import {replayFrame,HOME_REPLAY_TIMING} from '../static/onetake/edit-replay.mjs';
+const f=breathingRewind,h=1e-5,speed=t=>(f(t+h)-f(t-h))/(2*h);
+assert.equal(f(0),0);assert.equal(f(1),1);assert.equal(f(-1),0);assert.equal(f(2),1);
+for(let i=0;i<1000;i++)assert(f((i+1)/1000)>=f(i/1000),'reverse must not overshoot or move backwards');
+assert(speed(.8)>speed(.5));assert(speed(.5)>speed(.2));
+assert(f(.88)>.85,'braking only starts close to the target');
+assert(speed(.94)<speed(.87));assert(speed(.985)<speed(.94));assert(speed(.999)<.001);
+assert(Math.abs(speed(.88-h)-speed(.88+h))<.001,'braking does not jump the camera velocity');
+const options={timing:HOME_REPLAY_TIMING,rewindMotion:f},start=HOME_REPLAY_TIMING.question,end=start+HOME_REPLAY_TIMING.rewind;
+assert(Math.abs(replayFrame(start,options).take-.803)<1e-9);
+assert(Math.abs(replayFrame(end-1e-6,options).take-.55)<1e-8);
+assert.equal(replayFrame(end,options).take,.55);assert.equal(replayFrame(end,options).phase,'target');
+console.log('Passed progressive acceleration, near-target braking, monotonic motion, continuous speed, soft landing and unchanged CGC hold.');

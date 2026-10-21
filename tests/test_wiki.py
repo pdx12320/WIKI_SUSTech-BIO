@@ -127,9 +127,17 @@ class WikiRoutesTest(unittest.TestCase):
         # /next now adds the separately reviewed residue-112 structure section.
         home, preview = self.get_text("/"), self.get_text("/next")
         for page in [home, preview]:
-            for marker in ['data-ot-canvas', 'data-ot-story', 'data-bio-handle="pod"',
-                           'data-bio-handle="cetus"', 'What if we can']:
+            for marker in ['data-ot-canvas', 'data-ot-story', 'What if we can']:
                 self.assertIn(marker, page)
+        self.assertIn('data-edit-auto-dock', home)
+        self.assertNotIn('data-edit-auto-dock', preview)
+        for marker in ['data-bio-handle="pod"', 'data-bio-handle="cetus"', 'data-drop-site=']:
+            self.assertNotIn(marker, home)
+            self.assertIn(marker, preview)
+        self.assertIn('data-rna-cell', home)
+        self.assertIn('data-memory-maze-ending', home)
+        self.assertNotIn('data-rna-cell', preview)
+        self.assertNotIn('data-memory-maze-ending', preview)
         self.assertIn('id="ot-index-title"', home)
         self.assertIn('href="#apoe112"', preview)
 
@@ -159,7 +167,9 @@ class WikiRoutesTest(unittest.TestCase):
         for page in [home, team]:
             self.assertIn("ORCA", page)
             self.assertNotIn("REWIRE", page)
-        self.assertIn("On-target RNA Correction of APOE4 for Alzheimer’s Disease", home)
+        readable_home = re.sub(r'<br\s*/?>', ' ', home)
+        readable_home = re.sub(r'<[^>]+>', '', readable_home)
+        self.assertIn("On-target RNA Correction of APOE4 for Alzheimer's Disease", readable_home)
 
     def test_particle_assets_and_transitive_module_imports_are_served_locally(self):
         page = self.get_text("/")

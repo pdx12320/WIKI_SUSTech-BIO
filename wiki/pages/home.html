@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/dementia-burden.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/dementia-paris.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/confirmed-edit.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='onetake/one-c-context.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='onetake/rna-cell-context.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='onetake/memory-maze-ending.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/explore-slides.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/home-labels.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/home-entry-art.css') }}">
@@ -23,9 +26,11 @@
 {% block navigation %}{% include 'menu.html' %}{% endblock %}
 
 {% block main %}
-<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-auto-confirm data-edit-quick-rewind data-staged-conclusions data-ot>
+<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-auto-confirm data-edit-auto-dock data-edit-quick-rewind data-staged-conclusions data-ot>
   <script src="{{ url_for('static', filename='onetake/home-entry.js') }}"></script>
   {% include 'components/crt_opening.html' %}
+  {% include 'components/one_c_context.html' %}
+  {% include 'components/rna_cell_context.html' %}
   <div class="ot-bio-labels" aria-hidden="true">
     <div class="ot-bio-label ot-codon" data-bio-label="codon">
       <span class="ot-codon__name"><span class="ot-before">APOE4 RNA</span><span class="ot-after">APOE3 RNA</span></span>
@@ -36,15 +41,6 @@
     <span class="ot-bio-label ot-bio-callout ot-bio-label--pod" data-bio-label="pod" data-bio-callout><strong>PUF</strong><small>Recognizes and binds the target RNA.</small></span>
     <span class="ot-bio-label ot-bio-callout ot-bio-label--cetus" data-bio-label="cetus" data-bio-callout><strong>APOBEC</strong><small>Converts the target C to U.</small></span>
     <span class="ot-bio-label ot-bio-label--amyloid" data-bio-label="amyloid">Aβ</span>
-  </div>
-  <div class="ot-bio-interaction" data-bio-interaction hidden>
-    <svg class="ot-bio-guides" aria-hidden="true"><path data-bio-guide="pod"></path><path data-bio-guide="cetus"></path><path class="ot-bio-hit" data-bio-hit="pod"></path><path class="ot-bio-hit" data-bio-hit="cetus"></path></svg>
-    <span class="ot-drop-site" data-drop-site="pod" aria-hidden="true"><span>① PUF</span><small>Drop here</small></span>
-    <span class="ot-drop-site" data-drop-site="cetus" aria-hidden="true"><span>② APOBEC</span><small>Drop here</small></span>
-    <button class="ot-bio-handle" data-bio-handle="pod" aria-label="Drag PUF to the matching purple ring marked 1 PUF on the RNA, or press Enter to place" aria-pressed="false"><span>① PUF</span><small>Drag to ①</small></button>
-    <button class="ot-bio-handle" data-bio-handle="cetus" aria-label="Drag APOBEC to the matching blue ring marked 2 APOBEC beside C, or press Enter to place" aria-pressed="false"><span>② APOBEC</span><small>Drag to ②</small></button>
-    <p class="ot-placement-instruction" data-placement-instruction aria-live="polite">Drag each module into its matching numbered ring.</p>
-    <p class="ot-placement-auto-note">Both in place → animation plays automatically.<br>No more dragging needed.</p>
   </div>
   <p class="ot-edit-status" data-edit-status role="status" aria-live="polite" hidden></p>
   <button class="ot-edit-skip" data-edit-skip hidden>Skip animation</button>
@@ -61,35 +57,35 @@
     <div class="ot-chapters">
       <header class="ot-ch ot-ch--hero is-on" data-ot-chapter data-in="-1" data-out="-0.105">
         <h1 class="ot-hero-title">ORCA</h1>
-        <p class="ot-hero-sub">On-target RNA Correction of APOE4 for Alzheimer’s Disease</p>
+        <p class="ot-hero-sub"><b class="ot-tagline-initial">O</b>n-target <b class="ot-tagline-initial">R</b>NA <b class="ot-tagline-initial">C</b>orrection of <b class="ot-tagline-initial">A</b>POE4<br>for Alzheimer's Disease</p>
         <p class="ot-scroll-hint"><i></i>Scroll to enter</p>
       </header>
 
-      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.11" data-out="0.2">
+      <div class="ot-ch ot-ch--left" data-one-c-replaced data-ot-chapter data-in="0.11" data-out="0.2">
         <span class="ot-object">Brain</span>
         <p class="ot-chapter-copy"><strong class="ot-highlight-coral">Alzheimer’s disease</strong> progressively damages <strong class="ot-highlight-ice">brain cells and their connections</strong>, leading to <strong class="ot-highlight-coral">memory loss</strong> and declining thinking abilities.</p>
       </div>
 
-      <div class="ot-ch ot-ch--right" data-ot-chapter data-in="0.235" data-out="0.335">
+      <div class="ot-ch ot-ch--right" data-one-c-replaced data-ot-chapter data-in="0.235" data-out="0.335">
         <span class="ot-object">Astrocyte</span>
         <p class="ot-chapter-copy"><strong class="ot-highlight-mint">Astrocytes</strong> support neurons and help regulate brain metabolism. Changes in their <strong class="ot-highlight-ice">lipid handling</strong> and <strong class="ot-highlight-coral">inflammatory responses</strong> are linked to Alzheimer’s disease.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.395" data-out="0.485">
+      <div class="ot-ch ot-ch--left" data-one-c-replaced data-ot-chapter data-in="0.395" data-out="0.485">
         <span class="ot-object">APOE4 RNA</span>
         <p class="ot-chapter-copy">Astrocytes produce <strong class="ot-highlight-ice">APOE</strong> to transport cholesterol and other lipids. <strong class="ot-highlight-coral">APOE4</strong> can disturb this balance, weakening <strong class="ot-highlight-ice">metabolic support for neurons</strong>.</p>
       </div>
 
-      <div class="ot-ch ot-ch--low" data-ot-chapter data-in="0.52" data-out="0.605">
-        <p class="ot-static-explanation">The target is the first C in CGC. Changing it to U produces UGC, corresponding to Arg112→Cys112 in mature APOE.</p>
+      <div class="ot-ch ot-ch--low" data-one-c-replaced data-ot-chapter data-in="0.52" data-out="0.605">
+        <p class="ot-static-explanation">The target is the first C in CGC. Changing it to U produces UGC, corresponding to a change from Arg112 to Cys112 in mature APOE.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.62" data-out="0.672">
+      <div class="ot-ch ot-ch--left" data-rna-cell-replaced data-ot-chapter data-in="0.62" data-out="0.672">
         <span class="ot-object">Astrocyte · Aβ</span>
         <p class="ot-static-explanation">In human cell models, APOE4 astrocytes take up less amyloid-β than APOE3 astrocytes.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.689" data-out="0.731">
+      <div class="ot-ch ot-ch--left" data-rna-cell-replaced data-ot-chapter data-in="0.689" data-out="0.731">
         <p class="ot-narrative">APOE4 and APOE3 differ at just one amino acid, <strong class="ot-residue-before">Arg112</strong> versus <strong class="ot-residue-after">Cys112</strong>. Their effects on lipid handling and Alzheimer’s disease risk differ markedly.</p>
       </div>
 
@@ -106,23 +102,28 @@
         <p class="ot-static-explanation">PUF recognizes and binds the target RNA. APOBEC converts the target C to U.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left ot-ch--conclusion ot-ch--wet-design" data-ot-chapter data-in="0.935" data-out="0.966">
+      <div class="ot-ch ot-ch--left ot-ch--conclusion ot-ch--wet-design" data-ot-chapter data-in="0.935" data-out="0.951">
         <p class="ot-narrative">We design ORCA as a <strong class="ot-model-emphasis">modular RNA editing platform</strong>, coupling <strong class="ot-design-emphasis">programmable recognition</strong> with <strong class="ot-design-emphasis">catalytic engineering</strong>.</p>
-        <p class="ot-chapter-copy" data-ot-reveal="0.948" data-ot-reveal-end="0.952">We also investigate <strong class="ot-workstream-emphasis">GFA, MRE and ASO</strong> designs for expression control, explore <strong class="ot-workstream-emphasis">AAV9</strong> delivery, and develop <strong class="ot-workstream-emphasis">SONAR</strong> for editing-responsive fluorescence measurements.</p>
+        <p class="ot-chapter-copy" data-ot-reveal="0.941" data-ot-reveal-end="0.943">We also investigate <strong class="ot-workstream-emphasis">GFA, MRE and ASO</strong> designs for expression control, explore <strong class="ot-workstream-emphasis">AAV9</strong> delivery, and develop <strong class="ot-workstream-emphasis">SONAR</strong> for editing-responsive fluorescence measurements.</p>
       </div>
 
-      <div class="ot-ch ot-ch--left ot-ch--conclusion" data-ot-chapter data-in="0.974" data-out="2">
+      <div class="ot-ch ot-ch--left ot-ch--conclusion" data-ot-chapter data-in="0.954" data-out="0.969">
         <p class="ot-narrative">We integrate wet-lab evidence with <strong class="ot-model-emphasis">foundation models</strong> and <strong class="ot-model-emphasis">structural modeling</strong> to guide refinement of the PUF–APOBEC RNA editing system.</p>
-        <p class="ot-chapter-copy" data-ot-reveal="0.984" data-ot-reveal-end="0.988">Our goal is greater <strong class="ot-specificity-emphasis">editing specificity</strong> while preserving useful <strong class="ot-activity-emphasis">target activity</strong>.</p>
+        <p class="ot-chapter-copy" data-ot-reveal="0.960" data-ot-reveal-end="0.962">Our goal is greater <strong class="ot-specificity-emphasis">editing specificity</strong> while preserving useful <strong class="ot-activity-emphasis">target activity</strong>.</p>
       </div>
     </div>
   </section>
+
+  <div class="memory-maze-ending" data-memory-maze-ending aria-label="C to U. From C to Us.">
+    <div class="memory-maze-ending__static"><p>C → U</p><p>From C to Us</p></div>
+  </div>
 
   {% with compact_explore=true %}{% include 'components/explore_slides.html' %}{% endwith %}
 </main>
 {% endblock %}
 
 {% block footer %}
+{% include 'components/one_c_notes.html' %}
 <section class="ot-home-footer" aria-label="Population comparison sources">
   {% include 'components/dementia_paris_sources.html' %}
 </section>

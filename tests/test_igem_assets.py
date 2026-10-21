@@ -122,8 +122,8 @@ class ProductionRoutesTest(unittest.TestCase):
     def test_mounted_download_buttons_and_archived_navigation_stay_reachable(self):
         app.config['WIKI_ASSET_MODE'] = 'igem'
         cases = [
-            ('/contribution', '/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx'),
-            ('/contribution', '/assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx'),
+            ('/contribution', '/assets/human-practices/education/workbook-current-student-zh.docx'),
+            ('/contribution', '/assets/human-practices/education/workbook-current-student-en.docx'),
             ('/contribution', '/assets/human-practices/models/biology-brain-model.stl.zip'),
             ('/contribution', '/assets/human-practices/models/biology-animal-cell-model.stl.zip'),
             ('/engineering', '/static/downloads/rewire-modeling-toolkit.zip'),

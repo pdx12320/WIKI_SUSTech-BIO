@@ -14,12 +14,12 @@
 .ot--static .memory-maze-ending__type{display:none}
 @media(max-width:760px){.memory-maze-ending__morph-stroke{filter:none}}
 
-/* The fixed particle stage ends with the story. Opaque black fills the
-   project/footer gaps instead of exposing the scene through them. */
-.ot-crt-home .is-memory-maze-past :is(.ot-crt-picture,.ot-crt-room){visibility:hidden}
+/* Clear the particle backing only after both lines have faded completely. */
+.ot-crt-home .is-memory-maze-past .ot-crt-room{visibility:hidden}
+.ot-crt-home .is-memory-maze-past .ot-crt-picture{clip-path:inset(0 0 var(--memory-maze-stage-clip,100vh) 0)}
 .ot-crt-home .ot-home-footer{background:#03050b;position:relative;z-index:12}
 
-/* Reserve a final-phrase runway; the directory cannot cover pending motion. */
-.ot-crt-home .has-memory-maze-ending:not(.ot--static) [data-explore-slides]{margin-top:160vh}
+/* Reserve the incoming layout, but reveal it after the ending fades out. */
+.ot-crt-home .has-memory-maze-ending:not(.ot--static) [data-explore-slides]{margin-top:80vh;opacity:var(--memory-explore-opacity,0)}
 .ot-crt-home .has-memory-maze-ending:not(.ot--static):not(.is-memory-maze-complete) [data-explore-slides],
 .ot-crt-home .has-memory-maze-ending:not(.ot--static):not(.is-memory-maze-complete) ~ :is(.one-c-notes,.ot-home-footer,.site-footer){visibility:hidden;pointer-events:none}

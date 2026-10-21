@@ -22,6 +22,7 @@ import { createBiologyScene } from './biology-scene.mjs';
 import { createEditReplay } from './edit-replay.mjs';
 import { buildScrollTrack } from './burden-pacing.mjs';
 import { paceCellScroll } from './cell-scroll-pacing.mjs';
+import { paceMemoryConstellation, memoryPopulationTake } from './memory-constellation-state.mjs';
 import { createMemoryMazeEnding } from './memory-maze-ending.mjs';
 import { createParisParticles } from './paris-particles.mjs';
 import { createParticleAtmosphere } from './particle-atmosphere.mjs';
@@ -600,11 +601,12 @@ const KEYS = [
 // Let the leftward RNA journey run longer, with lighter pacing elsewhere.
 // The longer CSS track keeps morphs at their original scroll speed.
 // Text, camera and effects all use this same reversible timeline mapping.
-const { track: TRACK, length: trackLength, scale: trackScale } = paceCellScroll(buildScrollTrack(KEYS, {
+const memoryStarPreview=!!root?.hasAttribute('data-memory-star-preview');
+const { track: TRACK, length: trackLength, scale: trackScale } = paceMemoryConstellation(paceCellScroll(buildScrollTrack(KEYS, {
   burden: !!root?.querySelector('[data-burden]'),
   stagedConclusions: !!root?.hasAttribute('data-staged-conclusions'),
   paris: !!root?.querySelector('[data-burden-paris]'),
-}),!!root?.querySelector('[data-rna-cell]'));
+}),!!root?.querySelector('[data-rna-cell]')),memoryStarPreview);
 // Add the comparison's reading distance without speeding up other chapters.
 story?.style.setProperty('--ot-track-scale', trackScale);
 function takeOf(p) {
@@ -813,6 +815,8 @@ async function boot() {
   const hasCellContext=!!root.querySelector('[data-rna-cell]');
   const rnaCell = createRnaCellScene(THREE,scene,root,{small,cell});
   const memoryEnding = createMemoryMazeEnding(THREE,scene,root,{maze,brain,small});
+  const memoryConstellation=memoryStarPreview
+    ? (await import('./memory-constellation.mjs')).createMemoryConstellation(THREE,scene,root,{brain,small}) : null;
   const replay = createEditReplay({ root, story, toProgress: progressOfTake,
     enabled: Number.isNaN(pinned) && !reduceQuery.matches &&
       !(root.hasAttribute('data-structure-preview') && location.hash === '#apoe112') });
@@ -970,6 +974,8 @@ async function boot() {
     else if (wasReplaying && hasCellContext) { p = progressOf(); q = takeOf(p); }
     wasReplaying = !!replayState;
     const P = clamp(q, -1, 1);
+    const populationTake=memoryPopulationTake(P,memoryStarPreview);
+    const memoryBackdrop=memoryConstellation?.backdrop(P,replayState)??1;
     const rnaApproach=rnaReplayApproach(P,replayState,hasCellContext);
     const contextView=cellReplayView(P,rnaApproach??replayState,hasCellContext);
     const oneCBackground=contextView.backdrop??oneCContext.backdrop(contextView.take,contextView.replay);
@@ -1000,7 +1006,8 @@ async function boot() {
     mouseSmooth.lerp(mouseOn ? mouse : tmp.set(0, 0, 0), 1 - Math.exp(-dt * 3));
     oneCParticles.camera(contextView.take,time,aspect,camPos,camLook,contextView.replay,contextView.cameraOpacity??contextView.opacity);
     const cellBank=rnaCell.camera(contextView.take,aspect,camPos,camLook,contextView.replay,time,{x:mouseSmooth.x,y:mouseSmooth.y,on:mouseOn*motion})??0;
-    parisParticles.camera(P, camPos, camLook);
+    parisParticles.camera(populationTake, camPos, camLook);
+    memoryConstellation?.camera(P,time,aspect,camPos,camLook,replayState);
     rnaCell.questionCamera?.(contextView.take,aspect,camPos,camLook,contextView.replay,time,{x:mouseSmooth.x,y:mouseSmooth.y,on:mouseOn*motion});
     // The same molecular approach finishes inside the reverse, before docking.
     // Labels have their own fade; camera and RNA share one continuous clock.
@@ -1039,7 +1046,7 @@ async function boot() {
     // the scene keeps its full brightness until the comparison has ended, then
     // hands over to the question chapter.
     uniforms.uSceneAlpha.value = legacyParticleOpacity(P,hasCellContext);
-    uniforms.uSceneAlpha.value *= parisParticles.backdrop(P)*oneCBackground*memoryEnding.backdrop(P,replayState);
+    uniforms.uSceneAlpha.value *= parisParticles.backdrop(populationTake)*oneCBackground*memoryEnding.backdrop(P,replayState)*memoryBackdrop;
     uniforms.uMouse.value.copy(mouseSmooth);
     const openingPointer = stage < 0 ? 1 - smooth(ramp(stage, -0.98, -0.65)) : 1;
     uniforms.uMouseOn.value = mouseOn * motion * openingPointer;
@@ -1049,10 +1056,10 @@ async function boot() {
     const brainReturn = smooth(ramp(stage, 4.65, 5));
     const brainAmount = Math.max(brainIn * brainOut, brainReturn);
     foldContours.rotation.y = uniforms.uRot.value;
-    foldMaterial.opacity = brainAmount * 0.22 * oneCBackground*memoryEnding.backdrop(P,replayState);
+    foldMaterial.opacity = brainAmount * 0.22 * oneCBackground*memoryEnding.backdrop(P,replayState)*memoryBackdrop;
     foldContours.visible = brainAmount > 0.001 && oneCBackground > .001;
 
-    const biologicalEdit=biology.update(P,time,camera,motion,rnaApproach&&!rnaApproach.duringRewind?rnaApproach:replayState,parisParticles.backdrop(P),oneCBackground*memoryEnding.backdrop(P,replayState));
+    const biologicalEdit=biology.update(P,time,camera,motion,rnaApproach&&!rnaApproach.duringRewind?rnaApproach:replayState,parisParticles.backdrop(populationTake),oneCBackground*memoryEnding.backdrop(P,replayState)*memoryBackdrop);
 
     grade.uniforms.uTime.value = time;
     grade.uniforms.uAberration.value = P > .22 && P < .94 ? .00015 : .0007;
@@ -1060,13 +1067,24 @@ async function boot() {
     bloom.strength = (0.48 - .1*smooth(ramp(P,.22,.3))) * uniforms.uSignal.value;
 
     root.style.setProperty('--ot-p', P.toFixed(4));
-    root.dispatchEvent(new CustomEvent('ot:frame', { detail: { p, take: P, reduced: reduce } }));
-    parisParticles.update(P, time);
+    root.dispatchEvent(new CustomEvent('ot:frame', { detail: { p, take: P, populationTake, reduced: reduce } }));
+    parisParticles.update(populationTake, time);
     const editorView=rnaEditorView(P,rnaApproach??replayState,hasCellContext,biologicalEdit.fix);
     const moleculeView=editorView?{...editorView,presence:(editorView.presence??1)*memoryEnding.backdrop(P,replayState)}:null;
     oneCParticles.update(contextView.take,time,dt,oneCContext.edited?.()??false,contextView.replay,motion,contextView.opacity,moleculeView,{x:mouse.x,y:mouse.y,on:mouseOn*motion});
     oneCContext.update(contextView.take,contextView.replay,oneCParticles.labels(camera,innerWidth,innerHeight),contextView.opacity);
     rnaCell.update(contextView.take,time,camera,contextView.replay,motion,innerWidth,innerHeight,{x:mouse.x,y:mouse.y,on:mouseOn*motion},dt);
+    if(memoryConstellation){
+      // Attenuate only the known cellular layers after their normal updates.
+      // The Paris source is shared with Aβ and resumes as the stars retreat.
+      for(const obj of Object.values(rnaCell.objects??{}).flat()){
+        if(obj.material?.uniforms?.uOpacity)obj.material.uniforms.uOpacity.value*=memoryBackdrop;
+      }
+      const amyloid=scene.getObjectByName('extracellular-amyloid');
+      if(amyloid?.material.uniforms.uOpacity)amyloid.material.uniforms.uOpacity.value*=memoryBackdrop;
+      root.style.setProperty('--memory-cell-opacity',String(memoryBackdrop));
+      memoryConstellation.update(P,time,camera,replayState);
+    }
     const endingScreens=Math.max(0,(p-1)*(story.offsetHeight-innerHeight)/innerHeight);
     memoryEnding.update(P,time,camera,motion,innerWidth,innerHeight,replayState,p,endingScreens);
     composer.render();

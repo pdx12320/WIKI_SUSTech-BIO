@@ -1,0 +1,46 @@
+{
+  "desktop": {
+    "attributions": [
+      "Elżbieta Gralińska · FieldShift",
+      "Jacky Yuen · Comment on a farmer-facing platform",
+      "Elżbieta Gralińska · FermentOS V2"
+    ],
+    "quotes": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "size": "20px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "size": "20px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "size": "20px"
+      }
+    ],
+    "scrollWidth": 1366,
+    "width": 1366
+  },
+  "mobile": {
+    "bodyFont": "18px",
+    "componentWidth": 316,
+    "headingY": 73.8203125,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "desktop_details": {
+    "comments": 8,
+    "pointerOpen": true,
+    "keyboardClose": true
+  },
+  "mobile_details": {
+    "comments": 8,
+    "pointerOpen": true,
+    "keyboardClose": true,
+    "scrollWidth": 390
+  }
+}

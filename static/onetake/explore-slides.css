@@ -194,6 +194,10 @@
 }
 
 /* Home ends at the chapter directory, followed by a quiet attribution line. */
+.ot-crt-home .ot-index.explore-slides--clean {
+  z-index: auto;
+  background: none;
+}
 .explore-slides--clean .explore-slide__label { justify-content: center; min-height: 72px; }
 .explore-slides--clean { padding-bottom: clamp(36px, 5vw, 64px); }
 body.ot .ot-home-footer {

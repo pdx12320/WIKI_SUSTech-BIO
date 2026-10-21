@@ -51,10 +51,13 @@ class DesignCommunicationTest(unittest.TestCase):
         self.assertEqual(re.findall(r'<figcaption>Figure (\d+)\.', content.html), [str(n) for n in range(1, 20)])
         page = DesignImages()
         page.feed(content.html)
-        self.assertEqual(len(page.images), 35)
+        self.assertEqual(len(page.images), 36)
+        english_poster = 'https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif'
+        self.assertIn(english_poster, {image['src'] for image in page.images})
         for image in page.images:
             self.assertTrue(image.get('alt'))
-            self.assertTrue(image['src'].startswith('https://static.igem.wiki/teams/6085/wiki/design/'))
+            self.assertTrue(image['src'].startswith('https://static.igem.wiki/teams/6085/wiki/design/')
+                            or image['src'] == english_poster)
             self.assertTrue(image['src'].endswith('.avif'))
         self.assertEqual(len({url.split('#')[0] for url in page.pdf_links}), 4)
         self.assertTrue(any(url.endswith('#page=1') for url in page.pdf_links))

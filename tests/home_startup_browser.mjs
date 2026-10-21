@@ -14,9 +14,9 @@ try {
   await page.route('**/static/onetake/onetake.js',async route=>{await held;await route.continue();});
   await page.goto(base,{waitUntil:'commit'});
   const cover=page.locator('[data-entry-loader]');await cover.waitFor({state:'visible'});
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(14000);
   assert.equal(await page.locator('[data-home-startup-surface]').count(),0,'No replacement cover');
-  assert.ok(await cover.isVisible(),'Original cover stays visible beyond the old 3.2s cutoff');
+  assert.ok(await cover.isVisible(),'Original cover stays visible beyond the old 12s fallback cutoff');
   assert.equal(await page.locator('html').getAttribute('data-entry-loading'),'active');
   await page.screenshot({path:`${out}/original-cover-${width}.png`});
   release();await page.locator('[data-ot].is-ready').waitFor({timeout:20000});
@@ -29,7 +29,7 @@ try {
  let release;const held=new Promise(resolve=>release=resolve);
  await delayed.route('**/static/onetake/onetake.js',async route=>{await held;await route.continue();});
  await delayed.goto(base,{waitUntil:'commit'});
- await delayed.locator('[data-ot].ot--static.is-ready').waitFor({timeout:20000});
+ await delayed.locator('[data-ot].ot--static.is-ready').waitFor({timeout:35000});
  release();await delayed.waitForLoadState('domcontentloaded');
  assert.equal(await delayed.locator('[data-ot]').getAttribute('data-home-startup'),'fallback');
  await delayed.locator('[data-entry-loader]').waitFor({state:'hidden'});
@@ -56,7 +56,10 @@ try {
  for(const options of [{javaScriptEnabled:false},{reducedMotion:'reduce'}]){
   const page=await browser.newPage(options);await page.goto(base,{waitUntil:'domcontentloaded'});
   await page.locator('[data-crt-mount]').waitFor({state:'hidden'});
-  assert.ok(await page.locator('.ot-hero-title').isVisible());await page.close();
+  await page.locator('[data-entry-loader]').waitFor({state:'hidden'});
+  assert.ok(await page.locator('[data-home-static-entry]').isVisible());
+  assert.equal(await page.locator('.ot-hero-title').isVisible(),false);
+  assert.equal(await page.locator('.ot-story').isVisible(),false);await page.close();
  }
  checks.push('no JavaScript and reduced-motion reading fallbacks');
  await writeFile(`${out}/results.json`,JSON.stringify({checks,performance:performanceResult},null,2));

@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "local",
+    "route": "/design-communication",
+    "status": 200,
+    "poster_sources": [
+      "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif",
+      "/assets/design/aphasia-map/aphasia-map-instructions-en.jpg"
+    ]
+  },
+  {
+    "mode": "local",
+    "route": "/inclusivity",
+    "status": 200,
+    "poster_sources": [
+      "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif",
+      "/assets/design/aphasia-map/aphasia-map-instructions-en.jpg"
+    ]
+  },
+  {
+    "mode": "igem",
+    "route": "/design-communication",
+    "status": 200,
+    "poster_sources": [
+      "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif",
+      "https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif"
+    ]
+  },
+  {
+    "mode": "igem",
+    "route": "/inclusivity",
+    "status": 200,
+    "poster_sources": [
+      "https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif",
+      "https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif"
+    ]
+  }
+]

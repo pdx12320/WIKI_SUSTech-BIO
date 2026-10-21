@@ -22,30 +22,54 @@ export function memoryMazeState(take,{ reduced=false, small=false }={}) {
   };
 }
 
-// Entering the settled maze is the only trigger. Scroll remains free; the
-// route finishes in scene time before later glyph changes catch up gently.
-export function createMemoryMazeTravel({duration=3,arrivalHold=.32}={}) {
+// The first C starts one clock for the route, the slower straightening,
+// the C → U reading hold, and the complete falling/settling phrase.
+export function createMemoryMazeTravel({duration=4.8,arrivalHold=1.25,leadIn=.45,mazeRelease=.65,straightenDuration=2.3,arrowHold=1,letterDuration=3.6}={}) {
   let started=false,elapsed=0,display=0,lastTime=null;
+  const arrivalAt=leadIn+duration,releaseAt=arrivalAt+arrivalHold,straightenAt=releaseAt+mazeRelease;
+  const arrowAt=straightenAt+straightenDuration,letterAt=arrowAt+arrowHold,doneAt=letterAt+letterDuration;
   const reset=(progress,time)=>{started=false;elapsed=0;display=progress;lastTime=time;};
   return {
     update(progress,time,{reduced=false}={}) {
       const raw=clamp(progress),dt=lastTime===null?0:Math.max(0,time-lastTime);lastTime=time;
-      if(raw<.30-1e-7){reset(raw,time);return {progress:raw,pending:false,travel:0,arrivalAge:-1};}
-      if(reduced){reset(raw,time);display=Math.max(raw,.61);return {progress:display,pending:false,travel:1,arrivalAge:-1};}
-      if(!started){started=true;elapsed=0;display=.30;}
+      if(raw<.27-1e-7){reset(raw,time);return {progress:raw,pending:false,travel:0,arrivalAge:-1,letters:0};}
+      if(reduced){reset(raw,time);display=1;return {progress:1,pending:false,travel:1,arrivalAge:-1,letters:1};}
+      if(!started){started=true;elapsed=0;display=.27;}
       else elapsed+=dt;
-      if(elapsed<duration){display=.30+.31*ease(elapsed/duration);}
-      else if(elapsed<duration+arrivalHold){display=.61;}
-      else {
-        const goal=Math.max(raw,.61);
-        display=mix(display,goal,1-Math.exp(-dt*5));
-        if(Math.abs(goal-display)<.0001)display=goal;
-      }
-      return {progress:display,pending:elapsed<duration+arrivalHold||display<raw-.0001,
-        travel:interval(display,.30,.61),arrivalAge:elapsed>=duration?elapsed-duration:-1};
+      const letters=elapsed>=doneAt-1e-7?1:clamp((elapsed-letterAt)/letterDuration);
+      if(elapsed<leadIn)display=mix(.27,.30,ease(elapsed/leadIn));
+      else if(elapsed<arrivalAt)display=.30+.31*ease((elapsed-leadIn)/duration);
+      else if(elapsed<releaseAt)display=.61;
+      else if(elapsed<straightenAt)display=mix(.61,.66,ease((elapsed-releaseAt)/mazeRelease));
+      else if(elapsed<arrowAt)display=mix(.66,.80,ease((elapsed-straightenAt)/straightenDuration));
+      else if(elapsed<letterAt)display=.83;
+      else display=mix(.84,1,letters);
+      return {progress:display,pending:letters<1,
+        travel:interval(display,.30,.61),arrivalAge:elapsed>=arrivalAt?elapsed-arrivalAt:-1,letters};
     },
     reset(){reset(0,null);},
   };
+}
+
+export function memoryMazeLetterPose(progress,index=0) {
+  const p=clamp((progress-index*.07)/(1-index*.07));
+  if(p===0||p===1)return {drop:p,sway:0,lift:0,angle:0};
+  const falling=clamp(p/.62),settling=clamp((p-.62)/.38),direction=index?-1:1;
+  const drop=Math.pow(falling,1.65),fade=1-interval(settling,.8,1);
+  const rock=Math.exp(-3.6*settling)*fade;
+  return {drop,
+    sway:falling<1?Math.sin(falling*Math.PI*2)*Math.sin(falling*Math.PI)*.13:Math.sin(settling*Math.PI*3)*rock*.035,
+    lift:falling<1?0:-Math.abs(Math.sin(settling*Math.PI*2))*rock*.14,
+    angle:direction*(falling<1?Math.sin(falling*Math.PI*2)*Math.sin(falling*Math.PI)*16+9*falling:9*Math.cos(settling*Math.PI*3.4)*rock),
+  };
+}
+
+// Sequential fades: the incoming directory stays invisible until both lines
+// have completely disappeared. Scene time finishes the handoff without a gap.
+export function memoryMazeHandoff(age,{unlocked=true,skipped=false,reduced=false}={}) {
+  if(skipped||reduced)return {opacity:0,incoming:1,past:true};
+  if(!unlocked||age<0)return {opacity:1,incoming:0,past:false};
+  return {opacity:1-interval(age,0,.85),incoming:interval(age,.85,1.6),past:age>=.85};
 }
 
 // The random opening wander is deliberately not reused: this route must
@@ -124,18 +148,21 @@ function overlay(host) {
   const c=text('C','memory-maze-ending__c'),u=text('U','memory-maze-ending__u');
   const lowerC=text('C','memory-maze-ending__c'),lowerU=text('U','memory-maze-ending__u');
   const from=text('From',''),o=text('o',''),s=text('s','memory-maze-ending__u');
+  const period=text('.','memory-maze-ending__u');
   const bar=svgNode('path',{class:'memory-maze-ending__morph-stroke'},svg);
   const head=svgNode('path',{class:'memory-maze-ending__morph-stroke'},svg);
   const pop=svgNode('g',{class:'memory-maze-ending__arrival','data-memory-maze-pop':''},svg);
   const rays=Array.from({length:12},()=>svgNode('path',{},pop));
   const ring=svgNode('circle',{r:0},pop);
-  return {svg,c,u,lowerC,lowerU,from,o,s,bar,head,pop,rays,ring};
+  return {svg,c,u,lowerC,lowerU,from,o,s,period,bar,head,pop,rays,ring};
 }
 
 export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}={}) {
   const host=root.querySelector('[data-memory-maze-ending]');
   const noop={enabled:false,camera(){},update(){},skipToProject(){},backdrop(){return 1;},dispose(){}};
   if(!host||!maze?.navigation||!brain?.pos)return noop;
+  const directoryHeading=root.querySelector('[data-explore-slides] .explore-slides__head');
+  const directory=root.querySelector('[data-explore-slides]');
   root.classList.add('has-memory-maze-ending');
   const layout=createMemoryOrcaMaze(maze),route=extendMemoryMazeExit(memoryMazeRoute(layout.navigation)),ui=overlay(host);
   const group=new THREE.Group();group.name='home-memory-maze-ending';group.visible=false;scene.add(group);
@@ -164,12 +191,15 @@ export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}
   const projection=new THREE.Vector3(),targetCamera=new THREE.Vector3(),targetLook=new THREE.Vector3();
   const anchorGap=small?1.6:1.1;
   const entrance=route.points[0].map((v,j)=>v+(j===0?-anchorGap:0)),exit=route.mazeExit.map((v,j)=>v+(j===0?anchorGap:0));
-  let lastStraight=-1;const autoTravel=createMemoryMazeTravel({duration:small?4.2:4.8,arrivalHold:1.05});
-  let finalSince=null,complete=false,skipped=globalThis.location?.hash==='#ot-index-title';
+  let lastStraight=-1;const autoTravel=createMemoryMazeTravel({duration:small?4.2:4.8});
+  let finalSince=null,handoffSince=null,complete=false,skipped=globalThis.location?.hash==='#ot-index-title';
   function skipToProject(){
     skipped=true;complete=true;
     root.classList.toggle('is-memory-maze-complete',true);
     root.classList.toggle('is-memory-maze-past',true);
+    root.style?.setProperty('--memory-maze-stage-clip','100vh');
+    root.style?.setProperty('--memory-explore-opacity','1');
+    if(directory)directory.inert=false;
     group.visible=false;host.classList.toggle('is-on',false);
     host.style.setProperty('--memory-maze-opacity',0);
   }
@@ -185,18 +215,29 @@ export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}
     const automatic=autoTravel.update(active?raw.progress:0,time,{reduced:!motion});
     const displayTake=MEMORY_MAZE_RANGE.start+(MEMORY_MAZE_RANGE.end-MEMORY_MAZE_RANGE.start)*automatic.progress;
     const state=memoryMazeState(displayTake,{small,reduced:!motion});
-    host.dataset.memoryMazeTravel=state.travel.toFixed(4);host.dataset.memoryMazePending=String(active&&automatic.pending);
-    if(raw.progress<.30&&!skipped){finalSince=null;complete=false;}
+    const falling={progress:automatic.letters};
+    state.letters=ease(clamp(falling.progress/.76));
+    state.from=interval(falling.progress,.08,.38);state.phrase=interval(falling.progress,.55,.78);
+    const pending=automatic.pending;
+    host.dataset.memoryMazeLetters=falling.progress.toFixed(4);
+    host.dataset.memoryMazeTravel=state.travel.toFixed(4);host.dataset.memoryMazePending=String(active&&pending);
+    if(raw.progress<.27-1e-7&&!skipped){finalSince=null;complete=false;}
     if(skipped&&scrollProgress<.99){skipped=false;complete=false;finalSince=null;}
-    if(active&&state.phase==='final'&&!automatic.pending){
+    if(active&&state.phase==='final'&&!pending){
       if(finalSince===null)finalSince=time;
       if(time-finalSince>=.65)complete=true;
     }else if(!complete)finalSince=null;
     const unlocked=skipped||complete||!motion;
     root.classList.toggle('is-memory-maze-complete',unlocked);
-    // The final phrase owns 1.2 viewport heights after the story before fading.
-    const exitOpacity=skipped?0:unlocked?1-interval(endingScreens,1.2,1.7):1;
-    root.classList.toggle('is-memory-maze-past',skipped||(unlocked&&endingScreens>=1.7));
+    const headingTop=directoryHeading?.getBoundingClientRect?.().top??height*(2.1-endingScreens);
+    if(!unlocked||headingTop>height*1.05)handoffSince=null;
+    else if(handoffSince===null&&headingTop<=height*.95)handoffSince=time;
+    const handoff=memoryMazeHandoff(handoffSince===null?-1:Math.max(0,time-handoffSince),{unlocked,skipped,reduced:!motion});
+    const exitOpacity=handoff.opacity;
+    root.classList.toggle('is-memory-maze-past',handoff.past);
+    root.style?.setProperty('--memory-maze-stage-clip',`${handoff.past?height:0}px`);
+    root.style?.setProperty('--memory-explore-opacity',String(handoff.incoming));
+    if(directory)directory.inert=handoff.incoming===0;
     group.visible=active&&state.opacity*exitOpacity>.001;host.classList.toggle('is-on',active&&exitOpacity>.001);host.style.setProperty('--memory-maze-opacity',active?state.opacity*exitOpacity:0);host.dataset.memoryMazePhase=state.phase;
     if(!active)return;
     const pr=Math.min(globalThis.devicePixelRatio||1,small?1.5:2);
@@ -228,12 +269,18 @@ export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}
     ui.svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
     const place=(el,p,size,opacity)=>{el.setAttribute('x',p[0]);el.setAttribute('y',p[1]);el.setAttribute('font-size',size);el.style.opacity=opacity;};
     place(ui.c,left,font,state.anchor);place(ui.u,right,font,state.destination);
-    const offsets={from:-2.5,c:-.50,t:.82,o:1.48,u:2.5,s:3.14};
-    place(ui.lowerC,[mix(left[0],center+offsets.c*lowerFont,state.letters),mix(left[1],lowerY,state.letters)],mix(font,lowerFont,state.letters),state.letters);
-    place(ui.lowerU,[mix(right[0],center+offsets.u*lowerFont,state.letters),mix(right[1],lowerY,state.letters)],mix(font,lowerFont,state.letters),state.letters);
+    const offsets={from:-2.5,c:-.50,t:.70,o:1.36,u:2.5,s:3.14};
+    [ui.lowerC,ui.lowerU].forEach((el,index)=>{
+      const pose=memoryMazeLetterPose(falling.progress,index),start=index?right:left;
+      const x=mix(start[0],center+(index?offsets.u:offsets.c)*lowerFont,pose.drop)+pose.sway*lowerFont;
+      const y=mix(start[1],lowerY,pose.drop)+pose.lift*lowerFont,size=mix(font,lowerFont,pose.drop);
+      place(el,[x,y],size,interval(falling.progress,0,.025));
+      el.setAttribute('transform',`rotate(${pose.angle},${x},${y+size*.34})`);
+    });
     place(ui.from,[center+offsets.from*lowerFont,lowerY],lowerFont,state.from);
     place(ui.o,[center+offsets.o*lowerFont,lowerY],lowerFont,state.phrase);
     place(ui.s,[center+offsets.s*lowerFont,lowerY],lowerFont,state.phrase);
+    place(ui.period,[center+3.56*lowerFont,lowerY],lowerFont,state.phrase);
     // A second impression grows from the upper arrow; its head is the very
     // same cubic topology all the way down to the lower t's stem and hook.
     const rightTip=project(end),leftTip=project(memoryPathPoint(route,0,state.straighten));

@@ -1,0 +1,28 @@
+.markdown-content .workbook-readers {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  margin-block: 28px 40px;
+}
+.workbook-readers__edition { min-width: 0; scroll-margin-top: 110px; }
+.markdown-content .workbook-readers__edition > h4 { margin: 0 0 8px; }
+.markdown-content .workbook-readers__edition > p { margin: 0 0 12px; }
+.markdown-content .workbook-readers .contribution-pdf-resource { margin: 0; }
+.workbook-readers .contribution-pdf-reader:empty {
+  min-height: 430px;
+  background: #e9e8ff;
+}
+.workbook-readers .contribution-pdf-viewport {
+  height: min(65vh, 600px);
+  min-height: 320px;
+}
+.markdown-content .workbook-readers .contribution-pdf-download {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .workbook-readers .contribution-pdf-reader:empty { min-height: 320px; }
+  .workbook-readers .contribution-pdf-viewport { min-height: 280px; }
+}

@@ -375,20 +375,27 @@ The handwritten cards bring participants' own words into this visual story, turn
 
 ### Aphasia Map
 
-<div class="design-story-layout">
-  <div class="design-story-layout__row">
-    <div class="design-story-layout__copy">
-      <p>“Aphasia Map” brings the experience of language loss into view. By connecting an abstract health issue with concrete human experience, it gives public audiences a more accessible way to understand and discuss Alzheimer's disease.</p>
-      <p>The illustrated instruction board turns this idea into a communication game. Participants select an object card, avoid its name and the listed words, and use gestures or alternative descriptions to help a partner identify it. Three clear steps guide people through the activity.</p>
-    </div>
-    <figure class="design-story-map">
+“Aphasia Map” brings the experience of language loss into view. By connecting an abstract health issue with concrete human experience, it gives public audiences a more accessible way to understand and discuss Alzheimer's disease.
+
+The illustrated instruction board turns this idea into a communication game. Participants select an object card, avoid its name and the listed words, and use gestures or alternative descriptions to help a partner identify it. Three clear steps guide people through the activity.
+
+<figure class="design-figure-group" id="aphasia-instructions">
+  <div class="design-gallery design-gallery--aphasia-posters">
+    <div class="design-panel" role="group" aria-label="Chinese Aphasia Map poster">
       <a href="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" target="_blank" rel="noopener">
-        <img src="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" alt="Aphasia Map instruction board: draw an object card, avoid the listed words, and communicate through gestures or alternative descriptions" width="1080" height="1528">
+        <img src="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" alt="Chinese Aphasia Map poster: draw an object card, avoid the listed words, and communicate through gestures or alternative descriptions" width="1080" height="1528" loading="lazy" decoding="async" lang="zh-CN">
       </a>
-      <figcaption>Figure 18. The Aphasia Map (失语地图) activity board, presenting the rules as three illustrated steps.</figcaption>
-    </figure>
+      <span class="design-panel__label"><span lang="zh-CN">中文版</span> · Chinese</span>
+    </div>
+    <div class="design-panel" role="group" aria-label="English Aphasia Map poster">
+      <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif" target="_blank" rel="noopener">
+        <img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif" alt="English Aphasia Map poster: draw a card, forget its name, and express it another way so a partner can guess the object" width="1083" height="1452" loading="lazy" decoding="async" lang="en">
+      </a>
+      <span class="design-panel__label">English</span>
+    </div>
   </div>
-</div>
+  <figcaption>Figure 18. The Aphasia Map (失语地图) activity board in Chinese and English, presenting the rules as three illustrated steps. Open either poster to view the full image.</figcaption>
+</figure>
 
 
 ### WeChat and social media

@@ -1,0 +1,43 @@
+{
+  "archive": "outputs/01a15c5f-ff58-7010-8556-6c7c2c191c32/WORLDPROOF-PDFs-for-upload.zip",
+  "files": [
+    {
+      "name": "worldproof-judging-guideline-en.pdf",
+      "bytes": 85672,
+      "sha256": "56f3e1fe8edd37782c66443177523f8958d2b7f036b1366f723f20a2f0d63f48",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-en.pdf"
+    },
+    {
+      "name": "worldproof-judging-guideline-zh.pdf",
+      "bytes": 239313,
+      "sha256": "e75a715632a1923b460ca61a78472aad6b63c98096efac57c8619df887ccd79a",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-zh.pdf"
+    },
+    {
+      "name": "worldproof-judging-scorecard-en.pdf",
+      "bytes": 46920,
+      "sha256": "ebb3832846344122ac420c23a4b30e8b83c4380f9d3aa5d1314b76fdfe90d53c",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-en.pdf"
+    },
+    {
+      "name": "worldproof-judging-scorecard-zh.pdf",
+      "bytes": 147076,
+      "sha256": "159cc2c0b34b8632458a06dfd3b65944df7b41993cde8db6c9edfdb699b0f39b",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-zh.pdf"
+    },
+    {
+      "name": "worldproof-scenarios-and-constraints-en.pdf",
+      "bytes": 69928,
+      "sha256": "a51a7d5401cc42552e8ba713b9a1385553db9230afee4076edd3451b6d489e6f",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-en.pdf"
+    },
+    {
+      "name": "worldproof-scenarios-and-constraints-zh.pdf",
+      "bytes": 400837,
+      "sha256": "d7dc2ccf4ab5e3eb252d3904405ae12984e9f1715648804a77972202398812d6",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-zh.pdf"
+    }
+  ],
+  "upload_status": "User uploaded all six PDFs and supplied official static.igem.wiki links on 2026-10-21.",
+  "page_downloads": "Both Inclusivity and Contribution now reference the six confirmed official URLs."
+}

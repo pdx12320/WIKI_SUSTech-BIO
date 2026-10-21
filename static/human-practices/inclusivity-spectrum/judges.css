@@ -1,0 +1,84 @@
+/* Written judging feedback: unboxed quotations with explicit attribution. */
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-feedback {
+  --judge-ink: #171536;
+  --judge-indigo: #2E267C;
+  --judge-muted: #6B6880;
+  color: var(--judge-ink);
+  margin-block: 2rem;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-theme {
+  margin-block: 0 2.5rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-theme h4 {
+  margin: 0 0 1rem;
+  color: var(--judge-indigo);
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-quote {
+  color: var(--judge-indigo);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.6;
+  margin: 0 0 .65rem;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-attribution,
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-subject {
+  color: var(--judge-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 .8rem;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-reflection {
+  margin: 0;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-transcript {
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-transcript summary {
+  color: var(--judge-indigo);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding-block: .5rem;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-transcript summary:focus-visible {
+  outline: 2px solid var(--judge-indigo);
+  outline-offset: 4px;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-transcript-body {
+  padding-top: 1rem;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-comment {
+  margin: 1.25rem 0 1.75rem;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-original {
+  margin: 0;
+}
+
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-judge-source-note {
+  color: var(--judge-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}

@@ -35,9 +35,9 @@
   const preview = new URLSearchParams(location.search).get('loading') === 'preview';
   const isHome = canonical(location.href) === canonical(home);
   const navigationType = performance.getEntriesByType('navigation')[0]?.type;
-  if (!preview && (matchMedia('(prefers-reduced-motion: reduce)').matches || navigationType === 'back_forward')) return;
+  if (!preview && navigationType === 'back_forward') return;
   try {
-    if (!preview && !isHome && !(routeIntent && navigationType !== 'reload') && sessionStorage.getItem('orca.entry-seen.v1')) return;
+    if (!preview && !isHome && navigationType !== 'reload' && !routeIntent && sessionStorage.getItem('orca.entry-seen.v1')) return;
   } catch { /* Optional storage. */ }
   root.dataset.entryLoading = preview ? 'preview' : 'active';
   window.__orcaEntryWatchdog = setTimeout(() => {
@@ -47,5 +47,5 @@
       scene.classList.add('ot--static', 'is-ready');
     }
     root.removeAttribute('data-entry-loading');
-  }, isHome ? 15000 : 4500);
+  }, isHome ? 35000 : 12000);
 })();

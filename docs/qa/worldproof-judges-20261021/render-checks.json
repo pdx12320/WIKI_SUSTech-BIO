@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "local",
+    "mount": "/",
+    "status": 200,
+    "exact_comments": 8,
+    "themes": 3,
+    "full_names_verified": true,
+    "preserved_demo_records": 5,
+    "stylesheet": "static/human-practices/inclusivity-spectrum/judges.css?v=20261021"
+  },
+  {
+    "mode": "local",
+    "mount": "/sustech",
+    "status": 200,
+    "exact_comments": 8,
+    "themes": 3,
+    "full_names_verified": true,
+    "preserved_demo_records": 5,
+    "stylesheet": "static/human-practices/inclusivity-spectrum/judges.css?v=20261021"
+  },
+  {
+    "mode": "igem",
+    "mount": "/",
+    "status": 200,
+    "exact_comments": 8,
+    "themes": 3,
+    "full_names_verified": true,
+    "preserved_demo_records": 5,
+    "stylesheet": "static/human-practices/inclusivity-spectrum/judges.css?v=20261021"
+  },
+  {
+    "mode": "igem",
+    "mount": "/sustech",
+    "status": 200,
+    "exact_comments": 8,
+    "themes": 3,
+    "full_names_verified": true,
+    "preserved_demo_records": 5,
+    "stylesheet": "static/human-practices/inclusivity-spectrum/judges.css?v=20261021"
+  }
+]

@@ -70,6 +70,55 @@ Some older adults find small print, spoken explanations or dense text difficult 
 
 **We treated readability and staff time as design requirements.** Ms. Wu pointed out small type and dense pages and suggested more pictures, less text and space for notes. The revised workbook uses shorter reading sections, illustrations, writing space and a topic guide. These changes address how people can use a resource in an ordinary day. The [Education account and version comparison](/education#2-3-a-workbook-for-older-learners-involving-users-in-revision) retain the full activity and revision process.
 
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<link rel="stylesheet" href="static/human-practices/workbook-readers.css">
+<script type="module" src="static/human-practices/workbook-readers.mjs"></script>
+
+<div class="workbook-readers" id="workbook-editions" data-workbook-readers role="group" aria-label="Healthy Living Workbook: current student editions and teacher’s guide">
+<section class="workbook-readers__edition">
+<h4>Chinese student edition</h4>
+<p>56 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read Chinese student edition · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-student-zh-compact.pdf" data-pdf-title="Healthy Living Workbook — Chinese student edition" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-student-zh.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+<section class="workbook-readers__edition">
+<h4>English student edition</h4>
+<p>56 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read English student edition · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-student-en-compact.pdf" data-pdf-title="Healthy Living Workbook — English student edition" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-student-en.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+<section class="workbook-readers__edition">
+<h4>Chinese teacher’s guide</h4>
+<p>54 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read Chinese teacher’s guide · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-teacher-zh-compact.pdf" data-pdf-title="Healthy Living Workbook — Chinese teacher’s guide" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-teacher-zh.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+</div>
+
 <figure class="hp-figure" id="hp-figure-9">
   <img src="/assets/human-practices/images/shahe-service-center-staff-interview.webp" alt="Interview with a staff member at Shahe Subdistrict Elderly Service Center" loading="lazy" decoding="async">
   <figcaption>Figure 2. Listening to care staff at Shahe</figcaption>

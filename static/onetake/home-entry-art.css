@@ -1,4 +1,5 @@
 @import url("home-slide-companions.css");
+@import url("home-static-entry.css");
 /* Keep the scattered specimen slides; each chapter now has its own artwork. */
 .chapter-art { color: #aebef7; fill: none; }
 .chapter-art--2 { color: #a2c9ed; }

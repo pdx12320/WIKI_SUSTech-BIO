@@ -1,0 +1,66 @@
+[
+  {
+    "mode": "local",
+    "mount": "/",
+    "route": "/inclusivity",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "local",
+    "mount": "/",
+    "route": "/contribution",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "local",
+    "mount": "/sustech",
+    "route": "/inclusivity",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "local",
+    "mount": "/sustech",
+    "route": "/contribution",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "igem",
+    "mount": "/",
+    "route": "/inclusivity",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "igem",
+    "mount": "/",
+    "route": "/contribution",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "igem",
+    "mount": "/sustech",
+    "route": "/inclusivity",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  },
+  {
+    "mode": "igem",
+    "mount": "/sustech",
+    "route": "/contribution",
+    "status": 200,
+    "official_pdf_links": 6,
+    "local_pdf_links": 0
+  }
+]

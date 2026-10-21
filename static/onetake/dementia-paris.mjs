@@ -37,7 +37,7 @@ function mount(el) {
   }
   let current = BURDEN_IN;
   root.addEventListener('ot:frame', event => {
-    const take = Number(event.detail?.take);
+    const take = Number(event.detail?.populationTake ?? event.detail?.take);
     if (!Number.isFinite(take)) return;
     current = take;
     render(current);

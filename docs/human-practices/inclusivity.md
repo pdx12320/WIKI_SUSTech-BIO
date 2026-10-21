@@ -9,8 +9,11 @@ eyebrow: Engagement
 <link rel="stylesheet" href="static/human-practices/title-fonts/inclusivity-title.css">
 <link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/inclusivity.css">
 <link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/reading-refinements.css?v=20261021">
+<link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/worldproof.css?v=20261021">
+<link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/judges.css?v=20261021">
 <link rel="stylesheet" href="static/human-practices/inclusivity-overview/overview.css">
 <link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/before-i-sign.css?v=20261021">
+<link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/software-entry.css?v=20261021">
 
 <figure class="inc-overview-hero" id="inclusivity-figure-1">
   <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/1-2-1.pdf" target="_blank" rel="noopener" aria-label="Open Inclusivity Figure 1 as a PDF">
@@ -65,7 +68,56 @@ The specific layout suggestions in the written account include those of **Ms. Wu
 
 Readers can choose a relevant chapter, use a page with a facilitator or return to it later. Four Cornell note pages in the current Chinese student book, pp. 47–50, provide places for questions, notes and a summary. The particular note format, four-week logs, English edition and separation of teacher and student materials were later team choices. We can show these changes in the files; a return visit to observe readers using the revised edition is still ahead.
 
-[Full teaching and revision record](/education#older-learners-workbook) · [Same-topic comparisons](/education#hp-workbook-version-comparison) · [Workbook downloads](#workbook-resources)
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<link rel="stylesheet" href="static/human-practices/workbook-readers.css">
+<script type="module" src="static/human-practices/workbook-readers.mjs"></script>
+
+<div class="workbook-readers" id="workbook-editions" data-workbook-readers role="group" aria-label="Healthy Living Workbook: current student editions and teacher’s guide">
+<section class="workbook-readers__edition">
+<h4>Chinese student edition</h4>
+<p>56 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read Chinese student edition · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-student-zh-compact.pdf" data-pdf-title="Healthy Living Workbook — Chinese student edition" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-student-zh.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+<section class="workbook-readers__edition">
+<h4>English student edition</h4>
+<p>56 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read English student edition · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-student-en-compact.pdf" data-pdf-title="Healthy Living Workbook — English student edition" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-student-en.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+<section class="workbook-readers__edition">
+<h4>Chinese teacher’s guide</h4>
+<p>54 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read Chinese teacher’s guide · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-teacher-zh-compact.pdf" data-pdf-title="Healthy Living Workbook — Chinese teacher’s guide" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-teacher-zh.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+</div>
+
+[Full teaching and revision record](/education#older-learners-workbook) · [Same-topic comparisons](/education#hp-workbook-version-comparison)
 
 ### 1.3 Age-Friendly Digital Access {#age-friendly-digital-access}
 
@@ -77,7 +129,17 @@ Our documented delivery work brings together the supplied native Mini Program so
 
 The [HP record](/human-practices#2-5-anjia-guardian-a-home-safety-mini-app-designed-for-older-adults) describes large text, larger controls, role-based navigation and confirmations in the Mini Program, and reports an early Shahe try-out with positive reactions. The exact version, assistance and feedback-led edits still need to be matched to that use record. The native source has a configurable cloud-recognition path; the website uses fixed examples and makes no AI assessment, call, notification or cross-device connection. These different forms give us separate tasks to check with users and developers.
 
-[Website walkthrough](https://home-protection-cf808a.igem.wiki/) · [Source and setup](https://gitlab.igem.org/2026/software/sustech/home-protection) · [User guide](https://static.igem.wiki/teams/6085/wiki/hp/home-protection-user-guide.pdf)
+<aside class="inc-software-entry" aria-labelledby="anjia-entry-title">
+  <div class="inc-software-entry__identity"><span class="inc-software-entry__number" aria-hidden="true">01</span><span class="inc-software-entry__eyebrow">Age-friendly digital access</span><span class="inc-software-entry__status">Website available</span></div>
+  <h4 id="anjia-entry-title">Explore Home Protection</h4>
+  <p>Follow an illustrated room check, read a sample report and explore the older-adult and family views. No photograph is needed for the walkthrough.</p>
+  <div class="inc-software-entry__actions">
+    <a class="inc-software-entry__primary" href="https://home-protection-cf808a.igem.wiki/" target="_blank" rel="noopener">Open walkthrough <span aria-hidden="true">↗</span></a>
+    <a href="https://gitlab.igem.org/2026/software/sustech/home-protection" target="_blank" rel="noopener">Source &amp; setup <span aria-hidden="true">↗</span></a>
+    <a href="https://static.igem.wiki/teams/6085/wiki/hp/home-protection-user-guide.pdf" target="_blank" rel="noopener">User guide · PDF <span aria-hidden="true">↗</span></a>
+  </div>
+  <p class="inc-software-entry__note">Website walkthrough with fixed examples. Native Mini Program recognition requires separate configuration.</p>
+</aside>
 
 ## 2. When Needs Change {#when-needs-change}
 
@@ -99,9 +161,18 @@ At a public-facing activity, this creates an entry into a difficult subject thro
 
 **Aphasia Map (失语地图)** gives two people a communication task with a changed rule. One draws an object card, avoids its name and the specified words, and uses gestures or another description to help a partner identify it. The instruction board makes the sequence visible in three steps.
 
-<figure class="inc-instruction" id="aphasia-instructions">
-  <a href="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif"><img src="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" alt="Aphasia Map rules: draw an object card, avoid its name and the listed words, then use gestures or alternative descriptions so a partner can identify it" width="1080" height="1528" loading="lazy" decoding="async"></a>
-  <figcaption>The team’s activity board. Its three-step rule is also described in the text above, so reading the image is optional.</figcaption>
+<figure class="inc-instruction inc-instruction--bilingual inc-comparison" id="aphasia-instructions">
+  <div class="inc-page-pair">
+    <a href="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" target="_blank" rel="noopener">
+      <span class="inc-page-label"><span lang="zh-CN">中文版</span> · Chinese</span>
+      <img src="https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif" alt="Chinese Aphasia Map rules: draw an object card, avoid its name and the listed words, then use gestures or alternative descriptions so a partner can identify it" width="1080" height="1528" loading="lazy" decoding="async" lang="zh-CN">
+    </a>
+    <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif" target="_blank" rel="noopener">
+      <span class="inc-page-label">English</span>
+      <img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif" alt="English Aphasia Map rules: draw a card, forget its name, and express it another way so a partner can guess the object" width="1083" height="1452" loading="lazy" decoding="async" lang="en">
+    </a>
+  </div>
+  <figcaption>The team’s activity board in Chinese and English. Open either poster to view the full image. Its three-step rule is also described in the text above, so reading the image is optional.</figcaption>
 </figure>
 
 The rule asks the speaker to find another way to convey an idea, and the listener to attend to those cues and check what they mean. This gives the pair a reason to discuss how communication depends on both people and the available channels. It is a communication game, not a clinical simulation of aphasia. The rules support that discussion; detailed accounts of how particular pairs responded are still being assembled.
@@ -128,6 +199,18 @@ The camera prototype adds another route: a teacher or assistant outlines regions
 These stages have different records. The physical models were brought to learners; the software has developer checks using synthetic inputs and a separate real-camera frame-and-release check. Target-user testing of the camera interaction and audio comfort remains ahead. The current model colours come from painted references; red, yellow and blue alone do not establish colour-blind accessibility. We need learners and teachers to help judge which regions, cues and controls are distinguishable and useful in an actual session.
 
 [Physical teaching record](/education#touch-and-observation) · [Materials, text and setup](#model-resources)
+
+<aside class="inc-software-entry inc-software-entry--sound" aria-labelledby="tactune-entry-title">
+  <div class="inc-software-entry__identity"><span class="inc-software-entry__number" aria-hidden="true">02</span><span class="inc-software-entry__eyebrow">Touch · colour · sound</span><span class="inc-software-entry__status">Source available</span></div>
+  <h4 id="tactune-entry-title">Meet TacTune</h4>
+  <p>Explore brain and animal-cell models through structure text and generated sound. Follow the source, setup notes and teaching materials to see how the workspace connects shape, colour and sound.</p>
+  <div class="inc-software-entry__actions">
+    <a class="inc-software-entry__primary" href="https://gitlab.igem.org/2026/software/sustech/home-protection/-/tree/main/tactune" target="_blank" rel="noopener">Explore TacTune source <span aria-hidden="true">↗</span></a>
+    <a href="https://gitlab.igem.org/2026/software/sustech/home-protection/-/blob/main/tactune/README.md" target="_blank" rel="noopener">Setup &amp; sound mappings <span aria-hidden="true">↗</span></a>
+    <a href="#model-resources">Teaching materials <span aria-hidden="true">↓</span></a>
+  </div>
+  <p class="inc-software-entry__note">Model exploration can be used without a camera. Camera pointing requires assisted calibration; physical-model and target-user validation are separate from developer checks.</p>
+</aside>
 
 ### 2.4 Understanding and Expressing Choices {#before-i-sign}
 
@@ -164,73 +247,182 @@ The three English interface illustrations below make the single-player design re
 
 <span id="worldproof-changes"></span>
 
-**WORLDPROOF means solving real problems in the real world.** For us, a biology-related design has to meet questions about who uses it, who can challenge it and what happens when circumstances change. We organized WORLDPROOF as a Bio-hackathon where people from different fields could bring those questions into a working prototype. Its slogan is **“Build it. Break it. Fix it.”**
+**WORLDPROOF makes critique part of building.** SUSTech-BIO organized the biology-related hackathon around **“Build it. Break it. Fix it.”** Participants contributed both a prototype and challenges to other teams’ assumptions. The **Change Log** connected those challenges with the receiving team’s design decisions.
 
-The team designed the challenges and activity mechanism and organized students from different academic backgrounds to take part. Building a demo was one contribution; finding a missed assumption and helping another team change its design was another. This made questioning and revision an explicit part of participation.
+<figure class="inc-worldproof-mechanism" aria-labelledby="worldproof-mechanism-title">
+<h4 id="worldproof-mechanism-title">From a challenge to a design decision</h4>
+<div class="inc-worldproof-mechanism-flow">
+  <div><span class="inc-worldproof-step">01 · BUILD</span><h5>Make the proposal</h5><p>Show a working demo, its intended users and its assumptions.</p></div>
+  <div><span class="inc-worldproof-step">02 · BREAK</span><h5>Invite a Red Team</h5><p>Peers identify who could be affected, how the design could fail and what would reveal the failure.</p></div>
+  <div><span class="inc-worldproof-step">03 · FIX</span><h5>Respond through design</h5><p>Prioritize a challenge, revise the demo and explain the trade-offs.</p></div>
+</div>
+<div class="inc-worldproof-log"><strong>CHANGE LOG</strong><p>Record the constraint and peer feedback, the priority chosen, why it matters, the design decision and the issues still unresolved.</p></div>
+<figcaption>Judges review the <strong>Change Log and Final Demo</strong>. The log makes the reasoning behind a revision visible.</figcaption>
+</figure>
 
 ### 3.1 From Participation to Organizing {#worldproof-organizing}
 
-Chenfan Liao’s route into organizing began with participating. In **April 2026**, Liao took part in a hackathon and worked on a **pet collar intended to help prevent accidental ingestion**. In a separate written exchange, Liao spoke with the creator described in our [game-design context](#game-design-conversation). Liao also introduced our team’s work and the Shokz collaboration then being planned to others. That plan did not become a completed partnership.
+In **April 2026**, Chenfan Liao participated in a hackathon **as a contestant** and worked on a pet collar intended to help prevent accidental ingestion. Liao encountered few builders with biology backgrounds and later met students unfamiliar with hackathons. Those encounters motivated WORLDPROOF: a practical entry into biology-related design where knowledge from other fields could shape a proposal.
 
-Liao’s observation was that relatively few of the builders encountered had biology backgrounds. On campus, Liao also met students who did not know what a hackathon involved. These observations from Liao’s own encounters led to an organizing question: could we create a biology-related event where someone could begin through a practical problem and contribute knowledge from another field?
+<figure class="inc-model-photo" id="shenicest-public-judge-visit">
+  <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/shenicest-20260830-collage.avif" target="_blank" rel="noopener" aria-label="Open the six-photo SheNicest collage at full size"><img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/shenicest-20260830-collage.avif" alt="Six photographs from the SheNicest visit: a group photograph, a laptop demonstration, the Shouyu SIGNLAND banner, a robot demonstration, a board game and the Make Again display." width="2400" height="1759" loading="lazy" decoding="async"></a>
+  <figcaption>SheNicest, 30 August 2026. Liao attended as a public judge; the photographs show the visit and project displays, including Shouyu (SIGNLAND). The April hackathon was a separate experience as a contestant.</figcaption>
+</figure>
 
-WORLDPROOF was our response. We prepared the challenge material and the process through which participants would build, question and revise. The full event and teaching record is kept on [Education](/education#worldproof); here we focus on the entrances into the task and how participants could influence a design.
+[Event and teaching record on Education](/education#worldproof)
 
 ### 3.2 Builder Conversations {#builder-interviews}
 
 <span id="listening-through-products"></span><span id="builder-memory-and-bereavement"></span><span id="builder-mothers-and-homemakers"></span><span id="builder-shouyu"></span><span id="builder-connection-to-orca"></span><span id="builder-records-and-limits"></span><span id="builder-further-interviews"></span>
 
-A separate experience came in **late August 2026**, when Chenfan Liao attended a large hackathon as a **public judge**, tried products and had short conversations at booths. Videos were recorded and are awaiting organization. The account below draws on Liao’s recollection of those encounters, separately from Liao’s April participation and earlier written exchange.
+On **30 August 2026**, Liao attended the **SheNicest hackathon as a public judge**. Booth conversations introduced products about bereavement, mothers’ and homemakers’ sense of worth, and sign-language learning. **Shouyu** (手屿, literally “Hand Island”; a homophone of 手语, Mandarin for “sign language”), encountered during this visit, used an island-based interaction.
 
-One product explored bereavement and giving memories a place. Another addressed mothers’ and homemakers’ sense of personal worth. **Shouyu** (手屿, literally “Hand Island”; pronounced the same as 手语, Mandarin for “sign language”) offered sign-language learning through an island-based interaction. Together, these products raised design questions we could carry into our own work: what can someone choose to preserve, how can a person express priorities beyond an assigned role, and how can an unfamiliar communication method become something to practise?
-
-These are questions drawn from product encounters, rather than advice we attribute to a builder about our later prototypes. The earlier creator’s written exchange belongs with the [starting context for our game work](#game-design-conversation).
+Liao’s recollection raised questions about memory, personal priorities and unfamiliar communication methods. The builders did not review our later prototypes. A separate creator exchange is recorded in the [game-design context](#game-design-conversation).
 
 ### 3.3 Build it {#worldproof-build}
 
-The actual challenge pack offers **eight hypothetical scenarios**: **Riverlight, FieldShift, FermentOS, ClinicNow, ProBio Home, Mossback, ClearCoast and OpenBench**. Each gives a background, a conflict, stakeholders, possible demos and reality-check examples. These are prompts for design, not eight completed field validations.
+The **Project Track** accepts an existing iGEM or synthetic biology project; the **Scenario Track** begins with one of eight fictional briefs. Both tracks use the same judging criteria, so assessment focuses on reasoning and revision rather than the maturity of the starting project.
 
-A shared scenario gives people something concrete to question before they share specialist vocabulary. In **Riverlight**, for example, contained living pollution sensors at wastewater outlets raise questions about false alarms, public explanations and responsibility. A team could make a status map, an alert interface or a sample-tracking workflow. A participant’s contribution might concern the meaning of an alert, maintenance or whose evidence is shown, alongside the biology.
+The briefs make unfamiliar constraints discussable. **ClinicNow** introduces uneven connectivity and language access; **OpenBench** connects community-lab access with training and review. Teams can contribute through an interface, decision tool, simulation or service prototype without starting from a laboratory experiment.
 
-**ClinicNow** places a cell-free diagnostic kit in a setting with uneven connectivity, staffing and language access. **OpenBench** asks how a community biology laboratory can welcome beginners while organizing training and review. These tasks make resource conditions and entry procedures part of the design brief. The prototype is the place to make those choices visible.
+### 3.4 Break it: the Red Team challenge {#worldproof-break}
 
-The planning document also describes an entry for teams bringing an existing project and a scenario entry for people without one. We retain these as documented design options; the available event record does not establish every planned support measure as delivered.
+Liao’s event account records a requirement to act as a **Red Team for at least three other teams**. The judging guideline reserves the morning’s one-hour booth exchange for participants; formal judging follows in the afternoon. The exchange gives peers a defined opportunity to question a design before its final presentation.
 
-[Read the eight-scenario challenge pack · PDF](/assets/human-practices/attachments/worldproof-hackathon-challenges-en.pdf)
+A useful challenge identifies **an affected stakeholder, a failure mechanism, a likely consequence and an observable warning signal**. For example, a platform may assume that a farmer can interpret conflicting evidence. A Red Team can challenge that assumption and ask how the interface would communicate uncertainty. The target is a design decision that the receiving team can reconsider.
 
-### 3.4 Break it {#worldproof-break}
+### 3.5 Fix it: make the Change Log count {#worldproof-fix}
 
-Each team was required to act as a **red team for at least three other teams**. This gave participants a defined role in questioning someone else’s design, as well as presenting their own. The challenge was directed at an assumption or system behaviour: who could be left out, what an instruction assumed, or what might fail under the scenario’s conditions.
+**Judges review the Change Log and Final Demo together.** The log must include the organizer’s New Constraint Card, peer suggestions, the challenges prioritized, the reasons for those priorities, the resulting design decisions and important unresolved issues.
 
-The planning notes ask for a challenge to identify the affected person, the failure mechanism, its possible consequence and an observable warning sign. These prompts help turn a general objection into a question the receiving team can work on. The cross-team exchange then carried that question back to the people responsible for the prototype.
+Teams may prioritize one or more challenges. A meaningful response can change the workflow, permissions, communication, accessibility, monitoring or pause conditions. The final demo must show the response; the log must explain its reasoning and trade-offs. A list of suggestions alone cannot show how another participant influenced the design.
 
-The all-group change log is the record we will use to connect those exchanges with later changes. It matters that a challenge can travel from another person’s perspective into the design process, even when that person did not build the original demo.
+The bilingual materials below provide the judging framework. The collected demo descriptions and judge comments offer partial event records; they do not establish a complete feedback-to-revision history for every team.
 
-### 3.5 Fix it {#worldproof-fix}
+### 3.6 Five Demo Projects {#worldproof-project-evolution}
 
-Each team had to optimize its project in response to **at least three suggestions from other teams** and explain the improvements in its **change log**. Liao reports that judges gave particular attention to this part of the work. The final scoring sheet has not yet been matched to the local planning draft, so we do not attach a percentage to it here.
+The collection table records **five projects**. The overview retains the fields completed by every team: project name, description and assigned hypothetical constraint. Blank team names use **Team 1–5** in source order.
 
-That requirement gave feedback a place in the deliverable. A useful record connects an original difficulty, the suggestion received, the change made and what the revised demo can show. Three entries alone cannot tell that story: the reason for adopting an idea, or a documented reason for leaving it aside, helps explain whose input influenced the work.
+<details class="inc-worldproof-demo-figure">
+<summary>View the five-project overview</summary>
+<figure class="inc-worldproof-overview" id="worldproof-demo-overview">
+  <a href="/assets/human-practices/worldproof-demo/worldproof-five-demos-en.png" target="_blank" rel="noopener" aria-label="Open the five WORLDPROOF demo projects at full size"><img src="/assets/human-practices/worldproof-demo/worldproof-five-demos-en.png" alt="Five WORLDPROOF submissions: ProBio Home, FermentOS, FieldShift, Mossback and OpenBench. Each entry pairs its project description with an assigned constraint scenario. The full project text is available below." width="2400" height="3906" loading="lazy" decoding="async"></a>
+  <figcaption>Five demo concepts and the constraints assigned to them. Project descriptions are summarised from the submitted collection table. The constraint cards are hypothetical design prompts, rather than observed project outcomes. Open the figure at full size or read the individual records below.</figcaption>
+</figure>
 
-<div class="inc-worldproof-frame">
-<div class="inc-worldproof-cycle" role="group" aria-label="WORLDPROOF event requirements">
-  <div><strong>Build it.</strong><p>Use a biology-related problem to make a demonstrable proposal.</p></div>
-  <div><strong>Break it.</strong><p>Challenge at least three other teams as a red team.</p></div>
-  <div><strong>Fix it.</strong><p>Respond to at least three suggestions and explain changes in the log.</p></div>
+</details>
+
+<div class="inc-worldproof-details" aria-label="WORLDPROOF project records in text">
+<details><summary>Team 1 · ProBio Home</summary>
+<dl><dt>Project name</dt><dd>ProBio Home — Consumer-grade programmable probiotics</dd><dt>Project overview</dt><dd>A regulatory demo to examine whether promotional claims are reasonable and provide medicine traceability.</dd><dt>Assigned hypothetical constraint card</dt><dd>
+<p>P1 — A high-risk user bypasses the pharmacist</p>
+<p>An immunocompromised consumer buys the product online without consulting a pharmacist or doctor and plans to use it alongside prescription medicines.</p>
+<p>Design question: How could the demo identify high-risk use, explain contraindications clearly, and guide the user to pause use and seek professional help?</p>
+</dd></dl></details>
+<details><summary>Team 2 · FermentOS</summary>
+<dl><dt>Project name</dt><dd>FermentOS — Distributed biomanufacturing</dd><dt>Project overview</dt><dd>Real-time fermenter monitoring, recipe setup and management, batch setup and approval, and warnings for abnormal conditions.</dd><dt>Assigned hypothetical constraint card</dt><dd>
+<p>FM3 — An employee is afraid to report a near miss</p>
+<p>An operator notices they may have entered the wrong raw-material batch number, but delays reporting it for fear of punishment. Similar near misses may recur at other factories.</p>
+<p>Design question: How could the demo make reporting easier, protect the reporter, trigger review, and turn one incident into improvements that other factories can learn from?</p>
+</dd></dl></details>
+<details><summary>Team 3 · FieldShift</summary>
+<dl><dt>Project name</dt><dd>FieldShift — Engineered microbes for farmland</dd><dt>Project overview</dt><dd>A project addressing fertilisation in mountainous areas.</dd><dt>Assigned hypothetical constraint card</dt><dd>
+<p>F3 — Different plots lead to opposing conclusions</p>
+<p>Crop yields rise and chemical fertiliser use falls in one soil type, while yields fall in another. The cooperative still wants one deployment recommendation for all farmers.</p>
+<p>Design question: How could the demo avoid one-size-fits-all recommendations, explain suitable conditions and uncertainty, and support farmers in deciding whether to deploy?</p>
+</dd></dl></details>
+<details><summary>Team 4 · Mossback</summary>
+<dl><dt>Project name</dt><dd>Mossback — Urban engineered photosynthetic carbon-capture facilities</dd><dt>Project overview</dt><dd>MOSSBACK Evidence Terminal, a public-data and decision-support demonstration for urban photosynthetic carbon-capture facilities.</dd><dt>Assigned hypothetical constraint card</dt><dd>
+<p>M1 — Energy use offsets the carbon benefit</p>
+<p>During a heatwave, cooling electricity use rises sharply. Estimates show that energy use offsets 80% of the carbon-capture benefit, but the public display still shows only gross capture.</p>
+<p>Design question: How could the demo show net benefits, assumptions and uncertainty? When should operation be reduced or paused, or claims of climate benefit stopped?</p>
+</dd></dl></details>
+<details><summary>Team 5 · OpenBench</summary>
+<dl><dt>Project name</dt><dd>OpenBench — Public and community biology laboratories</dd><dt>Project overview</dt><dd>An open lab support platform for community biology laboratories. It uses the Design–Build–Test–Learn cycle to help beginners turn experimental ideas into workable plans, with training, supervision and feedback. It separates project risk from participant readiness and uses fairness monitoring, human review and appeals to reduce unfair automated rejection of beginners and non-native speakers.</dd><dt>Assigned hypothetical constraint card</dt><dd>
+<p>O3 — Automated scoring is unfair to beginners</p>
+<p>An audit finds that automated risk scoring blocks beginners and non-native speakers more often, even when their proposals are similar to others.</p>
+<p>Design question: How could the demo detect these differences, provide human review and appeals, and maintain fair access while protecting safety?</p>
+</dd></dl></details>
 </div>
-</div>
-
-<p class="inc-caption">The event mechanism, not a diagram of a verified individual project outcome. The challenge and revision requirements are recorded here from Liao’s account.</p>
-
-### 3.6 Following One Project’s Evolution {#worldproof-project-evolution}
-
-Liao recalls that the **first-prize team came mainly from mathematics and statistics, with little biology background**, and that the judging included biology expertise. This is a reason to look closely at what that particular team contributed: which assumptions they noticed, what others challenged and how they responded.
-
-The most informative account will place the initial demo beside the cross-team challenges, the corresponding change-log entries and the final demo. The team has retained an all-group change-log table; the paired project materials are being gathered for this page. For now, this section records Liao’s account of the team’s background; the paired demo and log entries will supply the project-level account.
-
-A complete project story should also leave room for suggestions that were not adopted, changes that could not be finished and feedback that did not help, wherever the records show them. Those details reveal how participants negotiated a real design decision.
 
 [Full event record](/education#worldproof-records) · [Available WORLDPROOF resources](#worldproof-resources)
+
+### 3.7 Judges’ Written Feedback {#worldproof-judge-feedback}
+
+The written comments address revision, learning support and readiness for use. Quotations preserve the original wording; the team reflections identify further questions.
+
+<div class="inc-judge-feedback" aria-label="Selected WORLDPROOF judge comments and team reflections">
+<article class="inc-judge-theme">
+  <h4>Make the revision visible</h4>
+  <p class="inc-judge-quote">“Just the change log part was not too clear.”</p>
+  <p class="inc-judge-attribution">Elżbieta Gralińska · FieldShift</p>
+  <p class="inc-judge-reflection"><strong>Our reflection.</strong> The log needs to connect each priority with the feedback received, the revision made and the remaining issue.</p>
+</article>
+<article class="inc-judge-theme">
+  <h4>Include learning in the design</h4>
+  <p class="inc-judge-quote">“Farmers need to be educated to use the platform.”</p>
+  <p class="inc-judge-attribution">Jacky Yuen · Comment on a farmer-facing platform</p>
+  <p class="inc-judge-reflection"><strong>Our reflection.</strong> Instructions, practice and help belong in the design. Their usefulness needs examination with the intended users.</p>
+</article>
+<article class="inc-judge-theme">
+  <h4>Carry the idea beyond the demo</h4>
+  <p class="inc-judge-quote">“I liked the well-defined challenge! The solution seems promising but might require further work before entering the real world.”</p>
+  <p class="inc-judge-attribution">Elżbieta Gralińska · FermentOS V2</p>
+  <p class="inc-judge-reflection"><strong>Our reflection.</strong> A promising proposal still needs evidence, user support and testing before use in the intended setting.</p>
+</article>
+
+<details class="inc-judge-transcript">
+<summary>Read all eight written comments</summary>
+<div class="inc-judge-transcript-body">
+<h4>Elżbieta Gralińska</h4>
+<div class="inc-judge-comment" data-comment-id="elz-database">
+  <p class="inc-judge-subject">Database overview · Topic label</p>
+  <p class="inc-judge-original">“I liked the presented overview of the created database, the idea is clear to understand however it might still require some more work on the “world readiness” aspects.”</p>
+</div>
+<div class="inc-judge-comment" data-comment-id="elz-fieldshift">
+  <p class="inc-judge-subject">FieldShift · Project name on the sheet</p>
+  <p class="inc-judge-original">“A well-thought decision support questionnaire - seems to work well based on the demonstration part. Just the change log part was not too clear.”</p>
+</div>
+<div class="inc-judge-comment" data-comment-id="elz-moss">
+  <p class="inc-judge-subject">MOSS · Project name on the sheet</p>
+  <p class="inc-judge-original">“Very clear presentation with the solution, which seems to have a high world readiness.”</p>
+</div>
+<div class="inc-judge-comment" data-comment-id="elz-synbio">
+  <p class="inc-judge-subject">Synbio lab virtual · Project name on the sheet</p>
+  <p class="inc-judge-original">“I liked the presented idea, however the presented solution needs more improvements and also a more clear direction.”</p>
+</div>
+<div class="inc-judge-comment" data-comment-id="elz-fermentos">
+  <p class="inc-judge-subject">FermentOS V2 · Project name on the sheet</p>
+  <p class="inc-judge-original">“I liked the well-defined challenge! The solution seems promising but might require further work before entering the real world.”</p>
+</div>
+<h4>Jacky Yuen</h4>
+<div class="inc-judge-comment" data-comment-id="jacky-self-analysis">
+  <p class="inc-judge-subject">Patient self-analysis · Topic label</p>
+  <p class="inc-judge-original">“Patient self analysis is tricky. It can be easily manipulated.”</p>
+</div>
+<div class="inc-judge-comment" data-comment-id="jacky-farmers">
+  <p class="inc-judge-subject">Farmer-facing platform · Topic label</p>
+  <p class="inc-judge-original">“Farmers need to be educated to use the platform.”</p>
+</div>
+<div class="inc-judge-comment" data-comment-id="jacky-onboarding">
+  <p class="inc-judge-subject">Platform onboarding · Topic label</p>
+  <p class="inc-judge-original">“People who use the platform should learn how to use it first.”</p>
+</div>
+<p class="inc-judge-source-note">Source: excerpts from three returned WORLDPROOF judging sheets, attributed by the team to Hengwei Su, Elżbieta Gralińska and Jacky Yuen. The supplied Hengwei Su page has no visible written comments. Project names above are retained as written on Elżbieta Gralińska’s sheet; topic labels describe comments whose sheets do not name the project. Sheet team numbers are not matched to the editorial Team 1–5 labels in the demo overview. <a href="/education#worldproof-records">Meet the judges on Education.</a></p>
+</div>
+</details>
+</div>
+
+### 3.8 Reuse the WORLDPROOF format {#worldproof-toolkit}
+
+The bilingual toolkit contains eight fictional briefs, **24 constraint cards**, the judging guideline and a blank score sheet. The new Change Log worksheet follows the guideline’s six required fields and labels additional prompts as optional. Organizers can adapt the materials to their participants and available revision time.
+
+| Material | English | Chinese |
+| --- | --- | --- |
+| Scenarios and constraint cards | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-en.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-en.md) | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-zh.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-zh.md) |
+| Judging guideline | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-en.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-guideline-en.md) | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-zh.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-guideline-zh.md) |
+| Blank judging score sheet | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-en.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-scorecard-en.md) | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-zh.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-scorecard-zh.md) |
+| Blank Change Log worksheet | [Editable CSV](/assets/human-practices/worldproof-resources/worldproof-change-log-template-en.csv) | [Editable CSV](/assets/human-practices/worldproof-resources/worldproof-change-log-template-zh.csv) |
 
 ## Resources & References {#resources-and-references}
 
@@ -242,12 +434,12 @@ The resources below connect to the cases where they were used. Editable files pr
 
 | Case | Available material | Adapting it |
 | --- | --- | --- |
-| <span id="workbook-resources"></span>Older readers’ workbook | [Chinese student PDF](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf), [English student PDF](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf), [Chinese teacher PDF](https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf); editable [Chinese student](/assets/human-practices/education/workbook-current-student-zh.docx), [English student](/assets/human-practices/education/workbook-current-student-en.docx) and [teacher](/assets/human-practices/education/workbook-current-teacher-zh.docx) files. | Choose chapters, language, type size and pace with readers. Downloaded pages can be read or printed offline. Keep safety information with the activity and personal record sheets private. |
+| <span id="workbook-resources"></span>Older readers’ workbook | Three current PDFs and their editable DOCX files are shown [with the workbook account](#workbook-editions): Chinese and English student editions and the Chinese teacher’s guide. | Choose chapters, language, type size and pace with readers. Downloaded pages can be read or printed offline. Keep safety information with the activity and personal record sheets private. |
 | Entering science | [Curriculum comparison](/assets/human-practices/attachments/curriculum-comparison-analysis.pdf), [reference framework](/assets/human-practices/attachments/curriculum-comparison-reference-framework.pdf) and [teacher accounts](/education#classroom-teacher-advice). | Adjust assumed prior knowledge, task length and simulated versus practical work; retain the link between a design claim and a way to test it. |
 | Anjia Guardian | [Website walkthrough](https://home-protection-cf808a.igem.wiki/), [source](https://gitlab.igem.org/2026/software/sustech/home-protection), [user guide](https://static.igem.wiki/teams/6085/wiki/hp/home-protection-user-guide.pdf), [methods and reuse](https://static.igem.wiki/teams/6085/wiki/hp/home-protection-methods-reuse.pdf). | Keep sample labels and failure states visible. The illustrated website example needs no photo; native cloud recognition requires separate configuration and testing. |
-| Time Capsule and Aphasia Map | [Time Capsule materials](/design-communication#time-capsule), [Aphasia Map instruction board](https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif) and [rules in this page](#aphasia-map). | Preserve the memory-change question and the communication task. Participants’ cards and recordings require separate permission before sharing. |
+| Time Capsule and Aphasia Map | [Time Capsule materials](/design-communication#time-capsule), Aphasia Map posters ([Chinese](https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif) · [English](https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif)) and [rules in this page](#aphasia-map). | Preserve the memory-change question and the communication task. Participants’ cards and recordings require separate permission before sharing. |
 | <span id="model-resources"></span>Brain/cell models and TacTune | [Physical teaching record](/education#touch-and-observation); [adaptation and setup notes · TXT](/assets/human-practices/inclusivity-spectrum/adaptation-notes.txt). The local software includes model descriptions, sound mappings and setup documentation. | Physical handling and facilitator explanation need no camera. Digital text/menu exploration is a separate option. Model files and the whole software package await their own redistribution-rights review. |
-| <span id="worldproof-resources"></span>WORLDPROOF | [Eight scenarios · PDF](/assets/human-practices/attachments/worldproof-hackathon-challenges-en.pdf), [documented mechanism · TXT](/assets/human-practices/inclusivity-spectrum/worldproof-mechanism-notes.txt), [blank feedback-to-change record · CSV](/assets/human-practices/inclusivity-spectrum/feedback-to-change.csv). | The TXT and blank CSV are page companions, not the original event rulebook or completed logs. Approved rules, the final scoring rubric and project records will be linked with their versions. |
+| <span id="worldproof-resources"></span>WORLDPROOF | [Bilingual scenarios, judging materials and blank Change Log](#worldproof-toolkit). | Choose a scenario or existing project, organize peer challenges and preserve the reasons for each revision. The worksheets are blank reusable tools. |
 
 </div>
 

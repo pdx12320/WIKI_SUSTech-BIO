@@ -1,3 +1,4 @@
+import {createCursorScatter,cursorScatterDeclarations,cursorScatterPosition} from './particle-cursor-scatter.mjs';
 import {cellLayout,rnaCellState,lipidPath,ease} from './rna-cell-state.mjs';
 // All biological subjects and the relationship path are THREE.Points.
 // No RNA-to-cell morph, clinical recovery switch, or disappearance of Aβ.
@@ -5,23 +6,18 @@ export {cellParticleData} from './cell-volume-shapes.mjs';
 import {cellParticleData,legacyCellParticles} from './cell-volume-shapes.mjs';
 import {cellCameraPose,cellQuestionPose,amyloidFlight} from './cell-fpv-motion.mjs';
 const vertex=`attribute float aTone;attribute vec3 aNormal;
-uniform float uTime,uOpacity,uPR,uPath,uTravel,uBody,uHover,uMotion,uSway;uniform vec3 uColor,uTrails[5];uniform vec2 uPointer,uViewport;
+uniform float uTime,uOpacity,uPR,uPath,uTravel,uBody,uMotion,uSway;uniform vec3 uColor;
 varying vec3 vColor;varying float vAlpha;
+${cursorScatterDeclarations}
+${cursorScatterPosition}
 void main(){
  vec3 local=position+aNormal*sin(uTime*.7+dot(position,vec3(.7,.4,.6)))*.018*uBody*uMotion;
  float arm=smoothstep(.55,3.8,length(position));
  float flex=(.18+.82*arm)*uSway*uMotion;
  local+=vec3(sin(uTime*.32+position.y*.7+position.z*.35)*.22,sin(uTime*.27+position.x*.65)*.12,sin(uTime*.24+position.y*.6-position.x*.25)*.27)*flex;
- vec4 mv=modelViewMatrix*vec4(local,1.);vec4 before=projectionMatrix*mv;
+ vec4 mv=modelViewMatrix*vec4(local,1.);
  float seed=fract(sin(dot(position,vec3(12.9898,78.233,37.719)))*43758.5453);
- float push=0.;vec2 away=vec2(1.,0.);
- for(int i=0;i<5;i++){
-  vec2 delta=(before.xy/max(.001,before.w)-uTrails[i].xy)*uViewport*.5;float d=length(delta);
-  float influence=exp(-pow(d/62.,2.))*uTrails[i].z;
-  if(influence>push){push=influence;away=normalize((d>.01?delta/d:vec2(1.,0.))+vec2(sin(seed*6.283),cos(seed*6.283))*.72);}
- }
- push*=uHover*uBody*uMotion;
- mv.xy+=away*push*(32.+seed*16.)*2./uViewport*(-mv.z)/vec2(projectionMatrix[0][0],projectionMatrix[1][1]);mv.z+=(seed-.5)*push*1.4;
+ mv=cursorScatterPosition(mv,uBody,seed);
  gl_Position=projectionMatrix*mv;gl_PointSize=clamp((1.8+.35*uBody)*uPR*pow(22./max(1.,-mv.z),.8),.9*uPR,5.*uPR);
  float light=.4+.6*max(0.,dot(normalize(normalMatrix*aNormal),normalize(vec3(-.3,.5,1.))));
  vColor=mix(uColor,vec3(.95,.85,1.),step(.5,aTone)*.56)*light;
@@ -34,12 +30,12 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
  const el=root.querySelector('[data-rna-cell]');
  if(!el)return {camera(){},update(){}};
  root.classList.add('has-rna-cell');
- const trails=Array.from({length:5},()=>new THREE.Vector3(9,9,0));let trailClock=0;
+ const scatter=createCursorScatter(THREE);
  const make=(data,color,name)=>{
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(data.positions,3));g.setAttribute('aTone',new THREE.BufferAttribute(data.tones,1));
   const normals=data.normals||new Float32Array(data.positions.length);if(!data.normals)for(let i=2;i<normals.length;i+=3)normals[i]=1;
   g.setAttribute('aNormal',new THREE.BufferAttribute(normals,3));
-  const uniforms={uTime:{value:0},uOpacity:{value:0},uPR:{value:1},uPath:{value:0},uTravel:{value:0},uBody:{value:0},uSway:{value:0},uHover:{value:0},uMotion:{value:1},uPointer:{value:new THREE.Vector2(9,9)},uViewport:{value:new THREE.Vector2(1440,900)},uTrails:{value:trails},uColor:{value:new THREE.Color(color)}};
+  const uniforms={...scatter.uniforms,uTime:{value:0},uOpacity:{value:0},uPR:{value:1},uPath:{value:0},uTravel:{value:0},uBody:{value:0},uSway:{value:0},uMotion:{value:1},uColor:{value:new THREE.Color(color)}};
   const material=new THREE.ShaderMaterial({uniforms,vertexShader:vertex,fragmentShader:fragment,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending});
   const points=new THREE.Points(g,material);points.name=name;points.frustumCulled=false;points.visible=false;scene.add(points);return points;
  };
@@ -64,7 +60,7 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
  });
  const projected=new THREE.Vector3(),destination=new THREE.Vector3(),look=new THREE.Vector3();
  const labels=[...el.querySelectorAll('[data-rna-cell-label]')];
- let aspect=0,amyloid=null,amyloidPortrait=null,amyloidCenters=[[0,0,0]];
+ let aspect=0,amyloid=null,amyloidPortrait=null,amyloidAnchors=[];
  function bindAmyloid(){
   const portrait=aspect<1;
   if(amyloid&&amyloidPortrait===portrait)return;
@@ -72,7 +68,8 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
   amyloidPortrait=portrait;
   const n=amyloid.geometry.attributes.position.count,positions=new Float32Array(n*3);
   const groups=[[-1.05,.82,-.7],[1.2,.55,-1.5],[-1.55,-.72,-1.9],[1.4,-1.15,-.85]].map(([x,y,z])=>[x*(portrait?.25:1),y,z]);
-  amyloidCenters=[[0,0,0],...groups];
+  const ends=amyloid.geometry.attributes.aEnd??amyloid.geometry.attributes.position,city=amyloid.geometry.attributes.aParis;
+  amyloidAnchors=Array.from({length:5},()=>({from:[0,0,0],to:[0,0,0],city:[0,0,0],count:0}));
   for(let i=0;i<n;i++){
    const seed=j=>{const x=Math.sin((i+j)*127.1+311.7)*43758.5453;return x-Math.floor(x);};
    const z=seed(1)*2-1,angle=seed(2)*6.283,r=Math.sqrt(1-z*z),fraction=i/n;
@@ -82,7 +79,12 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
    // and leave diffuse particles between them using the same vertex budget.
    const offset=group===-1?[0,0,0]:group>=0?groups[group]:[(seed(5)-.5)*8,(seed(6)-.5)*6,(seed(7)-.5)*7];
    positions.set([offset[0]+Math.cos(angle)*r*radius,offset[1]+Math.sin(angle)*r*radius,offset[2]+z*radius],i*3);
+   if(group>=-1){
+    const anchor=amyloidAnchors[group+1];anchor.count++;
+    for(let j=0;j<3;j++){anchor.from[j]+=ends.array[i*3+j];anchor.to[j]+=positions[i*3+j];anchor.city[j]+=city?.array[i*3+j]??0;}
+   }
   }
+  for(const anchor of amyloidAnchors)for(const key of ['from','to','city'])anchor[key]=anchor[key].map(v=>v/Math.max(1,anchor.count));
   amyloid.geometry.setAttribute('aFpv',new THREE.BufferAttribute(positions,3));
  }
  function place(nextAspect){
@@ -107,44 +109,54 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
   if(aspect!==width/height)place(width/height);
   // The same arbor stays gently alive in both the approach and the wide view.
   neuron.rotation.set(Math.sin(time*.16)*.022*motion,Math.sin(time*.13)*.032*motion,Math.sin(time*.11)*.012*motion);
-  const step=Math.max(0,dt);trailClock+=step;trails.forEach(p=>{p.z*=Math.exp(-step*3.8);});
-  if(!replay&&(pointer.on??0)>0&&motion){
-   const x=pointer.x??9,y=pointer.y??9;
-   if(trails[0].z<.05||Math.hypot(trails[0].x-x,trails[0].y-y)>.035||trailClock>.09){
-    for(let i=4;i>0;i--)trails[i].copy(trails[i-1]);trails[0].set(x,y,1);trailClock=0;
-   }else trails[0].z=1;
-  }
+  scatter.update(replay?{}:pointer,width,height,dt,motion);
   for(const obj of [astro,neuron,protein,route,translation,focus,...carriers]){
    obj.material.uniforms.uTime.value=time*motion;obj.material.uniforms.uPR.value=Math.min(globalThis.devicePixelRatio||1,small?1.5:1.75);
-   const u=obj.material.uniforms;u.uMotion.value=motion;u.uViewport.value.set(width,height);u.uPointer.value.set(pointer.x??9,pointer.y??9);
-   u.uHover.value+=((replay?0:motion)-u.uHover.value)*(1-Math.exp(-step*10));
+   obj.material.uniforms.uMotion.value=motion;
    obj.material.uniforms.uOpacity.value=(obj===neuron?Math.max(opacity,question):opacity)*(obj===protein?s.protein:carriers.includes(obj)?s.protein*.9:obj===route?s.protein*.16:obj===translation?s.protein*.24:obj===focus?(s.stage==='translation'?.24:0):obj===neuron?.56:.68);
    obj.visible=obj.material.uniforms.uOpacity.value>.001;
   }
   // One scroll-linked journey; a stationary reader never sees repeated delivery.
-  carriers.forEach((obj,i)=>{const u=ease((s.transport-i*.12)/.64);obj.position.fromArray(lipidPath(u,aspect));obj.visible&&=s.transport>i*.12;});
+  carriers.forEach((obj,i)=>{const u=ease((s.transport-i*.12)/.64);obj.position.fromArray(lipidPath(u,aspect));obj.rotation.y=time*.45*motion;obj.visible&&=s.transport>i*.12;});
   translation.material.uniforms.uTravel.value=s.protein;route.material.uniforms.uTravel.value=s.transport;
   bindAmyloid();const flight=amyloidFlight(take,aspect);
   if(amyloid){
    const u=amyloid.material.uniforms;u.uFpvMix.value=replay?0:flight.particleMix;u.uFpvCenter.value.fromArray(flight.position);
    if(!replay&&take>=.50&&take<.737){u.uOpacity.value=flight.opacity*.4;u.uGather.value=1;amyloid.visible=flight.opacity>.001;}
-   if(!replay&&take>=.50&&take<.752){const label=root.querySelector('[data-bio-label="amyloid"]');if(label){label.style.opacity='0';label.style.visibility='hidden';}}
+   if(!replay&&take>=.50&&(take<.752||question>0)){const label=root.querySelector('[data-bio-label="amyloid"]');if(label){label.style.opacity='0';label.style.visibility='hidden';}}
   }
   if(amyloid&&question>0){
    const u=amyloid.material.uniforms;u.uFpvMix.value=1;u.uParisMorph.value*=1-question;
    u.uFpvCenter.value.fromArray(flight.position);u.uOpacity.value=Math.max(u.uOpacity.value,question*.4);amyloid.visible=true;
   }
-  el.hidden=opacity<.01;el.style.opacity=String(opacity);el.dataset.stage=s.stage;
+  // Labels enter with their own particles, independently of camera chapters.
+  const amyloidOpacity=!replay&&amyloid?.visible?Math.max(flight.opacity,question)*(1-amyloid.material.uniforms.uParisMorph.value):0;
+  const contextOpacity=Math.max(opacity,amyloidOpacity);
+  el.hidden=contextOpacity<.01;el.style.opacity=String(contextOpacity);el.dataset.stage=s.stage;
   if(el.hidden)return;
   const labelPositions={rna:l.rna.map((v,i)=>v+[0,-1.05*l.scale,0][i]),astro:l.astro.map((v,i)=>v+[0,2.2*l.scale,0][i]),neuron:l.neuron.map((v,i)=>v+[0,-1.4*l.scale,0][i]),protein:l.protein.map((v,i)=>v+[.3,1.15*l.scale,0][i]),transport:lipidPath(.55,aspect),focus:l.focus};
-  amyloidCenters.forEach((center,i)=>{labelPositions[i?`amyloid-${i}`:'amyloid']=flight.position.map((v,j)=>v+center[j]);});
+  if(amyloid){
+   const u=amyloid.material.uniforms;amyloid.updateMatrixWorld(true);
+   amyloidAnchors.forEach((anchor,i)=>{
+    // Match the shader's RNA-independent A-beta travel and tower handoff.
+    labelPositions[i?`amyloid-${i}`:'amyloid']=anchor.from.map((v,j)=>{
+     const fpv=v+(anchor.to[j]+u.uFpvCenter.value.getComponent(j)-v)*u.uFpvMix.value;
+     return fpv+(anchor.city[j]-fpv)*u.uParisMorph.value;
+    });
+   });
+  }
   labels.forEach(node=>{
-   const stages=node.dataset.stages.split(' ');node.hidden=!stages.includes(s.stage);
+   const isAmyloid=node.dataset.rnaCellLabel.startsWith('amyloid');
+   const stages=node.dataset.stages.split(' ');
+   node.hidden=isAmyloid?amyloidOpacity<.01:opacity<.01||!stages.includes(s.stage);
+   node.style.opacity=String((isAmyloid?amyloidOpacity:opacity)/contextOpacity);
    if(node.hidden)return;
-   projected.fromArray(labelPositions[node.dataset.rnaCellLabel]).project(camera);
+   projected.fromArray(labelPositions[node.dataset.rnaCellLabel]);
+   if(isAmyloid)projected.applyMatrix4(amyloid.matrixWorld);
+   projected.project(camera);
    if(projected.z<=-1||projected.z>=1){node.hidden=true;return;}
    const x=(projected.x*.5+.5)*width,y=(.5-projected.y*.5)*height;
-   if(node.dataset.rnaCellLabel.startsWith('amyloid')){
+   if(isAmyloid){
     // Surface marks stay centered inside their own moving particle cluster.
     // Offscreen spheres take their labels with them instead of clamping to an edge.
     node.hidden=x<18||x>width-18||y<18||y>height-18;

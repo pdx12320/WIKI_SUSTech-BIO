@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-21",
+  "preview": "http://127.0.0.1:8181/",
+  "status": "Delivered local integrations reconciled and checked; visual acceptance incomplete. No Git commit, push, PR merge or publication in this integration turn.",
+  "integrated": [
+    "Approved second-act captions, Astrocyte pacing/label boundaries and shared cursor avoidance",
+    "Lipid rotation and A\u03b2 labels",
+    "Automatic maze/C\u2192U/falling-letter ending with Explore handoff",
+    "Reload whale and illustrated fallback; removal of two folded footer notes",
+    "Memory constellation, slower Paris transitions and staged question promoted from /next to Home by the owner",
+    "Bilingual Aphasia Map on Design and Inclusivity; Home Protection/TacTune cards retained"
+  ],
+  "verification": {
+    "node_suites_passed": [
+      "memory_constellation",
+      "rna_cell_scene",
+      "paris_particles",
+      "paris_retreat_pacing",
+      "home_auto_dock",
+      "home_rewind_motion",
+      "home_confirmed_edit",
+      "home_skip",
+      "home_edit_replay",
+      "one_c_context",
+      "one_c_particles",
+      "entry_loading",
+      "entry_loading_worker",
+      "entry_scene_budget",
+      "opening_warmup",
+      "memory-maze-ending",
+      "memory-orca-maze"
+    ],
+    "python_checks": "19 selected route, static-entry, entry-loader, Design, dual-mode upload and workbook-reader checks passed.",
+    "build": {
+      "routes": 31,
+      "document_audit_issues": [],
+      "destination": "/tmp/wiki-integration-20261021/build",
+      "media": "Linked existing static/ and assets/ instead of copying source media; shared public/ untouched.",
+      "resource_audit": {
+        "issues": []
+      }
+    },
+    "diff_check": "Passed for checked Home/entry-loading/Design scope.",
+    "template_parity": "Existing memory_constellation suite confirms Home and /next source parity except review title.",
+    "visual": "Not completed in this turn. In-app tab creation and recovery timed out; native Chrome access was interrupted by a user change, so further interaction stopped. Earlier owners\u2019 screenshots were reused as earlier evidence, not a new combined desktop/mobile walkthrough."
+  },
+  "remaining": [
+    "WORLDPROOF six PDFs and figure still use local preview URLs; owner awaits user uploads and official links. Do not treat them as production-ready.",
+    "One combined normal forward/reverse/fast/re-entry desktop/mobile Home walkthrough remains required before claiming visual acceptance."
+  ],
+  "source_hashes_at_record": {
+    "static/entry-loading/README.md": "ceb37d435a20c5287e2ca138be7085e7dcb8ab63f553e3f3d35ed0ced0bc5893",
+    "static/entry-loading/boot.js": "a29e7bacec523fb4d560730984244cfb197252b5005c28efd139e348447fa2bf",
+    "static/entry-loading/entry-loading.css": "dcfcf44d8109e367099cfab3bfe44b80f12859b0e0164124be46ba66e0934883",
+    "static/entry-loading/entry-loading.js": "8994f273edf0d28900344a3b2fe5ca85b09ac5d8cbd441bf82c0ed31c4a268f5",
+    "static/onetake/cell-scroll-pacing.mjs": "7319c4d3609fe0dbb15ff154893bad4a88732bdfe5b53040e2b51926f15d7a82",
+    "static/onetake/dementia-paris.mjs": "dc6907a8e84f6f52f82094eb7d329b6ec7e85a76eda7d7b5533e19d0e716f269",
+    "static/onetake/home-entry-art.css": "4b34ffb0906c47304a8b4f49bf7bb31271dbfd13ccc3896f095a8498694c0050",
+    "static/onetake/home-entry.js": "37568bae5c6b9c9fcac03444c2789a463a871214adbb901ad9948f91a606445a",
+    "static/onetake/home-static-entry.css": "159b3fe5e3c981e176dbca171dc088c71e1325fc73bb642aeabda0f88853d9b7",
+    "static/onetake/memory-constellation-state.mjs": "11ccc048eeba65781943680a1b0a4a66dfe3564c0e4adb795cc15158cc1dbddf",
+    "static/onetake/memory-constellation.css": "79cfc0bebc49a3144065fcf4e4010f103dc4fc4376c265dc0ce1108dc03c970e",
+    "static/onetake/memory-constellation.mjs": "6b40a4f9b01d5f5862248be9b7035c1b1311a50b18dd423035c990dfe70c7524",
+    "static/onetake/memory-maze-ending.mjs": "24cf05ecc8d225e93458f45a45b695cf1ff38932ed0ce566a92febac670cd176",
+    "static/onetake/memory-maze-ending.test.mjs": "a629d016c29a02bef19cbe69f4da32e3637c3ed11b4e6c06f90270e0b69ebe36",
+    "static/onetake/memory-question.mjs": "9828fbc98d1a4b79d7450a73d69c69407373bb66989265bc81c61cb1a3759197",
+    "static/onetake/one-c-context.mjs": "459fee8e396bcbda49e0ae2da14c0028cd6ef4b92a3a1707699993e5a69be8eb",
+    "static/onetake/one-c-copy.mjs": "2c645f372291bad08330982578ed9849ea52fcc13f0f6cf528309bf10786eda8",
+    "static/onetake/onetake.js": "af543ec5c671e38a84edd4a8681522030ca82f838b823d09d7ed843b270887d6",
+    "static/onetake/particle-cursor-scatter.mjs": "8c3ca001dfdb8a142b817265faa992eb5729e62c685001eef6c5243a2e1277cf",
+    "static/onetake/rna-cell-context.css": "2e0c2070595824125dce12490b9002b929a556b3b28606a8f9af08768d16a566",
+    "static/onetake/rna-cell-scene.mjs": "3ff07f0dd0fa2ec4bfa6df45084b9879041981faf8cc09f1d48838e6f2a64630",
+    "tests/entry_loading.mjs": "23c24a2f352b2a5af57a1a889327636eaa123ef31e062def5ec23a367b8c5dac",
+    "tests/home_refresh_browser.mjs": "9859dc876a55a1259abd99ab66abb286db9ac714d20643ea380e371922fc6c39",
+    "tests/home_startup_browser.mjs": "43ce81806a12b3b1275fb71dac456ac3644996646ecb040b9ba2e851113de154",
+    "tests/memory_constellation.mjs": "3a9fd487c3e8fb9ac8b403fd0ccfa13db0c1b3d0e6421fbaa5a4cef784996378",
+    "tests/test_home_static_entry.py": "7dc9d7e73489aa9de9cd23fd19751cabd38d8dca8d0411c8e396dd3f6cf98c59",
+    "tests/test_wiki.py": "99f280aceaf0e18e6f9921c8af7389376862f7259731b3b4c70d5091c3d79a25",
+    "wiki/components/home_static_entry.html": "6b8aa3161946c2d625e697e23b868736edfec2fd698ff2a350fb7472e645ffb8",
+    "wiki/components/memory_constellation.html": "2a3c5d2c6b1fd9428cf996540a596823d58032332bbb9989a75d0841d8d448ce",
+    "wiki/components/one_c_context.html": "d0e8dcd20d074992be5a3fa739b29dbf887d3ffaa75433eab1fdd9ddc2a35d6a",
+    "wiki/pages/home.html": "9871ce794405a426f075466fcaadcacc2a40a57fdf4132a325cdc844d1c49332",
+    "wiki/pages/home_next_structure.html": "ef4931f1e0ff6731d1bfaf30f465d424605dc8cc79ed950d771462b9861f22a4"
+  }
+}

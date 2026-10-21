@@ -1,0 +1,91 @@
+{
+  "source_name": "WORLDPROOF demo收集表.xlsx",
+  "source_sha256": "55b7db843c5f494fc6fd78fc49e2157075c7da192389ba415a0daddd4805fd5e",
+  "source_sheet": "数据表",
+  "included_columns": [
+    "B",
+    "F",
+    "I"
+  ],
+  "placeholder_policy": "Blank team names assigned Team 1–5 in source-row order. These are not the numbered peer teams referenced in challenge notes.",
+  "excluded_rows": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "records": [
+    {
+      "team": "Team 1",
+      "source_row": 2,
+      "project_zh": "ProBio Home｜消费级可编程益生菌",
+      "overview_zh": "主要作为监管系统监管宣传声明是否合理，提供药品回溯路径",
+      "constraint_zh": "P1｜高风险用户绕过了药师\n\n一名免疫功能低下的消费者通过网络购买产品，没有经过药师或医生咨询，并准备与处方药同时使用。\n\n团队必须回应： Demo 如何识别高风险使用、清楚说明禁忌，并引导用户暂停使用和寻求专业帮助？",
+      "project": "ProBio Home",
+      "topic": "Consumer-grade programmable probiotics",
+      "overview": "A regulatory demo to examine product claims and provide medicine traceability.",
+      "constraint": "An immunocompromised buyer skips pharmacist advice and plans to combine the product with prescription medicines.",
+      "project_full": "ProBio Home — Consumer-grade programmable probiotics",
+      "overview_full": "A regulatory demo to examine whether promotional claims are reasonable and provide medicine traceability.",
+      "constraint_full": "P1 — A high-risk user bypasses the pharmacist\n\nAn immunocompromised consumer buys the product online without consulting a pharmacist or doctor and plans to use it alongside prescription medicines.\n\nDesign question: How could the demo identify high-risk use, explain contraindications clearly, and guide the user to pause use and seek professional help?"
+    },
+    {
+      "team": "Team 2",
+      "source_row": 3,
+      "project_zh": "FermentOS｜分布式生物制造",
+      "overview_zh": "实现发酵罐数据实时监测，配方设置与管理，批次设置与审批，意外状况警告",
+      "constraint_zh": "FM3｜员工不敢报告险情\n\n一名操作员发现自己可能录错了原料批号，但担心受到处罚，没有立即上报。类似未遂事件可能在其他工厂重复发生。\n\n团队必须回应： Demo 如何降低报告门槛、保护报告者、触发复核，并把单个事件转化为跨工厂可学习的改进？",
+      "project": "FermentOS",
+      "topic": "Distributed biomanufacturing",
+      "overview": "Live fermenter monitoring, recipe and batch management, approvals and warnings.",
+      "constraint": "An operator may have entered the wrong raw-material batch number, but fears punishment and delays reporting it.",
+      "project_full": "FermentOS — Distributed biomanufacturing",
+      "overview_full": "Real-time fermenter monitoring, recipe setup and management, batch setup and approval, and warnings for abnormal conditions.",
+      "constraint_full": "FM3 — An employee is afraid to report a near miss\n\nAn operator notices they may have entered the wrong raw-material batch number, but delays reporting it for fear of punishment. Similar near misses may recur at other factories.\n\nDesign question: How could the demo make reporting easier, protect the reporter, trigger review, and turn one incident into improvements that other factories can learn from?"
+    },
+    {
+      "team": "Team 3",
+      "source_row": 4,
+      "project_zh": "FieldShift 农田工程微生物",
+      "overview_zh": "针对山区施肥实现的",
+      "constraint_zh": "\nF3｜不同地块得出相反结论\n\n一种土壤中的作物产量提高且化肥用量下降，另一种土壤中的产量却下降。合作社仍希望向所有农户发布统一的部署建议。\n\n团队必须回应： Demo 如何避免“一刀切”推荐，向农户解释适用条件和不确定性，并支持他们自主决定是否部署？",
+      "project": "FieldShift",
+      "topic": "Engineered microbes for farmland",
+      "overview": "A project addressing fertilisation in mountainous areas.",
+      "constraint": "One soil shows gains while another shows losses, yet a cooperative wants a single deployment recommendation.",
+      "project_full": "FieldShift — Engineered microbes for farmland",
+      "overview_full": "A project addressing fertilisation in mountainous areas.",
+      "constraint_full": "F3 — Different plots lead to opposing conclusions\n\nCrop yields rise and chemical fertiliser use falls in one soil type, while yields fall in another. The cooperative still wants one deployment recommendation for all farmers.\n\nDesign question: How could the demo avoid one-size-fits-all recommendations, explain suitable conditions and uncertainty, and support farmers in deciding whether to deploy?"
+    },
+    {
+      "team": "Team 4",
+      "source_row": 5,
+      "project_zh": "Mossback｜城市工程光合碳捕获设施",
+      "overview_zh": "MOSSBACK 证据终端，一个面向城市光合固碳设施的公共数据与决策支持演示",
+      "constraint_zh": "M1｜能源消耗抵消碳收益\n\n持续高温使设施冷却用电大幅增加，估算结果显示 80% 的碳捕获收益被能源消耗抵消，但公共屏幕仍只显示“捕获总量”。\n\n团队必须回应： Demo 如何呈现净效益、数据假设和不确定性？在何种条件下应降低运行强度、暂停设施或停止宣传气候收益？",
+      "project": "Mossback",
+      "topic": "Urban photosynthetic carbon capture",
+      "overview": "A public-data and decision-support terminal for urban photosynthetic carbon-capture facilities.",
+      "constraint": "During a heatwave, cooling energy offsets most estimated capture benefits, but the public display still shows gross capture.",
+      "project_full": "Mossback — Urban engineered photosynthetic carbon-capture facilities",
+      "overview_full": "MOSSBACK Evidence Terminal, a public-data and decision-support demonstration for urban photosynthetic carbon-capture facilities.",
+      "constraint_full": "M1 — Energy use offsets the carbon benefit\n\nDuring a heatwave, cooling electricity use rises sharply. Estimates show that energy use offsets 80% of the carbon-capture benefit, but the public display still shows only gross capture.\n\nDesign question: How could the demo show net benefits, assumptions and uncertainty? When should operation be reduced or paused, or claims of climate benefit stopped?"
+    },
+    {
+      "team": "Team 5",
+      "source_row": 6,
+      "project_zh": "OpenBench｜公众与社区生物实验室",
+      "overview_zh": "OpenBench 是面向社区生物实验室的开放实验支持平台，通过 Design–Build–Test–Learn 循环，帮助初学者将实验想法转化为可推进方案，并提供培训、监督与反馈支持。同时区分项目风险与参与准备度，通过公平监测、人工复核和申诉机制，减少自动系统对初学者和非母语参与者的不公平拦截。",
+      "constraint_zh": "\nO3｜自动评分对初学者不公平\n\n审查数据显示，自动风险评分系统更频繁地拦截初学者和非母语参与者，即使他们提交的项目与其他人相似。\n\n团队必须回应： Demo 如何检测这种差异、提供人工复核和申诉渠道，并在保障安全的同时维持公平准入？",
+      "project": "OpenBench",
+      "topic": "Community biology laboratories",
+      "overview": "A community lab platform using Design–Build–Test–Learn, training and supervision, with fairness checks, human review and appeals.",
+      "constraint": "Automated risk scoring blocks beginners and non-native speakers more often, even for similar proposals.",
+      "project_full": "OpenBench — Public and community biology laboratories",
+      "overview_full": "An open lab support platform for community biology laboratories. It uses the Design–Build–Test–Learn cycle to help beginners turn experimental ideas into workable plans, with training, supervision and feedback. It separates project risk from participant readiness and uses fairness monitoring, human review and appeals to reduce unfair automated rejection of beginners and non-native speakers.",
+      "constraint_full": "O3 — Automated scoring is unfair to beginners\n\nAn audit finds that automated risk scoring blocks beginners and non-native speakers more often, even when their proposals are similar to others.\n\nDesign question: How could the demo detect these differences, provide human review and appeals, and maintain fair access while protecting safety?"
+    }
+  ]
+}

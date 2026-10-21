@@ -1,0 +1,52 @@
+{
+  "asset": "shenicest-20260830-collage.jpg",
+  "page": "/inclusivity#worldproof-organizing",
+  "dimensions": [
+    2400,
+    1759
+  ],
+  "bytes": 1281469,
+  "sha256": "57147c8712993f51398ddacbcd343512ca6b64cdf43acecba56e1a9d759317f4",
+  "source": "Six photographs supplied by the user in this chat. Photographer and publication rights remain team-managed.",
+  "method": "Original photographs uniformly resized in full and arranged in two rows, with paper-colored gutters. No generated photo content, cropping, retouching or added text.",
+  "layout": [
+    "group photograph and laptop demonstration",
+    "SIGNLAND, robot, board game, Make Again"
+  ],
+  "sources": [
+    {
+      "filename": "835d1b0f8cee8bd9a57a25441478708e.jpg",
+      "sha256": "121cf92d867fd862c6ee06a583f7567dcaba70cdf126f4ca4fca6cd257dec1f8"
+    },
+    {
+      "filename": "1cf5b8d364269159db3c94b8a77676a0.jpg",
+      "sha256": "6182faba840a3829a7778f26bc266e0a33ea4aed5822bc009b208bb7431eae29"
+    },
+    {
+      "filename": "e3add8c54a22a940651b9fe91dd157e4.jpg",
+      "sha256": "42134c11c3f85ffb6ecee2a679d5726b1a1b608b4ca964ad2b34ef852ac2e7cd"
+    },
+    {
+      "filename": "7b5ac95df06b3ee86f5dc76c47ca47b9.jpg",
+      "sha256": "95f64b77987542945a8f2fc74881031f30dfb145c846b85500ddbaed4156eeb0"
+    },
+    {
+      "filename": "d6bfe1a1c1d78e38508af53f196d4fa3.jpg",
+      "sha256": "1bc3c485bdd87f1c4621b6901f3e7bbdbb9218a4e64082940a99a39c961d87b3"
+    },
+    {
+      "filename": "28facad2a1781bdad985933bc7f01906.jpg",
+      "sha256": "1c847b19e457d30f49cb2edb9c28260f32598e9cd989fb7ab18633970b0733b2"
+    }
+  ],
+  "chronology": "User correction: April 2026 hackathon participation as a contestant; 30 August 2026 SheNicest attendance as a public judge, including the Shouyu encounter.",
+  "upload_status": "User supplied the official uploaded AVIF URL; HTTP 200, AVIF signature and dimensions verified on 2026-10-21.",
+  "uploaded_url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/shenicest-20260830-collage.avif",
+  "uploaded_sha256": "83d5bdbe0fab6c2fd12066eae9048aad152d9eb1aa500af38765dc41458bb53b",
+  "uploaded_bytes": 540595,
+  "uploaded_dimensions": [
+    2400,
+    1759
+  ],
+  "encoding_note": "Original JPEG and uploaded AVIF are different encodings; byte identity is not claimed."
+}

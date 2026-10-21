@@ -3038,6 +3038,16 @@
     "https://static.igem.wiki/teams/6085/wiki/wiki-new/download-5.avif",
     "https://static.igem.wiki/teams/6085/wiki/wiki-new/download.avif",
     "https://static.igem.wiki/teams/6085/wiki/final/static-onetake-one-c-lettering.woff2",
+    "https://static.igem.wiki/teams/6048/wiki/sustech-med-logo.avif",
+    "https://static.igem.wiki/teams/6401/wiki/omni-mask-logo.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-beyotime.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-brainxell.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-elabscience.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genepharma.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genewiz.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-invitrogen.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-procell.avif",
+    "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif",
     "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-default-avatar.avif",
     "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-inter.ttf",
     "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-member-04.webp",
@@ -13885,7 +13895,8 @@
       "local_path": "static/human-practices/organizations/display-manifest.json",
       "url": "https://static.igem.wiki/teams/6085/wiki/10-21/static-human-practices-organizations-display-manifest-8ea1a42cb2.json",
       "sha256": "0158be19ee3ca7fb99ea88ab030dc4e51954e0e3f3a25652993bc8bbb0e6db00",
-      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+      "evidence": "historical_upload_source_changed_community_20261021",
+      "notes": "Uploaded bytes describe the previous Community list and team logos. Do not map the updated local provenance manifest to this obsolete URL."
     },
     {
       "local_path": "static/human-practices/organizations/manifest-footer-2025-additions.json",
@@ -13903,7 +13914,8 @@
       "local_path": "static/human-practices/organizations/manifest-part2.json",
       "url": "https://static.igem.wiki/teams/6085/wiki/10-21/static-human-practices-organizations-manifest-part2-451489369a.json",
       "sha256": "10bef15252260a0adf4fb32c4067d0208c0f445481ad699f1748dcaf4c56780a",
-      "evidence": "user_upload_list_flat_filename_and_git_blob_fingerprint"
+      "evidence": "historical_upload_source_changed_community_20261021",
+      "notes": "Uploaded bytes describe the previous Community list and team logos. Do not map the updated local provenance manifest to this obsolete URL."
     },
     {
       "local_path": "static/human-practices/organizations/manifest-reference.json",
@@ -15531,6 +15543,74 @@
       "url": "https://static.igem.wiki/teams/6085/wiki/final/static-onetake-one-c-lettering.woff2",
       "sha256": "a41dc79cde97550cfa0a4b5244cb8bbb139b2e4a32592549ee064d9e3dccf146",
       "evidence": "user_upload_http200_byte_identical_sha256_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/sustech-med-team-2026.avif",
+      "url": "https://static.igem.wiki/teams/6048/wiki/sustech-med-logo.avif",
+      "sha256": "9a7847c1e89be310c2049b26f7fb1cd2426067d88af195807ebe729b81ba514f",
+      "evidence": "official_2026_team_wiki_logo_download_verified_sha256"
+    },
+    {
+      "local_path": "static/human-practices/organizations/hku-igem-team-2026.avif",
+      "url": "https://static.igem.wiki/teams/6401/wiki/omni-mask-logo.avif",
+      "sha256": "896ed2d54ef039e1282b338596ffdf16f532f23f577465252d9fc06b381b0bb8",
+      "evidence": "official_2026_team_wiki_logo_download_verified_sha256"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-beyotime.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-beyotime.avif",
+      "sha256": "76f4a00d019ca76135db1ae974924ed51b47dfa73d16539419fc4a7eb963552a",
+      "uploaded_sha256": "8dd6254dc411666fd0931922660b28d7dcef4c50f09bbb195e6e963ce14d93f8",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-brainxell.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-brainxell.avif",
+      "sha256": "3a977c26589e80671bfb2253a57ad62293e30dfada03d67bbbbf5cda53547374",
+      "uploaded_sha256": "04e7e69eaeb58cc0583bd8f9deb5fb0aebf06c9a3af5490851c822e89acafcd7",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-elabscience.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-elabscience.avif",
+      "sha256": "628d547dc8dcda941d073420f605a3abf4cede5ba55abcab3d882f1c7d4b21ec",
+      "uploaded_sha256": "2a2b85cb5a25114008a58dcec2cadb93b06283204b76305ecdd5ed345502c05d",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-genepharma.jpg",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genepharma.avif",
+      "sha256": "0bb071a8590de763a9386586d02133102cc3941eaf29ed66e21d6ff9fbcc47ef",
+      "uploaded_sha256": "a62e2a2a8f6e060f1690755fefaf650501f0d314deb172ff165616ed4aa3886d",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-genewiz.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genewiz.avif",
+      "sha256": "acad7f82204d459a0aee6edae5042922ea27734caef869a2d25040e21bec9784",
+      "uploaded_sha256": "a70e761797b4d86ba10cb220fc86fcfd7a4ee653e32f1e9f1c5a95cf2212e75b",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-invitrogen.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-invitrogen.avif",
+      "sha256": "a8d4ce04950e73f8e70de399a034ec634cac52bc68bea2a26e732b319f455255",
+      "uploaded_sha256": "5f439aca6d0d2eea86308eb11178fbe50c3b60fead877567ad8fa331ecd496b0",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-procell.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-procell.avif",
+      "sha256": "2c1d1205523b66183cebad09ade296fb05ac61f731f142dd42116fb6527cefa4",
+      "uploaded_sha256": "fdc01b138f1448247eebc8edc85a28ae4be701b7b135ba4e6c083f98f19493d9",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
+    },
+    {
+      "local_path": "static/human-practices/organizations/company-takara.png",
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif",
+      "sha256": "130cf821fe5b2bf8609c3b6b72c3f0cc580ec846483672a6ffebe62302facc67",
+      "uploaded_sha256": "0995a90e5a69b836df1c133ab9e97e0640af60e3d1a9fd82d8c2c6c6ac6dc76d",
+      "evidence": "official_upload_ui_http200_dimensions_and_image_difference_verified_20261021"
     },
     {
       "local_path": "static/attributions-portraits/default-avatar.avif",
@@ -18841,6 +18921,46 @@
     {
       "url": "https://static.igem.wiki/teams/6085/wiki/10-21/static-vendor-three-three-importmap-1def0d137d.json",
       "sha256": "e0534ea7771b477db7a8a5f3868a859df001ac74ff6472482460e919640307c6"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6048/wiki/sustech-med-logo.avif",
+      "sha256": "9a7847c1e89be310c2049b26f7fb1cd2426067d88af195807ebe729b81ba514f"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6401/wiki/omni-mask-logo.avif",
+      "sha256": "896ed2d54ef039e1282b338596ffdf16f532f23f577465252d9fc06b381b0bb8"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-beyotime.avif",
+      "sha256": "8dd6254dc411666fd0931922660b28d7dcef4c50f09bbb195e6e963ce14d93f8"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-brainxell.avif",
+      "sha256": "04e7e69eaeb58cc0583bd8f9deb5fb0aebf06c9a3af5490851c822e89acafcd7"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-elabscience.avif",
+      "sha256": "2a2b85cb5a25114008a58dcec2cadb93b06283204b76305ecdd5ed345502c05d"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genepharma.avif",
+      "sha256": "a62e2a2a8f6e060f1690755fefaf650501f0d314deb172ff165616ed4aa3886d"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genewiz.avif",
+      "sha256": "a70e761797b4d86ba10cb220fc86fcfd7a4ee653e32f1e9f1c5a95cf2212e75b"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-invitrogen.avif",
+      "sha256": "5f439aca6d0d2eea86308eb11178fbe50c3b60fead877567ad8fa331ecd496b0"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-procell.avif",
+      "sha256": "fdc01b138f1448247eebc8edc85a28ae4be701b7b135ba4e6c083f98f19493d9"
+    },
+    {
+      "url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif",
+      "sha256": "0995a90e5a69b836df1c133ab9e97e0640af60e3d1a9fd82d8c2c6c6ac6dc76d"
     },
     {
       "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/attributions-default-avatar.avif",

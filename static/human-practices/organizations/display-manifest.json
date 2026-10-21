@@ -1,11 +1,13 @@
 {
-  "scope": "Organizations selected from the supplied Human Practices manuscript and the user-requested institution and club logos from the 2025 SUSTech-BIO footer. Inclusion does not assign a sponsorship category.",
+  "scope": "Organizations selected from the supplied Human Practices manuscript and the user-requested institution and club logos from the 2025 SUSTech-BIO footer. Inclusion does not assign a sponsorship category. Company names and logos were added from the user-supplied ORCA Community Logo SourceKit (2026-10-21); Procell uses its official website logo.",
   "source_manifests": [
     "manifest-part1.json",
     "manifest-part2.json",
     "manifest-teams.json",
     "manifest-reference.json",
-    "manifest-footer-2025-additions.json"
+    "manifest-footer-2025-additions.json",
+    "manifest-company-logos-20261021.json",
+    "manifest-team-logos-2026.json"
   ],
   "team_emblem": "The SUSTech-BIO emblem is already displayed in the main footer brand area.",
   "entries": [
@@ -171,6 +173,88 @@
       ]
     },
     {
+      "name": "GENEWIZ",
+      "logo": "company-genewiz.png",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "GENEWIZ"
+      ]
+    },
+    {
+      "name": "GenePharma",
+      "logo": "company-genepharma.jpg",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "GenePharma"
+      ]
+    },
+    {
+      "name": "Takara Bio",
+      "logo": "company-takara.png",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "Takara Bio"
+      ]
+    },
+    {
+      "name": "Beyotime Biotechnology",
+      "logo": "company-beyotime.png",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "Beyotime Biotechnology"
+      ],
+      "fit": "wide"
+    },
+    {
+      "name": "Elabscience Biotechnology",
+      "logo": "company-elabscience.png",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "Elabscience Biotechnology"
+      ],
+      "fit": "wide"
+    },
+    {
+      "name": "Invitrogen (Thermo Fisher Scientific)",
+      "logo": "company-invitrogen.png",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "Invitrogen (Thermo Fisher Scientific)"
+      ]
+    },
+    {
+      "name": "BrainXell, Inc.",
+      "logo": "company-brainxell.jpg",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "BrainXell, Inc."
+      ]
+    },
+    {
+      "name": "Procell / Pricella",
+      "logo": "company-procell.png",
+      "detail": "",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "Procell / Pricella"
+      ]
+    },
+    {
       "name": "HKUST (Guangzhou)",
       "logo": "hkust-gz-header.png",
       "detail": "",
@@ -253,7 +337,7 @@
     },
     {
       "name": "SUSTech-MED",
-      "logo": "sustech-med-team.webp",
+      "logo": "sustech-med-team-2026.avif",
       "detail": "iGEM team",
       "background": "light",
       "mark": "organization",
@@ -273,7 +357,7 @@
     },
     {
       "name": "HKU iGEM Team",
-      "logo": "hku-igem-team.webp",
+      "logo": "hku-igem-team-2026.avif",
       "detail": "",
       "background": "light",
       "mark": "organization",
@@ -302,10 +386,11 @@
       ]
     }
   ],
-  "display_policy": "Show each available logo once, without visible name captions. Omit organizations without a logo. Keep the SUSTech seal and SUSTech-BIO emblem in the main footer brand area only.",
+  "display_policy": "Show each available logo once with its name in the existing community strip. Omit organizations without a logo. No sponsorship categories are assigned. Keep the SUSTech seal and SUSTech-BIO emblem in the main footer brand area only.",
   "omitted_without_logo": [
     "Taoyuan Subdistrict Elderly Service Center",
-    "Shahe Subdistrict Elderly Service Center"
+    "Shahe Subdistrict Elderly Service Center",
+    "Guangzhou Ruibo Biotechnology Co., Ltd."
   ],
   "main_footer_seal_covers": [
     "Southern University of Science and Technology",

@@ -1,0 +1,9 @@
+{
+  "tests": 190,
+  "failures": [
+    "test_markdown_pages_expose_their_docs_source (test_wiki.WikiRoutesTest.test_markdown_pages_expose_their_docs_source) (route='/attributions')"
+  ],
+  "errors": [
+    "test_production_renders_dynamic_jinja_and_markdown_images (test_igem_assets.ProductionRoutesTest.test_production_renders_dynamic_jinja_and_markdown_images)"
+  ]
+}

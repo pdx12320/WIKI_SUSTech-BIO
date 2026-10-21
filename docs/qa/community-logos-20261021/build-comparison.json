@@ -1,0 +1,34 @@
+{
+  "current": {
+    "routes_and_links": [],
+    "cdn": [
+      "production media still local: static/attributions-portraits/default-avatar.avif (attributions)",
+      "production media still local: static/attributions-portraits/inter.ttf (static/attributions.css)",
+      "production media still local: static/attributions-portraits/member-04.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-06.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-07.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-08.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-10.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-16.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-21.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-23.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-24.webp (attributions)"
+    ]
+  },
+  "baseline": {
+    "routes_and_links": [],
+    "cdn": [
+      "production media still local: static/attributions-portraits/default-avatar.avif (attributions)",
+      "production media still local: static/attributions-portraits/inter.ttf (static/attributions.css)",
+      "production media still local: static/attributions-portraits/member-04.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-06.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-07.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-08.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-10.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-16.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-21.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-23.webp (attributions)",
+      "production media still local: static/attributions-portraits/member-24.webp (attributions)"
+    ]
+  }
+}

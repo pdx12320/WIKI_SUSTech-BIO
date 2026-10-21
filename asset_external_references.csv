@@ -1,19 +1,25 @@
 url,references,host_status
 //external.example/art.svg,tests/test_audit.py:70,review_external_reference
+https://aimg.as-1.co.jp/c/83/5904/15/83584360.jpg,static/human-practices/organizations/manifest-company-logos-20261021.json:59,review_external_reference
 https://assets.roche.com/f/176343/801x529/f89c88a24c/roche-logo-blue.png,static/human-practices/organizations/manifest-part2.json:103,review_external_reference
 https://bio.sustech.edu.cn/uploads/202204/20144203_59696.png,static/human-practices/organizations/manifest-part1.json:70,review_external_reference
+https://blog.genewiz.com/hubfs/Rebrand_logo_blog_header_ds1.png,static/human-practices/organizations/manifest-company-logos-20261021.json:11,review_external_reference
 https://brand.rice.edu/sites/g/files/bxs5371/files/2019-07/Rice_University_Horizontal_Blue.svg,static/human-practices/organizations/manifest-part2.json:91,review_external_reference
 https://cdn.example.com/hero.png,tests/test_audit.py:58,review_external_reference
+https://cdn.theorg.com/98c69a57-16a0-49ef-9bb5-b8e241ab79aa_small.jpg,static/human-practices/organizations/manifest-company-logos-20261021.json:23,review_external_reference
 https://commons.wikimedia.org/wiki/File:Agarose_gel_electrophoresis_of_DNA_with_annotation.png,static/experiments/entries/M02/index.html:572; static/experiments/entries/M02/pages.json:232,review_external_reference
 https://commons.wikimedia.org/wiki/File:DOI_logo.svg,docs/qa/supporting-data-release-20261021/release.md:9; wiki/components/supporting-data/doi_icon.html:1,review_external_reference
 https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg,docs/team/design-communication.md:19,review_external_reference
 https://commons.wikimedia.org/wiki/File:GelDoc_DNA_gel_electrophoresis_photograph_stained_with_ethidium_bromide_01.jpg,static/experiments/entries/M02/index.html:572; static/experiments/entries/M02/pages.json:225,review_external_reference
 https://commons.wikimedia.org/wiki/File:Unspecific_pcr.jpg,static/experiments/entries/M02/index.html:572; static/experiments/entries/M02/pages.json:218,review_external_reference
+https://companieslogo.com/img/orig/4974.T_BIG-f4dd2614.png?download=true&t=1731654091,static/human-practices/organizations/manifest-company-logos-20261021.json:35,review_external_reference
 https://evil.example/x.png,tests/test_igem_assets.py:52,review_external_reference
 https://example.org/assets/figure.png,tests/test_igem_assets.py:21,review_external_reference
 https://external.example/art.svg,tests/test_audit.py:70,review_external_reference
+https://files.procell.com.cn/assets/images/logo-new.png,static/human-practices/organizations/manifest-company-logos-20261021.json:111; static/human-practices/organizations/manifest-company-logos-20261021.json:95,review_external_reference
 https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg,docs/previews/exploration-atlas-2026-10-13/compact-preview.html:2366; docs/previews/exploration-atlas-2026-10-13/preview.html:2360; docs/previews/exploration-atlas-2026-10-13/sound-library-vertical-preview.html:2362,review_external_reference
 https://lhs.suat-sz.edu.cn/images/logo.svg,static/human-practices/organizations/manifest-part1.json:34,review_external_reference
+https://mma.prnewswire.com/media/2717924/Brainxell_Logo.jpg?p=facebook,static/human-practices/organizations/manifest-company-logos-20261021.json:83,review_external_reference
 https://qualifications.pearson.com/content/dam/demo/stuntcontent/images/about/About%20our%20qualifications/Think-Again/PLogo_Horizontal_Edexcel_200x188.png,static/human-practices/organizations/manifest-reference.json:9,review_external_reference
 https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf,static/human-practices/education/fonts/provenance.json:4,review_external_reference
 https://raw.githubusercontent.com/google/fonts/main/ofl/librebaskerville/LibreBaskerville-Italic%5Bwght%5D.ttf,static/fonts/headers/librebaskerville-provenance.json:3,review_external_reference
@@ -39,7 +45,7 @@ https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/chuangxin
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/dikongxi.webp,static/assets/brand/footer-2025-provenance.json:29,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/fluidiclab-logo-cn.webp,static/assets/brand/footer-2025-provenance.json:30,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hechengshegnwuxueyushengwugongchengshe.webp,static/assets/brand/footer-2025-provenance.json:31; static/human-practices/organizations/manifest-footer-2025-additions.json:94,official
-https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hku-hongkong.webp,static/assets/brand/footer-2025-provenance.json:32; static/human-practices/organizations/manifest-part2.json:167,official
+https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hku-hongkong.webp,static/assets/brand/footer-2025-provenance.json:32,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hkust-gz.webp,static/assets/brand/footer-2025-provenance.json:33,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hkust.webp,static/assets/brand/footer-2025-provenance.json:34,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hongxun.webp,static/assets/brand/footer-2025-provenance.json:35,official
@@ -49,7 +55,7 @@ https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/jisuanjix
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/ju-yuan-bio-chem.webp,static/assets/brand/footer-2025-provenance.json:39,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/minghang.webp,static/assets/brand/footer-2025-provenance.json:40,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/shengyigong.webp,static/assets/brand/footer-2025-provenance.json:41,official
-https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/sustech-med.webp,static/assets/brand/footer-2025-provenance.json:42; static/human-practices/organizations/manifest-part2.json:155,official
+https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/sustech-med.webp,static/assets/brand/footer-2025-provenance.json:42,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/sustechocean.webp,static/assets/brand/footer-2025-provenance.json:43,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/szu-china.webp,static/assets/brand/footer-2025-provenance.json:44,official
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/tongji-china.webp,static/assets/brand/footer-2025-provenance.json:45,official
@@ -57,8 +63,9 @@ https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/tongjishu
 https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/yixueyuan.webp,static/assets/brand/footer-2025-provenance.json:47; static/human-practices/organizations/manifest-footer-2025-additions.json:17,official
 https://static.igem.wiki/teams/5873/images/footer/sustech.webp,static/assets/brand/footer-2025-provenance.json:18; static/human-practices/opening/color-study/cream.html:1578; static/human-practices/opening/color-study/mint.html:1578; static/human-practices/opening/color-study/white.html:1578; static/human-practices/opening/this-color-study/green-orange.html:1587; static/human-practices/opening/this-color-study/green-purple.html:1587; static/human-practices/opening/this-color-study/orange-green.html:1587; static/human-practices/opening/this-color-study/orange-purple.html:1587; static/human-practices/opening/this-color-study/purple-green.html:1587; static/human-practices/opening/this-color-study/purple-orange.html:1587,official
 https://static.igem.wiki/teams/5919/images/logo.webp,static/human-practices/organizations/manifest-part1.json:199; static/human-practices/organizations/manifest-teams.json:55,official
+https://static.igem.wiki/teams/6048/wiki/sustech-med-logo.avif,static/human-practices/organizations/manifest-part2.json:155; static/human-practices/organizations/manifest-team-logos-2026.json:8,official
 https://static.igem.wiki/teams/6085/hero.webp,tests/whitehole_preload.mjs:11,official
-https://static.igem.wiki/teams/6085/wiki/10-18/hp-biology-models-printing-collage.webp,docs/human-practices/inclusivity.md:102,official
+https://static.igem.wiki/teams/6085/wiki/10-18/hp-biology-models-printing-collage.webp,docs/human-practices/inclusivity.md:111,official
 https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-engineering-02-model-puffer-61f4506c421a.avif,assets/images/engineering-overviews/manifest.json:22; docs/design/engineering-model-overview/provenance.json:11,official
 https://static.igem.wiki/teams/6085/wiki/10-19-new/orca-project-overview-882fa65b4ac0.avif,docs/design/engineering-project-overview/provenance.json:12,official
 https://static.igem.wiki/teams/6085/wiki/10-20/new/assets-hero-story-x-clearance-overwhelmed-38c488f68e.avif,docs/releases/asset-uploads-20261021/verification.json:9,official
@@ -163,6 +170,14 @@ https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon
 https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-08-aav9-3346a48c8d5b.avif,assets/images/engineering-cartoons/manifest.json:145; wiki/components/engineering_cartoon_assets.html:10,official
 https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-09-sonar-c615567701ad.avif,assets/images/engineering-cartoons/manifest.json:165; wiki/components/engineering_cartoon_assets.html:11,official
 https://static.igem.wiki/teams/6085/wiki/cartoon-figure/orca-engineering-cartoon-10-puffer-8625152c4d11.avif,assets/images/engineering-cartoons/manifest.json:185; wiki/components/engineering_cartoon_assets.html:12,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-beyotime.avif,docs/qa/community-logos-20261021/upload-verification.json:6; static/human-practices/organizations/manifest-company-logos-20261021.json:51,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-brainxell.avif,docs/qa/community-logos-20261021/upload-verification.json:20; static/human-practices/organizations/manifest-company-logos-20261021.json:87,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-elabscience.avif,docs/qa/community-logos-20261021/upload-verification.json:34; static/human-practices/organizations/manifest-company-logos-20261021.json:63,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genepharma.avif,docs/qa/community-logos-20261021/upload-verification.json:48; static/human-practices/organizations/manifest-company-logos-20261021.json:27,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genewiz.avif,docs/qa/community-logos-20261021/upload-verification.json:62; static/human-practices/organizations/manifest-company-logos-20261021.json:15,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-invitrogen.avif,docs/qa/community-logos-20261021/upload-verification.json:76; static/human-practices/organizations/manifest-company-logos-20261021.json:75,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-procell.avif,docs/qa/community-logos-20261021/upload-verification.json:90; static/human-practices/organizations/manifest-company-logos-20261021.json:99,official
+https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif,docs/qa/community-logos-20261021/upload-verification.json:104; static/human-practices/organizations/manifest-company-logos-20261021.json:39,official
 https://static.igem.wiki/teams/6085/wiki/description/cell-v1.avif,docs/project/results.md:130,official
 https://static.igem.wiki/teams/6085/wiki/description/choice-paddle-fist-v4.avif,docs/project/results.md:152,official
 https://static.igem.wiki/teams/6085/wiki/description/percent-left-v2.avif,docs/project/results.md:141,official
@@ -201,7 +216,7 @@ https://static.igem.wiki/teams/6085/wiki/design/identity/visual-system-primary-c
 https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-a-time-capsule-activity-materials.avif,docs/design/design-communication-sources/figure-asset-map.json:303; docs/design/design-communication-sources/igem-upload-links.json:410; docs/team/design-communication.md:354; docs/team/design-communication.md:355,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-b-time-capsule-activity-mailbox.avif,docs/design/design-communication-sources/figure-asset-map.json:313; docs/design/design-communication-sources/igem-upload-links.json:423; docs/team/design-communication.md:360; docs/team/design-communication.md:361,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/figure-16-c-time-capsule-handwritten-cards.avif,docs/design/design-communication-sources/figure-asset-map.json:323; docs/design/design-communication-sources/igem-upload-links.json:436; docs/team/design-communication.md:366; docs/team/design-communication.md:367,official
-https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif,docs/design/design-communication-sources/figure-asset-map.json:333; docs/design/design-communication-sources/igem-upload-links.json:449; docs/human-practices/inclusivity.md:213; docs/human-practices/inclusivity.md:87; docs/team/design-communication.md:385; docs/team/design-communication.md:386,official
+https://static.igem.wiki/teams/6085/wiki/design/stories/figure-17-aphasia-map-instructions.avif,docs/design/design-communication-sources/figure-asset-map.json:333; docs/design/design-communication-sources/igem-upload-links.json:449; docs/human-practices/inclusivity.md:222; docs/human-practices/inclusivity.md:96; docs/team/design-communication.md:385; docs/team/design-communication.md:386,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-a-time-capsule-post-zh-long.avif,docs/design/design-communication-sources/figure-asset-map.json:343; docs/design/design-communication-sources/igem-upload-links.json:462; docs/team/design-communication.md:404; docs/team/design-communication.md:405; docs/team/design-communication.md:408,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/figure-18-b-time-capsule-post-en-long.avif,docs/design/design-communication-sources/figure-asset-map.json:353; docs/design/design-communication-sources/igem-upload-links.json:475; docs/team/design-communication.md:411; docs/team/design-communication.md:412; docs/team/design-communication.md:415,official
 https://static.igem.wiki/teams/6085/wiki/design/stories/mascot-opening-bottom-left-still.avif,docs/design/design-communication-sources/igem-upload-links.json:487; wiki/components/design-communication/opening.html:11,official
@@ -211,9 +226,9 @@ https://static.igem.wiki/teams/6085/wiki/design/stories/pinyon-script-regular.tt
 https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/caveat-variable.woff2,docs/qa/education-restructure-20261021/upload-verification.json:4,official
 https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/patrickhand-regular.woff2,docs/qa/education-restructure-20261021/upload-verification.json:12,official
 https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/shantellsans-variable.woff2,docs/qa/education-restructure-20261021/upload-verification.json:20,official
-https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-body-p5.avif,docs/human-practices/inclusivity.md:45; docs/qa/education-restructure-20261021/upload-verification.json:28,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-body-p5.avif,docs/human-practices/inclusivity.md:54; docs/qa/education-restructure-20261021/upload-verification.json:28,official
 https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-medicine-p10.avif,docs/qa/education-restructure-20261021/upload-verification.json:38,official
-https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-body-p3.avif,docs/human-practices/inclusivity.md:44; docs/qa/education-restructure-20261021/upload-verification.json:48,official
+https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-body-p3.avif,docs/human-practices/inclusivity.md:53; docs/qa/education-restructure-20261021/upload-verification.json:48,official
 https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-medicine-p20.avif,docs/qa/education-restructure-20261021/upload-verification.json:58,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-00-project-overview-21327319225c.avif,docs/project/description.md:236,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-01-deliver-aav9-4cfe8c8a10c0.avif,assets/images/engineering-overviews/manifest.json:7,official
@@ -328,6 +343,7 @@ https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-opening-2026-07-24.
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-project-presentation-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:31; docs/releases/engagement-2026-10-20/server-assets-ui.json:9,official
 https://static.igem.wiki/teams/6085/wiki/hp/older-learners-feedback-mind-map.avif,docs/human-practices/education.md:95; docs/releases/engagement-2026-10-20/server-assets-ui.json:13,official
 https://static.igem.wiki/teams/6085/wiki/hp/stakeholder-map-summit-page-4.avif,docs/human-practices/human-practices.md:92; docs/human-practices/human-practices.md:93,official
+https://static.igem.wiki/teams/6085/wiki/inclusivity/65bfe70516c26afb5be8314843472ed3.avif,docs/human-practices/inclusivity.md:15; docs/qa/inclusivity-overview-20261021/upload-verification.json:2,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-background.avif,tests/test_dual_environment.py:56; wiki/pages/404.html:15,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-bubbles.avif,wiki/pages/404.html:16,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-island-sign.avif,wiki/pages/404.html:18,official
@@ -366,11 +382,14 @@ https://static.igem.wiki/teams/6193/wiki/home/team-logo.avif,static/human-practi
 https://static.igem.wiki/teams/6309/wiki/home/team-logo.avif,static/human-practices/organizations/manifest-teams.json:39,official
 https://static.igem.wiki/teams/6366/wiki/fonts/source-sans-3-variable-italic.woff2,static/fonts/source-sans-3-provenance.json:17,official
 https://static.igem.wiki/teams/6366/wiki/fonts/source-sans-3-variable.woff2,static/fonts/source-sans-3-provenance.json:11,official
+https://static.igem.wiki/teams/6401/wiki/omni-mask-logo.avif,static/human-practices/organizations/manifest-part2.json:167; static/human-practices/organizations/manifest-team-logos-2026.json:17,official
 https://static.igem.wiki/teams/6419/wiki/common/logo3.webp,static/human-practices/organizations/manifest-teams.json:7,official
 https://static.igem.wiki/teams/6510/wiki/shared/branding/scau-china-logo-dd2502e1.avif,static/human-practices/opening/color-study/cream.html:1996; static/human-practices/opening/color-study/mint.html:1996; static/human-practices/opening/color-study/white.html:1996; static/human-practices/opening/this-color-study/green-orange.html:2005; static/human-practices/opening/this-color-study/green-purple.html:2005; static/human-practices/opening/this-color-study/orange-green.html:2005; static/human-practices/opening/this-color-study/orange-purple.html:2005; static/human-practices/opening/this-color-study/purple-green.html:2005; static/human-practices/opening/this-color-study/purple-orange.html:2005,official
 https://static.igem.wiki/test.avif,tests/team_puzzle_images.mjs:28,official
 https://sustech.edu.cn/uploads/logo1.png,static/human-practices/organizations/manifest-part1.json:142; static/human-practices/organizations/manifest-part1.json:161; static/human-practices/organizations/manifest-part1.json:51,review_external_reference
+https://www.bioalpha2008.com/resource/images/146a79c9f63f4f1d920d5ea04af8fea5_40.png,static/human-practices/organizations/manifest-company-logos-20261021.json:47,review_external_reference
 https://www.cuhk.edu.hk/english/images/cuhk_logo_2x.png?20221027,static/human-practices/organizations/manifest-part2.json:43,review_external_reference
+https://www.fishersci.de/content/dam/fssite/eu/lab-reporter/2025/issue-1/ambient-advantage-invitrogen-antibodies/invitrogen-logo.png,static/human-practices/organizations/manifest-company-logos-20261021.json:71,review_external_reference
 https://www.hku.hk/adobe/dynamicmedia/deliver/dm-aid--afc8d43c-587a-43f0-b93c-26f8bd397e0e/logo-hku.svg.webp?width=208&preferwebp=true,static/human-practices/organizations/manifest-part2.json:55,review_external_reference
 https://www.hkust-gz.edu.cn/wp-content/themes/hkust-gz-official-0827/images/logo-e-white-2x.png,static/human-practices/organizations/manifest-part2.json:7,review_external_reference
 https://www.hsas.edu.cn/lib/img/logo-2.3e1d0ecf.png,static/human-practices/organizations/manifest-part1.json:180,review_external_reference

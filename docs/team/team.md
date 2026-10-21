@@ -98,10 +98,13 @@ members:
     icon: other
   - label: Wet Lab
     icon: wet
+  - label: SONAR
+    icon: sonar
   - label: Wiki
     icon: dry
   - label: Fashion
     icon: other
+  role_layout: one-row
   category: team-members
   quote_lang: en
   quote_source: Team members contribution.xlsx / Sheet1!B19

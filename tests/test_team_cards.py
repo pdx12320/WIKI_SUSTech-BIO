@@ -123,7 +123,7 @@ class TeamCardsTest(unittest.TestCase):
         expected = {
             'Bolin Dong': ['Dry Lab', 'RNA LAMAR Model'],
             'Dengxiang Yang': ['Student Leader', 'Dry Lab', 'Wiki', 'Foundation Model'],
-            'Hansen Zhang': ['Student Leader', 'Wet Lab', 'Wiki', 'Fashion'],
+            'Hansen Zhang': ['Student Leader', 'Wet Lab', 'SONAR', 'Wiki', 'Fashion'],
             'Chenfan Liao': ['Student Leader', 'HP', 'Wiki', 'Inclusivity', 'Builder'],
             'Wenxiang Huang': ['HP', 'Wiki', 'Video Production'],
             'Fengyi Tang': ['HP', 'Interview'],

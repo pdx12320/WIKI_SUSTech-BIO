@@ -1,0 +1,9 @@
+{
+  "fonts": {"display": "Georgia Bold", "body": "Futura Medium", "fallback": "Arial"},
+  "colors": {
+    "ink": "#171536", "indigo900": "#19143D", "indigo700": "#2E267C", "indigo500": "#5D5AD7",
+    "lavender300": "#9D9CF4", "lavender100": "#E9E8FF", "coral400": "#F58F9C", "coral200": "#FFD1D5",
+    "paper": "#FFFEFC", "muted": "#6B6880", "line": "#D9D7E5"
+  },
+  "categorical": ["#2E267C", "#F58F9C", "#9D9CF4", "#5D5AD7", "#FFD1D5", "#171536"]
+}

@@ -23,6 +23,7 @@ if (source) {
     let keyboard = false;
     let touchReveal = false;
     let lastY = scrollY;
+    let touchScrollAt = -Infinity;
     const touch = matchMedia('(hover: none)').matches;
     const render = () => {
       const focused = keyboard && nav.contains(document.activeElement);
@@ -43,10 +44,19 @@ if (source) {
     nav.addEventListener('focusin', render);
     nav.addEventListener('focusout', () => queueMicrotask(render));
     document.addEventListener('pointerleave', () => { nearTop = false; overNav = false; render(); });
+    addEventListener('touchmove', () => { touchScrollAt = performance.now(); }, {passive: true});
+    document.addEventListener('click', event => {
+      if (event.target.closest('[data-content-directory] a')) {
+        touchReveal = false;
+        render();
+      }
+    });
     new MutationObserver(render).observe(nav, {subtree: true, attributes: true, attributeFilter: ['aria-expanded', 'open']});
     addEventListener('scroll', () => {
       const delta = scrollY - lastY;
-      if (Math.abs(delta) > 3) touchReveal = delta < 0;
+      // Image reflow and fragment restoration also scroll the page. Reveal the
+      // mobile header only when a recent touch gesture establishes direction.
+      if (Math.abs(delta) > 3 && performance.now() - touchScrollAt < 500) touchReveal = delta < 0;
       lastY = scrollY;
       render();
     }, {passive: true});

@@ -1,0 +1,15 @@
+{
+  "checked_occurrences": 2954,
+  "hp_issues": [],
+  "unrelated_existing_issues": 691,
+  "unrelated_examples": [
+    "contribution: link escapes team path: /assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx",
+    "contribution: link escapes team path: /assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx",
+    "contribution: link escapes team path: /assets/human-practices/models/biology-brain-model.stl.zip",
+    "contribution: link escapes team path: /assets/human-practices/models/biology-animal-cell-model.stl.zip",
+    "engineering: link escapes team path: /assets/human-practices/attachments/public-perception-survey-findings-en.pdf",
+    "engineering: link escapes team path: /assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf",
+    "engineering: link escapes team path: /static/downloads/rewire-modeling-toolkit.zip",
+    "safety-and-security: link escapes team path: /static/notebook/pdfs/Gfa/2026-08-30_Gfa_Promoter_Expression_qPCR_Zhang_Hansen.pdf"
+  ]
+}

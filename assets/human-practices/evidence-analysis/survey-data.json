@@ -1,0 +1,18 @@
+{
+  "source": "/assets/human-practices/attachments/public-perception-survey-findings-en.pdf",
+  "questionnaire": "/assets/human-practices/attachments/public-perception-questionnaire-bilingual.pdf",
+  "report_pages": {"sample": 1, "priorities_and_barriers": 4},
+  "total_valid_records": 103,
+  "recruitment": null,
+  "collection_dates": null,
+  "respondent_level_data": false,
+  "age": [{"label":"Under 18","count":6},{"label":"18–30","count":96},{"label":"46–60","count":1}],
+  "age_other_listed_bands": {"labels":["31–45","61–70","71–80","81 or older"],"count_each":0},
+  "experience": [{"label":"Direct experience, including diagnosis or caregiving","count":5},{"label":"Some exposure; no long-term caregiving","count":24},{"label":"No relevant experience","count":72},{"label":"Prefer not to answer","count":2}],
+  "questions": [
+    {"id":"Q8","meaning":"Information to prioritize before deciding about an unfamiliar AD treatment","wording":"If you or a family member were considering an unfamiliar new treatment for Alzheimer's disease, which information would you prioritize before making a decision?","multiple_choice":true,"selection_limit":4,"denominator":103,"item_valid_answer_count":null,"missing_or_skipped_count":null,"display_indices":[0,1,2],"options":[{"label":"Actual improvement over existing treatments","count":71},{"label":"Serious adverse effects and their probabilities","count":56},{"label":"Who may benefit or be unsuitable","count":48},{"label":"Size and stage of human studies","count":40},{"label":"Duration of effects","count":29},{"label":"Clarity of molecular mechanism","count":27},{"label":"Cost and long-term financial burden","count":23},{"label":"Alternative options","count":20},{"label":"Individual patient experiences","count":11},{"label":"Institution or team reputation","count":5}]},
+    {"id":"Q10","meaning":"Barriers to understanding or judging unfamiliar biomedical technology","wording":"When learning about an unfamiliar biomedical technology, which issues most hinder your understanding or judgment?","multiple_choice":true,"selection_limit":3,"denominator":103,"item_valid_answer_count":null,"missing_or_skipped_count":null,"display_indices":[0,1,2],"options":[{"label":"“Effective” without saying what improved","count":51},{"label":"Too much technical jargon","count":46},{"label":"“Low risk” without numbers or probabilities","count":33},{"label":"Research stage not stated","count":27},{"label":"Too long; key points unclear","count":27},{"label":"Unclear source reliability","count":16},{"label":"No comparison with alternatives / no treatment","count":12},{"label":"No trusted person to ask","count":8},{"label":"Charts or data hard to understand","count":7},{"label":"No obvious barriers at present","count":7},{"label":"No accessible or easy-read versions","count":3},{"label":"Other","count":1}]}
+  ],
+  "counting_note":"Percentages are counts / 103, rounded to one decimal; multiple-choice groups overlap. Item-level completion and skipped-answer counts were not supplied. No imputation or cross-analysis.",
+  "selected_options_note":"Only the three most-selected options for Q8 and Q10 are plotted; all options are preserved here and in the report."
+}

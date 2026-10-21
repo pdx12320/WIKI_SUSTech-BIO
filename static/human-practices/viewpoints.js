@@ -3,6 +3,16 @@
   const voices = [...document.querySelectorAll('.hp-manuscript .hp-voice')];
   const states = new Map();
   for (const voice of voices) {
+    // Use the same original photograph with cover cropping in the circular
+    // trigger; the profile card keeps its existing SVG portrait and layout.
+    const artwork = voice.querySelector('.hp-voice__avatar svg image');
+    if (artwork && (voice.classList.contains('hp-voice--ye') || voice.classList.contains('hp-voice--dai'))) {
+      const photo = document.createElement('img');
+      photo.className = 'hp-voice__photo';
+      photo.alt = '';
+      photo.src = artwork.getAttribute('href');
+      artwork.closest('svg').replaceWith(photo);
+    }
     const trigger = voice.querySelector('summary');
     const state = { pinned: false, timer: null };
     states.set(voice, state);

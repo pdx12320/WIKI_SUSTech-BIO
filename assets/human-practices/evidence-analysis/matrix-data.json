@@ -1,0 +1,32 @@
+{
+ "title":"Evidence to action",
+ "date":"2026-10-21",
+ "type":"Retrospective qualitative synthesis; no evidence-strength scoring",
+ "columns":["Published evidence","Team conversations","Public questionnaire","Response and next step"],
+ "rows":[
+  {"theme":"Meaningful improvement","cells":[
+   {"text":"US interviews identified memory, progression and independence as desired outcomes.","refs":["5"]},
+   {"text":"Ye asked whether editing preserves normal apoE roles and changes cellular function.","refs":["H2"]},
+   {"text":"Q8: 71/103 selected improvement compared with existing treatment.","refs":["H1"]},
+   {"text":"Evaluation focus: connect editing with controlled cellular readouts; daily-life outcomes remain a future question.","refs":["E1"],"status":"Evaluation focus / planned"}]},
+  {"theme":"Treatment and care workload","cells":[
+   {"text":"Chinese care research and US treatment choices show that care context and stakeholder priorities matter.","refs":["7","8"]},
+   {"text":"Zhou raised repeat dosing and family burden; Dai considered delivery, cost and choice.","refs":["H2"]},
+   {"text":"Q8 covered duration and cost, but did not measure appointments, monitoring or care hours.","refs":["H1"]},
+   {"text":"Priority changed: give delivery burden greater attention; a future use and follow-up schedule remains to be defined.","refs":["E2","H2"],"status":"Priority changed / planned"}]},
+  {"theme":"Understandable information","cells":[
+   {"text":"Beijing interviews identified care-knowledge needs; the global report adds wider stigma concerns.","refs":["6","9"]},
+   {"text":"Ms. Wu raised small print, dense text and limited support time.","refs":["H3"]},
+   {"text":"Q10: 51/103 selected vague effectiveness claims and 46/103 selected jargon; stigma was not assessed.","refs":["H1"]},
+   {"text":"Implemented: shorter workbook text and larger app controls; planned: test comprehension with intended users.","refs":["H3","H4"],"status":"Implemented / planned"}]},
+  {"theme":"Workable ongoing support","cells":[
+   {"text":"Beijing primary care workers described workload and coordination barriers.","refs":["6"]},
+   {"text":"Shokz discussions did not establish a shared match of development resources and responsibilities.","refs":["H4"]},
+   {"text":"Not assessed: partner resources, service capacity and wearable performance.","refs":["H1"]},
+   {"text":"Route stopped: the Shokz partnership did not proceed; Anjia Guardian became a separate support tool.","refs":["H4"],"status":"Route stopped / implemented"}]}
+ ],
+ "links":{
+  "5":"#hp-ref-5","6":"#hp-ref-6","7":"#hp-ref-7","8":"#hp-ref-8","9":"#hp-ref-9","10":"#hp-ref-10",
+  "H1":"#hp-source-H1","H2":"#hp-source-H2","H3":"#hp-source-H3","H4":"#hp-source-H4","E1":"/engineering#engineering-functional-input","E2":"/engineering#engineering-delivery-input"
+ }
+}

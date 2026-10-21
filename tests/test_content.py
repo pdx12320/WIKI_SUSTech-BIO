@@ -16,7 +16,12 @@ class MarkdownContentTest(unittest.TestCase):
             with self.subTest(route=route):
                 content = load_markdown_content(config.markdown_path)
                 self.assertTrue(content.title)
-                self.assertTrue(content.metadata.get("subtitle"))
+                if route == "human-practices":
+                    # HP begins with a question and intentionally omits a repeated tagline.
+                    self.assertIn("subtitle", content.metadata)
+                    self.assertIsInstance(content.metadata["subtitle"], str)
+                else:
+                    self.assertTrue(content.metadata.get("subtitle"))
                 if route == "model":
                     # The custom Model template renders its heading from front matter.
                     self.assertTrue(content.metadata.get("heading"))

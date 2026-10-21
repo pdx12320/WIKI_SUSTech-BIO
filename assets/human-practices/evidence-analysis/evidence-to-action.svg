@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1152pt" height="720pt" viewBox="0 0 1152 720" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<title>Evidence to action matrix with four themes and four evidence/response columns</title>
+<desc>Original ORCA analysis, 21 October 2026. Source references and counting rules are retained in the figure and live HP page.</desc>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-21T03:15:42.449129</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 720 
+L 1152 720 
+L 1152 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 28.8 207.36 
+L 182.016 207.36 
+L 182.016 115.2 
+L 28.8 115.2 
+z
+" style="fill: #e9e8ff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #2e267c" x="44.1216" y="164.251172" transform="rotate(-0 44.1216 164.251172)">Theme</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 182.016 207.36 
+L 417.312 207.36 
+L 417.312 115.2 
+L 182.016 115.2 
+z
+" style="fill: #e9e8ff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #2e267c" x="205.5456" y="164.251172" transform="rotate(-0 205.5456 164.251172)">Published evidence</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 417.312 207.36 
+L 652.608 207.36 
+L 652.608 115.2 
+L 417.312 115.2 
+z
+" style="fill: #e9e8ff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #2e267c" x="440.8416" y="164.251172" transform="rotate(-0 440.8416 164.251172)">Team conversations</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 652.608 207.36 
+L 887.904 207.36 
+L 887.904 115.2 
+L 652.608 115.2 
+z
+" style="fill: #e9e8ff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #2e267c" x="676.1376" y="164.251172" transform="rotate(-0 676.1376 164.251172)">Public questionnaire</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 887.904 207.36 
+L 1123.2 207.36 
+L 1123.2 115.2 
+L 887.904 115.2 
+z
+" style="fill: #e9e8ff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #2e267c" x="911.4336" y="164.251172" transform="rotate(-0 911.4336 164.251172)">Response and next step</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 28.8 299.52 
+L 182.016 299.52 
+L 182.016 207.36 
+L 28.8 207.36 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 248.622305)">Meaningful</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 264.339492)">improvement</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 182.016 299.52 
+L 417.312 299.52 
+L 417.312 207.36 
+L 182.016 207.36 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 240.769453)">US interviews identified memory,</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 256.475156)">progression and independence as</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 272.192344)">desired outcomes. [5]</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 417.312 299.52 
+L 652.608 299.52 
+L 652.608 207.36 
+L 417.312 207.36 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 240.589395)">Ye asked whether editing</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 256.306582)">preserves normal apoE roles and</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 272.221465)">changes cellular function. [H2]</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 652.608 299.52 
+L 887.904 299.52 
+L 887.904 207.36 
+L 652.608 207.36 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 240.743203)">Q8: 71/103 selected improvement</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 256.448906)">compared with existing</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 272.166094)">treatment. [H1]</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 887.904 299.52 
+L 1123.2 299.52 
+L 1123.2 207.36 
+L 887.904 207.36 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 232.637695)">Evaluation focus: connect</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 248.343398)">editing with controlled cellular</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 264.269766)">readouts; daily-life outcomes</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 280.184648)">remain a future question. [E1]</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 28.8 391.68 
+L 182.016 391.68 
+L 182.016 299.52 
+L 28.8 299.52 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 340.71832)">Treatment and care</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 356.424023)">workload</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 182.016 391.68 
+L 417.312 391.68 
+L 417.312 299.52 
+L 182.016 299.52 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 325.012617)">Chinese care research and US</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 340.71832)">treatment choices show that care</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 356.424023)">context and stakeholder</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 372.129727)">priorities matter. [7][8]</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 417.312 391.68 
+L 652.608 391.68 
+L 652.608 299.52 
+L 417.312 299.52 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 332.755137)">Zhou raised repeat dosing and</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 348.681504)">family burden; Dai considered</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 364.387207)">delivery, cost and choice. [H2]</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 652.608 391.68 
+L 887.904 391.68 
+L 887.904 299.52 
+L 652.608 299.52 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 325.006875)">Q8 covered duration and cost,</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 340.712578)">but did not measure</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 356.418281)">appointments, monitoring or care</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 372.135469)">hours. [H1]</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 887.904 391.68 
+L 1123.2 391.68 
+L 1123.2 299.52 
+L 887.904 299.52 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 317.043691)">Priority changed: give delivery</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 332.760879)">burden greater attention; a</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 348.687246)">future use and follow-up</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 364.392949)">schedule remains to be defined.</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 380.098652)">[E2][H2]</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 28.8 483.84 
+L 182.016 483.84 
+L 182.016 391.68 
+L 28.8 391.68 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 432.87832)">Understandable</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 448.584023)">information</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 182.016 483.84 
+L 417.312 483.84 
+L 417.312 391.68 
+L 182.016 391.68 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 417.225117)">Beijing interviews identified</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 432.942305)">care-knowledge needs; the global</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 448.659492)">report adds wider stigma</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 464.37668)">concerns. [6][9]</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 417.312 483.84 
+L 652.608 483.84 
+L 652.608 391.68 
+L 417.312 391.68 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 425.025469)">Ms. Wu raised small print, dense</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 440.731172)">text and limited support time.</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 456.436875)">[H3]</text>
+    </g>
+    <g id="patch_20">
+     <path d="M 652.608 483.84 
+L 887.904 483.84 
+L 887.904 391.68 
+L 652.608 391.68 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 417.204609)">Q10: 51/103 selected vague</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 432.921797)">effectiveness claims and 46/103</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 448.6275)">selected jargon; stigma was not</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 464.344687)">assessed. [H1]</text>
+    </g>
+    <g id="patch_21">
+     <path d="M 887.904 483.84 
+L 1123.2 483.84 
+L 1123.2 391.68 
+L 887.904 391.68 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 417.166875)">Implemented: shorter workbook</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 432.872578)">text and larger app controls;</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 448.589766)">planned: test comprehension with</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 464.295469)">intended users. [H3][H4]</text>
+    </g>
+    <g id="patch_22">
+     <path d="M 28.8 576 
+L 182.016 576 
+L 182.016 483.84 
+L 28.8 483.84 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 525.032578)">Workable ongoing</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #2e267c" transform="translate(44.1216 540.749766)">support</text>
+    </g>
+    <g id="patch_23">
+     <path d="M 182.016 576 
+L 417.312 576 
+L 417.312 483.84 
+L 182.016 483.84 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 517.179727)">Beijing primary care workers</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 532.896914)">described workload and</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(205.5456 548.602617)">coordination barriers. [6]</text>
+    </g>
+    <g id="patch_24">
+     <path d="M 417.312 576 
+L 652.608 576 
+L 652.608 483.84 
+L 417.312 483.84 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 509.332617)">Shokz discussions did not</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 525.03832)">establish a shared match of</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 540.744023)">development resources and</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(440.8416 556.449727)">responsibilities. [H4]</text>
+    </g>
+    <g id="patch_25">
+     <path d="M 652.608 576 
+L 887.904 576 
+L 887.904 483.84 
+L 652.608 483.84 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 517.080879)">Not assessed: partner resources,</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 532.786582)">service capacity and wearable</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(676.1376 548.701465)">performance. [H1]</text>
+    </g>
+    <g id="patch_26">
+     <path d="M 887.904 576 
+L 1123.2 576 
+L 1123.2 483.84 
+L 887.904 483.84 
+z
+" style="fill: #ffffff; stroke: #d9d7e5; stroke-width: 0.65; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_25">
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 509.332617)">Route stopped: the Shokz</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 525.03832)">partnership did not proceed;</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 540.744023)">Anjia Guardian became a separate</text>
+     <text style="font-size: 10.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #171536" transform="translate(911.4336 556.449727)">support tool. [H4]</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 25px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #2e267c" x="40.32" y="43.2" transform="rotate(-0 40.32 43.2)">Evidence to action</text>
+  </g>
+  <g id="text_27">
+   <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #6b6880" x="40.32" y="79.2" transform="rotate(-0 40.32 79.2)">Figure A / Figure 12 · Retrospective qualitative synthesis · 21 October 2026</text>
+  </g>
+  <g id="text_28">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #6b6880" transform="translate(40.32 619.998969)">Source key: [5–9] published studies/report; [H1] team survey; [H2] research interviews; [H3] care staff/workbook; [H4] Shokz/Anjia.</text>
+   <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #6b6880" transform="translate(40.32 637.593469)">[E1] functional evaluation and [E2] delivery discussion in Engineering. Full links: Human Practices / Sources and records.</text>
+   <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #6b6880" transform="translate(40.32 655.2)">Statuses describe the recorded response, not evidence strength. No scores, pooled percentages or causal timeline are inferred.</text>
+  </g>
+ </g>
+</svg>

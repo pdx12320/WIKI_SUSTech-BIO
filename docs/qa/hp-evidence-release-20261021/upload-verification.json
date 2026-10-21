@@ -1,0 +1,88 @@
+[
+  {
+    "local_path": "assets/human-practices/overview/hp-hand-drawn-overview-20261021.jpg",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-hand-drawn-overview-20261021.avif",
+    "status": 200,
+    "content_type": "image/avif",
+    "source_sha256": "4f0a43e0e78ab71331c0bcca2ca3c69cbbd61744a96f17377528a984348f58ab",
+    "remote_sha256": "6957413577f75967c71ac4cd0f4be27d98bec750d7ef4f99680f2ea9f9c5cdf0",
+    "remote_bytes": 127727,
+    "source_dimensions": [
+      1685,
+      1000
+    ],
+    "remote_dimensions": [
+      1685,
+      1000
+    ],
+    "rgb_rms_at_remote_size": [
+      1.1269741004767593,
+      1.0298655957942247,
+      1.5698950048998486
+    ]
+  },
+  {
+    "local_path": "assets/human-practices/evidence-analysis/evidence-to-action.svg",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action.svg",
+    "status": 200,
+    "content_type": "image/svg+xml",
+    "source_sha256": "708cf56b34af735e2fbabdcc22003a0b40ee7e5b295bbbcf599208cff70d4d95",
+    "remote_sha256": "708cf56b34af735e2fbabdcc22003a0b40ee7e5b295bbbcf599208cff70d4d95",
+    "remote_bytes": 30996,
+    "byte_identical": true
+  },
+  {
+    "local_path": "assets/human-practices/evidence-analysis/evidence-to-action.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action-raster.avif",
+    "status": 200,
+    "content_type": "image/avif",
+    "source_sha256": "a86d756bfc35525ba005c197964af4d55ac2acef480fde058260a2d3ef18b1ff",
+    "remote_sha256": "d0508c629e5cdaa014a2fd9ec1783bf82593317d9ed8f91813541a216adbe716",
+    "remote_bytes": 99510,
+    "source_dimensions": [
+      3200,
+      2000
+    ],
+    "remote_dimensions": [
+      3200,
+      2000
+    ],
+    "rgb_rms_at_remote_size": [
+      0.7320593811297004,
+      0.6331862630774613,
+      1.0558783369782714
+    ]
+  },
+  {
+    "local_path": "assets/human-practices/evidence-analysis/public-questionnaire.svg",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire.svg",
+    "status": 200,
+    "content_type": "image/svg+xml",
+    "source_sha256": "8ae50c9aa182b3705deb5a592958ae038154a73afb569816dc2ac2e30e901a8f",
+    "remote_sha256": "8ae50c9aa182b3705deb5a592958ae038154a73afb569816dc2ac2e30e901a8f",
+    "remote_bytes": 24199,
+    "byte_identical": true
+  },
+  {
+    "local_path": "assets/human-practices/evidence-analysis/public-questionnaire.png",
+    "url": "https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire-raster.avif",
+    "status": 200,
+    "content_type": "image/avif",
+    "source_sha256": "ed0064e3888233be59bb2c8f613d881adef74f03abf23375e88e4a705ac5861c",
+    "remote_sha256": "51ef0bd05782218e148c834bb373ff2fe7ff389964867ce799b97cb93641bdc9",
+    "remote_bytes": 196143,
+    "source_dimensions": [
+      2400,
+      2800
+    ],
+    "remote_dimensions": [
+      2400,
+      2800
+    ],
+    "rgb_rms_at_remote_size": [
+      0.5949058298828239,
+      0.5268732171070778,
+      0.9492854455551593
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+/* Remove section-heading divider lines on Inclusivity only. */
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .markdown-content h2 { border-top:0; }

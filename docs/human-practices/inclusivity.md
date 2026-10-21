@@ -8,7 +8,9 @@ eyebrow: Engagement
 
 <link rel="stylesheet" href="static/human-practices/title-fonts/inclusivity-title.css">
 <link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/inclusivity.css">
+<link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/reading-refinements.css?v=20261021">
 <link rel="stylesheet" href="static/human-practices/inclusivity-overview/overview.css">
+<link rel="stylesheet" href="static/human-practices/inclusivity-spectrum/before-i-sign.css?v=20261021">
 
 <figure class="inc-overview-hero" id="inclusivity-figure-1">
   <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/1-2-1.pdf" target="_blank" rel="noopener" aria-label="Open Inclusivity Figure 1 as a PDF">
@@ -45,6 +47,11 @@ The resulting classroom sequence remains a teaching design. Its access question 
 <span id="what-participants-changed"></span>
 
 At **Shahe Subdistrict Elderly Service Center**, our first **Practical Healthy Living Workbook for Older Adults** was used in a facilitated lesson. Older readers and caregivers both participated in the workbook work. Their perspectives brought attention to following a lesson, returning to information at home and keeping useful notes.
+
+<figure class="inc-model-photo" id="senior-center-visit" style="max-width:36rem">
+  <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/77f8474a7fc3369b130f37b222e56f5c.avif" target="_blank" rel="noopener" aria-label="Open the senior-center visit photograph at full size"><img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/77f8474a7fc3369b130f37b222e56f5c.avif" alt="Team members visiting the senior center." width="1280" height="1280" loading="lazy" decoding="async"></a>
+  <figcaption>Team members visited the senior center to gain firsthand understanding.</figcaption>
+</figure>
 
 The specific layout suggestions in the written account include those of **Ms. Wu (a pseudonym)**, a service-center staff member: small type and dense text made pages difficult to follow; pictures, fewer words and writing space could help. She also raised printing costs. We shortened student reading sections, added illustrations and steps, and placed note-taking and personal-record pages in the student book. A separate teacher’s guide holds the fuller teaching material.
 
@@ -126,9 +133,28 @@ These stages have different records. The physical models were brought to learner
 
 **Before I Sign (签之前)** explores how someone can gather information, ask questions and express a treatment or research preference. The latest local design, dated **21 October 2026**, uses a fictional older person discussing chronic knee pain, with a separate optional memory-research invitation. It gives everyday circumstances—notes, changing information, support at home and time to ask—a place in the decision.
 
-An earlier software prototype used timed clue-dragging and branching choices. The current design replaces time pressure with revisitable information and proposes point-and-select actions, notes, questions and ways to pause, defer or decline. A proposed two-person version gives the person and a companion different information to discuss, while keeping the person’s own wishes central. These are design changes and planned interactions: the current materials contain a narrative and interface drafts, with no confirmed complete-game release or participant session.
+An earlier software prototype used timed clue-dragging and branching choices. The current local single-player prototype replaces time pressure with revisitable information, point-and-select actions, notes, questions and ways to pause, defer or decline. Its five chapters connect a family conversation, medicine information, a suspicious phone call, a consultation and the person’s own decision; an optional research invitation follows separately. A two-person version with different information for the person and a companion remains a design proposal. Target-user sessions and accessibility evaluation are still ahead.
 
 The access question is whether someone can find the explanation they need, return to it and say what matters to them. The game supports understanding, questions and expression of choice. It does not assess capacity to consent or replace the consent process in actual care or research.
+
+The three English interface illustrations below make the single-player design readable on this page. They adapt the local Chinese prototype for explanation; they are not participant-session records or an English-language game release. Open any image at full size.
+
+<figure class="inc-consent-figure" id="before-i-sign-opening">
+  <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-01-opening-en.avif" target="_blank" rel="noopener" aria-label="Open Before I Sign opening illustration at full size"><img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-01-opening-en.avif" alt="English opening illustration: a daughter hesitantly asks whether her mother would stay in hospital tomorrow. A face-down envelope and a packed overnight bag suggest that something has been left unsaid." width="1280" height="720" loading="lazy" decoding="async"></a>
+  <figcaption><strong>1. Begin with a conversation, not a test.</strong> The daughter’s unfinished question introduces hospitalisation without explaining everything at once. The envelope and packed bag give the player concrete things to ask about. The scene starts from a family situation rather than assuming biomedical vocabulary.</figcaption>
+</figure>
+
+<figure class="inc-consent-figure" id="before-i-sign-information">
+  <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-02-information-en.avif" target="_blank" rel="noopener" aria-label="Open Before I Sign information illustration at full size"><img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-02-information-en.avif" alt="English clue-sorting illustration: an appointment is confirmed, surgery remains to be discussed, and packing a bag does not establish the older person’s consent. Notes can be revisited without a countdown." width="1280" height="720" loading="lazy" decoding="async"></a>
+  <figcaption><strong>2. Keep information outside memory.</strong> Notes distinguish a confirmed appointment from a decision still to be made. The player can revisit the envelope, ask the daughter and change a placement. Point-and-select controls replace dragging, and there is no countdown. These choices aim to reduce memory and movement demands; their usefulness still needs evaluation with players.</figcaption>
+</figure>
+
+<figure class="inc-consent-figure" id="before-i-sign-choice">
+  <a href="https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-03-choice-en.avif" target="_blank" rel="noopener" aria-label="Open Before I Sign decision illustration at full size"><img src="https://static.igem.wiki/teams/6085/wiki/inclusivity/before-i-sign-03-choice-en.avif" alt="English decision illustration offering discussion of medicine and rehabilitation, exploration of surgical assessment, more time to ask questions, or refusal of the surgical path while retaining support." width="1280" height="720" loading="lazy" decoding="async"></a>
+  <figcaption><strong>3. Let the person choose the next step.</strong> The decision connects treatment to pain, daily life and available help. Further assessment, a different care discussion, deferral and refusal each lead to a supported continuation. The design keeps the older person’s wishes central rather than making agreement the condition for a positive ending.</figcaption>
+</figure>
+
+<p class="inc-consent-credit">English interface illustrations prepared from the local prototype, 21 October 2026. Background artwork is AI-assisted; English text and layout were typeset separately. All characters and dialogue are fictional.</p>
 
 <p id="game-design-conversation">Before our game work began, a woman creator who had made a mother–daughter shared album and an autism-related graduation game shared her starting ideas in a written conversation with Chenfan Liao. That exchange is part of our early game-design context. The record has not yet linked particular ideas to a specific team game. She had not seen our games or reviewed their prototypes.</p>
 
@@ -156,7 +182,7 @@ WORLDPROOF was our response. We prepared the challenge material and the process 
 
 A separate experience came in **late August 2026**, when Chenfan Liao attended a large hackathon as a **public judge**, tried products and had short conversations at booths. Videos were recorded and are awaiting organization. The account below draws on Liao’s recollection of those encounters, separately from Liao’s April participation and earlier written exchange.
 
-One product explored bereavement and giving memories a place. Another addressed mothers’ and homemakers’ sense of personal worth. **手屿** offered sign-language learning through an island-based interaction. Together, these products raised design questions we could carry into our own work: what can someone choose to preserve, how can a person express priorities beyond an assigned role, and how can an unfamiliar communication method become something to practise?
+One product explored bereavement and giving memories a place. Another addressed mothers’ and homemakers’ sense of personal worth. **Shouyu** (手屿, literally “Hand Island”; pronounced the same as 手语, Mandarin for “sign language”) offered sign-language learning through an island-based interaction. Together, these products raised design questions we could carry into our own work: what can someone choose to preserve, how can a person express priorities beyond an assigned role, and how can an unfamiliar communication method become something to practise?
 
 These are questions drawn from product encounters, rather than advice we attribute to a builder about our later prototypes. The earlier creator’s written exchange belongs with the [starting context for our game work](#game-design-conversation).
 

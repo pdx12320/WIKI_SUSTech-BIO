@@ -1,0 +1,42 @@
+/* The reading surface keeps its size. Center the directory independently in
+   the full left gutter, and vertically in the viewport below the fixed menu. */
+@media screen and (min-width: 761px) {
+  body:not(.engineering-workspace-page) :is(.content-page .markdown-page, .content-reading-page .markdown-page, .model-page .model-layout) {
+    --directory-shell-width: min(1260px, calc(100vw - clamp(48px, 9vw, 176px)));
+    --directory-shell-left: calc((100vw - var(--directory-shell-width)) / 2);
+    --directory-leading-space: 160px;
+    --directory-width: min(224px, calc(var(--directory-shell-left) + var(--directory-leading-space) - 32px));
+  }
+
+  body:not(.engineering-workspace-page) :is(.content-page .markdown-page > .content-directory, .content-reading-page .markdown-page > .markdown-toc, .model-page .model-sidebar) {
+    position: sticky;
+    top: calc(var(--nav-h, 100px) + 24px);
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    width: var(--directory-width);
+    height: calc(100dvh - var(--nav-h, 100px) - 48px);
+    max-height: calc(100dvh - var(--nav-h, 100px) - 48px);
+    margin: 0;
+    margin-left: calc((var(--directory-leading-space) - var(--directory-width) - var(--directory-shell-left)) / 2);
+    padding: 0 6px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body:not(.engineering-workspace-page) :is(.content-page .markdown-page > .content-directory > ol, .content-reading-page .markdown-page > .markdown-toc > ol, .model-page .model-sidebar > nav) {
+    flex: 0 0 auto;
+  }
+}
+
+@media screen and (min-width: 761px) and (max-width: 1100px) {
+  body:not(.engineering-workspace-page) :is(.content-page .markdown-page, .content-reading-page .markdown-page, .model-page .model-layout) {
+    --directory-leading-space: 132px;
+  }
+}
+
+/* Collapsed mobile directories follow the menu when it leaves the viewport. */
+@media screen and (max-width: 760px) {
+  body:has(.site-nav.is-scroll-hidden) :is(.content-mobile-directory, .mobile-toc, .model-page .model-sidebar) { top: 0; }
+}

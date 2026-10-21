@@ -58,23 +58,16 @@
   let navigation = null;
   let queued = false;
 
-  function offset(target) {
-    return (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0)
-      + (target ? parseFloat(getComputedStyle(target).scrollMarginTop) || 0 : 0);
-  }
-
-  function destination(target) {
-    return Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight,
-      scrollY + target.getBoundingClientRect().top - offset(target)));
-  }
-
+  const anchors = globalThis.ORCAReadingAnchors;
+  const offset = () => anchors.offset();
+  const destination = target => anchors.destination(target);
   function update() {
     queued = false;
     const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 100;
     if (sidebar) sidebar.classList.toggle('is-long-directory', sidebar.offsetHeight > innerHeight - header - 56);
     let active = navigation?.target;
     if (!active) for (const target of targets) {
-      if (target.getBoundingClientRect().top <= offset(target) + 36) active = target;
+      if (anchors.top(target) <= offset(target) + 2) active = target;
     }
     for (const link of links) {
       if (targetFor(link.hash) === active) link.setAttribute('aria-current', 'location');
@@ -87,6 +80,7 @@
   }
 
   function cancel() {
+    anchors.release();
     if (!navigation) return;
     cancelAnimationFrame(navigation.frame);
     navigation = null;
@@ -96,6 +90,7 @@
 
   function navigate(target, focus) {
     cancel();
+    anchors.prepare(target);
     const trip = {target, frame: 0};
     navigation = trip;
     const start = scrollY;
@@ -103,6 +98,7 @@
     const finish = () => {
       if (navigation !== trip) return;
       scrollTo({top: destination(target), behavior: 'instant'});
+      anchors.settle(target);
       navigation = null;
       page.classList.remove('is-reading-navigating');
       if (focus) {
@@ -278,15 +274,11 @@
     });
   });
 
-  function offset(target) {
-    return (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0)
-      + (parseFloat(getComputedStyle(target).scrollMarginTop) || 0);
-  }
-  function destination(target) {
-    return Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight,
-      scrollY + target.getBoundingClientRect().top - offset(target)));
-  }
+  const anchors = globalThis.ORCAReadingAnchors;
+  const offset = () => anchors.offset();
+  const destination = target => anchors.destination(target);
   function cancel() {
+    anchors.release();
     if (!navigation) return;
     cancelAnimationFrame(navigation.frame);
     navigation = null;
@@ -295,6 +287,7 @@
   }
   function navigate(target, {focus = false, animate = true} = {}) {
     cancel();
+    anchors.prepare(target);
     const trip = {target, frame: 0};
     navigation = trip;
     update();
@@ -302,6 +295,7 @@
     const finish = () => {
       if (navigation !== trip) return;
       scrollTo({top: destination(target), behavior: 'instant'});
+      anchors.settle(target);
       navigation = null;
       page.classList.remove('is-content-navigating');
       if (focus) {
@@ -344,15 +338,13 @@
 
   function update() {
     scheduled = false;
-    const nav = document.querySelector('.site-nav');
-    const top = (nav?.getBoundingClientRect().bottom || 100) +
-      (innerWidth <= 760 && mobile ? mobile.querySelector('summary').offsetHeight : 0) + 48;
+    const top = anchors.offset() + 2;
     // Opening the mobile menu moves the article; that is not a chapter change.
     const browsingDirectory = innerWidth <= 760 && mobile?.open;
     let active = navigation?.target || (browsingDirectory && currentHeading) || headings[0];
     if (!navigation && !browsingDirectory) for (const heading of headings) {
-      if (!heading.getClientRects().length) continue;
-      if (heading.getBoundingClientRect().top <= top) active = heading;
+      if (!heading.getClientRects().length || !links.some(link => targets.get(link) === heading)) continue;
+      if (anchors.top(heading) <= top) active = heading;
       else break;
     }
     if (!active) return;
@@ -388,11 +380,16 @@
   addEventListener('keydown', event => {
     if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' ', 'Tab', 'Escape'].includes(event.key)) cancel();
   });
+  // Native restoration can otherwise run after our reduced-motion landing.
+  const previousRestoration = history.scrollRestoration;
+  history.scrollRestoration = 'manual';
+  addEventListener('pagehide', () => { history.scrollRestoration = previousRestoration; });
+  addEventListener('pageshow', () => { history.scrollRestoration = 'manual'; });
   const followHistory = () => {
     const target = targetFor(location.hash);
     if (navigation?.target === target) return;
     cancel();
-    if (target && article.contains(target)) navigate(target);
+    if (!location.hash || (target && article.contains(target))) navigate(target);
     else schedule();
   };
   addEventListener('popstate', followHistory);
@@ -419,5 +416,9 @@
     }
     schedule();
   });
+  const initialTarget = targetFor(location.hash);
+  if (initialTarget && article.contains(initialTarget)) {
+    requestAnimationFrame(() => navigate(initialTarget, {animate: false}));
+  }
   update();
 })();

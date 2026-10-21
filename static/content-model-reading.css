@@ -151,7 +151,7 @@ body:not(.ot) .content-page--model-reading .markdown-content :is(th, td) {
 
 @media (min-width: 761px) and (max-width: 1100px) {
   .content-page--model-reading .markdown-page {
-    grid-template-columns: 224px minmax(0, 1fr);
+    grid-template-columns: 120px minmax(0, 1fr);
   }
 
   .content-page--model-reading .markdown-page--without-toc {

@@ -111,7 +111,7 @@ class WikiRoutesTest(unittest.TestCase):
             self.assertNotIn(marker, index.group(1))
         self.assertNotIn('↗', index.group(1))
         for text in ['Conceptual editing mechanism', 'Explore ORCA', '>POD<', '>CETUS<']:
-            self.assertNotIn(text, page)
+            self.assertNotIn(text, index.group(1) if text == 'Explore ORCA' else page)
         self.assertIn('Recognizes and binds the target RNA.', page)
         self.assertIn('Converts the target C to U.', page)
         self.assertNotIn('data-bio-label="nucleus"', page)

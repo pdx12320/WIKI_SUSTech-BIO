@@ -1,0 +1,15 @@
+{
+  "source_page": "https://www.sustech.edu.cn/en/",
+  "source_image": "https://www.sustech.edu.cn/static/images/sustech-logo-en.png",
+  "accessed_on": "2026-10-21",
+  "sha256": "518adeb797cd4b06065f18a3e916bc5f8e0f0a45ad0c99b19dd0cd3e54fc1d80",
+  "original_canvas": [
+    433,
+    86
+  ],
+  "format": "PNG with RGBA transparency",
+  "adaptation": "Source image bytes unchanged; displayed directly on the dark footer without a background, recoloring or compositing.",
+  "igem_upload": "https://static.igem.wiki/teams/6085/wiki/wiki-new/download-5.avif",
+  "uploaded_sha256": "2e3d9ebc501ed93202a002ce7a09452499e654d74d96bf506eb0a4200e15d0a2",
+  "upload_verification": "HTTP 200; AVIF 433 x 86 RGBA; alpha range 0-255. User identifies this upload as the source PNG conversion; source PNG retained unchanged."
+}

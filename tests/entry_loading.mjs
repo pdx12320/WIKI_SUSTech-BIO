@@ -10,6 +10,7 @@ function run(options = {}) {
   const storage = options.storage || new Map(options.seen ? [['orca.entry-seen.v1', '1']] : []);
   const root = { dataset: {}, hasAttribute: name => name === 'data-wh-cover' ? !!options.cover : 'entryLoading' in root.dataset,
     removeAttribute() { delete root.dataset.entryLoading; } };
+  const homeScene = {dataset:{},classList:{contains:()=>ready,add:()=>{ready=true;}}};
   const positions = [], eyes = [], mask = [];
   const ctx = { setTransform() {}, clearRect() { positions.length = 0; eyes.length = 0; mask.length = 0; }, save() {}, restore() {},
     beginPath() {}, moveTo(x, y) { mask.push([x, y]); }, lineTo(x, y) { mask.push([x, y]); }, closePath() {}, clip() {}, ellipse(...args) { eyes.push(args); }, fill() {},
@@ -21,7 +22,7 @@ function run(options = {}) {
     document: { documentElement: root, readyState: options.content ? 'loading' : 'complete',
       currentScript: { dataset: { home: options.home || '/' } },
       addEventListener: (name, fn) => documentEvents.set(name, fn), removeEventListener: name => documentEvents.delete(name),
-      querySelector: selector => selector === '[data-entry-loader]' ? layer : selector === '[data-ot]' ? (options.content ? null : {}) : ready ? {} : null,
+      querySelector: selector => selector === '[data-entry-loader]' ? layer : selector === '[data-ot]' ? (options.content ? null : homeScene) : ready ? {} : null,
       createElement: () => ({}) },
     location: { href: `https://wiki.test${options.path || '/'}`, origin: 'https://wiki.test',
       assign: url => assigned.push(url), search: options.preview ? '?loading=preview' : '' }, URL, URLSearchParams, Math,
@@ -160,11 +161,11 @@ assert.ok(click(frozenClick, '/sustech/model/index.html').defaultPrevented);
 assert.equal(run({ seen: true, content: true, path: '/sustech/model/index.html', home: '/sustech/index.html' }).root.dataset.entryLoading, 'active');
 assert.equal(click(frozenClick, '/sustech/team/index.html').defaultPrevented, false);
 assert.ok(run({ content: true, path: '/sustech/team/index.html', home: '/sustech/index.html' }).removed);
-assert.ok(run({ seen: true }).removed, 'Returning Home does not replay the loader');
+assert.equal(run({ seen: true }).root.dataset.entryLoading, 'active', 'Returning Home retains the original cover until its scene is ready');
 assert.ok(run({ cover: true }).removed, 'A white-hole return does not add a second loader');
 assert.ok(run({ reduced: true }).removed); assert.ok(run({ history: true }).removed);
 assert.ok(run({ noCanvas: true }).removed, 'Missing Canvas never traps the visitor');
-const failed = run({ blocked: true }); failed.advance(3500);
+const failed = run({ blocked: true }); failed.advance(12300);
 assert.ok(failed.removed, 'Failed Home boot and blocked storage still reveal the site');
 const restored = run(); restored.events.get('pagehide')();
 assert.ok(restored.removed); assert.equal(restored.frames.size, 0);

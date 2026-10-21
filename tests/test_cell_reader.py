@@ -49,6 +49,10 @@ class CellReaderRenderedRouteTests(unittest.TestCase):
                 self.assertEqual(html.count('data-cell-reader aria-label='), expected)
                 self.assertEqual(html.count('cell-reader/cell-reader.js'), expected)
                 self.assertEqual(html.count('cell-reader/cell-reader.css'), expected)
+                if expected:
+                    self.assertIn('data-cell-reader-drag', html)
+                    self.assertNotIn('data-cell-reader-top', html)
+                    self.assertNotIn('A little break for your eyes', html)
                 if slug == 'human-practices':
                     self.assertIn('data-cell-reader-start="#main-content > .content-overview" hidden', html)
                 else:

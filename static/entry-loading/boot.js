@@ -39,13 +39,21 @@
       Date.now() >= intent.at && Date.now() - intent.at < 15000;
   } catch { /* Native navigation works with blocked storage. */ }
   const preview = new URLSearchParams(location.search).get('loading') === 'preview';
+  const isHome = canonical(location.href) === canonical(home);
   if (!preview && ownOpenings.has(pageName(location.href))) return;
   if (root.hasAttribute('data-wh-cover')) return;
   if (!preview && (matchMedia('(prefers-reduced-motion: reduce)').matches ||
       performance.getEntriesByType('navigation')[0]?.type === 'back_forward')) return;
   try {
-    if (!preview && !homeIntent && !ordinaryPage(location.href) && sessionStorage.getItem('orca.entry-seen.v1')) return;
+    if (!preview && !isHome && !homeIntent && !ordinaryPage(location.href) && sessionStorage.getItem('orca.entry-seen.v1')) return;
   } catch { /* A private session can still show the loading surface. */ }
   root.dataset.entryLoading = preview ? 'preview' : 'active';
-  window.__orcaEntryWatchdog = setTimeout(() => root.removeAttribute('data-entry-loading'), 4500);
+  window.__orcaEntryWatchdog = setTimeout(() => {
+    const scene = document.querySelector('[data-ot]');
+    if (scene && !scene.classList.contains('is-ready')) {
+      scene.dataset.homeStartup = 'fallback';
+      scene.classList.add('ot--static', 'is-ready');
+    }
+    root.removeAttribute('data-entry-loading');
+  }, isHome ? 15000 : 4500);
 })();

@@ -2,11 +2,7 @@
 <aside class="cell-reader" data-cell-reader aria-label="Page reading companion"{% if request.view_args and request.view_args.get('page', '')|lower == 'human-practices' %} data-cell-reader-start="#main-content > .content-overview" hidden{% endif %}>
   <div class="cell-reader__rail" aria-hidden="true"><i class="cell-reader__checkpoint cell-reader__first"></i><i class="cell-reader__checkpoint cell-reader__second"></i></div>
   <div class="cell-reader__traveler">
-    <div class="cell-reader__tip" hidden>
-      <div role="status" aria-live="polite"><strong>A little break for your eyes</strong><p data-cell-reader-message></p></div>
-      <button type="button" data-cell-reader-dismiss aria-label="Dismiss eye-rest reminder">×</button>
-    </div>
-    <button class="cell-reader__button" type="button" data-cell-reader-top aria-label="Back to top" title="Back to top"><svg class="cell-reader__cell" viewBox="0 0 260 270" aria-hidden="true"><g class="cell-reader__swim-body" stroke="#354077" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <div class="cell-reader__button" role="slider" tabindex="0" data-cell-reader-drag aria-label="Page reading position" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" title="Drag to scroll"><svg class="cell-reader__cell" viewBox="0 0 260 270" aria-hidden="true"><g class="cell-reader__swim-body" stroke="#354077" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
 <g class="cell-reader__tail"><path fill="#f59daf" d="M110 142Q113 201 77 229L101 225L112 240L127 226L143 241L154 224L179 230Q145 199 148 142Z"/><path fill="#354077" stroke="none" d="M111 161Q129 165 149 161L152 177Q130 181 109 177ZM105 193Q132 200 157 193L165 209Q132 217 97 208Z"/></g>
 <g class="cell-reader__fin cell-reader__fin-lt"><path fill="#4259a0" d="M83 79L53 62L39 21L39 57L11 51L33 77L14 96L48 88L73 100Z"/><path d="M51 69L74 85" fill="none"/></g>
 <g class="cell-reader__fin cell-reader__fin-rt"><path fill="#4259a0" d="M177 79L207 62L221 21L221 57L249 51L227 77L246 96L212 88L187 100Z"/><path d="M209 69L186 85" fill="none"/></g>
@@ -14,7 +10,7 @@
 <g class="cell-reader__fin cell-reader__fin-rb"><path fill="#4259a0" d="M180 120L211 114L238 105L225 125L249 144L219 140L217 160L199 139L176 137Z"/></g>
 <path fill="#f59daf" d="M71 77Q130 41 189 77L181 109L190 136Q162 155 145 156L145 165L115 165L115 156Q94 153 70 136L78 109Z"/>
 <g class="cell-reader__eyes-open"><ellipse cx="104" cy="104" rx="14" ry="25" fill="#fffdf8"/><ellipse cx="157" cy="104" rx="14" ry="25" fill="#fffdf8"/><path stroke="none" fill="#354077" d="M90 103V95Q91 77 104 78Q120 77 118 105L111 115L118 114Q115 130 105 130Q92 130 91 113L100 111L100 102ZM143 103V95Q144 77 157 78Q173 77 171 105L164 115L171 114Q168 130 158 130Q145 130 144 113L153 111L153 102Z"/><path d="M86 99L115 101M143 101L173 99" fill="none" stroke-width="2"/></g>
-<g class="cell-reader__eyes-closed" fill="none"><path d="M89 109Q104 122 119 108M142 108Q157 122 172 109" stroke-width="4"/></g><ellipse cx="131" cy="134" rx="5" ry="3" fill="#fffdf8" stroke-width="2"/><g fill="#e87993" stroke="none" opacity=".45"><ellipse cx="88" cy="128" rx="8" ry="4"/><ellipse cx="175" cy="128" rx="8" ry="4"/></g></g></svg><span class="cell-reader__top-label">↑ Back to top</span></button>
+<g class="cell-reader__eyes-closed" fill="none"><path d="M89 109Q104 122 119 108M142 108Q157 122 172 109" stroke-width="4"/></g><ellipse cx="131" cy="134" rx="5" ry="3" fill="#fffdf8" stroke-width="2"/><g fill="#e87993" stroke="none" opacity=".45"><ellipse cx="88" cy="128" rx="8" ry="4"/><ellipse cx="175" cy="128" rx="8" ry="4"/></g></g></svg></div>
     <output class="cell-reader__percent" data-cell-reader-value aria-label="Page reading progress">0%</output>
   </div>
 </aside>

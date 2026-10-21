@@ -179,7 +179,15 @@
   if (preview) {
     clearTimeout(window.__orcaEntryWatchdog);
     layer.addEventListener('click', finish);
-  } else timer = setTimeout(finish, 3200);
+  } else timer = setTimeout(() => {
+    // Keep the original cover until Home has something real to reveal.
+    const home = document.querySelector('[data-ot]');
+    if (home && !home.classList.contains('is-ready')) {
+      home.dataset.homeStartup = 'fallback';
+      home.classList.add('ot--static', 'is-ready');
+    }
+    finish();
+  }, document.querySelector('[data-ot]') ? 12000 : 3200);
   document.addEventListener('DOMContentLoaded', ready, { once: true });
   resize(); draw(started); ready();
 })();

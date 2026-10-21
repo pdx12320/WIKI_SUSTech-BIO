@@ -72,9 +72,11 @@
  }
 
 .cell-reader__button { cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none; }
-.cell-reader__button:focus-visible { outline:2px solid #6f71c1; outline-offset:3px; border-radius:12px; }
+/* Keep global focus styles from boxing the character, including after release.
+   Keyboard users retain a focus cue that follows the character's silhouette. */
+body .cell-reader .cell-reader__button:focus { outline:none; box-shadow:none; }
+.cell-reader__button:focus-visible .cell-reader__cell { filter:drop-shadow(0 0 3px #6f71c1); }
 .cell-reader__dragging .cell-reader__button { cursor:grabbing; }
-/* Override the shared focus ring only while the character is being dragged. */
-.cell-reader__dragging .cell-reader__button:focus { outline:none; }
+.cell-reader__dragging .cell-reader__cell { filter:drop-shadow(0 6px 5px #3035690c); }
 .cell-reader__dragging .cell-reader__swim-body { animation:none; }
 .cell-reader__over-footer .cell-reader__percent { color:#eef0ff; text-shadow:0 0 5px #09182a; }

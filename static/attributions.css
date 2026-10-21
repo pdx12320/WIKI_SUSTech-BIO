@@ -1,0 +1,33 @@
+/* Match Design & Media Promotion's title and Model's reading surface. */
+.attributions-page {
+  --sans: Futura, "Avenir Next", "Century Gothic", Arial, sans-serif;
+  --particle-ink: #303d72;
+  padding-inline: clamp(20px, 6vw, 96px);
+}
+body:not(.ot) main.attributions-page { background: #edf0f4; }
+.attributions-page .content-overview,
+.attributions-page .attributions-form {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+.attributions-page .content-overview { padding-inline: 0; }
+.attributions-page .content-overview h1::after { color: #fb95a3; }
+.attributions-form {
+  padding: 12px clamp(30px, 4vw, 56px) 40px;
+  border: 1px solid #e0e3e8;
+  border-radius: 28px;
+  background: linear-gradient(90deg, #f3f4f5, #fff 22px, #fff calc(100% - 22px), #f3f4f5);
+  box-shadow: 0 0 28px 2px #5f667526;
+  color: #303d72;
+  font: 400 18px/1.75 "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+.attribution-official { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e0e3e8; text-align: right; }
+.attribution-official a { color: #303d72; text-underline-offset: 4px; }
+.attributions-form { padding-top: 32px; }
+@font-face { font-family: InterVariable; font-style: normal; font-weight: 100 900; font-display: swap; src: url('attributions-portraits/inter.ttf'); }
+@media (max-width: 760px) {
+  .attributions-page .content-overview { padding-bottom: 30px; }
+  .attributions-form { padding-inline: 24px; }
+}

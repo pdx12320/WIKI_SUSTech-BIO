@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ content.title }}{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='content-reading.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='attributions.css') }}">
+{% endblock %}
+
+{% block main %}
+<main id="main-content" class="content-page attributions-page">
+  <header class="content-overview">
+    <h1>{{ content.title }}</h1>
+  </header>
+  <section class="attributions-form" aria-label="Official team attributions"
+           data-content-source="{{ content.source_label }}">
+    <div id="official-attributions">
+      <template shadowrootmode="open">
+        <link rel="stylesheet" href="{{ url_for('static', filename='attributions-official.css') }}">
+        {% include "pages/attributions_official.html" %}
+      </template>
+    </div>
+    <footer class="attribution-official"><a href="https://teams.igem.org/wiki/6085/attributions" target="_blank" rel="noopener">Open official attributions ↗</a></footer>
+  </section>
+</main>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="module" src="{{ url_for('static', filename='attributions-official.js') }}"></script>
+{% endblock %}

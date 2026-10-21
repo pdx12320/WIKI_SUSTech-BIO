@@ -25,7 +25,9 @@ export function editAnnotationFade(q, replay) {
 }
 
 const vertex = `
-attribute vec3 aEnd, aColor, aParis;
+attribute vec3 aEnd, aColor, aParis, aFpv;
+uniform vec3 uFpvCenter;
+uniform float uFpvMix;
 attribute float aKind, aSeed;
 uniform float uTime, uOpacity, uGather, uFix, uPulse, uMotion, uPR, uScale, uSize, uDock, uParisMorph;
 varying vec3 vColor;
@@ -36,13 +38,14 @@ void main(){
   float cargo = step(3.5, aKind);
   float drift = mix(.008, .07 * (1. - uGather) + .008, cargo) * uMotion;
   p += vec3(sin(uTime*.42+aSeed*43.),cos(uTime*.33+aSeed*71.),sin(uTime*.29+aSeed*91.)) * drift;
+  p = mix(p, aFpv + uFpvCenter, uFpvMix);
   p = mix(p, aParis, uParisMorph);
   vec4 mv = modelViewMatrix * vec4(p,1.);
   gl_Position = projectionMatrix * mv;
   gl_PointSize = clamp(uSize * uPR * (11./max(1.,-mv.z)) * sqrt(uScale), 1., 5. * uPR);
   vColor = mix(aColor, mix(vec3(.96,.56,.61),vec3(.36,1.,.72),uFix),target);
   vColor = mix(vColor,vec3(.55,.9,.79),uDock);
-  vColor = mix(vColor,vec3(.96,.24,.04),uParisMorph);
+  vColor = mix(vColor,vec3(1.,.4156863,.3333333),uParisMorph);
   vColor += vec3(.12,.26,.18) * uPulse * target;
   vAlpha = uOpacity * (.65 + .35*aSeed) * (1. + .35*uPulse*target);
   vAlpha *= mix(.025,1.,smoothstep(.03,.2,uScale));
@@ -54,6 +57,8 @@ void main(){ float d=length(gl_PointCoord-.5); float a=smoothstep(.5,.03,d);
 gl_FragColor=vec4(vColor,a*a*vAlpha); }`;
 
 export function createBiologyScene(THREE, scene, { root, cell, strand, small, onReady }) {
+  const autoDock = root.hasAttribute('data-edit-auto-dock');
+  const homeContext=root.querySelector('[data-rna-cell]')?.hasAttribute?.('data-rna-cell')||false;
   let seed = 4102026;
   const random = () => ((seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0) / 4294967296);
   const direction = () => {
@@ -71,6 +76,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
     const uniforms = {
       uTime: { value: 0 }, uOpacity: { value: 0 }, uGather: { value: 0 },
       uFix: { value: 0 }, uPulse: { value: 0 }, uMotion: { value: 1 },
+      uFpvMix: { value: 0 }, uFpvCenter: { value: new THREE.Vector3() },
       uPR: { value: 1 }, uScale: { value: 1 }, uSize: { value: size }, uDock: { value: 0 }, uParisMorph: { value: 0 },
     };
     const object = new THREE.Points(geometry, new THREE.ShaderMaterial({ uniforms,
@@ -78,6 +84,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       depthWrite: false, blending: THREE.AdditiveBlending }));
     object.name = name;
     object.material.defaultAttributeValues.aParis = [0, 0, 0];
+    object.material.defaultAttributeValues.aFpv = [0, 0, 0];
     object.frustumCulled = false;
     scene.add(object);
     layers.push(object);
@@ -149,15 +156,17 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
     const center = clusters[i % clusters.length], d = direction(), r = .1 + random()*.22;
     ae.push(...center.map((v,a) => v+d[a]*r));
     const out = direction(), distance = 6+random()*4;
-    ap.push(...out.map(v => v*distance)); ac.push(.96,.56,.61); ak.push(4);
+    ap.push(...out.map(v => v*distance)); ac.push(1,106/255,85/255); ak.push(4);
   }
   const amyloid = points('extracellular-amyloid', ap, ac, ak, ae, 2.1);
 
   const labels = Object.fromEntries([...root.querySelectorAll('[data-bio-label]')].map(el => [el.dataset.bioLabel, el]));
   const calloutLines = Object.fromEntries([...root.querySelectorAll('[data-bio-callout-line]')].map(el => [el.dataset.bioCalloutLine, el]));
   const projected = new THREE.Vector3();
+  let contextPresence = 1;
   function label(name, position, opacity, camera, offset = 0) {
     const el = labels[name]; if (!el) return;
+    opacity *= contextPresence;
     projected.copy(position).project(camera);
     const visible = opacity > .02 && projected.z < 1 && projected.z > -1;
     el.style.opacity = visible ? opacity.toFixed(3) : '0';
@@ -171,7 +180,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       el.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-100%)`;
     }
   }
-  const preview = new THREE.Vector3(.55,.2,.78), final = new THREE.Vector3(targetX,0,0);
+  const preview = new THREE.Vector3(.55,.2,.78), final = new THREE.Vector3(homeContext?0:targetX,0,0);
   const ui = root.querySelector('[data-bio-interaction]');
   const instruction = root.querySelector('[data-placement-instruction]');
   const initialInstruction = instruction?.textContent;
@@ -257,14 +266,15 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
     });
   }
   return {
-    update(q, time, camera, motion, replay, backgroundOpacity = 1) {
+    update(q, time, camera, motion, replay, backgroundOpacity = 1, contextOpacity = 1) {
+      contextPresence = contextOpacity;
       const entrance = smooth(ramp(q,.335,.435));
       const transcript = windowOf(q,.272,.302,.602,.657) + windowOf(q,.775,.81,.9,.939);
-      const placement = replay?.phase === 'placement';
-      const replayEdit = replay && ['target','placement','edit','return'].includes(replay.phase);
-      activePlacement = placement; activeCamera = camera;
-      if (ui) ui.hidden = !placement;
-      if (placement && (!placementInitialized || placementSession !== root.dataset.editSession)) {
+      const placement = replay?.phase === 'placement', docking = replay?.phase === 'docking';
+      const replayEdit = replay && ['target','placement','docking','edit','return'].includes(replay.phase);
+      activePlacement = placement && !autoDock; activeCamera = camera;
+      if (ui) ui.hidden = !placement || autoDock;
+      if ((placement || docking) && (!placementInitialized || placementSession !== root.dataset.editSession)) {
         placementInitialized = true;
         placementSession = root.dataset.editSession;
         onReady?.(false);
@@ -272,14 +282,16 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
         for (const [name,item] of Object.entries(items)) {
           item.placed = false;
           const target = screenOf(fixedCenter(item));
-          const x = name === 'pod' ? (small?.19:.18) : (small?.81:.82);
-          const y = small && root.hasAttribute('data-edit-auto-confirm') ? (name === 'pod' ? .72 : .67) : .59;
+          const attachedApproach=autoDock&&name==='cetus'&&innerWidth<900;
+          const x = attachedApproach ? .44 : name === 'pod' ? (small?.19:.18) : (small?.81:.82);
+          const y = attachedApproach ? .59 : small && root.hasAttribute('data-edit-auto-confirm') ? (name === 'pod' ? .72 : .67) : .59;
           world.set(x*2-1,1-y*2,target.z).unproject(camera);
           item.home.copy(world).sub(fixedCenter(item)); item.offset.copy(item.home);
         }
       }
       const progress = replayEdit ? replay.edit : ramp(q,.798,.907);
       const edit = editState(progress || 0);
+      if (docking) edit.pod = edit.cetus = 1;
       if (placementInitialized && replay && ['edit','return'].includes(replay.phase)) {
         edit.pod = edit.cetus = 1;
         edit.fix = replay.autoEdit ? replay.fix : smooth(ramp(progress,.12,.6));
@@ -289,7 +301,7 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       const editVisible = replayEdit ? (replay.phase === 'return' ? 1-replay.cameraBlend : 1) : windowOf(q,.782,.8,.906,.928);
       rna.object.position.copy(preview).lerp(final, entrance);
       rna.object.scale.setScalar(.023 + .977*entrance);
-      rna.uniforms.uOpacity.value = replayEdit ? editVisible*.74 : transcript*.74;
+      rna.uniforms.uOpacity.value = homeContext ? 0 : replayEdit ? editVisible*.74 : transcript*.74;
       rna.uniforms.uScale.value = rna.object.scale.x;
       for (const layer of [bases,pod,cetus,linker]) {
         layer.object.position.copy(final); layer.object.scale.setScalar(1);
@@ -302,15 +314,19 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       cetus.uniforms.uOpacity.value = editVisible*edit.cetus*(1-.55*edit.leave)*.85;
       linker.uniforms.uOpacity.value = editVisible*edit.cetus*.4;
       podSlot.object.position.copy(final); cetusSlot.object.position.copy(final);
-      podSlot.uniforms.uOpacity.value = cetusSlot.uniforms.uOpacity.value = 0;
-      if (placement) {
+      podSlot.uniforms.uOpacity.value = cetusSlot.uniforms.uOpacity.value = autoDock && replayEdit ? editVisible*.42 : 0;
+      if (placement || docking) {
         for (const [name,item] of Object.entries(items)) {
+          if (docking) {
+            item.offset.copy(item.home).multiplyScalar(1-replay.dock[name]);
+            item.placed = replay.dock[name] >= 1;
+          }
           item.layer.object.position.copy(final).add(item.offset);
           item.layer.uniforms.uOpacity.value = .9;
           item.layer.uniforms.uDock.value = item.placed ? .35 : 0;
           const target = screenOf(fixedCenter(item)), actual = screenOf(fixedCenter(item).add(item.offset));
           const close = !!dragging && dragging.item === item && near(item);
-          item.slot.uniforms.uOpacity.value = close && !item.placed ? .68 : 0;
+          item.slot.uniforms.uOpacity.value = autoDock ? .42 : close && !item.placed ? .68 : 0;
           if (item.button) {
             item.button.style.transform = `translate3d(${actual.x}px,${actual.y}px,0) translate(-50%,-50%)`;
             item.button.classList.toggle('is-placed',item.placed);
@@ -345,10 +361,12 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
         const u = layer.material.uniforms;
         u.uTime.value = time; u.uMotion.value = motion;
         u.uPR.value = Math.min(devicePixelRatio,small?1.5:1.75);
+        u.uOpacity.value *= contextPresence;
         layer.visible = u.uOpacity.value > .001;
       }
       const annotationFade = root.hasAttribute('data-edit-scroll-return') ? editAnnotationFade(q, replay) : 1;
-      const annotationVisible = editVisible * annotationFade;
+      const homeEditorPresence=homeContext&&!replay?smooth(ramp(q,.815,.827)):1;
+      const annotationVisible = editVisible * annotationFade * contextPresence * homeEditorPresence;
       const codonOn = replayEdit ? editVisible : windowOf(q,.495,.523,.598,.622)+windowOf(q,.806,.826,.902,.924);
       const codon = labels.codon;
       if (codon) {
@@ -356,7 +374,8 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
         const editedName = root.hasAttribute('data-edit-auto-confirm') ? 'UGC, APOE3 RNA sequence' : 'UGC, intended APOE3-like RNA sequence';
         codon.setAttribute('aria-label', edit.fix > .5 && editVisible > .01 ? editedName : 'CGC, APOE4 RNA target');
       }
-      label('codon', final.clone().add(new THREE.Vector3(.62,.95,.2)),codonOn*annotationFade,camera,-18);
+      const targetLabelEntry=homeContext&&replay?.phase==='target'?smooth(ramp(replay.contextHandoff??0,.55,1)):1;
+      label('codon', final.clone().add(new THREE.Vector3(.62,.95,.2)),codonOn*annotationFade*targetLabelEntry*homeEditorPresence,camera,-18);
       label('pod', fixedCenter(items.pod).add(new THREE.Vector3(-.45,-.25,0)),placement?0:annotationVisible*edit.pod,camera,22);
       label('cetus', fixedCenter(items.cetus),placement?0:annotationVisible*edit.cetus,camera,small?-85:-28);
       let calloutBottom = innerHeight * .8;
@@ -368,8 +387,10 @@ export function createBiologyScene(THREE, scene, { root, cell, strand, small, on
       for (const [name, item] of Object.entries(items)) {
         if (!labels[name]?.hasAttribute('data-bio-callout')) continue;
         const anchor = item.layer.object.position.clone().add(item.center);
+        const attachment=autoDock&&name==='cetus'&&replayEdit&&placementInitialized&&placementSession===root.dataset.editSession
+          ? {session:placementSession,start:screenOf(fixedCenter(item).add(item.home)),end:screenOf(fixedCenter(item))} : null;
         positionCallout(labels[name], calloutLines[name], screenOf(anchor), codon.getBoundingClientRect(),
-          placement ? 1 : annotationVisible * edit[name], name === 'cetus', calloutBottom);
+          placement ? 1 : annotationVisible * edit[name], name === 'cetus', calloutBottom, attachment);
       }
       label('amyloid',new THREE.Vector3(-2.7,2.1,1.2),amyloid.uniforms.uOpacity.value,camera,-14);
       label('nucleus',new THREE.Vector3(.15,-.3,.45),windowOf(q,.26,.28,.326,.348),camera,30);

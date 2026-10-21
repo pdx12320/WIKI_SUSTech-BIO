@@ -4,8 +4,9 @@ import { runInNewContext } from 'node:vm';
 const source = readFileSync(new URL('../static/entry-loading/page-warmup.js', import.meta.url), 'utf8');
 const element = attrs => ({ getAttribute: name => attrs[name] || null });
 const flush = () => new Promise(setImmediate);
-function harness(connection = {}, prefix = '/') {
+function harness(connection = {}, prefix = '/', covered = false) {
   const requests = [], links = [], events = new Map(), idle = [];
+  let coverChanged, disconnected = 0;
   const page = {
     querySelector: selector => selector.includes('data-team-opening') ? {
       querySelectorAll: () => [element({ 'data-image': 'https://static.igem.wiki/opening.webp' }), element({ src: '/assets/second.webp' })],
@@ -21,7 +22,8 @@ function harness(connection = {}, prefix = '/') {
     window: { __orcaWhiteHole: { home: `https://wiki.test${prefix}` } },
     requestIdleCallback: fn => { idle.push(fn); return idle.length; }, cancelIdleCallback() {},
     addEventListener: (type, fn) => events.set(type, fn), removeEventListener: type => events.delete(type),
-    document: { querySelectorAll: selector => selector === 'link[href], script[src], img[src]' ? [{ href: 'https://wiki.test/static/shared.css' }] : [],
+    MutationObserver: class { constructor(fn) { coverChanged = fn; } observe() {} disconnect() { disconnected++; } },
+    document: { documentElement: { hasAttribute: () => covered }, querySelectorAll: selector => selector === 'link[href], script[src], img[src]' ? [{ href: 'https://wiki.test/static/shared.css' }] : selector === '[data-rna-nav]' ? [{ querySelector: () => ({ href: `https://wiki.test${prefix}team` }) }] : [],
       addEventListener: (type, fn) => events.set(type, fn), removeEventListener: type => events.delete(type),
       createElement(tag) { assert.equal(tag, 'link', 'Never create an executable script, image or hidden document'); return { remove() { this.removed = true; } }; },
       head: { append: link => links.push(link) } },
@@ -34,8 +36,12 @@ function harness(connection = {}, prefix = '/') {
   sandbox.window.requestIdleCallback = sandbox.requestIdleCallback;
   sandbox.window.cancelIdleCallback = sandbox.cancelIdleCallback;
   runInNewContext(source, sandbox);
-  return { api: sandbox.window.ORCAOpeningWarmup, requests, links, events, idle };
+  return { api: sandbox.window.ORCAOpeningWarmup, requests, links, events, idle, reveal() { covered = false; coverChanged?.(); }, get disconnected() { return disconnected; } };
 }
+const cover = harness({}, '/', true);
+cover.idle[0](); assert.equal(cover.requests.length, 0, 'Speculative HTML parsing waits while the entry cover is visible');
+cover.reveal(); cover.idle[1](); assert.equal(cover.requests.length, 1, 'Speculation resumes after reveal');
+assert.ok(cover.disconnected > 0); cover.api.stop();
 const site = harness();
 const one = site.api.warm('/team'), two = site.api.warm('/description'), three = site.api.warm('/model');
 assert.equal(site.requests.length, 2, 'At most two page requests run together');

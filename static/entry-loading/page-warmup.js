@@ -4,10 +4,10 @@
   'use strict';
   const connection = navigator.connection;
   if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || '')) return;
-  const base = new URL(window.__orcaWhiteHole?.home || './', location.href);
+  const base = new URL(window.__orcaEntry?.home || window.__orcaWhiteHole?.home || './', location.href);
   const prefix = base.pathname.replace(/\/$/, '') + '/';
   const pages = new Map(), assets = new Map(), queue = [], controllers = new Set();
-  let active = 0, stopped = false, intentTimer, idleTask;
+  let active = 0, stopped = false, intentTimer, idleTask, coverObserver;
   const existing = new Set(Array.from(document.querySelectorAll('link[href], script[src], img[src]'), el => el.href || el.src));
   const route = value => {
     let url; try { url = new URL(value, location.href); } catch { return null; }
@@ -96,6 +96,7 @@
   }
   function stop() {
     stopped = true; clearTimeout(intentTimer);
+    coverObserver?.disconnect(); coverObserver = null;
     if ('cancelIdleCallback' in window) cancelIdleCallback(idleTask); else clearTimeout(idleTask);
     controllers.forEach(controller => controller.abort());
     queue.splice(0).forEach(page => page.resolve(false));
@@ -105,6 +106,18 @@
   }
   const initial = () => {
     if (stopped) return;
+    // Parse other pages only after the visible loading cover is gone. Home's
+    // own initialization still runs concurrently; speculative work can wait.
+    if (document.documentElement?.hasAttribute('data-entry-loading')) {
+      coverObserver ||= new MutationObserver(() => {
+        if (!document.documentElement.hasAttribute('data-entry-loading')) {
+          coverObserver.disconnect(); coverObserver = null;
+          idleTask = 'requestIdleCallback' in window ? requestIdleCallback(initial, { timeout: 1500 }) : setTimeout(initial, 100);
+        }
+      });
+      coverObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-entry-loading'] });
+      return;
+    }
     // The first destination in each real navigation group covers the main
     // chapters without fetching the entire website during the first second.
     for (const group of Array.from(document.querySelectorAll('[data-rna-nav]')).slice(0, 5)) {

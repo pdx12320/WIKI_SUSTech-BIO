@@ -1,0 +1,251 @@
+{
+  "base_commit": "1a46a7a8cabf32b4cbe96613db1d935072dc018a",
+  "preview_commit": "926a56c3acc6e799007d10c564c93546ceae0eed",
+  "snapshot_date": "2026-10-21",
+  "files": [
+    {
+      "path": "scripts/build_home_rna_font.py",
+      "sha256": "5e7bb2b4fbb36558c9dd400d42f4b61868c74e5c98b922d9e08c77d85e6dd3bf"
+    },
+    {
+      "path": "static/entry-loading/boot.js",
+      "sha256": "d1b631a805198a2dacfc2f01d27030bbad1b92b939118ad09e31515fe25927ad"
+    },
+    {
+      "path": "static/entry-loading/entry-loading.css",
+      "sha256": "c5c8269a5a0c5b69635d1f3b9681298d80b1ffc359bc47f1016e857e52dde7cf"
+    },
+    {
+      "path": "static/entry-loading/entry-loading.js",
+      "sha256": "59cc35caafae030fd3e39d447da9036378118d1ebdef3d664bdefcbc4b903afe"
+    },
+    {
+      "path": "static/entry-loading/page-warmup.js",
+      "sha256": "0ade6ee0e362ed487c4fc436189b83666f79e955e3e1d0760dca7db9c80c08b6"
+    },
+    {
+      "path": "static/onetake/auto-docking.mjs",
+      "sha256": "f82a16cceb6cad9ee252b1ff7f1cee41aeff56435a485f8789db534788a7ba86"
+    },
+    {
+      "path": "static/onetake/bio-callouts.mjs",
+      "sha256": "0ffeb3e582ab902be762b89bf8d62f944c68b39c339d589f1a9e6c1d83f8e90d"
+    },
+    {
+      "path": "static/onetake/biology-scene.mjs",
+      "sha256": "6b0bc2fd35a28e4f345bf67605fd24c3b72603a18cc995edb8196b1710bc3606"
+    },
+    {
+      "path": "static/onetake/c-edge-glow.css",
+      "sha256": "e2ebe2f6445078f21e33a328b2bc162219983cf8a275da03c8869242e2bb3d23"
+    },
+    {
+      "path": "static/onetake/c-edge-glow.mjs",
+      "sha256": "301d4ec8c75417e82716887aee517f0c80076e60ededfc2468f0ad2f713a4d87"
+    },
+    {
+      "path": "static/onetake/c-frosted-glass.mjs",
+      "sha256": "dca9762230469c6cd96daa587aadc00d7251d130366d43b4fb8e91a38d91dbb8"
+    },
+    {
+      "path": "static/onetake/cell-fpv-motion.mjs",
+      "sha256": "ba5fbd4b01ab3bb34099a3bb84ee3fe600d1abe7fc622ca4183628724897e624"
+    },
+    {
+      "path": "static/onetake/cell-replay-view.mjs",
+      "sha256": "350cf2691904606cdf6f0669a48164a334f681eb53c56ae5d23a2ca329c9acec"
+    },
+    {
+      "path": "static/onetake/cell-scroll-pacing.mjs",
+      "sha256": "51801c170de5f28a4abf00bca71b5bb14e0fed04dfc310ba0b588fed396a0574"
+    },
+    {
+      "path": "static/onetake/cell-volume-shapes.mjs",
+      "sha256": "812ca857d4682abf3e62c69c40bde92180534534c7ea54930d93cdb1a66c9cd4"
+    },
+    {
+      "path": "static/onetake/confirmed-edit.css",
+      "sha256": "154ac66a0cfecaf18609abdf45745bd5f4742398451aec68db7ae0befc34237a"
+    },
+    {
+      "path": "static/onetake/cover-c-bridge.mjs",
+      "sha256": "2b25e0783e66271819594f4b6eba5097fbfa2c1bb077e52625eaedf1c21c843f"
+    },
+    {
+      "path": "static/onetake/crt-opening.css",
+      "sha256": "a8aa5c504a84832b1aa0fac6546cbbc49962d99319cb1a4d876ff1d6ca4e7174"
+    },
+    {
+      "path": "static/onetake/edit-replay.mjs",
+      "sha256": "542f5bfc24762d9ee756a5953ffd8804b321cca79e5607ecc3f58eec6b7956fc"
+    },
+    {
+      "path": "static/onetake/legacy-rna-shape.mjs",
+      "sha256": "7d4299dbdef17de5d424492169c8d8a8942c7a8dfc59ce1a60807725f9e60e24"
+    },
+    {
+      "path": "static/onetake/memory-maze-ending.css",
+      "sha256": "de22da0af2f245d2c4b31103be9840ddaf6596202c9b357e0b0b54749d24e228"
+    },
+    {
+      "path": "static/onetake/memory-maze-ending.mjs",
+      "sha256": "856f0205a29d5e32a1eb0c4aa28ae771a585a7f8c1ddc03808874310df58e63c"
+    },
+    {
+      "path": "static/onetake/memory-maze-ending.test.mjs",
+      "sha256": "b79afcdde0b777a18851d7607a531a1f2594568c0957178cf4deaae84e53c528"
+    },
+    {
+      "path": "static/onetake/memory-orca-maze.mjs",
+      "sha256": "c75adb87225e0abceb98030a3b83b5b6252f7bd0bc6b1c644690c7e152176e87"
+    },
+    {
+      "path": "static/onetake/memory-orca-maze.test.mjs",
+      "sha256": "19b957f6c12abe76156b13a80858471bad6cf9997aae6a9e94f4e244688df933"
+    },
+    {
+      "path": "static/onetake/memory-room.mjs",
+      "sha256": "c83a525a58b62f5a9a5997fa50ebd226294960a58becd7e087771e4ca69b9e24"
+    },
+    {
+      "path": "static/onetake/one-c-context.css",
+      "sha256": "5af770b8ff997c091b9e5e013cfb09ca6649a7f787defd8f200c95fb16a88bc6"
+    },
+    {
+      "path": "static/onetake/one-c-context.mjs",
+      "sha256": "bec07f56604a425bc237ba97c16f48e80c4f9f32fba173a6e6a3e485c2e5d1cc"
+    },
+    {
+      "path": "static/onetake/one-c-lettering.woff2",
+      "sha256": "a41dc79cde97550cfa0a4b5244cb8bbb139b2e4a32592549ee064d9e3dccf146"
+    },
+    {
+      "path": "static/onetake/one-c-particles.mjs",
+      "sha256": "fe8d50a2288ef24e182162a6e779c08ff532c7897397226a3bdc21b998927b8b"
+    },
+    {
+      "path": "static/onetake/onetake.js",
+      "sha256": "513fdf985b5d2f6f917bf1957c148fb24e782e10d001d813d0aac0e82f702bf6"
+    },
+    {
+      "path": "static/onetake/paris-particles.mjs",
+      "sha256": "4e7e28f6e2ccb5c78e59688c304d9c3443faf890461123f70f13d27f743edd80"
+    },
+    {
+      "path": "static/onetake/particle-atmosphere.css",
+      "sha256": "2f4a45d20c7d2f36f4d93040b2375418caf0459d0df6b700e72e938001139307"
+    },
+    {
+      "path": "static/onetake/particle-atmosphere.mjs",
+      "sha256": "7a829694e65ff8628760ad2476268dd214bc1ea7b9df2e91ef3c057c225d8c30"
+    },
+    {
+      "path": "static/onetake/particle-cursor-scatter.mjs",
+      "sha256": "a4095597e4bed092bf0970a715aa5839e18672d24dd6fca1f8b2e5902cd180ce"
+    },
+    {
+      "path": "static/onetake/rewind-motion.mjs",
+      "sha256": "4a387fe88423feec25e2741dc809bf8d37894c293b2e6cf4d9e49e2f0b1367ae"
+    },
+    {
+      "path": "static/onetake/rna-cell-context.css",
+      "sha256": "1bf421330355cdd138217c92255b0bddd99bed51e93571e49bb619ddf3520a93"
+    },
+    {
+      "path": "static/onetake/rna-cell-scene.mjs",
+      "sha256": "b9c26c24b8873289a1ad405738bc524d32c472da16c6d92de70c3aff8b377067"
+    },
+    {
+      "path": "static/onetake/rna-cell-state.mjs",
+      "sha256": "49690d3bdef737f1b4c3c90618f851e6690813d69227df63c5cd704d8e4ca87b"
+    },
+    {
+      "path": "tests/cover_c_bridge.mjs",
+      "sha256": "9fa36cb44842c798ffd89af95d6ee434a3dd5c1d5023147db4d62a13b542d735"
+    },
+    {
+      "path": "tests/cover_c_spacing.mjs",
+      "sha256": "f86af9997b10fff87bbaebaa9a50949d82f756217f109c3efbe47ce51cec0257"
+    },
+    {
+      "path": "tests/entry_loading.mjs",
+      "sha256": "702778dc54c5ea1a0e2e954df1f73b880497e8c2a23439158fad2b4b4421cd2c"
+    },
+    {
+      "path": "tests/entry_loading_worker.mjs",
+      "sha256": "b77493f2bcfacab5dc7b7b2cc269dccf85851b9c1cbbee3420d08254cf86311b"
+    },
+    {
+      "path": "tests/entry_scene_budget.mjs",
+      "sha256": "e1a3f0806dc66c928bbe4ab95d116a06e0087baef3ff98619998dbaa45e37670"
+    },
+    {
+      "path": "tests/home_auto_dock.mjs",
+      "sha256": "49514e4e3e59ba0d62287a85499926e68f0c7ca94795920d9ba1306864ee74ad"
+    },
+    {
+      "path": "tests/home_rewind_motion.mjs",
+      "sha256": "52f78badf8338c7ccd70cf7c97c090ec766f050c9f476dea743cca8da4486920"
+    },
+    {
+      "path": "tests/one_c_context.mjs",
+      "sha256": "5c7f1144c0d1945a56cffc59990f071cb7cd9bfde130d3988cb2f1e69867324f"
+    },
+    {
+      "path": "tests/one_c_particles.mjs",
+      "sha256": "fff4fc9253391fe9c880a7894ce1ebb57e8b641b8511f1d27b926b70bd527cc9"
+    },
+    {
+      "path": "tests/opening_warmup.mjs",
+      "sha256": "bc8fbf7ada01cf17c444244f22cf55cc07895a2a1eae592281f470a0dc7eb7d5"
+    },
+    {
+      "path": "tests/particle_atmosphere.mjs",
+      "sha256": "30ab34e557e7a3130fa340eed866bc027fee52b0479838504676c2c642ace969"
+    },
+    {
+      "path": "tests/rna_cell_scene.mjs",
+      "sha256": "01cade8b95d312b26b326ddac1a3627a54345bf918eadda4d18db31401ba1397"
+    },
+    {
+      "path": "tests/test_entry_loading.py",
+      "sha256": "e71db0cc94783b1a1fc741a68327b9b7121b358319676eea446b4725d3c71943"
+    },
+    {
+      "path": "tests/test_wiki.py",
+      "sha256": "ee0cb024f462be3484110ac002bd2bdabe1f126bbf67f18fb9d5349165701ea7"
+    },
+    {
+      "path": "wiki/components/dementia_paris_sources.html",
+      "sha256": "639c8abb86bb21ac587c1773944697f7b6e69966702418fd9f172e91cd8e9d8a"
+    },
+    {
+      "path": "wiki/components/entry_loading.html",
+      "sha256": "26be6026522141e1676fd272cb7500a26f6fbd7635704709451ef853d0c79868"
+    },
+    {
+      "path": "wiki/components/one_c_context.html",
+      "sha256": "1b5b172d787aa51513ae3b0012888c44340acb01c65bcf64eff6a7a172fb63d2"
+    },
+    {
+      "path": "wiki/components/one_c_notes.html",
+      "sha256": "85fc0a5e62b6303aef9bfebc9d6b55e7deb36901a373c109dcce04d86d17cca3"
+    },
+    {
+      "path": "wiki/components/rna_cell_context.html",
+      "sha256": "b0c814dd9a518d5a51e361a6ada1e736e6823603bd23f12ed8abe7626728db95"
+    },
+    {
+      "path": "wiki/layout.html",
+      "sha256": "7c631ee2d1d47fc6da8b50989db8d89743410fef826aa70d3172ba05f100614d"
+    },
+    {
+      "path": "wiki/pages/home.html",
+      "sha256": "c0ffbc58e0b46c226417e2d1937713754b177be5a3c1af7b45c04b26393d88e7"
+    },
+    {
+      "path": "wiki/pages/home_next_structure.html",
+      "sha256": "fd88b375e65388ac5351d5bd5021fc198f760d9eebfd5df5f6ca7c6cf797cbba"
+    }
+  ]
+}

@@ -1,18 +1,10 @@
-(() => {
+// Shared main-thread fallback and OffscreenCanvas worker renderer.
+function createORCALetterRenderer(canvas, makeCanvas, sampleFrame) {
   'use strict';
-  const root = document.documentElement;
-  const layer = document.querySelector('[data-entry-loader]');
-  if (!layer || !root.hasAttribute('data-entry-loading')) { layer?.remove(); return; }
-  const canvas = layer.querySelector('canvas');
   const ctx = canvas.getContext('2d', { alpha: true });
-  if (!ctx) { root.removeAttribute('data-entry-loading'); layer.remove(); return; }
-  const preview = root.dataset.entryLoading === 'preview';
-  const query = new URLSearchParams(location.search);
-  const sampleFrame = preview && query.has('loading-frame') ? Number(query.get('loading-frame')) : NaN;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!ctx) throw new Error('Canvas 2D unavailable');
   const started = performance.now();
-  let width, height, unit, frame, timer, removed = false, leaving = false;
-  let pointer = null, lastDraw = started;
+  let width, height, unit, pointer = null, lastDraw = started;
   const points = [], letters = 'LOADING';
   // Team-supplied primary visual palette: violet, coral pink and lavender.
   const palette = ['#7375B2', '#7375B2', '#FB95A3', '#C6CCF4'];
@@ -30,14 +22,6 @@
       previous = [x, y];
     }
     return vertices;
-  };
-  const inside = (x, y, vertices) => {
-    let hit = false;
-    for (let i = 0, j = vertices.length - 1; i < vertices.length; j = i++) {
-      const a = vertices[i], b = vertices[j];
-      if ((a[1] > y) !== (b[1] > y) && x < (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1]) + a[0]) hit = !hit;
-    }
-    return hit;
   };
   const outline = contour([16, 231], [
     [20, 205, 95, 173, 157, 161], [176, 159, 184, 151, 191, 132],
@@ -58,6 +42,42 @@
   const eye = contour([100, 214], [
     [111, 201, 139, 197, 145, 213], [149, 232, 115, 235, 100, 214],
   ]);
+  // Rasterize static markings once; frame rendering does constant-time lookup.
+  const maskWidth = 452, maskHeight = 328;
+  const markings = new Uint8Array(maskWidth * maskHeight);
+  for (const polygon of [belly, flank, eye]) {
+    for (let y = 0; y < maskHeight; y++) {
+      const scan = y + .5, intersections = [];
+      for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+        const a = polygon[j], b = polygon[i];
+        if ((a[1] > scan) !== (b[1] > scan)) intersections.push(a[0] + (scan - a[1]) * (b[0] - a[0]) / (b[1] - a[1]));
+      }
+      intersections.sort((a, b) => a - b);
+      for (let i = 0; i + 1 < intersections.length; i += 2) {
+        const left = Math.max(0, Math.ceil(intersections[i] - .5));
+        const right = Math.min(maskWidth, Math.ceil(intersections[i + 1] - .5));
+        markings.fill(1, y * maskWidth + left, y * maskWidth + right);
+      }
+    }
+  }
+  // Cache letter rasterization. Resizing rebuilds one small atlas; animation
+  // only copies sprites instead of shaping thousands of separate text runs.
+  const inks = ['#7375B2', '#FB95A3', '#C6CCF4', '#FFDBDD'];
+  let atlas = null, cell = 0, atlasFont = 0;
+  function buildAtlas(dpr) {
+    atlas ||= makeCanvas();
+    const paint = atlas.getContext?.('2d');
+    if (!paint) { atlas = null; return; }
+    atlasFont = Math.max(8, Math.ceil(7.1 * unit * dpr * 1.1));
+    cell = Math.ceil(atlasFont * 2.4);
+    atlas.width = cell * letters.length; atlas.height = cell * inks.length;
+    paint.font = `500 ${atlasFont}px ui-monospace, Menlo, Consolas, monospace`;
+    paint.textAlign = 'center'; paint.textBaseline = 'middle';
+    inks.forEach((ink, row) => {
+      paint.fillStyle = ink; paint.globalAlpha = row === 3 ? .95 : .94;
+      Array.from(letters).forEach((letter, col) => paint.fillText(letter, (col + .5) * cell, (row + .5) * cell));
+    });
+  }
   const center = { x: 226, y: 163 };
   // A circular field covers the complete logo at every angle. Fixed silhouette
   // and marking masks determine which letters are visible, never a moving body.
@@ -68,35 +88,34 @@
         letter: letters[Math.floor(random() * letters.length)], size: .9 + random() * .18, color: palette[Math.floor(random() * palette.length)], offsetX: 0, offsetY: 0 });
     }
   }
-  const duration = 1000;
-  function resize() {
-    width = innerWidth; height = innerHeight;
+  for (const p of points) {
+    p.letterIndex = letters.indexOf(p.letter); p.inkIndex = inks.indexOf(p.color);
+  }
+  function resize(newWidth, newHeight, dpr) {
+    width = newWidth; height = newHeight;
     pointer = null;
     for (const p of points) { p.offsetX = 0; p.offsetY = 0; }
-    const dpr = Math.min(devicePixelRatio || 1, 1.5);
     canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     unit = Math.min(width * .78 / 429, height * .5 / 312, 1.4);
+    buildAtlas(dpr);
   }
   const screenX = x => width / 2 + (x - center.x) * unit;
   const screenY = y => height / 2 - 18 + (y - center.y) * unit;
   function hover(event) {
-    if (event.pointerType === 'touch' || reduced.matches) return;
+    if (event.pointerType === 'touch') return;
     pointer = { x: event.clientX, y: event.clientY };
   }
   function unhover() { pointer = null; }
   function draw(now) {
-    if (removed) return;
-    if (!root.hasAttribute('data-entry-loading')) { dispose(); return; }
     const dt = Math.max(0, Math.min(50, now - lastDraw));
     lastDraw = now;
     const radius = Math.max(32, Math.min(54, width * .062));
     const ease = 1 - Math.exp(-dt / (pointer ? 65 : 150));
     const elapsed = Number.isFinite(sampleFrame) ? Math.max(0, sampleFrame) : now - started;
     // Positive rotation is clockwise in Canvas screen coordinates. No loop reset.
-    const angle = reduced.matches ? 0 : elapsed * .00085;
+    const angle = elapsed * .00085;
     const c = Math.cos(angle), s = Math.sin(angle);
-    layer.dataset.stage = 'loading';
     ctx.clearRect(0, 0, width, height);
     ctx.save(); ctx.beginPath();
     outline.forEach(([x, y], i) => i ? ctx.lineTo(screenX(x), screenY(y)) : ctx.moveTo(screenX(x), screenY(y)));
@@ -127,54 +146,144 @@
       // Each glyph yields locally, then eases back onto its rotating orbit.
       p.offsetX += (targetX - p.offsetX) * ease;
       p.offsetY += (targetY - p.offsetY) * ease;
-      const pale = inside(x, y, belly) || inside(x, y, flank) || inside(x, y, eye);
-      ctx.font = `500 ${Math.max(4.5, 7.1 * unit * p.size).toFixed(1)}px ui-monospace, Menlo, Consolas, monospace`;
-      ctx.globalAlpha = pale ? .95 : .94;
-      ctx.fillStyle = pale ? '#FFDBDD' : p.color;
-      ctx.fillText(p.letter, baseX + p.offsetX, baseY + p.offsetY);
+      const pale = markings[Math.floor(y) * maskWidth + Math.floor(x)] === 1;
+      const fontSize = Math.max(4.5, 7.1 * unit * p.size);
+      const sx = baseX + p.offsetX, sy = baseY + p.offsetY;
+      if (atlas) {
+        const size = cell * fontSize / atlasFont;
+        ctx.drawImage(atlas, p.letterIndex * cell, (pale ? 3 : p.inkIndex) * cell, cell, cell,
+          sx - size / 2, sy - size / 2, size, size);
+      } else {
+        ctx.font = `500 ${fontSize.toFixed(1)}px ui-monospace, Menlo, Consolas, monospace`;
+        ctx.globalAlpha = pale ? .95 : .94; ctx.fillStyle = pale ? '#FFDBDD' : p.color;
+        ctx.fillText(p.letter, sx, sy);
+      }
     }
     ctx.restore(); ctx.globalAlpha = 1;
+  }
+  return { draw, resize, hover, unhover, dispose() { if (atlas) { atlas.width = 1; atlas.height = 1; atlas = null; } } };
+}
+
+// Worker execution uses the same source and has no DOM/Home initialization.
+if (typeof document === 'undefined') {
+  let renderer, frame, active = false;
+  const raf = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : fn => setTimeout(() => fn(performance.now()), 16);
+  const caf = typeof cancelAnimationFrame === 'function' ? cancelAnimationFrame : clearTimeout;
+  let samples = [], gaps = [], last = 0, reportAt = 0, debug = false;
+  const tick = now => {
+    if (!active) return;
+    const begin = performance.now(); renderer.draw(now);
+    if (debug) {
+      samples.push(performance.now() - begin); if (last) gaps.push(now - last); last = now;
+      if (now - reportAt > 1000) {
+        postMessage({ type: 'stats', samples, gaps, backend: 'worker' });
+        samples = []; gaps = []; reportAt = now;
+      }
+    }
+    frame = raf(tick);
+  };
+  self.onmessage = ({ data }) => {
+    try {
+      if (data.type === 'init') {
+        renderer = createORCALetterRenderer(data.canvas, () => new OffscreenCanvas(1, 1), data.sampleFrame);
+        renderer.resize(data.width, data.height, data.dpr); debug = data.debug;
+        active = true; postMessage({ type: 'ready' }); frame = raf(tick);
+      } else if (data.type === 'resize') renderer?.resize(data.width, data.height, data.dpr);
+      else if (data.type === 'pointer') renderer?.hover(data);
+      else if (data.type === 'leave') renderer?.unhover();
+      else if (data.type === 'stop') { active = false; caf(frame); renderer?.dispose(); }
+    } catch (error) { postMessage({ type: 'error', message: String(error) }); }
+  };
+} else (() => {
+  'use strict';
+  const root = document.documentElement;
+  const layer = document.querySelector('[data-entry-loader]');
+  if (!layer || !root.hasAttribute('data-entry-loading')) { layer?.remove(); return; }
+  let canvas = layer.querySelector('canvas');
+  const preview = root.dataset.entryLoading === 'preview';
+  const query = new URLSearchParams(location.search);
+  const sampleFrame = preview && query.has('loading-frame') ? Number(query.get('loading-frame')) : NaN;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const started = performance.now(), scriptURL = document.currentScript?.src;
+  const debug = preview && query.get('loading-debug') === '1';
+  let worker, renderer, frame, timer, workerWatchdog, removed = false, leaving = false;
+  let report, lastFrame = started, reportAt = started;
+  const samples = [], gaps = [];
+  if (debug) {
+    report = document.createElement('output'); report.setAttribute('data-entry-performance', '');
+    report.style.cssText = 'position:absolute;bottom:20px;left:20px;max-width:90vw;color:#303d72;font:12px/1.5 monospace;white-space:pre-wrap';
+    layer.append(report);
+  }
+  function statistics(data) {
+    if (!report) return;
+    const avg = values => values.reduce((sum, x) => sum + x, 0) / Math.max(1, values.length);
+    const p95 = values => [...values].sort((a, b) => a - b)[Math.floor((values.length - 1) * .95)] || 0;
+    report.textContent = `${data.backend}: ${(1000 / avg(data.gaps)).toFixed(1)} fps · ${data.samples.length} frames\nDraw avg ${avg(data.samples).toFixed(2)} ms / p95 ${p95(data.samples).toFixed(2)} ms · frame p95 ${p95(data.gaps).toFixed(1)} ms`;
+  }
+  const size = () => ({ width: innerWidth, height: innerHeight, dpr: Math.min(devicePixelRatio || 1, 1.5) });
+  function resize() {
+    const bounds = size();
+    if (worker) worker.postMessage({ type: 'resize', ...bounds });
+    else renderer?.resize(bounds.width, bounds.height, bounds.dpr);
+  }
+  function hover(event) {
+    if (event.pointerType === 'touch' || reduced.matches) return;
+    const data = { type: 'pointer', clientX: event.clientX, clientY: event.clientY, pointerType: event.pointerType };
+    if (worker) worker.postMessage(data); else renderer?.hover(data);
+  }
+  function unhover() { if (worker) worker.postMessage({ type: 'leave' }); else renderer?.unhover(); }
+  function draw(now) {
+    if (removed) return;
+    if (!root.hasAttribute('data-entry-loading')) { dispose(); return; }
+    const begin = debug ? performance.now() : 0;
+    renderer.draw(now);
+    if (debug) {
+      samples.push(performance.now() - begin); if (now > lastFrame) gaps.push(now - lastFrame); lastFrame = now;
+      if (samples.length > 240) samples.shift(); if (gaps.length > 240) gaps.shift();
+      if (now - reportAt > 1000) { statistics({ samples, gaps, backend: 'main' }); reportAt = now; }
+    }
     if (!reduced.matches && !Number.isFinite(sampleFrame)) frame = requestAnimationFrame(draw);
+  }
+  function fallback(replace = false) {
+    if (removed) return;
+    clearTimeout(workerWatchdog); worker?.terminate(); worker = null;
+    if (replace) { const fresh = canvas.cloneNode(); canvas.replaceWith(fresh); canvas = fresh; }
+    try {
+      renderer = createORCALetterRenderer(canvas, () => document.createElement('canvas'), reduced.matches ? 0 : sampleFrame);
+      resize(); layer.dataset.renderer = 'main'; draw(performance.now());
+    } catch { dispose(); }
   }
   function dispose() {
     if (removed) return;
-    removed = true;
-    cancelAnimationFrame(frame); clearTimeout(timer); clearTimeout(window.__orcaEntryWatchdog);
-    observer.disconnect();
-    removeEventListener('resize', resize); removeEventListener('pagehide', dispose);
-    removeEventListener('pageshow', restored); removeEventListener('keydown', key);
-    reduced.removeEventListener('change', motionChange);
+    removed = true; cancelAnimationFrame(frame); clearTimeout(timer); clearTimeout(workerWatchdog); clearTimeout(window.__orcaEntryWatchdog);
+    worker?.terminate(); renderer?.dispose(); observer.disconnect();
+    removeEventListener('resize', resize); removeEventListener('pagehide', dispose); removeEventListener('pageshow', restored);
+    removeEventListener('keydown', key); removeEventListener('blur', unhover); reduced.removeEventListener('change', motionChange);
     document.removeEventListener('DOMContentLoaded', ready);
-    layer.removeEventListener('pointermove', hover); layer.removeEventListener('pointerleave', unhover);
-    layer.removeEventListener('pointercancel', unhover); removeEventListener('blur', unhover);
+    layer.removeEventListener('pointermove', hover); layer.removeEventListener('pointerleave', unhover); layer.removeEventListener('pointercancel', unhover);
     root.removeAttribute('data-entry-loading'); layer.remove();
   }
   function finish() {
     if (removed || leaving) return;
     leaving = true;
     try { sessionStorage.setItem('orca.entry-seen.v1', '1'); } catch { /* Optional storage. */ }
-    root.dataset.entryLoading = 'leaving';
-    clearTimeout(timer); timer = setTimeout(dispose, reduced.matches ? 0 : 260);
+    root.dataset.entryLoading = 'leaving'; clearTimeout(timer); timer = setTimeout(dispose, reduced.matches ? 0 : 260);
   }
   function ready() {
     if (preview || leaving || removed) return;
     const homeScene = document.querySelector('[data-ot]');
     if (homeScene ? document.querySelector('[data-ot].is-ready') : document.readyState !== 'loading') {
-      observer.disconnect(); clearTimeout(timer);
-      timer = setTimeout(finish, Math.max(0, duration - (performance.now() - started)));
+      observer.disconnect(); clearTimeout(timer); timer = setTimeout(finish, Math.max(0, 1000 - (performance.now() - started)));
     }
   }
   function restored(event) { if (event.persisted) dispose(); }
   function key(event) { if (preview && event.key === 'Escape') finish(); }
   function motionChange() { if (reduced.matches) finish(); }
   const observer = new MutationObserver(ready);
-  observer.observe(document.documentElement, { subtree: true, childList: true, attributes: true, attributeFilter: ['class'] });
-  layer.addEventListener('pointermove', hover, { passive: true });
-  layer.addEventListener('pointerleave', unhover); layer.addEventListener('pointercancel', unhover);
-  addEventListener('blur', unhover);
+  observer.observe(root, { subtree: true, childList: true, attributes: true, attributeFilter: ['class'] });
+  layer.addEventListener('pointermove', hover, { passive: true }); layer.addEventListener('pointerleave', unhover); layer.addEventListener('pointercancel', unhover);
   layer.addEventListener('wheel', event => event.preventDefault(), { passive: false });
-  addEventListener('resize', resize, { passive: true });
-  addEventListener('pagehide', dispose); addEventListener('pageshow', restored);
+  addEventListener('blur', unhover); addEventListener('resize', resize); addEventListener('pagehide', dispose); addEventListener('pageshow', restored);
   addEventListener('keydown', key); reduced.addEventListener('change', motionChange);
   if (preview) {
     clearTimeout(window.__orcaEntryWatchdog);
@@ -188,6 +297,22 @@
     }
     finish();
   }, document.querySelector('[data-ot]') ? 12000 : 3200);
-  document.addEventListener('DOMContentLoaded', ready, { once: true });
-  resize(); draw(started); ready();
+  document.addEventListener('DOMContentLoaded', ready, { once: true }); layer.dataset.stage = 'loading';
+  if (!reduced.matches && !Number.isFinite(sampleFrame) && scriptURL && typeof Worker === 'function' && canvas.transferControlToOffscreen) {
+    try {
+      worker = new Worker(scriptURL);
+      const currentWorker = worker;
+      worker.onerror = () => { if (worker === currentWorker) fallback(true); };
+      worker.onmessage = ({ data }) => {
+        if (removed || worker !== currentWorker) return;
+        if (data.type === 'ready') clearTimeout(workerWatchdog);
+        else if (data.type === 'error') fallback(true);
+        else if (data.type === 'stats') statistics(data);
+      };
+      const offscreen = canvas.transferControlToOffscreen();
+      worker.postMessage({ type: 'init', canvas: offscreen, sampleFrame, debug, ...size() }, [offscreen]);
+      layer.dataset.renderer = 'worker'; workerWatchdog = setTimeout(() => fallback(true), 1000);
+    } catch { fallback(true); }
+  } else fallback();
+  ready();
 })();

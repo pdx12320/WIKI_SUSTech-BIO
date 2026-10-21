@@ -20,7 +20,15 @@ import { matchBrainToMaze } from './brain-correspondence.mjs';
 import { createBiologyScene } from './biology-scene.mjs';
 import { createEditReplay } from './edit-replay.mjs';
 import { buildScrollTrack } from './burden-pacing.mjs';
+import { paceCellScroll } from './cell-scroll-pacing.mjs';
+import { createMemoryMazeEnding } from './memory-maze-ending.mjs';
 import { createParisParticles } from './paris-particles.mjs';
+import { createParticleAtmosphere } from './particle-atmosphere.mjs';
+import { createOneCContext } from './one-c-context.mjs';
+import { createOneCParticles } from './one-c-particles.mjs';
+import { createRnaCellScene } from './rna-cell-scene.mjs';
+import { cellPointerTranslation } from './cell-fpv-motion.mjs';
+import { cellReplayView,editOriginOffset,legacyParticleOpacity,rnaEditorView,rnaReplayApproach } from './cell-replay-view.mjs';
 
 const root = document.querySelector('[data-ot]');
 const canvas = root?.querySelector('[data-ot-canvas]');
@@ -263,25 +271,26 @@ async function brainShape(n, checkpoint = async () => {}) {
 }
 
 function astrocyteShape(n) {
-  const segs = [];
+  const segs = [], arbors = [];
   const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
   const mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k];
   const norm = (a) => { const l = Math.hypot(...a) || 1; return mul(a, 1 / l); };
-  const grow = (start, dir, len, r0, depth) => {
+  const grow = (start, dir, len, r0, depth, rootId) => {
     const end = add(start, mul(dir, len));
     const ctrl = add(add(start, mul(dir, len * 0.5)), mul(sphereDir(), len * 0.28));
     const r1 = r0 * 0.5;
-    segs.push({ a: start, c: ctrl, b: end, r0, r1, w: len * (r0 + r1) });
+    segs.push({ a: start, c: ctrl, b: end, r0, r1, rootId, w: len * (r0 + r1) });
     if (depth < 2) {
       const kids = depth === 0 ? 3 : 2;
-      for (let k = 0; k < kids; k++) grow(end, norm(add(dir, mul(sphereDir(), 0.85))), len * 0.62, r1, depth + 1);
+      for (let k = 0; k < kids; k++) grow(end, norm(add(dir, mul(sphereDir(), 0.85))), len * 0.62, r1, depth + 1, rootId);
     } else {
-      segs.push({ a: end, c: end, b: end, r0: 0.14, r1: 0.14, w: 0.08, bulb: true });
+      segs.push({ a: end, c: end, b: end, r0: 0.14, r1: 0.14, w: 0.08, rootId, bulb: true });
     }
   };
   for (let i = 0; i < 12; i++) {
     const d = sphereDir();
-    grow(mul(d, 0.8), d, 1.7 + rnd() * 1.1, 0.26, 0);
+    arbors.push({ id: i, direction: d.slice() });
+    grow(mul(d, 0.8), d, 1.7 + rnd() * 1.1, 0.26, 0, i);
   }
   const total = segs.reduce((s, g) => s + g.w, 0);
   const cdf = []; let acc = 0;
@@ -289,6 +298,7 @@ function astrocyteShape(n) {
 
   const pos = new Float32Array(n * 3);
   const meta = new Float32Array(n);
+  const branchIds = new Int16Array(n); branchIds.fill(-1);
   for (let i = 0; i < n; i++) {
     let p;
     const region = rnd();
@@ -313,11 +323,12 @@ function astrocyteShape(n) {
       const c = [0, 1, 2].map((k) => it * it * g.a[k] + 2 * it * t * g.c[k] + t * t * g.b[k]);
       const rr = lerp(g.r0, g.r1, t) * (.84 + .16*rnd());
       p = add(c, mul(sphereDir(), rr));
+      branchIds[i] = g.rootId;
       meta[i] = 1; // Tapered process surface, distinct from soma and nucleus.
     }
     pos.set(mul(p, 1.12), i * 3);
   }
-  return { pos, meta };
+  return { pos, meta, branchIds, arbors };
 }
 
 const STRAND = { centerX: -22, half: 22, radius: 1.05, pitch: 6.2, baseStep: 0.62 };
@@ -366,11 +377,13 @@ function sortShape(shape, n) {
   const key = (i) => shape.pos[i * 3] + 0.3 * shape.pos[i * 3 + 1] + 0.12 * shape.pos[i * 3 + 2];
   order.sort((a, b) => key(a) - key(b));
   const pos = new Float32Array(n * 3), meta = new Float32Array(n);
+  const branchIds = shape.branchIds ? new Int16Array(n) : null;
   order.forEach((src, dst) => {
     pos[dst * 3] = shape.pos[src * 3]; pos[dst * 3 + 1] = shape.pos[src * 3 + 1]; pos[dst * 3 + 2] = shape.pos[src * 3 + 2];
     meta[dst] = shape.meta[src];
+    if (branchIds) branchIds[dst] = shape.branchIds[src];
   });
-  return { ...shape, pos, meta };
+  return { ...shape, pos, meta, ...(branchIds ? { branchIds } : {}) };
 }
 
 /* ------------------------------------------------------------------ */
@@ -586,11 +599,11 @@ const KEYS = [
 // Let the leftward RNA journey run longer, with lighter pacing elsewhere.
 // The longer CSS track keeps morphs at their original scroll speed.
 // Text, camera and effects all use this same reversible timeline mapping.
-const { track: TRACK, length: trackLength, scale: trackScale } = buildScrollTrack(KEYS, {
+const { track: TRACK, length: trackLength, scale: trackScale } = paceCellScroll(buildScrollTrack(KEYS, {
   burden: !!root?.querySelector('[data-burden]'),
   stagedConclusions: !!root?.hasAttribute('data-staged-conclusions'),
   paris: !!root?.querySelector('[data-burden-paris]'),
-});
+}),!!root?.querySelector('[data-rna-cell]'));
 // Add the comparison's reading distance without speeding up other chapters.
 story?.style.setProperty('--ot-track-scale', trackScale);
 function takeOf(p) {
@@ -714,6 +727,8 @@ async function boot() {
   await checkpoint(true);
   const crt = createCrtOpening(root);
   await checkpoint(true);
+  const atmosphere = createParticleAtmosphere(root);
+  const oneCContext = createOneCContext(root);
 
   const N = small ? 26000 : 64000;
   const DUST = Math.floor(N * 0.07);
@@ -792,6 +807,10 @@ async function boot() {
   const scene = new THREE.Scene();
   ring.visible = false;
   scene.add(points);
+  const oneCParticles = createOneCParticles(THREE,scene,{enabled:!!root.querySelector('[data-one-c-context]'),small,strand});
+  const hasCellContext=!!root.querySelector('[data-rna-cell]');
+  const rnaCell = createRnaCellScene(THREE,scene,root,{small,cell});
+  const memoryEnding = createMemoryMazeEnding(THREE,scene,root,{maze,brain,small});
   const replay = createEditReplay({ root, story, toProgress: progressOfTake,
     enabled: Number.isNaN(pinned) && !reduceQuery.matches &&
       !(root.hasAttribute('data-structure-preview') && location.hash === '#apoe112') });
@@ -921,14 +940,23 @@ async function boot() {
   reduceQuery.addEventListener?.('change', (e) => { reduce = e.matches; });
 
   const camPos = new THREE.Vector3(), camLook = new THREE.Vector3(), tmp = new THREE.Vector3();
+  const rnaClosePos = new THREE.Vector3(), rnaCloseLook = new THREE.Vector3();
   const clock = new THREE.Clock();
-  let p = progressOf(), time = Number.isNaN(pinned) ? 0 : 4, intro = 0, started = false;
+  let p = progressOf(), time = Number.isNaN(pinned) ? 0 : 4, intro = 0, started = false, wasReplaying = false;
   root.addEventListener('ot:skip-story', () => {
     replay.skipToProject();
     p = progressOf();
   });
 
   function frame() {
+    // Let one frame initialize shaders/readiness, then give the visible entry
+    // loader the frame budget while this scene is completely covered.
+    const entryCover = document.documentElement.dataset.entryLoading;
+    if (started && entryCover && entryCover !== 'leaving') {
+      clock.getDelta();
+      raf = requestAnimationFrame(frame);
+      return;
+    }
     const dt = Math.min(clock.getDelta(), 0.05);
     const target = progressOf();
     p = reduce ? target : p + (target - p) * (1 - Math.exp(-dt * 5.5));
@@ -936,17 +964,23 @@ async function boot() {
     let q = takeOf(p);
     const replayState = replay.update(q, dt);
     if (replayState) { q = replayState.take; p = progressOf(); }
+    else if (wasReplaying && hasCellContext) { p = progressOf(); q = takeOf(p); }
+    wasReplaying = !!replayState;
     const P = clamp(q, -1, 1);
+    const rnaApproach=rnaReplayApproach(P,replayState,hasCellContext);
+    const contextView=cellReplayView(P,rnaApproach??replayState,hasCellContext);
+    const oneCBackground=contextView.backdrop??oneCContext.backdrop(contextView.take,contextView.replay);
+    oneCContext.captureCover?.();
     uniforms.uSignal.value = crt?.update(P) ?? 1;
     updatePointer();
-    updateDom(replayState?.phase === 'edit' ? .856 : q, !reduce && Number.isNaN(pinned));
+    updateDom(replayState?.phase === 'question'&&hasCellContext?.803:replayState?.phase === 'edit' ? .856 : q, !reduce && Number.isNaN(pinned));
     const motion = reduce ? 0 : 1;
     time += dt * motion;
     intro = crt || reduce || !Number.isNaN(pinned) ? 1 : Math.min(1, intro + dt / 3.2);
 
     const { t, stage } = sample(P);
     camCurve.getPoint(t, camPos); lookCurve.getPoint(t, camLook);
-    if (replayState && ['target','placement','edit','return'].includes(replayState.phase)) {
+    if (replayState && ['target','placement','docking','edit','return'].includes(replayState.phase)) {
       const targetCamera = sample(.84).t;
       camCurve.getPoint(targetCamera,camPos); lookCurve.getPoint(targetCamera,camLook);
       if (replayState.phase === 'return') {
@@ -954,19 +988,37 @@ async function boot() {
         camLook.lerp(lookCurve.getPoint(sample(.955).t),replayState.cameraBlend);
       }
     }
+    const editShift=editOriginOffset(strand.target.x,replayState,hasCellContext,P);
+    camPos.x+=editShift;camLook.x+=editShift;
     // Narrow screens: pull the camera back along its own axis.
     const aspect = innerWidth / innerHeight;
     const pull = Math.max(1, 1.15 / aspect);
     camPos.sub(camLook).multiplyScalar(pull).add(camLook);
-    parisParticles.camera(P, camPos, camLook);
     mouseSmooth.lerp(mouseOn ? mouse : tmp.set(0, 0, 0), 1 - Math.exp(-dt * 3));
+    oneCParticles.camera(contextView.take,time,aspect,camPos,camLook,contextView.replay,contextView.cameraOpacity??contextView.opacity);
+    const cellBank=rnaCell.camera(contextView.take,aspect,camPos,camLook,contextView.replay,time,{x:mouseSmooth.x,y:mouseSmooth.y,on:mouseOn*motion})??0;
+    parisParticles.camera(P, camPos, camLook);
+    rnaCell.questionCamera?.(contextView.take,aspect,camPos,camLook,contextView.replay,time,{x:mouseSmooth.x,y:mouseSmooth.y,on:mouseOn*motion});
+    // The same molecular approach finishes inside the reverse, before docking.
+    // Labels have their own fade; camera and RNA share one continuous clock.
+    if(rnaApproach){
+      const editorT=sample(.84).t;
+      camCurve.getPoint(editorT,rnaClosePos);lookCurve.getPoint(editorT,rnaCloseLook);
+      rnaClosePos.x-=strand.target.x;rnaCloseLook.x-=strand.target.x;
+      rnaClosePos.sub(rnaCloseLook).multiplyScalar(pull).add(rnaCloseLook);
+      camPos.lerp(rnaClosePos,rnaApproach.contextHandoff);camLook.lerp(rnaCloseLook,rnaApproach.contextHandoff);
+    }
+    memoryEnding.camera(P,time,aspect,camPos,camLook,replayState);
+    atmosphere.update(P, mouseSmooth.x, mouseSmooth.y, reduce, dt);
     // Dragging needs stable destinations: pointer parallax resumes on the pullback.
-    const pointerMotion = replayState && ['target','placement','edit','return'].includes(replayState.phase)
+    const pointerMotion = replayState && ['target','placement','docking','edit','return'].includes(replayState.phase)
       ? (replayState.phase === 'return' ? replayState.cameraBlend : 0) : 1;
-    camPos.x += mouseSmooth.x * 0.5 * motion * pointerMotion;
-    camPos.y += mouseSmooth.y * 0.3 * motion * pointerMotion;
+    const translationMotion=pointerMotion*cellPointerTranslation(P,hasCellContext)*memoryEnding.backdrop(P,replayState)*(1-(rnaApproach?.contextHandoff??0));
+    camPos.x += mouseSmooth.x * 0.5 * motion * translationMotion;
+    camPos.y += mouseSmooth.y * 0.3 * motion * translationMotion;
     // The opening dolly must not move the RNA while a direct-entry drag starts.
     if (!replayState) camPos.z += (1 - smooth(intro)) * 6;
+    camera.up.set(Math.sin(cellBank),Math.cos(cellBank),0);
     camera.position.copy(camPos); camera.lookAt(camLook);
     // Keep the C/U overlay aligned with this frame's camera before projection.
     camera.updateMatrixWorld();
@@ -983,10 +1035,8 @@ async function boot() {
     // The dementia comparison (0.747–0.78) stays inside the particle take:
     // the scene keeps its full brightness until the comparison has ended, then
     // hands over to the question chapter.
-    uniforms.uSceneAlpha.value = (1-smooth(ramp(P,.335,.387)))
-      + smooth(ramp(P,.634,.674))*(1-smooth(ramp(P,.786,.808)))
-      + smooth(ramp(P,.914,.95));
-    uniforms.uSceneAlpha.value *= parisParticles.backdrop(P);
+    uniforms.uSceneAlpha.value = legacyParticleOpacity(P,hasCellContext);
+    uniforms.uSceneAlpha.value *= parisParticles.backdrop(P)*oneCBackground*memoryEnding.backdrop(P,replayState);
     uniforms.uMouse.value.copy(mouseSmooth);
     const openingPointer = stage < 0 ? 1 - smooth(ramp(stage, -0.98, -0.65)) : 1;
     uniforms.uMouseOn.value = mouseOn * motion * openingPointer;
@@ -996,10 +1046,10 @@ async function boot() {
     const brainReturn = smooth(ramp(stage, 4.65, 5));
     const brainAmount = Math.max(brainIn * brainOut, brainReturn);
     foldContours.rotation.y = uniforms.uRot.value;
-    foldMaterial.opacity = brainAmount * 0.22;
-    foldContours.visible = brainAmount > 0.001;
+    foldMaterial.opacity = brainAmount * 0.22 * oneCBackground*memoryEnding.backdrop(P,replayState);
+    foldContours.visible = brainAmount > 0.001 && oneCBackground > .001;
 
-    biology.update(P,time,camera,motion,replayState,parisParticles.backdrop(P));
+    const biologicalEdit=biology.update(P,time,camera,motion,rnaApproach&&!rnaApproach.duringRewind?rnaApproach:replayState,parisParticles.backdrop(P),oneCBackground*memoryEnding.backdrop(P,replayState));
 
     grade.uniforms.uTime.value = time;
     grade.uniforms.uAberration.value = P > .22 && P < .94 ? .00015 : .0007;
@@ -1009,6 +1059,12 @@ async function boot() {
     root.style.setProperty('--ot-p', P.toFixed(4));
     root.dispatchEvent(new CustomEvent('ot:frame', { detail: { p, take: P, reduced: reduce } }));
     parisParticles.update(P, time);
+    const editorView=rnaEditorView(P,rnaApproach??replayState,hasCellContext,biologicalEdit.fix);
+    const moleculeView=editorView?{...editorView,presence:(editorView.presence??1)*memoryEnding.backdrop(P,replayState)}:null;
+    oneCParticles.update(contextView.take,time,dt,oneCContext.edited?.()??false,contextView.replay,motion,contextView.opacity,moleculeView,{x:mouse.x,y:mouse.y,on:mouseOn*motion});
+    oneCContext.update(contextView.take,contextView.replay,oneCParticles.labels(camera,innerWidth,innerHeight),contextView.opacity);
+    rnaCell.update(contextView.take,time,camera,contextView.replay,motion,innerWidth,innerHeight,{x:mouse.x,y:mouse.y,on:mouseOn*motion},dt);
+    memoryEnding.update(P,time,camera,motion,innerWidth,innerHeight,replayState,p);
     composer.render();
     if (!started) {
       started = true; root.classList.add('is-ready');

@@ -1,0 +1,9 @@
+/* Footer colours spread softly through the deep-blue particle space. */
+.particle-atmosphere {position:absolute;inset:-8%;overflow:hidden;pointer-events:none;opacity:0;
+ background:linear-gradient(135deg,#38245a32,transparent 58%,#25163c24);mix-blend-mode:screen;contain:paint;}
+.particle-atmosphere__glow {position:absolute;display:block;width:88%;height:108%;border-radius:50%;pointer-events:none;will-change:transform;}
+.particle-atmosphere__glow--purple {left:-27%;top:-22%;background:radial-gradient(ellipse,#b29aff38 0,#b29aff2b 22%,#a790f516 43%,transparent 72%);}
+.particle-atmosphere__glow--pink {left:27%;top:-40%;background:radial-gradient(ellipse,#ffa6d132 0,#ffa6d126 23%,#ed9ac314 44%,transparent 72%);}
+.particle-atmosphere__glow--mint {left:51%;top:15%;background:radial-gradient(ellipse,#9be8bf38 0,#9be8bf2b 22%,#91dcb416 44%,transparent 72%);}
+@media(max-width:760px){.particle-atmosphere__glow{width:108%;opacity:.85;}.particle-atmosphere__glow--pink{left:16%;}.particle-atmosphere__glow--mint{left:38%;}}
+@media(prefers-reduced-motion:reduce){.particle-atmosphere__glow{will-change:auto;transform:none!important;}}

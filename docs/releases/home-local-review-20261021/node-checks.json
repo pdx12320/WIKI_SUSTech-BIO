@@ -1,0 +1,137 @@
+[
+  {
+    "test": "tests/home_auto_dock.mjs",
+    "exit": 0,
+    "output": "Passed unattended PUF\u2192APOBEC docking before C\u2192U, no placement wait, no early edit, Skip completion, real particle positions and persistent pale yellow guides.\n(node:68480) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file://<review-checkout>/static/vendor/three/three.module.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to <review-checkout>/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  {
+    "test": "tests/home_rewind_motion.mjs",
+    "exit": 0,
+    "output": "Passed progressive acceleration, near-target braking, monotonic motion, continuous speed, soft landing and unchanged CGC hold.\n"
+  },
+  {
+    "test": "tests/cover_c_bridge.mjs",
+    "exit": 0,
+    "output": "Passed original C node identity, exact cover bounds, continuous RNA placement, pink C, stale-U cleanup, repeated ORCA restoration and later codon typography/color preservation.\n"
+  },
+  {
+    "test": "tests/cover_c_spacing.mjs",
+    "exit": 0,
+    "output": "390px: 229 visible sampled frames with no overlapping ink bounds.\n708px: 209 visible sampled frames with no overlapping ink bounds.\n1440px: 207 visible sampled frames with no overlapping ink bounds.\n(node:68486) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file://<review-checkout>/static/vendor/three/three.module.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to <review-checkout>/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  {
+    "test": "tests/one_c_context.mjs",
+    "exit": 0,
+    "output": "Passed fixed CGC, no manual editing, stale U cleanup, repeated return to cover, single-caption information and replay handoff.\n"
+  },
+  {
+    "test": "tests/one_c_particles.mjs",
+    "exit": 0,
+    "output": "Passed volumetric single-backbone RNA, unchanged molecular particles, projected codon labels, continuous camera motion, desktop/mobile framing, replay and /next isolation.\nPassed actual RNA object identity, unchanged vertices, full molecular containment and reversible cell-scale transition.\n(node:68488) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file://<review-checkout>/static/vendor/three/three.module.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to <review-checkout>/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  {
+    "test": "tests/particle_atmosphere.mjs",
+    "exit": 0,
+    "output": "Passed bounded pointer/scroll parallax, layered depth, opening/directory handoff and reduced-motion stability.\n"
+  },
+  {
+    "test": "tests/rna_cell_scene.mjs",
+    "exit": 0,
+    "output": "Passed particle-only biology, retained intracellular RNA, separate apoE, one transport pass, stable cell contours, three information points, desktop/mobile labels, reversible handoff, replay and /next isolation.\n(node:68494) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file://<review-checkout>/static/vendor/three/three.module.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to <review-checkout>/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  {
+    "test": "tests/home_confirmed_edit.mjs",
+    "exit": 0,
+    "output": "Passed second-drop automatic confirmation, target highlight, C\u2192U conversion, two-second result hold, no extra gesture, input continuity and unchanged manual handoff\nPassed combined quick rewind, full automatic confirmation and Skip-to-completed-result.\n"
+  },
+  {
+    "test": "tests/home_edit_replay.mjs",
+    "exit": 0,
+    "output": "Passed edit order, forward wheel/touch/key continuity, readable hold, real rewind, placement pause, one-gesture playback, interruption, direct project entry, session reset and reduced-motion checks.\nPassed completed-edit hold, hidden animation control, scroll-only reversible return, and wheel/touch/keyboard continuity.\nPassed homepage reading hold and slower rewind, continuous handoff, fast-scroll entry and completed edit before return.\nSkip animation: question, placement and edit all stop at UGC; only scrolling advances.\n"
+  },
+  {
+    "test": "tests/home_drag_entry.mjs",
+    "exit": 0,
+    "output": "Passed direct-anchor entry, story offset, direct project return and forward wheel/touch/key continuity without repeated CGC or AD chapters.\n"
+  },
+  {
+    "test": "tests/burden_pacing.mjs",
+    "exit": 0,
+    "output": "Passed: comparison occupies 5.9% of the take, surrounding speed unchanged, scroll reversible\nPassed homepage half-distance edit exit, unchanged reading distance and reversible mapping.\nPassed staged conclusion distance and unchanged earlier scroll pacing.\n"
+  },
+  {
+    "test": "tests/dementia_paris.mjs",
+    "exit": 0,
+    "output": "Passed Paris reading stages, reverse scroll, reveal bounds, handoff and ratio\n"
+  },
+  {
+    "test": "tests/paris_particles.mjs",
+    "exit": 0,
+    "output": "Passed original A\u03b2 identity/count, tower destinations, single-city hold, camera pullback, 27-city reveal, depth, fallback and /next isolation\n(node:68509) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file://<review-checkout>/static/vendor/three/three.module.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to <review-checkout>/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  {
+    "test": "tests/paris_retreat_pacing.mjs",
+    "exit": 0,
+    "output": "Passed 2.67\u00d7 slower Paris retreat, preserved unaffected speeds, reversible mapping and smooth endpoints\n"
+  },
+  {
+    "test": "tests/maze_navigation.mjs",
+    "exit": 0,
+    "output": "Passed: all 269 targets reachable; head and tail stay in open passages during pursuit, reversal, holding and wandering.\n"
+  },
+  {
+    "test": "tests/brain_correspondence.mjs",
+    "exit": 0,
+    "output": "Passed: every neuron preserved; local matching reduces planar morph travel; contours stay aligned.\n"
+  },
+  {
+    "test": "tests/entry_loading.mjs",
+    "exit": 0,
+    "output": "Passed fixed logo, clockwise letter flow, phone bounds, one-second readiness, session/bypass, recovery and cleanup.\n"
+  },
+  {
+    "test": "tests/entry_loading_worker.mjs",
+    "exit": 0,
+    "output": "Passed independent worker rendering, diagnostics, pointer/resize messages and termination.\n"
+  },
+  {
+    "test": "tests/entry_scene_budget.mjs",
+    "exit": 0,
+    "output": "Passed first-frame readiness, covered preview rendering budget, fade/resume and clock handling.\n"
+  },
+  {
+    "test": "tests/opening_warmup.mjs",
+    "exit": 0,
+    "output": "Passed opening resource discovery, inert loading, concurrency, dedup/promotion, origin/hosting guards, cleanup, restored navigation and constrained networks.\n"
+  },
+  {
+    "test": "tests/home_first_frame.mjs",
+    "exit": 0,
+    "output": "Passed pre-module opening selection, explicit legacy comparison, reduced motion and import-error fallback.\n"
+  },
+  {
+    "test": "tests/memory_tunnel.mjs",
+    "exit": 0,
+    "output": "Passed independent object speeds, overtaking, forward depth/scale, continuous wrapping, four-sided projection, inward arc and tumble, mouse steering, quiet center, peripheral encounters, idle movement, reduced motion and exit pause.\n"
+  },
+  {
+    "test": "tests/memory_grab.mjs",
+    "exit": 0,
+    "output": "Passed transformed picking, topmost memory, grab offset, pointer identity, release/cancel, camera lock and flying-object exclusion.\nPassed renderer pointer drag, stable held position, camera freeze, release flight and hidden-scene input cleanup.\n"
+  },
+  {
+    "test": "tests/memory_spacing.mjs",
+    "exit": 0,
+    "output": "Passed nearest-first overlap spacing, order independence, isolated recovery and rotated/mirrored silhouette bounds.\n"
+  },
+  {
+    "test": "static/onetake/memory-maze-ending.test.mjs",
+    "exit": 0,
+    "output": "Passed: original 2048 particle identities; real ORCA maze passages; extended exit and single arrival pop; continuous route-to-arrow; reversible scroll; desktop/mobile framing; project handoff; replay and /next isolation.\n(node:69611) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file://<review-checkout>/static/vendor/three/three.module.js is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to <review-checkout>/package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  {
+    "test": "static/onetake/memory-orca-maze.test.mjs",
+    "exit": 0,
+    "output": "Passed 4096 conserved particle indices, original brain silhouette (889 cells), 199 continuous orthogonal route points, 955 real maze walls, wall intersection checks, unchanged ORCA glyph topology/position, deterministic branches and retained depth bowl.\n"
+  }
+]

@@ -1,3 +1,4 @@
+import {ONE_C_CAPTIONS} from './one-c-copy.mjs';
 import {INTRO_FADE,INTRO_END,rnaCellState} from './rna-cell-state.mjs';
 import {createCoverCBridge} from './cover-c-bridge.mjs';
 const clamp=x=>Math.max(0,Math.min(1,x));
@@ -16,7 +17,7 @@ export function codonNeighboursOpacity(context,anchors,coverRect){
  const gap=Math.min(g.x-.36*g.size-right,last.x-.36*last.size-(g.x+.4*g.size));
  return context*smooth((gap-4)/Math.max(4,c.size*.12));
 }
-export const oneCCaptions=['APOE4 messenger RNA','One edit changes one amino acid.','Recognize the sequence. Edit one C.','Edit RNA. Leave DNA unchanged.'];
+export const oneCCaptions=ONE_C_CAPTIONS;
 export function createOneCContext(root){
  const el=root.querySelector('[data-one-c-context]');
  if(!el)return {backdrop:()=>1,update(){}};

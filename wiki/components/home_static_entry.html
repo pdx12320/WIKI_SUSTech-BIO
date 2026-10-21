@@ -1,0 +1,9 @@
+{# A complete illustrated entrance when the particle scene is unavailable. #}
+<section class="home-static-entry" data-home-static-entry aria-label="ORCA project introduction">
+  <img class="home-static-entry__orca" src="{{ url_for('static', filename='assets/wiki1-main-orca.png') }}" width="465" height="380" alt="ORCA, the team's orca mascot">
+  <div class="home-static-entry__copy">
+    <h1 aria-label="ORCA">{% set static_wordmark %}{% include 'components/orca_wordmark.html' %}{% endset %}{{ static_wordmark | replace('orca-sea-', 'static-entry-orca-sea-') | safe }}</h1>
+    <p>On-target RNA Correction of APOE4<br>for Alzheimer's Disease</p>
+    <a href="#ot-index-title">Explore the project <span aria-hidden="true">↓</span></a>
+  </div>
+</section>

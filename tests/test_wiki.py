@@ -119,27 +119,40 @@ class WikiRoutesTest(unittest.TestCase):
         self.assertIn('>APOE4 RNA</span>', page)
         self.assertNotIn('ot-residue-arrow', page)
         self.assertNotIn('class="burden__source"', page)
-        self.assertIn('class="burden__source"', self.get_text('/next'))
+        self.assertNotIn('class="burden__source"', self.get_text('/next'))
         self.assertLess(page.index('onetake/home-entry.js'), page.index('ot-hero-title'))
         self.assertIn('data-school-footer', self.get_text('/model'))
 
-    def test_particle_structure_preview_keeps_home_story(self):
-        # /next now adds the separately reviewed residue-112 structure section.
+    def test_memory_constellation_preview_keeps_current_home_story(self):
+        # The approved memory preview is now mounted on Home and retained on /next.
         home, preview = self.get_text("/"), self.get_text("/next")
         for page in [home, preview]:
             for marker in ['data-ot-canvas', 'data-ot-story', 'What if we can']:
                 self.assertIn(marker, page)
         self.assertIn('data-edit-auto-dock', home)
-        self.assertNotIn('data-edit-auto-dock', preview)
+        self.assertIn('data-edit-auto-dock', preview)
         for marker in ['data-bio-handle="pod"', 'data-bio-handle="cetus"', 'data-drop-site=']:
             self.assertNotIn(marker, home)
-            self.assertIn(marker, preview)
+            self.assertNotIn(marker, preview)
         self.assertIn('data-rna-cell', home)
         self.assertIn('data-memory-maze-ending', home)
-        self.assertNotIn('data-rna-cell', preview)
-        self.assertNotIn('data-memory-maze-ending', preview)
+        self.assertIn('data-rna-cell', preview)
+        self.assertIn('data-memory-maze-ending', preview)
         self.assertIn('id="ot-index-title"', home)
-        self.assertIn('href="#apoe112"', preview)
+        self.assertIn('id="ot-index-title"', preview)
+        self.assertIn('data-memory-star-preview', preview)
+        self.assertIn('data-memory-constellation', preview)
+        self.assertIn('data-memory-star-preview', home)
+        self.assertIn('data-memory-constellation', home)
+        self.assertNotIn('apoe112.js', preview)
+        self.assertNotIn('id="apoe112"', preview)
+        for label in ['Memory loss', 'Disorientation', 'Disconnection']:
+            self.assertIn(label, home)
+            self.assertIn(label, preview)
+        for page in [home, preview]:
+            self.assertIn('data-memory-question-prefix', page)
+            self.assertIn('data-memory-question-full', page)
+            self.assertIn('onetake/memory-constellation.css', page)
 
     def test_journey_preserves_biology_and_removes_crt(self):
         home, journey = self.get_text("/"), self.get_text("/next-journey")
@@ -150,14 +163,9 @@ class WikiRoutesTest(unittest.TestCase):
                        'data-burden', 'ot-index-title', 'data-journey-station="home"',
                        'data-journey-station="bridge"', 'data-journey-station="road"']:
             self.assertIn(marker, journey)
-        # The two independent previews retain their original biology copy.
-        # Home now has its own explanatory copy and system-optimization ending.
-        preview = self.get_text('/next')
-        start = '<div class="ot-ch ot-ch--left" data-ot-chapter data-in="0.11"'
-        preview_story = preview[preview.index(start):preview.index('<section class="apoe112')]
-        journey_story = journey[journey.index(start):journey.index('<section class="ot-index')]
-        self.assertEqual(preview_story.replace('href="#apoe112"', 'href="#ot-index-title"').strip(),
-                         journey_story.strip())
+        # The independent journey keeps its original biology copy and drag UI.
+        self.assertIn('APOE3-like RNA', journey)
+        self.assertNotIn('data-memory-star-preview', journey)
         self.assertIn('explore-slide__serial', journey)
         self.assertIn('data-edit-start', journey)
 
@@ -195,7 +203,10 @@ class WikiRoutesTest(unittest.TestCase):
                 response.close()
             if not asset_url.endswith((".js", ".mjs")):
                 continue
-            for specifier in re.findall(r'(?:from\s*|import\s*)[\'"]([^\'"]+)[\'"]', source):
+            # Anchor static declarations; a property named 'from' is not an
+            # import. Include the lazy memory modules mounted on Home and /next.
+            module_import = r'(?:^\s*(?:import|export)\b[^\n;]*?\bfrom\s*|^\s*import\s*|\bimport\s*\(\s*)[\'"]([^\'"]+)[\'"]'
+            for specifier in re.findall(module_import, source, re.M):
                 if specifier in imports:
                     pending.append(imports[specifier])
                 elif specifier.startswith("three/addons/"):

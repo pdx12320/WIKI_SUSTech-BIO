@@ -1,5 +1,5 @@
 // Choose the animated opening before any story content is painted. Without
-// JavaScript (or with reduced motion), the original readable fallback remains.
+// JavaScript (or with reduced motion), the illustrated static entrance remains.
 (() => {
   const root = document.currentScript.closest('[data-ot]');
   if (!root) return;
@@ -16,7 +16,7 @@
     clearTimeout(watchdog);
   };
   // A stalled download must not leave the visitor waiting indefinitely.
-  const watchdog = setTimeout(fallback, 12000);
+  const watchdog = setTimeout(fallback, 30000);
   root.addEventListener('ot:startup-ready', () => clearTimeout(watchdog), { once: true });
   // Failed module imports must restore the readable page, not leave an empty TV.
   window.addEventListener('error', event => {

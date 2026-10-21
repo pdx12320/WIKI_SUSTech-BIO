@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-21",
+  "preview": "http://127.0.0.1:8181/next",
+  "scope": "Approved memory constellation, slower Paris transitions and staged question are now mounted on production Home and retained on /next. The former residue-112 experiment is no longer mounted.",
+  "home": "http://127.0.0.1:8181/",
+  "source_files_changed_by_this_task": [
+    "static/onetake/memory-constellation-state.mjs",
+    "static/onetake/memory-constellation.mjs",
+    "static/onetake/memory-question.mjs",
+    "static/onetake/memory-constellation.css",
+    "wiki/components/memory_constellation.html",
+    "wiki/pages/home_next_structure.html",
+    "wiki/pages/home.html",
+    "static/onetake/onetake.js",
+    "static/onetake/dementia-paris.mjs",
+    "tests/memory_constellation.mjs",
+    "tests/test_wiki.py"
+  ],
+  "implementation": [
+    "All stars, connection threads and moving signals are THREE objects in the existing scene, sharing the existing camera, render loop and bloom.",
+    "Original opening brain geometry is sampled without modification, then continuously expands into eight connected clusters.",
+    "Memory loss removes selected lights, disorientation loops a subset of moving signals, and disconnection dissolves the inter-cluster bridges. Most stars remain lit.",
+    "Population camera and captions share a preview-only reversible clock. The original 27-city pullback resumes at take 0.760.",
+    "Captions float over the particle scene without panels. Existing reduced-motion/no-WebGL reading fallback remains available.",
+    "No new models, images, dependencies or separate source checkout are required. No publication or commit was performed."
+  ],
+  "passed_checks": [
+    "tests/memory_constellation.mjs: exact Home mapping when disabled; unchanged scroll speed outside insertion; monotonic, reversible timeline; retained majority of stars; actual changed signal paths; immutable brain source; finite and continuous camera; framing at 1280/800, 825/756, 0.85 and 390/844 aspects; deterministic return to the same symptom state; disposal; /next isolation; normalized template parity with current Home.",
+    "Four focused WikiRoutesTest checks: Home story/navigation, /next memory preview, independent journey preservation, locally served transitive module imports.",
+    "Existing paris_particles, paris_retreat_pacing, rna_cell_scene, home_auto_dock, home_rewind_motion, home_confirmed_edit and burden_pacing checks passed during integration.",
+    "JavaScript syntax and git diff --check passed.",
+    "Actual in-app browser: brain, ordered graph, disconnection, portrait disorientation and Paris tower observed; no shader errors in inspected browser logs.",
+    "Normal /next without pinned progress: scrolled into the graph, forward into population/editor scenes, then back into the intact graph. Preview tab is left on the normal scrollable route."
+  ],
+  "known_unrelated_failure": {
+    "check": "tests.test_wiki.WikiRoutesTest.test_markdown_pages_expose_their_docs_source, /attributions subtest",
+    "result": "Broad tests.test_wiki run: 26 tests, one failure because the current /attributions route does not contain class=markdown-content. Its custom page was not changed by this task."
+  },
+  "concurrency": [
+    "The primary checkout contained many pre-existing changes, all preserved. Another task changed Home's static fallback include and footer while this preview was being built; the new fallback was retained and a duplicate include caused by overlapping edits was removed under this task's lock.",
+    "The tests/test_wiki.py expectation update was initially written while a different task held the cooperative lock for memory-maze-ending files. No same-file overwrite was observed, but this was a lock-protocol lapse. The test diff was subsequently reread, reviewed and checked under this task's own lock. The other task's lock was never removed.",
+    "The existing skip/ending changes in shared onetake.js were preserved. Concurrent RNA scene changes were not reverted. Passing checks describe the observed state and cannot guarantee safety of future concurrent writes."
+  ],
+  "screenshots": [
+    "brain-desktop.png",
+    "ordered-desktop.png",
+    "connection-desktop.png",
+    "orientation-mobile.png",
+    "tower-desktop.png"
+  ],
+  "backup": ".local-backups/memory-constellation-20261021/",
+  "follow_up_paris_retreat": {
+    "request": "Increase the scroll distance between the single Eiffel Tower and the 27-tower view.",
+    "change": "Preview-only scroll distance from take 0.758 to 0.771 multiplied by 1.7. The particle geometry, camera path, population clock and other scene distances are unchanged.",
+    "changed_files": ["static/onetake/memory-constellation-state.mjs", "tests/memory_constellation.mjs", "docs/qa/memory-constellation-20261021/review-positions.json", "docs/qa/memory-constellation-20261021/verification.json"],
+    "checks": "memory_constellation.mjs passed, including the explicit 1.7x distance assertion, unchanged surrounding scene speed, reverse mapping and four camera aspect ratios; git diff --check passed.",
+    "verification_scope": "Timeline and camera checks; no additional browser walkthrough was needed for this pacing-only adjustment. Concurrent pre-existing changes were retained."
+  },
+  "follow_up_staged_question": {
+    "request": "Slow the 27-tower-to-neuron transition, show What if first, and reveal the complete question only after all Paris towers disappear.",
+    "change": "The preview return interval 0.780–0.797 gets 80% more scroll distance. What if begins at 0.7805 while the 27-city scene remains intact. City opacity reaches exactly zero at 0.7995; only after a gap, at 0.8005, can the full question begin to appear. It is fully visible at 0.8025, including the existing automatic 0.803 question hold.",
+    "particle_continuity": "The existing neuron and Aβ particles remain in the shared scene. The remaining Paris morph is cleared, not the Aβ source object. The complete caption is suppressed during the automatic rewind before city objects return.",
+    "changed_files": ["static/onetake/memory-constellation-state.mjs", "static/onetake/memory-question.mjs", "static/onetake/memory-constellation.mjs", "static/onetake/memory-constellation.css", "wiki/components/memory_constellation.html", "tests/memory_constellation.mjs", "docs/qa/memory-constellation-20261021/review-positions.json", "docs/qa/memory-constellation-20261021/verification.json"],
+    "checks": "Memory constellation suite passed, including 80% added return distance, early prefix over intact cities, no frame with both a complete question and visible towers, automatic question hold, retained Aβ object and reverse restoration of city visibility. Two focused Wiki route/module checks passed. Browser verified prefix and complete-question frames with no inspected rendering errors.",
+    "screenshots": ["what-if-transition-desktop.png", "full-question-neuron-desktop.png"],
+    "concurrency": "Only this preview's independent modules and owned component were edited; the shared Home and /next entry templates and other tasks' locks were left untouched."
+  },
+  "promotion_to_home": {
+    "date": "2026-10-21",
+    "authorization": "User explicitly requested connecting /next to the official Home page.",
+    "integration": "Three small Home template changes: stylesheet, existing feature attribute and memory component include. Current Home markup was patched in place; no snapshot or whole-file replacement was used. /next remains identical except for its review title.",
+    "changed_files": ["wiki/pages/home.html", "tests/test_wiki.py", "tests/memory_constellation.mjs", "README.md", "AGENTS.md", "docs/qa/memory-constellation-20261021/verification.json"],
+    "checks": "Memory animation suite and four focused Wiki route/navigation/transitive-module checks passed. Home/next source parity and git diff --check passed. Actual browser at the / route verified the particle constellation.",
+    "concurrency": "Waited for another task's shared integration lock, then acquired the lock, reread live files and diffs, saved a local backup, applied the minimal changes and checked them. Other Home refinements were retained.",
+    "backup": ".local-backups/memory-constellation-promotion-20261021/",
+    "screenshot": "home-promoted-desktop.png",
+    "delivery": "Integrated into the primary local source and existing 8181 Home preview; no Git commit, push or remote deployment was performed."
+  },
+  "limitations": [
+    "The visual is a conceptual metaphor, not a clinical connectivity map or disease-stage sequence.",
+    "No sustained frame-rate benchmark was recorded.",
+    "The former protein experiment is removed from the /next presentation; reusable source assets and the local backup are retained."
+  ]
+}

@@ -1,6 +1,8 @@
 // Add travel and A-beta-to-population reading distance without changing any
 // camera key, scene order, or the scroll mapping used by other routes.
 const bands=[
+ // Give the intracellular astrocyte view 2.5x reading distance at its center.
+ [.375,.39,.42,.435,1.5],
  [.50,.525,.737,.747,1.1],
  // Ease into the separate A-beta flight with one third more scroll distance.
  [.605,.62,.665,.68,.7],

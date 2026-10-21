@@ -1,0 +1,43 @@
+{
+  "prepared": "2026-10-21",
+  "originals": [
+    {
+      "source_filename": "WORLDPROOF_Judging_Guideline_CN.md",
+      "repository_file": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-zh.md",
+      "sha256": "00c24cbc3677a82c985af5846c0f84e7c2c9d249273f2622f8064974f86c9835",
+      "verbatim_source_copy": true
+    },
+    {
+      "source_filename": "WORLDPROOF_Judging_Guideline_EN.md",
+      "repository_file": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-en.md",
+      "sha256": "7a320c3a59eebaa9b877501bd9552f7882b9ca08a2d51729dd8e5aa4729303a1",
+      "verbatim_source_copy": true
+    },
+    {
+      "source_filename": "WORLDPROOF_Judging_Scorecard_EN.md",
+      "repository_file": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-en.md",
+      "sha256": "63346add880151334120b6f9e3a8ffe9e55392e5686d7a83658dcec60b577382",
+      "verbatim_source_copy": true
+    },
+    {
+      "source_filename": "WORLDPROOF_项目赛道命题与限制条件卡.md",
+      "repository_file": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-zh.md",
+      "sha256": "f37b6167d7295ac5d7c1f27b8ea40ee7dabf9c0ff062faaa4b429a64cf008f79",
+      "verbatim_source_copy": true
+    }
+  ],
+  "translations": [
+    "worldproof-judging-scorecard-zh.md",
+    "worldproof-scenarios-and-constraints-en.md"
+  ],
+  "template_status": "New blank reusable Change Log templates derived from the six required fields in the supplied judging guideline. Seven optional prompts are explicitly labelled. No participant records or results are included.",
+  "source_notes": [
+    "The supplied CN/EN judging guidelines materially agree.",
+    "The earlier at-least-three peer-challenge requirement is from the separate organizer account, not from these four files.",
+    "News motivation paragraphs are source translations without new citations or independent historical validation. Scenario backgrounds and cards remain hypothetical.",
+    "ClinicNow source refers both to WHO emergency listing and prequalification; neither is silently substituted for the other.",
+    "Mossback source gives a cost per tonne without further specifying the denominator; translation does not add one.",
+    "The scenario source title says Project Track; the English title preserves that wording. The Wiki describes the actual content as eight fictional briefs without silently relabelling the source."
+  ],
+  "publication": "Official PDF URLs received from user on 2026-10-21 and applied to both Inclusivity and Contribution. Editable Markdown and CSV sources retain their repository download links."
+}

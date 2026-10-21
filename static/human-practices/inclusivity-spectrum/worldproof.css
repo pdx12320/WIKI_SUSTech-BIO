@@ -1,0 +1,87 @@
+/* WORLDPROOF overview and Inclusivity chapter treatment. */
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] figure.inc-worldproof-overview { margin:1.8rem 0; padding:0; background:none; border:0; box-shadow:none; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-overview img { display:block; max-width:100%; width:100%; height:auto; margin:0; border-radius:0; }
+body:not(.ot) .content-page [data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-overview figcaption { color:#6B6880; font-size:1rem; line-height:1.7; margin-top:.9rem; padding:0; }
+.inc-worldproof-details details { margin:1rem 0; padding:1rem 0; border-bottom:1px solid #D9D7E5; }
+.inc-worldproof-details summary { cursor:pointer; color:#2E267C; font-size:1.1rem; line-height:1.7; }
+.inc-worldproof-details dl { margin:1rem 0 0; }
+.inc-worldproof-details dt { font-weight:600; color:#2E267C; margin-top:.8rem; }
+.inc-worldproof-details dd { margin:.25rem 0 1rem; }
+.inc-worldproof-demo-figure { margin: 1rem 0; }
+.inc-worldproof-demo-figure > summary { cursor: pointer; color: #2E267C; font-size: 1.1rem; line-height: 1.7; padding-block: .5rem; }
+
+/* The change log spans the whole critique-and-revision process. */
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-mechanism {
+  margin: 2rem 0 2.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-mechanism > h4 {
+  color: #2E267C;
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0 0 1.5rem;
+  line-height: 1.45;
+}
+.inc-worldproof-mechanism-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.25rem;
+  margin-bottom: 1.5rem;
+}
+.inc-worldproof-mechanism-flow > div { position: relative; min-width: 0; }
+.inc-worldproof-mechanism-flow > div:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1.65rem;
+  top: -.15rem;
+  color: #2E267C;
+  font-size: 1.5rem;
+}
+.inc-worldproof-step {
+  display: block;
+  color: #2E267C;
+  font-size: .9rem;
+  letter-spacing: .08em;
+  margin-bottom: .65rem;
+}
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-mechanism h5 {
+  color: #171536;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 0 0 .6rem;
+}
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-mechanism-flow p {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+.inc-worldproof-log {
+  background: #E9E8FF;
+  color: #2E267C;
+  padding: 1.15rem 1.3rem;
+}
+.inc-worldproof-log > strong { letter-spacing: .08em; font-size: .95rem; }
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-log p {
+  margin: .4rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+[data-content-source="docs/human-practices/inclusivity.md"] .inc-worldproof-mechanism figcaption {
+  margin-top: .9rem;
+  padding: 0;
+  color: #6B6880;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+@media (max-width: 1050px) {
+  .inc-worldproof-mechanism-flow { grid-template-columns: 1fr; gap: 2.5rem; }
+  .inc-worldproof-mechanism-flow > div:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 0;
+    top: auto;
+    bottom: -2.1rem;
+  }
+}

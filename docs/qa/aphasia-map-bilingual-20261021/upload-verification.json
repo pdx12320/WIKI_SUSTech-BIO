@@ -1,0 +1,22 @@
+{
+  "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/aphasia-map-instructions-en.avif",
+  "http_status": 200,
+  "local_path": "assets/design/aphasia-map/aphasia-map-instructions-en.jpg",
+  "local_sha256": "233b5d595bc59aaf851c14e4e641aaffa1c92132546f6b21ec342df447e58a94",
+  "uploaded_sha256": "3b3c4e108eca92893e9722889fffa4d7994f949004d01112fe6a12372ef9abd6",
+  "uploaded_bytes": 139313,
+  "original_dimensions": [
+    1083,
+    1452
+  ],
+  "uploaded_dimensions": [
+    1083,
+    1452
+  ],
+  "mean_absolute_channel_difference": 0.6616560128270025,
+  "source": "User-supplied English poster; uploaded through official SUSTech team upload UI. Converted AVIF downloaded and decoded for comparison.",
+  "pages": [
+    "/design-communication#aphasia-map",
+    "/inclusivity#aphasia-map"
+  ]
+}

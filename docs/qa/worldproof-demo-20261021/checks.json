@@ -1,0 +1,28 @@
+{
+  "projects": 5,
+  "team_labels": [
+    "Team 1",
+    "Team 2",
+    "Team 3",
+    "Team 4",
+    "Team 5"
+  ],
+  "common_source_columns": [
+    "B",
+    "F",
+    "I"
+  ],
+  "xlsx_all_values_match_curated": true,
+  "xlsx_english_only": true,
+  "unexpected_formulas": 0,
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "mobile_scroll_width": 390,
+  "mobile_record_font_px": 18,
+  "image_dimensions": [
+    2400,
+    3906
+  ]
+}

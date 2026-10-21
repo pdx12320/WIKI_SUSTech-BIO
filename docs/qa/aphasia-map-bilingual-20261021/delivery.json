@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-21",
+  "changed_files": [
+    "assets/design/aphasia-map/aphasia-map-instructions-en.jpg",
+    "docs/team/design-communication.md",
+    "docs/human-practices/inclusivity.md",
+    "static/design-communication.css",
+    "static/human-practices/inclusivity-spectrum/inclusivity.css",
+    "asset_uploads.json",
+    "asset_mapping.csv",
+    "tests/test_design_communication.py",
+    "docs/qa/aphasia-map-bilingual-20261021/upload-verification.json",
+    "docs/qa/aphasia-map-bilingual-20261021/render-checks.json",
+    "docs/qa/aphasia-map-bilingual-20261021/delivery.json"
+  ],
+  "checks": {
+    "existing_design_tests": "5 passed",
+    "existing_upload_dual_mode_tests": "3 passed",
+    "page_mode_render_checks": "4 passed after registering the mapping; local original HTTP 200",
+    "diff_check": "passed for task files",
+    "upload": "Official UI completed; actual CDN URL downloaded HTTP 200 and AVIF decoded at original dimensions; mean channel difference 0.662/255",
+    "desktop_browser": "Both /design-communication#aphasia-map and /inclusivity#aphasia-map visually checked in Chrome on port 8181; Chinese on left and English on right, full uncropped images and language labels",
+    "mobile": "Single-column media/container CSS configured; separate mobile browser visual check not performed"
+  },
+  "concurrency": "Inclusivity content changed concurrently in other sections. Only the Aphasia Map figure and resource row were patched here. Pre-existing diff retained under ignored .local-backups/aphasia-map-bilingual-20261021/. Shared mapping/test patch made after acquiring shared-integration lock; only own lock released.",
+  "delivery_status": {
+    "image_uploaded": true,
+    "wiki_sources_updated": true,
+    "preview_port": 8181,
+    "committed": false,
+    "deployed": false,
+    "preview_only_work": false
+  }
+}

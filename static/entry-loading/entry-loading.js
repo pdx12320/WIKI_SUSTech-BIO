@@ -260,6 +260,7 @@ if (typeof document === 'undefined') {
     removeEventListener('resize', resize); removeEventListener('pagehide', dispose); removeEventListener('pageshow', restored);
     removeEventListener('keydown', key); removeEventListener('blur', unhover); reduced.removeEventListener('change', motionChange);
     document.removeEventListener('DOMContentLoaded', ready);
+    removeEventListener('load', ready);
     layer.removeEventListener('pointermove', hover); layer.removeEventListener('pointerleave', unhover); layer.removeEventListener('pointercancel', unhover);
     root.removeAttribute('data-entry-loading'); layer.remove();
   }
@@ -272,7 +273,7 @@ if (typeof document === 'undefined') {
   function ready() {
     if (preview || leaving || removed) return;
     const homeScene = document.querySelector('[data-ot]');
-    if (homeScene ? document.querySelector('[data-ot].is-ready') : document.readyState !== 'loading') {
+    if (homeScene ? document.querySelector('[data-ot].is-ready') : document.readyState === 'complete') {
       observer.disconnect(); clearTimeout(timer); timer = setTimeout(finish, Math.max(0, 1000 - (performance.now() - started)));
     }
   }
@@ -296,7 +297,8 @@ if (typeof document === 'undefined') {
       home.classList.add('ot--static', 'is-ready');
     }
     finish();
-  }, document.querySelector('[data-ot]') ? 12000 : 3200);
+  }, document.querySelector('[data-ot]') ? 30000 : 10000);
+  addEventListener('load', ready, { once: true });
   document.addEventListener('DOMContentLoaded', ready, { once: true }); layer.dataset.stage = 'loading';
   if (!reduced.matches && !Number.isFinite(sampleFrame) && scriptURL && typeof Worker === 'function' && canvas.transferControlToOffscreen) {
     try {

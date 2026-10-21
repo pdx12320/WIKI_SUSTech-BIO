@@ -1,0 +1,32 @@
+[
+  {
+    "pdf": "worldproof-judging-guideline-en.pdf",
+    "pages": 4,
+    "contact_sheet": "docs/qa/worldproof-resources-20261021/worldproof-judging-guideline-en-contact.jpg"
+  },
+  {
+    "pdf": "worldproof-judging-guideline-zh.pdf",
+    "pages": 4,
+    "contact_sheet": "docs/qa/worldproof-resources-20261021/worldproof-judging-guideline-zh-contact.jpg"
+  },
+  {
+    "pdf": "worldproof-judging-scorecard-en.pdf",
+    "pages": 2,
+    "contact_sheet": "docs/qa/worldproof-resources-20261021/worldproof-judging-scorecard-en-contact.jpg"
+  },
+  {
+    "pdf": "worldproof-judging-scorecard-zh.pdf",
+    "pages": 2,
+    "contact_sheet": "docs/qa/worldproof-resources-20261021/worldproof-judging-scorecard-zh-contact.jpg"
+  },
+  {
+    "pdf": "worldproof-scenarios-and-constraints-en.pdf",
+    "pages": 11,
+    "contact_sheet": "docs/qa/worldproof-resources-20261021/worldproof-scenarios-and-constraints-en-contact.jpg"
+  },
+  {
+    "pdf": "worldproof-scenarios-and-constraints-zh.pdf",
+    "pages": 9,
+    "contact_sheet": "docs/qa/worldproof-resources-20261021/worldproof-scenarios-and-constraints-zh-contact.jpg"
+  }
+]

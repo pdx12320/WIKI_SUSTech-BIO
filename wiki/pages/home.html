@@ -2,6 +2,7 @@
 {% block title %}Home{% endblock %}
 {% block body_class %}ot ot-crt-home{% endblock %}
 {% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='onetake/memory-constellation.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/onetake.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/crt-opening.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='onetake/dementia-burden.css') }}">
@@ -26,11 +27,13 @@
 {% block navigation %}{% include 'menu.html' %}{% endblock %}
 
 {% block main %}
-<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-auto-confirm data-edit-auto-dock data-edit-quick-rewind data-staged-conclusions data-ot>
+<main id="main-content" class="ot-root ot--static" data-edit-scroll-return data-edit-auto-confirm data-edit-auto-dock data-edit-quick-rewind data-staged-conclusions data-memory-star-preview data-ot>
   <script src="{{ url_for('static', filename='onetake/home-entry.js') }}"></script>
+  {% include 'components/home_static_entry.html' %}
   {% include 'components/crt_opening.html' %}
   {% include 'components/one_c_context.html' %}
   {% include 'components/rna_cell_context.html' %}
+  {% include 'components/memory_constellation.html' %}
   <div class="ot-bio-labels" aria-hidden="true">
     <div class="ot-bio-label ot-codon" data-bio-label="codon">
       <span class="ot-codon__name"><span class="ot-before">APOE4 RNA</span><span class="ot-after">APOE3 RNA</span></span>
@@ -115,7 +118,7 @@
   </section>
 
   <div class="memory-maze-ending" data-memory-maze-ending aria-label="C to U. From C to Us.">
-    <div class="memory-maze-ending__static"><p>C → U</p><p>From C to Us</p></div>
+    <div class="memory-maze-ending__static"><p>C → U</p><p>From C to Us.</p></div>
   </div>
 
   {% with compact_explore=true %}{% include 'components/explore_slides.html' %}{% endwith %}
@@ -123,9 +126,5 @@
 {% endblock %}
 
 {% block footer %}
-{% include 'components/one_c_notes.html' %}
-<section class="ot-home-footer" aria-label="Population comparison sources">
-  {% include 'components/dementia_paris_sources.html' %}
-</section>
 {% include 'footer.html' %}
 {% endblock %}

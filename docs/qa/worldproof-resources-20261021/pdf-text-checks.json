@@ -1,0 +1,44 @@
+[
+  {
+    "file": "worldproof-judging-guideline-en.pdf",
+    "pages": 4,
+    "source_blocks": 108,
+    "missing_blocks": [],
+    "outside_safe_page_bounds": []
+  },
+  {
+    "file": "worldproof-judging-guideline-zh.pdf",
+    "pages": 4,
+    "source_blocks": 107,
+    "missing_blocks": [],
+    "outside_safe_page_bounds": []
+  },
+  {
+    "file": "worldproof-judging-scorecard-en.pdf",
+    "pages": 2,
+    "source_blocks": 52,
+    "missing_blocks": [],
+    "outside_safe_page_bounds": []
+  },
+  {
+    "file": "worldproof-judging-scorecard-zh.pdf",
+    "pages": 2,
+    "source_blocks": 52,
+    "missing_blocks": [],
+    "outside_safe_page_bounds": []
+  },
+  {
+    "file": "worldproof-scenarios-and-constraints-en.pdf",
+    "pages": 11,
+    "source_blocks": 197,
+    "missing_blocks": [],
+    "outside_safe_page_bounds": []
+  },
+  {
+    "file": "worldproof-scenarios-and-constraints-zh.pdf",
+    "pages": 9,
+    "source_blocks": 197,
+    "missing_blocks": [],
+    "outside_safe_page_bounds": []
+  }
+]

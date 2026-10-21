@@ -406,6 +406,58 @@ This contributes a way of working that other teams can adopt: identify whose exp
 
 **We developed educational resources that other teams can adapt and share.** The revised *Practical Healthy Living Workbook for Older Adults* combines short lessons, illustrations and space for personal notes. Feedback from older learners informed the move toward clearer pages and everyday use; Chinese and English editions extend its reach.
 
+<link rel="stylesheet" href="static/contribution-assets/previews.css">
+<link rel="stylesheet" href="static/human-practices/workbook-readers.css">
+<script type="module" src="static/human-practices/workbook-readers.mjs"></script>
+
+<div class="workbook-readers" id="workbook-editions" data-workbook-readers role="group" aria-label="Healthy Living Workbook: current student editions and teacher’s guide">
+<section class="workbook-readers__edition" id="education-workbook-chinese">
+<h4>Chinese student edition</h4>
+<p>A 56-page book for older learners, with two-page chapters, simpler language and illustrations with consistently typeset labels. Reusable appendices include four weeks each of morning and evening blood pressure and blood sugar records, personal cards, an action plan and four Cornell note pages.</p>
+<p>56 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read Chinese student edition · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-student-zh-compact.pdf" data-pdf-title="Healthy Living Workbook — Chinese student edition" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-student-zh.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+<section class="workbook-readers__edition" id="education-workbook-english">
+<h4>English student edition</h4>
+<p>The 56-page English student edition shares the same 14 chapters and recording tools. Illustrations depict older adults from different backgrounds; diagram labels use real fonts. Emergency-number prompts and explanations of China-specific services help educators adapt the book to their setting.</p>
+<p>56 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read English student edition · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-student-en-compact.pdf" data-pdf-title="Healthy Living Workbook — English student edition" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-student-en.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+<section class="workbook-readers__edition" id="education-workbook-teacher-chinese">
+<h4>Chinese teacher’s guide</h4>
+<p>A 54-page companion for preparing and delivering the lessons, with fuller explanations, classroom examples, materials, suggested timings and ways to assist participation. It follows the student books’ chapter names; personal record sheets and note pages remain in the student books.</p>
+<p>54 pages · Current second edition</p>
+<div class="contribution-pdf-resource" data-workbook-edition>
+<details class="contribution-pdf" open>
+<summary>Read Chinese teacher’s guide · PDF</summary>
+<div class="contribution-pdf-reader"></div>
+</details>
+<div class="contribution-pdf-download">
+<a href="/assets/human-practices/education/workbook-current-teacher-zh-compact.pdf" data-pdf-title="Healthy Living Workbook — Chinese teacher’s guide" target="_blank" rel="noopener">Open PDF</a> ·
+<a href="/assets/human-practices/education/workbook-current-teacher-zh.docx" target="_blank" rel="noopener">Editable DOCX</a>
+</div>
+</div>
+</section>
+</div>
+
 Our team also designed brain and animal-cell teaching models, printed in collaboration with the SUSTech 3D Printing Club. Their shapes and textures supported hands-on conversations about biology. The shared STL files let educators bring the same tangible approach into new classrooms and community activities.
 
 <figure class="contribution-figure">
@@ -414,8 +466,6 @@ Our team also designed brain and animal-cell teaching models, printed in collabo
 </figure>
 
 <div class="contribution-links">
-<a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx">Chinese handbook · editable</a>
-<a href="/assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx">English handbook · editable</a>
 <a href="/assets/human-practices/models/biology-brain-model.stl.zip">Brain model · STL</a>
 <a href="/assets/human-practices/models/biology-animal-cell-model.stl.zip">Cell model · STL</a>
 </div>
@@ -467,34 +517,7 @@ The browser demonstration uses a drawn room and two fixed hazard examples. Photo
 
 ## Education {#education}
 
-The updated second edition separates student reading and practice from teacher preparation. The [Education page explains the reader feedback and revision process](/education#second-edition-turning-a-health-workbook-into-a-handbook-for-everyday-use-and-notes).
-
-### Healthy Living Workbook — Chinese Student Edition {#education-workbook-chinese}
-
-A 56-page book for older learners, with two-page chapters, simpler language and illustrations with consistently typeset labels. Reusable appendices include four weeks each of morning and evening blood pressure and blood sugar records, personal cards, an action plan and four Cornell note pages.
-
-**Language:** Chinese<br>
-**For:** Older learners, community classes and families
-
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-zh.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — Chinese Student Edition, PDF, 56 pages">Download student PDF · Chinese <span aria-hidden="true">↓</span></a>
-
-### Healthy Living Workbook — English Student Edition {#education-workbook-english}
-
-The 56-page English student edition shares the same 14 chapters and recording tools. Illustrations depict older adults from different backgrounds; diagram labels use real fonts. Emergency-number prompts and explanations of China-specific services help educators adapt the book to their setting.
-
-**Language:** English<br>
-**For:** English-speaking older learners, community educators and future iGEM teams
-
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-student-en.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — English Student Edition, PDF, 56 pages">Download student PDF · English <span aria-hidden="true">↓</span></a>
-
-### Healthy Living Workbook — Chinese Teacher’s Guide {#education-workbook-teacher-chinese}
-
-A 54-page companion for preparing and delivering the lessons, with fuller explanations, classroom examples, materials, suggested timings and ways to assist participation. It follows the student books’ chapter names; personal record sheets and note pages remain in the student books.
-
-**Language:** Chinese<br>
-**For:** Senior-university teachers, elderly-service staff and workshop facilitators
-
-<a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/older-adults-health-workbook-v2-teacher-zh.pdf" target="_blank" rel="noopener" aria-label="Download Healthy Living Workbook — Chinese Teacher’s Guide, PDF, 54 pages">Download teacher PDF · Chinese <span aria-hidden="true">↓</span></a>
+The workbook PDFs and editable editions are presented in the Human Practices account above. The following resources extend our community lessons and curriculum work.
 
 ### Health Rumor Detectives Activity Plan — Chinese Edition {#education-health-rumor-plan-chinese}
 
@@ -532,6 +555,21 @@ Future teams can reuse the map interaction, evidence data structure and reportin
 <a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-methods-reuse.pdf" target="_blank" rel="noopener">Methods &amp; reuse · PDF · 5 pages</a>
 <a class="button" href="https://static.igem.wiki/teams/6085/wiki/hp/education-transfer-example-report.pdf" target="_blank" rel="noopener">Example report · PDF · 8 pages</a>
 <a class="button" href="https://gitlab.igem.org/2026/software/sustech/education-transfer/-/archive/9a2054211637e5882f85d2eb2f484cad870a98ad/education-transfer-9a2054211637e5882f85d2eb2f484cad870a98ad.zip">Source package · ZIP</a>
+
+### WORLDPROOF: Red Team and Change Log Toolkit {#education-worldproof-toolkit}
+
+**WORLDPROOF gives future teams a format for testing a prototype through peer critique and unexpected constraints.** Eight fictional briefs and 24 constraint cards support the Red Team exchange; the judging guideline and blank score sheet connect the challenge with a reasoned design response.
+
+The **Change Log** records the assigned constraint, peer suggestions, prioritized challenges, reasons, design decisions and unresolved issues. The bilingual worksheet includes these six required fields and clearly marks optional prompts. Future organizers can adapt the schedule and briefs while keeping time for revision and review of the **Change Log and Final Demo**.
+
+| Material | English | Chinese |
+| --- | --- | --- |
+| Scenarios and constraint cards | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-en.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-en.md) | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-zh.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-zh.md) |
+| Judging guideline | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-en.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-guideline-en.md) | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-zh.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-guideline-zh.md) |
+| Blank judging score sheet | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-en.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-scorecard-en.md) | [PDF](https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-zh.pdf) · [Editable Markdown](/assets/human-practices/worldproof-resources/worldproof-judging-scorecard-zh.md) |
+| Blank Change Log worksheet | [Editable CSV](/assets/human-practices/worldproof-resources/worldproof-change-log-template-en.csv) | [Editable CSV](/assets/human-practices/worldproof-resources/worldproof-change-log-template-zh.csv) |
+
+[Read the participation mechanism and judge feedback on Inclusivity →](/inclusivity#worldproof)
 
 <nav class="contribution-next" id="contribution-next" aria-label="Continue to Future">
   <a class="contribution-next__link" href="/future"><span aria-hidden="true">↓</span><span>To Future</span></a>

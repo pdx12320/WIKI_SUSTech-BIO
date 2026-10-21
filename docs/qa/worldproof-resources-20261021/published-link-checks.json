@@ -1,0 +1,82 @@
+{
+  "received": "2026-10-21",
+  "pdfs": [
+    {
+      "local_path": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-en.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-en.pdf",
+      "local_sha256": "56f3e1fe8edd37782c66443177523f8958d2b7f036b1366f723f20a2f0d63f48",
+      "evidence": "Official URL explicitly supplied by user on 2026-10-21.",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "pdf_header": "%PDF-1.4",
+      "pages": 4,
+      "remote_sha256_matches_local": true
+    },
+    {
+      "local_path": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-zh.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-guideline-zh.pdf",
+      "local_sha256": "e75a715632a1923b460ca61a78472aad6b63c98096efac57c8619df887ccd79a",
+      "evidence": "Official URL explicitly supplied by user on 2026-10-21.",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "pdf_header": "%PDF-1.4",
+      "pages": 4,
+      "remote_sha256_matches_local": true
+    },
+    {
+      "local_path": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-en.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-en.pdf",
+      "local_sha256": "ebb3832846344122ac420c23a4b30e8b83c4380f9d3aa5d1314b76fdfe90d53c",
+      "evidence": "Official URL explicitly supplied by user on 2026-10-21.",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "pdf_header": "%PDF-1.4",
+      "pages": 2,
+      "remote_sha256_matches_local": true
+    },
+    {
+      "local_path": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-zh.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-judging-scorecard-zh.pdf",
+      "local_sha256": "159cc2c0b34b8632458a06dfd3b65944df7b41993cde8db6c9edfdb699b0f39b",
+      "evidence": "Official URL explicitly supplied by user on 2026-10-21.",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "pdf_header": "%PDF-1.4",
+      "pages": 2,
+      "remote_sha256_matches_local": true
+    },
+    {
+      "local_path": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-en.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-en.pdf",
+      "local_sha256": "a51a7d5401cc42552e8ba713b9a1385553db9230afee4076edd3451b6d489e6f",
+      "evidence": "Official URL explicitly supplied by user on 2026-10-21.",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "pdf_header": "%PDF-1.4",
+      "pages": 11,
+      "remote_sha256_matches_local": true
+    },
+    {
+      "local_path": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-zh.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/worldproof-scenarios-and-constraints-zh.pdf",
+      "local_sha256": "d7dc2ccf4ab5e3eb252d3904405ae12984e9f1715648804a77972202398812d6",
+      "evidence": "Official URL explicitly supplied by user on 2026-10-21.",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "pdf_header": "%PDF-1.4",
+      "pages": 9,
+      "remote_sha256_matches_local": true
+    }
+  ],
+  "page_updates": [
+    {
+      "file": "docs/human-practices/inclusivity.md",
+      "pdf_links_replaced": 6
+    },
+    {
+      "file": "docs/project/contribution.md",
+      "pdf_links_replaced": 6
+    }
+  ],
+  "verification": "All six URLs retrieved read-only; response status, MIME type, page counts and complete byte hashes verified against the local reviewed PDFs."
+}

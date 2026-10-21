@@ -1,0 +1,5 @@
+{
+  "checks": [
+    "An already-visited inner page refresh replays the whale and waits for its eager image"
+  ]
+}

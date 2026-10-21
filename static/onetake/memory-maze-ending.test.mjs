@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs';
 import {runInNewContext} from 'node:vm';
 import * as THREE from '../vendor/three/three.module.js';
 import {matchBrainToMaze} from './brain-correspondence.mjs';
-import {MEMORY_MAZE_RANGE,memoryMazeState,memoryMazeRoute,sampleMemoryRoute,memoryPathPoint,createMemoryMazeEnding,createMemoryMazeTravel,extendMemoryMazeExit,memoryMazeArrivalPop} from './memory-maze-ending.mjs';
+import {MEMORY_MAZE_RANGE,memoryMazeState,memoryMazeRoute,sampleMemoryRoute,memoryPathPoint,createMemoryMazeEnding,createMemoryMazeTravel,memoryMazeLetterPose,memoryMazeHandoff,extendMemoryMazeExit,memoryMazeArrivalPop} from './memory-maze-ending.mjs';
 const at=progress=>MEMORY_MAZE_RANGE.start+(MEMORY_MAZE_RANGE.end-MEMORY_MAZE_RANGE.start)*progress;
 
 // Exercise the actual legacy geometry and navigation, not an invented maze.
@@ -29,19 +29,42 @@ for(let progress=0;progress<=1;progress+=.001){
  if(before.travel>0&&before.travel<1){assert.equal(before.morph,1);assert.equal(before.straighten,0);assert.equal(before.letters,0);}
  if(before.letters>0){assert.equal(before.straighten,1);assert.equal(before.travel,1);assert.equal(before.mazeOpacity,0);}
 }
-// Stop scrolling at the settled maze: scene time alone must reach U.
-const stopped=createMemoryMazeTravel();
-assert.equal(stopped.update(.30,0).travel,0);
-const halfway=stopped.update(.30,1.5);assert(halfway.travel>.35&&halfway.travel<.65);assert(halfway.pending);
-const arrived=stopped.update(.30,3.05);assert.equal(arrived.travel,1);assert.equal(arrived.progress,.61);
-assert.equal(stopped.update(.30,3.5).pending,false,'fixed scroll never stalls the automatic route');
-// A fast scroll to the final position cannot bypass traversal or arrival.
-const rushed=createMemoryMazeTravel();rushed.update(1,0);
-assert(rushed.update(1,1.5).progress<.61);
-assert.equal(rushed.update(1,3.1).progress,.61);
-const released=rushed.update(1,8);assert.equal(released.progress,1);assert.equal(released.pending,false,'later lettering catches up without scroll locking');
-rushed.update(.25,8.1);const again=rushed.update(.30,8.2);assert.equal(again.travel,0);assert(again.pending,'backscroll below the settled maze rearms entry');
-const still=createMemoryMazeTravel().update(.30,0,{reduced:true});assert.equal(still.travel,1);assert.equal(still.pending,false);
+// One entry gesture must finish every stage even if scrolling stops at C.
+const stopped=createMemoryMazeTravel(),rushed=createMemoryMazeTravel();
+assert.equal(stopped.update(.269,0).progress,.269,'the earlier maze still follows scrolling');
+for(const time of [0,.2,.45,2,5.4,6.4,7.6,9.5,10.3,11.35,14.05,14.5]){
+ const a=stopped.update(.28,time),b=rushed.update(1,time);
+ assert.deepEqual(a,b,'fixed scroll and fast scroll play the same timed sequence');
+ if(time===5.4){assert.equal(a.progress,.61);assert.equal(a.travel,1);assert(a.arrivalAge>0);}
+ if(time===6.4)assert.equal(a.progress,.61,'hold the full maze before it straightens');
+ if(time===7.6){const state=memoryMazeState(at(a.progress));assert(state.straighten>0&&state.straighten<1,'straightening has a visible intermediate stage');}
+ if(time===9.5||time===10.3){assert.equal(memoryMazeState(at(a.progress)).straighten,1);assert.equal(a.letters,0,'C arrow U gets its own reading hold');}
+ if(time===11.35)assert(a.letters>0&&a.letters<1,'fall follows automatically after the arrow hold');
+ if(time>=14.05){assert.equal(a.letters,1);assert.equal(a.progress,1);assert.equal(a.pending,false);}
+}
+rushed.update(.25,15);const again=rushed.update(.28,16);assert.equal(again.travel,0);assert(again.pending,'backscroll before C rearms the complete sequence');
+const still=createMemoryMazeTravel().update(.28,0,{reduced:true});assert.equal(still.progress,1);assert.equal(still.letters,1);assert.equal(still.pending,false);
+for(const index of [0,1]){
+ assert.equal(memoryMazeLetterPose(0,index).drop,0);
+ assert.deepEqual(memoryMazeLetterPose(1,index),{drop:1,sway:0,lift:0,angle:0});
+ const rocking=[.69,.76,.84,.92].map(p=>memoryMazeLetterPose(p,index).angle);
+ assert(rocking.some(v=>v<0)&&rocking.some(v=>v>0),'landed letters rock to both sides');
+ assert(Math.abs(memoryMazeLetterPose(.97,index).angle)<.2,'rocking decays before the phrase unlocks');
+}
+assert(memoryMazeLetterPose(.5,0).drop>memoryMazeLetterPose(.5,1).drop,'C and U fall slightly out of step');
+for(let age=0;age<=1.7;age+=.01){
+ const handoff=memoryMazeHandoff(age);
+ assert(handoff.opacity===0||handoff.incoming===0,'the two lines and Explore never overlap');
+ if(age<.85){assert.equal(handoff.incoming,0);assert.equal(handoff.past,false,'keep the upper arrow visible while it fades');}
+ if(age>.85){assert.equal(handoff.opacity,0);assert(handoff.incoming>0,'Explore begins immediately after the complete fade');}
+}
+assert.equal(memoryMazeHandoff(.4).opacity>0,true);
+assert.equal(memoryMazeHandoff(.85).opacity,0);assert.equal(memoryMazeHandoff(.85).incoming,0);
+assert.equal(memoryMazeHandoff(1.6).incoming,1);
+assert.equal(memoryMazeHandoff(-1).opacity,1,'hold the phrase until the heading approaches');
+assert.equal(memoryMazeHandoff(1,{unlocked:false}).opacity,1,'fast scrolling cannot bypass letter landing');
+assert.equal(memoryMazeHandoff(-1,{skipped:true}).incoming,1,'explicit skip immediately reveals Explore');
+assert.equal(memoryMazeHandoff(-1,{reduced:true}).incoming,1,'reduced motion reveals the directory without a fade');
 const extended=extendMemoryMazeExit(route);
 assert.equal(extended.points.length,route.points.length+1);assert(Math.abs(extended.length-route.length-.55)<1e-8);
 assert.deepEqual(extended.mazeExit,route.points.at(-1));assert.equal(extended.points.at(-1)[0],route.points.at(-1)[0]+.55);
@@ -54,7 +77,7 @@ class Node {
 globalThis.document={createElementNS:(_,tag)=>new Node(tag),createElement:tag=>new Node(tag)};
 for(const small of [false,true]){
  const width=small?390:1440,height=small?844:900,aspect=width/height;
- const host=new Node('div'),classes=new Set(),root={querySelector:()=>host,classList:{add(name){classes.add(name);},toggle(name,on){if(on)classes.add(name);else classes.delete(name);}}},scene=new THREE.Scene();
+ const host=new Node('div'),directory=new Node('section'),classes=new Set(),heading={top:height*1.1,getBoundingClientRect(){return {top:this.top};}},root={style:{setProperty(k,v){this[k]=v;}},querySelector:selector=>selector==='[data-explore-slides]'?directory:selector.includes('explore-slides')?heading:host,classList:{add(name){classes.add(name);},toggle(name,on){if(on)classes.add(name);else classes.delete(name);}}},scene=new THREE.Scene();
  const beforeMaze=Array.from(maze.pos),beforeBrain=Array.from(brain.pos);
  const view=createMemoryMazeEnding(THREE,scene,root,{maze,brain,small});
  assert(host.children.every(child=>child.tag!=='a'),'the ending creates no duplicate Explore link');
@@ -73,43 +96,77 @@ for(const small of [false,true]){
  }
  const originalCamera=position.toArray();view.camera(MEMORY_MAZE_RANGE.start-.0031,20,aspect,position,look,null);assert.deepEqual(position.toArray(),originalCamera,'ending recenter does not begin until both original scenes have ended');
  let time=20;
- for(const progress of [0,.2667,.5,.6333,.7333,.9167,1,.7333,.5,0]){
+ for(const progress of [0,.2667]){
   const take=at(progress);
-  view.camera(take,time,aspect,position,look,null);camera.position.copy(position);camera.lookAt(look);camera.updateMatrixWorld();view.update(take,time,camera,1,width,height,null,take);time+=8;view.update(take,time,camera,1,width,height,null,take);
-  assert.equal(host.dataset.memoryMazePhase,memoryMazeState(take).phase);
-  const [c,u]=host.children[0].children;
-  if(progress>.3){for(const label of [c,u]){const x=Number(label.attributes.x);assert(x>20&&x<width-20,`${small?'phone':'desktop'} endpoint label stays in viewport`);}}
+  view.camera(take,time,aspect,position,look,null);camera.position.copy(position);camera.lookAt(look);camera.updateMatrixWorld();view.update(take,time,camera,1,width,height,null,take);
+  assert.equal(host.dataset.memoryMazePhase,memoryMazeState(take).phase);time+=1;
  }
- // Runtime integration, not only the standalone controller: the same fixed
- // take advances the drawn route and reveals U without another scroll.
- view.update(at(.2),time,camera,1,width,height,null,at(.2));
- view.update(at(.30),time+.1,camera,1,width,height,null,at(.30));assert.equal(host.dataset.memoryMazeTravel,'0.0000');
- const duration=small?4.2:4.8;
- view.update(at(.30),time+.1+duration*.5,camera,1,width,height,null,at(.30));assert(Number(host.dataset.memoryMazeTravel)>.3);
- view.update(at(.30),time+.1+duration+.15,camera,1,width,height,null,at(.30));assert.equal(host.dataset.memoryMazeTravel,'1.0000');
+ // Hold the real runtime at the first C all the way to the settled phrase.
+ const firstC=at(.28),start=time+.1,duration=small?4.2:4.8,arrivalAt=.45+duration,fallAt=arrivalAt+1.25+.65+2.3+1;
+ view.update(firstC,start,camera,1,width,height,null,firstC);assert.equal(host.dataset.memoryMazeTravel,'0.0000');
+ view.update(firstC,start+.45+duration*.5,camera,1,width,height,null,firstC);assert(Number(host.dataset.memoryMazeTravel)>.3);
+ view.update(firstC,start+arrivalAt+.15,camera,1,width,height,null,firstC);assert.equal(host.dataset.memoryMazeTravel,'1.0000');
  assert.equal(host.dataset.memoryMazePop,'true','one small celebration follows the completed route');
- view.update(at(.30),time+.1+duration+.9,camera,1,width,height,null,at(.30));assert.equal(host.dataset.memoryMazePop,'false','celebration clears while the complete ORCA is still held');
- assert.equal(host.dataset.memoryMazePhase,'path','the full maze is held until scrolling resumes');
+ view.update(firstC,start+arrivalAt+.9,camera,1,width,height,null,firstC);assert.equal(host.dataset.memoryMazePop,'false');
+ assert.equal(host.dataset.memoryMazePhase,'path','the completed maze has its own hold');
  assert.equal(Number(host.children[0].children[1].style.opacity),1,'U is revealed on automatic arrival');
+ view.update(firstC,start+arrivalAt+1.25+.65+1.15,camera,1,width,height,null,firstC);
+ assert(line.material.uniforms.uStraighten.value>0&&line.material.uniforms.uStraighten.value<1,'the real route straightens gradually');
+ view.update(firstC,start+fallAt-.5,camera,1,width,height,null,firstC);
+ assert.equal(line.material.uniforms.uStraighten.value,1);assert.equal(host.dataset.memoryMazeLetters,'0.0000','hold C arrow U before the letters fall');
+ view.update(firstC,start+fallAt+1.8,camera,1,width,height,null,firstC);
+ assert.equal(host.dataset.memoryMazeLetters,'0.5000');assert(!classes.has('is-memory-maze-complete'));
+ view.update(firstC,start+fallAt+3.61,camera,1,width,height,null,firstC);
+ assert.equal(host.dataset.memoryMazeLetters,'1.0000');assert.equal(host.dataset.memoryMazePhase,'final');
+ assert(!classes.has('is-memory-maze-complete'),'the final phrase has a reading hold');
+ view.update(firstC,start+fallAt+4.31,camera,1,width,height,null,firstC);
+ assert(classes.has('is-memory-maze-complete'),'fixed scroll at the first C completes the entire ending');
+ const period=host.children[0].children[7];assert.equal(period.textContent,'.');assert.equal(Number(period.style.opacity),1,'the final full stop is visible');
+ for(const label of [host.children[0].children[2],host.children[0].children[3],period]){
+  const x=Number(label.attributes.x);assert(x>20&&x<width-20,'final letters and period fit desktop and mobile');
+ }
  assert.deepEqual(Array.from(maze.pos),beforeMaze,'source maze was not overwritten');assert.deepEqual(Array.from(brain.pos),beforeBrain,'source brain was not overwritten');
+ time=start+fallAt+4.31;
  const rush=time+duration+3;
  view.update(at(.2),rush,camera,1,width,height,null,at(.2));
  view.update(1,rush+.1,camera,1,width,height,null,1.02,2);
  assert(view.group.visible,'scrolling past the story cannot hide the unfinished route');
  assert(!classes.has('is-memory-maze-complete'),'Explore remains gated during the timed route');
- const finalTime=rush+.1+duration+1.2;
+ const finalTime=rush+.1+fallAt;
  view.update(1,finalTime,camera,1,width,height,null,1.02,2);
- assert(!classes.has('is-memory-maze-complete'),'the completed phrase gets a minimum reading hold');
- view.update(1,finalTime+.7,camera,1,width,height,null,1.01,1.1);
- assert(classes.has('is-memory-maze-complete'));assert(view.group.visible,'final phrase stays visible for 1.2 screens of scroll');
- view.update(1,finalTime+.8,camera,1,width,height,null,1.02,1.7);
- assert.equal(view.group.visible,false,'the ending fades before Explore enters its clear screen');
- assert(classes.has('is-memory-maze-past'),'past the story, the fixed particle backdrop is hidden above the opaque footer');
+ assert(!classes.has('is-memory-maze-complete'),'the fall starts before the final reading hold');
+ view.update(1,finalTime+1.8,camera,1,width,height,null,1.02,2);
+ assert(!classes.has('is-memory-maze-complete'),'Explore cannot cover the falling letters');
+ const lowerC=host.children[0].children[2];
+ assert(!lowerC.attributes.transform.startsWith('rotate(0,'),'the visible glyph tilts during its fall');
+ view.update(1,finalTime+3.61,camera,1,width,height,null,1.01,1.1);
+ assert(!classes.has('is-memory-maze-complete'),'the settled phrase gets its own reading hold');
+ view.update(1,finalTime+4.31,camera,1,width,height,null,1.01,1.1);
+ assert(classes.has('is-memory-maze-complete'));assert(view.group.visible,'final phrase holds until the actual heading enters');
+ view.update(1,finalTime+4.35,camera,1,width,height,null,1.02,2.5);
+ assert.equal(Number(host.style['--memory-maze-opacity']),1,'scroll distance alone cannot fade the phrase before a late incoming heading');
+ heading.top=height*.75;
+ const handoffStart=finalTime+4.38;
+ view.update(1,handoffStart,camera,1,width,height,null,1.02,1.35);
+ view.update(1,handoffStart+.4,camera,1,width,height,null,1.02,1.35);
+ assert(Number(host.style['--memory-maze-opacity'])>0&&Number(host.style['--memory-maze-opacity'])<1,'both lines fade with time at a fixed scroll position');
+ assert.equal(Number(root.style['--memory-explore-opacity']),0,'the incoming directory remains invisible while letters fade');
+ assert(directory.inert,'invisible links cannot receive focus or clicks');
+ assert(!classes.has('is-memory-maze-past'),'the upper arrow fades with both lines');
+ view.update(1,handoffStart+.86,camera,1,width,height,null,1.02,1.35);
+ assert.equal(Number(host.style['--memory-maze-opacity']),0,'both lines fully disappear before Explore begins');
+ assert(Number(root.style['--memory-explore-opacity'])>0,'Explore then fades in without another scroll gesture');
+ assert.equal(view.group.visible,false);
+ assert.equal(parseFloat(root.style['--memory-maze-stage-clip']),height,'the outgoing canvas cannot cover the incoming cards');
+ assert(classes.has('is-memory-maze-past'));
+ view.update(1,handoffStart+1.61,camera,1,width,height,null,1.02,1.35);
+ assert.equal(Number(root.style['--memory-explore-opacity']),1);assert.equal(directory.inert,false);
+ heading.top=height*1.1;
  position.set(12,5,11);const prior=position.toArray();view.camera(at(.5),20,aspect,position,look,{phase:'edit'});assert.deepEqual(position.toArray(),prior,'editing and earlier replay cameras remain authoritative');
  view.camera(at(.5),20,aspect,position,look,{phase:'return'});assert.notDeepEqual(position.toArray(),prior,'late return hands the camera to the ending before replay ends');
  view.update(at(.5),20,camera,1,width,height,{phase:'return'},at(.5));assert(view.group.visible,'real home replay return does not skip the maze beginning');
  assert(!classes.has('is-memory-maze-past'),'scrolling back restores the particle stage for the maze');
- view.skipToProject();assert(classes.has('is-memory-maze-complete'));assert(!view.group.visible,'the explicit skip bypasses the complete ending');
+ view.skipToProject();assert.equal(Number(root.style['--memory-explore-opacity']),1);assert.equal(directory.inert,false);assert(classes.has('is-memory-maze-complete'));assert(!view.group.visible,'the explicit skip bypasses the complete ending');
  view.update(at(.2),finalTime+1,camera,1,width,height,null,at(.2));assert(!classes.has('is-memory-maze-complete'),'backscroll rearms the ending after a skip');
  view.update(at(.5),20,camera,1,width,height,{phase:'edit'},at(.5));assert.equal(view.group.visible,false,'molecular editing still vetoes the ending');
  assert.equal(view.backdrop(at(0)),1);assert.equal(view.backdrop(at(1)),0);assert.equal(view.backdrop(at(.5),{phase:'return'}),0);assert.equal(view.backdrop(at(.5),{phase:'edit'}),1);assert.equal(view.backdrop(MEMORY_MAZE_RANGE.start-.01,{phase:'return'}),1);

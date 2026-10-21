@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-21",
+  "task": "Inline previews for the current older-adult workbook editions",
+  "changed_files": [
+    "docs/human-practices/human-practices.md",
+    "docs/human-practices/inclusivity.md",
+    "docs/project/contribution.md",
+    "static/human-practices/workbook-readers.mjs",
+    "static/human-practices/workbook-readers.css",
+    "tests/test_workbook_readers.py",
+    "tests/test_igem_assets.py"
+  ],
+  "behavior": {
+    "routes": [
+      "/human-practices#workbook-editions",
+      "/inclusivity#workbook-editions",
+      "/contribution#workbook-editions"
+    ],
+    "editions": [
+      "Chinese student, 56 pages",
+      "English student, 56 pages",
+      "Chinese teacher guide, 54 pages"
+    ],
+    "readers": "Open by default at the workbook account; original PDFs render as scrollable canvases with zoom controls. Load when approaching the viewport.",
+    "downloads": "Current matching DOCX and original compact PDF remain beside each reader.",
+    "contribution": "Moved the workbook editions beside Knowledge that travels; preserved the three existing edition anchors and their descriptions.",
+    "inclusivity": "Removed the workbook account link to the resource table."
+  },
+  "verification": {
+    "workbook_tests": "3 passed: three open editions in each route, local/production modes, empty and /sustech mount, six current PDF/DOCX files, former anchors.",
+    "page_links": "4 passed",
+    "hp_opening": "3 passed",
+    "contribution_sonar": "4 passed",
+    "asset_tests": "15 passed; 1 unrelated existing assertion errored: test_production_renders_dynamic_jinja_and_markdown_images expects whitehole in /engineering. That route currently renders the entry loader and this task did not edit its content, layout or transition modules.",
+    "javascript": "Bundled Node syntax check passed.",
+    "diff": "Whitespace check passed for the changed tracked files.",
+    "browser": "At 127.0.0.1:8181, verified Chinese and English PDF canvases on Human Practices, English PDF on Contribution and Inclusivity; all showed 56 pages. No browser console errors seen. All three editions are open in page markup.",
+    "narrow_layout": "At the actual in-app browser size (825 pixels), workbook content was 461 pixels wide with scrollWidth 461: no horizontal overflow in the group. A separate phone-size emulation was not available through the connected browser controls."
+  },
+  "screenshots": [
+    "human-practices-english.png",
+    "contribution-english.png",
+    "inclusivity-english.png"
+  ],
+  "cooperation": "Acquired the shared integration lock before rereading and changing the two editable-download regression targets in tests/test_igem_assets.py; inspected the diff, ran checks, and released only this chat’s lock. Other pre-existing Inclusivity changes and newly observed WORLDPROOF Contribution content were preserved.",
+  "delivery": "All functional changes are in the primary repository and rendered by the existing 8181 preview. No separate worktree, shared public build, commit, push or publication was created."
+}

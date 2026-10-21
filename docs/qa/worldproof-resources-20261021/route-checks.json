@@ -1,0 +1,82 @@
+[
+  {
+    "mode": "local",
+    "mount": "/",
+    "route": "/inclusivity",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "local",
+    "mount": "/",
+    "route": "/contribution",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "local",
+    "mount": "/sustech",
+    "route": "/inclusivity",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "local",
+    "mount": "/sustech",
+    "route": "/contribution",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "igem",
+    "mount": "/",
+    "route": "/inclusivity",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "igem",
+    "mount": "/",
+    "route": "/contribution",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "igem",
+    "mount": "/sustech",
+    "route": "/inclusivity",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  },
+  {
+    "mode": "igem",
+    "mount": "/sustech",
+    "route": "/contribution",
+    "status": 200,
+    "unique_downloads": 14,
+    "pdfs": 6,
+    "markdown_files": 6,
+    "csv_templates": 2
+  }
+]

@@ -1,0 +1,19 @@
+/* Captions float within the existing particle take. Geometry is all WebGL. */
+.memory-constellation{display:none;position:fixed;inset:0;z-index:12;pointer-events:none;color:#e9e8ff}
+[data-memory-star-preview]:not(.ot--static) .memory-constellation:not([hidden]){display:block}
+.memory-constellation__caption{position:absolute;left:24px;right:24px;bottom:10vh;text-align:center;opacity:0;text-shadow:0 2px 20px #03050b}
+.memory-constellation__caption h2{font:400 clamp(27px,3.2vw,43px)/1.12 var(--ot-sans);letter-spacing:-.025em;margin:0 0 10px}
+.memory-constellation__caption p{font:400 clamp(14px,1.2vw,17px)/1.5 var(--ot-sans);color:#b7b7d1;margin:0}
+.memory-constellation__caption--loss h2,.memory-constellation__caption--connection h2{color:#f5b0b9}
+.memory-constellation__caption--orientation h2{color:#bce7dc}
+[data-memory-star-preview]:not(.ot--static) .ot-ch--stats.is-on{opacity:var(--memory-population-opacity,0)!important}
+[data-memory-star-preview]:not(.ot--static) .rna-cell-context{opacity:var(--memory-cell-opacity,1)!important}
+[data-memory-star-preview]:not(.ot--static) .ot-ch--question{display:none}
+.memory-question{display:none;position:fixed;inset:0;z-index:12;pointer-events:none;color:#e9e8ff}
+[data-memory-star-preview]:not(.ot--static) .memory-question:not([hidden]){display:block}
+.memory-question__heading{position:absolute;left:50%;bottom:24vh;transform:translateX(-50%);width:min(850px,88vw);display:grid;text-align:center;text-shadow:0 2px 20px #03050b}
+.memory-question__prefix,.memory-question__full{grid-area:1/1;opacity:0}
+.memory-question__prefix{align-self:start}
+.ot--static .memory-constellation{display:block;position:relative;padding:35px 24px}
+.ot--static .memory-constellation__caption{position:static;opacity:1;margin:32px auto;max-width:48ch}
+@media(max-width:600px){.memory-constellation__caption{bottom:13vh;left:20px;right:20px}.memory-constellation__caption p{max-width:28ch;margin:auto}}

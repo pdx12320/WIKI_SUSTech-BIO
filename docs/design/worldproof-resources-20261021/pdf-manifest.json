@@ -1,0 +1,50 @@
+[
+  {
+    "source": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-en.md",
+    "pdf": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-en.pdf",
+    "source_sha256": "7a320c3a59eebaa9b877501bd9552f7882b9ca08a2d51729dd8e5aa4729303a1",
+    "pdf_sha256": "56f3e1fe8edd37782c66443177523f8958d2b7f036b1366f723f20a2f0d63f48",
+    "pages": 4,
+    "text_characters": 8707
+  },
+  {
+    "source": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-zh.md",
+    "pdf": "assets/human-practices/worldproof-resources/worldproof-judging-guideline-zh.pdf",
+    "source_sha256": "00c24cbc3677a82c985af5846c0f84e7c2c9d249273f2622f8064974f86c9835",
+    "pdf_sha256": "e75a715632a1923b460ca61a78472aad6b63c98096efac57c8619df887ccd79a",
+    "pages": 4,
+    "text_characters": 3510
+  },
+  {
+    "source": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-en.md",
+    "pdf": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-en.pdf",
+    "source_sha256": "63346add880151334120b6f9e3a8ffe9e55392e5686d7a83658dcec60b577382",
+    "pdf_sha256": "ebb3832846344122ac420c23a4b30e8b83c4380f9d3aa5d1314b76fdfe90d53c",
+    "pages": 2,
+    "text_characters": 3397
+  },
+  {
+    "source": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-zh.md",
+    "pdf": "assets/human-practices/worldproof-resources/worldproof-judging-scorecard-zh.pdf",
+    "source_sha256": "045ffe7f643bd0c604e9604cd841fd07f95b1ea786e9a5a569d3d468d60e20f7",
+    "pdf_sha256": "159cc2c0b34b8632458a06dfd3b65944df7b41993cde8db6c9edfdb699b0f39b",
+    "pages": 2,
+    "text_characters": 1379
+  },
+  {
+    "source": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-en.md",
+    "pdf": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-en.pdf",
+    "source_sha256": "1b6d26d03bc883eb066fbf17a3f1b4ba3d7c295679a72f6b65e863115f268f06",
+    "pdf_sha256": "a51a7d5401cc42552e8ba713b9a1385553db9230afee4076edd3451b6d489e6f",
+    "pages": 11,
+    "text_characters": 27129
+  },
+  {
+    "source": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-zh.md",
+    "pdf": "assets/human-practices/worldproof-resources/worldproof-scenarios-and-constraints-zh.pdf",
+    "source_sha256": "f37b6167d7295ac5d7c1f27b8ea40ee7dabf9c0ff062faaa4b429a64cf008f79",
+    "pdf_sha256": "d7dc2ccf4ab5e3eb252d3904405ae12984e9f1715648804a77972202398812d6",
+    "pages": 9,
+    "text_characters": 8325
+  }
+]

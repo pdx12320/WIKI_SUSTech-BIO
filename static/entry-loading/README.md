@@ -1,14 +1,17 @@
-# Fixed-logo first-entry loading
+# White whale page-entry loading
 
 The shared layout includes `entry_loading_head.html` and `entry_loading.html`
 for public Home/content routes. A visitor's first page in a browsing session
-shows the letter whale, including direct entry through a content URL. Subsequent
-content visits skip it. Explicit same-window Home links replay it: a capture
-handler records a short-lived Home intent and uses native navigation before the
-white-hole click handler runs. Hash links, modifier clicks and external links
-remain native. Home-to-content keeps the existing white-hole transition.
-Review endpoints (`/next` etc.) and 404 pages stay isolated. No Home template
-content or authored opening is changed.
+shows the letter whale, including direct entry through a content URL. Every
+full refresh replays the white whale cover, including content pages already
+visited in the same session. Subsequent native content navigations
+can skip it. Explicit same-window Home links replay it: a capture
+handler records a short-lived route intent and starts native navigation. Hash links, modifier clicks and external links
+remain native. Home-to-content uses the same whale cover.
+Review endpoints (`/next` etc.) and 404 pages keep their own entry behavior.
+The animated Home opening is unchanged. Its static entrance has the team
+mascot, ORCA wordmark, project tagline and illustrated project links, replacing
+the legacy oversized title and text-only chapters.
 
 The stationary silhouette and pale markings are the original hand-traced ORCA
 mascot from `static/assets/wiki1-main-orca.png`. There is no swimming, tail beat,
@@ -26,16 +29,25 @@ the primary visual palette: violet #7375B2, coral pink #FB95A3 and lavender
 #C6CCF4, with blush #FFDBDD markings. No bottom preview instruction is shown. The field
 covers the complete logo at every angle, with no repeating pose/time reset.
 
+The parser-time shield is a body pseudo-element, sharing the loader’s stacking
+context even when Team locks the body for its opening. The entry cover also
+opts out of page-specific blur/transform effects.
+
 Canvas 2D needs no model, font download or extra WebGL context. DPR is capped at
 1.5. The complete logo scales to phone portrait/landscape viewports.
 
 Normal playback reveals the page once its scene/DOM is ready and one second has passed,
-then fades out over 240ms (260ms disposal). Home initialization failure falls
-back after 3.2 seconds; the head boot watchdog removes a failed cover after 4.5
-seconds. Home starts initializing concurrently.
+then fades out over 240ms (260ms disposal). Content pages wait for the window
+load event, including eager opening images
+and scripts, with a 10-second recovery deadline. Slow Home initialization has
+a 30-second preparation budget before the illustrated static entrance takes
+over; a separate head watchdog recovers a failed controller after 35 seconds
+on Home (12 seconds on content pages). Home starts initializing concurrently.
 
-Session storage suppresses repeat content playback; explicit Home clicks replay it. White-hole arrivals, reduced motion
-and history restorations skip normal entry. Storage failures and missing Canvas
+Session storage suppresses repeat native content navigation playback; refresh
+and cross-theme navigation replay it. Reduced motion shows a stationary whale;
+history restorations skip normal
+entry to preserve the browser’s restored page. Storage failures and missing Canvas
 remain recoverable. Disposal cancels animation, timers, observers and listeners.
 
 Review on real Home using `?loading=preview`; it runs continuously. Click or

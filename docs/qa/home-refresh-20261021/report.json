@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-21",
+  "preview": "http://127.0.0.1:8181/",
+  "delivery": "Source changes are integrated in the primary repository; not confined to a separate preview. No public/ build, branch switch, worktree creation, commit or push.",
+  "changes": [
+    "Every public Home/content reload replays the white whale, even after a prior visit.",
+    "Content reveal waits for the load event rather than DOM parsing alone; recovery remains bounded.",
+    "Home has a 30-second startup preparation budget instead of the previous 12 seconds.",
+    "The legacy bare-title/text-only static story is replaced visually by a complete illustrated entrance and existing project links.",
+    "Reduced motion keeps a stationary white-background whale. History restoration retains its existing behavior.",
+    "The current /next content and existing concurrent changes are preserved. Its static entrance receives the same replacement; its entry loader remains isolated.",
+    "The parser-time white shield now shares the loader’s body stacking context. Team page fixed-body and blur effects no longer cover, scale or blur the whale."
+  ],
+  "changed_files": [
+    "static/entry-loading/boot.js",
+    "static/entry-loading/entry-loading.js",
+    "static/entry-loading/entry-loading.css",
+    "static/entry-loading/README.md",
+    "static/onetake/home-entry.js",
+    "static/onetake/home-entry-art.css",
+    "static/onetake/home-static-entry.css",
+    "wiki/components/home_static_entry.html",
+    "wiki/pages/home.html",
+    "wiki/pages/home_next_structure.html",
+    "tests/entry_loading.mjs",
+    "tests/home_startup_browser.mjs",
+    "tests/home_refresh_browser.mjs",
+    "tests/test_home_static_entry.py",
+    "docs/qa/home-refresh-20261021/"
+  ],
+  "shared_template_patch": "Only one home_static_entry.html include was added to each live Home template. Existing /next edits belong to other tasks and were not overwritten.",
+  "checks_passed": [
+    "tests/entry_loading.mjs: session/reload policy, readiness, 12-second regression, reduced motion, failure recovery, cleanup and whale renderer.",
+    "tests/entry_loading_worker.mjs: independent rendering, resize/pointer messages and termination.",
+    "tests/entry_scene_budget.mjs: first-frame readiness and covered scene rendering budget.",
+    "tests/opening_warmup.mjs: resource preparation, origin guards and cleanup.",
+    "tests/test_entry_loading.py: 2 tests.",
+    "tests/test_home_static_entry.py: 2 tests.",
+    "Scoped git diff --check.",
+    "Live 8181 HTTP response includes the new fallback component.",
+    "Browser: slow module cover remains active after 14 seconds; failed modules hide the legacy story on desktop and phone; no-JavaScript and reduced-motion entries remain illustrated.",
+    "Browser inner-page retry passed: an already-visited /team reload shows the whale and waits for a deliberately held eager image before revealing the destination (results.json)."
+  ],
+  "broader_checks": {
+    "initial_test_wiki_run": "24 passed, 2 failed.",
+    "targeted_recheck": "The transitive module scanner passed after concurrent shared-test edits. The /attributions markdown-content assertion still fails, unrelated to entry loading."
+  },
+  "browser_limits": "Full animated WebGL playback could not be confirmed in this local headless environment: GPU-enabled attempts timed out. The normal headless run used the illustrated fallback. Browser screenshots verify the white whale and fallback layout; they do not prove all animated chapters.",
+  "concurrency": "The existing shared-integration lock was respected. Our two-template patch was applied under our own atomic lock and that lock was released. Other Home tasks continued modifying the same checkout, so these checks describe the observed state, not a guarantee against future concurrent writes."
+}

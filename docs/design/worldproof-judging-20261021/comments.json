@@ -1,0 +1,115 @@
+{
+  "created": "2026-10-21",
+  "purpose": "Traceable transcription for the English Inclusivity judge-feedback section. No numeric scores are transcribed or displayed.",
+  "sources": [
+    {
+      "id": "su",
+      "filename": "e3c96470e0ca54526c5b85c2b9180089.jpg",
+      "judge": "Hengwei Su",
+      "visible_written_comments": 0,
+      "sha256": "12e9fae5c165a458d9048e114618d0761cd5233a1b7bcf040cf390a24fc5148f",
+      "attribution_basis": "User-provided mapping of attached images to judges."
+    },
+    {
+      "id": "elz",
+      "filename": "26571d7d9cd37ec1568e9692b75fe57f.jpg",
+      "judge": "Elżbieta Gralińska",
+      "name_status": "Full name from Education's WORLDPROOF judges section; confirmed against the event poster. User identified Elz as this judge's abbreviation.",
+      "name_source": "docs/human-practices/education.md#worldproof-records",
+      "name_reference_image": "assets/human-practices/images/worldproof-event-poster.webp",
+      "visible_written_comments": 5,
+      "sha256": "66de3d4c62c91be6677e3bdf69e9638e043840274efe6c8e96db263381b7aaee",
+      "attribution_basis": "User-provided mapping of attached images to judges."
+    },
+    {
+      "id": "jacky",
+      "filename": "59da783ceb79aa93dc8cca4e0ce736a2.png",
+      "judge": "Jacky Yuen",
+      "visible_written_comments": 3,
+      "sha256": "61153360e20c743ceae12bffe5acbfd3389a17f6a3b50e82ecd11e85ea53ce8a",
+      "attribution_basis": "User-provided mapping of attached images to judges."
+    }
+  ],
+  "comments": [
+    {
+      "id": "elz-database",
+      "source": "elz",
+      "source_row": 1,
+      "source_team_label": "Team 1",
+      "project_as_written": null,
+      "editorial_topic": "Database overview",
+      "text": "I liked the presented overview of the created database, the idea is clear to understand however it might still require some more work on the “world readiness” aspects."
+    },
+    {
+      "id": "elz-fieldshift",
+      "source": "elz",
+      "source_row": 2,
+      "source_team_label": "Team 3",
+      "project_as_written": "FieldShift",
+      "editorial_topic": null,
+      "text": "A well-thought decision support questionnaire - seems to work well based on the demonstration part. Just the change log part was not too clear."
+    },
+    {
+      "id": "elz-moss",
+      "source": "elz",
+      "source_row": 3,
+      "source_team_label": "Team 4",
+      "project_as_written": "MOSS",
+      "editorial_topic": null,
+      "text": "Very clear presentation with the solution, which seems to have a high world readiness."
+    },
+    {
+      "id": "elz-synbio",
+      "source": "elz",
+      "source_row": 4,
+      "source_team_label": "Team 2",
+      "project_as_written": "Synbio lab virtual",
+      "editorial_topic": null,
+      "text": "I liked the presented idea, however the presented solution needs more improvements and also a more clear direction."
+    },
+    {
+      "id": "elz-fermentos",
+      "source": "elz",
+      "source_row": 5,
+      "source_team_label": "Team 2",
+      "project_as_written": "FermentOS V2",
+      "editorial_topic": null,
+      "text": "I liked the well-defined challenge! The solution seems promising but might require further work before entering the real world."
+    },
+    {
+      "id": "jacky-self-analysis",
+      "source": "jacky",
+      "source_row": 1,
+      "source_team_label": "Team 1",
+      "project_as_written": null,
+      "editorial_topic": "Patient self-analysis",
+      "text": "Patient self analysis is tricky. It can be easily manipulated."
+    },
+    {
+      "id": "jacky-farmers",
+      "source": "jacky",
+      "source_row": 3,
+      "source_team_label": "Team 3",
+      "project_as_written": null,
+      "editorial_topic": "Farmer-facing platform",
+      "text": "Farmers need to be educated to use the platform."
+    },
+    {
+      "id": "jacky-onboarding",
+      "source": "jacky",
+      "source_row": 5,
+      "source_team_label": "Team 5",
+      "project_as_written": null,
+      "editorial_topic": "Platform onboarding",
+      "text": "People who use the platform should learn how to use it first."
+    }
+  ],
+  "mapping_notes": [
+    "Source team numbers are not joined to editorial Team 1–5 labels from the demo collection workbook.",
+    "Elżbieta Gralińska's sheet labels two different rows Team 2. Printed row sequence differs from written team numbers.",
+    "Jacky Yuen sheet does not name projects; topic labels are editorial descriptions of comment content.",
+    "MOSS is retained as written, without asserting a match to Mossback in the demo collection.",
+    "No visible written comments on the supplied Hengwei Su page; no qualitative opinion inferred.",
+    "Theme reflections are team editorial interpretations, not claims of completed revisions or validation."
+  ]
+}

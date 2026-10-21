@@ -1,0 +1,26 @@
+[
+  {
+    "fits": true,
+    "hidden": false,
+    "text": "This C belongs to APOE4 messenger RNA.",
+    "pass": true
+  },
+  {
+    "fits": true,
+    "hidden": false,
+    "text": "CGC encodes Arg112 in apoE4.",
+    "pass": true
+  },
+  {
+    "fits": true,
+    "hidden": false,
+    "text": "Changing C to U would encode Cys112.",
+    "pass": true
+  },
+  {
+    "fits": true,
+    "hidden": false,
+    "text": "ORCA aims to make this change in RNA.",
+    "pass": true
+  }
+]

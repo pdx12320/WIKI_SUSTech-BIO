@@ -11,6 +11,8 @@
 .markdown-content .inc-model-photo img { width:100%; height:auto; }
 .markdown-content .inc-instruction { max-width:23rem; margin:1.6rem auto; }
 .markdown-content .inc-instruction img { display:block; width:100%; height:auto; }
+.markdown-content .inc-instruction--bilingual { max-width:52rem; }
+.markdown-content .inc-instruction--bilingual img { aspect-ratio:1080 / 1528; object-fit:contain; object-position:top; }
 .markdown-content .inc-prompt { color:var(--inc-primary); font-family:Georgia,serif; font-size:clamp(1.3rem,2vw,1.75rem); line-height:1.6; margin:1.6rem 0; }
 .markdown-content .inc-worldproof-cycle { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; border-block:1px solid var(--inc-line); padding-block:1.3rem; margin-top:1.8rem; }
 .inc-worldproof-cycle strong { display:block; color:var(--inc-primary); font-family:Georgia,serif; font-size:1.25rem; margin-bottom:.6rem; }

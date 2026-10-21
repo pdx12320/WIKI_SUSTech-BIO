@@ -57,8 +57,10 @@ header_introduction: >-
   <article class="achievement-card model" aria-labelledby="model-title">
     <a class="card-figure" href="/assets/images/engineering-conclusions/model.png" data-enlarge aria-label="Enlarge Model summary figure"><img src="/assets/images/engineering-conclusions/model.png" alt="PUFFER connects RNA-seq analysis, PUF specificity ranking, catalytic design, LAMAR site prioritization and delivery simulations." width="3600" height="2840"></a>
     <div class="card-copy"><h3 id="model-title">Let data<br>guide the next edit.</h3>
-      <p class="card-description">The PUF specificity ranker recovered 20 of the measured Top30 candidates in a grouped evaluation of 66 constructs. Together with RNA-seq analysis, LAMAR and delivery simulations, this work helped prioritize candidates and questions for experimental testing.</p>
-      <p class="card-takeaway"><em>Predictions guide validation; their performance is bounded by the evaluated data.</em></p>
+      <p class="card-description">We developed <strong>PUFFER</strong>, a five-module computational workflow connecting <strong>RNA-seq analysis, PUF recognition, APOBEC catalytic design, LAMAR site ranking, and delivery modelling</strong>. RNA-seq analysis established candidate editing profiles, while sequence and structural models generated editor candidates and mechanistic comparisons for experimental follow-up.</p>
+      <p class="card-description">In grouped evaluation of <strong>66 constructs</strong>, the <strong>PUF-ESM Specificity Ranker</strong> achieved <strong>Spearman ρ = 0.405</strong> and recovered <strong>20 of the measured Top30 candidates</strong>, compared with 13.64 expected randomly. Across <strong>140 positive test windows</strong>, LAMAR's top 10 and top 20 cytidines included a supported editing site in <strong>77.9% and 92.1%</strong> of windows, respectively.</p>
+      <p class="card-description">Our <strong>delivery simulations</strong> connected vector distribution, blood–brain barrier transport, cellular expression, and competing RNA-editing reactions. Simulated dose scans identified an intermediate maximum in APOE3-like RNA, while spatial simulations revealed persistent differences in exposure between cells near and far from vessels. These findings defined candidate priorities and delivery questions for matched experimental testing.</p>
+      <p class="card-takeaway"><strong>PUFFER connected editing measurements with candidate ranking and delivery simulations to guide the next round of ORCA engineering.</strong></p>
     </div>
   </article>
 

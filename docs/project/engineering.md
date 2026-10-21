@@ -2396,7 +2396,7 @@ Refining catalytic-module structural models
 
 Module 3 links APOBEC structural modeling with experimental comparisons of substrate preference and activity. Published PUF–APOBEC designs provided the platform context (Wang et al., 2002; Han et al., 2022, 2025). Parent and variant sequences, functional measurements and matched controls defined the comparisons examined by the model.
 
-We combined contact decomposition, parent-corrected substrate differences, parallel protein–RNA and protein-only predictions, and contact-network clustering. Successive revisions separated contact types, accounted for parental substrate effects and stabilized structural groups. The resulting maps and clusters informed candidate combinations and mechanistic comparisons. Transcriptome-wide RNA editing reported for DNA base editors illustrates why local structural or substrate-preference metrics cannot establish a complete off-target profile (Grünewald et al., 2019). That evidence concerns a different editor system and serves here as an assessment limitation.
+We combined contact decomposition, parent-corrected substrate differences, parallel protein–RNA and protein-only predictions, and contact-network clustering. Successive revisions separated contact types, accounted for parental substrate effects and stabilized structural groups. The resulting maps and clusters informed candidate combinations and mechanistic comparisons. Reports of transcriptome-wide RNA editing by DNA base editors motivate complementing local structural analysis with transcriptome-wide measurements (Grünewald et al., 2019).
 
 **Main results.** Combination screening identified G27T–K30H–Q58M with a GCG/GCA editing ratio of 2.156 and retention of 77.3% of parental target activity. Matched same-site and sequence-background comparisons further showed how residue choices shaped substrate preference and activity. These experimental outcomes connected structural hypotheses with a lead that balanced both objectives.
 
@@ -2662,7 +2662,7 @@ Stage I used a classification head to predict whether an input region contained 
 
 <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mi>W</mi><annotation encoding="application/x-tex">&#87;</annotation></semantics></math></span> denotes the input region, <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><msub><mi>y</mi><mi>W</mi></msub><annotation encoding="application/x-tex">&#121;&#95;&#87;</annotation></semantics></math></span> its label, and <span class="engineering-math"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><msub><mi>p</mi><mi>W</mi></msub><annotation encoding="application/x-tex">&#112;&#95;&#87;</annotation></semantics></math></span> the positive-class output. Stage II used 101-nt cytidine-centred contexts for local prediction. The two tasks were trained separately from the human-adapted encoder; Stage II initialized directly from the human-pretraining checkpoint.
 
-The regional partitions contained 3,835 training regions, 213 validation regions and 212 test regions. This decomposition gave each model a distinct prediction target and input scale. Sequence relatedness across partitions must still be considered when interpreting generalization, consistent with the broader literature on evaluation leakage (Kapoor & Narayanan, 2023); the partition-overlap limitations are documented on [Model §4.3](/model#module4-strategy).
+The regional partitions contained 3,835 training regions, 213 validation regions and 212 test regions. This decomposition gave each model a distinct prediction target and input scale. The evaluation used these regional partitions; sequence-overlap details are provided in [Model §4.3](/model#module4-strategy), alongside the evaluation-leakage considerations described by Kapoor and Narayanan (2023).
 
 ##### Test {#model-lamar-cycle-03-test}
 
@@ -2745,7 +2745,7 @@ Hit@K measures the proportion of evaluated positive windows with at least one su
 
 ##### Learn {#model-lamar-cycle-05-learn}
 
-The model now returned ordered cytidine candidates for the experimental team to examine within each region. Finding useful sites under a limited budget became the practical objective. Further evaluation will assess the complete workflow and newly proposed candidates. The learning-to-rank framework reviewed by T.-Y. Liu (2009) provides a methodological basis for aligning the training objective with this use.
+The model returned ordered cytidine candidates for the experimental team to examine within each region. The resulting shortlists organized candidate testing around a defined screening budget. End-to-end workflow assessment and experimental testing of newly proposed candidates form the next evaluation stage. The learning-to-rank framework reviewed by T.-Y. Liu (2009) provides a methodological basis for aligning the training objective with this use.
 
 #### References {#model-lamar-references}
 
@@ -2952,13 +2952,13 @@ Panel B labels **1–4** identify **10R-proapobec, 10R-design-4, 10R-dual-site a
 
 ##### Learn {#model-whole-body-cycle-05-learn}
 
-Spatial coverage became a separate output alongside mean editing, with vessel-distance groups retained as the diagnostic. Dose primarily changed the magnitude of editing in these simulations. Delivery comparisons must therefore examine barrier release, diffusion and uptake together to address the uneven distribution revealed by the model.
+Spatial coverage became a separate output alongside mean editing, with vessel-distance groups retained as the diagnostic. Dose primarily changed the magnitude of editing in these simulations. The spatial model identified barrier release, diffusion and uptake as joint design variables for improving tissue coverage.
 
 #### Model Conclusion {#model-conclusion .engineering-conclusion-title}
 
 ![PUFFER — transcriptomic analysis, recognition and catalytic design, RNA-site ranking, and delivery modelling](/assets/images/engineering-conclusions/model.png){.engineering-figure .engineering-conclusion-illustration style="--engineering-figure-width:100%;--engineering-detail-width:1400px"}
 
-PUFFER connected **transcriptomic analysis, recognition and catalytic design, RNA-site ranking, and delivery modelling** into a computational workflow for ORCA engineering. Its outputs provide ranked candidates, editing-context comparisons, and parameter-dependent delivery scenarios to guide subsequent decisions. Across these five directions, modelling helped identify useful representations and expose limitations. **Computational rankings and simulated outcomes remain distinct from experimentally validated editor performance or therapeutic benefit**, and require matched experimental follow-up.
+PUFFER connected **transcriptomic analysis, recognition and catalytic design, RNA-site ranking, and delivery modelling** into a computational workflow for ORCA engineering. Across these five directions, experimental data informed model development, and model comparisons refined candidate selection and evaluation priorities. **Ranked editor candidates, RNA-site shortlists and simulated delivery scenarios provide concrete starting points for the next round of matched experimental testing.**
 
 <span id="references"></span>
 

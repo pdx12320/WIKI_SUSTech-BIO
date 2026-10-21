@@ -73,7 +73,7 @@
           ] %}
           {% for label, source in socials %}
           <div class="ofd-social">
-            <button type="button" data-ofd-qr="{{ source }}" data-ofd-platform="{{ label }}" aria-label="Enlarge {{ label }} QR code" aria-haspopup="dialog">
+            <button type="button" data-ofd-qr data-ofd-platform="{{ label }}" aria-label="Enlarge {{ label }} QR code" aria-haspopup="dialog">
               <img src="{{ source }}" alt="{{ label }} QR code" width="100" height="100" loading="lazy">
             </button>
             <span>{{ label }}</span>

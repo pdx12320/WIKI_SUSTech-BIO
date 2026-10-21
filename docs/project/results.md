@@ -75,42 +75,44 @@ header_introduction: >-
 
 ## SONAR Spotlight
 
-<p class="sonar-introduction">SONAR connects <strong>reporter Engineering, a Measurement framework, and reusable resources shared through Contribution</strong>. Together, they turn an experimental reporter into a workflow that other teams can understand, adapt and test.</p>
+<p class="sonar-subtitle">From a reporter to a reusable measurement system.</p>
+
+<p class="sonar-introduction">SONAR (System for Optical Normalization and Analysis of RNA Editing) began as a fluorescence reporter for ORCA. Ten engineering cycles developed it into a modular optical platform; four measurement layers established how to interpret its signals; and SAP made the workflow accessible beyond our own experiments.</p>
 
 <figure class="sonar-system" aria-labelledby="sonar-system-title">
   <div class="sonar-ring">
     <strong class="sonar-ring-title" id="sonar-system-title">SONAR</strong>
-    <svg class="sonar-ring-arrows" viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <svg class="sonar-ring-arrows" viewBox="0 0 780 769.1875" preserveAspectRatio="none" aria-hidden="true">
       <defs><marker id="sonar-cycle-arrow" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" viewBox="0 0 16 16" refX="12" refY="8" orient="auto"><path d="M2 2 L14 8 L2 14 Z"/></marker></defs>
-      <path class="sonar-ring-path" d="M670 162 A300 300 0 0 1 800 400" marker-end="url(#sonar-cycle-arrow)"/>
-      <path class="sonar-ring-path" d="M590 696 A300 300 0 0 1 410 696" marker-end="url(#sonar-cycle-arrow)"/>
-      <path class="sonar-ring-path" d="M200 400 A300 300 0 0 1 330 162" marker-end="url(#sonar-cycle-arrow)"/>
+      <path class="sonar-ring-path" d="M562 198.59375 C768 218.59375 768 289.59375 699 354.59375" marker-end="url(#sonar-cycle-arrow)"/>
+      <path class="sonar-ring-path" d="M591 629.1875 C551 789.1875 229 789.1875 189 629.1875" marker-end="url(#sonar-cycle-arrow)"/>
+      <path class="sonar-ring-path" d="M81 354.59375 C12 289.59375 12 218.59375 218 198.59375" marker-end="url(#sonar-cycle-arrow)"/>
     </svg>
     <section class="sonar-cycle-card sonar-ring-engineering" aria-labelledby="sonar-engineering-title">
       <h3 id="sonar-engineering-title"><a href="/engineering#measure">Engineering</a></h3>
-      <p class="sonar-cycle-role">Build and test the reporter:</p>
-      <p>Reporter construction and controlled editor tests provide modeling benchmarks, experimental data and independent molecular evidence.</p>
-      <a class="sonar-chapter-link" href="/engineering#measure">Explore Engineering</a>
+      <p class="sonar-cycle-role">Build the Signal</p>
+      <p>Across ten DBTL cycles, we refined SONAR's EGFP editing switch, mCherry reference, and ORCA-associated BFP marker, establishing a modular reporter and experimental benchmarks.</p>
+      <a class="sonar-chapter-link" href="/engineering#measure">Explore Engineering →</a>
     </section>
     <section class="sonar-cycle-card sonar-ring-measurement" aria-labelledby="sonar-measurement-title">
       <h3 id="sonar-measurement-title"><a href="/measurement">Measurement</a></h3>
-      <p class="sonar-cycle-role">Define how to interpret the signal:</p>
-      <p>Data define cell selection, normalization and reference calibration, and test how optical signals relate to molecular evidence.</p>
-      <a class="sonar-chapter-link" href="/measurement">Explore Measurement</a>
+      <p class="sonar-cycle-role">Understand the Signal</p>
+      <p>We developed the <strong>SONAR Measurement Pipeline</strong>, a four-layer framework connecting fluorescence to quantitative interpretation through background correction, normalized scoring, AC/INAC calibration, and exploratory Sanger-referenced estimates.</p>
+      <a class="sonar-chapter-link" href="/measurement">Explore Measurement →</a>
     </section>
     <section class="sonar-cycle-card sonar-ring-contribution" aria-labelledby="sonar-contribution-title">
       <h3 id="sonar-contribution-title"><a href="/contribution#sonar">Contribution</a></h3>
-      <p class="sonar-cycle-role">Make the workflow usable by others:</p>
-      <p>Reporter designs, protocols and <strong>SAP (SONAR Analysis Program)</strong> help other teams adapt reporters and use the measurement framework.</p>
-      <a class="sonar-chapter-link" href="/contribution#sonar">Explore Contribution</a>
+      <p class="sonar-cycle-role">Share the Method</p>
+      <p>We shared reporter designs, controls, protocols, example datasets, and the SONAR Analysis Program (SAP), helping future teams adapt SONAR and analyze flow-cytometry data.</p>
+      <a class="sonar-chapter-link" href="/contribution#sonar">Explore Contribution →</a>
     </section>
-    <div class="sonar-ring-label sonar-ring-data"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 V20 M6 14 L12 20 L18 14"/></svg></span><span class="sonar-label-text">Provides modeling benchmarks and experimental data</span></div>
-    <div class="sonar-ring-label sonar-ring-framework"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 V20 M6 14 L12 20 L18 14"/></svg></span><span class="sonar-label-text">Serves as<br>the software core</span></div>
-    <div class="sonar-ring-label sonar-ring-reuse"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 8 A8 8 0 1 0 19 17 M19 3 V8 H14"/></svg></span><span class="sonar-label-text">Tools, parts and guidance for other teams</span></div>
+    <div class="sonar-ring-label sonar-ring-data"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 V20 M6 14 L12 20 L18 14"/></svg></span><span class="sonar-label-text">Provides experimental benchmarks for quantitative analysis</span></div>
+    <div class="sonar-ring-label sonar-ring-framework"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 V20 M6 14 L12 20 L18 14"/></svg></span><span class="sonar-label-text">Forms the foundation of reusable analysis tools</span></div>
+    <div class="sonar-ring-label sonar-ring-reuse"><span class="sonar-stack-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 8 A8 8 0 1 0 19 17 M19 3 V8 H14"/></svg></span><span class="sonar-label-text">Enables future teams to build upon SONAR</span></div>
   </div>
 </figure>
 
-<p class="sonar-explanation"><strong>SONAR is the overall system; SAP is the software within it.</strong> The reporter supplies experimental signals, Measurement defines how to analyze them, and SAP helps users apply the workflow—from reporter sequence adaptation to flow-data analysis and export.</p>
+<p class="sonar-explanation sonar-summary"><strong>BUILD → MEASURE → REUSE</strong></p>
 
 ## Guided by Real-World Questions {#guided-by-real-world-questions}
 

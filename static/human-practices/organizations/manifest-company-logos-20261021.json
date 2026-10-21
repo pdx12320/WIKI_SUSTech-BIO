@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-21",
+  "source_archive": "ORCA_Community_9_Logo_SourceKit (1).zip",
+  "policy": "Names and matching logos only, inserted into the existing community strip without new categories. Original downloaded assets are preserved locally; all eight company logos are mapped to verified iGEM CDN uploads.",
+  "entries": [
+    {
+      "id": "GENEWIZ",
+      "name": "GENEWIZ",
+      "company": "GENEWIZ from Azenta Life Sciences（金唯智；安升达生命科学旗下品牌）",
+      "logo": "company-genewiz.png",
+      "source_url": "https://blog.genewiz.com/hubfs/Rebrand_logo_blog_header_ds1.png",
+      "source": "官方博客 / official GENEWIZ blog",
+      "homepage": "https://www.genewiz.com.cn/",
+      "sha256": "acad7f82204d459a0aee6edae5042922ea27734caef869a2d25040e21bec9784",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genewiz.avif",
+      "uploaded_sha256": "a70e761797b4d86ba10cb220fc86fcfd7a4ee653e32f1e9f1c5a95cf2212e75b"
+    },
+    {
+      "id": "GenePharma",
+      "name": "GenePharma",
+      "company": "苏州吉玛基因股份有限公司 / Suzhou GenePharma Co., Ltd.",
+      "logo": "company-genepharma.jpg",
+      "source_url": "https://cdn.theorg.com/98c69a57-16a0-49ef-9bb5-b8e241ab79aa_small.jpg",
+      "source": "The Org 品牌页面；商标样式与企业披露文件一致",
+      "homepage": "https://www.genepharma.com/",
+      "sha256": "0bb071a8590de763a9386586d02133102cc3941eaf29ed66e21d6ff9fbcc47ef",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-genepharma.avif",
+      "uploaded_sha256": "a62e2a2a8f6e060f1690755fefaf650501f0d314deb172ff165616ed4aa3886d"
+    },
+    {
+      "id": "TaKaRa",
+      "name": "Takara Bio",
+      "company": "Takara Bio Inc.（宝生物；中国生产基地：宝生物工程〔大连〕有限公司）",
+      "logo": "company-takara.png",
+      "source_url": "https://companieslogo.com/img/orig/4974.T_BIG-f4dd2614.png?download=true&t=1731654091",
+      "source": "CompaniesLogo 第三方品牌资源",
+      "homepage": "https://www.takarabiomed.com.cn/",
+      "sha256": "130cf821fe5b2bf8609c3b6b72c3f0cc580ec846483672a6ffebe62302facc67",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-takara.avif",
+      "uploaded_sha256": "0995a90e5a69b836df1c133ab9e97e0640af60e3d1a9fd82d8c2c6c6ac6dc76d"
+    },
+    {
+      "id": "Beyotime",
+      "name": "Beyotime Biotechnology",
+      "company": "上海碧云天生物技术股份有限公司 / Beyotime Biotechnology",
+      "logo": "company-beyotime.png",
+      "source_url": "https://www.bioalpha2008.com/resource/images/146a79c9f63f4f1d920d5ea04af8fea5_40.png",
+      "source": "经销商页面上的品牌标识",
+      "homepage": "https://www.beyotime.com/",
+      "sha256": "76f4a00d019ca76135db1ae974924ed51b47dfa73d16539419fc4a7eb963552a",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-beyotime.avif",
+      "uploaded_sha256": "8dd6254dc411666fd0931922660b28d7dcef4c50f09bbb195e6e963ce14d93f8"
+    },
+    {
+      "id": "Elabscience",
+      "name": "Elabscience Biotechnology",
+      "company": "武汉伊莱瑞特生物科技股份有限公司 / Elabscience Biotechnology Co., Ltd.",
+      "logo": "company-elabscience.png",
+      "source_url": "https://aimg.as-1.co.jp/c/83/5904/15/83584360.jpg",
+      "source": "AS ONE 产品目录展示的品牌标识",
+      "homepage": "https://www.elabscience.cn/",
+      "sha256": "628d547dc8dcda941d073420f605a3abf4cede5ba55abcab3d882f1c7d4b21ec",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-elabscience.avif",
+      "uploaded_sha256": "2a2b85cb5a25114008a58dcec2cadb93b06283204b76305ecdd5ed345502c05d"
+    },
+    {
+      "id": "Invitrogen",
+      "name": "Invitrogen (Thermo Fisher Scientific)",
+      "company": "Invitrogen® — a Thermo Fisher Scientific brand / Thermo Fisher Scientific Inc.",
+      "logo": "company-invitrogen.png",
+      "source_url": "https://www.fishersci.de/content/dam/fssite/eu/lab-reporter/2025/issue-1/ambient-advantage-invitrogen-antibodies/invitrogen-logo.png",
+      "source": "Fisher Scientific 官方渠道",
+      "homepage": "https://www.thermofisher.com/",
+      "sha256": "a8d4ce04950e73f8e70de399a034ec634cac52bc68bea2a26e732b319f455255",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-invitrogen.avif",
+      "uploaded_sha256": "5f439aca6d0d2eea86308eb11178fbe50c3b60fead877567ad8fa331ecd496b0"
+    },
+    {
+      "id": "BrainXell",
+      "name": "BrainXell, Inc.",
+      "company": "BrainXell, Inc.",
+      "logo": "company-brainxell.jpg",
+      "source_url": "https://mma.prnewswire.com/media/2717924/Brainxell_Logo.jpg?p=facebook",
+      "source": "公司对外新闻稿所附品牌 Logo（PR Newswire）",
+      "homepage": "https://brainxell.com/",
+      "sha256": "3a977c26589e80671bfb2253a57ad62293e30dfada03d67bbbbf5cda53547374",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-brainxell.avif",
+      "uploaded_sha256": "04e7e69eaeb58cc0583bd8f9deb5fb0aebf06c9a3af5490851c822e89acafcd7"
+    },
+    {
+      "id": "Procell",
+      "name": "Procell / Pricella",
+      "company": "武汉普诺赛生命科技有限公司 / Wuhan Pricella Biotechnology Co., Ltd.",
+      "logo": "company-procell.png",
+      "source_url": "https://files.procell.com.cn/assets/images/logo-new.png",
+      "source": "Official Procell website header logo",
+      "homepage": "https://www.procell.com.cn/",
+      "sha256": "2c1d1205523b66183cebad09ade296fb05ac61f731f142dd42116fb6527cefa4",
+      "igem_url": "https://static.igem.wiki/teams/6085/wiki/community-20261021/company-procell.avif",
+      "uploaded_sha256": "fdc01b138f1448247eebc8edc85a28ae4be701b7b135ba4e6c083f98f19493d9"
+    }
+  ],
+  "omitted": [
+    {
+      "id": "Ruibo_GZ",
+      "reason": "Company name supplied, but no logo file or URL."
+    }
+  ],
+  "procell_verification": {
+    "official_page": "https://www.procell.com.cn/",
+    "header_logo": "https://files.procell.com.cn/assets/images/logo-new.png",
+    "note": "Official site header shows both the Chinese Pricella name and Procell System. Replaced the third-party candidate with this official mark."
+  }
+}

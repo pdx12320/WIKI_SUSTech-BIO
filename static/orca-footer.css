@@ -100,3 +100,6 @@ body.ofd-reading-footer :is(.cell-reader, .model-back-top) { visibility: hidden;
 @media (prefers-reduced-motion: reduce) {
   .orca-footer * { scroll-behavior: auto !important; }
 }
+
+/* These supplied originals include wide white margins around horizontal marks. */
+.orca-footer .sponsor-logo--wide { object-fit: cover; }

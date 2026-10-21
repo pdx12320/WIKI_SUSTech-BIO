@@ -1,0 +1,24 @@
+{
+  "verified_on": "2026-10-21",
+  "scope": "Replace only the SUSTech-MED and HKU team marks in the existing community strip with assets used by their official 2026 Wikis. Original downloaded AVIF bytes are preserved.",
+  "entries": [
+    {
+      "name": "SUSTech-MED",
+      "local_filename": "sustech-med-team-2026.avif",
+      "source_url": "https://static.igem.wiki/teams/6048/wiki/sustech-med-logo.avif",
+      "official_page_url": "https://2026.igem.wiki/sustech-med/",
+      "sha256": "9a7847c1e89be310c2049b26f7fb1cd2426067d88af195807ebe729b81ba514f",
+      "bytes": 66529,
+      "notes": "Official 2026 Wiki team-logo image, distinct from its School of Medicine logo."
+    },
+    {
+      "name": "HKU iGEM Team",
+      "local_filename": "hku-igem-team-2026.avif",
+      "source_url": "https://static.igem.wiki/teams/6401/wiki/omni-mask-logo.avif",
+      "official_page_url": "https://2026.igem.wiki/hku-hongkong/",
+      "sha256": "896ed2d54ef039e1282b338596ffdf16f532f23f577465252d9fc06b381b0bb8",
+      "bytes": 94342,
+      "notes": "Used by the team on its official 2026 Wiki. HKU mark is used in both navigation and footer."
+    }
+  ]
+}

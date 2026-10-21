@@ -151,27 +151,27 @@
     },
     {
       "name": "SUSTech-MED iGEM Team",
-      "local_filename": "sustech-med-team.webp",
-      "source_url": "https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/sustech-med.webp",
-      "official_page_url": "https://2025.igem.wiki/sustech-bio/",
+      "local_filename": "sustech-med-team-2026.avif",
+      "source_url": "https://static.igem.wiki/teams/6048/wiki/sustech-med-logo.avif",
+      "official_page_url": "https://2026.igem.wiki/sustech-med/",
       "evidence_section": "2.7 campus charity fair; 3.6 Grand APiC co-hosting; acknowledgements",
       "preferred_background": "light",
       "used": true,
-      "sha256": "33e7d85af2d18dbe108d5fed48172ea951d0203fe690227894dcdb34757fbd72",
-      "bytes": 10168,
-      "notes": "Reused existing SUSTech-BIO footer team mark; visually verified as SUSTech-MED without a visible year."
+      "sha256": "9a7847c1e89be310c2049b26f7fb1cd2426067d88af195807ebe729b81ba514f",
+      "bytes": 66529,
+      "notes": "Official 2026 Wiki team-logo image, distinct from its School of Medicine logo."
     },
     {
       "name": "HKU iGEM Team",
-      "local_filename": "hku-igem-team.webp",
-      "source_url": "https://static.igem.wiki/teams/5873/images/footer/sponsors-cooperators/hku-hongkong.webp",
-      "official_page_url": "https://2025.igem.wiki/sustech-bio/",
+      "local_filename": "hku-igem-team-2026.avif",
+      "source_url": "https://static.igem.wiki/teams/6401/wiki/omni-mask-logo.avif",
+      "official_page_url": "https://2026.igem.wiki/hku-hongkong/",
       "evidence_section": "3.6 Grand APiC co-hosting; acknowledgements",
       "preferred_background": "light",
       "used": true,
-      "sha256": "e09b099e719a435bea3015cfd3b640d79de94689fcd8aa79dec14af403f3c1e7",
-      "bytes": 13032,
-      "notes": "Reused existing SUSTech-BIO footer team mark; visually verified as HKU iGEM without a visible year. Separate from the official HKU university logo."
+      "sha256": "896ed2d54ef039e1282b338596ffdf16f532f23f577465252d9fc06b381b0bb8",
+      "bytes": 94342,
+      "notes": "Used by the team on its official 2026 Wiki. HKU mark is used in both navigation and footer."
     },
     {
       "name": "iGEM",

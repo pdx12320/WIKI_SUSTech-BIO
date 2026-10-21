@@ -107,9 +107,12 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
     if (cellContext && liveFrame) scrollToTake(liveFrame.contextTake ?? liveFrame.take);
     finish();
   };
+  // A failed render must not leave the automatic replay consuming input.
+  const unavailable = () => root.dataset.homeStartup === 'fallback';
   const beginEdit = () => { editingStarted = true; elapsed = editStart; };
   startButton?.addEventListener('click', () => start(timing.question + timing.rewind));
   window.addEventListener('wheel', event => {
+    if (unavailable()) { finish(); return; }
     if (!active) return;
     if (scrollReturn && phase === 'return') { dismissReturnHint(); return; }
     if (phase === 'placement') {
@@ -121,6 +124,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
   let touchY = 0;
   window.addEventListener('touchstart', event => { touchY = event.touches[0]?.clientY || 0; }, { passive: true });
   window.addEventListener('touchmove', event => {
+    if (unavailable()) { finish(); return; }
     if (!active || event.target.closest?.('[data-bio-handle], [data-bio-hit]')) return;
     if (scrollReturn && phase === 'return') { dismissReturnHint(); return; }
     if (['placement','edit','docking'].includes(phase)) {
@@ -133,6 +137,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
     } else interrupt();
   }, { passive: false });
   window.addEventListener('keydown', event => {
+    if (unavailable()) { finish(); return; }
     if (!active) return;
     if (scrollReturn && phase === 'return' && event.key !== 'Escape') {
       if (['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)) dismissReturnHint();
@@ -166,6 +171,7 @@ export function createEditReplay({ root, story, toProgress, enabled, autoStart =
       if (autoEdit && active && phase === 'placement' && ready && !editingStarted) beginEdit();
     },
     update(take, dt) {
+      if (unavailable()) { finish(); return null; }
       if (enabled && autoStart && !played && previous < .797 && take >= .797 && take < .94) {
         // Continue from the live camera position instead of snapping to .803.
         questionFrom = quickRewind ? take : .803;

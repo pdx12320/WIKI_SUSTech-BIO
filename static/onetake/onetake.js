@@ -9,6 +9,7 @@
  * Everything is procedural: no textures, no models, no remote requests.
  */
 import * as THREE from 'three';
+import { guardSceneFrame } from './scene-frame-guard.mjs';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
@@ -688,6 +689,7 @@ function webglAvailable() {
 }
 
 function showStatic() {
+  if (root) root.dataset.homeStartup = 'fallback';
   root?.classList.add('ot--static', 'is-ready');
   root?.querySelectorAll('[data-ot-reveal]').forEach(el => el.removeAttribute('aria-hidden'));
   for (const el of document.querySelectorAll('[data-ot-count]')) {
@@ -949,7 +951,7 @@ async function boot() {
     p = progressOf();
   });
 
-  function frame() {
+  const frame = guardSceneFrame(() => {
     // Let one frame initialize shaders/readiness, then give the visible entry
     // loader the frame budget while this scene is completely covered.
     const entryCover = document.documentElement.dataset.entryLoading;
@@ -1073,7 +1075,10 @@ async function boot() {
       root.dispatchEvent(new CustomEvent('ot:startup-ready'));
     }
     raf = requestAnimationFrame(frame);
-  }
+  }, () => root.dataset.homeStartup === 'fallback', error => {
+    showStatic();
+    console.warn('Home animation stopped; showing the readable home page.', error);
+  });
   let raf = requestAnimationFrame(frame);
   let contextLost = false;
   canvas.addEventListener('webglcontextlost', () => {
@@ -1083,13 +1088,14 @@ async function boot() {
   });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) cancelAnimationFrame(raf);
-    else if (!contextLost) { clock.getDelta(); raf = requestAnimationFrame(frame); }
+    else if (!contextLost && root.dataset.homeStartup !== 'fallback') { clock.getDelta(); raf = requestAnimationFrame(frame); }
   });
 }
 
 boot().catch(error => {
+  const cancelled = root?.dataset.homeStartup === 'fallback';
   showStatic();
-  if (root?.dataset.homeStartup !== 'fallback') {
+  if (!cancelled) {
     console.warn('Particle scene unavailable; showing the readable home page.', error);
   }
 });

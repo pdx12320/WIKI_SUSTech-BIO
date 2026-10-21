@@ -5,11 +5,12 @@ https://bio.sustech.edu.cn/uploads/202204/20144203_59696.png,static/human-practi
 https://brand.rice.edu/sites/g/files/bxs5371/files/2019-07/Rice_University_Horizontal_Blue.svg,static/human-practices/organizations/manifest-part2.json:91,review_external_reference
 https://cdn.example.com/hero.png,tests/test_audit.py:58,review_external_reference
 https://commons.wikimedia.org/wiki/File:Agarose_gel_electrophoresis_of_DNA_with_annotation.png,static/experiments/entries/M02/index.html:572; static/experiments/entries/M02/pages.json:232,review_external_reference
+https://commons.wikimedia.org/wiki/File:DOI_logo.svg,docs/qa/supporting-data-release-20261021/release.md:9; wiki/components/supporting-data/doi_icon.html:1,review_external_reference
 https://commons.wikimedia.org/wiki/File:Designer-Dieter_Rams.jpg,docs/team/design-communication.md:19,review_external_reference
 https://commons.wikimedia.org/wiki/File:GelDoc_DNA_gel_electrophoresis_photograph_stained_with_ethidium_bromide_01.jpg,static/experiments/entries/M02/index.html:572; static/experiments/entries/M02/pages.json:225,review_external_reference
 https://commons.wikimedia.org/wiki/File:Unspecific_pcr.jpg,static/experiments/entries/M02/index.html:572; static/experiments/entries/M02/pages.json:218,review_external_reference
-https://evil.example/x.png,tests/test_igem_assets.py:31,review_external_reference
-https://example.org/assets/figure.png,tests/test_igem_assets.py:19,review_external_reference
+https://evil.example/x.png,tests/test_igem_assets.py:52,review_external_reference
+https://example.org/assets/figure.png,tests/test_igem_assets.py:21,review_external_reference
 https://external.example/art.svg,tests/test_audit.py:70,review_external_reference
 https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg,docs/previews/exploration-atlas-2026-10-13/compact-preview.html:2366; docs/previews/exploration-atlas-2026-10-13/preview.html:2360; docs/previews/exploration-atlas-2026-10-13/sound-library-vertical-preview.html:2362,review_external_reference
 https://lhs.suat-sz.edu.cn/images/logo.svg,static/human-practices/organizations/manifest-part1.json:34,review_external_reference
@@ -225,12 +226,17 @@ https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-09-con
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-10-control-cre-loxp-4ec25a9e9be1.avif,assets/images/engineering-overviews/manifest.json:116,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-11-fundamental-research-5a292a432e76.avif,assets/images/engineering-overviews/manifest.json:128,official
 https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-12-functional-validation-6778be681dc8.avif,assets/images/engineering-overviews/manifest.json:141,official
-https://static.igem.wiki/teams/6085/wiki/figure.avif,tests/test_igem_assets.py:14,official
+https://static.igem.wiki/teams/6085/wiki/figure.avif,tests/test_igem_assets.py:16,official
 https://static.igem.wiki/teams/6085/wiki/home/dry-lab.avif,docs/qa/home-slide-companions-cdn-2026-10-19.json:53,official
 https://static.igem.wiki/teams/6085/wiki/home/engagement.avif,docs/qa/home-slide-companions-cdn-2026-10-19.json:69,official
 https://static.igem.wiki/teams/6085/wiki/home/project.avif,docs/qa/home-slide-companions-cdn-2026-10-19.json:21,official
 https://static.igem.wiki/teams/6085/wiki/home/team.avif,docs/qa/home-slide-companions-cdn-2026-10-19.json:5,official
 https://static.igem.wiki/teams/6085/wiki/home/wet-lab.avif,docs/qa/home-slide-companions-cdn-2026-10-19.json:37,official
+https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action-raster.avif,docs/qa/hp-evidence-release-20261021/upload-verification.json:36,official
+https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/evidence-to-action.svg,docs/qa/hp-evidence-release-20261021/upload-verification.json:26,official
+https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/hp-hand-drawn-overview-20261021.avif,docs/qa/hp-evidence-release-20261021/upload-verification.json:4,official
+https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire-raster.avif,docs/qa/hp-evidence-release-20261021/upload-verification.json:68,official
+https://static.igem.wiki/teams/6085/wiki/hp-evidence-20261021/public-questionnaire.svg,docs/qa/hp-evidence-release-20261021/upload-verification.json:58,official
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-001.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:17; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:3; static/human-practices/pdf-previews/workbook-v2-manifest.json:219,official
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-002.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:18; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:10; static/human-practices/pdf-previews/workbook-v2-manifest.json:224,official
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-en-page-003.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:19; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:17; static/human-practices/pdf-previews/workbook-v2-manifest.json:229,official
@@ -311,14 +317,15 @@ https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-pag
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-041.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:94; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:542; static/human-practices/pdf-previews/workbook-v2-manifest.json:205,official
 https://static.igem.wiki/teams/6085/wiki/hp-workbook-previews/workbook-v2-zh-page-042.webp,docs/releases/engagement-2026-10-20/server-assets-ui.json:95; docs/releases/engagement-2026-10-20/workbook-preview-cdn-verification.json:549; static/human-practices/pdf-previews/workbook-v2-manifest.json:210,official
 https://static.igem.wiki/teams/6085/wiki/hp/banana-dna-original.avif,docs/design/hp-opening/README.md:16; docs/qa/hp-opening-release-2026-10-19.md:37; docs/releases/engagement-2026-10-20/server-assets-ui.json:3; tests/test_hp_opening.py:12,official
-https://static.igem.wiki/teams/6085/wiki/hp/caregivers-perspective-mind-map.avif,docs/human-practices/human-practices.md:191; docs/releases/engagement-2026-10-20/server-assets-ui.json:4,official
-https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg,docs/human-practices/human-practices.md:22; docs/qa/hp-overview-animation-release-2026-10-21.json:4,official
+https://static.igem.wiki/teams/6085/wiki/hp/caregivers-perspective-mind-map.avif,docs/human-practices/human-practices.md:79; docs/releases/engagement-2026-10-20/server-assets-ui.json:4,official
+https://static.igem.wiki/teams/6085/wiki/hp/emit-echo-evolve-layered-v3.svg,docs/human-practices/human-practices.md:35; docs/qa/hp-overview-animation-release-2026-10-21.json:4,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-collage-2026-07-24.svg,docs/human-practices/education.md:727; docs/releases/engagement-2026-10-20/cdn-verification.json:3; docs/releases/engagement-2026-10-20/server-assets-ui.json:5,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-discussion-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:10; docs/releases/engagement-2026-10-20/server-assets-ui.json:6,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-name-cards-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:17; docs/releases/engagement-2026-10-20/server-assets-ui.json:7,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-opening-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:24; docs/releases/engagement-2026-10-20/server-assets-ui.json:8,official
 https://static.igem.wiki/teams/6085/wiki/hp/northwest-meetup-project-presentation-2026-07-24.avif,docs/releases/engagement-2026-10-20/cdn-verification.json:31; docs/releases/engagement-2026-10-20/server-assets-ui.json:9,official
 https://static.igem.wiki/teams/6085/wiki/hp/older-learners-feedback-mind-map.avif,docs/human-practices/education.md:95; docs/releases/engagement-2026-10-20/server-assets-ui.json:13,official
+https://static.igem.wiki/teams/6085/wiki/hp/stakeholder-map-summit-page-4.avif,docs/human-practices/human-practices.md:92; docs/human-practices/human-practices.md:93,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-background.avif,tests/test_dual_environment.py:56; wiki/pages/404.html:15,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-bubbles.avif,wiki/pages/404.html:16,official
 https://static.igem.wiki/teams/6085/wiki/not-found/not-found-island-sign.avif,wiki/pages/404.html:18,official

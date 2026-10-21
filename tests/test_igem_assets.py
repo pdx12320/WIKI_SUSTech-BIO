@@ -3,10 +3,12 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import urljoin
 
 from app import app
 from igem_assets import read_mapping, resolve_url, rewrite_text
 from scripts.audit_igem_assets import inspect_build, issues_for_report
+from scripts.check_internal_links import Links
 
 
 class AssetResolverTest(unittest.TestCase):
@@ -24,6 +26,25 @@ class AssetResolverTest(unittest.TestCase):
         self.assertIn('width="72"', result)
         self.assertIn('figure.avif 1x, assets/unknown.png 2x', result)
         self.assertIn('background:url(https://static.igem.wiki/', result)
+
+    def test_mounted_html_keeps_navigation_and_downloads_under_team_path(self):
+        source = ('<a href="/">Home</a><a href="/team?from=preview#members">Team</a>'
+                  '<a href="/assets/model.zip">Model</a>'
+                  '<a href="/sustech/engineering">Engineering</a>'
+                  '<a href="https://example.org/">External</a>'
+                  '<a href="//static.igem.wiki/file.pdf">Remote</a>'
+                  '<a href="#panel">Panel</a><a href="relative.html">Relative</a>'
+                  '<a href="/assets/figure.png">Uploaded</a>'
+                  '<button data-reader-url="/static/reader.html">Reader</button>')
+        expected = (source.replace('href="/"', 'href="./"')
+                    .replace('href="/team?', 'href="team?')
+                    .replace('href="/assets/model.zip"', 'href="assets/model.zip"')
+                    .replace('href="/assets/figure.png"', 'href="' + self.mapping['/assets/figure.png'] + '"')
+                    .replace('data-reader-url="/static/', 'data-reader-url="static/'))
+        self.assertEqual(rewrite_text(source, '/', 'html', self.mapping, '/sustech'), expected)
+        error = '<base href="/sustech/"><a href="/team">Team</a>'
+        self.assertEqual(rewrite_text(error, '/404.html', 'html', {}, '/sustech'),
+                         '<base href="/sustech/"><a href="/sustech/team">Team</a>')
 
     def test_reject_non_official_mapping(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -81,6 +102,45 @@ class ProductionRoutesTest(unittest.TestCase):
         self.assertIn('https://static.igem.wiki/', cursor)
         self.assertIn('3 3, auto', cursor)
 
+    def test_mounted_production_rewrites_asset_and_static_downloads(self):
+        app.config['WIKI_ASSET_MODE'] = 'igem'
+        cases = [
+            ('/human-practices', '/assets/human-practices/evidence-analysis/survey-data.json'),
+            ('/experiments', '/static/experiments/pdf/M02_Agarose_Gel_Electrophoresis_and_Gel_Extraction.pdf'),
+        ]
+        for route, local in cases:
+            with self.subTest(route=route), self.client.get(
+                route, environ_overrides={'SCRIPT_NAME': '/sustech'}
+            ) as response:
+                self.assertEqual(response.status_code, 200)
+                page = response.get_data(as_text=True)
+                self.assertIn(app.extensions['igem_assets'][local], page)
+                self.assertNotIn('href="/sustech' + local + '"', page)
+
+    def test_mounted_download_buttons_and_archived_navigation_stay_reachable(self):
+        app.config['WIKI_ASSET_MODE'] = 'igem'
+        cases = [
+            ('/contribution', '/assets/human-practices/attachments/older-adults-health-workbook-v2-zh.docx'),
+            ('/contribution', '/assets/human-practices/attachments/older-adults-health-workbook-v2-en.docx'),
+            ('/contribution', '/assets/human-practices/models/biology-brain-model.stl.zip'),
+            ('/contribution', '/assets/human-practices/models/biology-animal-cell-model.stl.zip'),
+            ('/engineering', '/static/downloads/rewire-modeling-toolkit.zip'),
+            ('/static/human-practices/opening/color-study/cream.html', '/team'),
+        ]
+        for mount in ['', '/sustech']:
+            for route, local in cases:
+                with self.subTest(mount=mount, route=route, local=local), self.client.get(
+                    route, environ_overrides={'SCRIPT_NAME': mount}
+                ) as response:
+                    self.assertEqual(response.status_code, 200)
+                    page = response.get_data(as_text=True)
+                    parser = Links()
+                    parser.feed(page)
+                    base = 'https://2026.igem.wiki/sustech' + route
+                    destinations = {urljoin(base, link) for link in parser.links}
+                    self.assertIn('https://2026.igem.wiki/sustech' + local, destinations)
+                    self.assertNotIn('href="' + local + '"', page)
+
     def test_notebook_schema_is_preserved_and_hp_manifest_is_rewritten(self):
         app.config['WIKI_ASSET_MODE'] = 'igem'
         notebook = json.loads(self.get_text('/static/notebook/index.json'))
@@ -92,6 +152,19 @@ class ProductionRoutesTest(unittest.TestCase):
         for document in hp.values():
             for page in document['pages']:
                 self.assertTrue(page['file'].startswith('https://static.igem.wiki/'))
+
+    def test_spatial_data_source_switches_in_both_modes_and_mounts(self):
+        local = '/static/assets/software/brain-delivery/brain-delivery-spatial.json'
+        remote = app.extensions['igem_assets'][local]
+        for mount in ['', '/sustech']:
+            for mode in ['local', 'igem']:
+                app.config['WIKI_ASSET_MODE'] = mode
+                with self.subTest(mount=mount, mode=mode), self.client.get(
+                    '/software', environ_overrides={'SCRIPT_NAME': mount}
+                ) as response:
+                    self.assertEqual(response.status_code, 200)
+                    expected = remote if mode == 'igem' else mount + local
+                    self.assertIn('data-source="' + expected + '"', response.get_data(as_text=True))
 
     def test_standalone_protocol_reader_gets_cdn_images(self):
         app.config['WIKI_ASSET_MODE'] = 'igem'

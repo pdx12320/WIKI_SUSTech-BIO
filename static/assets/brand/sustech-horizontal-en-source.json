@@ -1,0 +1,12 @@
+{
+  "source_page": "https://www.sustech.edu.cn/en/",
+  "source_image": "https://www.sustech.edu.cn/static/images/sustech-logo-en.png",
+  "accessed_on": "2026-10-21",
+  "sha256": "518adeb797cd4b06065f18a3e916bc5f8e0f0a45ad0c99b19dd0cd3e54fc1d80",
+  "original_canvas": [
+    433,
+    86
+  ],
+  "format": "PNG with RGBA transparency",
+  "adaptation": "Source image bytes unchanged; displayed directly on the dark footer without a background, recoloring or compositing."
+}

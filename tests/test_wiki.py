@@ -309,7 +309,14 @@ class WikiRoutesTest(unittest.TestCase):
             with self.subTest(route=route):
                 page = self.get_text(route)
                 self.assertIn(f'data-content-source="{source}"', page)
-                if route != "/experiments":
+                if route == "/attributions":
+                    # The official form uses isolated styles, not Markdown markup.
+                    self.assertIn('class="attributions-form"', page)
+                    self.assertIn('id="official-attributions"', page)
+                    self.assertIn('<template shadowrootmode="open">', page)
+                    self.assertIn('Team Member Contributions', page)
+                    self.assertIn('https://teams.igem.org/wiki/6085/attributions', page)
+                elif route != "/experiments":
                     self.assertIn('class="markdown-content"', page)
 
     def test_engineering_map_and_reader_navigation_contract(self):

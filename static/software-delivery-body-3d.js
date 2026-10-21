@@ -2,6 +2,7 @@
 import * as THREE from './vendor/three/three.module.js';
 import { tissue, refineBodySurface } from './software-anatomy-detail.js';
 import { anatomyPoint, anatomyScale } from './software-body-proportions.js';
+import { loadModelBuffer } from './model-buffer.mjs';
 
 const clamp = (v, low, high) => Math.max(low, Math.min(high, v));
 const V = p => new THREE.Vector3(...anatomyPoint(p));
@@ -15,9 +16,9 @@ async function readGeometry(url) {
   if (Array.isArray(mesh.positions)) {
     positions = new Float32Array(mesh.positions); normals = new Float32Array(mesh.normals); indices = new Uint32Array(mesh.indices);
   } else {
-    const result = await fetch(new URL(mesh.buffer, new URL(url, document.baseURI)), {credentials: 'same-origin'});
-    if (!result.ok) throw new Error('Body surface buffer unavailable');
-    const buffer = await result.arrayBuffer();
+    const buffer = await loadModelBuffer(
+      new URL(mesh.buffer, new URL(url, document.baseURI)),
+      new URL('./assets/software/body-3d-adult/body-surface.glb', import.meta.url));
     positions = new Float32Array(buffer, mesh.positions.byte_offset, mesh.positions.count);
     normals = new Float32Array(buffer, mesh.normals.byte_offset, mesh.normals.count);
     indices = new Uint32Array(buffer, mesh.indices.byte_offset, mesh.indices.count);

@@ -9,7 +9,7 @@ import {cellParticleData,createRnaCellScene} from '../static/onetake/rna-cell-sc
 for(const small of [false,true]){
  const width=small?390:1440,height=small?844:900,aspect=width/height,l=cellLayout(aspect);
  const scene=new THREE.Scene(),labels=['rna','astro','neuron','protein','transport','focus','amyloid'].map(name=>({dataset:{rnaCellLabel:name,stages:name==='rna'?'inside translation':name==='astro'?'inside transport':name==='neuron'?'transport flight':name==='amyloid'?'flight':name==='transport'?'transport':'translation'},style:{}}));
- const questions={},el={dataset:{},style:{},querySelectorAll:()=>labels,querySelector:()=>questions};
+ const el={dataset:{},style:{},querySelectorAll:()=>labels};
  const root={querySelector:()=>el,classList:{add(){}}};
  const view=createRnaCellScene(THREE,scene,root,{small}),camera=new THREE.PerspectiveCamera(38,aspect,.1,200);
  const p=new THREE.Vector3(),target=new THREE.Vector3();
@@ -18,7 +18,7 @@ for(const small of [false,true]){
   p.fromArray(l.camera);target.set(0,0,0);const bank=view.camera(take,aspect,p,target,null);camera.up.set(Math.sin(bank),Math.cos(bank),0);camera.position.copy(p);camera.lookAt(target);camera.updateMatrixWorld();
   view.update(take,1,camera,null,1,width,height);
   assert.deepEqual(view.objects.astro.geometry.attributes.position.array,contours,'the cell never morphs or heals');
-  const visible=labels.filter(n=>!n.hidden).length+(questions.hidden?0:3);assert(visible>=1&&visible<=3,'one to three information points per stage');
+  const visible=labels.filter(n=>!n.hidden).length;assert(visible>=1&&visible<=3,'one to three information points per stage');
   for(const label of labels.filter(n=>!n.hidden)){
    const x=parseFloat(label.style.left),y=parseFloat(label.style.top);
    assert(x>12&&x<width-12&&y>65&&y<height-12,`${label.dataset.rnaCellLabel} stays in ${width}px viewport`);
@@ -50,5 +50,5 @@ assert.deepEqual(lipidPath(2),lipidPath(1));assert.deepEqual(lipidPath(-1),lipid
 const isolated=new THREE.Scene();createRnaCellScene(THREE,isolated,{querySelector:()=>null});assert.equal(isolated.children.length,0);
 const markup=readFileSync(new URL('../wiki/components/rna_cell_context.html',import.meta.url),'utf8');
 assert(!/[\u2190-\u21ff\u27f0-\u27ff\u2900-\u297f]/u.test(markup));
-for(const text of ['Was the RNA edited?','Did cell function change?','Separate evidence','Design schematic','Arg112','Cys112'])assert(markup.includes(text));
+for(const text of ['Design schematic','Arg112','Cys112'])assert(markup.includes(text));
 console.log('Passed particle-only biology, retained intracellular RNA, separate apoE, one transport pass, stable cell contours, three information points, desktop/mobile labels, reversible handoff, replay and /next isolation.');

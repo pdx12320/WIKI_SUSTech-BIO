@@ -18,3 +18,8 @@
    project/footer gaps instead of exposing the scene through them. */
 .ot-crt-home .is-memory-maze-past :is(.ot-crt-picture,.ot-crt-room){visibility:hidden}
 .ot-crt-home .ot-home-footer{background:#03050b;position:relative;z-index:12}
+
+/* Reserve a final-phrase runway; the directory cannot cover pending motion. */
+.ot-crt-home .has-memory-maze-ending:not(.ot--static) [data-explore-slides]{margin-top:160vh}
+.ot-crt-home .has-memory-maze-ending:not(.ot--static):not(.is-memory-maze-complete) [data-explore-slides],
+.ot-crt-home .has-memory-maze-ending:not(.ot--static):not(.is-memory-maze-complete) ~ :is(.one-c-notes,.ot-home-footer,.site-footer){visibility:hidden;pointer-events:none}

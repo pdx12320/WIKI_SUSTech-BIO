@@ -134,7 +134,7 @@ function overlay(host) {
 
 export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}={}) {
   const host=root.querySelector('[data-memory-maze-ending]');
-  const noop={enabled:false,camera(){},update(){},backdrop(){return 1;},dispose(){}};
+  const noop={enabled:false,camera(){},update(){},skipToProject(){},backdrop(){return 1;},dispose(){}};
   if(!host||!maze?.navigation||!brain?.pos)return noop;
   root.classList.add('has-memory-maze-ending');
   const layout=createMemoryOrcaMaze(maze),route=extendMemoryMazeExit(memoryMazeRoute(layout.navigation)),ui=overlay(host);
@@ -165,21 +165,38 @@ export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}
   const anchorGap=small?1.6:1.1;
   const entrance=route.points[0].map((v,j)=>v+(j===0?-anchorGap:0)),exit=route.mazeExit.map((v,j)=>v+(j===0?anchorGap:0));
   let lastStraight=-1;const autoTravel=createMemoryMazeTravel({duration:small?4.2:4.8,arrivalHold:1.05});
+  let finalSince=null,complete=false,skipped=globalThis.location?.hash==='#ot-index-title';
+  function skipToProject(){
+    skipped=true;complete=true;
+    root.classList.toggle('is-memory-maze-complete',true);
+    root.classList.toggle('is-memory-maze-past',true);
+    group.visible=false;host.classList.toggle('is-on',false);
+    host.style.setProperty('--memory-maze-opacity',0);
+  }
   function camera(take,time,aspect,position,look,replay){
     if((replay&&replay.phase!=='return')||take<MEMORY_MAZE_RANGE.start-.003)return;
     const blend=interval(take,MEMORY_MAZE_RANGE.start-.003,MEMORY_MAZE_RANGE.start);
     targetLook.set(0,.2,0);targetCamera.set(0,.2,aspect<1?30/aspect:18.3);
     position.lerp(targetCamera,blend);look.lerp(targetLook,blend);
   }
-  function update(take,time,camera,motion=1,width=1440,height=900,replay=null,scrollProgress=take){
+  function update(take,time,camera,motion=1,width=1440,height=900,replay=null,scrollProgress=take,endingScreens=0){
     const raw=memoryMazeState(take,{small,reduced:!motion}),active=(!replay||replay.phase==='return')&&take>=MEMORY_MAZE_RANGE.start;
     if(!active)autoTravel.reset();
     const automatic=autoTravel.update(active?raw.progress:0,time,{reduced:!motion});
     const displayTake=MEMORY_MAZE_RANGE.start+(MEMORY_MAZE_RANGE.end-MEMORY_MAZE_RANGE.start)*automatic.progress;
     const state=memoryMazeState(displayTake,{small,reduced:!motion});
     host.dataset.memoryMazeTravel=state.travel.toFixed(4);host.dataset.memoryMazePending=String(active&&automatic.pending);
-    const exitOpacity=1-interval(scrollProgress,1,1.012);
-    root.classList.toggle('is-memory-maze-past',scrollProgress>=1.012);
+    if(raw.progress<.30&&!skipped){finalSince=null;complete=false;}
+    if(skipped&&scrollProgress<.99){skipped=false;complete=false;finalSince=null;}
+    if(active&&state.phase==='final'&&!automatic.pending){
+      if(finalSince===null)finalSince=time;
+      if(time-finalSince>=.65)complete=true;
+    }else if(!complete)finalSince=null;
+    const unlocked=skipped||complete||!motion;
+    root.classList.toggle('is-memory-maze-complete',unlocked);
+    // The final phrase owns 1.2 viewport heights after the story before fading.
+    const exitOpacity=skipped?0:unlocked?1-interval(endingScreens,1.2,1.7):1;
+    root.classList.toggle('is-memory-maze-past',skipped||(unlocked&&endingScreens>=1.7));
     group.visible=active&&state.opacity*exitOpacity>.001;host.classList.toggle('is-on',active&&exitOpacity>.001);host.style.setProperty('--memory-maze-opacity',active?state.opacity*exitOpacity:0);host.dataset.memoryMazePhase=state.phase;
     if(!active)return;
     const pr=Math.min(globalThis.devicePixelRatio||1,small?1.5:2);
@@ -228,6 +245,6 @@ export function createMemoryMazeEnding(THREE,scene,root,{maze,brain,small=false}
     ui.bar.setAttribute('d',`M${mix(leftTip[0],tx-lowerFont*.22,state.letters)},${mix(leftTip[1],ty-lowerFont*.14,state.letters)}L${mix(rightTip[0],tx+lowerFont*.23,state.letters)},${mix(rightTip[1],ty-lowerFont*.14,state.letters)}`);
     ui.bar.style.opacity=ui.head.style.opacity=state.letters;ui.bar.style.strokeWidth=ui.head.style.strokeWidth=String(mix(2,Math.max(2,lowerFont*.06),state.letters));
   }
-  return {enabled:true,layout,route,group,camera,update,backdrop:(take,replay)=>replay&&replay.phase!=='return'?1:1-memoryMazeState(take,{small}).opacity,
+  return {enabled:true,layout,route,group,camera,update,skipToProject,backdrop:(take,replay)=>replay&&replay.phase!=='return'?1:1-memoryMazeState(take,{small}).opacity,
     dispose(){scene.remove(group);geometry.dispose();material.dispose();pathGeometry.dispose();pathMaterial.dispose();lineMaterial.dispose();arrowGeometry.dispose();arrowMaterial.dispose();ui.svg.remove();}};
 }

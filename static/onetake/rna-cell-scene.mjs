@@ -63,7 +63,7 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
   return make({positions:new Float32Array(p),tones:new Float32Array(tones)},0xf3cf88,`rna-context-apoE-lipid-${i}`);
  });
  const projected=new THREE.Vector3(),destination=new THREE.Vector3(),look=new THREE.Vector3();
- const labels=[...el.querySelectorAll('[data-rna-cell-label]')],questions=el.querySelector('[data-rna-cell-questions]');
+ const labels=[...el.querySelectorAll('[data-rna-cell-label]')];
  let aspect=0,amyloid=null,amyloidPortrait=null,amyloidCenters=[[0,0,0]];
  function bindAmyloid(){
   const portrait=aspect<1;
@@ -155,6 +155,5 @@ export function createRnaCellScene(THREE,scene,root,{small=false,cell=null}={}){
     node.style.top=`${Math.max(94,Math.min(height-36,y))}px`;
    }
   });
-  questions.hidden=s.stage!=='questions';
  }};
 }

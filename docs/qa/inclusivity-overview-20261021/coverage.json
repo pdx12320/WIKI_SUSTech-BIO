@@ -1,0 +1,8 @@
+{
+  "artwork_passes": 1,
+  "letter_groups": 7,
+  "rectangular_foreground_exclusions": 0,
+  "tight_letter_mask_pixels": 64102,
+  "uncovered_pixels": 0,
+  "non_letter_pixels_visible_after_artwork": true
+}

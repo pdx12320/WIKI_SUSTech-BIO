@@ -1,0 +1,18 @@
+{
+  "url": "https://static.igem.wiki/teams/6085/wiki/inclusivity/65bfe70516c26afb5be8314843472ed3.avif",
+  "http_status": 200,
+  "content_type": "image/avif",
+  "local_path": "assets/human-practices/inclusivity-overview/inclusivity-hand-drawn-overview-20261021.jpg",
+  "local_sha256": "72e3397cf60eb79d5e84099679070f4b802a22e869fcfb8827f12026166da7ac",
+  "uploaded_sha256": "eb3bcddc63d1bbdc18a12f2f2ec4deba9cd2f5fef18f9003e05963d2f15a292e",
+  "original_dimensions": [
+    1280,
+    666
+  ],
+  "uploaded_dimensions": [
+    1280,
+    666
+  ],
+  "mean_absolute_channel_difference": 0.7081092811561561,
+  "evidence": "user_provided_official_url_http200_avif_decode_dimensions_and_pixel_comparison"
+}

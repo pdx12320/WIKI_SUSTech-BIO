@@ -1,0 +1,18 @@
+{
+  "retrieved_at": "2026-10-21",
+  "scope": "User-requested footer community entry; no sponsorship category assigned.",
+  "assets": [
+    {
+      "name": "SUSTech 3D Manufacturing Club",
+      "file": "sustech-3d-manufacturing-club.jpg",
+      "path": "static/human-practices/organizations/sustech-3d-manufacturing-club.jpg",
+      "source": "User-supplied second image attachment in this chat.",
+      "width": 638,
+      "height": 670,
+      "bytes": 30746,
+      "sha256": "58c98e31d2737b2b2fbf4e6175f599d240a5075bd3d6cb62c054fbf055a9f89d",
+      "preferred_background": "light",
+      "transformation": "None; original user-supplied JPEG bytes preserved."
+    }
+  ]
+}

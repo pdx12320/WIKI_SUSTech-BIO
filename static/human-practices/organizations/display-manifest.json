@@ -5,7 +5,8 @@
     "manifest-part2.json",
     "manifest-teams.json",
     "manifest-reference.json",
-    "manifest-footer-2025-additions.json"
+    "manifest-footer-2025-additions.json",
+    "manifest-3d-manufacturing-club.json"
   ],
   "team_emblem": "The SUSTech-BIO emblem is already displayed in the main footer brand area.",
   "entries": [
@@ -58,6 +59,18 @@
       "mark": "organization",
       "covers": [
         "SUSTech Synthetic Biology Club"
+      ]
+    },
+    {
+      "name": "SUSTech 3D Manufacturing Club",
+      "logo": "sustech-3d-manufacturing-club.jpg",
+      "detail": "南方科技大学3D制造社",
+      "background": "light",
+      "mark": "organization",
+      "covers": [
+        "SUSTech 3D Manufacturing Club",
+        "SUSTech 3D Printing Club",
+        "南方科技大学3D制造社"
       ]
     },
     {

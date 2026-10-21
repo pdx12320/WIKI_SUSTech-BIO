@@ -1,0 +1,36 @@
+/* Inclusivity's own content components; the shared reading shell is unchanged. */
+[data-content-source="docs/human-practices/inclusivity.md"] {
+  --inc-ink:#171536; --inc-primary:#2e267c; --inc-light:#e9e8ff;
+  --inc-line:#d9d7e5; --inc-muted:#6b6880;
+}
+.inc-page-pair { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.inc-page-pair > a { display:block; border:1px solid var(--inc-line); text-decoration:none; padding:.65rem; background:white; }
+.inc-page-label { display:block; color:var(--inc-primary); font-size:.95rem; line-height:1.5; margin-bottom:.6rem; }
+.markdown-content .inc-page-pair img { width:100%; height:auto; display:block; margin:0; border-radius:0; }
+.markdown-content .inc-model-photo { max-width:48rem; margin:1.5rem auto; }
+.markdown-content .inc-model-photo img { width:100%; height:auto; }
+.markdown-content .inc-instruction { max-width:23rem; margin:1.6rem auto; }
+.markdown-content .inc-instruction img { display:block; width:100%; height:auto; }
+.markdown-content .inc-prompt { color:var(--inc-primary); font-family:Georgia,serif; font-size:clamp(1.3rem,2vw,1.75rem); line-height:1.6; margin:1.6rem 0; }
+.markdown-content .inc-worldproof-cycle { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.1rem; border-block:1px solid var(--inc-line); padding-block:1.3rem; margin-top:1.8rem; }
+.inc-worldproof-cycle strong { display:block; color:var(--inc-primary); font-family:Georgia,serif; font-size:1.25rem; margin-bottom:.6rem; }
+.markdown-content .inc-worldproof-cycle p { font-size:1rem; line-height:1.6; margin:0; }
+.markdown-content .inc-caption { color:var(--inc-muted); font-size:.95rem; line-height:1.6; margin:.7rem 0 1.8rem; }
+.inc-toolkit { overflow-x:auto; margin:1.5rem 0; }
+body:not(.ot) .content-page--model-reading .markdown-content .inc-toolkit table { display:table; width:100%; min-width:48rem; max-width:none; margin:0; font-size:1rem; }
+[data-content-source="docs/human-practices/inclusivity.md"] :is(a, .inc-toolkit):focus-visible { outline:3px solid var(--inc-primary); outline-offset:4px; border-radius:2px; }
+.markdown-content :is(.inc-comparison,.inc-model-photo,.inc-instruction) figcaption { color:var(--inc-muted); font-size:.95rem; line-height:1.6; margin-top:1rem; }
+.inc-comparison { scroll-margin-top:190px; container:inc-figure / inline-size; }
+@media(max-width:650px) {
+  .inc-page-pair, .markdown-content .inc-worldproof-cycle { grid-template-columns:1fr; }
+  .inc-page-pair > a { padding:.55rem; }
+  .inc-worldproof-cycle > div + div { border-top:1px solid var(--inc-line); padding-top:1rem; }
+}
+@container inc-figure (max-width:650px) { .inc-page-pair { grid-template-columns:1fr; } }
+@media print { .inc-page-pair { grid-template-columns:1fr 1fr; } }
+
+.inc-worldproof-frame { container:inc-mechanism / inline-size; }
+@container inc-mechanism (max-width:650px) {
+  .markdown-content .inc-worldproof-cycle { grid-template-columns:1fr; }
+  .inc-worldproof-cycle > div + div { border-top:1px solid var(--inc-line); padding-top:1rem; }
+}

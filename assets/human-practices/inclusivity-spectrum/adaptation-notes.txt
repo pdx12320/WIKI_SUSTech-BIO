@@ -1,0 +1,77 @@
+ORCA Inclusivity — resources and adaptation notes
+Local review edition, 21 October 2026
+
+Perspective
+Spectrum and passband are metaphors for changing needs and the ways a setting
+routinely accepts participation. They do not measure people or rank identity,
+health or ability. These notes accompany the three-part Inclusivity page.
+No external reuse of this toolkit is documented.
+
+Across life stages
+Curriculum comparison: read the supporting documents and teacher interviews
+on /education#classroom-teacher-advice. The report is about document coverage,
+not student ability. Short simulated cases, longer electives and practical work
+are options for task design; the proposed course has not been trialled.
+Workbook: older readers and caregivers participated in the work, as confirmed
+by the captain. Use the recorded role when attributing a particular suggestion.
+The first Chinese edition and current student/teacher editions are distinct.
+Current student p. 5 and first-edition p. 3 show the same body-change topic.
+Current Chinese student pp. 47–50 provide Cornell note pages. The particular
+forms and four-week logs are later team choices. Revised-reader testing remains
+a separate next step.
+Offline: download and read or print selected pages. Camera/audio are optional.
+Adapt language, type size, spacing, pace and chapter selection with readers.
+Retain the meaning of health/safety information and review local adaptations.
+Keep completed health/contact/note forms private. No print-cost comparison exists.
+Anjia Guardian: the captain confirmed this is the age-friendly Mini Program.
+Home Protection is its website's name, not another product. The supplied native
+source and independently built website have different functions. The website
+uses a fixed illustrated report, local photo preview and same-tab demonstration
+states. It makes no AI assessment, real call, notification or cross-device link.
+Native cloud recognition needs separate WeChat/model configuration and testing.
+Keep sample and failed states clear. Match user-use records to the actual version.
+
+When needs change
+Time Capsule's exact question: If I lost my memory, what one sentence would I
+leave for myself? Do not replace this with a generic future-self letter. Do not
+publish cards, themes or quotations without records and permission.
+Aphasia Map: draw an object card, avoid its name and the specified words, and use
+gestures or other descriptions to help a partner identify it. It is a communication
+game, not a clinical aphasia simulation. Keep detailed participant observations
+separate from an explanation of the rule.
+Models: the documented materials are existing brain/cell prints and hand-applied
+paint. A full fabrication bill, print settings and measured cost are not supplied.
+Handling, looking and facilitator explanation need no camera or computer.
+TacTune: Python 3.10+, a local server kept running and a compatible browser.
+The local handover package bundles dependencies. Use text/menu exploration
+without the camera; speech additionally needs a suitable installed local voice.
+Camera route: stable view, lighting and assisted region calibration. Recalibrate
+when the setup changes. Camera pointing does not measure physical contact.
+Keep structure explanations distinct from geometric/colour pitch mapping.
+There is no separate recorded-audio collection. Physical encounters, synthetic
+software tests, real-camera frames/release and target-user trials have different
+records; the last remains incomplete. Actual regions and audio comfort need
+intended-user review. Microphone/voice commands are not an established entry.
+Rights: original code Apache-2.0; STL, photos and third-party terms differ. Whole
+package redistribution is not newly authorized by this page.
+Before I Sign: early timed/drag prototype exists. The 21 October narrative/interface
+design removes time pressure and proposes revisitable information and point/select
+interaction. Full game, two-person service and participant sessions are not confirmed
+complete. Do not report the expected completion date as an observed completion.
+The game supports understanding/questions/preferences, not capacity assessment
+or replacement of formal consent.
+
+WORLDPROOF
+Read worldproof-mechanism-notes.txt for the captain-confirmed requirements.
+The eight hypothetical scenarios are a prompt bank, not eight field validations.
+The all-group change log exists according to the captain and awaits transfer
+from Feishu. Original rules, final scoring, demos, award record and approved
+recordings remain to be matched. A draft suggested percentage is not a final score.
+Use feedback-to-change.csv as a NEW blank organizer, not the original event log.
+Record source/version, contributor role, actual change, reason for adoption or
+non-adoption, later observation and permission scope. Leave unknowns blank.
+
+Reuse and permissions
+New notes/blank record follow the Wiki's existing CC BY 4.0 licence. This does
+not relicense third-party models, pictures, services or source packages. Retain
+original notices and obtain permission for participant materials separately.

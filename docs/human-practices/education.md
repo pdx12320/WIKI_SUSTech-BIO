@@ -168,17 +168,17 @@ The current second-edition release (with later illustration and appendix revisio
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-zh">
     <h5 id="hp-handbook-zh">Student edition · Chinese</h5>
     <p>56 pages. Short lessons for older learners, with practice, health logs and space for notes.</p>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-zh-compact.pdf" data-pdf-title="Second edition · Student · Chinese">Download student PDF · Chinese</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-zh-compact.pdf" data-pdf-title="Second edition · Student · Chinese">Download student PDF · Chinese</a></p>
   </section>
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-en">
     <h5 id="hp-handbook-en">Student edition · English</h5>
     <p>56 pages. The same lesson structure and recording tools, adapted for English-speaking older learners.</p>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-en-compact.pdf" data-pdf-title="Second edition · Student · English">Download student PDF · English</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-en-compact.pdf" data-pdf-title="Second edition · Student · English">Download student PDF · English</a></p>
   </section>
   <section class="hp-handbook-edition" aria-labelledby="hp-handbook-teacher-zh">
     <h5 id="hp-handbook-teacher-zh">Teacher’s guide · Chinese</h5>
     <p>54 pages. Fuller explanations, classroom examples, materials, activity timings and ways to assist participation.</p>
-    <p><a href="https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf" data-pdf-title="Second edition · Teacher’s guide · Chinese">Download teacher PDF · Chinese</a></p>
+    <p><a href="https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-teacher-zh-compact.pdf" data-pdf-title="Second edition · Teacher’s guide · Chinese">Download teacher PDF · Chinese</a></p>
   </section>
 </div>
 

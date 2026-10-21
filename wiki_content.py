@@ -92,7 +92,7 @@ NAVIGATION = (
     {
         "label": "Wet Lab",
         "items": (
-            ("experiments", "Experiment"),
+            ("experiments", "Experiments"),
             ("notebook", "Notebook"),
             ("measurement", "Measurement"),
             ("safety-and-security", "Safety & Security"),
@@ -110,7 +110,7 @@ NAVIGATION = (
         "label": "Engagement",
         "align_end": True,
         "items": (
-            ("human-practices", "Human Practice"),
+            ("human-practices", "Human Practices"),
             ("education", "Education"),
             ("inclusivity", "Inclusivity"),
         ),

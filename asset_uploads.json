@@ -2630,9 +2630,9 @@
     "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/shantellsans-variable.woff2",
     "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-body-p5.avif",
     "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-medicine-p10.avif",
-    "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-en-compact.pdf",
-    "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-zh-compact.pdf",
-    "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-en-compact.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-zh-compact.pdf",
+    "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-teacher-zh-compact.pdf",
     "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-body-p3.avif",
     "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-v1-medicine-p20.avif",
     "https://static.igem.wiki/teams/6085/wiki/engineering-new/orca-engineering-01-deliver-aav9-4cfe8c8a10c0.avif",
@@ -12465,19 +12465,19 @@
     },
     {
       "local_path": "assets/human-practices/education/workbook-current-student-en-compact.pdf",
-      "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-en-compact.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-en-compact.pdf",
       "sha256": "9043a43c8a155b6c055a067753d6d9ea94e46a389f0ab836c13529298e6b1eeb",
       "evidence": "explicit_user_approved_20261021_official_upload_UI_and_byte_identity"
     },
     {
       "local_path": "assets/human-practices/education/workbook-current-student-zh-compact.pdf",
-      "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-zh-compact.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-zh-compact.pdf",
       "sha256": "6863f68df84c39392fef351033fb95a00d36a59d282abeca99a2c146b0b98bd8",
       "evidence": "explicit_user_approved_20261021_official_upload_UI_and_byte_identity"
     },
     {
       "local_path": "assets/human-practices/education/workbook-current-teacher-zh-compact.pdf",
-      "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-teacher-zh-compact.pdf",
       "sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6",
       "evidence": "explicit_user_approved_20261021_official_upload_UI_and_byte_identity"
     },
@@ -16907,15 +16907,15 @@
       "sha256": "5f434712c2b81326cca574811616258bbdf12fac71eaf6fafb86d8c0ce76a3d8"
     },
     {
-      "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-en-compact.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-en-compact.pdf",
       "sha256": "9043a43c8a155b6c055a067753d6d9ea94e46a389f0ab836c13529298e6b1eeb"
     },
     {
-      "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-student-zh-compact.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-student-zh-compact.pdf",
       "sha256": "6863f68df84c39392fef351033fb95a00d36a59d282abeca99a2c146b0b98bd8"
     },
     {
-      "url": "https://static.igem.wiki/teams/6085/wiki/education-chapters-20261021/workbook-current-teacher-zh-compact.pdf",
+      "url": "https://static.igem.wiki/teams/6085/wiki/10-21-15-26/workbook-current-teacher-zh-compact.pdf",
       "sha256": "0847dba7c148d4257537a9696ce41198f0482d260d89acf189aaf52a2c4168e6"
     },
     {

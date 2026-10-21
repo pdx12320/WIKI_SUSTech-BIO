@@ -28,7 +28,7 @@ URL generation, including relative paths in Frozen-Flask builds.
 
 - Supply the full preferred name. `card_name` optionally sets a shorter displayed name.
 - Supported role icons: `design`, `outreach`, `wet`, `dry`, `other`, `compute`,
-  `video`, `interview`, `inclusivity`, `illustration`.
+  `video`, `interview`, `inclusivity`, `illustration`, `sonar` (the SAP brand mark).
 - An empty role list shows the neutral “Team 2026” label; no workstream is inferred.
 - Student Leader stays in the role data but renders once as a compact badge at
   the top right of the portrait, outside the bottom tag list. The card's accessible
@@ -37,6 +37,8 @@ URL generation, including relative paths in Frozen-Flask builds.
   the last three share row two as text-only pills. Chenfan Liao uses this layout:
   HP on the first row and Wiki, Inclusivity, Builder on the second row, keeping
   Builder in column three and the identity block below the face.
+- `role_layout: one-row` keeps compact tags on a single line. Hansen Zhang uses
+  this for Wet Lab, SONAR, Wiki and Fashion, with the SAP icon beside SONAR.
 - Empty `quote` shows an explicit pending message, without quotation marks.
 - Keep one-liners around 10–100 English characters or 5–35 Chinese characters.
   Longer text wraps and shrinks to fit, with scrolling for the complete quote.

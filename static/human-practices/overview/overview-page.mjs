@@ -1,3 +1,5 @@
+import { initHandDraw } from './hand-draw.mjs';
+
 // HP-only placement and navigation. Shared templates/navigation stay untouched.
 const source = document.querySelector('[data-content-source="docs/human-practices/human-practices.md"]');
 if (source) {
@@ -15,10 +17,27 @@ if (source) {
   if (hero && header) {
     hero.classList.add('hp-overview-hero');
     header.after(hero);
+    const drawingReady = initHandDraw(hero).catch(() => {
+      hero.querySelector('.hp-hand-draw-source')?.classList.remove('hp-hand-draw-source');
+      hero.querySelector('.hp-hand-draw-canvas')?.remove();
+      hero.querySelector('.hp-hand-draw-controls')?.remove();
+      delete hero.dataset.handDraw;
+    });
     const overviewTarget = document.getElementById(location.hash.slice(1));
     if (overviewTarget && hero.contains(overviewTarget)) {
-      cssReady.then(() => document.fonts.ready).then(() => {
-        requestAnimationFrame(() => overviewTarget.scrollIntoView({block: "start"}));
+      Promise.all([cssReady, drawingReady]).then(() => {
+        const restore = () => requestAnimationFrame(() => overviewTarget.scrollIntoView({block: "start"}));
+        restore();
+        // Fonts may settle later; do not pull a visitor back after they start reading.
+        const input = new AbortController();
+        let untouched = true;
+        for (const type of ['wheel', 'touchstart', 'pointerdown', 'keydown']) {
+          addEventListener(type, () => { untouched = false; input.abort(); }, {once: true, passive: true, signal: input.signal});
+        }
+        document.fonts.ready.then(() => {
+          if (untouched) restore();
+          input.abort();
+        });
       });
     }
   }
